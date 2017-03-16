@@ -16,8 +16,8 @@ Support can take place in the appropriate channels:
 * Email based ticket system 
 * Community forum
 
-These channels can be accessed from our [support website here](https://support.advancedcustomfields.com/)
+These channels can be accessed from our [support website](https://support.advancedcustomfields.com/).
 
-## Contributing to WooCommerce
+## Contributing
 
-If you have a patch, or stumbled upon an issue with WooCommerce core, you can contribute this back to the code. Please create a new github issue with as much information as possible.
+If you have a patch, or stumbled upon an issue with ACF core, you can contribute this back to the code. Please create a new github issue with as much information as possible.
