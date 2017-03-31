@@ -155,6 +155,10 @@ class acf {
 		acf_include('pro/acf-pro.php');
 		
 		
+		// beta
+		acf_include('beta.php');
+		
+		
 		// actions
 		add_action('init',	array($this, 'init'), 5);
 		add_action('init',	array($this, 'register_post_types'), 5);
