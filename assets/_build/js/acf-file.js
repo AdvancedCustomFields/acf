@@ -378,17 +378,27 @@
 		get_file_info: function( $file_input, $hidden_input ){
 			
 			// vars
-			var attachment = {};
+			var val = $file_input.val(),
+				attachment = {};
+			
+			
+			// bail early if no value
+			if( !val ) {
+				
+				$hidden_input.val('');
+				return;
+				
+			}
 			
 			
 			// url
-			attachment.url = $file_input.val();
+			attachment.url = val;
 			
 			
 			// modern browsers
 			var files = $file_input[0].files;
 			
-			if( files ){
+			if( files.length ){
 				
 				// vars
 				var file = files[0];
@@ -426,7 +436,7 @@
 				}
 				
 			}
-				
+			
 			
 			// set hidden input value
 			$hidden_input.val( jQuery.param(attachment) );

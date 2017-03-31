@@ -991,62 +991,63 @@
 			// extend
 			wp.media.view.AttachmentCompat = AttachmentCompat.extend({
 				
+				add_acf_expand_button: function(){
+					
+					// vars
+					var $el = this.$el.closest('.media-modal');
+					
+					
+					// does button already exist?
+					if( $el.find('.media-frame-router .acf-expand-details').exists() ) return;
+					
+					
+					// create button
+					var $a = $([
+						'<a href="#" class="acf-expand-details">',
+							'<span class="is-closed"><span class="acf-icon -left small grey"></span>' + acf._e('expand_details') +  '</span>',
+							'<span class="is-open"><span class="acf-icon -right small grey"></span>' + acf._e('collapse_details') +  '</span>',
+						'</a>'
+					].join('')); 
+					
+					
+					// add events
+					$a.on('click', function( e ){
+						
+						e.preventDefault();
+						
+						if( $el.hasClass('acf-expanded') ) {
+						
+							$el.removeClass('acf-expanded');
+							
+						} else {
+							
+							$el.addClass('acf-expanded');
+							
+						}
+						
+					});
+					
+					
+					// append
+					$el.find('.media-frame-router').append( $a );
+					
+				},
+				
 				render: function() {
-					
-					// reference
-					var self = this;
-					
 					
 					// validate
 					if( this.ignore_render ) return this;
 					
 					
-					// add button
+					// reference
+					var self = this;
+					
+					
+					// add expand button
 					setTimeout(function(){
 						
-						// vars
-						var $media_model = self.$el.closest('.media-modal');
+						self.add_acf_expand_button();
 						
-						
-						// does button already exist?
-						if( $media_model.find('.media-frame-router .acf-expand-details').exists() ) {
-						
-							return;	
-							
-						}
-						
-						
-						// create button
-						var $a = $([
-							'<a href="#" class="acf-expand-details">',
-								'<span class="is-closed"><span class="acf-icon -left small grey"></span>' + acf._e('expand_details') +  '</span>',
-								'<span class="is-open"><span class="acf-icon -right small grey"></span>' + acf._e('collapse_details') +  '</span>',
-							'</a>'
-						].join('')); 
-						
-						
-						// add events
-						$a.on('click', function( e ){
-							
-							e.preventDefault();
-							
-							if( $media_model.hasClass('acf-expanded') ) {
-							
-								$media_model.removeClass('acf-expanded');
-								
-							} else {
-								
-								$media_model.addClass('acf-expanded');
-								
-							}
-							
-						});
-						
-						
-						// append
-						$media_model.find('.media-frame-router').append( $a );
-							
-					
 					}, 0);
 					
 					

@@ -306,6 +306,10 @@
 			});
 			
 			
+			// action for 3rd party customization
+			acf.do_action('google_map_init', this.map, this.map.marker, this.$field);
+			
+			
 	        // add to maps
 	        this.maps[ this.o.id ] = this.map;
 	        
