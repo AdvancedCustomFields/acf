@@ -47,7 +47,7 @@ class acf_beta {
 		
 		// vars
 		$url = 'https://connect.advancedcustomfields.com';
-		$url = 'http://connect';
+		//$url = 'http://connect';
 		
 		
 		// defaults
