@@ -106,6 +106,12 @@ http://support.advancedcustomfields.com/
 
 == Changelog ==
 
+= 5.5.12 =
+* Tab field: Allowed HTML within field label to show in tab
+* Core: Improved plugin update class
+* Language: Updated Portuguese translation - thanks to Pedro Mendonça
+* Language: Updated Brazilian Portuguese translation - thanks to Rafael Ribeiro
+
 = 5.5.11 =
 * Google Map field: Added new 'google_map_init' JS action
 * Core: Minor fixes and improvements

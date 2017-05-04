@@ -344,6 +344,13 @@
 				case 'select':
 					
 					this.$el.children('input').select2('data', item);
+					
+					
+					// vars
+					//var $select = this.$el.children('select');
+					//acf.select2.set_data($select, item);
+					
+					
 					break;
 				
 				case 'multi_select':
@@ -359,6 +366,13 @@
 					
 					// update
 					$input.select2('data', value);
+					
+					
+					// vars
+					//var $select = this.$el.children('select');
+					//acf.select2.append_data($select, item);
+					
+					
 					break;
 				
 				case 'checkbox':

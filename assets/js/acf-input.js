@@ -2084,6 +2084,7 @@ var acf;
 			// lower case
 			string = string.toLowerCase();
 			
+			
 			// return
 			return string;
 						
@@ -9075,6 +9076,124 @@ var acf;
 		
 		
 		/*
+		*  set_data
+		*
+		*  description
+		*
+		*  @type	function
+		*  @date	17/4/17
+		*  @since	5.5.10
+		*
+		*  @param	$post_id (int)
+		*  @return	$post_id (int)
+		*/
+		
+		set_data: function( $select, data ){
+			
+			// v3
+			if( this.version == 3 ) {
+				
+				$select = $select.siblings('input');
+				
+			}
+			
+			
+			// set data
+			$select.select2('data', data);
+			
+		},
+		
+		append_data: function( $select, data ){
+			
+			// v3
+			if( this.version == 3 ) {
+				
+				$select = $select.siblings('input');
+				
+			}
+			
+			
+			
+			// vars
+			var current = $select.select2('data') || [];
+			
+			
+			// append
+			current.push( data );
+			
+			
+			// set data
+			$select.select2('data', current);
+			
+		},
+		
+		test1: function(){
+		
+			// vars
+			var $select1 = $('#acf-field_58f402c1bbcfc'),
+				$select2 = $('#acf-field_58f409669fb72');
+			
+			
+			// data
+			var item = {
+				id:		'foo',
+				text:	'bar'
+			};
+			
+			console.log('test set_data to bar');
+			
+			acf.select2.set_data( $select1, item );
+			acf.select2.set_data( $select2, item );
+			
+		},
+		
+		test2: function(){
+		
+			// vars
+			var $select1 = $('#acf-field_58f402c1bbcfc'),
+				$select2 = $('#acf-field_58f409669fb72');
+			
+			
+			// data
+			var item = {
+				id:		'foo',
+				text:	'bar'
+			};
+			
+			console.log('test append_data to bar');
+			
+			acf.select2.set_data( $select1, item );
+			acf.select2.set_data( $select2, item );
+			
+		},
+		
+		test3: function(){
+		
+			// vars
+			var $select1 = $('#acf-field_58f402c1bbcfc'),
+				$select2 = $('#acf-field_58f409669fb72');
+			
+			
+			// data
+			var items = [
+				{
+					id:		'foo1',
+					text:	'bar1'
+				},
+					{
+					id:		'foo2',
+					text:	'bar2'
+				}
+			];
+			
+			console.log('test append_data to [bar1, bar2]');
+			
+			acf.select2.set_data( $select1, items );
+			acf.select2.set_data( $select2, items );
+			
+		},
+		
+		/*
 		*  decode_data
 		*
 		*  This function will take an array of choices and decode the text
@@ -9302,8 +9421,8 @@ var acf;
 			return val;
 			
 		},
-		    
-    
+		
+		
 		/*
 		*  init_v3
 		*
@@ -9993,7 +10112,7 @@ var acf;
 			// get options
 			this.o = this.$el.data();
 			this.o.key = this.$field.data('key');
-			this.o.text = this.$el.text();
+			this.o.text = this.$el.html();
 			
 		},
 		
@@ -11105,6 +11224,13 @@ var acf;
 				case 'select':
 					
 					this.$el.children('input').select2('data', item);
+					
+					
+					// vars
+					//var $select = this.$el.children('select');
+					//acf.select2.set_data($select, item);
+					
+					
 					break;
 				
 				case 'multi_select':
@@ -11120,6 +11246,13 @@ var acf;
 					
 					// update
 					$input.select2('data', value);
+					
+					
+					// vars
+					//var $select = this.$el.children('select');
+					//acf.select2.append_data($select, item);
+					
+					
 					break;
 				
 				case 'checkbox':

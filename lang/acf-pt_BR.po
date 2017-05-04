@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Advanced Custom Fields PRO 5.4\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
-"POT-Creation-Date: 2017-03-30 10:26+1000\n"
-"PO-Revision-Date: 2017-03-30 10:27+1000\n"
+"POT-Creation-Date: 2017-04-05 16:09-0300\n"
+"PO-Revision-Date: 2017-04-05 16:17-0300\n"
 "Last-Translator: Elliot Condon <e@elliotcondon.com>\n"
 "Language-Team: Augusto Simão <augusto@ams.art.br>\n"
 "Language: pt_BR\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 1.8.1\n"
+"X-Generator: Poedit 2.0\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
@@ -392,7 +392,7 @@ msgstr "Características"
 
 #: admin/field-groups.php:622
 msgid "How to"
-msgstr ""
+msgstr "Como"
 
 #: admin/field-groups.php:623
 msgid "Tutorials"
@@ -441,7 +441,7 @@ msgstr "Sincronizar"
 
 #: admin/field-groups.php:774
 msgid "Apply"
-msgstr ""
+msgstr "Aplicar"
 
 #: admin/field-groups.php:792
 #, fuzzy
@@ -677,9 +677,8 @@ msgid "Post Type"
 msgstr "Tipo de Post"
 
 #: admin/views/field-group-locations.php:7
-#, fuzzy
 msgid "Post Template"
-msgstr "Modelo do borne"
+msgstr "Modelo de Postagem"
 
 #: admin/views/field-group-locations.php:8
 msgid "Post Status"
@@ -1002,13 +1001,15 @@ msgid ""
 "Please also ensure any premium add-ons (%s) have first been updated to the "
 "latest version."
 msgstr ""
+"Certifique-se que todos os complementos premium (%s) foram atualizados para "
+"a última versão."
 
 #: admin/views/install.php:12
 msgid "Reading upgrade tasks..."
 msgstr "Lendo as tarefas de atualização…"
 
 #: admin/views/install.php:16
-#, fuzzy, php-format
+#, php-format
 msgid "Database Upgrade complete. <a href=\"%s\">See what's new</a>"
 msgstr ""
 "Atualização do banco de dados concluída. <a href=\"%s\">Veja o que há de "
@@ -1392,8 +1393,8 @@ msgstr "Tamanho Original"
 msgid "(no title)"
 msgstr "(sem título)"
 
-#: api/api-helpers.php:1979 fields/page_link.php:284
-#: fields/post_object.php:283 fields/taxonomy.php:988
+#: api/api-helpers.php:1979 fields/page_link.php:284 fields/post_object.php:283
+#: fields/taxonomy.php:988
 msgid "Parent"
 msgstr "Página de Nível mais Alto (sem mãe)"
 
@@ -1462,8 +1463,7 @@ msgstr "Layout"
 msgid "Validate Email"
 msgstr "Validar Email"
 
-#: core/form.php:101 pro/api/api-options-page.php:52
-#: pro/fields/gallery.php:588
+#: core/form.php:101 pro/api/api-options-page.php:52 pro/fields/gallery.php:588
 msgid "Update"
 msgstr "Atualizar"
 
@@ -1538,7 +1538,6 @@ msgid "Toggle All"
 msgstr "Selecionar Tudo"
 
 #: fields/checkbox.php:202
-#, fuzzy
 msgid "Add new choice"
 msgstr "Adicionar nova opção"
 
@@ -1695,8 +1694,8 @@ msgid "The format used when saving a value"
 msgstr "O formato usado ao salvar um valor"
 
 #: fields/date_picker.php:245 fields/date_time_picker.php:206
-#: fields/post_object.php:447 fields/relationship.php:778
-#: fields/select.php:528 fields/time_picker.php:140
+#: fields/post_object.php:447 fields/relationship.php:778 fields/select.php:528
+#: fields/time_picker.php:140
 msgid "Return Format"
 msgstr "Formato dos Dados"
 
@@ -2480,7 +2479,7 @@ msgstr "Sim"
 
 #: fields/true_false.php:142
 msgid "Displays text alongside the checkbox"
-msgstr ""
+msgstr "Exibe texto ao lado da caixa de seleção"
 
 #: fields/true_false.php:170
 #, fuzzy
@@ -2489,7 +2488,7 @@ msgstr "On Texto"
 
 #: fields/true_false.php:171
 msgid "Text shown when active"
-msgstr ""
+msgstr "Texto exibido quando ativo"
 
 #: fields/true_false.php:180
 #, fuzzy
@@ -2498,7 +2497,7 @@ msgstr "Off Texto"
 
 #: fields/true_false.php:181
 msgid "Text shown when inactive"
-msgstr ""
+msgstr "Texto exibido quando inativo"
 
 #: fields/url.php:36
 msgid "Url"
@@ -2531,7 +2530,7 @@ msgstr "Texto"
 
 #: fields/wysiwyg.php:392
 msgid "Click to initialize TinyMCE"
-msgstr ""
+msgstr "Clique para inicializar o TinyMCE"
 
 #: fields/wysiwyg.php:445
 msgid "Tabs"
