@@ -343,18 +343,19 @@
 				// select
 				case 'select':
 					
-					this.$el.children('input').select2('data', item);
+					//this.$el.children('input').select2('data', item);
 					
 					
 					// vars
-					//var $select = this.$el.children('select');
-					//acf.select2.set_data($select, item);
+					var $select = this.$el.children('select');
+					acf.select2.add_value($select, term.term_id, term.term_label);
 					
 					
 					break;
 				
 				case 'multi_select':
 					
+/*
 					// vars
 					var $input = this.$el.children('input'),
 						value = $input.select2('data') || [];
@@ -368,9 +369,10 @@
 					$input.select2('data', value);
 					
 					
+*/
 					// vars
-					//var $select = this.$el.children('select');
-					//acf.select2.append_data($select, item);
+					var $select = this.$el.children('select');
+					acf.select2.add_value($select, term.term_id, term.term_label);
 					
 					
 					break;

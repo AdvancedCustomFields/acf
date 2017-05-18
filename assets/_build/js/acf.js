@@ -684,45 +684,74 @@ var acf;
 		*  @return	$post_id (int)
 		*/
 		
-		serialize_form : function( $el ){
+		serialize_form: function( $el, prefix ){
+			
+			// defaults
+			prefix = prefix || '';
+			
 			
 			// vars
-			var data = {},
-				names = {};
-			
-			
-			// selector
-			$selector = $el.find('select, textarea, input');
+			var data = {};
+			var names = {};
+			var values = $el.find('select, textarea, input').serializeArray();
 			
 			
 			// populate data
-			$.each( $selector.serializeArray(), function( i, pair ) {
+			$.each( values, function( i, pair ) {
+				
+				// vars
+				var name = pair.name;
+				var value = pair.value;
+				
+				
+				// prefix
+				if( prefix ) {
+					
+					// bail early if does not contain
+					if( name.indexOf(prefix) !== 0 ) return;
+					
+					
+					// remove prefix
+					name = name.substr(prefix.length);
+					
+					
+					// name must not start as array piece
+					if( name.slice(0, 1) == '[' ) {
+						
+						name = name.replace('[', '');
+						name = name.replace(']', '');
+						
+					}
+					
+				}
+				
 				
 				// initiate name
-				if( pair.name.slice(-2) === '[]' ) {
+				if( name.slice(-2) === '[]' ) {
 					
 					// remove []
-					pair.name = pair.name.replace('[]', '');
+					name = name.slice(0, -2);
 					
 					
 					// initiate counter
-					if( typeof names[ pair.name ] === 'undefined'){
+					if( typeof names[ name ] === 'undefined'){
 						
-						names[ pair.name ] = -1;
+						names[ name ] = -1;
+						
 					}
 					
 					
 					// increase counter
-					names[ pair.name ]++;
+					names[ name ]++;
 					
 					
 					// add key
-					pair.name += '[' + names[ pair.name ] +']';
+					name += '[' + names[ name ] +']';
 				}
 				
 				
 				// append to data
-				data[ pair.name ] = pair.value;
+				data[ name ] = value;
 				
 			});
 			
@@ -732,9 +761,9 @@ var acf;
 			
 		},
 		
-		serialize: function( $el ){
+		serialize: function( $el, prefix ){
 			
-			return this.serialize_form( $el );
+			return this.serialize_form.apply( this, arguments );
 			
 		},
 		

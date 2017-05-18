@@ -436,11 +436,42 @@ table.conditional-logic-rules tbody td {
 *	
 *---------------------------------------------------------------------------------------------*/
 
-.acf-field-object-date_picker .acf-radio-list span {
-	display: inline-block;
-	width: 100px;
+.acf-field-object-date-picker,
+.acf-field-object-time-picker,
+.acf-field-object-date-time-picker {
+	
+	.acf-radio-list {
+		
+		li {
+			line-height: 25px;
+		}
+		
+		span {
+			display: inline-block;
+			min-width: 10em;
+		}
+		
+		input[type="text"] {
+			width: 100px;
+		}
+	}
+
 }
 
+.acf-field-object-date-time-picker {
+	
+	.acf-radio-list {
+		
+		span {
+			min-width: 15em;
+		}
+		
+		input[type="text"] {
+			width: 200px;
+		}
+	}
+	
+}
 
 /*--------------------------------------------------------------------------------------------
 *

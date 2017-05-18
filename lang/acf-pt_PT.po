@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Advanced Custom Fields PRO\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
-"POT-Creation-Date: 2017-04-12 16:14+0100\n"
-"PO-Revision-Date: 2017-04-12 16:14+0100\n"
+"POT-Creation-Date: 2017-05-04 12:54+0100\n"
+"PO-Revision-Date: 2017-05-04 12:54+0100\n"
 "Last-Translator: Pedro Mendonça <ped.gaspar@gmail.com>\n"
 "Language-Team: Pedro Mendonça <ped.gaspar@gmail.com>\n"
 "Language: pt_PT\n"
@@ -24,94 +24,94 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: acf.php:60
+#: acf.php:63
 msgid "Advanced Custom Fields"
 msgstr "Advanced Custom Fields"
 
-#: acf.php:283 admin/admin.php:117
+#: acf.php:323 admin/admin.php:117
 msgid "Field Groups"
 msgstr "Grupos de campos"
 
-#: acf.php:284
+#: acf.php:324
 msgid "Field Group"
 msgstr "Grupo de campos"
 
-#: acf.php:285 acf.php:317 admin/admin.php:118
-#: pro/fields/flexible-content.php:581
+#: acf.php:325 acf.php:357 admin/admin.php:118
+#: pro/fields/flexible-content.php:580
 msgid "Add New"
 msgstr "Adicionar novo"
 
-#: acf.php:286
+#: acf.php:326
 msgid "Add New Field Group"
 msgstr "Adicionar novo grupo de campos"
 
-#: acf.php:287
+#: acf.php:327
 msgid "Edit Field Group"
 msgstr "Editar grupo de campos"
 
-#: acf.php:288
+#: acf.php:328
 msgid "New Field Group"
 msgstr "Novo grupo de campos"
 
-#: acf.php:289
+#: acf.php:329
 msgid "View Field Group"
 msgstr "Ver grupo de campos"
 
-#: acf.php:290
+#: acf.php:330
 msgid "Search Field Groups"
 msgstr "Pesquisar grupos de campos"
 
-#: acf.php:291
+#: acf.php:331
 msgid "No Field Groups found"
 msgstr "Nenhum grupo de campos encontrado"
 
-#: acf.php:292
+#: acf.php:332
 msgid "No Field Groups found in Trash"
 msgstr "Nenhum grupo de campos encontrado no lixo"
 
-#: acf.php:315 admin/field-group.php:182 admin/field-group.php:280
+#: acf.php:355 admin/field-group.php:182 admin/field-group.php:280
 #: admin/field-groups.php:510 pro/fields/clone.php:857
 msgid "Fields"
 msgstr "Campos"
 
-#: acf.php:316
+#: acf.php:356
 msgid "Field"
 msgstr "Campo"
 
-#: acf.php:318
+#: acf.php:358
 msgid "Add New Field"
 msgstr "Adicionar novo campo"
 
-#: acf.php:319
+#: acf.php:359
 msgid "Edit Field"
 msgstr "Editar campo"
 
-#: acf.php:320 admin/views/field-group-fields.php:51
+#: acf.php:360 admin/views/field-group-fields.php:51
 #: admin/views/settings-info.php:111
 msgid "New Field"
 msgstr "Novo campo"
 
-#: acf.php:321
+#: acf.php:361
 msgid "View Field"
 msgstr "Ver campo"
 
-#: acf.php:322
+#: acf.php:362
 msgid "Search Fields"
 msgstr "Pesquisar campos"
 
-#: acf.php:323
+#: acf.php:363
 msgid "No Fields found"
 msgstr "Nenhum campo encontrado"
 
-#: acf.php:324
+#: acf.php:364
 msgid "No Fields found in Trash"
 msgstr "Nenhum campo encontrado no lixo"
 
-#: acf.php:363 admin/field-group.php:395 admin/field-groups.php:567
+#: acf.php:403 admin/field-group.php:395 admin/field-groups.php:567
 msgid "Inactive"
 msgstr "Inactivo"
 
-#: acf.php:368
+#: acf.php:408
 #, php-format
 msgid "Inactive <span class=\"count\">(%s)</span>"
 msgid_plural "Inactive <span class=\"count\">(%s)</span>"
@@ -182,7 +182,7 @@ msgstr "cópia"
 #: admin/views/field-group-field-conditional-logic.php:55
 #: admin/views/field-group-field-conditional-logic.php:155
 #: admin/views/field-group-locations.php:68
-#: admin/views/field-group-locations.php:144 api/api-helpers.php:4072
+#: admin/views/field-group-locations.php:144 api/api-helpers.php:4078
 msgid "or"
 msgstr "ou"
 
@@ -418,7 +418,7 @@ msgid "Duplicate this item"
 msgstr "Duplicar este item"
 
 #: admin/field-groups.php:671 admin/field-groups.php:687
-#: admin/views/field-group-field.php:59 pro/fields/flexible-content.php:580
+#: admin/views/field-group-field.php:59 pro/fields/flexible-content.php:579
 msgid "Duplicate"
 msgstr "Duplicar"
 
@@ -540,7 +540,7 @@ msgstr "e"
 msgid "Add rule group"
 msgstr "Adicionar grupo de regras"
 
-#: admin/views/field-group-field.php:50 pro/fields/flexible-content.php:427
+#: admin/views/field-group-field.php:50 pro/fields/flexible-content.php:426
 #: pro/fields/repeater.php:358
 msgid "Drag to reorder"
 msgstr "Arraste para reordenar"
@@ -570,7 +570,7 @@ msgstr "Mover"
 msgid "Delete field"
 msgstr "Eliminar campo"
 
-#: admin/views/field-group-field.php:61 pro/fields/flexible-content.php:579
+#: admin/views/field-group-field.php:61 pro/fields/flexible-content.php:578
 msgid "Delete"
 msgstr "Eliminar"
 
@@ -640,13 +640,13 @@ msgid "Order"
 msgstr "Ordem"
 
 #: admin/views/field-group-fields.php:16 fields/checkbox.php:312
-#: fields/radio.php:313 fields/select.php:534
-#: pro/fields/flexible-content.php:606
+#: fields/radio.php:321 fields/select.php:534
+#: pro/fields/flexible-content.php:605
 msgid "Label"
 msgstr "Legenda"
 
 #: admin/views/field-group-fields.php:17 fields/taxonomy.php:966
-#: pro/fields/flexible-content.php:619
+#: pro/fields/flexible-content.php:618
 msgid "Name"
 msgstr "Nome"
 
@@ -1367,62 +1367,62 @@ msgstr "Seleccionar ficheiro"
 msgid "Import"
 msgstr "Importar"
 
-#: api/api-helpers.php:961
+#: api/api-helpers.php:967
 msgid "Thumbnail"
 msgstr "Miniatura"
 
-#: api/api-helpers.php:962
+#: api/api-helpers.php:968
 msgid "Medium"
 msgstr "Média"
 
-#: api/api-helpers.php:963
+#: api/api-helpers.php:969
 msgid "Large"
 msgstr "Grande"
 
-#: api/api-helpers.php:1012
+#: api/api-helpers.php:1018
 msgid "Full Size"
 msgstr "Tamanho original"
 
-#: api/api-helpers.php:1353 api/api-helpers.php:1942 pro/fields/clone.php:1042
+#: api/api-helpers.php:1359 api/api-helpers.php:1948 pro/fields/clone.php:1042
 msgid "(no title)"
 msgstr "(sem título)"
 
-#: api/api-helpers.php:1979 fields/page_link.php:284 fields/post_object.php:283
+#: api/api-helpers.php:1985 fields/page_link.php:284 fields/post_object.php:283
 #: fields/taxonomy.php:988
 msgid "Parent"
 msgstr "Superior"
 
-#: api/api-helpers.php:3993
+#: api/api-helpers.php:3999
 #, php-format
 msgid "Image width must be at least %dpx."
 msgstr "A largura da imagem deve ser pelo menos de %dpx."
 
-#: api/api-helpers.php:3998
+#: api/api-helpers.php:4004
 #, php-format
 msgid "Image width must not exceed %dpx."
 msgstr "A largura da imagem não deve exceder os %dpx."
 
-#: api/api-helpers.php:4014
+#: api/api-helpers.php:4020
 #, php-format
 msgid "Image height must be at least %dpx."
 msgstr "A altura da imagem deve ser pelo menos de %dpx."
 
-#: api/api-helpers.php:4019
+#: api/api-helpers.php:4025
 #, php-format
 msgid "Image height must not exceed %dpx."
 msgstr "A altura da imagem não deve exceder os %dpx."
 
-#: api/api-helpers.php:4037
+#: api/api-helpers.php:4043
 #, php-format
 msgid "File size must be at least %s."
 msgstr "O tamanho do ficheiro deve ser pelo menos de %s."
 
-#: api/api-helpers.php:4042
+#: api/api-helpers.php:4048
 #, php-format
 msgid "File size must must not exceed %s."
 msgstr "O tamanho do ficheiro não deve exceder %s."
 
-#: api/api-helpers.php:4076
+#: api/api-helpers.php:4082
 #, php-format
 msgid "File type must be %s."
 msgstr "O tipo de ficheiro deve ser %s."
@@ -1447,9 +1447,9 @@ msgstr "Relacional"
 msgid "jQuery"
 msgstr "jQuery"
 
-#: core/field.php:339 fields/checkbox.php:281 fields/radio.php:292
-#: pro/fields/clone.php:889 pro/fields/flexible-content.php:576
-#: pro/fields/flexible-content.php:625 pro/fields/repeater.php:514
+#: core/field.php:339 fields/checkbox.php:281 fields/radio.php:300
+#: pro/fields/clone.php:889 pro/fields/flexible-content.php:575
+#: pro/fields/flexible-content.php:624 pro/fields/repeater.php:514
 msgid "Layout"
 msgstr "Layout"
 
@@ -1535,20 +1535,20 @@ msgstr "Seleccionar tudo"
 msgid "Add new choice"
 msgstr "Adicionar nova opção"
 
-#: fields/checkbox.php:241 fields/radio.php:242 fields/select.php:470
+#: fields/checkbox.php:241 fields/radio.php:250 fields/select.php:470
 msgid "Choices"
 msgstr "Opções"
 
-#: fields/checkbox.php:242 fields/radio.php:243 fields/select.php:471
+#: fields/checkbox.php:242 fields/radio.php:251 fields/select.php:471
 msgid "Enter each choice on a new line."
 msgstr "Introduza cada opção numa linha separada."
 
-#: fields/checkbox.php:242 fields/radio.php:243 fields/select.php:471
+#: fields/checkbox.php:242 fields/radio.php:251 fields/select.php:471
 msgid "For more control, you may specify both a value and label like this:"
 msgstr ""
 "Para maior controlo, pode especificar tanto os valores como as legendas:"
 
-#: fields/checkbox.php:242 fields/radio.php:243 fields/select.php:471
+#: fields/checkbox.php:242 fields/radio.php:251 fields/select.php:471
 msgid "red : Red"
 msgstr "vermelho : Vermelho"
 
@@ -1569,7 +1569,7 @@ msgid "Save 'custom' values to the field's choices"
 msgstr "Guarda valores personalizados nas opções do campo"
 
 #: fields/checkbox.php:272 fields/color_picker.php:147 fields/email.php:133
-#: fields/number.php:145 fields/radio.php:283 fields/select.php:479
+#: fields/number.php:145 fields/radio.php:291 fields/select.php:479
 #: fields/text.php:142 fields/textarea.php:139 fields/true_false.php:150
 #: fields/url.php:114 fields/wysiwyg.php:436
 msgid "Default Value"
@@ -1579,11 +1579,11 @@ msgstr "Valor por omissão"
 msgid "Enter each default value on a new line"
 msgstr "Introduza cada valor por omissão numa linha separada"
 
-#: fields/checkbox.php:287 fields/radio.php:298
+#: fields/checkbox.php:287 fields/radio.php:306
 msgid "Vertical"
 msgstr "Vertical"
 
-#: fields/checkbox.php:288 fields/radio.php:299
+#: fields/checkbox.php:288 fields/radio.php:307
 msgid "Horizontal"
 msgstr "Horizontal"
 
@@ -1597,20 +1597,20 @@ msgstr ""
 "Preceder com caixa de selecção adicional para seleccionar todas as opções"
 
 #: fields/checkbox.php:305 fields/file.php:219 fields/image.php:206
-#: fields/radio.php:306 fields/taxonomy.php:835
+#: fields/radio.php:314 fields/taxonomy.php:835
 msgid "Return Value"
 msgstr "Valor devolvido"
 
 #: fields/checkbox.php:306 fields/file.php:220 fields/image.php:207
-#: fields/radio.php:307
+#: fields/radio.php:315
 msgid "Specify the returned value on front end"
 msgstr "Especifica o valor devolvido na frente do site."
 
-#: fields/checkbox.php:311 fields/radio.php:312 fields/select.php:533
+#: fields/checkbox.php:311 fields/radio.php:320 fields/select.php:533
 msgid "Value"
 msgstr "Valor"
 
-#: fields/checkbox.php:313 fields/radio.php:314 fields/select.php:535
+#: fields/checkbox.php:313 fields/radio.php:322 fields/select.php:535
 msgid "Both (Array)"
 msgstr "Ambos (Array)"
 
@@ -1663,36 +1663,42 @@ msgctxt "Date Picker JS weekHeader"
 msgid "Wk"
 msgstr "Sem"
 
-#: fields/date_picker.php:216 fields/date_time_picker.php:190
-#: fields/time_picker.php:126
+#: fields/date_picker.php:223 fields/date_time_picker.php:197
+#: fields/time_picker.php:127
 msgid "Display Format"
 msgstr "Formato de visualização"
 
-#: fields/date_picker.php:217 fields/date_time_picker.php:191
-#: fields/time_picker.php:127
+#: fields/date_picker.php:224 fields/date_time_picker.php:198
+#: fields/time_picker.php:128
 msgid "The format displayed when editing a post"
 msgstr "O formato de visualização ao editar um conteúdo"
 
-#: fields/date_picker.php:234
+#: fields/date_picker.php:232 fields/date_picker.php:263
+#: fields/date_time_picker.php:207 fields/date_time_picker.php:224
+#: fields/time_picker.php:135 fields/time_picker.php:150
+msgid "Custom:"
+msgstr "Personalizado:"
+
+#: fields/date_picker.php:242
 msgid "Save Format"
 msgstr "Formato guardado"
 
-#: fields/date_picker.php:235
+#: fields/date_picker.php:243
 msgid "The format used when saving a value"
 msgstr "O formato usado ao guardar um valor"
 
-#: fields/date_picker.php:245 fields/date_time_picker.php:206
+#: fields/date_picker.php:253 fields/date_time_picker.php:214
 #: fields/post_object.php:447 fields/relationship.php:778 fields/select.php:528
-#: fields/time_picker.php:140
+#: fields/time_picker.php:142
 msgid "Return Format"
 msgstr "Formato devolvido"
 
-#: fields/date_picker.php:246 fields/date_time_picker.php:207
-#: fields/time_picker.php:141
+#: fields/date_picker.php:254 fields/date_time_picker.php:215
+#: fields/time_picker.php:143
 msgid "The format returned via template functions"
 msgstr "O formato devolvido através das <em>template functions</em>"
 
-#: fields/date_picker.php:263 fields/date_time_picker.php:222
+#: fields/date_picker.php:272 fields/date_time_picker.php:231
 msgid "Week Starts On"
 msgstr "Semana começa em"
 
@@ -1779,7 +1785,7 @@ msgstr "P"
 msgid "Email"
 msgstr "Email"
 
-#: fields/email.php:134 fields/number.php:146 fields/radio.php:284
+#: fields/email.php:134 fields/number.php:146 fields/radio.php:292
 #: fields/text.php:143 fields/textarea.php:140 fields/url.php:115
 #: fields/wysiwyg.php:437
 msgid "Appears when creating a new post"
@@ -2104,7 +2110,7 @@ msgstr "Filtrar por taxonomia"
 msgid "All taxonomies"
 msgstr "Todas as taxonomias"
 
-#: fields/page_link.php:528 fields/post_object.php:427 fields/radio.php:251
+#: fields/page_link.php:528 fields/post_object.php:427 fields/radio.php:259
 #: fields/select.php:488 fields/taxonomy.php:795 fields/user.php:423
 msgid "Allow Null?"
 msgstr "Permitir nulo?"
@@ -2135,20 +2141,20 @@ msgstr "ID do conteúdo"
 msgid "Radio Button"
 msgstr "Botão de opção"
 
-#: fields/radio.php:261
+#: fields/radio.php:269
 msgid "Other"
 msgstr "Outro"
 
-#: fields/radio.php:266
+#: fields/radio.php:274
 msgid "Add 'other' choice to allow for custom values"
 msgstr ""
 "Adicionar opção 'outros' para permitir a introdução de valores personalizados"
 
-#: fields/radio.php:272
+#: fields/radio.php:280
 msgid "Save Other"
 msgstr "Guardar outros"
 
-#: fields/radio.php:277
+#: fields/radio.php:285
 msgid "Save 'other' values to the field's choices"
 msgstr "Guardar 'outros' valores nas opções do campo"
 
@@ -2546,7 +2552,7 @@ msgstr "Atrasar a inicialização?"
 msgid "TinyMCE will not be initalized until field is clicked"
 msgstr "O TinyMCE não será inicializado até que clique no campo"
 
-#: forms/comment.php:166 forms/post.php:295 pro/admin/options-page.php:421
+#: forms/comment.php:166 forms/post.php:303 pro/admin/options-page.php:421
 msgid "Edit field group"
 msgstr "Editar grupo de campos"
 
@@ -2558,7 +2564,7 @@ msgstr[0] "1 campo requer a sua atenção."
 msgstr[1] "%d campos requerem a sua atenção."
 
 #. Plugin Name of the plugin/theme
-#: pro/acf-pro.php:24
+#: pro/acf-pro.php:28
 msgid "Advanced Custom Fields PRO"
 msgstr "Advanced Custom Fields PRO"
 
@@ -2696,17 +2702,17 @@ msgstr "Simples (substitui este campo pelos campos seleccionados)"
 msgid "Specify the style used to render the selected fields"
 msgstr "Especifica o estilo usado para mostrar os campos seleccionados."
 
-#: pro/fields/clone.php:895 pro/fields/flexible-content.php:636
+#: pro/fields/clone.php:895 pro/fields/flexible-content.php:635
 #: pro/fields/repeater.php:522
 msgid "Block"
 msgstr "Bloco"
 
-#: pro/fields/clone.php:896 pro/fields/flexible-content.php:635
+#: pro/fields/clone.php:896 pro/fields/flexible-content.php:634
 #: pro/fields/repeater.php:521
 msgid "Table"
 msgstr "Tabela"
 
-#: pro/fields/clone.php:897 pro/fields/flexible-content.php:637
+#: pro/fields/clone.php:897 pro/fields/flexible-content.php:636
 #: pro/fields/repeater.php:523
 msgid "Row"
 msgstr "Linha"
@@ -2787,60 +2793,60 @@ msgstr "{required} {identifier} {label} em falta (mín {min})"
 msgid "Flexible Content requires at least 1 layout"
 msgstr "O conteúdo flexível requer pelo menos 1 layout"
 
-#: pro/fields/flexible-content.php:287
+#: pro/fields/flexible-content.php:288
 #, php-format
 msgid "Click the \"%s\" button below to start creating your layout"
 msgstr "Clique no botão \"%s\" abaixo para começar a criar o seu layout"
 
-#: pro/fields/flexible-content.php:430
+#: pro/fields/flexible-content.php:429
 msgid "Add layout"
 msgstr "Adicionar layout"
 
-#: pro/fields/flexible-content.php:431
+#: pro/fields/flexible-content.php:430
 msgid "Remove layout"
 msgstr "Remover layout"
 
-#: pro/fields/flexible-content.php:432 pro/fields/repeater.php:360
+#: pro/fields/flexible-content.php:431 pro/fields/repeater.php:360
 msgid "Click to toggle"
 msgstr "Clique para alternar"
 
-#: pro/fields/flexible-content.php:578
+#: pro/fields/flexible-content.php:577
 msgid "Reorder Layout"
 msgstr "Reordenar layout"
 
-#: pro/fields/flexible-content.php:578
+#: pro/fields/flexible-content.php:577
 msgid "Reorder"
 msgstr "Reordenar"
 
-#: pro/fields/flexible-content.php:579
+#: pro/fields/flexible-content.php:578
 msgid "Delete Layout"
 msgstr "Eliminar layout"
 
-#: pro/fields/flexible-content.php:580
+#: pro/fields/flexible-content.php:579
 msgid "Duplicate Layout"
 msgstr "Duplicar layout"
 
-#: pro/fields/flexible-content.php:581
+#: pro/fields/flexible-content.php:580
 msgid "Add New Layout"
 msgstr "Adicionar novo layout"
 
-#: pro/fields/flexible-content.php:652
+#: pro/fields/flexible-content.php:651
 msgid "Min"
 msgstr "Mín"
 
-#: pro/fields/flexible-content.php:665
+#: pro/fields/flexible-content.php:664
 msgid "Max"
 msgstr "Máx"
 
-#: pro/fields/flexible-content.php:692 pro/fields/repeater.php:530
+#: pro/fields/flexible-content.php:691 pro/fields/repeater.php:530
 msgid "Button Label"
 msgstr "Legenda do botão"
 
-#: pro/fields/flexible-content.php:701
+#: pro/fields/flexible-content.php:700
 msgid "Minimum Layouts"
 msgstr "Mínimo de layouts"
 
-#: pro/fields/flexible-content.php:710
+#: pro/fields/flexible-content.php:709
 msgid "Maximum Layouts"
 msgstr "Máximo de layouts"
 

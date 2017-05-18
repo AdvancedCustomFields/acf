@@ -106,6 +106,19 @@ http://support.advancedcustomfields.com/
 
 == Changelog ==
 
+= 5.5.13 =
+* Clone field: Improved 'Fields' setting to show all fields within a matching field group search
+* Flexible Content field: Fixed bug causing 'layout_title' filter to fail when field is cloned
+* Flexible Content field: Added missing 'translate_field' function
+* WYSIWYG field: Fixed JS error when using CKEditor plugin
+* Date Picker field: Improved 'Display Format' and 'Return Format' settings UI
+* Time Picker field: Same as above
+* Datetime Picker field: Same as above
+* Core: Added new 'remove_wp_meta_box' setting
+* Core: Added constants ACF, ACF_PRO, ACF_VERSION and ACF_PATH
+* Core: Improved compatibility with Select2 v4 including sortable functionality
+* Language: Updated Portuguese translation - thanks to Pedro Mendonça
+
 = 5.5.12 =
 * Tab field: Allowed HTML within field label to show in tab
 * Core: Improved plugin update class

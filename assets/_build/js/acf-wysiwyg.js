@@ -87,6 +87,10 @@
 			if( typeof tinymce === 'undefined' ) return;
 			
 			
+			// bail early if no tinyMCEPreInit.mceInit
+			if( typeof tinyMCEPreInit.mceInit === 'undefined' ) return;
+			
+			
 			// vars
 			var mceInit = this.get_mceInit();
 			
@@ -121,6 +125,10 @@
 			
 			// bail early if no quicktags
 			if( typeof quicktags === 'undefined' ) return;
+			
+			
+			// bail early if no tinyMCEPreInit.qtInit
+			if( typeof tinyMCEPreInit.qtInit === 'undefined' ) return;
 			
 			
 			// vars
@@ -462,7 +470,7 @@ ed.on('ResizeEditor', function(e) {
 			
 			
 			// bail early if no tinymce
-			if( typeof tinymce === 'undefined' ) return;
+			if( !acf.isset(window,'tinymce','on') ) return;
 			
 			
 			// restore default activeEditor
