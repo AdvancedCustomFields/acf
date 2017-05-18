@@ -106,6 +106,9 @@ http://support.advancedcustomfields.com/
 
 == Changelog ==
 
+= 5.5.14 =
+* Core: Minor bug fixes
+
 = 5.5.13 =
 * Clone field: Improved 'Fields' setting to show all fields within a matching field group search
 * Flexible Content field: Fixed bug causing 'layout_title' filter to fail when field is cloned

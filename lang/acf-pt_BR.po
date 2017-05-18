@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Advanced Custom Fields PRO 5.4\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "POT-Creation-Date: 2017-04-05 16:09-0300\n"
-"PO-Revision-Date: 2017-04-05 16:17-0300\n"
+"PO-Revision-Date: 2017-05-15 21:46-0300\n"
 "Last-Translator: Elliot Condon <e@elliotcondon.com>\n"
 "Language-Team: Augusto Simão <augusto@ams.art.br>\n"
 "Language: pt_BR\n"
@@ -34,7 +34,7 @@ msgstr "Grupos de Campos"
 msgid "Field Group"
 msgstr "Grupo de Campos"
 
-#: acf.php:285 acf.php:317 admin/admin.php:118
+#: acf.php:322 acf.php:354 admin/admin.php:118
 #: pro/fields/flexible-content.php:581
 msgid "Add New"
 msgstr "Adicionar Novo"
@@ -106,12 +106,11 @@ msgid "No Fields found in Trash"
 msgstr "Nenhum Campo encontrado na Lixeira"
 
 #: acf.php:363 admin/field-group.php:395 admin/field-groups.php:567
-#, fuzzy
 msgid "Inactive"
 msgstr "Inativo"
 
 #: acf.php:368
-#, fuzzy, php-format
+#, php-format
 msgid "Inactive <span class=\"count\">(%s)</span>"
 msgid_plural "Inactive <span class=\"count\">(%s)</span>"
 msgstr[0] "Ativo <span class=\"count\">(%s)</span>"
@@ -361,7 +360,6 @@ msgid "Resources"
 msgstr "Recursos (em inglês)"
 
 #: admin/field-groups.php:614
-#, fuzzy
 msgid "Documentation"
 msgstr "Documentação"
 
@@ -386,7 +384,6 @@ msgid "Filters"
 msgstr "Filtros"
 
 #: admin/field-groups.php:621
-#, fuzzy
 msgid "Features"
 msgstr "Características"
 
@@ -444,7 +441,6 @@ msgid "Apply"
 msgstr "Aplicar"
 
 #: admin/field-groups.php:792
-#, fuzzy
 msgid "Bulk Actions"
 msgstr "Ações em massa"
 
@@ -1560,22 +1556,18 @@ msgid "red : Red"
 msgstr "vermelho : Vermelho"
 
 #: fields/checkbox.php:250
-#, fuzzy
 msgid "Allow Custom"
 msgstr "Permitir personalização"
 
 #: fields/checkbox.php:255
-#, fuzzy
 msgid "Allow 'custom' values to be added"
 msgstr "Permite adicionar valores personalizados"
 
 #: fields/checkbox.php:261
-#, fuzzy
 msgid "Save Custom"
 msgstr "Salvar personalização"
 
 #: fields/checkbox.php:266
-#, fuzzy
 msgid "Save 'custom' values to the field's choices"
 msgstr "Salva valores personalizados nas opções do campo"
 
@@ -1684,12 +1676,10 @@ msgid "The format displayed when editing a post"
 msgstr "O formato que será exibido ao editar um post"
 
 #: fields/date_picker.php:234
-#, fuzzy
 msgid "Save Format"
 msgstr "Salvar formato"
 
 #: fields/date_picker.php:235
-#, fuzzy
 msgid "The format used when saving a value"
 msgstr "O formato usado ao salvar um valor"
 
@@ -2557,12 +2547,10 @@ msgid "Show Media Upload Buttons?"
 msgstr "Mostrar Botões de Upload de Mídia?"
 
 #: fields/wysiwyg.php:479
-#, fuzzy
 msgid "Delay initialization?"
 msgstr "Atrasar a inicialização?"
 
 #: fields/wysiwyg.php:480
-#, fuzzy
 msgid "TinyMCE will not be initalized until field is clicked"
 msgstr "TinyMCE não será iniciado até que o campo seja clicado"
 
@@ -2748,12 +2736,10 @@ msgid "Prefix Field Names"
 msgstr "Prefixo dos Nomes dos Campos"
 
 #: pro/fields/clone.php:1038
-#, fuzzy
 msgid "Unknown field"
 msgstr "Campo desconhecido"
 
 #: pro/fields/clone.php:1077
-#, fuzzy
 msgid "Unknown field group"
 msgstr "Grupo de campo desconhecido"
 
@@ -2846,11 +2832,11 @@ msgstr "Adicionar Novo Layout"
 
 #: pro/fields/flexible-content.php:652
 msgid "Min"
-msgstr "Mín."
+msgstr "Mín"
 
 #: pro/fields/flexible-content.php:665
 msgid "Max"
-msgstr "Máx."
+msgstr "Máx"
 
 #: pro/fields/flexible-content.php:692 pro/fields/repeater.php:530
 msgid "Button Label"
