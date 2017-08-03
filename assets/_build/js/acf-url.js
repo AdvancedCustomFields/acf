@@ -52,12 +52,12 @@
 			// add class
 			if( this.is_valid() ) {
 				
-				this.$input.parent().addClass('valid');
+				this.$input.parent().addClass('-valid');
 			
 			// remove class	
 			} else {
 				
-				this.$input.parent().removeClass('valid');
+				this.$input.parent().removeClass('-valid');
 				
 			}
 			

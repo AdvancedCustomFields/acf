@@ -1089,7 +1089,7 @@
 					
 					
 					// serialize form
-					var data = acf.serialize_form(this.$el);
+					var data = acf.serialize(this.$el);
 					
 					
 					// ignore render

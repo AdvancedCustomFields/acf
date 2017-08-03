@@ -1006,17 +1006,20 @@
 			var $input = $select.siblings('input');
 			
 			
-			// bail early if no select2
-			if( !$input.data('select2') ) return;
+			// destroy via api
+			if( $input.data('select2') ) {
+				$input.select2('destroy');
+			}
 			
 			
-			// destroy
-			$input.select2('destroy');
+			// destory via HTML (duplicating HTML deos not contain data)
+			$select.siblings('.select2-container').remove();
 			
 			
 			// enable select
 			$select.prop('disabled', false).removeClass('acf-disabled acf-hidden');
-					
+			$input.attr('style', ''); // fixes bug causing hidden select2 element
+			
 		},
 		
 		add_value: function( $select, value, label ){
@@ -1173,12 +1176,15 @@
 			}
 			
 			
+/*
+			// removed - Select2 does not show this value by default!
 			// remove the blank option as we have a clear all button!
 			if( args.allow_null ) {
 				
 				$select.find('option[value=""]').remove();
 				
 			}
+*/
 			
 		    
 		    // remove conflicting atts
@@ -1399,13 +1405,15 @@
 		
 		destroy: function( $select ){
 			
-			// bail early if no select2
-			if( !$select.data('select2') ) return;
+			// destroy via api
+			if( $select.data('select2') ) {
+				$select.select2('destroy');
+			}
 			
 			
-			// destroy
-			$select.select2('destroy');
-					
+			// destory via HTML (duplicating HTML deos not contain data)
+			$select.siblings('.select2-container').remove();
+			
 		}
 		
 	};

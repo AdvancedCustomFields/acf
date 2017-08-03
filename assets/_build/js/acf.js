@@ -588,21 +588,22 @@ var acf;
 		*  @return	(mixed)
 		*/
 		
-		get_data: function( $el, name ){
+		get_data: function( $el, defaults ){
 			
-			//console.log('get_data(%o, %o)', name, $el);
+			// get data
+			var data = $el.data();
 			
 			
-			// get all datas
-			if( typeof name === 'undefined' ) {
+			// defaults
+			if( typeof defaults === 'object' ) {
 				
-				return $el.data();
+				data = this.parse_args( data, defaults );
 				
 			}
 			
 			
 			// return
-			return $el.data(name);
+			return data;
 							
 		},
 		
@@ -684,7 +685,13 @@ var acf;
 		*  @return	$post_id (int)
 		*/
 		
-		serialize_form: function( $el, prefix ){
+		serialize_form: function(){
+			
+			return this.serialize.apply( this, arguments );
+			
+		},
+		
+		serialize: function( $el, prefix ){
 			
 			// defaults
 			prefix = prefix || '';
@@ -712,14 +719,13 @@ var acf;
 					
 					
 					// remove prefix
-					name = name.substr(prefix.length);
+					name = name.slice(prefix.length);
 					
 					
 					// name must not start as array piece
 					if( name.slice(0, 1) == '[' ) {
 						
-						name = name.replace('[', '');
-						name = name.replace(']', '');
+						name = name.slice(1).replace(']', '');
 						
 					}
 					
@@ -756,16 +762,81 @@ var acf;
 			});
 			
 			
+			//console.log('serialize', data);
+			
+			
 			// return
 			return data;
 			
 		},
 		
+/*
 		serialize: function( $el, prefix ){
 			
-			return this.serialize_form.apply( this, arguments );
+			// defaults
+			prefix = prefix || '';
+			
+			
+			// vars
+			var data = {};
+			var $inputs = $el.find('select, textarea, input');
+			
+			
+			// loop
+			$inputs.each(function(){
+				
+				// vars
+				var $el = $(this);
+				var name = $el.attr('name');
+				var val = $el.val();
+				
+				
+				// is array
+				var is_array = ( name.slice(-2) === '[]' );
+				if( is_array ) {
+					name = name.slice(0, -2);
+				}
+				
+				
+				// explode name
+				var bits = name.split('[');
+				var depth = bits.length;
+				
+				
+				// loop
+				for( var i = 0; i < depth; i++ ) {
+					
+					// vars
+					var k = bits[i];
+										
+					
+					// end
+					if( i == depth-1 ) {
+						
+						
+						
+						
+					// not end
+					} else {
+						
+						// must be object
+						if( typeof data[k] !== 'object' ) {
+							data[k] = {};
+						} 
+						
+					}
+					
+					
+				}
+				
+				
+				bits.map(function( s ){ return s.replace(']', ''); })
+				
+				
+			});
 			
 		},
+*/
 		
 		
 		/*
@@ -1035,35 +1106,56 @@ var acf;
 			end_height = end_height || 0;
 			
 			
-			// set layout
+			// vars
+			var height = $el.height(),
+				width = $el.width(),
+				margin = $el.css('margin'),
+				outer_height = $el.outerHeight(true);
+			
+			
+			// action
+			acf.do_action('remove', $el);
+			
+			
+			// create wrap
+			$el.wrap('<div class="acf-temp-remove" style="height:' + outer_height + 'px"></div>');
+			var $wrap = $el.parent();
+			
+			
+			// set pos
 			$el.css({
-				height		: $el.height(),
-				width		: $el.width(),
-				position	: 'absolute'
+				height:		height,
+				width:		width,
+				margin:		margin,
+				position:	'absolute'
 			});
 			
 			
-			// wrap field
-			$el.wrap( '<div class="acf-temp-wrap" style="height:' + $el.outerHeight(true) + 'px"></div>' );
-			
-			
-			// fade $el
-			$el.animate({ opacity : 0 }, 250);
-			
-			
-			// remove
-			$el.parent('.acf-temp-wrap').animate({ height : end_height }, 250, function(){
+			// fade
+			setTimeout(function(){
 				
-				$(this).remove();
+				// aniamte
+				$wrap.css({
+					opacity:	0,
+					height:		end_height
+				});
 				
+			}, 50);
+			
+			
+			// animate complete
+			setTimeout(function(){
+				
+				// remove wrap
+				$wrap.remove();
+				
+				
+				// callback
 				if( typeof(callback) == 'function' ) {
-				
-					callback();
-				
+					callback.apply(this, arguments);
 				}
-				
-			});
 			
+			}, 301);
 			
 		},
 		
@@ -1390,16 +1482,71 @@ var acf;
 		prepare_for_ajax : function( args ) {
 			
 			// vars
-			args.nonce = acf.get('nonce');
-			args.post_id = acf.get('post_id');
+			var data = {
+				nonce	: acf.get('nonce'),
+				post_id	: acf.get('post_id')
+			};
+			
+			
+			// $.ajax() expects all args to be 'non-nested'
+			$.each(args, function(k,v){
+				
+				// object
+				if( $.isPlainObject(v) && !$.isEmptyObject(v) ) {
+					
+					// loop
+					$.each(v, function(k2,v2){
+						
+						// convert string
+						k2 = k2 + '';
+						
+						
+						// vars
+						var i = k2.indexOf('[');
+						
+						
+						// starts with [
+						if( i == 0 ) {
+							
+							k2 = k + k2;
+						
+						// contains [	
+						} else if( i > 0 ) {
+							
+							k2 = k + '[' + k2.slice(0, i) + ']' + k2.slice(i);
+						
+						// no [	
+						} else {
+							
+							k2 = k + '[' + k2 + ']';
+							
+						}
+						
+						
+						// append
+						data[k2] = v2;
+							
+					});
+				
+				// else	
+				} else {
+					
+					data[k] = v;
+					
+				}
+				
+			});
 			
 			
 			// filter for 3rd party customization
-			args = acf.apply_filters('prepare_for_ajax', args);	
+			data = acf.apply_filters('prepare_for_ajax', data);	
+			
+			
+			//console.log( 'prepare_for_ajax', data );
 			
 			
 			// return
-			return args;
+			return data;
 			
 		},
 		
@@ -2112,6 +2259,12 @@ var acf;
 		
 		parse_args: function( args, defaults ) {
 			
+			// defaults
+			if( typeof args !== 'object' ) args = {};
+			if( typeof defaults !== 'object' ) defaults = {};
+			
+			
+			// return
 			return $.extend({}, defaults, args);
 			
 		},
@@ -2269,12 +2422,13 @@ var acf;
 			
 			// vars
 			var model = this,
-				event = name.substr(0,name.indexOf(' ')),
-				selector = name.substr(name.indexOf(' ')+1);
+				i = name.indexOf(' '),
+				event = (i > 0) ? name.substr(0,i) : name,
+				selector = (i > 0) ? name.substr(i+1) : '';
 			
 			
-			// add event
-			$(document).on(event, selector, function( e ){
+			// event
+			var fn = function( e ){
 				
 				// append $el to event object
 				e.$el = $(this);
@@ -2282,16 +2436,22 @@ var acf;
 				
 				// event
 				if( typeof model.event === 'function' ) {
-					
 					e = model.event( e );
-					
 				}
 				
 				
 				// callback
-				model[ callback ].apply(model, [e]);
+				model[ callback ].apply(model, arguments);
 				
-			});
+			};
+			
+			
+			// add event
+			if( selector ) {
+				$(document).on(event, selector, fn);
+			} else {
+				$(document).on(event, fn);
+			}
 			
 		},
 		
@@ -2924,6 +3084,16 @@ var acf;
 			if( !$fields.exists() ) return;
 			
 			
+			// bail ealry if is .-left
+			if( $el.hasClass('-left') ) {
+				
+				$fields.removeAttr('data-width');
+				$fields.css('width', 'auto');
+				return;
+				
+			}
+			
+			
 			// reset fields
 			$fields.removeClass('acf-r0 acf-c0').css({'min-height': 0});
 			
@@ -3009,11 +3179,8 @@ var acf;
 	$(document).on('change', '.acf-field input, .acf-field textarea, .acf-field select', function(){
 		
 		// preview hack
-		if( $('#acf-form-data input[name="_acfchanged"]').exists() ) {
-		
-			$('#acf-form-data input[name="_acfchanged"]').val(1);
-			
-		}
+		var $input = $('#_acf_changed');
+		if( $input.length ) $input.val(1);
 		
 		
 		// action for 3rd party customization
@@ -3057,6 +3224,7 @@ var acf;
 		
 	acf.unload = acf.model.extend({
 		
+		locked: 1,
 		active: 1,
 		changed: 0,
 		
@@ -3065,8 +3233,19 @@ var acf;
 		},
 		
 		actions: {
+			'ready':	'ready',
 			'change':	'on',
-			'submit':	'off'
+		},
+		
+		ready: function(){
+			
+			// unlock in 1s to avoid JS 'trigger change' bugs
+			setTimeout(function(){
+				
+				acf.unload.locked = 0;
+				
+			}, 1000);
+			
 		},
 		
 		events: {
@@ -3088,8 +3267,8 @@ var acf;
 		
 		on: function(){
 			
-			// bail ealry if already changed (or not active)
-			if( this.changed || !this.active ) {
+			// bail ealry if already changed, not active, or still locked
+			if( this.changed || !this.active || this.locked ) {
 				
 				return;
 				
@@ -3128,45 +3307,30 @@ var acf;
 	
 	acf.tooltip = acf.model.extend({
 		
-		$el: null,
-		
 		events: {
-			'mouseenter .acf-js-tooltip':	'on',
-			'mouseleave .acf-js-tooltip':	'off'
+			'mouseenter .acf-js-tooltip':	'_on',
+			'mouseup .acf-js-tooltip':		'_off',
+			'mouseleave .acf-js-tooltip':	'_off'
 		},
-
-		on: function( e ){
-			
-			//console.log('on');
+		
+		tooltip: function( text, $el ){
 			
 			// vars
-			var title = e.$el.attr('title');
-			
-			
-			// hide empty titles
-			if( !title ) {
-				
-				return;
-									
-			}
-			
-			
-			// $t
-			this.$el = $('<div class="acf-tooltip">' + title + '</div>');
+			var $tooltip = $('<div class="acf-tooltip">' + text + '</div>');
 			
 			
 			// append
-			$('body').append( this.$el );
+			$('body').append( $tooltip );
 			
 			
 			// position
 			var tolerance = 10;
-				target_w = e.$el.outerWidth(),
-				target_h = e.$el.outerHeight(),
-				target_t = e.$el.offset().top,
-				target_l = e.$el.offset().left,
-				tooltip_w = this.$el.outerWidth(),
-				tooltip_h = this.$el.outerHeight();
+				target_w = $el.outerWidth(),
+				target_h = $el.outerHeight(),
+				target_t = $el.offset().top,
+				target_l = $el.offset().left,
+				tooltip_w = $tooltip.outerWidth(),
+				tooltip_h = $tooltip.outerHeight();
 			
 			
 			// calculate top
@@ -3177,7 +3341,7 @@ var acf;
 			// too far left
 			if( left < tolerance ) {
 				
-				this.$el.addClass('right');
+				$tooltip.addClass('right');
 				
 				left = target_l + target_w;
 				top = target_t + (target_h / 2) - (tooltip_h / 2);
@@ -3186,7 +3350,7 @@ var acf;
 			// too far right
 			} else if( (left + tooltip_w + tolerance) > $(window).width() ) {
 				
-				this.$el.addClass('left');
+				$tooltip.addClass('left');
 				
 				left = target_l - tooltip_w;
 				top = target_t + (target_h / 2) - (tooltip_h / 2);
@@ -3195,46 +3359,138 @@ var acf;
 			// too far top
 			} else if( top - $(window).scrollTop() < tolerance ) {
 				
-				this.$el.addClass('bottom');
+				$tooltip.addClass('bottom');
 				
 				top = target_t + target_h;
 
 			} else {
 				
-				this.$el.addClass('top');
+				$tooltip.addClass('top');
 				
 			}
 			
 			
 			// update css
-			this.$el.css({ 'top': top, 'left': left });
+			$tooltip.css({ 'top': top, 'left': left });
 			
 			
-			// avoid double title	
-			e.$el.data('title', title);
+			// return
+			return $tooltip;
+			
+		},
+		
+		confirm: function( $el, callback, text, button_y, button_n ){
+			
+			// defaults
+			text = text || acf._e('are_you_sure');
+			button_y = button_y || '<a href="#" class="acf-confirm-y">'+acf._e('yes')+'</a>';
+			button_n = button_n || '<a href="#" class="acf-confirm-n">'+acf._e('No')+'</a>';
+			
+			
+			// vars
+			var $tooltip = this.tooltip( text + ' ' + button_y + ' ' + button_n , $el);
+			
+			
+			// add class
+			$tooltip.addClass('-confirm');
+			
+			
+			// events
+			var event = function( e, result ){
+				
+				// prevent all listeners
+				e.preventDefault();
+				e.stopImmediatePropagation();
+				
+				
+				// remove events
+				$el.off('click', event_y);
+				$tooltip.off('click', '.acf-confirm-y', event_y);
+				$tooltip.off('click', '.acf-confirm-n', event_n);
+				$('body').off('click', event_n);
+				
+				
+				// remove tooltip
+				$tooltip.remove();
+				
+				
+				// callback
+				callback.apply(null, [result]);
+				
+			};
+			
+			var event_y = function( e ){
+				event( e, true );
+			};
+			
+			var event_n = function( e ){
+				event( e, false );
+			};
+			
+			
+			// add events
+			$tooltip.on('click', '.acf-confirm-y', event_y);
+			$tooltip.on('click', '.acf-confirm-n', event_n);
+			$el.on('click', event_y);
+			$('body').on('click', event_n);
+			
+		},
+		
+		confirm_remove: function( $el, callback ){
+			
+			// vars
+			text = false; // default
+			button_y = '<a href="#" class="acf-confirm-y -red">'+acf._e('remove')+'</a>';
+			button_n = '<a href="#" class="acf-confirm-n">'+acf._e('cancel')+'</a>';
+			
+			
+			// confirm
+			this.confirm( $el, callback, false, button_y, button_n );
+			
+		},
+		
+		_on: function( e ){
+			
+			// vars
+			var title = e.$el.attr('title');
+			
+			
+			// bail ealry if no title
+			if( !title ) return;
+			
+			
+			// create tooltip
+			var $tooltip = this.tooltip( title, e.$el );
+			
+			
+			// store as data
+			e.$el.data('acf-tooltip', {
+				'title': title,
+				'$el': $tooltip
+			});
+			
+			
+			// clear title to avoid default browser tooltip
 			e.$el.attr('title', '');
 			
 		},
 		
-		off: function( e ){
+		_off: function( e ){
 			
-			//console.log('off');
-			
-			// bail early if no $el
-			if( !this.$el ) {
-				
-				return;
-				
-			}
+			// vars
+			var tooltip = e.$el.data('acf-tooltip');
 			
 			
-			// replace title
-			e.$el.attr('title', e.$el.data('title'));
+			// bail early if no data
+			if( !tooltip ) return;
 			
 			
 			// remove tooltip
-			this.$el.remove();
+			tooltip.$el.remove();
 			
+			
+			// restore title
+			e.$el.attr('title', tooltip.title);
 		}
 		
 	});
@@ -3426,6 +3682,25 @@ var acf;
 		$duplicate.find('select option.selected').removeClass('selected');
 		
 	});
+	
+	
+	
+/*
+	acf.test_rtl = acf.model.extend({
+		
+		actions: {
+			'ready':	'ready',
+		},
+		
+		ready: function(){
+			
+			$('html').attr('dir', 'rtl');
+			
+		}
+		
+	});
+*/
+	
 	
 	
 /*

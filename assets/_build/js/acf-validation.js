@@ -387,7 +387,7 @@
 				
 				
 			// vars
-			var data = acf.serialize_form($form);
+			var data = acf.serialize($form);
 				
 			
 			// append AJAX action		

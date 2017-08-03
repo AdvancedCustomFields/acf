@@ -27,7 +27,7 @@
 			
 			// get elements
 			this.$el = this.$field.find('.acf-relationship');
-			this.$input = this.$el.find('.acf-hidden input');
+			this.$input = this.$el.children('input[type="hidden"]');
 			this.$choices = this.$el.find('.choices'),
 			this.$values = this.$el.find('.values');
 			

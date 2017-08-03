@@ -9,6 +9,7 @@
 // @codekit-prepend "../js/acf-file.js";
 // @codekit-prepend "../js/acf-google-map.js";
 // @codekit-prepend "../js/acf-image.js";
+// @codekit-prepend "../js/acf-link.js";
 // @codekit-prepend "../js/acf-media.js";
 // @codekit-prepend "../js/acf-oembed.js";
 // @codekit-prepend "../js/acf-radio.js";
