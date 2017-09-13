@@ -283,6 +283,7 @@
 			// underline search match
 			// consider removing due to bug where matched strings within HTML attributes caused incorrect results
 			// Looks like Select2 v4 has moved away from highlighting results, so perhaps we should too
+/*
 			if( this.o.s ) {
 			
 				// vars
@@ -305,6 +306,7 @@
 				});
 				
 			}
+*/
 			
 			
 			// append

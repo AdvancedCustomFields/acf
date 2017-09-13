@@ -549,12 +549,6 @@
 			
 			this.do_function( 'remove_value', arguments );
 			
-		},
-		
-		remove_value: function( $select, value ){
-			
-			this.do_function( 'remove_value', arguments );
-			
 		}
 		
 	});

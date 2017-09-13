@@ -2577,13 +2577,24 @@ var acf;
 			// add event
 			$(document).on(event, context + ' ' + selector, function( e ){
 				
-				// append $el to event object
-				e.$el = $(this);
-				e.$field = acf.get_closest_field(e.$el, model.type);
+				// vars
+				var $el = $(this);
+				var $field = acf.get_closest_field( $el, model.type );
+				
+				
+				// bail early if no field
+				if( !$field.length ) return;
 				
 				
 				// focus
-				model.set('$field', e.$field);
+				if( !$field.is(model.$field) ) {
+					model.set('$field', $field);
+				}
+				
+				
+				// append to event
+				e.$el = $el;
+				e.$field = $field;
 				
 				
 				// callback
@@ -2597,9 +2608,7 @@ var acf;
 			
 			// callback
 			if( typeof this.focus === 'function' ) {
-				
 				this.focus();
-				
 			}
 			
 		},

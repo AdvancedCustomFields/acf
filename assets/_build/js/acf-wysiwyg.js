@@ -25,13 +25,17 @@
 			this.$el = this.$field.find('.wp-editor-wrap').last();
 			this.$textarea = this.$el.find('textarea');
 			
+			
 			// get options
-			this.o = acf.get_data( this.$el );
-			this.o.id = this.$textarea.attr('id');
+			this.o = acf.get_data(this.$el, {
+				toolbar:	'',
+				active:		this.$el.hasClass('tmce-active'),
+				id:			this.$textarea.attr('id')
+			});
 			
 		},
 		
-		mousedown: function(e) {
+		mousedown: function(e){
 			
 			// prevent default
 			e.preventDefault();
@@ -53,8 +57,13 @@
 			if( this.$el.hasClass('delay') ) return;
 			
 			
-			// bail early if no tinyMCEPreInit (needed by both tinymce and quicktags)
-			if( typeof tinyMCEPreInit === 'undefined' ) return;
+			// vars
+			var args = {
+				tinymce:	true,
+				quicktags:	true,
+				toolbar:	this.o.toolbar,
+				mode:		this.o.active ? 'visual' : 'text',
+			};
 			
 			
 			// generate new id
@@ -70,364 +79,27 @@
 			// swap
 			this.$el.replaceWith( html );			
 			
-						
+			
 			// update id
-			this.o.id = new_id
+			this.o.id = new_id;
 			
-			
+						
 			// initialize
-			this.initialize_tinymce();
-			this.initialize_quicktags();
+			acf.tinymce.initialize( this.o.id, args, this.$field );
 			
 		},
-		
-		initialize_tinymce: function(){
-			
-			// bail early if no tinymce
-			if( typeof tinymce === 'undefined' ) return;
-			
-			
-			// bail early if no tinyMCEPreInit.mceInit
-			if( typeof tinyMCEPreInit.mceInit === 'undefined' ) return;
-			
-			
-			// vars
-			var mceInit = this.get_mceInit();
-			
-			
-			// append
-			tinyMCEPreInit.mceInit[ mceInit.id ] = mceInit;
-			
-			
-			// bail early if not visual active
-			if( !this.$el.hasClass('tmce-active') ) return;
-			
-			
-			// initialize
-			try {
-				
-				// init
-				tinymce.init( mceInit );
-				
-				
-				// vars
-				var ed = tinyMCE.get( mceInit.id );
-				
-				
-				// action for 3rd party customization
-				acf.do_action('wysiwyg_tinymce_init', ed, ed.id, mceInit, this.$field);
-				
-			} catch(e){}
-			
-		},
-		
-		initialize_quicktags: function(){
-			
-			// bail early if no quicktags
-			if( typeof quicktags === 'undefined' ) return;
-			
-			
-			// bail early if no tinyMCEPreInit.qtInit
-			if( typeof tinyMCEPreInit.qtInit === 'undefined' ) return;
-			
-			
-			// vars
-			var qtInit = this.get_qtInit();
-			
-			
-			// append
-			tinyMCEPreInit.qtInit[ qtInit.id ] = qtInit;
-			
-			
-			// initialize
-			try {
-				
-				// init
-				var qtag = quicktags( qtInit );
-				
-				
-				// buttons
-				this._buttonsInit( qtag );
-				
-				
-				// action for 3rd party customization
-				acf.do_action('wysiwyg_quicktags_init', qtag, qtag.id, qtInit, this.$field);
-				
-			} catch(e){}
-			
-		},
-		
-		get_mceInit : function(){
-			
-			// reference
-			var $field = this.$field;
-				
-				
-			// vars
-			var toolbar = this.get_toolbar( this.o.toolbar ),
-				mceInit = $.extend({}, tinyMCEPreInit.mceInit.acf_content);
-			
-			
-			// selector
-			mceInit.selector = '#' + this.o.id;
-			
-			
-			// id
-			mceInit.id = this.o.id; // tinymce v4
-			mceInit.elements = this.o.id; // tinymce v3
-			
-			
-			// toolbar
-			if( toolbar ) {
-				
-				var k = (tinymce.majorVersion < 4) ? 'theme_advanced_buttons' : 'toolbar';
-				
-				for( var i = 1; i < 5; i++ ) {
-					
-					mceInit[ k + i ] = acf.isset(toolbar, i) ? toolbar[i] : '';
-					
-				}
-				
-			}
-			
-			
-			// events
-			if( tinymce.majorVersion < 4 ) {
-				
-				mceInit.setup = function( ed ){
-					
-					ed.onInit.add(function(ed, event) {
-						
-						// focus
-						$(ed.getBody()).on('focus', function(){
-					
-							acf.validation.remove_error( $field );
-							
-						});
-						
-						$(ed.getBody()).on('blur', function(){
-							
-							// update the hidden textarea
-							// - This fixes a bug when adding a taxonomy term as the form is not posted and the hidden textarea is never populated!
-			
-							// save to textarea	
-							ed.save();
-							
-							
-							// trigger change on textarea
-							$field.find('textarea').trigger('change');
-							
-						});
-					
-					});
-					
-				};
-			
-			} else {
-			
-				mceInit.setup = function( ed ){
-					
-					ed.on('focus', function(e) {
-				
-						acf.validation.remove_error( $field );
-						
-					});
-					
-					ed.on('change', function(e) {
-						
-						// save to textarea	
-						ed.save();
-						
-						
-						$field.find('textarea').trigger('change');
-						
-					});
-					
-/*
-					ed.on('blur', function(e) {
-						
-						// update the hidden textarea
-						// - This fixes a but when adding a taxonomy term as the form is not posted and the hidden textarea is never populated!
-		
-						// save to textarea	
-						ed.save();
-						
-						
-						// trigger change on textarea
-						$field.find('textarea').trigger('change');
-						
-					});
-*/
-					
-					/*
-ed.on('ResizeEditor', function(e) {
-					    // console.log(e);
-					});
-*/
-					
-				};
-			
-			}
-			
-			
-			// disable wp_autoresize_on (no solution yet for fixed toolbar)
-			mceInit.wp_autoresize_on = false;
-			
-			
-			// hook for 3rd party customization
-			mceInit = acf.apply_filters('wysiwyg_tinymce_settings', mceInit, mceInit.id, this.$field);
-			
-			
-			// return
-			return mceInit;
-			
-		},
-		
-		get_qtInit : function(){
-				
-			// vars
-			var qtInit = $.extend({}, tinyMCEPreInit.qtInit.acf_content);
-			
-			
-			// id
-			qtInit.id = this.o.id;
-			
-			
-			// hook for 3rd party customization
-			qtInit = acf.apply_filters('wysiwyg_quicktags_settings', qtInit, qtInit.id, this.$field);
-			
-			
-			// return
-			return qtInit;
-			
-		},
-		
-		/*
-		*  disable
-		*
-		*  This function will disable the tinymce for a given field
-		*  Note: txtarea_el is different from $textarea.val() and is the value that you see, not the value that you save.
-		*        this allows text like <--more--> to wok instead of showing as an image when the tinymce is removed
-		*
-		*  @type	function
-		*  @date	1/08/2014
-		*  @since	5.0.0
-		*
-		*  @param	n/a
-		*  @return	n/a
-		*/
 		
 		disable: function(){
 			
-			try {
-				
-				// vars
-				var ed = tinyMCE.get( this.o.id )
-					
-				
-				// save
-				ed.save();
-				
-				
-				// destroy editor
-				ed.destroy();
-								
-			} catch(e) {}
+			acf.tinymce.destroy( this.o.id );
 			
 		},
 		
 		enable: function(){
 			
-			try {
-				
-				// bail early if html mode
-				if( this.$el.hasClass('tmce-active') ) {
-					
-					switchEditors.go( this.o.id, 'tmce');
-					
-				}
-								
-			} catch(e) {}
-			
-		},
-		
-		get_toolbar : function( name ){
-			
-			// bail early if toolbar doesn't exist
-			if( typeof this.toolbars[ name ] !== 'undefined' ) {
-				
-				return this.toolbars[ name ];
-				
+			if( this.o.active ) {
+				acf.tinymce.enable( this.o.id );
 			}
-			
-			
-			// return
-			return false;
-			
-		},
-		
-		
-		/*
-		*  _buttonsInit
-		*
-		*  This function will add the quicktags HTML to a WYSIWYG field. Normaly, this is added via quicktags on document ready,
-		*  however, there is no support for 'append'. Source: wp-includes/js/quicktags.js:245
-		*
-		*  @type	function
-		*  @date	1/08/2014
-		*  @since	5.0.0
-		*
-		*  @param	ed (object) quicktag object
-		*  @return	n/a
-		*/
-		
-		_buttonsInit: function( ed ) {
-			var defaults = ',strong,em,link,block,del,ins,img,ul,ol,li,code,more,close,';
-	
-			canvas = ed.canvas;
-			name = ed.name;
-			settings = ed.settings;
-			html = '';
-			theButtons = {};
-			use = '';
-
-			// set buttons
-			if ( settings.buttons ) {
-				use = ','+settings.buttons+',';
-			}
-
-			for ( i in edButtons ) {
-				if ( !edButtons[i] ) {
-					continue;
-				}
-
-				id = edButtons[i].id;
-				if ( use && defaults.indexOf( ',' + id + ',' ) !== -1 && use.indexOf( ',' + id + ',' ) === -1 ) {
-					continue;
-				}
-
-				if ( !edButtons[i].instance || edButtons[i].instance === inst ) {
-					theButtons[id] = edButtons[i];
-
-					if ( edButtons[i].html ) {
-						html += edButtons[i].html(name + '_');
-					}
-				}
-			}
-
-			if ( use && use.indexOf(',fullscreen,') !== -1 ) {
-				theButtons.fullscreen = new qt.FullscreenButton();
-				html += theButtons.fullscreen.html(name + '_');
-			}
-
-
-			if ( 'rtl' === document.getElementsByTagName('html')[0].dir ) {
-				theButtons.textdirection = new qt.TextDirectionButton();
-				html += theButtons.textdirection.html(name + '_');
-			}
-
-			ed.toolbar.innerHTML = html;
-			ed.theButtons = theButtons;
 			
 		}
 		
@@ -435,38 +107,52 @@ ed.on('ResizeEditor', function(e) {
 	
 	
 	/*
-	*  wysiwyg_manager
+	*  acf.tinymce
 	*
-	*  This model will handle validation of fields within a tab group
+	*  description
 	*
 	*  @type	function
-	*  @date	25/11/2015
-	*  @since	5.3.2
+	*  @date	18/8/17
+	*  @since	5.6.0
 	*
 	*  @param	$post_id (int)
 	*  @return	$post_id (int)
 	*/
 	
-	var acf_content = acf.model.extend({
+	acf.tinymce = acf.model.extend({
 		
-		$div: null,
+		toolbars: {},
 		
 		actions: {
 			'ready': 'ready'
 		},
 		
+		
+		/*
+		*  ready
+		*
+		*  This function will move the acf-hidden-wp-editor and fix the activeEditor
+		*
+		*  @type	function
+		*  @date	18/8/17
+		*  @since	5.6.0
+		*
+		*  @param	$post_id (int)
+		*  @return	$post_id (int)
+		*/
+		
 		ready: function(){
 
 			// vars
-			this.$div = $('#acf-hidden-wp-editor');
+			var $div = $('#acf-hidden-wp-editor');
 			
 			
 			// bail early if doesn't exist
-			if( !this.$div.exists() ) return;
+			if( !$div.exists() ) return;
 			
 			
 			// move to footer
-			this.$div.appendTo('body');
+			$div.appendTo('body');
 			
 			
 			// bail early if no tinymce
@@ -494,8 +180,369 @@ ed.on('ResizeEditor', function(e) {
 				
 			});
 			
-		}
+		},
+		
+		
+		/*
+		*  defaults
+		*
+		*  This function will return default mce and qt settings
+		*
+		*  @type	function
+		*  @date	18/8/17
+		*  @since	5.6.0
+		*
+		*  @param	$post_id (int)
+		*  @return	$post_id (int)
+		*/
+		
+		defaults: function(){
+			
+			// bail early if no tinyMCEPreInit
+			if( typeof tinyMCEPreInit === 'undefined' ) return false;
+			
+			
+			// vars
+			var defaults = {
+				tinymce:	tinyMCEPreInit.mceInit.acf_content,
+				quicktags:	tinyMCEPreInit.qtInit.acf_content
+			};
+			
+			
+			// return
+			return defaults;
+			
+		},
+		
+		
+		/*
+		*  initialize
+		*
+		*  This function will initialize the tinymce and quicktags instances
+		*
+		*  @type	function
+		*  @date	18/8/17
+		*  @since	5.6.0
+		*
+		*  @param	$post_id (int)
+		*  @return	$post_id (int)
+		*/
+		
+		initialize: function( id, args, $field ){
+			
+			// defaults
+			args = args || {};
+			$field = $field || null;
+			
+			
+			// merge
+			args = acf.parse_args(args, {
+				tinymce:	true,
+				quicktags:	true,
+				toolbar:	'full',
+				mode:		'visual', // visual,text
+			});
+			
+			
+			// tinymce
+			if( args.tinymce ) {
+				this.initialize_tinymce( id, args, $field );
+			}
+			
+			
+			// quicktags
+			if( args.quicktags ) {
+				this.initialize_quicktags( id, args, $field );
+			}
+			
+		},
+		
+		
+		/*
+		*  initialize_tinymce
+		*
+		*  This function will initialize the tinymce instance
+		*
+		*  @type	function
+		*  @date	18/8/17
+		*  @since	5.6.0
+		*
+		*  @param	$post_id (int)
+		*  @return	$post_id (int)
+		*/
+		
+		initialize_tinymce: function( id, args, $field ){
+			
+			// vars
+			var $textarea = $('#'+id);
+			var defaults = this.defaults();
+			var toolbars = this.toolbars;
+			
+			
+			// bail early
+			if( typeof tinymce === 'undefined' ) return false;
+			if( !defaults ) return false;
+			
+			
+			// check if exists
+			if( tinymce.get(id) ) {
+				return this.enable( id );
+			}
+			
+			
+			// settings
+			init = $.extend( {}, defaults.tinymce, args.tinymce );
+			init.id = id;
+			init.selector = '#' + id;
+			
+			
+			// toolbar
+			var toolbar = args.toolbar;
+			if( toolbar && typeof toolbars[toolbar] !== 'undefined' ) {
+				
+				for( var i = 1; i <= 4; i++ ) {
+					init[ 'toolbar' + i ] = toolbars[toolbar][i] || '';
+				}
+				
+			}
+			
+			
+			// event
+			init.setup = function( ed ){
+				
+				ed.on('focus', function(e) {
+					acf.validation.remove_error( $field );
+				});
+				
+				ed.on('change', function(e) {
+					ed.save(); // save to textarea	
+					$textarea.trigger('change');
+				});
+				
+				$( ed.getWin() ).on('unload', function() {
+					acf.tinymce.remove( id );
+				});
+				
+			};
+			
+			
+			// disable wp_autoresize_on (no solution yet for fixed toolbar)
+			init.wp_autoresize_on = false;
+			
+			
+			// hook for 3rd party customization
+			init = acf.apply_filters('wysiwyg_tinymce_settings', init, id, $field);
+			
+			
+			// z-index fix
+			if( acf.isset(tinymce,'ui','FloatPanel') ) {
+				tinymce.ui.FloatPanel.zIndex = 900000;
+			}
+			
+			
+			// store settings
+			tinyMCEPreInit.mceInit[ id ] = init;
+			
+			
+			// visual tab is active
+			if( args.mode == 'visual' ) {
+				
+				// init 
+				tinymce.init( init );
+				
+				
+				// get editor
+				var ed = tinymce.get( id );
+				
+				
+				// action
+				acf.do_action('wysiwyg_tinymce_init', ed, ed.id, init, $field);
+				
+			}
+			
+		},
+		
+		
+		/*
+		*  initialize_quicktags
+		*
+		*  This function will initialize the quicktags instance
+		*
+		*  @type	function
+		*  @date	18/8/17
+		*  @since	5.6.0
+		*
+		*  @param	$post_id (int)
+		*  @return	$post_id (int)
+		*/
+		
+		initialize_quicktags: function( id, args, $field ){
+			
+			// vars
+			var defaults = this.defaults();
+			
+			
+			// bail early
+			if( typeof quicktags === 'undefined' ) return false;
+			if( !defaults ) return false;
+			
+			
+			// settings
+			init = $.extend( {}, defaults.quicktags, args.quicktags );
+			init.id = id;
+			
+					
+			// filter
+			init = acf.apply_filters('wysiwyg_quicktags_settings', init, init.id, $field);
+			
+			
+			// store settings
+			tinyMCEPreInit.qtInit[ id ] = init;
+			
+			
+			// init
+			var ed = quicktags( init );
+			
+			
+			// generate HTML
+			this.build_quicktags( ed );
+			
+			
+			// action for 3rd party customization
+			acf.do_action('wysiwyg_quicktags_init', ed, ed.id, init, $field);
+				
+		},
+		
+		
+		/*
+		*  build_quicktags
+		*
+		*  This function will build the quicktags HTML
+		*
+		*  @type	function
+		*  @date	18/8/17
+		*  @since	5.6.0
+		*
+		*  @param	$post_id (int)
+		*  @return	$post_id (int)
+		*/
+		
+		build_quicktags: function( ed ){
+			
+			var canvas, name, settings, theButtons, html, ed, id, i, use,
+				defaults = ',strong,em,link,block,del,ins,img,ul,ol,li,code,more,close,';
+
+			canvas = ed.canvas;
+			name = ed.name;
+			settings = ed.settings;
+			html = '';
+			theButtons = {};
+			use = '';
+
+			// set buttons
+			if ( settings.buttons ) {
+				use = ','+settings.buttons+',';
+			}
+
+			for ( i in edButtons ) {
+				if ( ! edButtons[i] ) {
+					continue;
+				}
+
+				id = edButtons[i].id;
+				if ( use && defaults.indexOf( ',' + id + ',' ) !== -1 && use.indexOf( ',' + id + ',' ) === -1 ) {
+					continue;
+				}
+
+				if ( ! edButtons[i].instance || edButtons[i].instance === instanceId ) {
+					theButtons[id] = edButtons[i];
+
+					if ( edButtons[i].html ) {
+						html += edButtons[i].html( name + '_' );
+					}
+				}
+			}
+
+			if ( use && use.indexOf(',dfw,') !== -1 ) {
+				theButtons.dfw = new QTags.DFWButton();
+				html += theButtons.dfw.html( name + '_' );
+			}
+
+			if ( 'rtl' === document.getElementsByTagName( 'html' )[0].dir ) {
+				theButtons.textdirection = new QTags.TextDirectionButton();
+				html += theButtons.textdirection.html( name + '_' );
+			}
+
+			ed.toolbar.innerHTML = html;
+			ed.theButtons = theButtons;
+
+			if ( typeof jQuery !== 'undefined' ) {
+				jQuery( document ).triggerHandler( 'quicktags-init', [ ed ] );
+			}
+			
+		},
+		
+		disable: function( id ){
+			
+			this.destroy( id );
+			
+		},
+		
+		destroy: function( id ){
+			
+			this.destroy_tinymce( id );
+			
+		},
+		
+		destroy_tinymce: function( id ){
+			
+			// bail early
+			if( typeof tinymce === 'undefined' ) return false;
+			
+			
+			// get editor
+			var ed = tinymce.get( id );
+				
+			
+			// bail early if no editor
+			if( !ed ) return false;
+			
+			
+			// save
+			ed.save();
+			
+			
+			// destroy editor
+			ed.destroy();
+			
+			
+			// return
+			return true;
+			
+		},
+		
+		enable: function( id ){
+			
+			this.enable_tinymce( id );
+			
+		},
+		
+		enable_tinymce: function( id ){
+			
+			// bail early
+			if( typeof switchEditors === 'undefined' ) return false;
+			
+						
+			// toggle			
+			switchEditors.go( id, 'tmce');
+			
+			
+			// return
+			return true;
+			
+		},
 		
 	});
+	
 
 })(jQuery);
