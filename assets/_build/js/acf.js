@@ -2034,6 +2034,39 @@ var acf;
 		},
 		
 		
+		/**
+		*  esc_html
+		*
+		*  This function will escape HTML characters for safe use
+		*
+		*  @source	https://stackoverflow.com/questions/24816/escaping-html-strings-with-jquery
+		*  @date	20/9/17
+		*  @since	5.6.3
+		*
+		*  @param	n/a
+		*  @return	n/a
+		*/
+		
+		esc_html: function( string ){
+			
+			var entityMap = {
+			  '&': '&amp;',
+			  '<': '&lt;',
+			  '>': '&gt;',
+			  '"': '&quot;',
+			  "'": '&#39;',
+			  '/': '&#x2F;',
+			  '`': '&#x60;',
+			  '=': '&#x3D;'
+			};
+			
+			return String(string).replace(/[&<>"'`=\/]/g, function (s) {
+				return entityMap[s];
+			});
+
+		},
+		
+		
 		/*
 		*  render_select
 		*
@@ -2090,7 +2123,7 @@ var acf;
 				
 				
 				// append select
-				$optgroup.append( '<option value="' + item.value + '">' + item.label + '</option>' );
+				$optgroup.append( '<option value="' + item.value + '">' + acf.esc_html(item.label) + '</option>' );
 				
 				
 				// selectedIndex

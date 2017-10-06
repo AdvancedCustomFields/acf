@@ -22,7 +22,11 @@
 			
 			
 			// get options
-			this.o = acf.get_data( this.$el );
+			this.o = acf.get_data(this.$el, {
+				save: '',
+				type: '',
+				taxonomy: ''
+			});
 			
 			
 			// extra

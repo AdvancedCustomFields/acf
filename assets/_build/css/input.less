@@ -579,6 +579,23 @@ html[dir="rtl"] input.acf-is-prepended.acf-is-appended {
 	border-radius: 0 !important;
 }
 
+
+/*---------------------------------------------------------------------------------------------
+*
+*  Color Picker
+*
+*---------------------------------------------------------------------------------------------*/
+
+.acf-color-picker {
+	
+	.wp-picker-active {
+		position: relative;
+		z-index: 1;
+	}
+	
+}
+
+
 /*---------------------------------------------------------------------------------------------
 *
 *  Url
@@ -933,6 +950,10 @@ ul.acf-checkbox-list {
 		span {
 			float: none;
 		}
+		
+		i {
+			vertical-align: middle;
+		}
 	}
 	
 	
@@ -955,6 +976,91 @@ ul.acf-checkbox-list {
 			margin-right: 0;
 		}
 	}
+	
+	
+	
+	
+}
+
+
+/*---------------------------------------------------------------------------------------------
+*
+*  Button Group
+*
+*---------------------------------------------------------------------------------------------*/
+
+.acf-button-group {
+	display: inline-block;
+	
+	label {
+		display: inline-block;
+		border: #ccc solid 1px;
+		position: relative;
+		z-index: 1;
+		padding: 5px 10px;
+		background: #fff;
+		
+		&:hover {
+			border-color: darken(#ccc, 20%);
+			z-index: 2;
+		}
+		
+		&.selected {
+			border-color: darken(#309cf3, 1%);
+			background: #309cf3;
+			color: #fff;
+			z-index: 2;
+			
+			&:hover {
+				background: lighten(#309cf3, 5%);
+			}
+		}
+	}
+	
+	input {
+		display: none;
+	}
+	
+	
+	/* default (horizontal) */
+	& {
+		padding-left: 1px;
+		display: inline-flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		
+		label {
+			margin: 0 0 0 -1px;
+			flex: 1;
+			text-align: center;
+			white-space: nowrap;
+		
+			// corners
+			&:first-child { border-radius: 3px 0 0 3px; }
+			&:last-child { border-radius: 0 3px 3px 0; }
+			&:only-child { border-radius: 3px; }
+			
+		}
+	}
+	
+	
+	/* vertical */
+	&.-vertical {
+		padding-left: 0;
+		padding-top: 1px;
+		flex-direction: column;
+		
+		label {
+			margin: -1px 0 0 0;
+			
+			// corners
+			&:first-child { border-radius: 3px 3px 0 0; }
+			&:last-child { border-radius: 0 0 3px 3px; }
+			&:only-child { border-radius: 3px; }
+			
+		}
+	}
+	
 	
 }
 
@@ -987,10 +1093,11 @@ ul.acf-checkbox-list {
 	border-radius: 5px;
 	cursor: pointer;
 	position: relative;
-	background: #f1f1f1;
+	background: #f8f8f8;
 	height: 30px;
 	vertical-align: middle;
-	box-shadow: inset 0 0 1px rgba(0,0,0,0.1);
+	//box-shadow: inset 0 0 1px rgba(0,0,0,0.2);
+	border: #ccc solid 1px;
 	
 	-webkit-transition: background 0.25s ease;
 	-moz-transition: background 0.25s ease;
@@ -1024,9 +1131,9 @@ ul.acf-checkbox-list {
 	
 	.acf-switch-slider {
 		position: absolute;
-		top: 3px;
-		left: 3px;
-		bottom: 3px;
+		top: 2px;
+		left: 2px;
+		bottom: 2px;
 		right: 50%;
 		z-index: 1;
 		background: #fff;
@@ -1037,24 +1144,33 @@ ul.acf-checkbox-list {
 		-moz-transition: all 0.25s ease;
 		-o-transition: all 0.25s ease;
 		transition: all 0.25s ease;
+		
+		transition-property: left, right;
 	}
 	
 	
 	/* hover */
 	&:hover {
-		background: darken(#f1f1f1, 1%);
+		.acf-switch-slider{
+			border-color: darken(#ccc, 10%);
+		}
 	}
 	
 	
 	/* active */
 	&.-on {
-		background: @acf_blue;
+		background: #309cf3;
+		border-color: darken(#309cf3, 1%);
 		
 		.acf-switch-slider {
 			left: 50%;
-			right: 3px;
-			
-			border-color: darken(@acf_blue, 10%);
+			right: 2px;
+			border-color: darken(#309cf3, 10%);
+		}
+		
+		/* hover */
+		&:hover {
+			background: lighten(#309cf3, 5%);
 		}
 	}
 	
@@ -1094,6 +1210,17 @@ ul.acf-checkbox-list {
 	margin: 0;
 }
 
+
+/* in media modal */
+.compat-item .acf-true-false {
+	
+	.message {
+		float: none;
+		padding: 0;
+		vertical-align: middle;
+	}
+	
+}
 
 
 /*--------------------------------------------------------------------------
@@ -2344,7 +2471,7 @@ html[dir="rtl"] .pac-container .pac-item {
 	
 	input[type="number"] {
 		display: inline-block;
-		width: 50px;
+		min-width: 3em;
 		margin-left: 10px;
 		vertical-align: middle;
 	}

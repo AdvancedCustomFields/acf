@@ -453,7 +453,7 @@
 			
 			
 			// input with :checked
-			if( type == 'true_false' || type == 'checkbox' || type == 'radio' ) {
+			if( type == 'true_false' || type == 'checkbox' || type == 'radio' || type == 'button_group' ) {
 				
 				match = this.calculate_checkbox( rule, $trigger );
 	        

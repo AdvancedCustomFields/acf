@@ -52,7 +52,7 @@
 		ready: function( $el ){
 			
 			// reference
-			$el.find('.acf-field input').filter('[type="number"], [type="email"], [type="url"]').on('invalid', function( e ){
+			$el.find('.acf-field input').on('invalid', function( e ){
 				
 				// prvent defual
 				// fixes chrome bug where 'hidden-by-tab' field throws focus error
