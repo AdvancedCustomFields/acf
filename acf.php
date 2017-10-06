@@ -177,10 +177,6 @@ class acf {
 		acf_include('pro/acf-pro.php');
 		
 		
-		// beta
-		acf_include('beta.php');
-		
-		
 		// actions
 		add_action('init',	array($this, 'init'), 5);
 		add_action('init',	array($this, 'register_post_types'), 5);
@@ -235,6 +231,12 @@ class acf {
 		// include wpml support
 		if( defined('ICL_SITEPRESS_VERSION') ) {
 			acf_include('includes/wpml.php');
+		}
+		
+		
+		// early access
+		if( defined('ACF_EARLY_ACCESS') ) {
+			acf_include('includes/early-access.php');
 		}
 		
 		
