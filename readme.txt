@@ -29,10 +29,10 @@ Use the Advanced Custom Fields plugin to take full control of your WordPress edi
 * [Website](https://www.advancedcustomfields.com)
 * [Documentation](https://www.advancedcustomfields.com/resources/)
 * [Support](https://support.advancedcustomfields.com)
-* [ACF PRO](https://www.advancedcustomfields.com/resources/pro/)
+* [ACF PRO](https://www.advancedcustomfields.com/pro/)
 
 = PRO =
-The Advanced Custom Fields plugin is also available in a professional version which includes more fields, more functionality, and more flexibility! [Learn more](https://www.advancedcustomfields.com/resources/pro/)
+The Advanced Custom Fields plugin is also available in a professional version which includes more fields, more functionality, and more flexibility! [Learn more](https://www.advancedcustomfields.com/pro/)
 
 
 == Installation ==
