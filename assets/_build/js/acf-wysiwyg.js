@@ -334,10 +334,10 @@
 			init = acf.apply_filters('wysiwyg_tinymce_settings', init, id, $field);
 			
 			
-			// z-index fix
-			if( acf.isset(tinymce,'ui','FloatPanel') ) {
-				tinymce.ui.FloatPanel.zIndex = 900000;
-			}
+			// z-index fix (caused too many conflicts)
+			//if( acf.isset(tinymce,'ui','FloatPanel') ) {
+			//	tinymce.ui.FloatPanel.zIndex = 900000;
+			//}
 			
 			
 			// store settings
@@ -531,6 +531,10 @@
 			
 			// bail early
 			if( typeof switchEditors === 'undefined' ) return false;
+			
+			
+			// bail ealry if not initialized
+			if( typeof tinyMCEPreInit.mceInit[ id ] === 'undefined' ) return false;
 			
 						
 			// toggle			

@@ -392,24 +392,20 @@
 		active: 1,
 		
 		actions: {
-			'add_field_error': 'add_field_error'
+			'invalid_field': 'invalid_field',
 		},
 		
-		add_field_error: function( $field ){
+		invalid_field: function( $field ){
 			
 			// bail early if already focused
 			if( !this.active ) {
-				
 				return;
-				
 			}
 			
 			
 			// bail early if not hidden by tab
 			if( !$field.hasClass('hidden-by-tab') ) {
-				
 				return;
-				
 			}
 			
 			
