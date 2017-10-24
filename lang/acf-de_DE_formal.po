@@ -370,7 +370,7 @@ msgstr "Versionshinweise"
 #: includes/admin/admin-field-groups.php:614
 #, php-format
 msgid "See what's new in <a href=\"%s\">version %s</a>."
-msgstr "Was gibt es Neues in <a href=„%s“>Version %s</a>."
+msgstr "Was gibt es Neues in <a href=\"%s\">Version %s</a>."
 
 # @ acf
 #: includes/admin/admin-field-groups.php:617
@@ -957,7 +957,7 @@ msgstr "Die Website ist aktuell"
 msgid ""
 "Database Upgrade complete. <a href=\"%s\">Return to network dashboard</a>"
 msgstr ""
-"Upgrade der Datenbank fertiggestellt. <a href=„%s“>Zum Netzwerk Dashboard</a>"
+"Upgrade der Datenbank fertiggestellt. <a href=\"%s\">Zum Netzwerk Dashboard</a>"
 
 # @ acf
 #: includes/admin/views/install-network.php:102
@@ -1204,9 +1204,9 @@ msgid ""
 "but if you do have one, please contact our support team via the <a href=\"%s"
 "\">help desk</a>"
 msgstr ""
-"Um möglichen Fragen zu begegnen haben wir haben einen <a href=„%s“>Upgrade-"
+"Um möglichen Fragen zu begegnen haben wir haben einen <a href=\"%s\">Upgrade-"
 "Leitfaden (Engl.)</a> erstellt. Sollten dennoch Fragen auftreten, "
-"kontaktieren Sie bitte unser <a href=„%s“> Support-Team </a>"
+"kontaktieren Sie bitte unser <a href=\"%s\"> Support-Team </a>"
 
 # @ acf
 #: includes/admin/views/settings-info.php:66
@@ -3382,7 +3382,7 @@ msgid ""
 msgstr ""
 "Um die Update-Fähigkeit freizuschalten geben Sie bitte unten Ihren "
 "Lizenzschlüssel ein. Falls Sie keinen besitzen informieren Sie sich bitte "
-"hier hinsichtlich der <a href=„%s“ target=„_blank“>Preise und Einzelheiten</"
+"hier hinsichtlich der <a href=\"%s\" target=\"_blank\">Preise und Einzelheiten</"
 "a>."
 
 # @ acf
@@ -3767,9 +3767,9 @@ msgid ""
 "\">details & pricing</a>."
 msgstr ""
 "Um die Update-Fähigkeit freizuschalten geben Sie bitte Ihren Lizenzschlüssel "
-"auf der <a href=„%s“>Aktualisierungen</a> Seite ein. Falls Sie keinen "
-"besitzen informieren Sie sich bitte hier hinsichtlich der <a href=„%s“ "
-"target=„_blank“>Preise und Einzelheiten</a>."
+"auf der <a href=\"%s\">Aktualisierungen</a> Seite ein. Falls Sie keinen "
+"besitzen informieren Sie sich bitte hier hinsichtlich der <a href=\"%s\" "
+"target=\"_blank\">Preise und Einzelheiten</a>."
 
 #. Plugin URI of the plugin/theme
 msgid "https://www.advancedcustomfields.com/"
