@@ -45,6 +45,9 @@
   margin: 0 0 3px;
   padding: 0;
 }
+.acf-field .acf-label:empty {
+  margin-bottom: 0;
+}
 .acf-field .acf-input {
   vertical-align: top;
 }
@@ -219,7 +222,7 @@ html[dir="rtl"] .acf-fields.-left > .acf-field > .acf-input {
 }
 /* left */
 .acf-fields.-clear.-left > .acf-field > .acf-label {
-  padding-right: 24px;
+  padding-right: 12px * 2;
 }
 /*--------------------------------------------------------------------------------------------
 *
@@ -280,8 +283,7 @@ html[dir="rtl"] .acf-fields.-left > .acf-field > .acf-input {
 .acf-postbox.seamless > .inside {
   display: block !important;
   /* stop metabox from hiding when closed */
-  margin-left: -12px !important;
-  margin-right: -12px !important;
+  margin: -12px !important;
 }
 .acf-postbox.seamless > .acf-fields > .acf-field {
   border: 0 none !important;

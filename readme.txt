@@ -66,6 +66,14 @@ From your WordPress dashboard
 
 == Changelog ==
 
+= 5.6.5 =
+* API: Added new 'kses' setting to the `acf_form()` function
+* Core: Added new 'Admin Tools' framework (includes design refresh)
+* Core: Minor fixes and improvements
+* Language: Update Ukrainian translation - thanks to Jurko Chervony
+* Language: Update Russian translation - thanks to Andriy Toniyevych
+* Language: Update Hebrew translation - thanks to Itamar Megged
+
 = 5.6.4 =
 * Google Map field: Fixed bug causing invalid url to JavaScript library
 * WYSIWYG field: Fixed minor z-index and drag/drop bugs

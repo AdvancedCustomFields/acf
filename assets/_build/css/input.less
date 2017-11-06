@@ -37,6 +37,10 @@
 		    margin: 0 0 3px;
 			padding: 0;
 		}
+		
+		&:empty {
+			margin-bottom: 0;
+		}
 	}
 	
 	
@@ -335,8 +339,7 @@ td.acf-fields {
 	/* inside */
 	> .inside {
 		display: block !important; /* stop metabox from hiding when closed */
-		margin-left: -@field_padding_x !important;
-		margin-right: -@field_padding_x !important;
+		margin: -@field_padding_x !important;
 	}
 	
 	> .acf-fields > .acf-field {

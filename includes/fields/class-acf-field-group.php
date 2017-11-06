@@ -407,8 +407,8 @@ class acf_field__group extends acf_field {
 				
 			?>
 			<th <?php acf_esc_attr_e( $atts ); ?>>
-				<?php acf_the_field_wrap_label( $sub_field ); ?>
-				<?php acf_the_field_wrap_instructions( $sub_field ); ?>
+				<?php acf_render_field_label( $sub_field ); ?>
+				<?php acf_render_field_instructions( $sub_field ); ?>
 			</th>
 		<?php endforeach; ?>
 		</tr>

@@ -3675,6 +3675,38 @@ var acf;
 			
 		},
 		
+		temp: function( text, $el ){
+			
+			// tooltip
+			var $el = this.tooltip( text, $el );
+			var time = 0;
+			
+			
+			// wait 250
+			time += 250;
+			
+			
+			// add class
+			setTimeout(function(){
+				
+				$el.addClass('acf-fade-up');
+				
+			}, time);
+			
+			
+			// wait 250
+			time += 250;
+			
+			
+			// remove
+			setTimeout(function(){
+				
+				$el.remove();
+				
+			}, time);
+			
+		},
+		
 		confirm: function( $el, callback, text, button_y, button_n ){
 			
 			// defaults
@@ -3876,6 +3908,118 @@ var acf;
 			
 		}
 		
+	});
+	
+	
+	/**
+	*  panel
+	*
+	*  This model handles .acf-panel JS
+	*
+	*  @date	21/10/17
+	*  @since	5.6.3
+	*
+	*  @param	n/a
+	*  @return	n/a
+	*/
+	
+	var acf_panel = acf.model.extend({
+		
+		events: {
+			'click .acf-panel-title': '_click',
+		},
+		
+		_click: function( e ){
+			
+			// prevent Defailt
+			e.preventDefault();
+			
+			
+			// open close
+			this.toggle( e.$el.parent() );
+			
+		},
+		
+		is_open: function( $el ) {
+			return $el.hasClass('-open');
+		},
+		
+		toggle: function( $el ){
+			
+			// is open
+			if( this.is_open($el) ) {
+				this.close( $el );
+			} else {
+				this.open( $el );
+			}
+			
+		},
+		
+		open: function( $el ){
+			$el.addClass('-open');
+			$el.find('.acf-panel-title i').attr('class', 'dashicons dashicons-arrow-down');
+		},
+		
+		close: function( $el ){
+			$el.removeClass('-open');
+			$el.find('.acf-panel-title i').attr('class', 'dashicons dashicons-arrow-right');
+		}
+				 
+	});
+	
+	
+	/**
+	*  acf_h2_notice
+	*
+	*  This model will move the .acf-notice element quickly without the WP flicker
+	*
+	*  @date	21/10/17
+	*  @since	5.6.3
+	*
+	*  @param	n/a
+	*  @return	n/a
+	*/
+	
+	acf.notice = acf.model.extend({
+		
+		actions: {
+			'prepare': 'prepare',
+		},
+		
+		prepare: function(){
+			
+			// vars
+			var $notice = $('.acf-notice');
+			
+			
+			// move
+			if( $notice.length ) {
+				$('h1:first').after( $notice );
+			}
+			
+		},
+		
+		html: function( text, type ){
+			
+		},
+		
+		success: function( text ){
+			
+			
+		},
+		
+		error: function( text ){
+			
+		},
+		
+		warning: function( text ){
+			
+		},
+		
+		information: function( text ){
+			
+		}
+				 
 	});
 			
 	

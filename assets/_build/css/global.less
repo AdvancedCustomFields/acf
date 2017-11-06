@@ -795,6 +795,18 @@ a.acf-icon.-cancel.grey:hover {
 }
 
 
+/* fade-up */
+.acf-fade-up {
+	-webkit-transition: all 0.25s ease-out;
+	-moz-transition: all 0.25s ease-out;
+	-o-transition: all 0.25s ease-out;
+	transition: all 0.25s ease-out;
+	
+	transform: translate(0, -10px);
+	opacity: 0;
+}
+
+
 /*---------------------------------------------------------------------------------------------
 *
 *  wp-admin
@@ -885,6 +897,7 @@ a.acf-icon.-cancel.grey:hover {
 .acf-columns-2 {
 	margin-right: 300px;
 	clear: both;
+	.clearfix;
 	
 	/* rtl */
 	html[dir="rtl"] & {
@@ -948,6 +961,7 @@ a.acf-icon.-cancel.grey:hover {
 	}
 
 }
+
 
 /*---------------------------------------------------------------------------------------------
 *
@@ -1459,6 +1473,260 @@ html[dir="rtl"] .acf-table > tbody > tr > td:first-child {
 html[dir="rtl"] .acf-table > tbody > tr > td.order + td {
 	border-right-color: #e1e1e1;
 }
+
+
+/*---------------------------------------------------------------------------------------------
+*
+*  acf-postbox-columns
+*
+*---------------------------------------------------------------------------------------------*/
+
+.acf-postbox-columns {
+	.clearfix;
+	position: relative;
+	margin-top: -11px;
+	margin-bottom: -11px;
+	margin-left: -12px;
+	margin-right: (280px - 12px);
+	
+	.acf-postbox-main,
+	.acf-postbox-side {
+		.border-box;
+		padding: 0 12px 12px;
+	}
+	
+	.acf-postbox-main {
+		float: left;
+		width: 100%;
+	}
+	
+	.acf-postbox-side {
+		float: right;
+		width: 280px;
+		margin-right: -280px;
+		
+		&:before {
+			content: "";
+			display: block;
+			position: absolute;
+			width: 1px;
+			height: 100%;
+			top: 0;
+			right: 0;
+			background: #ebebeb; 
+		}
+	}
+}
+
+
+/* mobile */
+@media only screen and (max-width: 850px) {
+	
+	.acf-postbox-columns {
+		margin: 0;
+		
+		.acf-postbox-main,
+		.acf-postbox-side {
+			float: none;
+			width: auto;
+			margin: 0;
+			padding: 0;
+		}
+		
+		.acf-postbox-side {
+			margin-top: 1em;
+			
+			&:before {
+				display: none;
+			}
+		}
+	}
+}
+
+
+/*---------------------------------------------------------------------------------------------
+*
+*  acf-panel
+*
+*---------------------------------------------------------------------------------------------*/
+
+.acf-panel {
+	margin-top: -1px;
+	border-top: 1px solid #e2e4e7;
+	border-bottom: 1px solid #e2e4e7;
+	
+	.acf-panel-title {
+		margin: 0;
+		padding: 12px;
+		font-weight: bold;
+		cursor: pointer;
+		font-size: inherit;
+		
+		i {
+			float: right;
+		}
+	}
+	
+	.acf-panel-inside {
+		margin: 0;
+		padding: 0 12px 12px;
+		display: none;
+	}
+	
+	/* open */
+	&.-open {
+		
+		.acf-panel-inside {
+			display: block;
+		}
+		
+	}
+	
+	
+	/* inside postbox */
+	.postbox & {
+		margin-left: -12px;
+		margin-right: -12px;
+	}
+	
+	
+	/* fields */
+	.acf-field {
+		margin: 20px 0 0;
+		
+		.acf-label label {
+			color: #555d66;
+			font-weight: normal;
+		}
+		
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+	
+}
+
+
+/*---------------------------------------------------------------------------------------------
+*
+*  Admin Tools
+*
+*---------------------------------------------------------------------------------------------*/
+
+#acf-admin-tools {
+	
+	.notice {
+		margin-top: 10px;
+	}
+}
+
+.acf-meta-box-wrap {
+	margin-top: 10px;
+	
+	.postbox {
+		.border-box;
+		
+		.inside {
+			margin-bottom: 0;
+		}
+		
+		.hndle {
+			font-size: 14px;
+			padding: 8px 12px;
+			margin: 0;
+			line-height: 1.4;
+		}
+		
+		.handlediv {
+			display: none;
+		}
+	}
+	
+	
+	/* acf-fields */
+	.acf-fields {
+		border: #ebebeb solid 1px;
+		background: #fafafa;
+		border-radius: 3px;
+	}
+}
+
+
+/* grid */
+.acf-meta-box-wrap.-grid {
+	margin-left: 8px;
+	margin-right: 8px;
+	
+	.postbox {
+		float: left;
+		clear: left;
+		width: 50%;
+		margin: 0 0 16px;
+		
+		&:nth-child(odd) {
+			margin-left: -8px;
+		}
+		
+		&:nth-child(even) {
+			float: right;
+			clear: right;
+			margin-right: -8px;
+		}
+	}
+}
+
+
+/* mobile */
+@media only screen and (max-width: 850px) {
+	
+	.acf-meta-box-wrap.-grid {
+		margin-left: 0;
+		margin-right: 0;
+		
+		.postbox {
+			margin-left: 0 !important;
+			margin-right: 0 !important;
+			width: 100%;
+		}
+	}
+}
+
+
+/* export tool */
+#acf-admin-tool-export {
+	
+	p {
+		max-width: 800px;
+	}
+	
+	ul {
+		column-width: 200px;
+	}
+	
+	.acf-postbox-side .button {
+		margin: 0;
+		width: 100%;
+	}
+	
+	textarea {
+		display: block;
+		width: 100%;
+		min-height: 500px;
+		
+		background: #fafafa;
+		box-shadow: none;
+		padding: 7px;
+		border-radius: 3px;
+	}
+	
+	/* panel: selection */
+	.acf-panel-selection {
+		.acf-label {
+			display: none;
+		}
+	}
+}
+
 
 /*---------------------------------------------------------------------------------------------
 *
