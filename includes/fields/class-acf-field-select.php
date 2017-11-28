@@ -289,9 +289,14 @@ class acf_field_select extends acf_field {
 		if( $field['multiple'] ) {
 		
 			$select['multiple'] = 'multiple';
-			$select['size'] = 5;
 			$select['name'] .= '[]';
 			
+			if ( empty($field['size']) ) {
+				$select['size'] = count($choices);
+			} else {
+				$select['size'] = $field['size'];
+			}
+
 		}
 		
 		
