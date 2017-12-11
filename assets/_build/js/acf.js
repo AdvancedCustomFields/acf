@@ -2905,29 +2905,11 @@ var acf;
 		
 	acf.layout = acf.model.extend({
 		
-		active: 0,
-		
 		actions: {
-			'prepare 99': 	'prepare',
 			'refresh 99': 	'refresh'
 		},
 		
-		prepare: function(){
-			
-			// vars
-			this.active = 1;
-			
-			
-			// render
-			this.refresh();
-			
-		},
-		
 		refresh: function( $el ){ 
-			
-			// bail early if not yet active
-			if( !this.active ) return;
-			
 			
 			// defaults
 			$el = $el || $('body');
@@ -3132,7 +3114,7 @@ var acf;
 			
 			
 			// reset fields
-			$fields.removeClass('acf-r0 acf-c0').css({'min-height': 0});
+			$fields.removeClass('-r0 -c0').css({'min-height': 0});
 			
 			
 			// loop
@@ -3177,11 +3159,11 @@ var acf;
 				// add classes
 				if( this_top == 0 ) {
 					
-					$el.addClass('acf-r0');
+					$el.addClass('-r0');
 					
 				} else if( cell == 0 ) {
 					
-					$el.addClass('acf-c0');
+					$el.addClass('-c0');
 					
 				}
 				

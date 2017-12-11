@@ -25,10 +25,8 @@
   position: relative;
 }
 .acf-field {
-  margin: 0 0 20px;
-  /* label */
-  /* input */
-  /* error */
+  margin: 15px 0;
+  clear: both;
 }
 .acf-field p.description {
   display: block;
@@ -64,14 +62,55 @@
 }
 .acf-field .acf-error-message:after {
   content: "";
+  display: block;
   width: 0;
   height: 0;
   border: transparent 5px solid;
   border-top-color: #F55E4F;
-  display: block;
   position: absolute;
   bottom: -10px;
   left: 10px;
+}
+.acf-fieldtd,
+.acf-fieldtr {
+  margin: 0;
+}
+.acf-field[data-width] {
+  float: left;
+  clear: none;
+  /*
+	@media screen and (max-width: @sm) {
+		float: none;
+		width: auto;
+		border-left-width: 0;
+		border-right-width: 0;
+	}
+*/
+}
+.acf-field[data-width] + .acf-field[data-width] {
+  border-left: 1px solid #eeeeee;
+}
+html[dir="rtl"] .acf-field[data-width] {
+  float: right;
+}
+html[dir="rtl"] .acf-field[data-width] + .acf-field[data-width] {
+  border-left: none;
+  border-right: 1px solid #eeeeee;
+}
+.acf-field[data-width]td,
+.acf-field[data-width]tr {
+  float: none;
+}
+.acf-field.-c0 {
+  clear: both;
+  border-left-width: 0 !important;
+}
+html[dir="rtl"] .acf-field.-c0 {
+  border-left-width: 1px !important;
+  border-right-width: 0 !important;
+}
+.acf-field.-r0 {
+  border-top-width: 0 !important;
 }
 /*--------------------------------------------------------------------------------------------
 *
@@ -86,9 +125,6 @@
   content: "";
   display: table;
 }
-.acf-fields:after {
-  margin-bottom: -1px;
-}
 .acf-fields.-border {
   border: #dfdfdf solid 1px;
   background: #fff;
@@ -97,8 +133,10 @@
   position: relative;
   margin: 0;
   padding: 15px 12px;
-  border-bottom: #EEEEEE solid 1px;
-  clear: both;
+  border-top: #EEEEEE solid 1px;
+}
+.acf-fields > .acf-field:first-child {
+  border-top-width: 0;
 }
 td.acf-fields {
   padding: 0 !important;
@@ -112,9 +150,6 @@ td.acf-fields {
   border: none;
   padding: 0;
   margin: 15px 0;
-}
-.acf-fields.-clear > .acf-field:after {
-  margin-bottom: 0;
 }
 .acf-fields.-clear > .acf-field[data-width] {
   border: none !important;
@@ -151,6 +186,12 @@ td.acf-fields {
   bottom: 0;
   left: 0;
   width: 20%;
+}
+.acf-fields.-left > .acf-field[data-width] {
+  float: none;
+  width: auto !important;
+  border-left-width: 0 !important;
+  border-right-width: 0 !important;
 }
 .acf-fields.-left > .acf-field > .acf-label {
   float: left;
@@ -302,67 +343,9 @@ html[dir="rtl"] .acf-fields.-left > .acf-field > .acf-input {
 .metabox-prefs label.acf-hidden {
   display: none;
 }
-/*--------------------------------------------------------------------------------------------
-*
-*	Basic ACF field wrap
-*
-*--------------------------------------------------------------------------------------------*/
-/* add term */
-#addtag div.acf-field.error {
-  border: 0 none;
-  padding: 8px 0;
-}
-/* width */
-.acf-field[data-width] {
-  float: left;
-  clear: none;
-  /* next width */
-  /* table */
-}
-.acf-field[data-width] + .acf-field[data-width] {
-  border-left: 1px solid #eeeeee;
-}
-.acf-field[data-width]td {
-  float: none;
-  width: auto;
-}
-/* field width helpers */
-/*
-.acf-r0 {
-	border-top-width: 0 !important;
-}
-*/
-.acf-c0 {
-  clear: left !important;
-  border-left-width: 0 !important;
-}
-/* rtl */
-html[dir="rtl"] .acf-field[data-width] {
-  float: right;
-}
-html[dir="rtl"] .acf-field[data-width] + .acf-field {
-  clear: right;
-}
-html[dir="rtl"] .acf-field[data-width] + .acf-field[data-width] {
-  clear: none;
-  border-left: none;
-  border-right: 1px solid #eeeeee;
-}
-html[dir="rtl"] .acf-c0 {
-  clear: right !important;
-  border-left-width: 1px !important;
-  border-right-width: 0 !important;
-}
-/* left aligned */
-.acf-fields.-left > .acf-field[data-width] {
-  float: none;
-  width: auto !important;
-  border-left-width: 0 !important;
-  border-right-width: 0 !important;
-}
 /*---------------------------------------------------------------------------------------------
 *
-*  Basic Field Styles
+*  Inputs
 *
 *---------------------------------------------------------------------------------------------*/
 .acf-field input[type="text"],
@@ -1273,9 +1256,7 @@ html[dir="rtl"] .acf-relationship .selection .values .acf-icon {
 }
 .acf-tab-wrap {
   clear: both;
-}
-.acf-tab-wrap:first-child {
-  clear: none;
+  z-index: 1;
 }
 .acf-tab-group {
   border-bottom: #ccc solid 1px;
@@ -1315,14 +1296,13 @@ html[dir="rtl"] .acf-tab-group li {
   position: relative;
   z-index: 1;
 }
-/* inside acf-fields */
 .acf-fields > .acf-tab-wrap {
   background: #F9F9F9;
 }
 .acf-fields > .acf-tab-wrap .acf-tab-group {
   position: relative;
   z-index: 1;
-  margin-top: -1px;
+  margin-bottom: -1px;
   border-top: #DFDFDF solid 1px;
   border-bottom: #DFDFDF solid 1px;
 }
@@ -1335,13 +1315,15 @@ html[dir="rtl"] .acf-tab-group li {
 .acf-fields > .acf-tab-wrap .acf-tab-group li.active a {
   background: #FFFFFF;
 }
-/* inside acf-fields.-left */
+.acf-fields > .acf-tab-wrap:first-child .acf-tab-group {
+  border-top: none;
+}
 .acf-fields.-left > .acf-tab-wrap .acf-tab-group {
   padding-left: 20%;
   /* mobile */
   /* rtl */
 }
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 782px) {
   .acf-fields.-left > .acf-tab-wrap .acf-tab-group {
     padding-left: 10px;
   }
@@ -1356,16 +1338,60 @@ html[dir="rtl"] .acf-fields.-left > .acf-tab-wrap .acf-tab-group {
     padding-right: 10px;
   }
 }
-/* space between field and tabs */
+.acf-tab-wrap.-left .acf-tab-group {
+  position: absolute;
+  left: 0;
+  width: 20%;
+  border: 0 none;
+  padding: 0 !important;
+  /* important overrides 'left aligned labels' */
+  margin: 1px 0 0;
+}
+.acf-tab-wrap.-left .acf-tab-group li {
+  float: none;
+  margin: -1px 0 0;
+}
+.acf-tab-wrap.-left .acf-tab-group li a {
+  border: 1px solid #ededed;
+  font-size: 13px;
+  line-height: 18px;
+  color: #0073aa;
+  padding: 10px;
+  margin: 0;
+  font-weight: normal;
+  border-width: 1px 0;
+  border-radius: 0;
+  background: transparent;
+}
+.acf-tab-wrap.-left .acf-tab-group li a:hover {
+  color: #00a0d2;
+}
+.acf-tab-wrap.-left .acf-tab-group li.active a {
+  border-color: #DFDFDF;
+  color: #000;
+  margin-right: -1px;
+  background: #fff;
+}
+html[dir="rtl"] .acf-tab-wrap.-left .acf-tab-group {
+  left: auto;
+  right: 0;
+}
+html[dir="rtl"] .acf-tab-wrap.-left .acf-tab-group li.active a {
+  margin-right: 0;
+  margin-left: -1px;
+}
 .acf-field + .acf-tab-wrap.-left:before {
   content: "";
   display: block;
-  position: absolute;
+  position: relative;
   z-index: 1;
-  background: #DFDFDF;
-  left: 0;
-  width: 100%;
-  height: 1px;
+  height: 10px;
+  border-top: #DFDFDF solid 1px;
+  border-bottom: #DFDFDF solid 1px;
+  margin-bottom: -1px;
+}
+.acf-tab-wrap.-left:first-child .acf-tab-group li:first-child a {
+  border-top: none;
 }
 /* sidebar */
 .acf-fields.-sidebar {
@@ -1373,9 +1399,6 @@ html[dir="rtl"] .acf-fields.-left > .acf-tab-wrap .acf-tab-group {
   position: relative;
   /* before */
   /* rtl */
-  /* tab wrap left */
-  /* .acf-fields.-left */
-  /* first tab group */
 }
 .acf-fields.-sidebar:before {
   content: "";
@@ -1398,48 +1421,6 @@ html[dir="rtl"] .acf-fields.-sidebar:before {
   left: auto;
   right: 0;
 }
-.acf-fields.-sidebar > .acf-tab-wrap.-left .acf-tab-group {
-  position: absolute;
-  left: 0;
-  width: 20%;
-  border: 0 none;
-  padding: 0 !important;
-  /* important overrides 'left aligned labels' */
-  margin: 1px 0 0;
-  /* rtl */
-}
-html[dir="rtl"] .acf-fields.-sidebar > .acf-tab-wrap.-left .acf-tab-group {
-  left: auto;
-  right: 0;
-}
-.acf-fields.-sidebar > .acf-tab-wrap.-left .acf-tab-group li {
-  float: none;
-  margin: -1px 0 0;
-}
-.acf-fields.-sidebar > .acf-tab-wrap.-left .acf-tab-group li a {
-  border: 1px solid #ededed;
-  font-size: 13px;
-  line-height: 18px;
-  color: #0073aa;
-  padding: 10px;
-  font-weight: normal;
-  border-width: 1px 0;
-  border-radius: 0;
-  background: transparent;
-}
-.acf-fields.-sidebar > .acf-tab-wrap.-left .acf-tab-group li a:hover {
-  color: #00a0d2;
-}
-.acf-fields.-sidebar > .acf-tab-wrap.-left .acf-tab-group li.active a {
-  border-color: #DFDFDF;
-  color: #000;
-  margin-right: -1px;
-  background: #fff;
-}
-html[dir="rtl"] .acf-fields.-sidebar > .acf-tab-wrap.-left .acf-tab-group li.active a {
-  margin-right: 0;
-  margin-left: -1px;
-}
 .acf-fields.-sidebar.-left {
   padding: 0 0 0 180px !important;
   /* rtl */
@@ -1452,17 +1433,17 @@ html[dir="rtl"] .acf-fields.-sidebar.-left {
   border-color: #dfdfdf;
   width: 180px;
 }
-.acf-fields.-sidebar.-left .acf-tab-wrap.-left .acf-tab-group {
+.acf-fields.-sidebar.-left > .acf-tab-wrap.-left .acf-tab-group {
   width: 180px;
 }
-.acf-fields.-sidebar.-left .acf-tab-wrap.-left .acf-tab-group li a {
+.acf-fields.-sidebar.-left > .acf-tab-wrap.-left .acf-tab-group li a {
   border-color: #e4e4e4;
 }
-.acf-fields.-sidebar.-left .acf-tab-wrap.-left .acf-tab-group li.active a {
+.acf-fields.-sidebar.-left > .acf-tab-wrap.-left .acf-tab-group li.active a {
   background: #F9F9F9;
 }
-.acf-fields.-sidebar .acf-tab-wrap.-left:first-child .acf-tab-group li:first-child a {
-  border-top-width: 0;
+.acf-fields.-sidebar > .acf-field-tab + .acf-field {
+  border-top: none;
 }
 .acf-fields.-clear > .acf-tab-wrap {
   background: transparent;
@@ -1470,7 +1451,8 @@ html[dir="rtl"] .acf-fields.-sidebar.-left {
 .acf-fields.-clear > .acf-tab-wrap .acf-tab-group {
   margin-top: 0;
   border-top: none;
-  padding: 0;
+  padding-left: 0;
+  padding-right: 0;
 }
 .acf-fields.-clear > .acf-tab-wrap .acf-tab-group li a {
   background: #e5e5e5;
@@ -1482,12 +1464,14 @@ html[dir="rtl"] .acf-fields.-sidebar.-left {
   background: #f1f1f1;
 }
 /* seamless */
-.acf-postbox.seamless {
-  /* standard */
-  /* left label */
+.acf-postbox.seamless > .acf-fields.-sidebar {
+  margin-left: 0 !important;
+}
+.acf-postbox.seamless > .acf-fields.-sidebar:before {
+  background: transparent;
 }
 .acf-postbox.seamless > .acf-fields > .acf-tab-wrap {
-  background: #f1f1f1;
+  background: transparent;
   margin-bottom: 10px;
   padding-left: 12px;
   padding-right: 12px;
@@ -1504,20 +1488,30 @@ html[dir="rtl"] .acf-fields.-sidebar.-left {
 .acf-postbox.seamless > .acf-fields > .acf-tab-wrap .acf-tab-group li.active a {
   background: #f1f1f1;
 }
-.acf-postbox.seamless > .acf-fields.-left {
-  /* left label, top tab */
-  /* left label, left tab */
+.acf-postbox.seamless > .acf-fields > .acf-tab-wrap.-left:before {
+  border-top: none;
+  height: auto;
 }
-.acf-postbox.seamless > .acf-fields.-left .acf-tab-wrap.-left .acf-tab-group {
+.acf-postbox.seamless > .acf-fields > .acf-tab-wrap.-left .acf-tab-group {
   margin-bottom: 0;
 }
-.acf-postbox.seamless > .acf-fields.-left .acf-tab-wrap.-left .acf-tab-group li a {
+.acf-postbox.seamless > .acf-fields > .acf-tab-wrap.-left .acf-tab-group li a {
   border-width: 1px 0 1px 1px !important;
   border-color: #cccccc;
   background: #e5e5e5;
 }
-.acf-postbox.seamless > .acf-fields.-left .acf-tab-wrap.-left .acf-tab-group li.active a {
+.acf-postbox.seamless > .acf-fields > .acf-tab-wrap.-left .acf-tab-group li.active a {
   background: #f1f1f1;
+}
+.menu-edit .acf-fields.-clear > .acf-tab-wrap .acf-tab-group li a,
+.widget .acf-fields.-clear > .acf-tab-wrap .acf-tab-group li a {
+  background: #f1f1f1;
+}
+.menu-edit .acf-fields.-clear > .acf-tab-wrap .acf-tab-group li a:hover,
+.widget .acf-fields.-clear > .acf-tab-wrap .acf-tab-group li a:hover,
+.menu-edit .acf-fields.-clear > .acf-tab-wrap .acf-tab-group li.active a,
+.widget .acf-fields.-clear > .acf-tab-wrap .acf-tab-group li.active a {
+  background: #fff;
 }
 .compat-item .acf-tab-wrap td {
   display: block;
@@ -1921,7 +1915,7 @@ html[dir="rtl"] .acf-range-wrap .acf-prepend {
 }
 /*---------------------------------------------------------------------------------------------
 *
-*  acf-panel
+*  acf-accordion
 *
 *---------------------------------------------------------------------------------------------*/
 .acf-accordion {
@@ -1963,6 +1957,7 @@ html[dir="rtl"] .acf-range-wrap .acf-prepend {
 /* field specific */
 .acf-field.acf-accordion {
   padding: 0;
+  border-color: #dfdfdf;
 }
 .acf-field.acf-accordion .acf-accordion-title {
   padding: 12px !important;
@@ -2016,6 +2011,10 @@ tr.acf-field.acf-accordion .acf-accordion-content {
   padding: 0 12px 12px;
 }
 /* #addtag */
+#addtag div.acf-field.error {
+  border: 0 none;
+  padding: 8px 0;
+}
 #addtag > .acf-field.acf-accordion {
   padding-right: 0;
   margin-right: 5%;
@@ -2070,6 +2069,9 @@ tr.acf-accordion + tr.acf-accordion {
 .media-modal .compat-attachment-fields .acf-field.acf-accordion > .acf-input {
   width: 100%;
 }
+.media-modal .compat-attachment-fields .acf-field.acf-accordion .compat-attachment-fields > tbody > tr > td {
+  padding-bottom: 5px;
+}
 /*---------------------------------------------------------------------------------------------
 *
 *  Attachment Form (single page)
@@ -2109,6 +2111,7 @@ tr.acf-accordion + tr.acf-accordion {
 /* WP sets tables to act as divs. ACF uses tables, so these muct be reset */
 .media-modal .compat-attachment-fields td.acf-input table {
   display: table;
+  table-layout: auto;
 }
 .media-modal .compat-attachment-fields td.acf-input table tbody {
   display: table-row-group;

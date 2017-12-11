@@ -3159,29 +3159,11 @@ var acf;
 		
 	acf.layout = acf.model.extend({
 		
-		active: 0,
-		
 		actions: {
-			'prepare 99': 	'prepare',
 			'refresh 99': 	'refresh'
 		},
 		
-		prepare: function(){
-			
-			// vars
-			this.active = 1;
-			
-			
-			// render
-			this.refresh();
-			
-		},
-		
 		refresh: function( $el ){ 
-			
-			// bail early if not yet active
-			if( !this.active ) return;
-			
 			
 			// defaults
 			$el = $el || $('body');
@@ -3386,7 +3368,7 @@ var acf;
 			
 			
 			// reset fields
-			$fields.removeClass('acf-r0 acf-c0').css({'min-height': 0});
+			$fields.removeClass('-r0 -c0').css({'min-height': 0});
 			
 			
 			// loop
@@ -3431,11 +3413,11 @@ var acf;
 				// add classes
 				if( this_top == 0 ) {
 					
-					$el.addClass('acf-r0');
+					$el.addClass('-r0');
 					
 				} else if( cell == 0 ) {
 					
-					$el.addClass('acf-c0');
+					$el.addClass('-c0');
 					
 				}
 				
@@ -11659,6 +11641,14 @@ var acf;
 	
 	var tabs = acf.model.extend({
 		
+		$fields: [],
+		
+		actions: {
+			'prepare 15': 	'initialize',
+			'append 15': 	'initialize',
+			'refresh 15': 	'refresh'
+		},
+		
 		events: {
 			'click .acf-tab-button': '_click'
 		},
@@ -11753,17 +11743,50 @@ var acf;
 			
 		},
 		
+		addTab: function( $field ){
+			this.$fields.push( $field );
+		},
+		
+		initialize: function(){
+			
+			// bail ealry if no fields
+			if( !this.$fields.length ) return;	
+			
+			// loop
+			for( var i = 0; i < this.$fields.length; i++) {
+				this.createTab( this.$fields[ i ] );
+			}
+			
+			// reset
+			this.$fields = [];
+			
+		},
+			
 		createTab: function( $field ){
 			
+			// bail early if is cell
+			if( $field.is('td') ) return false;
+			
+			
 			// vars
+			var $label = $field.children('.acf-label');
+			var $input = $field.children('.acf-input');	
 			var $wrap = this.getWrap( $field );
 			var $button = $field.find('.acf-tab-button');
 			var settings = $button.data();
+			var open = false;
+			
+			
+			// remove
+			$field.hide();
+			$label.remove();
+			$input.remove();
 			
 			
 			// create wrap
 			if( !$wrap.exists() || settings.endpoint ) {
 				$wrap = this.createTabWrap( $field, settings );
+				open = true;
 			}
 			
 			
@@ -11771,14 +11794,8 @@ var acf;
 			var $tab = $('<li></li>').append( $button );
 			
 			
-			// index
-			tabIndex++;
-			
-			
-			// active
-			var order = acf.getPreference('this.tabs') || [];
-			var index = order[ groupIndex-1 ] || 0;
-			if( index == tabIndex-1 ) {
+			// open
+			if( open ) {
 				$tab.addClass('active');
 				this.open( $field );
 			} else {
@@ -11792,6 +11809,17 @@ var acf;
 			
 			// append
 			$wrap.find('ul').append( $tab );
+			
+			
+			// toggle active tab
+			// previous attempts to integrate with above 'open' variable were uncessefull
+			// this separate toggle logic ensures the tab exists
+			tabIndex++;
+			var order = acf.getPreference('this.tabs') || [];
+			var index = order[ groupIndex-1 ] || 0;
+			if( index == tabIndex-1 && !open ) {
+				this.toggle( $button );
+			}
 			
 			
 			// return
@@ -11831,6 +11859,34 @@ var acf;
 			// return
 			return $wrap;
 			
+		},
+		
+		refresh: function( $el ){
+			
+			// loop
+			$('.acf-tab-wrap', $el).each(function(){
+				
+				// vars
+				var $wrap = $(this);
+				
+				
+				// fix left aligned min-height
+				if( $wrap.hasClass('-left') ) {
+					
+					// vars
+					var $parent = $wrap.parent();
+					var attribute = $parent.is('td') ? 'height' : 'min-height';
+					
+					// find height (minus 1 for border-bottom)
+					var height = $wrap.position().top + $wrap.children('ul').outerHeight(true) - 1;
+					
+					// add css
+					$parent.css(attribute, height);
+					
+				}
+						
+			});
+			
 		}
 		
 	});
@@ -11868,24 +11924,8 @@ var acf;
 		
 		initialize: function(){
 			
-			// vars
-			var $field = this.$field;
-			var $label = $field.children('.acf-label');
-			var $input = $field.children('.acf-input');	
-			
-			
-			// bail early if is cell
-			if( $field.is('td') ) return;
-			
-			
 			// add tab
-			var $tab = tabs.createTab( $field );
-			
-			
-			// remove
-			$field.hide();
-			$label.remove();
-			$input.remove();
+			tabs.addTab( this.$field );
 			
 		},
 		
@@ -11900,7 +11940,6 @@ var acf;
 			var $wrap = tabs.getWrap( $field );
 			var $tab = tabs.getTab( $wrap, key );
 			var $li = $tab.parent();
-			
 			
 			// bail early if $group does not exist (clone field)
 			if( !$wrap.exists() ) return;
@@ -11918,7 +11957,7 @@ var acf;
 			
 			// select other tab if active
 			if( $li.hasClass('active') ) {
-				$wrap.find('a:visible').first().trigger('click');
+				$wrap.find('li:not(.'+hidden+'):first a').trigger('click');
 			}
 			
 		},

@@ -66,6 +66,9 @@ From your WordPress dashboard
 
 == Changelog ==
 
+= 5.6.7 =
+* Fixed an assortment of bugs found in 5.6.6
+
 = 5.6.6 =
 * Accordion field: Added new field type
 * Tab field: Added logic to remember active tabs
@@ -79,6 +82,7 @@ From your WordPress dashboard
 * Language: Updated Dutch translation - thanks to Derk Oosterveld
 * Language: Updated Portuguese translation - thanks to Pedro Mendonça
 * Language: Updated Persian translation - thanks to Kamel Kimiaei
+* Language: Updated Swiss German translation - thanks to Raphael Hüni
 
 = 5.6.5 =
 * API: Added new 'kses' setting to the `acf_form()` function
