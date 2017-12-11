@@ -166,6 +166,9 @@ class acf_form_widget {
 			));
 			
 			
+			// wrap
+			echo '<div class="acf-widget-fields acf-fields -clear">';
+			
 			// loop
 			foreach( $field_groups as $field_group ) {
 				
@@ -185,6 +188,9 @@ class acf_form_widget {
 				acf_render_fields( $post_id, $fields, 'div', $field_group['instruction_placement'] );
 				
 			}
+			
+			//wrap
+			echo '</div>';
 			
 			
 			// jQuery selector looks odd, but is necessary due to WP adding an incremental number into the ID
@@ -355,18 +361,6 @@ class acf_form_widget {
 		
 		// submit
 		acf.do_action('submit', $widget );
-		
-	});
-	
-	
-	// sortable
-	$('div.widgets-sortables').on('sortstart', function( event, ui ) {
-		
-		acf.do_action('sortstart', ui.item, ui.placeholder);
-		
-	}).on('sortstop', function( event, ui ) {
-		
-		acf.do_action('sortstop', ui.item, ui.placeholder);
 		
 	});
 		

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Advanced Custom Fields Pro v5.6.2 Formal\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "POT-Creation-Date: 2017-09-17 14:06+0200\n"
-"PO-Revision-Date: 2017-10-24 11:48+1000\n"
+"PO-Revision-Date: 2017-11-22 15:41+1000\n"
 "Last-Translator: Elliot Condon <e@elliotcondon.com>\n"
 "Language-Team: Ralf Koller <r.koller@gmail.com>\n"
 "Language: de_DE\n"
@@ -2311,7 +2311,7 @@ msgstr "Breite"
 # @ acf
 #: includes/fields/class-acf-field-link.php:25
 msgid "Link"
-msgstr "Seiten-Link"
+msgstr "Bearbeitbarer Seiten-Link"
 
 # @ acf
 #: includes/fields/class-acf-field-link.php:133

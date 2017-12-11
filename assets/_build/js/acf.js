@@ -1482,10 +1482,7 @@ var acf;
 		prepare_for_ajax : function( args ) {
 			
 			// vars
-			var data = {
-				nonce	: acf.get('nonce'),
-				post_id	: acf.get('post_id')
-			};
+			var data = {};
 			
 			
 			// $.ajax() expects all args to be 'non-nested'
@@ -1538,11 +1535,13 @@ var acf;
 			});
 			
 			
+			// required
+			data.nonce = acf.get('nonce');
+			data.post_id = acf.get('post_id');
+			
+			
 			// filter for 3rd party customization
 			data = acf.apply_filters('prepare_for_ajax', data);	
-			
-			
-			//console.log( 'prepare_for_ajax', data );
 			
 			
 			// return
@@ -2910,7 +2909,7 @@ var acf;
 		
 		actions: {
 			'prepare 99': 	'prepare',
-			'refresh': 		'refresh'
+			'refresh 99': 	'refresh'
 		},
 		
 		prepare: function(){
@@ -2934,10 +2933,6 @@ var acf;
 			$el = $el || $('body');
 			
 			
-			// reference
-			var self = this;
-			
-			
 			// render
 			this.render_tables( $el );
 			this.render_groups( $el );
@@ -2954,11 +2949,11 @@ var acf;
 			var $tables = $el.find('.acf-table:visible');
 			
 			
-			// appent self if is tr
-			if( $el.is('tr') ) {
-				
-				$tables = $el.parent().parent();
-				
+			// appent self
+			if( $el.is('table') ) {
+				$tables = $tables.add( $el );
+			} else if( $el.is('tr') ) {
+				$tables = $tables.add( $el.closest('table') );
 			}
 			
 			
@@ -3767,7 +3762,93 @@ var acf;
 		}
 				 
 	});
-			
+	
+	
+	// Preferences
+	var preferences = localStorage.getItem('acf');
+	preferences = preferences ? JSON.parse(preferences) : {};
+	
+	
+	/**
+	*  getPreferenceName
+	*
+	*  Gets the true preference name. 
+	*  Converts "this.thing" to "thing-123" if editing post 123.
+	*
+	*  @date	11/11/17
+	*  @since	5.6.5
+	*
+	*  @param	string name
+	*  @return	string
+	*/
+	
+	var getPreferenceName = function( name ){
+		if( name.substr(0, 5) === 'this.' ) {
+			name = name.substr(5) + '-' + acf.get('post_id');
+		}
+		return name;
+	};
+	
+	
+	/**
+	*  acf.getPreference
+	*
+	*  Gets a preference setting or null if not set.
+	*
+	*  @date	11/11/17
+	*  @since	5.6.5
+	*
+	*  @param	string name
+	*  @return	mixed
+	*/
+	
+	acf.getPreference = function( name ){
+		name = getPreferenceName( name );
+		return preferences[ name ] || null;
+	}
+	
+	
+	/**
+	*  acf.setPreference
+	*
+	*  Sets a preference setting.
+	*
+	*  @date	11/11/17
+	*  @since	5.6.5
+	*
+	*  @param	string name
+	*  @param	mixed value
+	*  @return	n/a
+	*/
+	
+	acf.setPreference = function( name, value ){
+		name = getPreferenceName( name );
+		if( value === null ) {
+			delete preferences[ name ];
+		} else {
+			preferences[ name ] = value;
+		}
+		localStorage.setItem('acf', JSON.stringify(preferences));
+	}
+	
+	
+	/**
+	*  acf.removePreference
+	*
+	*  Removes a preference setting.
+	*
+	*  @date	11/11/17
+	*  @since	5.6.5
+	*
+	*  @param	string name
+	*  @return	n/a
+	*/
+	
+	acf.removePreference = function( name ){ 
+		acf.setPreference(name, null);
+	};
+	
+	
 	
 	/*
 	*  Sortable
@@ -3781,6 +3862,14 @@ var acf;
 	*  @param	$post_id (int)
 	*  @return	$post_id (int)
 	*/
+	
+	$(document).on('sortstart', function( event, ui ) {
+		acf.do_action('sortstart', ui.item, ui.placeholder);
+	});
+	
+	$(document).on('sortstop', function( event, ui ) {
+		acf.do_action('sortstop', ui.item, ui.placeholder);
+	});
 	
 	acf.add_action('sortstart', function( $item, $placeholder ){
 		

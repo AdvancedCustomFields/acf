@@ -90,28 +90,30 @@
 .acf-fields {
 	position: relative;
 	
-	> .acf-field {
-		margin: 0;
-		padding: @field_padding;
-		border-top: #EEEEEE solid 1px;
-		position: relative;
-		clear: left; /* used to clear floating widths */
-		
-		&:first-child {
-			border-top-width: 0;
-		}
-	}
+	// clearifx
+	.clearfix;
 	
+	// hide .acf-field border-bottom
 	&:after {
-	    content: "";
-	    display: block;
-	    line-height: 0;
-	    clear: both;
+		margin-bottom: -1px;
 	}
 	
+	// border
 	&.-border {
 		border: #dfdfdf solid 1px;
 		background: #fff;
+	}
+	
+	// field
+	> .acf-field {
+		position: relative;
+		margin: 0;
+		padding: @field_padding;
+		border-bottom: #EEEEEE solid 1px;
+		
+		// clear is important as it will avoid any layout issues with floating fields
+		// do not delete (you have tried this)
+		clear: both;
 	}
 }
 
@@ -122,21 +124,49 @@ td.acf-fields {
 
 /*--------------------------------------------------------------------------------------------
 *
+*	acf-fields (clear)
+*
+*--------------------------------------------------------------------------------------------*/
+
+.acf-fields.-clear > .acf-field {
+	border: none;
+	padding: 0;
+	margin: 15px 0;
+	
+	// no border to hide
+	&:after {
+		margin-bottom: 0;
+	}
+	
+	&[data-width] {
+		border: none !important;
+	}
+	
+	// label
+	> .acf-label {
+		padding: 0;
+	}
+	
+	// input
+	> .acf-input {
+		padding: 0;
+	}
+}
+
+
+/*--------------------------------------------------------------------------------------------
+*
 *	acf-fields (left)
 *
 *--------------------------------------------------------------------------------------------*/
+
 .acf-fields.-left > .acf-field {
-	padding-left: 20%;
+	padding: @fy 0;
 	
-	html[dir="rtl"] & { padding-left: @field_padding_x; padding-right: 20%; }
+	// clearifx
+	.clearfix;
 	
-	&:after {
-	    content: "";
-	    display: block;
-	    line-height: 0;
-	    clear: both;
-	}
-	
+	// sidebar
 	&:before {
 		content: "";
 	    display: block;
@@ -150,121 +180,112 @@ td.acf-fields {
 	    bottom: 0;
 	    left: 0;
 	    width: 20%;
-	    
-	    /* rtl */
-		html[dir="rtl"] & {
-			border-right-width: 0;
-			border-left-width: 1px;
+	}
+	
+	// label
+	> .acf-label {
+		float: left;
+		width: 20%;
+		margin: 0;
+		padding: 0 @fx;
+	}
+	
+	// input
+	> .acf-input {
+		float: left;
+		width: 80%;
+		margin: 0;
+		padding: 0 @fx;
+	}
+	
+	// rtl
+	html[dir="rtl"] & {
+		
+		// sidebar
+		&:before {
+			border-width: 0 0 0 1px;
 			left: auto;
 			right: 0;
 		}
-	}
-	
-	> .acf-label,
-	> .acf-input {
-		float: left;
-		margin: 0;
 		
-		html[dir="rtl"] & { float: right; }
-	}
-	
-	
-	> .acf-label {
-		width: 25%;
-		margin-left: -25%;
-		padding: 0 @field_padding_x;
-		
-		html[dir="rtl"] & { margin-left: 0; margin-right: -25%; }
-	}
-	
-	> .acf-input {
-		width: 100%;
-		padding-left: @field_padding_x;
-		
-		html[dir="rtl"] & { padding-left: 0; padding-right: @field_padding_x; }
-	}
-	
-	
-	/* mobile */
-	@media screen and (max-width: @sm) {
-		
-		& {
-			padding: @field_padding;
+		// label
+		> .acf-label {
+			float: right;
 		}
 		
+		// input
+		> .acf-input {
+			float: right;
+		}
+	}
+	
+	// mobile
+	@media screen and (max-width: @sm) {
+		
+		// sidebar
 		&:before { 
 			display: none;
 		}
 		
-		> .acf-label,
-		> .acf-input {
-			padding: 0;
-			float: none;
-			width: auto;
+		// label
+		> .acf-label {
+			width: 100%;
+			margin-bottom: 10px;
 		}
 		
-		> .acf-label {
-			margin: 0 0 10px;
+		// input
+		> .acf-input {
+			width: 100%;
 		}
 	}
 }
 
 
-/* acf-table */
-.acf-table tr.acf-field {
+/* clear + left */
+.acf-fields.-clear.-left > .acf-field {
+	padding: 0;
+	border: none;
 	
-	> td.acf-label,
-	> td.acf-input {
-		padding: @field_padding;
-		margin: 0;
+	// sidebar
+	&:before {
+		display: none;
 	}
 	
-	> td.acf-label {
-		background: #F9F9F9;
-	    width: 20%;
+	// label
+	> .acf-label {
+		padding: 0;
 	}
 	
-	> td.acf-input {
-		border-left-color: #E1E1E1;
+	// input
+	> .acf-input {
+		padding: 0;
 	}
-	
 }
 
 
 /*--------------------------------------------------------------------------------------------
 *
-*	acf-fields (clear)
+*	acf-table
 *
 *--------------------------------------------------------------------------------------------*/
 
-.acf-fields.-clear > .acf-field {
-	border: none;
-	padding: 0;
-	margin: 0 0 20px;
+.acf-table tr.acf-field {
 	
-	&:before {
-		display: none;
+	// label
+	> td.acf-label {
+		padding: @fp;
+		margin: 0;
+		background: #F9F9F9;
+	    width: 20%;
 	}
 	
-	> .acf-label {
-		padding: 0;
-	}
-	
-	> .acf-input {
-		padding: 0;
+	// input
+	> td.acf-input {
+		padding: @fp;
+		margin: 0;
+		border-left-color: #E1E1E1;
 	}
 }
-	
-
-/* left */
-.acf-fields.-clear.-left > .acf-field {
-	
-	> .acf-label {
-		padding-right: @field_padding_x * 2;
-	}
-	
-}
-
 
 
 /*--------------------------------------------------------------------------------------------
@@ -339,23 +360,13 @@ td.acf-fields {
 	/* inside */
 	> .inside {
 		display: block !important; /* stop metabox from hiding when closed */
-		margin: -@field_padding_x !important;
-	}
-	
-	> .acf-fields > .acf-field {
-		border: 0 none !important;
-	}
-	
-	/* tab */
-	.acf-tab-wrap {
-		padding-left: @field_padding_x;
-		padding-right: @field_padding_x;
+		margin-left: -@field_padding_x !important;
+		margin-right: -@field_padding_x !important;
 		
-		.acf-tab-group {
-			border-top: 0 none;
+		> .acf-field {
+			border-color: transparent;
 		}
 	}
-	
 }
 
 
@@ -402,30 +413,27 @@ td.acf-fields {
 /* width */
 .acf-field[data-width] {
 	float: left;
-	
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
-
-.acf-field[data-width] + .acf-field {
-	clear: left;
-}
-
-.acf-field[data-width] + .acf-field[data-width] {
 	clear: none;
-	border-left: 1px solid #eeeeee;	
-}
-
-td.acf-field[data-width] {
-	float: none;
+	
+	/* next width */
+	+ .acf-field[data-width] {
+		border-left: 1px solid #eeeeee;	
+	}
+	
+	/* table */
+	&td {
+		float: none;
+		width: auto;
+	}
 }
 
 
 /* field width helpers */
+/*
 .acf-r0 {
 	border-top-width: 0 !important;
 }
+*/
 
 .acf-c0 {
 	clear: left !important;
@@ -434,22 +442,36 @@ td.acf-field[data-width] {
 
 
 /* rtl */
-html[dir="rtl"] .acf-field[data-width] {
-	float: right;
+html[dir="rtl"] {
+	
+	.acf-field[data-width] {
+		float: right;
+		
+		+ .acf-field {
+			clear: right;
+		}
+		
+		+ .acf-field[data-width] {
+			clear: none;
+			border-left: none;
+			border-right: 1px solid #eeeeee;	
+		}
+	}
+	
+	.acf-c0 {
+		clear: right !important;
+		border-left-width: 1px !important;
+		border-right-width: 0 !important;
+	}
+
 }
 
-html[dir="rtl"] .acf-field[data-width] + .acf-field {
-	clear: right;
-}
 
-html[dir="rtl"] .acf-field[data-width] + .acf-field[data-width] {
-	clear: none;
-	border-right: 1px solid #eeeeee;	
-}
-
-html[dir="rtl"] .acf-c0 {
-	clear: right !important;
-	border-left-width: 1px !important;
+/* left aligned */
+.acf-fields.-left > .acf-field[data-width] {
+	float: none;
+	width: auto !important;
+	border-left-width: 0 !important;
 	border-right-width: 0 !important;
 }
 
@@ -460,45 +482,44 @@ html[dir="rtl"] .acf-c0 {
 *
 *---------------------------------------------------------------------------------------------*/
 
-.acf-field input[type="text"], 
-.acf-field input[type="password"], 
-.acf-field input[type="number"], 
-.acf-field input[type="search"], 
-.acf-field input[type="email"], 
-.acf-field input[type="url"], 
-.acf-field textarea,
-.acf-field select {
-    width: 100%;
-	padding: 3px 5px;
-	resize: none;
-	margin: 0;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-    
-    font-size: 14px;
-    line-height: 1.4;
-}
-
-.acf-field textarea {
-	resize: vertical;
-}
-
-
-/* disabled */
 .acf-field {
 	
-	input:disabled,
-	select:disabled,
-	textarea:disabled {
-		background: #f8f8f8;
+	// inputs
+	input[type="text"], 
+	input[type="password"], 
+	input[type="number"], 
+	input[type="search"], 
+	input[type="email"], 
+	input[type="url"], 
+	textarea,
+	select {
+	    width: 100%;
+		padding: 3px 5px;
+		resize: none;
+		margin: 0;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	    
+	    font-size: 14px;
+	    line-height: 1.4;
+	    
+	    // disabled
+	    &:disabled {
+		    background: #f8f8f8;
+	    }
+	    
+	    // readonly
+	    &[readonly] {
+		    background: #f8f8f8;
+	    }
 	}
 	
-	input[readonly],
-	textarea[readonly] {
-		background: #f8f8f8;
+	// textarea
+	textarea {
+		resize: vertical;
 	}
-		
+	
 }
 
 
@@ -1673,20 +1694,28 @@ html[dir="rtl"] .pac-container .pac-item {
 	display: none !important;
 }
 
+// class to hide fields
 .hidden-by-tab {
 	display: none !important;
 }
 
+// ensure floating fields do not disturb tab wrap
 .acf-tab-wrap {
 	clear: both;
+	
+	// fix first child negative margin not workign
+	&:first-child {
+		clear: none;
+	}
 }
 
+// tab group
 .acf-tab-group {
 	border-bottom: #ccc solid 1px;
 	padding: 10px 10px 0;
 	
 	li {
-	    margin: 0 0 0 0.5em;
+	    margin: 0 0.5em 0 0;
 	    
 	    a {
 			padding: 5px 10px;
@@ -1715,19 +1744,13 @@ html[dir="rtl"] .pac-container .pac-item {
 		}
 		
 		
-		/* rtl */
+		// rtl
 		html[dir="rtl"] & {
-			margin: 0 0.5em 0 0;
+			margin: 0 0 0 0.5em;
 		}
 		
 		
-		/* first */
-		&:first-child {
-			margin: 0 !important;
-		}
-		
-		
-		/* active */
+		// active
 		&.active a {
 			background: #F1F1F1;
 			color: #000;
@@ -1747,7 +1770,7 @@ html[dir="rtl"] .pac-container .pac-item {
 	.acf-tab-group {
 		position: relative;
 		z-index: 1;
-		margin-bottom: -1px;
+		margin-top: -1px;
 		
 		border-top: #DFDFDF solid 1px;
 		border-bottom: #DFDFDF solid 1px;
@@ -1765,20 +1788,12 @@ html[dir="rtl"] .pac-container .pac-item {
 		}
 	}
 	
-	&:first-child .acf-tab-group {
-		border-top: none;
-	}
 }
 
 
 /* inside acf-fields.-left */
 .acf-fields.-left > .acf-tab-wrap .acf-tab-group {
 	padding-left: 20%;
-	
-	li:first-child {
-		margin: 0;
-	}
-	
 	
 	/* mobile */
 	@media screen and (max-width: 850px) {
@@ -1853,7 +1868,7 @@ html[dir="rtl"] .pac-container .pac-item {
 		width: 20%;
 		border: 0 none;
 		padding: 0 !important; /* important overrides 'left aligned labels' */
-		margin: 0;
+		margin: 1px 0 0;
 		
 		/* rtl */
 		html[dir="rtl"] & {
@@ -1931,6 +1946,31 @@ html[dir="rtl"] .pac-container .pac-item {
 }
 
 
+// clear
+.acf-fields.-clear > .acf-tab-wrap {
+	background: transparent;
+	
+	// group
+	.acf-tab-group {
+		margin-top: 0;
+		border-top: none;
+		padding: 0;
+		
+		li a {
+			background: #e5e5e5;
+			
+			&:hover {
+				background: #fff;
+			}
+		}
+		
+		li.active a {
+			background: #f1f1f1;
+		}
+	}
+}
+
+
 /* seamless */
 .acf-postbox.seamless {
 	
@@ -1938,8 +1978,11 @@ html[dir="rtl"] .pac-container .pac-item {
 	> .acf-fields > .acf-tab-wrap {
 		background: #f1f1f1;
 		margin-bottom: 10px;
+		padding-left: @fx;
+		padding-right: @fx;
 		
 		.acf-tab-group {
+			border-top: 0 none;
 			
 			li a {
 				background: #e5e5e5;
@@ -2034,9 +2077,7 @@ html[dir="rtl"] .pac-container .pac-item {
 
 
 /* table */
-.form-table > tbody > tr.acf-tab-wrap td {
-	padding: 0;
-}
+
 
 .form-table > tbody > tr.acf-tab-wrap .acf-tab-group {
 	padding: 0 5px 0 210px;
@@ -2390,11 +2431,6 @@ html[dir="rtl"] .pac-container .pac-item {
 		z-index: 2;
 	}
 	
-	 /* sidebar */
-	.acf-fields.-sidebar > & {
-		
-	}
-	
 }
 
 
@@ -2511,6 +2547,267 @@ html[dir="rtl"] .pac-container .pac-item {
 }
 
 
+/*---------------------------------------------------------------------------------------------
+*
+*  acf-panel
+*
+*---------------------------------------------------------------------------------------------*/
+
+.acf-accordion {
+	margin: 0;
+	padding: 0;
+	background: #fff;
+	
+	/* title */
+	.acf-accordion-title {
+		margin: 0;
+		padding: 12px;
+		font-weight: bold;
+		cursor: pointer;
+		font-size: inherit;
+		font-size: 13px;
+		line-height: 1.4em;
+		
+		label {
+			margin: 0;
+			padding: 0;
+			font-size: 13px;
+			line-height: 1.4em;
+		}
+		
+		p {
+			font-weight: normal;
+		}
+		
+		.acf-accordion-icon {
+			float: right;
+		}
+	}
+	
+	.acf-accordion-content {
+		margin: 0;
+		padding: 0 12px 12px;
+		display: none;
+	}
+	
+	
+	/* open */
+	&.-open {
+		
+		> .acf-accordion-content {
+			display: block;
+		}
+		
+	}
+}
+
+
+/* field specific */
+.acf-field.acf-accordion {
+	padding: 0;
+	
+	.acf-accordion-title {
+		padding: 12px !important;
+		width: auto !important;
+		float: none !important;
+		width: auto !important;
+	}
+	
+	.acf-accordion-content {
+		padding: 0;
+		float: none !important;
+		width: auto !important;
+		
+		> .acf-fields {
+			border-top: #EEEEEE solid 1px;
+			
+			&.-clear {
+				padding: 0 @fx @fy;
+			}
+		}
+	}
+}
+
+
+/* field specific (left) */
+.acf-fields.-left > .acf-field.acf-accordion {
+	padding: 0 !important;
+	
+	&:before {
+		display: none;
+	}
+	
+	.acf-accordion-title {
+		width: auto;
+		margin: 0 !important;
+		padding: 12px;
+		float: none !important;		
+	}
+	
+	.acf-accordion-content {
+		padding: 0 !important;
+	}
+}
+
+
+/* field specific (clear) */
+.acf-fields.-clear > .acf-field.acf-accordion {
+	border: #cccccc solid 1px;
+	background: transparent;
+	
+	+ .acf-field.acf-accordion {
+		margin-top: -16px;
+	}
+}
+
+
+/* table */
+tr.acf-field.acf-accordion {
+	background: transparent;
+	
+	> .acf-input {
+		padding: 0 !important;
+		border: #cccccc solid 1px;
+	}
+	
+	.acf-accordion-content {
+		padding: 0 12px 12px;
+	}
+}
+
+
+/* #addtag */
+#addtag > .acf-field.acf-accordion {
+	padding-right: 0;
+	margin-right: 5%;
+	
+	+ p.submit {
+		margin-top: 0;
+	}
+}
+
+
+
+/* border */
+tr.acf-accordion {
+	margin: 15px 0 !important;
+	
+	+ tr.acf-accordion {
+		margin-top: -16px !important;
+	}
+}
+
+
+/* seamless */
+.acf-postbox.seamless > .acf-fields > .acf-accordion {
+	margin-left: @field_padding_x !important;
+	margin-right: @field_padding_x !important;
+}
+
+
+/* rtl */
+html[dir="rtl"] .acf-accordion {
+	
+}
+
+
+/* menu item */
+/*
+.menu-item-settings > .field-acf > .acf-field.acf-accordion {
+	border: #dfdfdf solid 1px;
+	margin: 10px -13px 10px -11px;
+	
+	+ .acf-field.acf-accordion {
+		margin-top: -11px;
+	}
+}
+*/
+
+
+/* widget */
+.widget .widget-content > .acf-field.acf-accordion {
+	border: #dfdfdf solid 1px;
+	margin-bottom: 10px;
+	
+	.acf-accordion-title {
+		margin-bottom: 0;
+	}
+	
+	+ .acf-field.acf-accordion {
+		margin-top: -11px;
+	}
+}
+
+
+// seamless
+.acf-postbox.seamless > .acf-fields > .acf-field.acf-accordion {
+	border: #e5e5e5 solid 1px;
+	
+	// siblings
+	+ .acf-field.acf-accordion {
+		margin-top: -1px;
+	}
+}
+
+
+// media modal
+.media-modal .compat-attachment-fields .acf-field.acf-accordion {
+	
+	// siblings
+	+ .acf-field.acf-accordion {
+		margin-top: -1px;
+	}
+	
+	// input
+	> .acf-input {
+		width: 100%;
+	}
+}
+
+
+
+/*---------------------------------------------------------------------------------------------
+*
+*  Attachment Form (single page)
+*
+*---------------------------------------------------------------------------------------------*/
+
+#post .compat-attachment-fields {
+	
+	.compat-field-acf-form-data {
+		display: none;
+	}
+	
+	&,
+	> tbody,
+	> tbody > tr,
+	> tbody > tr > th,
+	> tbody > tr > td {
+		display: block;
+	}
+	
+	> tbody > .acf-field {
+		margin: 15px 0;
+		
+		> .acf-label {
+			margin: 0;
+			
+			label {
+				margin: 0;
+				padding: 0;
+				
+				p {
+					margin: 0 0 3px !important;
+				}
+			}
+		}
+		
+		> .acf-input {
+			margin: 0;
+		}
+	} 
+}
+
 
 /*---------------------------------------------------------------------------------------------
 *
@@ -2543,7 +2840,7 @@ html[dir="rtl"] .pac-container .pac-item {
 
 /* field widths floats */
 .media-modal .compat-attachment-fields > tbody > .acf-field {
-	margin: 0;
+	margin: 5px 0;
 	
 	> .acf-label {
 		min-width: 30%;
@@ -3041,7 +3338,7 @@ html[dir="rtl"] .pac-container .pac-item {
 		/* label */
 		> .acf-label {
 			padding: 20px 10px 20px 0;
-		    width: 210px;
+		    width: 200px;
 		    
 		    /* rtl */
 			html[dir="rtl"] & {
@@ -3058,7 +3355,7 @@ html[dir="rtl"] .pac-container .pac-item {
 		
 		/* input */
 		> .acf-input {
-			padding: 15px 5% 15px 10px;
+			padding: 15px 10px;
 			
 			/* rtl */
 			html[dir="rtl"] & {
@@ -3095,17 +3392,22 @@ html[dir="rtl"] .pac-container .pac-item {
 *
 *--------------------------------------------------------------------------------------------*/
 
-#addtag > .acf-field {
+// add term
+.acf-addterm-fields {
 	padding-right: 5%;
-}
-
-#addtag > .acf-field .acf-label {
-	margin: 0;
-}
-
-#addtag > .acf-field .acf-label label {
-	font-size: 12px;
-	font-weight: normal;
+	
+	> .acf-field {
+		
+		> .acf-label {
+			margin: 0;
+			
+			label {
+				font-size: 12px;
+				font-weight: normal;
+			}
+		}
+	}
+	
 }
 
 p.submit .spinner,
@@ -3113,6 +3415,40 @@ p.submit .acf-spinner {
 	vertical-align: top;
 	float: none;
 	margin: 4px 4px 0;
+}
+
+
+// edit term
+#edittag .acf-fields.-left {
+	
+	> .acf-field {
+		padding-left: 220px;
+		
+		&:before {
+			width: 209px;
+		}
+		
+		> .acf-label {
+			width: 220px;
+			margin-left: -220px;
+			padding: 0 10px;
+		}
+		
+		> .acf-input {
+			padding: 0;
+		}
+	}
+}
+
+#edittag > .acf-fields.-left {
+	width: 96%;
+	
+	> .acf-field { 
+		
+		> .acf-label {
+			padding-left: 0;
+		}
+	}
 }
 
 
@@ -3139,10 +3475,9 @@ p.submit .acf-spinner {
 	padding-right: 0;
 }
 
-.widget {
+.acf-widget-fields {
 	
-	.acf-field {
-		margin: 1em 0;
+	> .acf-field {
 		
 		.acf-label {
 			margin-bottom: 5px;
@@ -3153,21 +3488,10 @@ p.submit .acf-spinner {
 			}
 		}
 	}
-	
-	.widget-inside > form > .acf-error-message {
-		margin-top: 15px;
-	}
 }
 
-
-/*--------------------------------------------------------------------------------------------
-*
-*	Customizer
-*
-*--------------------------------------------------------------------------------------------*/
-
-.customize-control .acf-field {
-	margin: 1em 0;
+.widget form > .acf-error-message {
+	margin-top: 15px;
 }
 
 
@@ -3181,30 +3505,7 @@ p.submit .acf-spinner {
 	border-top: 1px solid #eee;
     margin-top: 2em;
 	
-	
-	/* fields */
-	> .acf-fields {
-		
-		> .acf-field {
-			padding-left: 20%;
-			margin: 0 0 10px;
-			
-			> .acf-label {
-				width: 25%;
-				margin-left: -25%;
-				
-				label {
-					color: #666;
-				    font-style: italic;
-				    font-weight: normal;
-				}
-			}
-		}
-		
-	}
-	
-	
-	/* seamless */
+	// seamless
 	&.-seamless {
 		border-top: none;
 		margin-top: 15px;
@@ -3213,29 +3514,11 @@ p.submit .acf-spinner {
 	}
 }
 
-
-.menu-item-settings {
-	
-	/* fields */
-	> .field-acf {
-		
-		> .acf-field {
-			margin: 0 0 10px;
-			
-			> .acf-label {
-				margin: 0;
-				
-				label {
-					color: #666;
-				    font-style: italic;
-				    font-weight: normal;
-				    margin: 0;
-				}
-			}
-		}
-	}
-	
+.acf-menu-item-fields {
+	margin-right: 10px;
+	float: left;
 }
+
 
 
 /*--------------------------------------------------------------------------------------------

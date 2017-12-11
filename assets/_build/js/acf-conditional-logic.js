@@ -1,20 +1,26 @@
-(function($){
+(function($, undefined){
 	
-	acf.conditional_logic = acf.model.extend({
-			
+	// vars
+	var hidden = 'hidden-by-conditional-logic';
+	
+	// model
+	var conditionalLogic = acf.conditional_logic = acf.model.extend({
+		
+		// storage of fields that have conditions
+		conditions: {},
+		
+		// storage of fields that trigger a condition
+		triggers: {},
+		
+		// reference to parent element of both the trigger and target
+		$parent: false,
+		
+		// actions
 		actions: {
 			'prepare 20': 	'render',
-			'append 20': 	'render'
+			'append 20': 	'render',
+			'change':		'change'
 		},
-		
-		events: {
-			'change .acf-field input': 		'change',
-			'change .acf-field textarea': 	'change',
-			'change .acf-field select': 	'change'
-		},
-		
-		items: {},
-		triggers: {},
 		
 		
 		/*
@@ -26,46 +32,139 @@
 		*  @date	22/05/2015
 		*  @since	5.2.3
 		*
-		*  @param	target (string) target field key
-		*  @param	groups (array) rule groups
+		*  @param	string	target		field key
+		*  @param	array	conditions	array of conditional logic groups
 		*  @return	$post_id (int)
 		*/
 		
-		add: function( target, groups ){
+		add: function( target, conditions ){
 			
-			// debug
-			//console.log( 'conditional_logic.add(%o, %o)', target, groups );
-			
-			
-			// populate triggers
-			for( var i in groups ) {
-				
-				// vars
-				var group = groups[i];
+			// add triggers
+			for( var i in conditions ) {
+				var group = conditions[i];
 				
 				for( var k in group ) {
+					var rule = group[k];
 					
-					// vars
-					var rule = group[k],
-						trigger = rule.field,
-						triggers = this.triggers[ trigger ] || {};
-					
-					
-					// append trigger (sub field will simply override)
-					triggers[ target ] = target;
-					
-					
-					// update
-					this.triggers[ trigger ] = triggers;
-										
+					this.addTrigger( rule.field, target );
 				}
-				
 			}
 			
 			
-			// append items
-			this.items[ target ] = groups;
+			// add condition
+			this.setCondition( target, conditions );
 			
+		},
+		
+		
+		/**
+		*  getTrigger
+		*
+		*  This function will return the fields that are triggered by this key.
+		*
+		*  @date	15/11/17
+		*  @since	5.6.5
+		*
+		*  @param	string key The trigger's key.
+		*  @return	mixed
+		*/
+		
+		getTrigger: function( key ){
+			return this.triggers[ key ] || null;
+		},
+		
+		
+		/**
+		*  setTrigger
+		*
+		*  This function will set the fields that are triggered by this key.
+		*
+		*  @date	15/11/17
+		*  @since	5.6.5
+		*
+		*  @param	string key The trigger's key.
+		*  @return	mixed
+		*/
+		
+		setTrigger: function( key, value ){
+			this.triggers[ key ] = value;
+		},
+		
+		
+		/**
+		*  addTrigger
+		*
+		*  This function will add a reference for a field that triggers another field's visibility
+		*
+		*  @date	15/11/17
+		*  @since	5.6.5
+		*
+		*  @param	n/a
+		*  @return	n/a
+		*/
+		
+		addTrigger: function( trigger, target ){
+			
+			// vars
+			var triggers = this.getTrigger( trigger ) || {};
+			
+			// append
+			triggers[ target ] = 1;
+			
+			// set
+			this.setTrigger(trigger, triggers);
+				
+		},
+		
+		
+		/**
+		*  getConditions
+		*
+		*  This function will return the conditions for all targets.
+		*
+		*  @date	15/11/17
+		*  @since	5.6.5
+		*
+		*  @param	string key The trigger's key.
+		*  @return	mixed
+		*/
+		
+		getConditions: function(){
+			return this.conditions;
+		},
+		
+		
+		/**
+		*  getCondition
+		*
+		*  This function will return the conditions for a target.
+		*
+		*  @date	15/11/17
+		*  @since	5.6.5
+		*
+		*  @param	string key The trigger's key.
+		*  @return	mixed
+		*/
+		
+		getCondition: function( key ){
+			return this.conditions[ key ] || null;
+		},
+		
+		
+		/**
+		*  setCondition
+		*
+		*  This function will set the conditions for a target.
+		*
+		*  @date	15/11/17
+		*  @since	5.6.5
+		*
+		*  @param	string key The trigger's key.
+		*  @return	mixed
+		*/
+		
+		setCondition: function( key, value ){
+			this.conditions[ key ] = value;
 		},
 		
 		
@@ -84,24 +183,70 @@
 		
 		render: function( $el ){
 			
-			// debug
-			//console.log('conditional_logic.render(%o)', $el);
-			
-			
-			// defaults
+			// vars
 			$el = $el || false;
-			
 			
 			// get targets
 			var $targets = acf.get_fields( '', $el, true );
 			
-			
 			// render fields
-			this.render_fields( $targets );
-			
+			this.renderFields( $targets );
 			
 			// action for 3rd party customization
 			acf.do_action('refresh', $el);
+			
+		},
+		
+		
+		/**
+		*  findParent
+		*
+		*  This function will find a parent that contains both the trigger and target
+		*
+		*  @date	15/11/17
+		*  @since	5.6.5
+		*
+		*  @param	n/a
+		*  @return	n/a
+		*/
+		
+		findTarget: function( $trigger, target ){
+			
+			// vars
+			var self = this;
+			
+			// reset scope
+			this.$parent = false;
+			
+			// find all targets
+			var $targets = acf.get_fields(target, false, true);
+			
+			// bail early if nothing found
+			if( !$targets.length ) return false;
+			
+			// refine scope if more than 1 found
+			if( $targets.length > 1 ) {
+				
+				// loop
+				$trigger.parents('.acf-row, .acf-table, .acf-fields').each(function(){
+					
+					// vars
+					var $parent = $(this);
+					var $child = $parent.find( $targets );
+					
+					// found
+					if( $child.length ) {
+						$targets = $child;
+						self.$parent = $parent;
+						return false;
+					}
+					
+				});
+				
+			}
+			
+			// return
+			return $targets;
 			
 		},
 		
@@ -119,55 +264,35 @@
 		*  @return	$post_id (int)
 		*/
 		
-		change: function( e ){
-			
-			// debug
-			//console.log( 'conditional_logic.change(%o)', $input );
-			
+		change: function( $input ){
 			
 			// vars
-			var $input = e.$el,
-				$field = acf.get_field_wrap( $input ),
-				key = $field.data('key');
+			var $trigger = acf.get_field_wrap($input);
+			var key = $trigger.data('key');
+			var trigger = this.getTrigger(key);
 			
+			// bail early if this field is not a trigger
+			if( !trigger ) return false;
 			
-			// bail early if this field does not trigger any actions
-			if( typeof this.triggers[key] === 'undefined' ) {
+			// loop
+			for( var target in trigger ) {
 				
-				return false;
-				
-			}
-			
-			
-			// vars
-			$parent = $field.parent();
-			
-			
-			// update visibility
-			for( var i in this.triggers[ key ] ) {
-				
-				// get the target key
-				var target_key = this.triggers[ key ][ i ];
-				
-				
-				// get targets
-				var $targets = acf.get_fields(target_key, $parent, true);
-				
+				// get target(s)
+				var $targets = this.findTarget( $trigger, target );
 				
 				// render
-				this.render_fields( $targets );
+				this.renderFields( $targets );
 				
 			}
 			
-			
 			// action for 3rd party customization
-			acf.do_action('refresh', $parent);
+			acf.do_action('refresh', this.$parent);
 			
 		},
 		
 		
 		/*
-		*  render_fields
+		*  renderFields
 		*
 		*  This function will render a selection of fields
 		*
@@ -179,17 +304,14 @@
 		*  @return	$post_id (int)
 		*/
 		
-		render_fields: function( $targets ) {
+		renderFields: function( $targets ) {
 		
 			// reference
 			var self = this;
 			
-			
-			// loop over targets and render them			
+			// loop		
 			$targets.each(function(){
-					
-				self.render_field( $(this) );
-				
+				self.renderField( $(this) );
 			});
 			
 		},
@@ -208,80 +330,51 @@
 		*  @return	$post_id (int)
 		*/
 		
-		render_field : function( $target ){
-			
-			// vars
-			var key = $target.data('key');
-			
-			
-			// bail early if this field does not contain any conditional logic
-			if( typeof this.items[ key ] === 'undefined' ) {
-				
-				return false;
-				
-			}
-			
+		renderField : function( $target ){
 			
 			// vars
 			var visibility = false;
+			var key = $target.data('key');
+			var condition = this.getCondition( key );
 			
+			// bail early if this field does not contain any conditional logic
+			if( !condition ) return false;
 			
-			// debug
-			//console.log( 'conditional_logic.render_field(%o)', $field );
-			
-			
-			// get conditional logic
-			var groups = this.items[ key ];
-			
-			
-			// calculate visibility
-			for( var i = 0; i < groups.length; i++ ) {
+			// loop
+			for( var i = 0; i < condition.length; i++ ) {
 				
 				// vars
-				var group = groups[i],
+				var group = condition[i],
 					match_group	= true;
 				
+				// loop
 				for( var k = 0; k < group.length; k++ ) {
 					
 					// vars
 					var rule = group[k];
 					
-					
 					// get trigger for rule
-					var $trigger = this.get_trigger( $target, rule.field );
-					
+					var $trigger = this.findTarget( $target, rule.field );
 					
 					// break if rule did not validate
 					if( !this.calculate(rule, $trigger, $target) ) {
-						
 						match_group = false;
 						break;
-						
-					}
-										
+					}					
 				}
-				
 				
 				// set visibility if rule group did validate
 				if( match_group ) {
-					
 					visibility = true;
 					break;
-					
 				}
-				
 			}
 			
-			
-			// hide / show field
+			// hide / show
 			if( visibility ) {
-				
-				this.show_field( $target );					
-			
+				this.showField( $target );					
 			} else {
-				
-				this.hide_field( $target );
-			
+				this.hideField( $target );
 			}
 			
 		},
@@ -300,24 +393,20 @@
 		*  @return	$post_id (int)
 		*/
 		
-		show_field: function( $field ){
+		showField: function( $field ){
 			
-			// debug
-			//console.log('show_field(%o)', $field);
-			
+			// bail ealry if not hidden
+			//if( !$field.hasClass(hidden) ) return;
 			
 			// vars
 			var key = $field.data('key');
 			
-			
 			// remove class
-			$field.removeClass( 'hidden-by-conditional-logic' );
-			
+			$field.removeClass(hidden);
 			
 			// enable
-			acf.enable_form( $field, 'condition_'+key );
+			acf.enable_form( $field, 'condition-'+key );
 			
-						
 			// action for 3rd party customization
 			acf.do_action('show_field', $field, 'conditional_logic' );
 			
@@ -337,92 +426,25 @@
 		*  @return	$post_id (int)
 		*/
 		
-		hide_field : function( $field ){
+		hideField : function( $field ){
 			
-			// debug
-			//console.log('hide_field(%o)', $field);
-			
+			// bail ealry if hidden
+			//if( $field.hasClass(hidden) ) return;
 			
 			// vars
 			var key = $field.data('key');
 			
-			
 			// add class
-			$field.addClass( 'hidden-by-conditional-logic' );
-			
+			$field.addClass( hidden );
 			
 			// disable
-			acf.disable_form( $field, 'condition_'+key );
+			acf.disable_form( $field, 'condition-'+key );
 						
-			
 			// action for 3rd party customization
 			acf.do_action('hide_field', $field, 'conditional_logic' );
 			
 		},
-		
-		
-		/*
-		*  get_trigger
-		*
-		*  This function will return the relevant $trigger for a $target
-		*
-		*  @type	function
-		*  @date	22/05/2015
-		*  @since	5.2.3
-		*
-		*  @param	$post_id (int)
-		*  @return	$post_id (int)
-		*/
-		
-		get_trigger: function( $target, key ){
-			
-			// vars
-			var selector = acf.get_selector( key );
-			
-			
-			// find sibling $trigger
-			var $trigger = $target.siblings( selector );
-			
-			
-			// parent trigger
-			if( !$trigger.exists() ) {
 				
-				// vars
-				var parent = acf.get_selector();
-				
-				
-				// loop through parent fields and review their siblings too
-				$target.parents( parent ).each(function(){
-					
-					// find sibling $trigger
-					$trigger = $(this).siblings( selector );
-					
-					
-					// bail early if $trigger is found
-					if( $trigger.exists() ) {
-						
-						return false;
-						
-					}
-	
-				});
-				
-			}
-			
-			
-			// bail early if no $trigger is found
-			if( !$trigger.exists() ) {
-				
-				return false;
-				
-			}
-			
-			
-			// return
-			return $trigger;
-			
-		},
-		
 		
 		/*
 		*  calculate
@@ -437,7 +459,7 @@
 		*  @return	$post_id (int)
 		*/
 		
-		calculate : function( rule, $trigger, $target ){
+		calculate: function( rule, $trigger, $target ){
 			
 			// bail early if $trigger could not be found
 			if( !$trigger || !$target ) return false;
@@ -531,5 +553,11 @@
 		}
 		
 	});
+	
+	
+	// compatibility
+	conditionalLogic.show_field = conditionalLogic.showField;
+	conditionalLogic.hide_field = conditionalLogic.hideField;
+	
 
 })(jQuery);

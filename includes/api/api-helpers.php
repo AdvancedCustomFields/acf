@@ -811,19 +811,20 @@ function acf_verify_nonce( $value) {
 
 function acf_verify_ajax() {
 	
+	// vars
+	$action = acf_maybe_get_POST('action');
+	$nonce = acf_maybe_get_POST('nonce');
+	
+	
 	// bail early if not acf action
-	if( empty($_POST['action']) || substr($_POST['action'], 0, 3) !== 'acf' ) {
-		
+	if( !$action || substr($action, 0, 3) !== 'acf' ) {
 		return false;
-		
 	}
 	
 	
 	// bail early if not acf nonce
-	if( empty($_POST['nonce']) || !wp_verify_nonce($_POST['nonce'], 'acf_nonce') ) {
-	
+	if( !$nonce || !wp_verify_nonce($nonce, 'acf_nonce') ) {
 		return false;
-		
 	}
 	
 	

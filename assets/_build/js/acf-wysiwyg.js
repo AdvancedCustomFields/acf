@@ -429,16 +429,17 @@
 		
 		build_quicktags: function( ed ){
 			
-			var canvas, name, settings, theButtons, html, ed, id, i, use,
+			var canvas, name, settings, theButtons, html, ed, id, i, use, instanceId,
 				defaults = ',strong,em,link,block,del,ins,img,ul,ol,li,code,more,close,';
-
+			
 			canvas = ed.canvas;
 			name = ed.name;
 			settings = ed.settings;
 			html = '';
 			theButtons = {};
 			use = '';
-
+			instanceId = ed.id;
+			
 			// set buttons
 			if ( settings.buttons ) {
 				use = ','+settings.buttons+',';

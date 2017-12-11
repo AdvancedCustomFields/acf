@@ -71,6 +71,10 @@
 				var $field = acf.get_field_wrap( $input );
 				
 				
+				// event
+				$field.trigger('invalidField');
+				
+				
 				// action
 				acf.do_action('invalid', $input);
 				acf.do_action('invalid_field', $field);
@@ -803,6 +807,10 @@
 			$field.on('focus change', 'input, textarea, select', event);
 			
 			
+			// event
+			$field.trigger('invalidField');
+				
+				
 			// hook for 3rd party customization
 			acf.do_action('add_field_error', $field);
 			acf.do_action('invalid_field', $field);

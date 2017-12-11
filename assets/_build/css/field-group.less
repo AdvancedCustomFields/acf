@@ -139,6 +139,12 @@
 		visibility: visible !important;
 		background: #F9F9F9;
 		border-top-color: transparent;
+		min-height: 54px;
+		
+		// hide tab field separator
+		&:after, &:before {
+			visibility: hidden;
+		}
 	}
 	
 	
@@ -363,49 +369,54 @@ table.conditional-logic-rules tbody td {
 *	
 *---------------------------------------------------------------------------------------------*/
 
-.acf-field-object-tab tr[data-name="name"],
-.acf-field-object-tab tr[data-name="instructions"],
-.acf-field-object-tab tr[data-name="required"],
-.acf-field-object-tab tr[data-name="warning"],
-.acf-field-object-tab tr[data-name="wrapper"] {
-	display: none !important;
+.acf-field-object-tab {
+	
+	// hide setting
+	.acf-field-setting-name,
+	.acf-field-setting-instructions,
+	.acf-field-setting-required,
+	.acf-field-setting-warning,
+	.acf-field-setting-wrapper {
+		display: none;
+	}
+	
+	// hide name
+	.li-field-name {
+		visibility: hidden;
+	}
+	
+	// add spacer
+	.acf-field-object + & {
+		
+		&:before {
+			display: block;
+			content: "";
+			height: 5px;
+			width: 100%;
+			background: #f9f9f9;
+			border-bottom: #f0f0f0 solid 1px;
+		}
+	}
+	
+	p:first-child {
+		margin: 0.5em 0;
+	}
 }
 
-.acf-field-object-tab .li-field-name {
-	visibility: hidden;
-}
 
+/*---------------------------------------------------------------------------------------------
+*
+*	Field: Accordion
+*	
+*---------------------------------------------------------------------------------------------*/
 
-.acf-field-object-tab .acf-error-message {
-	display: none;
-}
-
-.acf-field-list[data-layout="table"] .acf-field-object-tab .acf-error-message {
-	display: block;
-}
-
-.acf-field-object + .acf-field-object-tab {
-	margin-top: 6px;
-}
-
-.acf-field-object + .acf-field-object-tab:before {
-	display: block;
-	content: "";
-	height: 1px;
-	background: #F0F0F0;
-	margin-top: -7px;
-	width: 100%;
-	position: absolute;
-}
-
-.acf-field-object + .acf-field-object-tab.ui-sortable-placeholder {
-	margin-top: 0;
-	padding-top: 6px;
-}
-
-.acf-field-object-tab.ui-sortable-helper:before,
-.ui-sortable-placeholder + .acf-field-object-tab:before  {
-	display: none;
+.acf-field-object-accordion:extend( .acf-field-object-tab all ) {
+	
+	// show settings
+	.acf-field-setting-instructions {
+		display: table-row;
+	}
+	
 }
 
 

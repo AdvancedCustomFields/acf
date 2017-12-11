@@ -18,6 +18,7 @@
 // @codekit-prepend "../js/acf-relationship.js";
 // @codekit-prepend "../js/acf-select2.js";
 // @codekit-prepend "../js/acf-select.js";
+// @codekit-prepend "../js/acf-accordion.js";
 // @codekit-prepend "../js/acf-tab.js";
 // @codekit-prepend "../js/acf-time-picker.js";
 // @codekit-prepend "../js/acf-true-false.js";
