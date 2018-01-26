@@ -186,6 +186,13 @@ class acf_input {
 		// scripts
 		wp_enqueue_script('acf-input');
 		
+
+		// localize data to be utilized by acf-input.js
+		$wp_data = array(
+			'admin_url'            => get_admin_url(),
+		);
+		wp_localize_script( 'acf-input', 'acf_wp_data', $wp_data );
+
 		
 		// styles
 		wp_enqueue_style('acf-input');
