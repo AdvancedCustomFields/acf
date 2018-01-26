@@ -9767,7 +9767,10 @@ var acf;
 				'<li>',
 					'<input type="hidden" name="' + this.$input.attr('name') + '[]" value="' + e.$el.data('id') + '" />',
 					'<span data-id="' + e.$el.data('id') + '" class="acf-rel-item">' + e.$el.html(),
-						'<a href="#" class="acf-icon -minus small dark" data-name="remove_item"></a>',
+						'<div class="acf-icon-set">',
+							'<a href="' + acf_wp_data.admin_url + 'post.php?post=' + e.$el.data('id') + '&action=edit" class="acf-icon -pencil small dark" data-name="edit_item" target="_blank"></a>\n',
+							'<a href="#" class="acf-icon -minus small dark" data-name="remove_item"></a>',
+						'</div>',
 					'</span>',
 				'</li>'].join('');
 						
@@ -9788,7 +9791,7 @@ var acf;
 		remove_item : function( e ){
 			
 			// vars
-			var $span = e.$el.parent(),
+			var $span = e.$el.closest('span'),
 				id = $span.data('id');
 			
 			
