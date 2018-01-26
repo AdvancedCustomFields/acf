@@ -9762,17 +9762,13 @@ var acf;
 			e.$el.addClass('disabled');
 			
 			
-			// set domain variable
-			var domain = window.location.protocol + "//" + window.location.host + "/";
-
-
 			// template
 			var html = [
 				'<li>',
 					'<input type="hidden" name="' + this.$input.attr('name') + '[]" value="' + e.$el.data('id') + '" />',
 					'<span data-id="' + e.$el.data('id') + '" class="acf-rel-item">' + e.$el.html(),
 						'<div class="acf-icon-set">',
-							'<a href="' + domain + 'wp-admin/post.php?post=' + e.$el.data('id') + '&action=edit" class="acf-icon -pencil small dark" data-name="edit_item" target="_blank"></a>\n',
+							'<a href="' + acf_wp_data.admin_url + 'post.php?post=' + e.$el.data('id') + '&action=edit" class="acf-icon -pencil small dark" data-name="edit_item" target="_blank"></a>\n',
 							'<a href="#" class="acf-icon -minus small dark" data-name="remove_item"></a>',
 						'</div>',
 					'</span>',
