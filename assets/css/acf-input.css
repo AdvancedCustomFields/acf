@@ -1177,18 +1177,18 @@ html[dir="rtl"] .pac-container .pac-item {
 .acf-relationship .selection .choices .list {
   border-right: #DFDFDF solid 1px;
 }
-.acf-relationship .selection .values .acf-icon {
+.acf-relationship .selection .values .acf-icon-set {
   position: absolute;
   top: 4px;
   right: 7px;
   display: none;
   /* rtl */
 }
-html[dir="rtl"] .acf-relationship .selection .values .acf-icon {
+html[dir="rtl"] .acf-relationship .selection .values .acf-icon-set {
   right: auto;
   left: 7px;
 }
-.acf-relationship .selection .values .acf-rel-item:hover .acf-icon {
+.acf-relationship .selection .values .acf-rel-item:hover .acf-icon-set {
   display: block;
 }
 .acf-relationship .selection .values .acf-rel-item {
