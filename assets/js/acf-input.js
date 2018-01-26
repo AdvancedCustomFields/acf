@@ -9795,7 +9795,7 @@ var acf;
 		remove_item : function( e ){
 			
 			// vars
-			var $span = e.$el.parent(),
+			var $span = e.$el.closest('span'),
 				id = $span.data('id');
 			
 			
