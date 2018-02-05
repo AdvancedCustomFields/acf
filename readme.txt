@@ -2,7 +2,7 @@
 Contributors: elliotcondon
 Tags: acf, advanced, custom, field, fields, form, repeater, content
 Requires at least: 3.6.0
-Tested up to: 4.9.0
+Tested up to: 4.9.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -66,6 +66,16 @@ From your WordPress dashboard
 
 == Changelog ==
 
+= 5.6.8 =
+* API: Fixed bug causing have_rows() to fail with PHP 7.2
+* Core: Fixed bug causing "Add new term" form to hide after submit
+* Core: Minor fixes and improvements
+* Language: Updated German translation - thanks to Ralf Koller
+* Language: Updated Portuguese translation - thanks to Pedro Mendonça
+* Language: Updated Arabic translation - thanks to Karim Ramadan
+* Language: Updated Spanish translation - thanks to Luis Rull Muñoz
+* Language: Updated Persian translation - thanks to Majix
+
 = 5.6.7 =
 * Fixed an assortment of bugs found in 5.6.6
 
@@ -83,6 +93,7 @@ From your WordPress dashboard
 * Language: Updated Portuguese translation - thanks to Pedro Mendonça
 * Language: Updated Persian translation - thanks to Kamel Kimiaei
 * Language: Updated Swiss German translation - thanks to Raphael Hüni
+* Language: Updated Arabic translation - thanks to Karim Ramadan
 
 = 5.6.5 =
 * API: Added new 'kses' setting to the `acf_form()` function

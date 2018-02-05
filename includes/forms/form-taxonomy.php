@@ -159,7 +159,7 @@ class acf_form_taxonomy {
 			));
 			
 			// wrap
-			echo '<div class="acf-addterm-fields acf-fields -clear">';
+			echo '<div id="acf-term-fields" class="acf-fields -clear">';
 			
 			// loop
 			foreach( $field_groups as $field_group ) {
@@ -275,48 +275,36 @@ class acf_form_taxonomy {
 <?php if( $this->form == '#addtag' ): ?>
 
 	// store origional HTML
-	var $orig = $('#addtag').children('.acf-field').clone();
-	
+	var $el = $('#acf-term-fields');
+	var html = $el.html();
 	
 	// events
 	$('#submit').on('click', function( e ){
 		
 		// bail early if not active
 		if( !acf.validation.active ) {
-		
 			return true;
-			
 		}
-		
 		
 		// ignore validation (only ignore once)
 		if( acf.validation.ignore ) {
-		
 			acf.validation.ignore = 0;
 			return true;
-			
 		}
-		
 		
 		// bail early if this form does not contain ACF data
-		if( !$('#addtag').find('#acf-form-data').exists() ) {
-			
+		if( !$('#acf-form-data').exists() ) {
 			return true;
-		
 		}
-		
 		
 		// stop WP JS validation
 		e.stopImmediatePropagation();
 		
-		
 		// store submit trigger so it will be clicked if validation is passed
 		acf.validation.$trigger = $(this);
-		
-					
+				
 		// run validation
 		acf.validation.fetch( $('#addtag') );
-		
 		
 		// stop all other click events on this input
 		return false;
@@ -328,42 +316,28 @@ class acf_form_taxonomy {
 		
 		// bail early if is other ajax call
 		if( settings.data.indexOf('action=add-tag') == -1 ) {
-			
 			return;
-			
 		}
-		
 		
 		// unlock form
 		acf.validation.toggle( $('#addtag'), 'unlock' );
 		
-		
 		// bail early if response contains error
 		if( xhr.responseText.indexOf('wp_error') !== -1 ) {
-			
 			return;
-			
 		}
 		
-		
 		// action for 3rd party customization
-		acf.do_action('remove', $('#addtag'));
+		acf.do_action('remove', $el);
 		
-		
-		// remove old fields
-		$('#addtag').find('.acf-field').remove();
-		
-		
-		// add orig fields
-		$('#acf-form-data').after( $orig.clone() );
-		
-		
+		// restore html
+		$el.html( html );
+				
 		// reset unload
 		acf.unload.off();
 		
-		
 		// action for 3rd party customization
-		acf.do_action('append', $('#addtag'));
+		acf.do_action('append', $el);
 		
 	});
 	

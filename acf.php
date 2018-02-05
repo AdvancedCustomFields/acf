@@ -3,7 +3,7 @@
 Plugin Name: Advanced Custom Fields
 Plugin URI: https://www.advancedcustomfields.com/
 Description: Customise WordPress with powerful, professional and intuitive fields.
-Version: 5.6.7
+Version: 5.6.8
 Author: Elliot Condon
 Author URI: http://www.elliotcondon.com/
 Copyright: Elliot Condon
@@ -13,12 +13,12 @@ Domain Path: /lang
 
 if( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-if( ! class_exists('acf') ) :
+if( ! class_exists('ACF') ) :
 
-class acf {
+class ACF {
 	
 	/** @var string The plugin version number */
-	var $version = '5.6.7';
+	var $version = '5.6.8';
 	
 	
 	/** @var array The plugin settings array */
@@ -71,7 +71,7 @@ class acf {
 			'file'				=> __FILE__,
 			'basename'			=> plugin_basename( __FILE__ ),
 			'path'				=> plugin_dir_path( __FILE__ ),
-			'dir'				=> plugin_dir_url( __FILE__ ),
+			'url'				=> plugin_dir_url( __FILE__ ),
 			
 			// options
 			'show_admin'				=> true,
@@ -219,9 +219,9 @@ class acf {
 		$major = intval( acf_get_setting('version') );
 		
 		
-		// redeclare dir
+		// update url
 		// - allow another plugin to modify dir (maybe force SSL)
-		acf_update_setting('dir', plugin_dir_url( __FILE__ ));
+		acf_update_setting('url', plugin_dir_url( __FILE__ ));
 		
 		
 		// textdomain
@@ -484,14 +484,14 @@ class acf {
 		
 		
 		// scripts
-		wp_register_script('acf-input', acf_get_dir("assets/js/acf-input{$min}.js"), array('jquery', 'jquery-ui-core', 'jquery-ui-sortable', 'jquery-ui-resizable'), $version );
-		wp_register_script('acf-field-group', acf_get_dir("assets/js/acf-field-group{$min}.js"), array('acf-input'), $version );
+		wp_register_script('acf-input', acf_get_url("assets/js/acf-input{$min}.js"), array('jquery', 'jquery-ui-core', 'jquery-ui-sortable', 'jquery-ui-resizable'), $version );
+		wp_register_script('acf-field-group', acf_get_url("assets/js/acf-field-group{$min}.js"), array('acf-input'), $version );
 		
 		
 		// styles
-		wp_register_style('acf-global', acf_get_dir('assets/css/acf-global.css'), array(), $version );
-		wp_register_style('acf-input', acf_get_dir('assets/css/acf-input.css'), array('acf-global'), $version );
-		wp_register_style('acf-field-group', acf_get_dir('assets/css/acf-field-group.css'), array('acf-input'), $version );
+		wp_register_style('acf-global', acf_get_url('assets/css/acf-global.css'), array(), $version );
+		wp_register_style('acf-input', acf_get_url('assets/css/acf-input.css'), array('acf-global'), $version );
+		wp_register_style('acf-field-group', acf_get_url('assets/css/acf-field-group.css'), array('acf-input'), $version );
 		
 	}
 	
@@ -518,25 +518,17 @@ class acf {
 		
 		// acf_field_key
 		if( $field_key = $wp_query->get('acf_field_key') ) {
-		
 			$where .= $wpdb->prepare(" AND {$wpdb->posts}.post_name = %s", $field_key );
-			
 	    }
-	    
 	    
 	    // acf_field_name
 	    if( $field_name = $wp_query->get('acf_field_name') ) {
-	    
 			$where .= $wpdb->prepare(" AND {$wpdb->posts}.post_excerpt = %s", $field_name );
-			
 	    }
-	    
 	    
 	    // acf_group_key
 		if( $group_key = $wp_query->get('acf_group_key') ) {
-		
 			$where .= $wpdb->prepare(" AND {$wpdb->posts}.post_name = %s", $group_key );
-			
 	    }
 	    
 	    
@@ -562,71 +554,61 @@ class acf {
 	
 	function define( $name, $value = true ) {
 		
-		if( !defined($name) ) define( $name, $value );
+		if( !defined($name) ) {
+			define( $name, $value );
+		}
 		
 	}
 	
-	
-	/*
-	*  get_setting
+	/**
+	*  has_setting
 	*
-	*  This function will return a value from the settings array found in the acf object
+	*  Returns true if has setting.
 	*
-	*  @type	function
-	*  @date	28/09/13
-	*  @since	5.0.0
+	*  @date	2/2/18
+	*  @since	5.6.5
 	*
-	*  @param	$name (string) the setting name to return
-	*  @param	$value (mixed) default value
-	*  @return	$value
+	*  @param	string $name
+	*  @return	boolean
 	*/
 	
-	function get_setting( $name, $value = null ) {
-		
-		// check settings
-		if( isset($this->settings[ $name ]) ) {
-			
-			$value = $this->settings[ $name ];
-			
-		}
-		
-		
-		// filter for 3rd party customization
-		if( substr($name, 0, 1) !== '_' ) {
-			
-			$value = apply_filters( "acf/settings/{$name}", $value );
-			
-		}
-		
-		
-		// return
-		return $value;
-		
+	function has_setting( $name ) {
+		return isset($this->settings[ $name ]);
 	}
 	
-	
-	/*
-	*  update_setting
+	/**
+	*  get_setting
 	*
-	*  This function will update a value into the settings array found in the acf object
+	*  Returns a setting.
 	*
-	*  @type	function
 	*  @date	28/09/13
 	*  @since	5.0.0
 	*
-	*  @param	$name (string)
-	*  @param	$value (mixed)
+	*  @param	string $name
+	*  @return	mixed
+	*/
+	
+	function get_setting( $name ) {
+		return isset($this->settings[ $name ]) ? $this->settings[ $name ] : null;
+	}
+	
+	/**
+	*  update_setting
+	*
+	*  Updates a setting.
+	*
+	*  @date	28/09/13
+	*  @since	5.0.0
+	*
+	*  @param	string $name
+	*  @param	mixed $value
 	*  @return	n/a
 	*/
 	
 	function update_setting( $name, $value ) {
-		
 		$this->settings[ $name ] = $value;
-		
 		return true;
-		
 	}
-	
 }
 
 
@@ -647,17 +629,19 @@ class acf {
 */
 
 function acf() {
-
+	
+	// globals
 	global $acf;
 	
-	if( !isset($acf) ) {
 	
-		$acf = new acf();
-		
+	// initialize
+	if( !isset($acf) ) {
+		$acf = new ACF();
 		$acf->initialize();
-		
 	}
 	
+	
+	// return
 	return $acf;
 	
 }

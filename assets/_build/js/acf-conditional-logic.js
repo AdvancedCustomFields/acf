@@ -218,11 +218,20 @@
 			// reset scope
 			this.$parent = false;
 			
+			
+			// find siblings
+			var selector = acf.get_selector( target );
+			var $targets = $trigger.siblings( selector );
+			
+			// return if found
+			if( $targets.length ) {
+				this.$parent = $trigger.parent();
+				return $targets;
+			}
+			
+			
 			// find all targets
 			var $targets = acf.get_fields(target, false, true);
-			
-			// bail early if nothing found
-			if( !$targets.length ) return false;
 			
 			// refine scope if more than 1 found
 			if( $targets.length > 1 ) {

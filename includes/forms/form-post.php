@@ -604,10 +604,10 @@ if( typeof acf !== 'undefined' ) {
 	
 	function is_protected_meta( $protected, $meta_key, $meta_type ) {
 		
-		// if acf_get_field_reference returns a valid key, this is an acf value, so protect it!
+		// if acf_get_reference returns a valid key, this is an acf value, so protect it!
 		if( !$protected ) {
 			
-			$reference = acf_get_field_reference( $meta_key, $this->post_id );
+			$reference = acf_get_reference( $meta_key, $this->post_id );
 			
 			if( acf_is_field_key($reference) ) {
 				

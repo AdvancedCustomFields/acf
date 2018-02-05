@@ -2525,13 +2525,13 @@ html[dir="rtl"] .form-table > tbody > .acf-tab-wrap td {
 *	Term
 *
 *--------------------------------------------------------------------------------------------*/
-.acf-addterm-fields {
+#acf-term-fields {
   padding-right: 5%;
 }
-.acf-addterm-fields > .acf-field > .acf-label {
+#acf-term-fields > .acf-field > .acf-label {
   margin: 0;
 }
-.acf-addterm-fields > .acf-field > .acf-label label {
+#acf-term-fields > .acf-field > .acf-label label {
   font-size: 12px;
   font-weight: normal;
 }
