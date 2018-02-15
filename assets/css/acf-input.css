@@ -811,6 +811,12 @@ html[dir="rtl"] ul.acf-checkbox-list input[type="radio"] {
 .acf-button-group.-vertical label:only-child {
   border-radius: 3px;
 }
+html[dir="rtl"] .acf-button-group label:first-child {
+    border-radius: 0 3px 3px 0;
+}
+html[dir="rtl"] .acf-button-group label:last-child {
+    border-radius: 3px 0 0 3px;
+}
 /*---------------------------------------------------------------------------------------------
 *
 *  Checkbox
