@@ -178,6 +178,75 @@ function acf_append_setting( $name, $value ) {
 }
 
 
+/**
+*  acf_get_data
+*
+*  Returns data.
+*
+*  @date	28/09/13
+*  @since	5.0.0
+*
+*  @param	string $name
+*  @return	mixed
+*/
+
+function acf_get_data( $name ) {
+	return acf()->get_data( $name );
+}
+
+
+/**
+*  acf_set_data
+*
+*  Sets data.
+*
+*  @date	28/09/13
+*  @since	5.0.0
+*
+*  @param	string $name
+*  @param	mixed $value
+*  @return	n/a
+*/
+
+function acf_set_data( $name, $value ) {
+	return acf()->set_data( $name, $value );
+}
+
+
+/**
+*  acf_new_instance
+*
+*  description
+*
+*  @date	13/2/18
+*  @since	5.6.5
+*
+*  @param	type $var Description. Default.
+*  @return	type Description.
+*/
+
+function acf_new_instance( $class ) {
+	return acf()->new_instance( $class );
+}
+
+
+/**
+*  acf_get_instance
+*
+*  description
+*
+*  @date	13/2/18
+*  @since	5.6.5
+*
+*  @param	type $var Description. Default.
+*  @return	type Description.
+*/
+
+function acf_get_instance( $class ) {
+	return acf()->get_instance( $class );
+}
+
+
 /*
 *  acf_init
 *
@@ -704,59 +773,51 @@ function acf_get_sub_array( $array, $keys ) {
 }
 
 
-/*
+/**
 *  acf_get_post_types
 *
-*  This function will return an array of available post types
+*  Returns an array of post type names.
 *
-*  @type	function
 *  @date	7/10/13
 *  @since	5.0.0
 *
-*  @param	$exclude (array)
-*  @param	$include (array)
-*  @return	(array)
+*  @param	array $args Optional. An array of key => value arguments to match against the post type objects. Default empty array.
+*  @return	array A list of post type names.
 */
 
 function acf_get_post_types( $args = array() ) {
 	
 	// vars
+	$post_types = array();
+	
+	// extract special arg
 	$exclude = acf_extract_var( $args, 'exclude', array() );
-	$return = array();
-	
-	
-	// get post types
-	$post_types = get_post_types( $args, 'objects' );
-	
-	
-	// remove ACF post types
 	$exclude[] = 'acf-field';
 	$exclude[] = 'acf-field-group';
 	
-		
+	// get post type objects
+	$objects = get_post_types( $args, 'objects' );
+	
 	// loop
-	foreach( $post_types as $i => $post_type ) {
+	foreach( $objects as $i => $object ) {
 		
 		// bail early if is exclude
 		if( in_array($i, $exclude) ) continue;
 		
-		
 		// bail early if is builtin (WP) private post type
 		// - nav_menu_item, revision, customize_changeset, etc
-		if( $post_type->_builtin && !$post_type->public ) continue;
-		
+		if( $object->_builtin && !$object->public ) continue;
 		
 		// append
-		$return[] = $i;
-		
+		$post_types[] = $i;
 	}
 	
+	// filter
+	$post_types = apply_filters('acf/get_post_types', $post_types, $args);
 	
 	// return
-	return $return;
-	
+	return $post_types;
 }
-
 
 function acf_get_pretty_post_types( $post_types = array() ) {
 	

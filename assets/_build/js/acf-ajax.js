@@ -81,6 +81,8 @@
 			// bail early if not active
 			if( !this.active ) return;
 			
+			// bail early if not for post
+			if( acf.get('screen') !== 'post' ) return;
 			
 			// bail early if no ajax
 			if( !acf.get('ajax') ) return;

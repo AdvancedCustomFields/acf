@@ -8,8 +8,8 @@
 		$input: null,
 		
 		events: {
-			'input input': '_change',
-			'change input': '_change'
+			'input input': 'onInput',
+			'change input': 'onChange'
 		},
 		
 		focus: function(){
@@ -21,30 +21,22 @@
 			
 		},
 		
-		_change: function( e ){
-			
-			// get value from changed element
-			var val = e.$el.val();
-			var type = e.$el.attr('type');
-			
-			
-			// allow for cleared value
-			val = val || 0;
-			
-			
-			// update sibling
-			if( type === 'range' ) {
-				
-				this.$input.val( val );
-				
-			} else {
-				
-				this.$range.val( val );
-				
-			}
-						
-		}
+		setValue: function( val ){
+			this.$input.val( val );
+			this.$range.val( val );
+		},
 		
+		onInput: function( e ){
+			this.setValue( e.$el.val() );
+		},
+		
+		onChange: function( e ){
+			this.setValue( e.$el.val() );
+			
+			if( e.$el.attr('type') == 'number' ) {
+				this.$range.trigger('change');
+			}
+		}
 	});
 	
 })(jQuery);

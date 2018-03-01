@@ -1,7 +1,8 @@
 (function($, undefined){
 	
-	// vars
-	var hidden = 'hidden-by-conditional-logic';
+	// constants
+	var CLASS = 'hidden-by-conditional-logic';
+	var CONTEXT = 'conditional_logic';
 	
 	// model
 	var conditionalLogic = acf.conditional_logic = acf.model.extend({
@@ -402,22 +403,34 @@
 		*  @return	$post_id (int)
 		*/
 		
-		showField: function( $field ){
+		showField: function( $field, lockKey ){
+//console.log('showField', lockKey, $field.data('name'), $field.data('type') );
+			// defaults
+			lockKey = lockKey || 'default';
 			
-			// bail ealry if not hidden
-			//if( !$field.hasClass(hidden) ) return;
+			// bail early if field is not locked (does not need to be unlocked)
+			if( !acf.isLocked($field, CONTEXT) ) {
+//console.log('- not locked, no need to show');
+				return false;
+			}
 			
-			// vars
-			var key = $field.data('key');
+			// unlock
+			acf.unlock($field, CONTEXT, lockKey);
+			
+			// bail early if field is still locked (by another field)
+			if( acf.isLocked($field, CONTEXT) ) {
+//console.log('- is still locked, cant show', acf.getLocks($field, CONTEXT));
+				return false;
+			}
 			
 			// remove class
-			$field.removeClass(hidden);
+			$field.removeClass( CLASS );
 			
 			// enable
-			acf.enable_form( $field, 'condition-'+key );
+			acf.enable_form( $field, CONTEXT );
 			
 			// action for 3rd party customization
-			acf.do_action('show_field', $field, 'conditional_logic' );
+			acf.do_action('show_field', $field, CONTEXT );
 			
 		},
 		
@@ -435,22 +448,31 @@
 		*  @return	$post_id (int)
 		*/
 		
-		hideField : function( $field ){
-			
-			// bail ealry if hidden
-			//if( $field.hasClass(hidden) ) return;
+		hideField: function( $field, lockKey ){
+//console.log('hideField', lockKey, $field.data('name'), $field.data('type') );
+			// defaults
+			lockKey = lockKey || 'default';
 			
 			// vars
-			var key = $field.data('key');
+			var isLocked = acf.isLocked($field, CONTEXT);
+			
+			// unlock
+			acf.lock($field, CONTEXT, lockKey);
+			
+			// bail early if field is already locked (by another field)
+			if( isLocked ) {
+//console.log('- is already locked');
+				return false;
+			}
 			
 			// add class
-			$field.addClass( hidden );
+			$field.addClass( CLASS );
 			
 			// disable
-			acf.disable_form( $field, 'condition-'+key );
+			acf.disable_form( $field, CONTEXT );
 						
 			// action for 3rd party customization
-			acf.do_action('hide_field', $field, 'conditional_logic' );
+			acf.do_action('hide_field', $field, CONTEXT );
 			
 		},
 				

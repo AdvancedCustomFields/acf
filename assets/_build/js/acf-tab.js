@@ -1,7 +1,7 @@
 (function($){
 	
 	// vars
-	var hidden = 'hidden-by-conditional-logic';
+	var CLASS = 'hidden-by-conditional-logic';
 	var groupIndex = 0;
 	var tabIndex = 0;
 	
@@ -326,18 +326,18 @@
 			
 			
 			// hide li
-			$li.addClass(hidden);
+			$li.addClass( CLASS );
 			
 				
 			// hide fields
 			tabs.getFields( $field ).each(function(){
-				acf.conditional_logic.hide_field( $(this) );
+				acf.conditional_logic.hide_field( $(this), key );
 			});
 			
 			
 			// select other tab if active
 			if( $li.hasClass('active') ) {
-				$wrap.find('li:not(.'+hidden+'):first a').trigger('click');
+				$wrap.find('li:not(.'+CLASS+'):first a').trigger('click');
 			}
 			
 		},
@@ -360,18 +360,18 @@
 			
 			
 			// show li
-			$li.removeClass(hidden);
+			$li.removeClass( CLASS );
 			
 			
 			// hide fields
 			tabs.getFields( $field ).each(function(){
-				acf.conditional_logic.show_field( $(this) );
+				acf.conditional_logic.show_field( $(this), key );
 			});
 			
 			
 			// select tab if no other active
 			var $active = $li.siblings('.active');
-			if( !$active.exists() || $active.hasClass(hidden) ) {
+			if( !$active.exists() || $active.hasClass(CLASS) ) {
 				tabs.toggle( $tab );
 			}
 			

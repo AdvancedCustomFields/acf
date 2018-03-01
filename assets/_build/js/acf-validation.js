@@ -634,11 +634,6 @@
 				
 			}
 			
-			
-			// action for 3rd party
-			acf.do_action('validation_failure');
-			
-			
 			// set valid (prevents fetch_complete from runing)
 			this.valid = false;
 			
@@ -649,6 +644,10 @@
 			
 			// display errors
 			this.display_errors( json.errors, $form );
+			
+			
+			// action
+			acf.do_action('validation_failure');
 			
 		},
 		

@@ -3254,6 +3254,7 @@ var acf;
 		actions: {
 			'ready':	'ready',
 			'change':	'on',
+			'submit':	'off'
 		},
 		
 		ready: function(){
@@ -3831,6 +3832,65 @@ var acf;
 	};
 	
 	
+	/**
+	*  acf.lock
+	*
+	*  Creates a lock on an element
+	*
+	*  @date	22/2/18
+	*  @since	5.6.9
+	*
+	*  @param	type $var Description. Default.
+	*  @return	type Description.
+	*/
+	
+	acf.lock = function( $el, type, key ){
+		var locks = getLocks( $el, type );
+		var i = locks.indexOf(key);
+		if( i < 0 ) {
+			locks.push( key );
+			setLocks( $el, type, locks );
+		}
+	};
+	
+	acf.unlock = function( $el, type, key ){
+		var locks = getLocks( $el, type );
+		var i = locks.indexOf(key);
+		if( i > -1 ) {
+			locks.splice(i, 1);
+			setLocks( $el, type, locks );
+		}
+	};
+	
+	acf.isLocked = function( $el, type ){
+		return ( getLocks( $el, type ).length > 0 );
+	};
+	
+	var getLocks = function( $el, type ){
+		return $el.data('acf-lock-'+type) || [];
+	};
+	
+	var setLocks = function( $el, type, locks ){
+		$el.data('acf-lock-'+type, locks);
+	}
+	
+/*
+	$(document).ready(function(){
+		
+		var $el = $('#page_template');
+		
+		console.log( 'isLocked', acf.isLocked($el, 'visible') );
+		console.log( 'getLocks', getLocks($el, 'visible') );
+		
+		console.log( 'lock', acf.lock($el, 'visible', 'me') );
+		console.log( 'getLocks', getLocks($el, 'visible') );
+		console.log( 'isLocked', acf.isLocked($el, 'visible') );
+		
+		console.log( 'unlock', acf.unlock($el, 'visible', 'me') );
+		console.log( 'isLocked', acf.isLocked($el, 'visible') );
+		
+	});
+*/
 	
 	/*
 	*  Sortable

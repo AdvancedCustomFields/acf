@@ -1040,10 +1040,15 @@ ul.acf-checkbox-list {
 			white-space: nowrap;
 		
 			// corners
-			&:first-child { border-radius: 3px 0 0 3px; }
-			&:last-child { border-radius: 0 3px 3px 0; }
+			&:first-child { 
+				border-radius: 3px 0 0 3px;
+				html[dir="rtl"] & { border-radius: 0 3px 3px 0; }
+			}
+			&:last-child { 
+				border-radius: 0 3px 3px 0;
+				html[dir="rtl"] & { border-radius: 3px 0 0 3px; }
+			}
 			&:only-child { border-radius: 3px; }
-			
 		}
 	}
 	
@@ -3546,7 +3551,6 @@ p.submit .acf-spinner {
 }
 
 
-
 /*--------------------------------------------------------------------------------------------
 *
 *	Confirm remove
@@ -3607,4 +3611,33 @@ p.submit .acf-spinner {
 /* Tabify shows hidden postboxes */
 .acf-postbox.acf-hidden {
 	display: none !important;
+}
+
+
+/*--------------------------------------------------------------------------------------------
+*
+*	Gutenberg
+*
+*--------------------------------------------------------------------------------------------*/
+
+#editor {
+	
+	.edit-post-layout__metaboxes {
+		//border-top: none;
+	}
+	
+	.editor-meta-boxes-area {
+		max-width: 80%;
+		
+		.postbox {
+			border: #e2e4e7 solid 1px;
+			border-bottom: none;
+			margin: 20px 0;
+		}
+		
+		input {
+			max-width: none;
+		}
+	}
+
 }

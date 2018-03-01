@@ -10,9 +10,9 @@
 *  @subpackage	Forms
 */
 
-if( ! class_exists('acf_form_post') ) :
+if( ! class_exists('ACF_Form_Post') ) :
 
-class acf_form_post {
+class ACF_Form_Post {
 	
 	var $post_id	= 0,
 		$typenow	= '',
@@ -256,9 +256,9 @@ class acf_form_post {
 		
 		
 		// render post data
-		acf_form_data(array( 
-			'post_id'	=> $this->post_id, 
-			'nonce'		=> 'post',
+		acf_form_data(array(
+			'screen'	=> 'post',
+			'post_id'	=> $this->post_id,
 			'ajax'		=> 1
 		));
 		
@@ -321,7 +321,7 @@ class acf_form_post {
 			
 			
 			// render
-			acf_render_fields( $this->post_id, $fields, 'div', $field_group['instruction_placement'] );
+			acf_render_fields( $fields, $this->post_id, 'div', $field_group['instruction_placement'] );
 		
 		// render replace-me div
 		} else {
@@ -442,7 +442,7 @@ if( typeof acf !== 'undefined' ) {
 				
 				
 				// render
-				acf_render_fields( $options['post_id'], $fields, 'div', $field_group['instruction_placement'] );
+				acf_render_fields( $fields, $options['post_id'], 'div', $field_group['instruction_placement'] );
 				
 				
 				$item['html'] = ob_get_clean();
@@ -625,7 +625,7 @@ if( typeof acf !== 'undefined' ) {
 			
 }
 
-new acf_form_post();
+acf_new_instance('ACF_Form_Post');
 
 endif;
 
