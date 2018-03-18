@@ -137,8 +137,11 @@ class acf_field_date_and_time_picker extends acf_field {
 			'class' 				=> 'input',
 			'value'					=> $display_value,
 		);
-		
-		
+
+		if( !empty($field['disabled']) ) {
+			$text_input['disabled'] = 'disabled';
+		}
+
 		// html
 		?>
 		<div <?php acf_esc_attr_e( $div ); ?>>

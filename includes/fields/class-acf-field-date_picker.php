@@ -148,8 +148,11 @@ class acf_field_date_picker extends acf_field {
 			'class' 				=> 'input',
 			'value'					=> $display_value,
 		);
-		
-		
+
+		if( !empty($field['disabled']) ) {
+			$text_input['disabled'] = 'disabled';
+		}
+
 		// save_format - compatibility with ACF < 5.0.0
 		if( !empty($field['save_format']) ) {
 			
