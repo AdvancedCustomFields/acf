@@ -382,9 +382,9 @@
 			
 			// hide / show
 			if( visibility ) {
-				this.showField( $target );					
+				this.showField( $target, key );					
 			} else {
-				this.hideField( $target );
+				this.hideField( $target, key );
 			}
 			
 		},
@@ -404,34 +404,23 @@
 		*/
 		
 		showField: function( $field, lockKey ){
-//console.log('showField', lockKey, $field.data('name'), $field.data('type') );
-			// defaults
-			lockKey = lockKey || 'default';
-			
-			// bail early if field is not locked (does not need to be unlocked)
-			if( !acf.isLocked($field, CONTEXT) ) {
-//console.log('- not locked, no need to show');
-				return false;
-			}
-			
-			// unlock
-			acf.unlock($field, CONTEXT, lockKey);
-			
-			// bail early if field is still locked (by another field)
-			if( acf.isLocked($field, CONTEXT) ) {
-//console.log('- is still locked, cant show', acf.getLocks($field, CONTEXT));
-				return false;
-			}
-			
-			// remove class
-			$field.removeClass( CLASS );
 			
 			// enable
-			acf.enable_form( $field, CONTEXT );
+			acf.enable( $field, lockKey );
 			
-			// action for 3rd party customization
-			acf.do_action('show_field', $field, CONTEXT );
+			// show field and store result
+			var changed = acf.show( $field, lockKey );
 			
+			// use changed to set cl class
+			if( changed ) {
+				$field.removeClass( CLASS );
+			}
+			
+			// always do action to avoid tab field bugs (fixed in 5.7)
+			acf.do_action('show_field', $field, CONTEXT);
+			
+			// return
+			return changed;
 		},
 		
 		
@@ -449,31 +438,23 @@
 		*/
 		
 		hideField: function( $field, lockKey ){
-//console.log('hideField', lockKey, $field.data('name'), $field.data('type') );
-			// defaults
-			lockKey = lockKey || 'default';
-			
-			// vars
-			var isLocked = acf.isLocked($field, CONTEXT);
-			
-			// unlock
-			acf.lock($field, CONTEXT, lockKey);
-			
-			// bail early if field is already locked (by another field)
-			if( isLocked ) {
-//console.log('- is already locked');
-				return false;
-			}
-			
-			// add class
-			$field.addClass( CLASS );
 			
 			// disable
-			acf.disable_form( $field, CONTEXT );
-						
-			// action for 3rd party customization
-			acf.do_action('hide_field', $field, CONTEXT );
+			acf.disable( $field, lockKey );
 			
+			// hide field and store result
+			var changed = acf.hide( $field, lockKey );
+			
+			// use changed to set cl class
+			if( changed ) {
+				$field.addClass( CLASS );
+			}
+			
+			// always do action to avoid tab field bugs (fixed in 5.7)
+			acf.do_action('hide_field', $field, CONTEXT);
+			
+			// return
+			return changed;
 		},
 				
 		

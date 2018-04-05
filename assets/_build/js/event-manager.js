@@ -247,6 +247,6 @@
 	};
 	
 	window.wp = window.wp || {};
-	window.wp.hooks = new EventManager();
+	window.wp.hooks = window.wp.hooks || new EventManager();
 
 } )( window );
