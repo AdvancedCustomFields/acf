@@ -85,6 +85,12 @@ class acf_form_front {
 	*/
 	
 	function validate_form( $args ) {
+
+        if(empty($args['id'])){
+            $args['id']='';
+        }else{
+            $args['id']=$args['id'];
+        }
 		
 		// defaults
 		$args = wp_parse_args( $args, array(
@@ -97,7 +103,7 @@ class acf_form_front {
 			'post_content'			=> false,
 			'form'					=> true,
 			'form_attributes'		=> array(),
-			'return'				=> add_query_arg( 'updated', 'true', acf_get_current_url() ),
+			'return'				=> add_query_arg( array('updated' => 'true', 'currentform-id' => $args['id']), acf_get_current_url() ),
 			'html_before_fields'	=> '',
 			'html_after_fields'		=> '',
 			'submit_value'			=> __("Update", 'acf'),
@@ -107,7 +113,7 @@ class acf_form_front {
 			'field_el'				=> 'div',
 			'uploader'				=> 'wp',
 			'honeypot'				=> true,
-			'html_updated_message'	=> '<div id="message" class="updated"><p>%s</p></div>', // 5.5.10
+			'html_updated_message'	=> '<div id="message" class="updated '.$args['id'].'"><p>%s</p></div>', // 5.5.10
 			'html_submit_button'	=> '<input type="submit" class="acf-button button button-primary button-large" value="%s" />', // 5.5.10
 			'html_submit_spinner'	=> '<span class="acf-spinner"></span>', // 5.5.10
 			'kses'					=> true // 5.6.5
@@ -603,6 +609,26 @@ class acf_form_front {
 			printf( $args['html_updated_message'], $args['updated_message'] );
 			
 		}
+
+        // show updated message
+        if( !empty($_GET['currentform-id']) && !empty($_GET['updated']) && $args['updated_message'] ) {
+
+            $formacfid = $_GET['currentform-id'];
+
+            ?>
+            <script>
+                var currentacf = "<?php echo $formacfid ?>";
+
+                if(jQuery(".updated").hasClass(currentacf)){
+
+                    jQuery(".currentacf").css("display","block");
+                } else {
+                    jQuery(".updated").css("display","none");
+                }
+
+            </script>
+
+        <?php  }
 		
 		
 		// uploader (always set incase of multiple forms on the page)
