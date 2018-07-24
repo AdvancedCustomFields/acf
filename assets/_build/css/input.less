@@ -56,25 +56,43 @@
 		}
 	}
 	
-	// error
-	.acf-error-message {
-		background: #F55E4F;
-		color: #fff;
-		margin: 0 0 10px;
-		display: inline-block;
-		border-radius: 3px;
-		border-left: none;
+	// notice
+	.acf-notice {
+		margin: 0 0 15px;
+		background: #edf2ff;
+		color: #2183b9;
+		border: none;
 		
-		&:after {
-			content: "";
-			display: block;
-			width: 0;
-			height: 0;
-			border: transparent 5px solid;
-			border-top-color: #F55E4F;
-			position: absolute;
-			bottom: -10px;
-			left: 10px;
+		.acf-notice-dismiss {
+			background: transparent;
+			color: inherit;
+			
+			&:hover {
+				background: #fff;
+			}
+		}
+		
+		// dismiss
+		&.-dismiss {
+			padding-right: 40px;
+		}
+		
+		// error
+		&.-error {
+			background: #ffe6e6;
+			color: #d12626;
+		}
+		
+		// success
+		&.-success {
+			background: #eefbe8;
+			color: #32a23b;
+		}
+		
+		// warning
+		&.-warning {
+			background: #fff3e6;
+			color: #d16226;
 		}
 	}
 	
@@ -356,20 +374,18 @@
 .acf-postbox {
 	position: relative;
 	
-	/* position high */
+	// position high
 	#acf_after_title-sortables & {
 		margin: 20px 0 0;
 	}
 	
-	
-	/* inside */
+	// inside
 	> .inside {
 		margin: 0 !important; /* override WP style - do not delete - you have tried this before */
 		padding: 0 !important; /* override WP style - do not delete - you have tried this before */
 	}
 	
-	
-	/* hndle */
+	// hndle
 	> .hndle {
 		
 		/* edit field group */
@@ -386,15 +402,14 @@
 				color: #777777;
 			}
 		}
-		
-		&:hover .acf-hndle-cog,
-		&.hover .acf-hndle-cog {
-			display: block;
-		}
-		
-
 	}
 	
+	// hover
+	&:hover > .hndle .acf-hndle-cog {
+		display: block;
+	}
+	
+	// replace
 	.acf-replace-with-fields {
 		padding: 15px;
 		text-align: center;
@@ -1022,7 +1037,7 @@ ul.acf-checkbox-list {
 	}
 	
 	input {
-		display: none;
+		display: none !important;
 	}
 	
 	
@@ -1722,6 +1737,10 @@ html[dir="rtl"] .pac-container .pac-item {
 				box-shadow: none;
 			}
 			
+			&:empty {
+				display: none;
+			}
+			
 		}
 		
 		
@@ -2123,7 +2142,7 @@ html[dir="rtl"] .pac-container .pac-item {
 		border-bottom: #DFDFDF solid 1px;
 		padding: 5px 10px;
 		
-		h4, input[type="text"] {
+		.input-search {
 			margin: 0;
 			font-size: 14px;
 			line-height: 30px;
@@ -2136,20 +2155,10 @@ html[dir="rtl"] .pac-container .pac-item {
 			cursor: text;
 		}
 		
-		.search {
-			height: auto;
-			border: 0 none;
-		}
-		
 		.acf-actions {
 			padding: 6px;
 		}
-		
-		&:hover .acf-actions {
-			display: block;
-		}
 	}
-	
 	
 	.canvas {
 		position: relative;
@@ -2169,10 +2178,7 @@ html[dir="rtl"] .pac-container .pac-item {
 		}
 		
 		.acf-icon.-picture {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			margin: -21px 0 0 -21px;
+			.centered;
 			z-index: 0;
 			
 			height: 42px;
@@ -2181,24 +2187,8 @@ html[dir="rtl"] .pac-container .pac-item {
 			color: #999;
 		}
 		
-		.canvas-loading {
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			z-index: 2;
-			
+		.acf-loading-overlay {
 			background: rgba(255,255,255,0.9);
-			display: none;
-			z-index: 2;
-			
-			i {
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				margin: -10px 0 0 -10px;
-			}
 		}
 		
 		.canvas-error {
@@ -2218,30 +2208,22 @@ html[dir="rtl"] .pac-container .pac-item {
 		}
 	}
 	
-	&.has-value .canvas {
-		min-height: 0;
+	// has value
+	&.has-value {
+		.canvas {
+			min-height: 50;
+		}
+		
+		.input-search {
+			font-weight: bold;
+		}
+		
+		.title:hover .acf-actions {
+			display: block;
+		}
 	}
 
 }
-
-
-/* states */
-.acf-oembed .title-value { display: none; }
-.acf-oembed .title-search { display: block; }
-
-.acf-oembed.has-value .title-value { display: block; }
-.acf-oembed.has-value .title-search { display: none; }
-.acf-oembed.has-value .canvas .acf-icon { display: none; }
-
-.acf-oembed.is-editing .title-value { display: none; }
-.acf-oembed.is-editing .title-search { display: block; }
-
-.acf-oembed.is-loading .canvas-loading { display: block; }
-.acf-oembed.is-loading .title .acf-icon { display: none; }
-
-.acf-oembed.has-error .canvas-error { display: block; }
-.acf-oembed.has-error .canvas .acf-icon { display: none; }
-
 
 /*--------------------------------------------------------------------------------------------
 *
@@ -2461,13 +2443,6 @@ html[dir="rtl"] .pac-container .pac-item {
 .acf-taxonomy-field {
 	position: relative;
 	
-	ul {
-		
-		li {
-			
-		}
-	}
-	
 	.categorychecklist-holder {
 		border: #DFDFDF solid 1px;
 		border-radius: 3px;
@@ -2487,22 +2462,18 @@ html[dir="rtl"] .pac-container .pac-item {
 	
 	/* hover */
 	&:hover {
-		
 		.acf-actions {
 			display: block;
 		}
-		
 	}
 	
 	
 	/* select */
-	&[data-type="select"] {
-		
+	&[data-ftype="select"] {
 		.acf-actions {
 			padding: 0;
 			margin: -9px;
 		}
-		
 	}
 	
 }
@@ -2958,22 +2929,6 @@ html[dir="rtl"] .acf-accordion {
 	}
 	
 	
-	/* fix % margin which causes .acf-uploadedTo to drop down below select */
-	select.attachment-filters {
-		margin-right: 6px !important;
-		vertical-align: middle;
-	}
-	
-	.acf-uploadedTo {
-		line-height: 28px;
-		height: 28px;
-		display: inline-block;
-		position: relative;
-		margin: 11px 6px 0 0;
-		vertical-align: middle;
-	}
-	
-	
 	/* allow line breaks in upload error */
 	.upload-error-message {
 		white-space: pre-wrap;
@@ -3071,6 +3026,11 @@ html[dir="rtl"] .acf-accordion {
 	.is-open { display: none; }
 	.is-closed { display: block; }
 	
+	
+	/* mobile sm */
+	@media (max-width: @sm) {
+		display: none;
+	}
 }
 
 
@@ -3189,6 +3149,22 @@ html[dir="rtl"] .acf-accordion {
 		
 	}
 	
+	// only allow for devices larger than mobile
+	@media screen and (min-width: 1024px) {
+		
+		// - requires long selector to override WP core
+		.media-modal-content .media-frame .media-toolbar-secondary {
+			max-width: none;
+			
+			select.attachment-filters {
+				width: auto;
+				min-width: 150px;
+				max-width: none;
+				margin: 11px 6px 0 0;
+				vertical-align: middle;
+			}
+		}
+	}
 }
 
 
@@ -3242,13 +3218,7 @@ html[dir="rtl"] .acf-accordion {
 	
 	/* tidy up incorrect distance */
 	.media-frame-content {
-	    top: 56px;
-	}
-	
-	
-	/* WP4 */
-	body.major-4 & .media-frame-content {
-		top: 50px;
+	    top: 50px;
 	}
 	
 	
@@ -3369,7 +3339,7 @@ html[dir="rtl"] .acf-accordion {
 		/* label */
 		> .acf-label {
 			padding: 20px 10px 20px 0;
-		    width: 200px;
+		    width: 210px;
 		    
 		    /* rtl */
 			html[dir="rtl"] & {
@@ -3416,6 +3386,58 @@ html[dir="rtl"] .acf-accordion {
 	
 }
 
+#your-profile,
+#createuser {
+	
+	/* override for user css */
+	.acf-field input[type="text"],
+	.acf-field input[type="password"],
+	.acf-field input[type="number"],
+	.acf-field input[type="search"],
+	.acf-field input[type="email"],
+	.acf-field input[type="url"],
+	.acf-field select {
+	    max-width: 25em;
+	}
+	
+	.acf-field textarea {
+		max-width: 500px;
+	}
+	
+	
+	/* allow sub fields to display correctly */
+	.acf-field .acf-field input[type="text"],
+	.acf-field .acf-field input[type="password"],
+	.acf-field .acf-field input[type="number"],
+	.acf-field .acf-field input[type="search"],
+	.acf-field .acf-field input[type="email"],
+	.acf-field .acf-field input[type="url"],
+	.acf-field .acf-field textarea,
+	.acf-field .acf-field select {
+	    max-width: none;
+	}
+}
+
+#registerform {
+	
+	h2 {
+		margin: 1em 0;
+	}
+	
+	.acf-field .acf-label {
+		margin-bottom: 0;
+		
+		label {
+			font-weight: normal;
+			font-size: 14px;
+		}
+	}
+	
+	p.submit {
+		text-align: right;
+	}
+
+}
 
 /*--------------------------------------------------------------------------------------------
 *
@@ -3520,11 +3542,6 @@ p.submit .acf-spinner {
 		}
 	}
 }
-
-.widget form > .acf-error-message {
-	margin-top: 15px;
-}
-
 
 /*--------------------------------------------------------------------------------------------
 *

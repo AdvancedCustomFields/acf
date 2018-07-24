@@ -1,3491 +1,987 @@
-var acf;
-
-(function($){
-	
-	
-	/*
-	*  exists
-	*
-	*  This function will return true if a jQuery selection exists
-	*
-	*  @type	function
-	*  @date	8/09/2014
-	*  @since	5.0.0
-	*
-	*  @param	n/a
-	*  @return	(boolean)
-	*/
-	
-	$.fn.exists = function() {
-	
-		return $(this).length>0;
+(function($, undefined){
 		
-	};
-	
-	
-	/*
-	*  outerHTML
-	*
-	*  This function will return a string containing the HTML of the selected element
-	*
-	*  @type	function
-	*  @date	19/11/2013
-	*  @since	5.0.0
-	*
-	*  @param	$.fn
-	*  @return	(string)
-	*/
-	
-	$.fn.outerHTML = function() {
-	    
-	    return $(this).get(0).outerHTML;
-	    
-	};
-	
-	
-	acf = {
-		
-		// vars
-		l10n:	{},
-		o:		{},
-		
-		
-		/*
-		*  update
-		*
-		*  This function will update a value found in acf.o
-		*
-		*  @type	function
-		*  @date	8/09/2014
-		*  @since	5.0.0
-		*
-		*  @param	k (string) the key
-		*  @param	v (mixed) the value
-		*  @return	n/a
-		*/
-		
-		update: function( k, v ){
-				
-			this.o[ k ] = v;
-			
-		},
-		
-		
-		/*
-		*  get
-		*
-		*  This function will return a value found in acf.o
-		*
-		*  @type	function
-		*  @date	8/09/2014
-		*  @since	5.0.0
-		*
-		*  @param	k (string) the key
-		*  @return	v (mixed) the value
-		*/
-		
-		get: function( k ){
-			
-			if( typeof this.o[ k ] !== 'undefined' ) {
-				
-				return this.o[ k ];
-				
-			}
-			
-			return null;
-			
-		},
-		
-		
-		/*
-		*  _e
-		*
-		*  This functiln will return a string found in acf.l10n
-		*
-		*  @type	function
-		*  @date	8/09/2014
-		*  @since	5.0.0
-		*
-		*  @param	k1 (string) the first key to look for
-		*  @param	k2 (string) the second key to look for
-		*  @return	string (string)
-		*/
-		
-		_e: function( k1, k2 ){
-			
-			// defaults
-			k2 = k2 || false;
-			
-			
-			// get context
-			var string = this.l10n[ k1 ] || '';
-			
-			
-			// get string
-			if( k2 ) {
-			
-				string = string[ k2 ] || '';
-				
-			}
-			
-			
-			// return
-			return string;
-			
-		},
-		
-		
-		/*
-		*  add_action
-		*
-		*  This function uses wp.hooks to mimics WP add_action
-		*
-		*  @type	function
-		*  @date	8/09/2014
-		*  @since	5.0.0
-		*
-		*  @param	
-		*  @return
-		*/
-		
-		add_action: function() {
-			
-			// vars
-			var a = arguments[0].split(' '),
-				l = a.length;
-			
-			
-			// loop
-			for( var i = 0; i < l; i++) {
-				
-/*
-				// allow for special actions
-				if( a[i].indexOf('initialize') !== -1 ) {
-					
-					a.push( a[i].replace('initialize', 'ready') );
-					a.push( a[i].replace('initialize', 'append') );
-					l = a.length;
-					
-					continue;
-				}
-*/
-				
-				
-				// prefix action
-				arguments[0] = 'acf/' + a[i];
-			
-			
-				// add
-				wp.hooks.addAction.apply(this, arguments);
-					
-			}
-			
-			
-			// return
-			return this;
-			
-		},
-		
-		
-		/*
-		*  remove_action
-		*
-		*  This function uses wp.hooks to mimics WP remove_action
-		*
-		*  @type	function
-		*  @date	8/09/2014
-		*  @since	5.0.0
-		*
-		*  @param	
-		*  @return
-		*/
-		
-		remove_action: function() {
-			
-			// prefix action
-			arguments[0] = 'acf/' + arguments[0];
-			
-			wp.hooks.removeAction.apply(this, arguments);
-			
-			return this;
-			
-		},
-		
-		
-		/*
-		*  do_action
-		*
-		*  This function uses wp.hooks to mimics WP do_action
-		*
-		*  @type	function
-		*  @date	8/09/2014
-		*  @since	5.0.0
-		*
-		*  @param	
-		*  @return
-		*/
-		
-		do_action: function() { //console.log('acf.do_action(%o)', arguments);
-			
-			// prefix action
-			arguments[0] = 'acf/' + arguments[0];
-			
-			wp.hooks.doAction.apply(this, arguments);
-			
-			return this;
-			
-		},
-		
-		
-		/*
-		*  add_filter
-		*
-		*  This function uses wp.hooks to mimics WP add_filter
-		*
-		*  @type	function
-		*  @date	8/09/2014
-		*  @since	5.0.0
-		*
-		*  @param	
-		*  @return
-		*/
-		
-		add_filter: function() {
-			
-			// prefix action
-			arguments[0] = 'acf/' + arguments[0];
-			
-			wp.hooks.addFilter.apply(this, arguments);
-			
-			return this;
-			
-		},
-		
-		
-		/*
-		*  remove_filter
-		*
-		*  This function uses wp.hooks to mimics WP remove_filter
-		*
-		*  @type	function
-		*  @date	8/09/2014
-		*  @since	5.0.0
-		*
-		*  @param	
-		*  @return
-		*/
-		
-		remove_filter: function() {
-			
-			// prefix action
-			arguments[0] = 'acf/' + arguments[0];
-			
-			wp.hooks.removeFilter.apply(this, arguments);
-			
-			return this;
-			
-		},
-		
-		
-		/*
-		*  apply_filters
-		*
-		*  This function uses wp.hooks to mimics WP apply_filters
-		*
-		*  @type	function
-		*  @date	8/09/2014
-		*  @since	5.0.0
-		*
-		*  @param	
-		*  @return
-		*/
-		
-		apply_filters: function() { //console.log('acf.apply_filters(%o)', arguments);
-			
-			// prefix action
-			arguments[0] = 'acf/' + arguments[0];
-			
-			return wp.hooks.applyFilters.apply(this, arguments);
-			
-		},
-		
-		
-		/*
-		*  get_selector
-		*
-		*  This function will return a valid selector for finding a field object
-		*
-		*  @type	function
-		*  @date	15/01/2015
-		*  @since	5.1.5
-		*
-		*  @param	s (string)
-		*  @return	(string)
-		*/
-		
-		get_selector: function( s ) {
-			
-			// defaults
-			s = s || '';
-			
-			
-			// vars
-			var selector = '.acf-field';
-			
-			
-			// compatibility with object
-			if( $.isPlainObject(s) ) {
-				
-				if( $.isEmptyObject(s) ) {
-				
-					s = '';
-					
-				} else {
-					
-					for( k in s ) { s = s[k]; break; }
-					
-				}
-				
-			}
-
-
-			// search
-			if( s ) {
-				
-				// append
-				selector += '-' + s;
-				
-				
-				// replace underscores (split/join replaces all and is faster than regex!)
-				selector = selector.split('_').join('-');
-				
-				
-				// remove potential double up
-				selector = selector.split('field-field-').join('field-');
-			
-			}
-			
-			
-			// return
-			return selector;
-			
-		},
-		
-		
-		/*
-		*  get_fields
-		*
-		*  This function will return a jQuery selection of fields
-		*
-		*  @type	function
-		*  @date	8/09/2014
-		*  @since	5.0.0
-		*
-		*  @param	args (object)
-		*  @param	$el (jQuery) element to look within
-		*  @param	all (boolean) return all fields or allow filtering (for repeater)
-		*  @return	$fields (jQuery)
-		*/
-		
-		get_fields: function( s, $el, all ){
-			
-			// debug
-			//console.log( 'acf.get_fields(%o, %o, %o)', args, $el, all );
-			//console.time("acf.get_fields");
-			
-			
-			// defaults
-			s = s || '';
-			$el = $el || false;
-			all = all || false;
-			
-			
-			// vars
-			var selector = this.get_selector(s);
-			
-			
-			// get child fields
-			var $fields = $( selector, $el );
-			
-			
-			// append context to fields if also matches selector.
-			// * Required for field group 'change_filed_type' append $tr to work
-			if( $el !== false ) {
-				
-				$el.each(function(){
-					
-					if( $(this).is(selector) ) {
-					
-						$fields = $fields.add( $(this) );
-						
-					}
-					
-				});
-				
-			}
-			
-			
-			// filter out fields
-			if( !all ) {
-				
-				// remove clone fields
-				$fields = $fields.not('.acf-clone .acf-field');
-				
-				
-				// filter
-				$fields = acf.apply_filters('get_fields', $fields);
-								
-			}
-			
-			
-			//console.log('get_fields(%o, %o, %o) %o', s, $el, all, $fields);
-			//console.log('acf.get_fields(%o):', this.get_selector(s) );
-			//console.timeEnd("acf.get_fields");
-			
-			
-			// return
-			return $fields;
-							
-		},
-		
-		
-		/*
-		*  get_field
-		*
-		*  This function will return a jQuery selection based on a field key
-		*
-		*  @type	function
-		*  @date	8/09/2014
-		*  @since	5.0.0
-		*
-		*  @param	field_key (string)
-		*  @param	$el (jQuery) element to look within
-		*  @return	$field (jQuery)
-		*/
-		
-		get_field: function( s, $el ){
-			
-			// defaults
-			s = s || '';
-			$el = $el || false;
-			
-			
-			// get fields
-			var $fields = this.get_fields(s, $el, true);
-			
-			
-			// check if exists
-			if( $fields.exists() ) {
-			
-				return $fields.first();
-				
-			}
-			
-			
-			// return
-			return false;
-			
-		},
-		
-		
-		/*
-		*  get_closest_field
-		*
-		*  This function will return the closest parent field
-		*
-		*  @type	function
-		*  @date	8/09/2014
-		*  @since	5.0.0
-		*
-		*  @param	$el (jQuery) element to start from
-		*  @param	args (object)
-		*  @return	$field (jQuery)
-		*/
-		
-		get_closest_field : function( $el, s ){
-			
-			// defaults
-			s = s || '';
-			
-			
-			// return
-			return $el.closest( this.get_selector(s) );
-			
-		},
-		
-		
-		/*
-		*  get_field_wrap
-		*
-		*  This function will return the closest parent field
-		*
-		*  @type	function
-		*  @date	8/09/2014
-		*  @since	5.0.0
-		*
-		*  @param	$el (jQuery) element to start from
-		*  @return	$field (jQuery)
-		*/
-		
-		get_field_wrap: function( $el ){
-			
-			return $el.closest( this.get_selector() );
-			
-		},
-		
-		
-		/*
-		*  get_field_key
-		*
-		*  This function will return the field's key
-		*
-		*  @type	function
-		*  @date	8/09/2014
-		*  @since	5.0.0
-		*
-		*  @param	$field (jQuery)
-		*  @return	(string)
-		*/
-		
-		get_field_key: function( $field ){
-		
-			return $field.data('key');
-			
-		},
-		
-		
-		/*
-		*  get_field_type
-		*
-		*  This function will return the field's type
-		*
-		*  @type	function
-		*  @date	8/09/2014
-		*  @since	5.0.0
-		*
-		*  @param	$field (jQuery)
-		*  @return	(string)
-		*/
-		
-		get_field_type: function( $field ){
-		
-			return $field.data('type');
-			
-		},
-		
-		
-		/*
-		*  get_data
-		*
-		*  This function will return attribute data for a given elemnt
-		*
-		*  @type	function
-		*  @date	8/09/2014
-		*  @since	5.0.0
-		*
-		*  @param	$el (jQuery)
-		*  @param	name (mixed)
-		*  @return	(mixed)
-		*/
-		
-		get_data: function( $el, defaults ){
-			
-			// get data
-			var data = $el.data();
-			
-			
-			// defaults
-			if( typeof defaults === 'object' ) {
-				
-				data = this.parse_args( data, defaults );
-				
-			}
-			
-			
-			// return
-			return data;
-							
-		},
-		
-		
-		/*
-		*  get_uniqid
-		*
-		*  This function will return a unique string ID
-		*
-		*  @type	function
-		*  @date	8/09/2014
-		*  @since	5.0.0
-		*
-		*  @param	prefix (string)
-		*  @param	more_entropy (boolean)
-		*  @return	(string)
-		*/
-		
-		get_uniqid : function( prefix, more_entropy ){
-		
-			// + original by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
-			// + revised by: Kankrelune (http://www.webfaktory.info/)
-			// % note 1: Uses an internal counter (in php_js global) to avoid collision
-			// * example 1: uniqid();
-			// * returns 1: 'a30285b160c14'
-			// * example 2: uniqid('foo');
-			// * returns 2: 'fooa30285b1cd361'
-			// * example 3: uniqid('bar', true);
-			// * returns 3: 'bara20285b23dfd1.31879087'
-			if (typeof prefix === 'undefined') {
-				prefix = "";
-			}
-			
-			var retId;
-			var formatSeed = function (seed, reqWidth) {
-				seed = parseInt(seed, 10).toString(16); // to hex str
-				if (reqWidth < seed.length) { // so long we split
-					return seed.slice(seed.length - reqWidth);
-				}
-				if (reqWidth > seed.length) { // so short we pad
-					return Array(1 + (reqWidth - seed.length)).join('0') + seed;
-				}
-				return seed;
-			};
-			
-			// BEGIN REDUNDANT
-			if (!this.php_js) {
-				this.php_js = {};
-			}
-			// END REDUNDANT
-			if (!this.php_js.uniqidSeed) { // init seed with big random int
-				this.php_js.uniqidSeed = Math.floor(Math.random() * 0x75bcd15);
-			}
-			this.php_js.uniqidSeed++;
-			
-			retId = prefix; // start with prefix, add current milliseconds hex string
-			retId += formatSeed(parseInt(new Date().getTime() / 1000, 10), 8);
-			retId += formatSeed(this.php_js.uniqidSeed, 5); // add seed hex string
-			if (more_entropy) {
-				// for more entropy we add a float lower to 10
-				retId += (Math.random() * 10).toFixed(8).toString();
-			}
-			
-			return retId;
-			
-		},
-		
-		
-		/*
-		*  serialize_form
-		*
-		*  This function will create an object of data containing all form inputs within an element
-		*
-		*  @type	function
-		*  @date	8/09/2014
-		*  @since	5.0.0
-		*
-		*  @param	$el (jQuery selection)
-		*  @return	$post_id (int)
-		*/
-		
-		serialize_form: function(){
-			
-			return this.serialize.apply( this, arguments );
-			
-		},
-		
-		serialize: function( $el, prefix ){
-			
-			// defaults
-			prefix = prefix || '';
-			
-			
-			// vars
-			var data = {};
-			var names = {};
-			var values = $el.find('select, textarea, input').serializeArray();
-			
-			
-			// populate data
-			$.each( values, function( i, pair ) {
-				
-				// vars
-				var name = pair.name;
-				var value = pair.value;
-				
-				
-				// prefix
-				if( prefix ) {
-					
-					// bail early if does not contain
-					if( name.indexOf(prefix) !== 0 ) return;
-					
-					
-					// remove prefix
-					name = name.slice(prefix.length);
-					
-					
-					// name must not start as array piece
-					if( name.slice(0, 1) == '[' ) {
-						
-						name = name.slice(1).replace(']', '');
-						
-					}
-					
-				}
-				
-				
-				// initiate name
-				if( name.slice(-2) === '[]' ) {
-					
-					// remove []
-					name = name.slice(0, -2);
-					
-					
-					// initiate counter
-					if( typeof names[ name ] === 'undefined'){
-						
-						names[ name ] = -1;
-						
-					}
-					
-					
-					// increase counter
-					names[ name ]++;
-					
-					
-					// add key
-					name += '[' + names[ name ] +']';
-				}
-				
-				
-				// append to data
-				data[ name ] = value;
-				
-			});
-			
-			
-			//console.log('serialize', data);
-			
-			
-			// return
-			return data;
-			
-		},
-		
-		
-		/*
-		*  remove_tr
-		*
-		*  This function will remove a tr element with animation
-		*
-		*  @type	function
-		*  @date	8/09/2014
-		*  @since	5.0.0
-		*
-		*  @param	$tr (jQuery selection)
-		*  @param	callback (function) runs on complete
-		*  @return	n/a
-		*/
-		
-		remove_tr : function( $tr, callback ){
-			
-			// vars
-			var height = $tr.height(),
-				children = $tr.children().length;
-			
-			
-			// add class
-			$tr.addClass('acf-remove-element');
-			
-			
-			// after animation
-			setTimeout(function(){
-				
-				// remove class
-				$tr.removeClass('acf-remove-element');
-				
-				
-				// vars
-				$tr.html('<td style="padding:0; height:' + height + 'px" colspan="' + children + '"></td>');
-				
-				
-				$tr.children('td').animate({ height : 0}, 250, function(){
-					
-					$tr.remove();
-					
-					if( typeof(callback) == 'function' ) {
-					
-						callback();
-					
-					}
-					
-					
-				});
-				
-					
-			}, 250);
-			
-		},
-		
-		
-		/*
-		*  remove_el
-		*
-		*  This function will remove an element with animation
-		*
-		*  @type	function
-		*  @date	8/09/2014
-		*  @since	5.0.0
-		*
-		*  @param	$el (jQuery selection)
-		*  @param	callback (function) runs on complete
-		*  @param	end_height (int)
-		*  @return	n/a
-		*/
-		
-		remove_el : function( $el, callback, end_height ){
-			
-			// defaults
-			end_height = end_height || 0;
-			
-			
-			// vars
-			var height = $el.height(),
-				width = $el.width(),
-				margin = $el.css('margin'),
-				outer_height = $el.outerHeight(true);
-			
-			
-			// action
-			acf.do_action('remove', $el);
-			
-			
-			// create wrap
-			$el.wrap('<div class="acf-temp-remove" style="height:' + outer_height + 'px"></div>');
-			var $wrap = $el.parent();
-			
-			
-			// set pos
-			$el.css({
-				height:		height,
-				width:		width,
-				margin:		margin,
-				position:	'absolute'
-			});
-			
-			
-			// fade
-			setTimeout(function(){
-				
-				// aniamte
-				$wrap.css({
-					opacity:	0,
-					height:		end_height
-				});
-				
-			}, 50);
-			
-			
-			// animate complete
-			setTimeout(function(){
-				
-				// remove wrap
-				$wrap.remove();
-				
-				
-				// callback
-				if( typeof(callback) == 'function' ) {
-					callback.apply(this, arguments);
-				}
-			
-			}, 301);
-			
-		},
-		
-		
-		/*
-		*  isset
-		*
-		*  This function will return true if an object key exists
-		*
-		*  @type	function
-		*  @date	8/09/2014
-		*  @since	5.0.0
-		*
-		*  @param	(object)
-		*  @param	key1 (string)
-		*  @param	key2 (string)
-		*  @param	...
-		*  @return	(boolean)
-		*/
-		
-		isset : function(){
-			
-			var a = arguments,
-		        l = a.length,
-		        c = null,
-		        undef;
-			
-		    if (l === 0) {
-		        throw new Error('Empty isset');
-		    }
-			
-			c = a[0];
-			
-		    for (i = 1; i < l; i++) {
-		    	
-		        if (a[i] === undef || c[ a[i] ] === undef) {
-		            return false;
-		        }
-		        
-		        c = c[ a[i] ];
-		        
-		    }
-		    
-		    return true;	
-			
-		},
-		
-		
-		/*
-		*  maybe_get
-		*
-		*  This function will attempt to return a value and return null if not possible
-		*
-		*  @type	function
-		*  @date	8/09/2014
-		*  @since	5.0.0
-		*
-		*  @param	obj (object) the array to look within
-		*  @param	key (key) the array key to look for. Nested values may be found using '/'
-		*  @param	value (mixed) the value returned if not found
-		*  @return	(mixed)
-		*/
-		
-		maybe_get: function( obj, key, value ){
-			
-			// default
-			if( typeof value == 'undefined' ) value = null;
-						
-			
-			// convert type to string and split
-			keys = String(key).split('.');
-			
-			
-			// loop through keys
-			for( var i in keys ) {
-				
-				// vars
-				var key = keys[i];
-				
-				
-				// bail ealry if not set
-				if( typeof obj[ key ] === 'undefined' ) {
-					
-					return value;
-					
-				}
-				
-				
-				// update obj
-				obj = obj[ key ];
-				
-			}
-			
-			
-			// return
-			return obj;
-			
-		},
-		
-		
-		/*
-		*  open_popup
-		*
-		*  This function will create and open a popup modal
-		*
-		*  @type	function
-		*  @date	8/09/2014
-		*  @since	5.0.0
-		*
-		*  @param	args (object)
-		*  @return	n/a
-		*/
-		
-		open_popup : function( args ){
-			
-			// vars
-			$popup = $('body > #acf-popup');
-			
-			
-			// already exists?
-			if( $popup.exists() ) {
-			
-				return update_popup(args);
-				
-			}
-			
-			
-			// template
-			var tmpl = [
-				'<div id="acf-popup">',
-					'<div class="acf-popup-box acf-box">',
-						'<div class="title"><h3></h3><a href="#" class="acf-icon -cancel grey acf-close-popup"></a></div>',
-						'<div class="inner"></div>',
-						'<div class="loading"><i class="acf-loading"></i></div>',
-					'</div>',
-					'<div class="bg"></div>',
-				'</div>'
-			].join('');
-			
-			
-			// append
-			$('body').append( tmpl );
-			
-			
-			$('#acf-popup').on('click', '.bg, .acf-close-popup', function( e ){
-				
-				e.preventDefault();
-				
-				acf.close_popup();
-				
-			});
-			
-			
-			// update
-			return this.update_popup(args);
-			
-		},
-		
-		
-		/*
-		*  update_popup
-		*
-		*  This function will update the content within a popup modal
-		*
-		*  @type	function
-		*  @date	8/09/2014
-		*  @since	5.0.0
-		*
-		*  @param	args (object)
-		*  @return	n/a
-		*/
-		
-		update_popup : function( args ){
-			
-			// vars
-			$popup = $('#acf-popup');
-			
-			
-			// validate
-			if( !$popup.exists() )
-			{
-				return false
-			}
-			
-			
-			// defaults
-			args = $.extend({}, {
-				title	: '',
-				content : '',
-				width	: 0,
-				height	: 0,
-				loading : false
-			}, args);
-			
-			
-			if( args.title ) {
-			
-				$popup.find('.title h3').html( args.title );
-			
-			}
-			
-			if( args.content ) {
-				
-				$inner = $popup.find('.inner:first');
-				
-				$inner.html( args.content );
-				
-				acf.do_action('append', $inner);
-				
-				// update height
-				$inner.attr('style', 'position: relative;');
-				args.height = $inner.outerHeight();
-				$inner.removeAttr('style');
-				
-			}
-			
-			if( args.width ) {
-			
-				$popup.find('.acf-popup-box').css({
-					'width'			: args.width,
-					'margin-left'	: 0 - (args.width / 2)
-				});
-				
-			}
-			
-			if( args.height ) {
-				
-				// add h3 height (44)
-				args.height += 44;
-				
-				$popup.find('.acf-popup-box').css({
-					'height'		: args.height,
-					'margin-top'	: 0 - (args.height / 2)
-				});	
-				
-			}
-			
-			
-			if( args.loading ) {
-			
-				$popup.find('.loading').show();
-				
-			} else {
-			
-				$popup.find('.loading').hide();
-				
-			}
-			
-			return $popup;
-		},
-		
-		
-		/*
-		*  close_popup
-		*
-		*  This function will close and remove a popup modal
-		*
-		*  @type	function
-		*  @date	8/09/2014
-		*  @since	5.0.0
-		*
-		*  @param	n/a
-		*  @return	n/a
-		*/
-		
-		close_popup : function(){
-			
-			// vars
-			$popup = $('#acf-popup');
-			
-			
-			// already exists?
-			if( $popup.exists() )
-			{
-				$popup.remove();
-			}
-			
-		},
-		
-		
-		/*
-		*  update_user_setting
-		*
-		*  This function will send an AJAX request to update a user setting
-		*
-		*  @type	function
-		*  @date	8/09/2014
-		*  @since	5.0.0
-		*
-		*  @param	$post_id (int)
-		*  @return	$post_id (int)
-		*/
-		
-		update_user_setting : function( name, value ) {
-			
-			// ajax
-			$.ajax({
-		    	url			: acf.get('ajaxurl'),
-				dataType	: 'html',
-				type		: 'post',
-				data		: acf.prepare_for_ajax({
-					'action'	: 'acf/update_user_setting',
-					'name'		: name,
-					'value'		: value
-				})
-			});
-			
-		},
-		
-		
-		/*
-		*  prepare_for_ajax
-		*
-		*  This function will prepare data for an AJAX request
-		*
-		*  @type	function
-		*  @date	8/09/2014
-		*  @since	5.0.0
-		*
-		*  @param	args (object)
-		*  @return	args
-		*/
-		
-		prepare_for_ajax : function( args ) {
-			
-			// vars
-			var data = {};
-			
-			
-			// $.ajax() expects all args to be 'non-nested'
-			$.each(args, function(k,v){
-				
-				// object
-				if( $.isPlainObject(v) && !$.isEmptyObject(v) ) {
-					
-					// loop
-					$.each(v, function(k2,v2){
-						
-						// convert string
-						k2 = k2 + '';
-						
-						
-						// vars
-						var i = k2.indexOf('[');
-						
-						
-						// starts with [
-						if( i == 0 ) {
-							
-							k2 = k + k2;
-						
-						// contains [	
-						} else if( i > 0 ) {
-							
-							k2 = k + '[' + k2.slice(0, i) + ']' + k2.slice(i);
-						
-						// no [	
-						} else {
-							
-							k2 = k + '[' + k2 + ']';
-							
-						}
-						
-						
-						// append
-						data[k2] = v2;
-							
-					});
-				
-				// else	
-				} else {
-					
-					data[k] = v;
-					
-				}
-				
-			});
-			
-			
-			// required
-			data.nonce = acf.get('nonce');
-			data.post_id = acf.get('post_id');
-			
-			
-			// filter for 3rd party customization
-			data = acf.apply_filters('prepare_for_ajax', data);	
-			
-			
-			// return
-			return data;
-			
-		},
-		
-		
-		/*
-		*  is_ajax_success
-		*
-		*  This function will return true for a successful WP AJAX response
-		*
-		*  @type	function
-		*  @date	8/09/2014
-		*  @since	5.0.0
-		*
-		*  @param	json (object)
-		*  @return	(boolean)
-		*/
-		
-		is_ajax_success : function( json ) {
-			
-			if( json && json.success ) {
-				
-				return true;
-				
-			}
-			
-			return false;
-			
-		},
-		
-		
-		/*
-		*  get_ajax_message
-		*
-		*  This function will return an object containing error/message information
-		*
-		*  @type	function
-		*  @date	8/09/2014
-		*  @since	5.0.0
-		*
-		*  @param	json (object)
-		*  @return	(boolean)
-		*/
-		
-		get_ajax_message: function( json ) {
-			
-			// vars
-			var message = {
-				text: '',
-				type: 'error'
-			};
-			
-			
-			// bail early if no json
-			if( !json ) {
-				
-				return message;
-				
-			}
-			
-			
-			// PHP error (too may themes will have warnings / errors. Don't show these in ACF taxonomy popup)
-/*
-			if( typeof json === 'string' ) {
-				
-				message.text = json;
-				return message;
-					
-			}
-*/
-			
-			
-			// success
-			if( json.success ) {
-				
-				message.type = 'success';
-
-			}
-			
-						
-			// message
-			if( json.data && json.data.message ) {
-				
-				message.text = json.data.message;
-				
-			}
-			
-			
-			// error
-			if( json.data && json.data.error ) {
-				
-				message.text = json.data.error;
-				
-			}
-			
-			
-			// return
-			return message;
-			
-		},
-		
-		
-		/*
-		*  is_in_view
-		*
-		*  This function will return true if a jQuery element is visible in browser
-		*
-		*  @type	function
-		*  @date	8/09/2014
-		*  @since	5.0.0
-		*
-		*  @param	$el (jQuery)
-		*  @return	(boolean)
-		*/
-		
-		is_in_view: function( $el ) {
-			
-			// vars
-		    var elemTop = $el.offset().top,
-		    	elemBottom = elemTop + $el.height();
-		    
-		    
-			// bail early if hidden
-			if( elemTop === elemBottom ) {
-				
-				return false;
-				
-			}
-			
-			
-			// more vars
-			var docViewTop = $(window).scrollTop(),
-				docViewBottom = docViewTop + $(window).height();
-			
-			
-			// return
-		    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
-					
-		},
-		
-		
-		/*
-		*  val
-		*
-		*  This function will update an elements value and trigger the change event if different
-		*
-		*  @type	function
-		*  @date	16/10/2014
-		*  @since	5.0.9
-		*
-		*  @param	$el (jQuery)
-		*  @param	val (mixed)
-		*  @return	n/a
-		*/
-		
-		val: function( $el, val ){
-			
-			// vars
-			var orig = $el.val();
-			
-			
-			// update value
-			$el.val( val );
-			
-			
-			// trigger change
-			if( val != orig ) {
-				
-				$el.trigger('change');
-				
-			}
-			
-		},
-		
-		
-		/*
-		*  str_replace
-		*
-		*  This function will perform a str replace similar to php function str_replace
-		*
-		*  @type	function
-		*  @date	1/05/2015
-		*  @since	5.2.3
-		*
-		*  @param	$search (string)
-		*  @param	$replace (string)
-		*  @param	$subject (string)
-		*  @return	(string)
-		*/
-		
-		str_replace: function( search, replace, subject ) {
-			
-			return subject.split(search).join(replace);
-			
-		},
-		
-		
-		/*
-		*  str_sanitize
-		*
-		*  description
-		*
-		*  @type	function
-		*  @date	4/06/2015
-		*  @since	5.2.3
-		*
-		*  @param	$post_id (int)
-		*  @return	$post_id (int)
-		*/
-		
-		str_sanitize: function( string ) {
-			
-			// chars (https://jsperf.com/replace-foreign-characters)
-			var map = {
-	            "À": "A",
-	            "Á": "A",
-	            "Â": "A",
-	            "Ã": "A",
-	            "Ä": "A",
-	            "Å": "A",
-	            "Æ": "AE",
-	            "Ç": "C",
-	            "È": "E",
-	            "É": "E",
-	            "Ê": "E",
-	            "Ë": "E",
-	            "Ì": "I",
-	            "Í": "I",
-	            "Î": "I",
-	            "Ï": "I",
-	            "Ð": "D",
-	            "Ñ": "N",
-	            "Ò": "O",
-	            "Ó": "O",
-	            "Ô": "O",
-	            "Õ": "O",
-	            "Ö": "O",
-	            "Ø": "O",
-	            "Ù": "U",
-	            "Ú": "U",
-	            "Û": "U",
-	            "Ü": "U",
-	            "Ý": "Y",
-	            "ß": "s",
-	            "à": "a",
-	            "á": "a",
-	            "â": "a",
-	            "ã": "a",
-	            "ä": "a",
-	            "å": "a",
-	            "æ": "ae",
-	            "ç": "c",
-	            "è": "e",
-	            "é": "e",
-	            "ê": "e",
-	            "ë": "e",
-	            "ì": "i",
-	            "í": "i",
-	            "î": "i",
-	            "ï": "i",
-	            "ñ": "n",
-	            "ò": "o",
-	            "ó": "o",
-	            "ô": "o",
-	            "õ": "o",
-	            "ö": "o",
-	            "ø": "o",
-	            "ù": "u",
-	            "ú": "u",
-	            "û": "u",
-	            "ü": "u",
-	            "ý": "y",
-	            "ÿ": "y",
-	            "Ā": "A",
-	            "ā": "a",
-	            "Ă": "A",
-	            "ă": "a",
-	            "Ą": "A",
-	            "ą": "a",
-	            "Ć": "C",
-	            "ć": "c",
-	            "Ĉ": "C",
-	            "ĉ": "c",
-	            "Ċ": "C",
-	            "ċ": "c",
-	            "Č": "C",
-	            "č": "c",
-	            "Ď": "D",
-	            "ď": "d",
-	            "Đ": "D",
-	            "đ": "d",
-	            "Ē": "E",
-	            "ē": "e",
-	            "Ĕ": "E",
-	            "ĕ": "e",
-	            "Ė": "E",
-	            "ė": "e",
-	            "Ę": "E",
-	            "ę": "e",
-	            "Ě": "E",
-	            "ě": "e",
-	            "Ĝ": "G",
-	            "ĝ": "g",
-	            "Ğ": "G",
-	            "ğ": "g",
-	            "Ġ": "G",
-	            "ġ": "g",
-	            "Ģ": "G",
-	            "ģ": "g",
-	            "Ĥ": "H",
-	            "ĥ": "h",
-	            "Ħ": "H",
-	            "ħ": "h",
-	            "Ĩ": "I",
-	            "ĩ": "i",
-	            "Ī": "I",
-	            "ī": "i",
-	            "Ĭ": "I",
-	            "ĭ": "i",
-	            "Į": "I",
-	            "į": "i",
-	            "İ": "I",
-	            "ı": "i",
-	            "Ĳ": "IJ",
-	            "ĳ": "ij",
-	            "Ĵ": "J",
-	            "ĵ": "j",
-	            "Ķ": "K",
-	            "ķ": "k",
-	            "Ĺ": "L",
-	            "ĺ": "l",
-	            "Ļ": "L",
-	            "ļ": "l",
-	            "Ľ": "L",
-	            "ľ": "l",
-	            "Ŀ": "L",
-	            "ŀ": "l",
-	            "Ł": "l",
-	            "ł": "l",
-	            "Ń": "N",
-	            "ń": "n",
-	            "Ņ": "N",
-	            "ņ": "n",
-	            "Ň": "N",
-	            "ň": "n",
-	            "ŉ": "n",
-	            "Ō": "O",
-	            "ō": "o",
-	            "Ŏ": "O",
-	            "ŏ": "o",
-	            "Ő": "O",
-	            "ő": "o",
-	            "Œ": "OE",
-	            "œ": "oe",
-	            "Ŕ": "R",
-	            "ŕ": "r",
-	            "Ŗ": "R",
-	            "ŗ": "r",
-	            "Ř": "R",
-	            "ř": "r",
-	            "Ś": "S",
-	            "ś": "s",
-	            "Ŝ": "S",
-	            "ŝ": "s",
-	            "Ş": "S",
-	            "ş": "s",
-	            "Š": "S",
-	            "š": "s",
-	            "Ţ": "T",
-	            "ţ": "t",
-	            "Ť": "T",
-	            "ť": "t",
-	            "Ŧ": "T",
-	            "ŧ": "t",
-	            "Ũ": "U",
-	            "ũ": "u",
-	            "Ū": "U",
-	            "ū": "u",
-	            "Ŭ": "U",
-	            "ŭ": "u",
-	            "Ů": "U",
-	            "ů": "u",
-	            "Ű": "U",
-	            "ű": "u",
-	            "Ų": "U",
-	            "ų": "u",
-	            "Ŵ": "W",
-	            "ŵ": "w",
-	            "Ŷ": "Y",
-	            "ŷ": "y",
-	            "Ÿ": "Y",
-	            "Ź": "Z",
-	            "ź": "z",
-	            "Ż": "Z",
-	            "ż": "z",
-	            "Ž": "Z",
-	            "ž": "z",
-	            "ſ": "s",
-	            "ƒ": "f",
-	            "Ơ": "O",
-	            "ơ": "o",
-	            "Ư": "U",
-	            "ư": "u",
-	            "Ǎ": "A",
-	            "ǎ": "a",
-	            "Ǐ": "I",
-	            "ǐ": "i",
-	            "Ǒ": "O",
-	            "ǒ": "o",
-	            "Ǔ": "U",
-	            "ǔ": "u",
-	            "Ǖ": "U",
-	            "ǖ": "u",
-	            "Ǘ": "U",
-	            "ǘ": "u",
-	            "Ǚ": "U",
-	            "ǚ": "u",
-	            "Ǜ": "U",
-	            "ǜ": "u",
-	            "Ǻ": "A",
-	            "ǻ": "a",
-	            "Ǽ": "AE",
-	            "ǽ": "ae",
-	            "Ǿ": "O",
-	            "ǿ": "o",
-	            
-	            // extra
-	            ' ': '_',
-				'\'': '',
-				'?': '',
-				'/': '',
-				'\\': '',
-				'.': '',
-				',': '',
-				'`': '',
-				'>': '',
-				'<': '',
-				'"': '',
-				'[': '',
-				']': '',
-				'|': '',
-				'{': '',
-				'}': '',
-				'(': '',
-				')': ''
-	        };
-			
-		    
-		    // vars
-		    var regexp = /\W/g,
-		        mapping = function (c) { return (typeof map[c] !== 'undefined') ? map[c] : c; };
-			
-			
-			// replace
-			string = string.replace(regexp, mapping);
-			
-			
-			// lower case
-			string = string.toLowerCase();
-			
-			
-			// return
-			return string;
-						
-		},
-		
-		
-		/*
-		*  addslashes
-		*
-		*  This function mimics the PHP addslashes function. 
-		*  Returns a string with backslashes before characters that need to be escaped.
-		*
-		*  @type	function
-		*  @date	9/1/17
-		*  @since	5.5.0
-		*
-		*  @param	text (string)
-		*  @return	(string)
-		*/
-		
-		addslashes: function(text){
-			
-			return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
-			
-		},
-		
-		
-		/**
-		*  esc_html
-		*
-		*  This function will escape HTML characters for safe use
-		*
-		*  @source	https://stackoverflow.com/questions/24816/escaping-html-strings-with-jquery
-		*  @date	20/9/17
-		*  @since	5.6.3
-		*
-		*  @param	n/a
-		*  @return	n/a
-		*/
-		
-		esc_html: function( string ){
-			
-			var entityMap = {
-			  '&': '&amp;',
-			  '<': '&lt;',
-			  '>': '&gt;',
-			  '"': '&quot;',
-			  "'": '&#39;',
-			  '/': '&#x2F;',
-			  '`': '&#x60;',
-			  '=': '&#x3D;'
-			};
-			
-			return String(string).replace(/[&<>"'`=\/]/g, function (s) {
-				return entityMap[s];
-			});
-
-		},
-		
-		
-		/*
-		*  render_select
-		*
-		*  This function will update a select field with new choices
-		*
-		*  @type	function
-		*  @date	8/04/2014
-		*  @since	5.0.0
-		*
-		*  @param	$select
-		*  @param	choices
-		*  @return	n/a
-		*/
-		
-		render_select: function( $select, choices ){
-			
-			// vars
-			var value = $select.val();
-			
-			
-			// clear choices
-			$select.html('');
-			
-			
-			// bail early if no choices
-			if( !choices ) {
-				
-				return;
-				
-			}
-			
-			
-			// populate choices
-			$.each(choices, function( i, item ){
-				
-				// vars
-				var $optgroup = $select;
-				
-				
-				// add group
-				if( item.group ) {
-					
-					$optgroup = $select.find('optgroup[label="' + item.group + '"]');
-					
-					if( !$optgroup.exists() ) {
-						
-						$optgroup = $('<optgroup label="' + item.group + '"></optgroup>');
-						
-						$select.append( $optgroup );
-						
-					}
-					
-				}
-				
-				
-				// append select
-				$optgroup.append( '<option value="' + item.value + '">' + acf.esc_html(item.label) + '</option>' );
-				
-				
-				// selectedIndex
-				if( value == item.value ) {
-					
-					 $select.prop('selectedIndex', i);
-					 
-				}
-				
-			});
-			
-		},
-		
-		
-		/*
-		*  duplicate
-		*
-		*  This function will duplicate and return an element
-		*
-		*  @type	function
-		*  @date	22/08/2015
-		*  @since	5.2.3
-		*
-		*  @param	$el (jQuery) object to be duplicated
-		*  @param	attr (string) attrbute name where $el id can be found
-		*  @return	$el2 (jQuery)
-		*/
-		
-		duplicate: function( args ){
-			
-			//console.time('duplicate');
-			
-			
-			// backwards compatibility
-			// - array of settings added in v5.4.6
-			if( typeof args.length !== 'undefined' ) args = { $el: args };
-			
-			
-			// defaults
-			args = acf.parse_args(args, {
-				$el: false,
-				search: '',
-				replace: '',
-				before: function( $el ){},
-				after: function( $el, $el2 ){},
-				append: function( $el, $el2 ){ $el.after( $el2 ); }
-			});
-			
-			
-			// vars
-			var $el = args.$el,
-				$el2;
-			
-			
-			// search
-			if( !args.search ) args.search = $el.attr('data-id');
-			
-			
-			// replace
-			if( !args.replace ) args.replace = acf.get_uniqid();
-			
-			
-			// before
-			// - allow acf to modify DOM
-			// - fixes bug where select field option is not selected
-			args.before.apply( this, [$el] );
-			acf.do_action('before_duplicate', $el);
-			
-			
-			// clone
-			var	$el2 = $el.clone();
-			
-			
-			// remove acf-clone (may be a clone)
-			$el2.removeClass('acf-clone');
-			
-			
-			// remove JS functionality
-			acf.do_action('remove', $el2);
-			
-			
-			// find / replace
-			if( args.search ) {
-				
-				// replace data
-				$el2.attr('data-id', args.replace);
-				
-				
-				// replace ids
-				$el2.find('[id*="' + args.search + '"]').each(function(){	
-				
-					$(this).attr('id', $(this).attr('id').replace(args.search, args.replace) );
-					
-				});
-				
-				
-				// replace names
-				$el2.find('[name*="' + args.search + '"]').each(function(){	
-				
-					$(this).attr('name', $(this).attr('name').replace(args.search, args.replace) );
-					
-				});
-				
-				
-				// replace label for
-				$el2.find('label[for*="' + args.search + '"]').each(function(){
-				
-					$(this).attr('for', $(this).attr('for').replace(args.search, args.replace) );
-					
-				});
-				
-			}
-			
-			
-			// remove ui-sortable
-			$el2.find('.ui-sortable').removeClass('ui-sortable');
-			
-			
-			// after
-			// - allow acf to modify DOM
-			acf.do_action('after_duplicate', $el, $el2 );
-			args.after.apply( this, [$el, $el2] );
-			
-			
-			// append
-			args.append.apply( this, [$el, $el2] );
-			
-			
-			// add JS functionality
-			// - allow element to be moved into a visible position before fire action
-			setTimeout(function(){
-				
-				acf.do_action('append', $el2);
-				
-			}, 1);
-			
-			
-			//console.timeEnd('duplicate');
-			
-			
-			// return
-			return $el2;
-			
-		},
-		
-		decode: function( string ){
-			
-			return $('<textarea/>').html( string ).text();
-			
-		},
-		
-		
-		/*
-		*  parse_args
-		*
-		*  This function will merge together defaults and args much like the WP wp_parse_args function
-		*
-		*  @type	function
-		*  @date	11/04/2016
-		*  @since	5.3.8
-		*
-		*  @param	args (object)
-		*  @param	defaults (object)
-		*  @return	args
-		*/
-		
-		parse_args: function( args, defaults ) {
-			
-			// defaults
-			if( typeof args !== 'object' ) args = {};
-			if( typeof defaults !== 'object' ) defaults = {};
-			
-			
-			// return
-			return $.extend({}, defaults, args);
-			
-		},
-		
-		
-		/*
-		*  enqueue_script
-		*
-		*  This function will append a script to the page
-		*
-		*  @source	https://www.nczonline.net/blog/2009/06/23/loading-javascript-without-blocking/
-		*  @type	function
-		*  @date	27/08/2016
-		*  @since	5.4.0
-		*
-		*  @param	url (string)
-		*  @param	callback (function)
-		*  @return	na
-		*/
-		
-		enqueue_script: function( url, callback ) {
-			
-			// vars
-		    var script = document.createElement('script');
-		    
-		    
-		    // atts
-		    script.type = "text/javascript";
-			script.src = url;
-		    script.async = true;
-			
-			
-			// ie
-		    if( script.readyState ) {
-			    
-		        script.onreadystatechange = function(){
-			        
-		            if( script.readyState == 'loaded' || script.readyState == 'complete' ){
-			            
-		                script.onreadystatechange = null;
-		                callback();
-		                
-		            }
-		            
-		        };
-		    
-		    // normal browsers
-		    } else {
-			    
-		        script.onload = function(){
-		            callback();
-		        };
-		        
-		    }
-		    
-		    
-		    // append
-		    document.body.appendChild(script);
-			
-		}
-		
-	};
-	
-	
-	/*
-	*  acf.model
-	*
-	*  This model acts as a scafold for action.event driven modules
-	*
-	*  @type	object
-	*  @date	8/09/2014
-	*  @since	5.0.0
-	*
-	*  @param	(object)
-	*  @return	(object)
-	*/
-	
-	acf.model = {
-		
-		// vars
-		actions:	{},
-		filters:	{},
-		events:		{},
-		
-		extend: function( args ){
-			
-			// extend
-			var model = $.extend( {}, this, args );
-			
-			
-			// setup actions
-			$.each(model.actions, function( name, callback ){
-				
-				model._add_action( name, callback );
-			
-			});
-			
-			
-			// setup filters
-			$.each(model.filters, function( name, callback ){
-				
-				model._add_filter( name, callback );
-			
-			});
-			
-			
-			// setup events
-			$.each(model.events, function( name, callback ){
-				
-				model._add_event( name, callback );
-				
-			});
-			
-			
-			// return
-			return model;
-			
-		},
-		
-		_add_action: function( name, callback ) {
-			
-			// split
-			var model = this,
-				data = name.split(' ');
-			
-			
-			// add missing priority
-			var name = data[0] || '',
-				priority = data[1] || 10;
-			
-			
-			// add action
-			acf.add_action(name, model[ callback ], priority, model);
-			
-		},
-		
-		_add_filter: function( name, callback ) {
-			
-			// split
-			var model = this,
-				data = name.split(' ');
-			
-			
-			// add missing priority
-			var name = data[0] || '',
-				priority = data[1] || 10;
-			
-			
-			// add action
-			acf.add_filter(name, model[ callback ], priority, model);
-			
-		},
-		
-		_add_event: function( name, callback ) {
-			
-			// vars
-			var model = this,
-				i = name.indexOf(' '),
-				event = (i > 0) ? name.substr(0,i) : name,
-				selector = (i > 0) ? name.substr(i+1) : '';
-			
-			
-			// event
-			var fn = function( e ){
-				
-				// append $el to event object
-				e.$el = $(this);
-				
-				
-				// event
-				if( typeof model.event === 'function' ) {
-					e = model.event( e );
-				}
-				
-				
-				// callback
-				model[ callback ].apply(model, arguments);
-				
-			};
-			
-			
-			// add event
-			if( selector ) {
-				$(document).on(event, selector, fn);
-			} else {
-				$(document).on(event, fn);
-			}
-			
-		},
-		
-		get: function( name, value ){
-			
-			// defaults
-			value = value || null;
-			
-			
-			// get
-			if( typeof this[ name ] !== 'undefined' ) {
-				
-				value = this[ name ];
-					
-			}
-			
-			
-			// return
-			return value;
-			
-		},
-		
-		
-		set: function( name, value ){
-			
-			// set
-			this[ name ] = value;
-			
-			
-			// function for 3rd party
-			if( typeof this[ '_set_' + name ] === 'function' ) {
-				
-				this[ '_set_' + name ].apply(this);
-				
-			}
-			
-			
-			// return for chaining
-			return this;
-			
-		}
-		
-	};
-	
-	
-	/*
-	*  field
-	*
-	*  This model sets up many of the field's interactions
-	*
-	*  @type	function
-	*  @date	21/02/2014
-	*  @since	3.5.1
-	*
-	*  @param	n/a
-	*  @return	n/a
-	*/
-	
-	acf.field = acf.model.extend({
-		
-		// vars
-		type:		'',
-		o:			{},
-		$field:		null,
-		
-		_add_action: function( name, callback ) {
-			
-			// vars
-			var model = this;
-			
-			
-			// update name
-			name = name + '_field/type=' + model.type;
-			
-			
-			// add action
-			acf.add_action(name, function( $field ){
-				
-				// focus
-				model.set('$field', $field);
-				
-				
-				// callback
-				model[ callback ].apply(model, arguments);
-				
-			});
-			
-		},
-		
-		_add_filter: function( name, callback ) {
-			
-			// vars
-			var model = this;
-			
-			
-			// update name
-			name = name + '_field/type=' + model.type;
-			
-			
-			// add action
-			acf.add_filter(name, function( $field ){
-				
-				// focus
-				model.set('$field', $field);
-				
-				
-				// callback
-				model[ callback ].apply(model, arguments);
-				
-			});
-			
-		},
-		
-		_add_event: function( name, callback ) {
-			
-			// vars
-			var model = this,
-				event = name.substr(0,name.indexOf(' ')),
-				selector = name.substr(name.indexOf(' ')+1),
-				context = acf.get_selector(model.type);
-			
-			
-			// add event
-			$(document).on(event, context + ' ' + selector, function( e ){
-				
-				// vars
-				var $el = $(this);
-				var $field = acf.get_closest_field( $el, model.type );
-				
-				
-				// bail early if no field
-				if( !$field.length ) return;
-				
-				
-				// focus
-				if( !$field.is(model.$field) ) {
-					model.set('$field', $field);
-				}
-				
-				
-				// append to event
-				e.$el = $el;
-				e.$field = $field;
-				
-				
-				// callback
-				model[ callback ].apply(model, [e]);
-				
-			});
-			
-		},
-		
-		_set_$field: function(){
-			
-			// callback
-			if( typeof this.focus === 'function' ) {
-				this.focus();
-			}
-			
-		},
-		
-		// depreciated
-		doFocus: function( $field ){
-			
-			return this.set('$field', $field);
-			
-		}
-		
-	});
-	
-	
-	/*
-	*  field
-	*
-	*  This model fires actions and filters for registered fields
-	*
-	*  @type	function
-	*  @date	21/02/2014
-	*  @since	3.5.1
-	*
-	*  @param	n/a
-	*  @return	n/a
-	*/
-	
-	acf.fields = acf.model.extend({
-		
-		actions: {
-			'prepare'			: '_prepare',
-			'prepare_field'		: '_prepare_field',
-			'ready'				: '_ready',
-			'ready_field'		: '_ready_field',
-			'append'			: '_append',
-			'append_field'		: '_append_field',
-			'load'				: '_load',
-			'load_field'		: '_load_field',
-			'remove'			: '_remove',
-			'remove_field'		: '_remove_field',
-			'sortstart'			: '_sortstart',
-			'sortstart_field'	: '_sortstart_field',
-			'sortstop'			: '_sortstop',
-			'sortstop_field'	: '_sortstop_field',
-			'show'				: '_show',
-			'show_field'		: '_show_field',
-			'hide'				: '_hide',
-			'hide_field'		: '_hide_field'
-		},
-		
-		// prepare
-		_prepare: function( $el ){
-		
-			acf.get_fields('', $el).each(function(){
-				
-				acf.do_action('prepare_field', $(this));
-				
-			});
-			
-		},
-		
-		_prepare_field: function( $el ){
-			
-			acf.do_action('prepare_field/type=' + $el.data('type'), $el);
-			
-		},
-		
-		// ready
-		_ready: function( $el ){
-		
-			acf.get_fields('', $el).each(function(){
-				
-				acf.do_action('ready_field', $(this));
-				
-			});
-			
-		},
-		
-		_ready_field: function( $el ){
-			
-			acf.do_action('ready_field/type=' + $el.data('type'), $el);
-			
-		},
-		
-		// append
-		_append: function( $el ){
-		
-			acf.get_fields('', $el).each(function(){
-				
-				acf.do_action('append_field', $(this));
-				
-			});
-			
-		},
-		
-		_append_field: function( $el ){
-		
-			acf.do_action('append_field/type=' + $el.data('type'), $el);
-			
-		},
-		
-		// load
-		_load: function( $el ){
-		
-			acf.get_fields('', $el).each(function(){
-				
-				acf.do_action('load_field', $(this));
-				
-			});
-			
-		},
-		
-		_load_field: function( $el ){
-		
-			acf.do_action('load_field/type=' + $el.data('type'), $el);
-			
-		},
-		
-		// remove
-		_remove: function( $el ){
-		
-			acf.get_fields('', $el).each(function(){
-				
-				acf.do_action('remove_field', $(this));
-				
-			});
-			
-		},
-		
-		_remove_field: function( $el ){
-		
-			acf.do_action('remove_field/type=' + $el.data('type'), $el);
-			
-		},
-		
-		// sortstart
-		_sortstart: function( $el, $placeholder ){
-		
-			acf.get_fields('', $el).each(function(){
-				
-				acf.do_action('sortstart_field', $(this), $placeholder);
-				
-			});
-			
-		},
-		
-		_sortstart_field: function( $el, $placeholder ){
-		
-			acf.do_action('sortstart_field/type=' + $el.data('type'), $el, $placeholder);
-			
-		},
-		
-		// sortstop
-		_sortstop: function( $el, $placeholder ){
-		
-			acf.get_fields('', $el).each(function(){
-				
-				acf.do_action('sortstop_field', $(this), $placeholder);
-				
-			});
-			
-		},
-		
-		_sortstop_field: function( $el, $placeholder ){
-		
-			acf.do_action('sortstop_field/type=' + $el.data('type'), $el, $placeholder);
-			
-		},
-		
-		
-		// hide
-		_hide: function( $el, context ){
-		
-			acf.get_fields('', $el).each(function(){
-				
-				acf.do_action('hide_field', $(this), context);
-				
-			});
-			
-		},
-		
-		_hide_field: function( $el, context ){
-		
-			acf.do_action('hide_field/type=' + $el.data('type'), $el, context);
-			
-		},
-		
-		// show
-		_show: function( $el, context ){
-		
-			acf.get_fields('', $el).each(function(){
-				
-				acf.do_action('show_field', $(this), context);
-				
-			});
-			
-		},
-		
-		_show_field: function( $el, context ){
-		
-			acf.do_action('show_field/type=' + $el.data('type'), $el, context);
-			
-		}
-		
-	});
-	
-	
-	/*
-	*  ready
+	/**
+	*  acf
 	*
 	*  description
 	*
-	*  @type	function
-	*  @date	19/02/2014
-	*  @since	5.0.0
+	*  @date	14/12/17
+	*  @since	5.6.5
 	*
-	*  @param	$post_id (int)
-	*  @return	$post_id (int)
-	*/
-	
-	$(document).ready(function(){
-		
-		// action for 3rd party customization
-		acf.do_action('ready', $('body'));
-		
-	});
-	
-	
-	/*
-	*  load
-	*
-	*  description
-	*
-	*  @type	function
-	*  @date	19/02/2014
-	*  @since	5.0.0
-	*
-	*  @param	$post_id (int)
-	*  @return	$post_id (int)
-	*/
-	
-	$(window).on('load', function(){
-		
-		// action for 3rd party customization
-		acf.do_action('load', $('body'));
-		
-	});
-	
-	
-	/*
-	*  layout
-	*
-	*  This model handles the width layout for fields
-	*
-	*  @type	function
-	*  @date	21/02/2014
-	*  @since	3.5.1
-	*
-	*  @param	n/a
-	*  @return	n/a
+	*  @param	type $var Description. Default.
+	*  @return	type Description.
 	*/
 		
-	acf.layout = acf.model.extend({
-		
-		actions: {
-			'refresh 99': 	'refresh'
-		},
-		
-		refresh: function( $el ){ 
-			
-			// defaults
-			$el = $el || $('body');
-			
-			
-			// render
-			this.render_tables( $el );
-			this.render_groups( $el );
-			
-		},
-		
-		render_tables: function( $el ){ 
-			
-			// reference
-			var self = this;
-			
-			
-			// vars
-			var $tables = $el.find('.acf-table:visible');
-			
-			
-			// appent self
-			if( $el.is('table') ) {
-				$tables = $tables.add( $el );
-			} else if( $el.is('tr') ) {
-				$tables = $tables.add( $el.closest('table') );
-			}
-			
-			
-			// loop
-			$tables.each(function(){
-				
-				self.render_table( $(this) );
-				
-			});
-			
-		},
-		
-		render_table: function( $table ){
-			
-			// vars
-			var $ths = $table.find('> thead th.acf-th'),
-				colspan = 1,
-				available_width = 100;
-			
-			
-			// bail early if no $ths
-			if( !$ths.exists() ) return;
-			
-			
-			// vars
-			var $trs = $table.find('> tbody > tr'),
-				$tds = $trs.find('> td.acf-field');
-			
-			
-			// remove clones if has visible rows
-			if( $trs.hasClass('acf-clone') && $trs.length > 1 ) {
-				
-				$tds = $trs.not('.acf-clone').find('> td.acf-field');
-				
-			}
-			
-			
-			// render th/td visibility
-			$ths.each(function(){
-				
-				// vars
-				var $th = $(this),
-					key = $th.attr('data-key'),
-					$td = $tds.filter('[data-key="'+key+'"]');
-				
-				// clear class
-				$td.removeClass('appear-empty');
-				$th.removeClass('hidden-by-conditional-logic');
-				
-				
-				// no td
-				if( !$td.exists() ) {
-					
-					// do nothing
-				
-				// if all td are hidden
-				} else if( $td.not('.hidden-by-conditional-logic').length == 0 ) {
-					
-					$th.addClass('hidden-by-conditional-logic');
-				
-				// if 1 or more td are visible
-				} else {
-					
-					$td.filter('.hidden-by-conditional-logic').addClass('appear-empty');
-					
-				}
-				
-			});
-			
-			
-			
-			// clear widths
-			$ths.css('width', 'auto');
-			
-			
-			// update $ths
-			$ths = $ths.not('.hidden-by-conditional-logic');
-			
-			
-			// set colspan
-			colspan = $ths.length;
-			
-			
-			// set custom widths first
-			$ths.filter('[data-width]').each(function(){
-				
-				// vars
-				var width = parseInt( $(this).attr('data-width') );
-				
-				
-				// remove from available
-				available_width -= width;
-				
-				
-				// set width
-				$(this).css('width', width + '%');
-				
-			});
-			
-			
-			// update $ths
-			$ths = $ths.not('[data-width]');
-			
-			
-			// set custom widths first
-			$ths.each(function(){
-				
-				// cal width
-				var width = available_width / $ths.length;
-				
-				
-				// set width
-				$(this).css('width', width + '%');
-				
-			});
-			
-			
-			// update colspan
-			$table.find('.acf-row .acf-field.-collapsed-target').removeAttr('colspan');
-			$table.find('.acf-row.-collapsed .acf-field.-collapsed-target').attr('colspan', colspan);
-			
-		},
-		
-		render_groups: function( $el ){
-			
-			// reference
-			var self = this;
-			
-			
-			// vars
-			var $groups = $el.find('.acf-fields:visible');
-			
-			
-			// appent self if is '.acf-fields'
-			if( $el && $el.is('.acf-fields') ) {
-				
-				$groups = $groups.add( $el );
-				
-			}
-			
-			
-			// loop
-			$groups.each(function(){
-				
-				self.render_group( $(this) );
-				
-			});
-			
-		},
-		
-		render_group: function( $el ){
-			
-			// vars
-			var $els = $(),
-				top = 0,
-				height = 0,
-				cell = -1;
-			
-			
-			// get fields
-			var $fields = $el.children('.acf-field[data-width]:visible');
-			
-			
-			// bail early if no fields
-			if( !$fields.exists() ) return;
-			
-			
-			// bail ealry if is .-left
-			if( $el.hasClass('-left') ) {
-				
-				$fields.removeAttr('data-width');
-				$fields.css('width', 'auto');
-				return;
-				
-			}
-			
-			
-			// reset fields
-			$fields.removeClass('-r0 -c0').css({'min-height': 0});
-			
-			
-			// loop
-			$fields.each(function( i ){
-				
-				// vars
-				var $el = $(this),
-					this_top = $el.position().top;
-				
-				
-				// set top
-				if( i == 0 ) top = this_top;
-				
-				
-				// detect new row
-				if( this_top != top ) {
-					
-					// set previous heights
-					$els.css({'min-height': (height+1)+'px'});
-					
-					// reset
-					$els = $();
-					top = $el.position().top; // don't use variable as this value may have changed due to min-height css
-					height = 0;
-					cell = -1;
-					
-				}
-				
-								
-				// increase
-				cell++;
-				
-				
-				// set height
-				height = ($el.outerHeight() > height) ? $el.outerHeight() : height;
-				
-				
-				// append
-				$els = $els.add( $el );
-				
-				
-				// add classes
-				if( this_top == 0 ) {
-					
-					$el.addClass('-r0');
-					
-				} else if( cell == 0 ) {
-					
-					$el.addClass('-c0');
-					
-				}
-				
-			});
-			
-			
-			// clean up
-			if( $els.exists() ) {
-				
-				$els.css({'min-height': (height+1)+'px'});
-				
-			}
-			
-		}
-		
-	});
+	// The global acf object
+	var acf = {};
 	
+	// Set as a browser global
+	window.acf = acf;
 	
-	/*
-	*  Force revisions
-	*
-	*  description
-	*
-	*  @type	function
-	*  @date	19/02/2014
-	*  @since	5.0.0
-	*
-	*  @param	$post_id (int)
-	*  @return	$post_id (int)
-	*/
-	
-	$(document).on('change', '.acf-field input, .acf-field textarea, .acf-field select', function(){
-		
-		// preview hack
-		var $input = $('#_acf_changed');
-		if( $input.length ) $input.val(1);
-		
-		
-		// action for 3rd party customization
-		acf.do_action('change', $(this));
-		
-	});
-	
-	
-	/*
-	*  preventDefault helper
-	*
-	*  This function will prevent default of any link with an href of #
-	*
-	*  @type	function
-	*  @date	24/07/2014
-	*  @since	5.0.0
-	*
-	*  @param	$post_id (int)
-	*  @return	$post_id (int)
-	*/
-	
-	$(document).on('click', '.acf-field a[href="#"]', function( e ){
-		
-		e.preventDefault();
-		
-	});
-	
-	
-	/*
-	*  unload
-	*
-	*  This model handles the unload prompt
-	*
-	*  @type	function
-	*  @date	21/02/2014
-	*  @since	3.5.1
-	*
-	*  @param	n/a
-	*  @return	n/a
-	*/
-		
-	acf.unload = acf.model.extend({
-		
-		locked: 1,
-		active: 1,
-		changed: 0,
-		
-		filters: {
-			'validation_complete': 'validation_complete'
-		},
-		
-		actions: {
-			'ready':	'ready',
-			'change':	'on',
-			'submit':	'off'
-		},
-		
-		ready: function(){
-			
-			// unlock in 1s to avoid JS 'trigger change' bugs
-			setTimeout(function(){
-				
-				acf.unload.locked = 0;
-				
-			}, 1000);
-			
-		},
-		
-		events: {
-			'submit form':	'off'
-		},
-		
-		validation_complete: function( json, $form ){
-			
-			if( json && json.errors ) {
-				
-				this.on();
-				
-			}
-			
-			// return
-			return json;
-			
-		},
-		
-		on: function(){
-			
-			// bail ealry if already changed, not active, or still locked
-			if( this.changed || !this.active || this.locked ) {
-				
-				return;
-				
-			}
-			
-			
-			// update 
-			this.changed = 1;
-			
-			
-			// add event
-			$(window).on('beforeunload', this.unload);
-			
-		},
-		
-		off: function(){
-			
-			// update 
-			this.changed = 0;
-			
-			
-			// remove event
-			$(window).off('beforeunload', this.unload);
-			
-		},
-		
-		unload: function(){
-			
-			// alert string
-			return acf._e('unload');
-			
-		}
-		 
-	});
-	
-	
-	acf.tooltip = acf.model.extend({
-		
-		events: {
-			'mouseenter .acf-js-tooltip':	'_on',
-			'mouseup .acf-js-tooltip':		'_off',
-			'mouseleave .acf-js-tooltip':	'_off'
-		},
-		
-		tooltip: function( text, $el ){
-			
-			// vars
-			var $tooltip = $('<div class="acf-tooltip">' + text + '</div>');
-			
-			
-			// append
-			$('body').append( $tooltip );
-			
-			
-			// position
-			var tolerance = 10;
-				target_w = $el.outerWidth(),
-				target_h = $el.outerHeight(),
-				target_t = $el.offset().top,
-				target_l = $el.offset().left,
-				tooltip_w = $tooltip.outerWidth(),
-				tooltip_h = $tooltip.outerHeight();
-			
-			
-			// calculate top
-			var top = target_t - tooltip_h,
-				left = target_l + (target_w / 2) - (tooltip_w / 2);
-			
-			
-			// too far left
-			if( left < tolerance ) {
-				
-				$tooltip.addClass('right');
-				
-				left = target_l + target_w;
-				top = target_t + (target_h / 2) - (tooltip_h / 2);
-			
-			
-			// too far right
-			} else if( (left + tooltip_w + tolerance) > $(window).width() ) {
-				
-				$tooltip.addClass('left');
-				
-				left = target_l - tooltip_w;
-				top = target_t + (target_h / 2) - (tooltip_h / 2);
-			
-				
-			// too far top
-			} else if( top - $(window).scrollTop() < tolerance ) {
-				
-				$tooltip.addClass('bottom');
-				
-				top = target_t + target_h;
-
-			} else {
-				
-				$tooltip.addClass('top');
-				
-			}
-			
-			
-			// update css
-			$tooltip.css({ 'top': top, 'left': left });
-			
-			
-			// return
-			return $tooltip;
-			
-		},
-		
-		temp: function( text, $el ){
-			
-			// tooltip
-			var $el = this.tooltip( text, $el );
-			var time = 0;
-			
-			
-			// wait 250
-			time += 250;
-			
-			
-			// add class
-			setTimeout(function(){
-				
-				$el.addClass('acf-fade-up');
-				
-			}, time);
-			
-			
-			// wait 250
-			time += 250;
-			
-			
-			// remove
-			setTimeout(function(){
-				
-				$el.remove();
-				
-			}, time);
-			
-		},
-		
-		confirm: function( $el, callback, text, button_y, button_n ){
-			
-			// defaults
-			text = text || acf._e('are_you_sure');
-			button_y = button_y || '<a href="#" class="acf-confirm-y">'+acf._e('yes')+'</a>';
-			button_n = button_n || '<a href="#" class="acf-confirm-n">'+acf._e('No')+'</a>';
-			
-			
-			// vars
-			var $tooltip = this.tooltip( text + ' ' + button_y + ' ' + button_n , $el);
-			
-			
-			// add class
-			$tooltip.addClass('-confirm');
-			
-			
-			// events
-			var event = function( e, result ){
-				
-				// prevent all listeners
-				e.preventDefault();
-				e.stopImmediatePropagation();
-				
-				
-				// remove events
-				$el.off('click', event_y);
-				$tooltip.off('click', '.acf-confirm-y', event_y);
-				$tooltip.off('click', '.acf-confirm-n', event_n);
-				$('body').off('click', event_n);
-				
-				
-				// remove tooltip
-				$tooltip.remove();
-				
-				
-				// callback
-				callback.apply(null, [result]);
-				
-			};
-			
-			var event_y = function( e ){
-				event( e, true );
-			};
-			
-			var event_n = function( e ){
-				event( e, false );
-			};
-			
-			
-			// add events
-			$tooltip.on('click', '.acf-confirm-y', event_y);
-			$tooltip.on('click', '.acf-confirm-n', event_n);
-			$el.on('click', event_y);
-			$('body').on('click', event_n);
-			
-		},
-		
-		confirm_remove: function( $el, callback ){
-			
-			// vars
-			text = false; // default
-			button_y = '<a href="#" class="acf-confirm-y -red">'+acf._e('remove')+'</a>';
-			button_n = '<a href="#" class="acf-confirm-n">'+acf._e('cancel')+'</a>';
-			
-			
-			// confirm
-			this.confirm( $el, callback, false, button_y, button_n );
-			
-		},
-		
-		_on: function( e ){
-			
-			// vars
-			var title = e.$el.attr('title');
-			
-			
-			// bail ealry if no title
-			if( !title ) return;
-			
-			
-			// create tooltip
-			var $tooltip = this.tooltip( title, e.$el );
-			
-			
-			// store as data
-			e.$el.data('acf-tooltip', {
-				'title': title,
-				'$el': $tooltip
-			});
-			
-			
-			// clear title to avoid default browser tooltip
-			e.$el.attr('title', '');
-			
-		},
-		
-		_off: function( e ){
-			
-			// vars
-			var tooltip = e.$el.data('acf-tooltip');
-			
-			
-			// bail early if no data
-			if( !tooltip ) return;
-			
-			
-			// remove tooltip
-			tooltip.$el.remove();
-			
-			
-			// restore title
-			e.$el.attr('title', tooltip.title);
-		}
-		
-	});
-	
-	
-	acf.postbox = acf.model.extend({
-		
-		events: {
-			'mouseenter .acf-postbox .handlediv':	'on',
-			'mouseleave .acf-postbox .handlediv':	'off'
-		},
-
-		on: function( e ){
-			
-			e.$el.siblings('.hndle').addClass('hover');
-			
-		},
-		
-		off: function( e ){
-			
-			e.$el.siblings('.hndle').removeClass('hover');
-			
-		},
-		
-		render: function( args ){
-			
-			// defaults
-			args = $.extend({}, {
-				id: 		'',
-				key:		'',
-				style: 		'default',
-				label: 		'top',
-				edit_url:	'',
-				edit_title:	'',
-				visibility:	true
-			}, args);
-			
-			
-			// vars
-			var $postbox = $('#' + args.id),
-				$toggle = $('#' + args.id + '-hide'),
-				$label = $toggle.parent();
-			
-			
-			
-			// add class
-			$postbox.addClass('acf-postbox');
-			$label.addClass('acf-postbox-toggle');
-			
-			
-			// remove class
-			$postbox.removeClass('hide-if-js');
-			$label.removeClass('hide-if-js');
-			
-			
-			// field group style
-			if( args.style !== 'default' ) {
-				
-				$postbox.addClass( args.style );
-				
-			}
-			
-			
-			// .inside class
-			$postbox.children('.inside').addClass('acf-fields').addClass('-' + args.label);
-			
-				
-			// visibility
-			if( args.visibility ) {
-				
-				$toggle.prop('checked', true);
-				
-			} else {
-				
-				$postbox.addClass('acf-hidden');
-				$label.addClass('acf-hidden');
-				
-			}
-			
-			
-			// edit_url
-			if( args.edit_url ) {
-				
-				$postbox.children('.hndle').append('<a href="' + args.edit_url + '" class="dashicons dashicons-admin-generic acf-hndle-cog acf-js-tooltip" title="' + args.edit_title + '"></a>');
-
-			}
-			
-		}
-		
-	});
+	/** @var object Data sent from PHP */
+	acf.data = {};
 	
 	
 	/**
-	*  panel
+	*  get
 	*
-	*  This model handles .acf-panel JS
+	*  Gets a specific data value
 	*
-	*  @date	21/10/17
-	*  @since	5.6.3
+	*  @date	14/12/17
+	*  @since	5.6.5
 	*
-	*  @param	n/a
-	*  @return	n/a
+	*  @param	string name
+	*  @return	mixed
 	*/
 	
-	var acf_panel = acf.model.extend({
-		
-		events: {
-			'click .acf-panel-title': '_click',
-		},
-		
-		_click: function( e ){
-			
-			// prevent Defailt
-			e.preventDefault();
-			
-			
-			// open close
-			this.toggle( e.$el.parent() );
-			
-		},
-		
-		is_open: function( $el ) {
-			return $el.hasClass('-open');
-		},
-		
-		toggle: function( $el ){
-			
-			// is open
-			if( this.is_open($el) ) {
-				this.close( $el );
-			} else {
-				this.open( $el );
-			}
-			
-		},
-		
-		open: function( $el ){
-			$el.addClass('-open');
-			$el.find('.acf-panel-title i').attr('class', 'dashicons dashicons-arrow-down');
-		},
-		
-		close: function( $el ){
-			$el.removeClass('-open');
-			$el.find('.acf-panel-title i').attr('class', 'dashicons dashicons-arrow-right');
-		}
-				 
-	});
+	acf.get = function( name ){
+		return this.data[name] || null;
+	};
 	
 	
 	/**
-	*  acf_h2_notice
+	*  has
 	*
-	*  This model will move the .acf-notice element quickly without the WP flicker
+	*  Returns `true` if the data exists and is not null
 	*
-	*  @date	21/10/17
-	*  @since	5.6.3
+	*  @date	14/12/17
+	*  @since	5.6.5
 	*
-	*  @param	n/a
-	*  @return	n/a
+	*  @param	string name
+	*  @return	boolean
 	*/
 	
-	acf.notice = acf.model.extend({
+	acf.has = function( name ){
+		return this.get(name) !== null;
+	};
+	
+	
+	/**
+	*  set
+	*
+	*  Sets a specific data value
+	*
+	*  @date	14/12/17
+	*  @since	5.6.5
+	*
+	*  @param	string name
+	*  @param	mixed value
+	*  @return	this
+	*/
+	
+	acf.set = function( name, value ){
+		this.data[ name ] = value;
+		return this;
+	};
+	
+	
+	/**
+	*  uniqueId
+	*
+	*  Returns a unique ID
+	*
+	*  @date	9/11/17
+	*  @since	5.6.3
+	*
+	*  @param	string prefix Optional prefix.
+	*  @return	string
+	*/
+	
+	var idCounter = 0;
+	acf.uniqueId = function(prefix){
+		var id = ++idCounter + '';
+		return prefix ? prefix + id : id;
+	};
+	
+	/**
+	*  acf.uniqueArray
+	*
+	*  Returns a new array with only unique values
+	*  Credit: https://stackoverflow.com/questions/1960473/get-all-unique-values-in-an-array-remove-duplicates
+	*
+	*  @date	23/3/18
+	*  @since	5.6.9
+	*
+	*  @param	type $var Description. Default.
+	*  @return	type Description.
+	*/
+	
+	acf.uniqueArray = function( array ){
+		function onlyUnique(value, index, self) { 
+		    return self.indexOf(value) === index;
+		}
+		return array.filter( onlyUnique );
+	};
+	
+	/**
+	*  uniqid
+	*
+	*  Returns a unique ID (PHP version)
+	*
+	*  @date	9/11/17
+	*  @since	5.6.3
+	*  @source	http://locutus.io/php/misc/uniqid/
+	*
+	*  @param	string prefix Optional prefix.
+	*  @return	string
+	*/
+	
+	var uniqidSeed = '';
+	acf.uniqid = function(prefix, moreEntropy){
+		//  discuss at: http://locutus.io/php/uniqid/
+		// original by: Kevin van Zonneveld (http://kvz.io)
+		//  revised by: Kankrelune (http://www.webfaktory.info/)
+		//      note 1: Uses an internal counter (in locutus global) to avoid collision
+		//   example 1: var $id = uniqid()
+		//   example 1: var $result = $id.length === 13
+		//   returns 1: true
+		//   example 2: var $id = uniqid('foo')
+		//   example 2: var $result = $id.length === (13 + 'foo'.length)
+		//   returns 2: true
+		//   example 3: var $id = uniqid('bar', true)
+		//   example 3: var $result = $id.length === (23 + 'bar'.length)
+		//   returns 3: true
+		if (typeof prefix === 'undefined') {
+			prefix = '';
+		}
 		
-		actions: {
-			'prepare': 'prepare',
-		},
+		var retId;
+		var formatSeed = function(seed, reqWidth) {
+			seed = parseInt(seed, 10).toString(16); // to hex str
+			if (reqWidth < seed.length) { // so long we split
+				return seed.slice(seed.length - reqWidth);
+			}
+			if (reqWidth > seed.length) { // so short we pad
+				return Array(1 + (reqWidth - seed.length)).join('0') + seed;
+			}
+			return seed;
+		};
 		
-		prepare: function(){
+		if (!uniqidSeed) { // init seed with big random int
+			uniqidSeed = Math.floor(Math.random() * 0x75bcd15);
+		}
+		uniqidSeed++;
+		
+		retId = prefix; // start with prefix, add current milliseconds hex string
+		retId += formatSeed(parseInt(new Date().getTime() / 1000, 10), 8);
+		retId += formatSeed(uniqidSeed, 5); // add seed hex string
+		if (moreEntropy) {
+			// for more entropy we add a float lower to 10
+			retId += (Math.random() * 10).toFixed(8).toString();
+		}
+		
+		return retId;
+	};
+	
+	
+	/**
+	*  strReplace
+	*
+	*  Performs a string replace
+	*
+	*  @date	14/12/17
+	*  @since	5.6.5
+	*
+	*  @param	string search
+	*  @param	string replace
+	*  @param	string subject
+	*  @return	string
+	*/
+	
+	acf.strReplace = function( search, replace, subject ){
+		return subject.split(search).join(replace);
+	};
+	
+	
+	/**
+	*  strCamelCase
+	*
+	*  Converts a string into camelCase
+	*  Thanks to https://stackoverflow.com/questions/2970525/converting-any-string-into-camel-case
+	*
+	*  @date	14/12/17
+	*  @since	5.6.5
+	*
+	*  @param	string str
+	*  @return	string
+	*/
+	
+	acf.strCamelCase = function( str ){
+		
+		// replace [_-] characters with space
+		str = str.replace(/[_-]/g, ' ');
+		
+		// camelCase
+		str = str.replace(/(?:^\w|\b\w|\s+)/g, function(match, index) {
+			if (+match === 0) return ""; // or if (/\s+/.test(match)) for white spaces
+			return index == 0 ? match.toLowerCase() : match.toUpperCase();
+		});
+		
+		// return
+		return str;
+	};
+	
+	/**
+	*  strPascalCase
+	*
+	*  Converts a string into PascalCase
+	*  Thanks to https://stackoverflow.com/questions/1026069/how-do-i-make-the-first-letter-of-a-string-uppercase-in-javascript
+	*
+	*  @date	14/12/17
+	*  @since	5.6.5
+	*
+	*  @param	string str
+	*  @return	string
+	*/
+	
+	acf.strPascalCase = function( str ){
+		var camel = acf.strCamelCase( str );
+		return camel.charAt(0).toUpperCase() + camel.slice(1); 
+	};
+	
+	/**
+	*  acf.strSlugify
+	*
+	*  Converts a string into a HTML class friendly slug
+	*
+	*  @date	21/3/18
+	*  @since	5.6.9
+	*
+	*  @param	string str
+	*  @return	string
+	*/
+	
+	acf.strSlugify = function( str ){
+		return acf.strReplace( '_', '-', str.toLowerCase() );
+	};
+	
+	
+	acf.strSanitize = function( str ){
+		
+		// chars (https://jsperf.com/replace-foreign-characters)
+		var map = {
+            "À": "A",
+            "Á": "A",
+            "Â": "A",
+            "Ã": "A",
+            "Ä": "A",
+            "Å": "A",
+            "Æ": "AE",
+            "Ç": "C",
+            "È": "E",
+            "É": "E",
+            "Ê": "E",
+            "Ë": "E",
+            "Ì": "I",
+            "Í": "I",
+            "Î": "I",
+            "Ï": "I",
+            "Ð": "D",
+            "Ñ": "N",
+            "Ò": "O",
+            "Ó": "O",
+            "Ô": "O",
+            "Õ": "O",
+            "Ö": "O",
+            "Ø": "O",
+            "Ù": "U",
+            "Ú": "U",
+            "Û": "U",
+            "Ü": "U",
+            "Ý": "Y",
+            "ß": "s",
+            "à": "a",
+            "á": "a",
+            "â": "a",
+            "ã": "a",
+            "ä": "a",
+            "å": "a",
+            "æ": "ae",
+            "ç": "c",
+            "è": "e",
+            "é": "e",
+            "ê": "e",
+            "ë": "e",
+            "ì": "i",
+            "í": "i",
+            "î": "i",
+            "ï": "i",
+            "ñ": "n",
+            "ò": "o",
+            "ó": "o",
+            "ô": "o",
+            "õ": "o",
+            "ö": "o",
+            "ø": "o",
+            "ù": "u",
+            "ú": "u",
+            "û": "u",
+            "ü": "u",
+            "ý": "y",
+            "ÿ": "y",
+            "Ā": "A",
+            "ā": "a",
+            "Ă": "A",
+            "ă": "a",
+            "Ą": "A",
+            "ą": "a",
+            "Ć": "C",
+            "ć": "c",
+            "Ĉ": "C",
+            "ĉ": "c",
+            "Ċ": "C",
+            "ċ": "c",
+            "Č": "C",
+            "č": "c",
+            "Ď": "D",
+            "ď": "d",
+            "Đ": "D",
+            "đ": "d",
+            "Ē": "E",
+            "ē": "e",
+            "Ĕ": "E",
+            "ĕ": "e",
+            "Ė": "E",
+            "ė": "e",
+            "Ę": "E",
+            "ę": "e",
+            "Ě": "E",
+            "ě": "e",
+            "Ĝ": "G",
+            "ĝ": "g",
+            "Ğ": "G",
+            "ğ": "g",
+            "Ġ": "G",
+            "ġ": "g",
+            "Ģ": "G",
+            "ģ": "g",
+            "Ĥ": "H",
+            "ĥ": "h",
+            "Ħ": "H",
+            "ħ": "h",
+            "Ĩ": "I",
+            "ĩ": "i",
+            "Ī": "I",
+            "ī": "i",
+            "Ĭ": "I",
+            "ĭ": "i",
+            "Į": "I",
+            "į": "i",
+            "İ": "I",
+            "ı": "i",
+            "Ĳ": "IJ",
+            "ĳ": "ij",
+            "Ĵ": "J",
+            "ĵ": "j",
+            "Ķ": "K",
+            "ķ": "k",
+            "Ĺ": "L",
+            "ĺ": "l",
+            "Ļ": "L",
+            "ļ": "l",
+            "Ľ": "L",
+            "ľ": "l",
+            "Ŀ": "L",
+            "ŀ": "l",
+            "Ł": "l",
+            "ł": "l",
+            "Ń": "N",
+            "ń": "n",
+            "Ņ": "N",
+            "ņ": "n",
+            "Ň": "N",
+            "ň": "n",
+            "ŉ": "n",
+            "Ō": "O",
+            "ō": "o",
+            "Ŏ": "O",
+            "ŏ": "o",
+            "Ő": "O",
+            "ő": "o",
+            "Œ": "OE",
+            "œ": "oe",
+            "Ŕ": "R",
+            "ŕ": "r",
+            "Ŗ": "R",
+            "ŗ": "r",
+            "Ř": "R",
+            "ř": "r",
+            "Ś": "S",
+            "ś": "s",
+            "Ŝ": "S",
+            "ŝ": "s",
+            "Ş": "S",
+            "ş": "s",
+            "Š": "S",
+            "š": "s",
+            "Ţ": "T",
+            "ţ": "t",
+            "Ť": "T",
+            "ť": "t",
+            "Ŧ": "T",
+            "ŧ": "t",
+            "Ũ": "U",
+            "ũ": "u",
+            "Ū": "U",
+            "ū": "u",
+            "Ŭ": "U",
+            "ŭ": "u",
+            "Ů": "U",
+            "ů": "u",
+            "Ű": "U",
+            "ű": "u",
+            "Ų": "U",
+            "ų": "u",
+            "Ŵ": "W",
+            "ŵ": "w",
+            "Ŷ": "Y",
+            "ŷ": "y",
+            "Ÿ": "Y",
+            "Ź": "Z",
+            "ź": "z",
+            "Ż": "Z",
+            "ż": "z",
+            "Ž": "Z",
+            "ž": "z",
+            "ſ": "s",
+            "ƒ": "f",
+            "Ơ": "O",
+            "ơ": "o",
+            "Ư": "U",
+            "ư": "u",
+            "Ǎ": "A",
+            "ǎ": "a",
+            "Ǐ": "I",
+            "ǐ": "i",
+            "Ǒ": "O",
+            "ǒ": "o",
+            "Ǔ": "U",
+            "ǔ": "u",
+            "Ǖ": "U",
+            "ǖ": "u",
+            "Ǘ": "U",
+            "ǘ": "u",
+            "Ǚ": "U",
+            "ǚ": "u",
+            "Ǜ": "U",
+            "ǜ": "u",
+            "Ǻ": "A",
+            "ǻ": "a",
+            "Ǽ": "AE",
+            "ǽ": "ae",
+            "Ǿ": "O",
+            "ǿ": "o",
+            
+            // extra
+            ' ': '_',
+			'\'': '',
+			'?': '',
+			'/': '',
+			'\\': '',
+			'.': '',
+			',': '',
+			'`': '',
+			'>': '',
+			'<': '',
+			'"': '',
+			'[': '',
+			']': '',
+			'|': '',
+			'{': '',
+			'}': '',
+			'(': '',
+			')': ''
+        };
+		
+		// vars
+		var nonWord = /\W/g;
+        var mapping = function (c) {
+            return map[c] || c; 
+        };
+        
+        // replace
+        str = str.replace(nonWord, mapping);
+	    
+	    // lowercase
+	    str = str.toLowerCase();
+	    
+	    // return
+	    return str;	
+	};
+	
+	/**
+	*  acf.strMatch
+	*
+	*  Returns the number of characters that match between two strings
+	*
+	*  @date	1/2/18
+	*  @since	5.6.5
+	*
+	*  @param	type $var Description. Default.
+	*  @return	type Description.
+	*/
+	
+	acf.strMatch = function( s1, s2 ){
+		
+		// vars
+		var val = 0;
+		var min = Math.min( s1.length, s2.length );
+		
+		// loop
+		for( var i = 0; i < min; i++ ) {
+			if( s1[i] !== s2[i] ) {
+				break;
+			}
+			val++;
+		}
+		
+		// return
+		return val;
+	};
+	
+	/**
+	*  acf.decode
+	*
+	*  description
+	*
+	*  @date	13/1/18
+	*  @since	5.6.5
+	*
+	*  @param	type $var Description. Default.
+	*  @return	type Description.
+	*/
+	
+	acf.decode = function( string ){
+		return $('<textarea/>').html( string ).text();
+	};
+	
+	/**
+	*  acf.strEscape
+	*
+	*  description
+	*
+	*  @date	3/2/18
+	*  @since	5.6.5
+	*
+	*  @param	type $var Description. Default.
+	*  @return	type Description.
+	*/
+	
+	acf.strEscape = function( string ){
+		
+		var entityMap = {
+		  '&': '&amp;',
+		  '<': '&lt;',
+		  '>': '&gt;',
+		  '"': '&quot;',
+		  "'": '&#39;',
+		  '/': '&#x2F;',
+		  '`': '&#x60;',
+		  '=': '&#x3D;'
+		};
+		
+		return String(string).replace(/[&<>"'`=\/]/g, function (s) {
+			return entityMap[s];
+		});
+	};
+	
+	/**
+	*  parseArgs
+	*
+	*  Merges together defaults and args much like the WP wp_parse_args function
+	*
+	*  @date	14/12/17
+	*  @since	5.6.5
+	*
+	*  @param	object args
+	*  @param	object defaults
+	*  @return	object
+	*/
+	
+	acf.parseArgs = function( args, defaults ){
+		if( typeof args !== 'object' ) args = {};
+		if( typeof defaults !== 'object' ) defaults = {};
+		return $.extend({}, defaults, args);
+	}
+	
+	/**
+	*  __
+	*
+	*  Retrieve the translation of $text.
+	*
+	*  @date	16/4/18
+	*  @since	5.6.9
+	*
+	*  @param	string text Text to translate.
+	*  @return	string Translated text.
+	*/
+	
+	if( window.acfL10n == undefined ) {
+		acfL10n = {};
+	}
+	
+	acf.__ = function( text ){
+		return acfL10n[ text ] || text;
+	};
+	
+	/**
+	*  _x
+	*
+	*  Retrieve translated string with gettext context.
+	*
+	*  @date	16/4/18
+	*  @since	5.6.9
+	*
+	*  @param	string text Text to translate.
+	*  @param	string context Context information for the translators.
+	*  @return	string Translated text.
+	*/
+	
+	acf._x = function( text, context ){
+		return acfL10n[ text + '.' + context ] || acfL10n[ text ] || text;
+	};
+	
+	/**
+	*  _n
+	*
+	*  Retrieve the plural or single form based on the amount. 
+	*
+	*  @date	16/4/18
+	*  @since	5.6.9
+	*
+	*  @param	string single Single text to translate.
+	*  @param	string plural Plural text to translate.
+	*  @param	int number The number to compare against.
+	*  @return	string Translated text.
+	*/
+	
+	acf._n = function( single, plural, number ){
+		if( number == 1 ) {
+			return acf.__(single);
+		} else {
+			return acf.__(plural);
+		}
+	};
+	
+	acf.isArray = function( a ){
+		return Array.isArray(a);
+	};
+	
+	acf.isObject = function( a ){
+		return ( typeof a === 'object' );
+	}
+	
+	/**
+	*  serialize
+	*
+	*  description
+	*
+	*  @date	24/12/17
+	*  @since	5.6.5
+	*
+	*  @param	type $var Description. Default.
+	*  @return	type Description.
+	*/
+	
+	var buildObject = function( obj, name, value ){
+		//console.log('buildObject', obj, name);
+		// replace [] with placeholder
+		name = name.replace('[]', '[%%index%%]');
+		
+		// vars
+		var keys = name.match(/([^\[\]])+/g);
+		if( !keys ) return;
+		var length = keys.length;
+		var ref = obj;
+		
+		// loop
+		for( var i = 0; i < length; i++ ) {
 			
 			// vars
-			var $notice = $('.acf-notice');
+			var key = String( keys[i] );
 			
-			
-			// move
-			if( $notice.length ) {
-				$('h1:first').after( $notice );
+			// value
+			if( i == length - 1 ) {
+				
+				// %%index%%
+				if( key === '%%index%%' ) {
+					ref.push( value );
+				
+				// default
+				} else {
+					ref[ key ] = value;
+				}
+				
+			// path
+			} else {
+				
+				// array
+				if( keys[i+1] === '%%index%%' ) {
+					if( !acf.isArray(ref[ key ]) ) {
+						ref[ key ] = [];
+					}
+				
+				// object	
+				} else {
+					if( !acf.isObject(ref[ key ]) ) {
+						ref[ key ] = {};
+					}
+				}
+				
+				// crawl
+				ref = ref[ key ];
 			}
-			
-		},
-		
-		html: function( text, type ){
-			
-		},
-		
-		success: function( text ){
-			
-			
-		},
-		
-		error: function( text ){
-			
-		},
-		
-		warning: function( text ){
-			
-		},
-		
-		information: function( text ){
-			
+			//console.log('ref:', ref);
 		}
-				 
-	});
+	};
+	
+	acf.serialize = function( $el, prefix ){
+		//console.time('serialize');		
+		// vars
+		var obj = {};
+		var inputs = $el.find('select, textarea, input').serializeArray();
+		
+		// prefix
+		if( prefix !== undefined ) {
+			
+			// filter and modify
+			inputs = inputs.filter(function( item ){
+				return item.name.indexOf(prefix) === 0;
+			}).map(function( item ){
+				item.name = item.name.slice(prefix.length);
+				return item;
+			});
+		}
+		
+		// loop
+		for( var i = 0; i < inputs.length; i++ ) {
+			buildObject( obj, inputs[i].name, inputs[i].value );
+		}
+		//console.timeEnd('serialize');
+		
+		// return
+		return obj;
+	};
+	
+	
+	/**
+	*  addAction
+	*
+	*  Wrapper for acf.hooks.addAction
+	*
+	*  @date	14/12/17
+	*  @since	5.6.5
+	*
+	*  @param	n/a
+	*  @return	this
+	*/
+	
+/*
+	var prefixAction = function( action ){
+		return 'acf_' + action;
+	}
+*/
+	
+	acf.addAction = function( action, callback, priority, context ){
+		//action = prefixAction(action);
+		acf.hooks.addAction.apply(this, arguments);
+		return this;
+	};
+	
+	
+	/**
+	*  removeAction
+	*
+	*  Wrapper for acf.hooks.removeAction
+	*
+	*  @date	14/12/17
+	*  @since	5.6.5
+	*
+	*  @param	n/a
+	*  @return	this
+	*/
+	
+	acf.removeAction = function( action, callback ){
+		//action = prefixAction(action);
+		acf.hooks.removeAction.apply(this, arguments);
+		return this;
+	};
+	
+	
+	/**
+	*  doAction
+	*
+	*  Wrapper for acf.hooks.doAction
+	*
+	*  @date	14/12/17
+	*  @since	5.6.5
+	*
+	*  @param	n/a
+	*  @return	this
+	*/
+	
+	var actionHistory = {};
+	//var currentAction = false;
+	acf.doAction = function( action ){
+		//action = prefixAction(action);
+		//currentAction = action;
+		actionHistory[ action ] = 1;
+		acf.hooks.doAction.apply(this, arguments);
+		actionHistory[ action ] = 0;
+		return this;
+	};
+	
+	
+	/**
+	*  doingAction
+	*
+	*  Return true if doing action
+	*
+	*  @date	14/12/17
+	*  @since	5.6.5
+	*
+	*  @param	n/a
+	*  @return	this
+	*/
+	
+	acf.doingAction = function( action ){
+		//action = prefixAction(action);
+		return (actionHistory[ action ] === 1);
+	};
+	
+	
+	/**
+	*  didAction
+	*
+	*  Wrapper for acf.hooks.doAction
+	*
+	*  @date	14/12/17
+	*  @since	5.6.5
+	*
+	*  @param	n/a
+	*  @return	this
+	*/
+	
+	acf.didAction = function( action ){
+		//action = prefixAction(action);
+		return (actionHistory[ action ] !== undefined);
+	};
+	
+	/**
+	*  currentAction
+	*
+	*  Wrapper for acf.hooks.doAction
+	*
+	*  @date	14/12/17
+	*  @since	5.6.5
+	*
+	*  @param	n/a
+	*  @return	this
+	*/
+	
+	acf.currentAction = function(){
+		for( var k in actionHistory ) {
+			if( actionHistory[k] ) {
+				return k;
+			}
+		}
+		return false;
+	};
+	
+	/**
+	*  addFilter
+	*
+	*  Wrapper for acf.hooks.addFilter
+	*
+	*  @date	14/12/17
+	*  @since	5.6.5
+	*
+	*  @param	n/a
+	*  @return	this
+	*/
+	
+	acf.addFilter = function( action ){
+		//action = prefixAction(action);
+		acf.hooks.addFilter.apply(this, arguments);
+		return this;
+	};
+	
+	
+	/**
+	*  removeFilter
+	*
+	*  Wrapper for acf.hooks.removeFilter
+	*
+	*  @date	14/12/17
+	*  @since	5.6.5
+	*
+	*  @param	n/a
+	*  @return	this
+	*/
+	
+	acf.removeFilter = function( action ){
+		//action = prefixAction(action);
+		acf.hooks.removeFilter.apply(this, arguments);
+		return this;
+	};
+	
+	
+	/**
+	*  applyFilters
+	*
+	*  Wrapper for acf.hooks.applyFilters
+	*
+	*  @date	14/12/17
+	*  @since	5.6.5
+	*
+	*  @param	n/a
+	*  @return	this
+	*/
+	
+	acf.applyFilters = function( action ){
+		//action = prefixAction(action);
+		return acf.hooks.applyFilters.apply(this, arguments);
+	};
+	
+	
+	/**
+	*  getArgs
+	*
+	*  description
+	*
+	*  @date	15/12/17
+	*  @since	5.6.5
+	*
+	*  @param	type $var Description. Default.
+	*  @return	type Description.
+	*/
+	
+	acf.arrayArgs = function( args ){
+		return Array.prototype.slice.call( args );
+	};
+	
+	
+	/**
+	*  extendArgs
+	*
+	*  description
+	*
+	*  @date	15/12/17
+	*  @since	5.6.5
+	*
+	*  @param	type $var Description. Default.
+	*  @return	type Description.
+	*/
+	
+/*
+	acf.extendArgs = function( ){
+		var args = Array.prototype.slice.call( arguments );
+		var realArgs = args.shift();
+			
+		Array.prototype.push.call(arguments, 'bar')
+		return Array.prototype.push.apply( args, arguments );
+	};
+*/
 	
 	
 	// Preferences
@@ -3574,6 +1070,890 @@ var acf;
 	
 	
 	/**
+	*  remove
+	*
+	*  Removes an element with fade effect
+	*
+	*  @date	1/1/18
+	*  @since	5.6.5
+	*
+	*  @param	type $var Description. Default.
+	*  @return	type Description.
+	*/
+	
+	acf.remove = function( props ){
+		
+		// allow jQuery
+		if( props instanceof jQuery ) {
+			props = {
+				target: props
+			};
+		}
+		
+		// defaults
+		props = acf.parseArgs(props, {
+			target: false,
+			endHeight: 0,
+			complete: function(){}
+		});
+		
+		// action
+		acf.doAction('remove', props.target);
+		
+		// tr
+		if( props.target.is('tr') ) {
+			removeTr( props );
+		
+		// div
+		} else {
+			removeDiv( props );
+		}
+		
+	};
+	
+	/**
+	*  removeDiv
+	*
+	*  description
+	*
+	*  @date	16/2/18
+	*  @since	5.6.9
+	*
+	*  @param	type $var Description. Default.
+	*  @return	type Description.
+	*/
+	
+	var removeDiv = function( props ){
+		
+		// vars
+		var $el = props.target;
+		var height = $el.height();
+		var width = $el.width();
+		var margin = $el.css('margin');
+		var outerHeight = $el.outerHeight(true);
+		var style = $el.attr('style') + ''; // needed to copy
+		
+		// wrap
+		$el.wrap('<div class="acf-temp-remove" style="height:' + outerHeight + 'px"></div>');
+		var $wrap = $el.parent();
+		
+		// set pos
+		$el.css({
+			height:		height,
+			width:		width,
+			margin:		margin,
+			position:	'absolute'
+		});
+		
+		// fade wrap
+		setTimeout(function(){
+			
+			$wrap.css({
+				opacity:	0,
+				height:		props.endHeight
+			});
+			
+		}, 50);
+		
+		// remove
+		setTimeout(function(){
+			
+			$el.attr('style', style);
+			$wrap.remove();
+			props.complete();
+		
+		}, 301);
+	};
+	
+	/**
+	*  removeTr
+	*
+	*  description
+	*
+	*  @date	16/2/18
+	*  @since	5.6.9
+	*
+	*  @param	type $var Description. Default.
+	*  @return	type Description.
+	*/
+	
+	var removeTr = function( props ){
+		
+		// vars
+		var $tr = props.target;
+		var height = $tr.height();
+		var children = $tr.children().length;
+		
+		// create dummy td
+		var $td = $('<td class="acf-temp-remove" style="padding:0; height:' + height + 'px" colspan="' + children + '"></td>');
+		
+		// fade away tr
+		$tr.addClass('acf-remove-element');
+		
+		// update HTML after fade animation
+		setTimeout(function(){
+			$tr.html( $td );
+		}, 251);
+		
+		// allow .acf-temp-remove to exist before changing CSS
+		setTimeout(function(){
+			
+			// remove class
+			$tr.removeClass('acf-remove-element');
+			
+			// collapse
+			$td.css({
+				height: props.endHeight
+			});			
+				
+		}, 300);
+		
+		// remove
+		setTimeout(function(){
+			
+			$tr.remove();
+			props.complete();
+		
+		}, 451);
+	};
+	
+	/**
+	*  duplicate
+	*
+	*  description
+	*
+	*  @date	3/1/18
+	*  @since	5.6.5
+	*
+	*  @param	type $var Description. Default.
+	*  @return	type Description.
+	*/
+	
+	acf.duplicate = function( args ){
+		
+		// allow jQuery
+		if( args instanceof jQuery ) {
+			args = {
+				target: args
+			};
+		}
+		
+		// vars
+		var timeout = 0;
+				
+		// defaults
+		args = acf.parseArgs(args, {
+			target: false,
+			search: '',
+			replace: '',
+			before: function( $el ){},
+			after: function( $el, $el2 ){},
+			append: function( $el, $el2 ){ 
+				$el.after( $el2 );
+				timeout = 1;
+			}
+		});
+		
+		// compatibility
+		args.target = args.target || args.$el;
+				
+		// vars
+		var $el = args.target;
+		
+		// search
+		args.search = args.search || $el.attr('data-id');
+		args.replace = args.replace || acf.uniqid();
+		
+		// before
+		// - allow acf to modify DOM
+		// - fixes bug where select field option is not selected
+		args.before( $el );
+		acf.doAction('before_duplicate', $el);
+		
+		// clone
+		var $el2 = $el.clone();
+		
+		// rename
+		acf.rename({
+			target:		$el2,
+			search:		args.search,
+			replace:	args.replace,
+		});
+		
+		// remove classes
+		$el2.removeClass('acf-clone');
+		$el2.find('.ui-sortable').removeClass('ui-sortable');
+		
+		// after
+		// - allow acf to modify DOM
+		args.after( $el, $el2 );
+		acf.doAction('after_duplicate', $el, $el2 );
+		
+		// append
+		args.append( $el, $el2 );
+		
+		// append
+		// - allow element to be moved into a visible position before fire action
+		//var callback = function(){
+			acf.doAction('append', $el2);
+		//};
+		//if( timeout ) {
+		//	setTimeout(callback, timeout);
+		//} else {
+		//	callback();
+		//}
+		
+		// return
+		return $el2;
+	};
+	
+	/**
+	*  rename
+	*
+	*  description
+	*
+	*  @date	7/1/18
+	*  @since	5.6.5
+	*
+	*  @param	type $var Description. Default.
+	*  @return	type Description.
+	*/
+	
+	acf.rename = function( args ){
+		
+		// allow jQuery
+		if( args instanceof jQuery ) {
+			args = {
+				target: args
+			};
+		}
+		
+		// defaults
+		args = acf.parseArgs(args, {
+			target: false,
+			destructive: false,
+			search: '',
+			replace: '',
+		});
+		
+		// vars
+		var $el = args.target;
+		var search = args.search || $el.attr('data-id');
+		var replace = args.replace || acf.uniqid('acf');
+		var replaceAttr = function(i, value){
+			return value.replace( search, replace );
+		}
+		
+		// replace (destructive)
+		if( args.destructive ) {
+			var html = $el.outerHTML();
+			html = acf.strReplace( search, replace, html );
+			$el.replaceWith( html );
+			
+		// replace
+		} else {
+			$el.attr('data-id', replace);
+			$el.find('[id*="' + search + '"]').attr('id', replaceAttr);
+			$el.find('[for*="' + search + '"]').attr('for', replaceAttr);
+			$el.find('[name*="' + search + '"]').attr('name', replaceAttr);
+		}
+		
+		// return
+		return $el;
+	};
+	
+	
+	/**
+	*  acf.prepareForAjax
+	*
+	*  description
+	*
+	*  @date	4/1/18
+	*  @since	5.6.5
+	*
+	*  @param	type $var Description. Default.
+	*  @return	type Description.
+	*/
+	
+	acf.prepareForAjax = function( data ){
+		
+		// required
+		data.nonce = acf.get('nonce');
+		data.post_id = acf.get('post_id');
+		
+		// filter for 3rd party customization
+		data = acf.applyFilters('prepare_for_ajax', data);	
+		
+		// return
+		return data;
+	};
+	
+	
+	/**
+	*  acf.startButtonLoading
+	*
+	*  description
+	*
+	*  @date	5/1/18
+	*  @since	5.6.5
+	*
+	*  @param	type $var Description. Default.
+	*  @return	type Description.
+	*/
+	
+	acf.startButtonLoading = function( $el ){
+		$el.prop('disabled', true);
+		$el.after(' <i class="acf-loading"></i>');
+	}
+	
+	acf.stopButtonLoading = function( $el ){
+		$el.prop('disabled', false);
+		$el.next('.acf-loading').remove();
+	}
+	
+	
+	/**
+	*  acf.showLoading
+	*
+	*  description
+	*
+	*  @date	12/1/18
+	*  @since	5.6.5
+	*
+	*  @param	type $var Description. Default.
+	*  @return	type Description.
+	*/
+	
+	acf.showLoading = function( $el ){
+		$el.append('<div class="acf-loading-overlay"><i class="acf-loading"></i></div>');
+	};
+	
+	acf.hideLoading = function( $el ){
+		$el.children('.acf-loading-overlay').remove();
+	};
+	
+	
+	/**
+	*  acf.updateUserSetting
+	*
+	*  description
+	*
+	*  @date	5/1/18
+	*  @since	5.6.5
+	*
+	*  @param	type $var Description. Default.
+	*  @return	type Description.
+	*/
+	
+	acf.updateUserSetting = function( name, value ){
+		
+		var ajaxData = {
+			action: 'acf/update_user_setting',
+			name: name,
+			value: value
+		};
+		
+		$.ajax({
+	    	url: acf.get('ajaxurl'),
+	    	data: acf.prepareForAjax(ajaxData),
+			type: 'post',
+			dataType: 'html'
+		});
+		
+	};
+	
+	
+	/**
+	*  acf.val
+	*
+	*  description
+	*
+	*  @date	8/1/18
+	*  @since	5.6.5
+	*
+	*  @param	type $var Description. Default.
+	*  @return	type Description.
+	*/
+	
+	acf.val = function( $input, value, silent ){
+		
+		// vars
+		var prevValue = $input.val();
+		
+		// bail if no change
+		if( value === prevValue ) {
+			return false
+		}
+		
+		// update value
+		$input.val( value );
+		
+		// prevent select elements displaying blank value if option doesn't exist
+		if( $input.is('select') && $input.val() === null ) {
+			$input.val( prevValue );
+			return false;
+		}
+		
+		// update with trigger
+		if( silent !== true ) {
+			$input.trigger('change');
+		}
+		
+		// return
+		return true;	
+	};
+	
+	/**
+	*  acf.show
+	*
+	*  description
+	*
+	*  @date	9/2/18
+	*  @since	5.6.5
+	*
+	*  @param	type $var Description. Default.
+	*  @return	type Description.
+	*/
+	
+	acf.show = function( $el, lockKey ){
+		
+		// unlock
+		if( lockKey ) {
+			acf.unlock($el, 'hidden', lockKey);
+		}
+		
+		// bail early if $el is still locked
+		if( acf.isLocked($el, 'hidden') ) {
+			//console.log( 'still locked', getLocks( $el, 'hidden' ));
+			return false;
+		}
+		
+		// $el is hidden, remove class and return true due to change in visibility
+		if( $el.hasClass('acf-hidden') ) {
+			$el.removeClass('acf-hidden');
+			return true;
+		
+		// $el is visible, return false due to no change in visibility
+		} else {
+			return false;
+		}
+	};
+	
+	
+	/**
+	*  acf.hide
+	*
+	*  description
+	*
+	*  @date	9/2/18
+	*  @since	5.6.5
+	*
+	*  @param	type $var Description. Default.
+	*  @return	type Description.
+	*/
+	
+	acf.hide = function( $el, lockKey ){
+		
+		// lock
+		if( lockKey ) {
+			acf.lock($el, 'hidden', lockKey);
+		}
+		
+		// $el is hidden, return false due to no change in visibility
+		if( $el.hasClass('acf-hidden') ) {
+			return false;
+		
+		// $el is visible, add class and return true due to change in visibility
+		} else {
+			$el.addClass('acf-hidden');
+			return true;
+		}
+	};
+	
+	
+	/**
+	*  acf.isHidden
+	*
+	*  description
+	*
+	*  @date	9/2/18
+	*  @since	5.6.5
+	*
+	*  @param	type $var Description. Default.
+	*  @return	type Description.
+	*/
+	
+	acf.isHidden = function( $el ){
+		return $el.hasClass('acf-hidden');
+	};
+	
+	
+	/**
+	*  acf.isVisible
+	*
+	*  description
+	*
+	*  @date	9/2/18
+	*  @since	5.6.5
+	*
+	*  @param	type $var Description. Default.
+	*  @return	type Description.
+	*/
+	
+	acf.isVisible = function( $el ){
+		return !acf.isHidden( $el );
+	};
+	
+	
+	/**
+	*  enable
+	*
+	*  description
+	*
+	*  @date	12/3/18
+	*  @since	5.6.9
+	*
+	*  @param	type $var Description. Default.
+	*  @return	type Description.
+	*/
+	
+	var enable = function( $el, lockKey ){
+		
+		// check class. Allow .acf-disabled to overrule all JS
+		if( $el.hasClass('acf-disabled') ) {
+			return false;
+		}
+		
+		// unlock
+		if( lockKey ) {
+			acf.unlock($el, 'disabled', lockKey);
+		}
+		
+		// bail early if $el is still locked
+		if( acf.isLocked($el, 'disabled') ) {
+			return false;
+		}
+		
+		// $el is disabled, remove prop and return true due to change
+		if( $el.prop('disabled') ) {
+			$el.prop('disabled', false);
+			return true;
+		
+		// $el is enabled, return false due to no change
+		} else {
+			return false;
+		}
+	};
+	
+	/**
+	*  acf.enable
+	*
+	*  description
+	*
+	*  @date	9/2/18
+	*  @since	5.6.5
+	*
+	*  @param	type $var Description. Default.
+	*  @return	type Description.
+	*/
+	
+	acf.enable = function( $el, lockKey ){
+		
+		// enable single input
+		if( $el.attr('name') ) {
+			return enable( $el, lockKey );
+		}
+		
+		// find and enable child inputs
+		// return true if any inputs have changed
+		var results = false;
+		$el.find('[name]').each(function(){
+			var result = enable( $(this), lockKey );
+			if( result ) {
+				results = true;
+			}
+		});
+		return results;
+	};
+	
+	
+	/**
+	*  disable
+	*
+	*  description
+	*
+	*  @date	12/3/18
+	*  @since	5.6.9
+	*
+	*  @param	type $var Description. Default.
+	*  @return	type Description.
+	*/
+	
+	var disable = function( $el, lockKey ){
+		
+		// lock
+		if( lockKey ) {
+			acf.lock($el, 'disabled', lockKey);
+		}
+		
+		// $el is disabled, return false due to no change
+		if( $el.prop('disabled') ) {
+			return false;
+		
+		// $el is enabled, add prop and return true due to change
+		} else {
+			$el.prop('disabled', true);
+			return true;
+		}
+	};
+	
+	
+	/**
+	*  acf.disable
+	*
+	*  description
+	*
+	*  @date	9/2/18
+	*  @since	5.6.5
+	*
+	*  @param	type $var Description. Default.
+	*  @return	type Description.
+	*/
+	
+	acf.disable = function( $el, lockKey ){
+		
+		// disable single input
+		if( $el.attr('name') ) {
+			return disable( $el, lockKey );
+		}
+		
+		// find and enable child inputs
+		// return true if any inputs have changed
+		var results = false;
+		$el.find('[name]').each(function(){
+			var result = disable( $(this), lockKey );
+			if( result ) {
+				results = true;
+			}
+		});
+		return results;
+	};
+	
+	
+	/**
+	*  acf.isset
+	*
+	*  description
+	*
+	*  @date	10/1/18
+	*  @since	5.6.5
+	*
+	*  @param	type $var Description. Default.
+	*  @return	type Description.
+	*/
+	
+	acf.isset = function( obj /*, level1, level2, ... */ ) {
+		for( var i = 1; i < arguments.length; i++ ) {
+			if( !obj.hasOwnProperty(arguments[i]) ) {
+				return false;
+			}
+			obj = obj[ arguments[i] ];
+		}
+		return true;
+	};
+	
+	/**
+	*  acf.isget
+	*
+	*  description
+	*
+	*  @date	10/1/18
+	*  @since	5.6.5
+	*
+	*  @param	type $var Description. Default.
+	*  @return	type Description.
+	*/
+	
+	acf.isget = function( obj /*, level1, level2, ... */ ) {
+		for( var i = 1; i < arguments.length; i++ ) {
+			if( !obj.hasOwnProperty(arguments[i]) ) {
+				return null;
+			}
+			obj = obj[ arguments[i] ];
+		}
+		return obj;
+	};
+	
+	/**
+	*  acf.getFileInputData
+	*
+	*  description
+	*
+	*  @date	10/1/18
+	*  @since	5.6.5
+	*
+	*  @param	type $var Description. Default.
+	*  @return	type Description.
+	*/
+	
+	acf.getFileInputData = function( $input, callback ){
+		
+		// vars
+		var value = $input.val();
+		
+		// bail early if no value
+		if( !value ) {
+			return false;
+		}
+		
+		// data
+		var data = {
+			url: value
+		};
+		
+		// modern browsers
+		var file = acf.isget( $input[0], 'files', 0);
+		if( file ){
+			
+			// update data
+			data.size = file.size;
+			data.type = file.type;
+			
+			// image
+			if( file.type.indexOf('image') > -1 ) {
+				
+				// vars
+				var windowURL = window.URL || window.webkitURL;
+				var img = new Image();
+				
+				img.onload = function() {
+					
+					// update
+					data.width = this.width;
+					data.height = this.height;
+					
+					callback( data );
+				};
+				img.src = windowURL.createObjectURL( file );
+			} else {
+				callback( data );
+			}
+		} else {
+			callback( data );
+		}		
+	};
+	
+	/**
+	*  acf.isAjaxSuccess
+	*
+	*  description
+	*
+	*  @date	18/1/18
+	*  @since	5.6.5
+	*
+	*  @param	type $var Description. Default.
+	*  @return	type Description.
+	*/
+	
+	acf.isAjaxSuccess = function( json ){
+		return ( json && json.success );
+	};
+	
+	/**
+	*  acf.getAjaxMessage
+	*
+	*  description
+	*
+	*  @date	18/1/18
+	*  @since	5.6.5
+	*
+	*  @param	type $var Description. Default.
+	*  @return	type Description.
+	*/
+	
+	acf.getAjaxMessage = function( json ){
+		return acf.isget( json, 'data', 'message' );
+	};
+	
+	/**
+	*  acf.getAjaxError
+	*
+	*  description
+	*
+	*  @date	18/1/18
+	*  @since	5.6.5
+	*
+	*  @param	type $var Description. Default.
+	*  @return	type Description.
+	*/
+	
+	acf.getAjaxError = function( json ){
+		return acf.isget( json, 'data', 'error' );
+	};
+	
+	
+	/**
+	*  acf.renderSelect
+	*
+	*  Renders the innter html for a select field.
+	*
+	*  @date	19/2/18
+	*  @since	5.6.9
+	*
+	*  @param	jQuery $select The select element.
+	*  @param	array choices An array of choices.
+	*  @return	void
+	*/
+	
+	acf.renderSelect = function( $select, choices ){
+		
+		// vars
+		var value = $select.val();
+		var values = [];
+		
+		// callback
+		var crawl = function( items ){
+			
+			// vars
+			var itemsHtml = '';
+			
+			// loop
+			items.map(function( item ){
+				
+				// vars
+				var text = item.text || item.label || '';
+				var id = item.id || item.value || '';
+				
+				// append
+				values.push(id);
+				
+				//  optgroup
+				if( item.children ) {
+					itemsHtml += '<optgroup label="' + acf.strEscape(text) + '">' + crawl( item.children ) + '</optgroup>';
+				
+				// option
+				} else {
+					itemsHtml += '<option value="' + id + '"' + (item.disabled ? ' disabled="disabled"' : '') + '>' + acf.strEscape(text) + '</option>';
+				}
+			});
+			
+			// return
+			return itemsHtml;
+		};
+		
+		// update HTML
+		$select.html( crawl(choices) );
+		
+		// update value
+		if( values.indexOf(value) > -1 ){
+			$select.val( value );
+		}
+		
+		// return selected value
+		return $select.val();
+	};
+	
+	/**
 	*  acf.lock
 	*
 	*  Creates a "lock" on an element for a given type and key
@@ -3647,396 +2027,41 @@ var acf;
 		return ( getLocks( $el, type ).length > 0 );
 	};
 	
-	/**
-	*  acf.show
-	*
-	*  description
-	*
-	*  @date	9/2/18
-	*  @since	5.6.5
-	*
-	*  @param	type $var Description. Default.
-	*  @return	type Description.
-	*/
-	
-	acf.show = function( $el, lockKey ){
-		
-		// unlock
-		if( lockKey ) {
-			acf.unlock($el, 'hidden', lockKey);
-		}
-		
-		// bail early if $el is still locked
-		if( acf.isLocked($el, 'hidden') ) {
-			//console.log( 'still locked', getLocks( $el, 'hidden' ));
-			return false;
-		}
-		
-		// $el is hidden, remove class and return true due to change in visibility
-		if( $el.hasClass('acf-hidden') ) {
-			$el.removeClass('acf-hidden');
-			return true;
-		
-		// $el is visible, return false due to no change in visibility
-		} else {
-			return false;
-		}
-	};
-	
-	/**
-	*  enable
-	*
-	*  description
-	*
-	*  @date	12/3/18
-	*  @since	5.6.9
-	*
-	*  @param	type $var Description. Default.
-	*  @return	type Description.
-	*/
-	
-	var enable = function( $el, lockKey ){
-		
-		// check class. Allow .acf-disabled to overrule all JS
-		if( $el.hasClass('acf-disabled') ) {
-			return false;
-		}
-		
-		// unlock
-		if( lockKey ) {
-			acf.unlock($el, 'disabled', lockKey);
-		}
-		
-		// bail early if $el is still locked
-		if( acf.isLocked($el, 'disabled') ) {
-			return false;
-		}
-		
-		// $el is disabled, remove prop and return true due to change
-		if( $el.prop('disabled') ) {
-			$el.prop('disabled', false);
-			return true;
-		
-		// $el is enabled, return false due to no change
-		} else {
-			return false;
-		}
-	};
-	
-	/**
-	*  acf.enable
-	*
-	*  description
-	*
-	*  @date	9/2/18
-	*  @since	5.6.5
-	*
-	*  @param	type $var Description. Default.
-	*  @return	type Description.
-	*/
-	
-	acf.enable = function( $el, lockKey ){
-		
-		// enable single input
-		if( $el.attr('name') ) {
-			return enable( $el, lockKey );
-		}
-		
-		// find and enable child inputs
-		// return false if 'any' inputs are still disabled
-		var results = true;
-		$el.find('[name]').each(function(){
-			var result = enable( $(this), lockKey );
-			if( !result ) {
-				results = false;
-			}
-		});
-		return results;
-	};
-	
-	
-	/**
-	*  disable
-	*
-	*  description
-	*
-	*  @date	12/3/18
-	*  @since	5.6.9
-	*
-	*  @param	type $var Description. Default.
-	*  @return	type Description.
-	*/
-	
-	var disable = function( $el, lockKey ){
-		
-		// lock
-		if( lockKey ) {
-			acf.lock($el, 'disabled', lockKey);
-		}
-		
-		// $el is disabled, return false due to no change
-		if( $el.prop('disabled') ) {
-			return false;
-		
-		// $el is enabled, add prop and return true due to change
-		} else {
-			$el.prop('disabled', true);
-			return true;
-		}
-	};
-	
-	
-	/**
-	*  acf.disable
-	*
-	*  description
-	*
-	*  @date	9/2/18
-	*  @since	5.6.5
-	*
-	*  @param	type $var Description. Default.
-	*  @return	type Description.
-	*/
-	
-	acf.disable = function( $el, lockKey ){
-		
-		// disable single input
-		if( $el.attr('name') ) {
-			return disable( $el, lockKey );
-		}
-		
-		// find and enable child inputs
-		// return false if 'any' inputs did not change
-		var results = true;
-		$el.find('[name]').each(function(){
-			var result = disable( $(this), lockKey );
-			if( !result ) {
-				results = false;
-			}
-		});
-		return results;
-	};
-	
-	// compatibility
-	acf.enable_el = acf.enable;
-	acf.enable_form = acf.enable;
-	
-	acf.disable_el = acf.disable;
-	acf.disable_form = acf.disable;
-	
-	
-	/**
-	*  acf.hide
-	*
-	*  description
-	*
-	*  @date	9/2/18
-	*  @since	5.6.5
-	*
-	*  @param	type $var Description. Default.
-	*  @return	type Description.
-	*/
-	
-	acf.hide = function( $el, lockKey ){
-		
-		// lock
-		if( lockKey ) {
-			acf.lock($el, 'hidden', lockKey);
-		}
-		
-		// $el is hidden, return false due to no change in visibility
-		if( $el.hasClass('acf-hidden') ) {
-			return false;
-		
-		// $el is visible, add class and return true due to change in visibility
-		} else {
-			$el.addClass('acf-hidden');
-			return true;
-		}
-	};
-	
-	
-	/**
-	*  acf.isHidden
-	*
-	*  description
-	*
-	*  @date	9/2/18
-	*  @since	5.6.5
-	*
-	*  @param	type $var Description. Default.
-	*  @return	type Description.
-	*/
-	
-	acf.isHidden = function( $el ){
-		return $el.hasClass('acf-hidden');
-	};
-	
-	
-	/**
-	*  acf.isVisible
-	*
-	*  description
-	*
-	*  @date	9/2/18
-	*  @since	5.6.5
-	*
-	*  @param	type $var Description. Default.
-	*  @return	type Description.
-	*/
-	
-	acf.isVisible = function( $el ){
-		return !acf.isHidden( $el );
-	};
-	
 	/*
-	*  Sortable
+	*  exists
 	*
-	*  These functions will hook into the start and stop of a jQuery sortable event and modify the item and placeholder
+	*  This function will return true if a jQuery selection exists
 	*
 	*  @type	function
-	*  @date	12/11/2013
+	*  @date	8/09/2014
 	*  @since	5.0.0
 	*
-	*  @param	$post_id (int)
-	*  @return	$post_id (int)
+	*  @param	n/a
+	*  @return	(boolean)
 	*/
 	
-	$(document).on('sortstart', function( event, ui ) {
-		acf.do_action('sortstart', ui.item, ui.placeholder);
-	});
-	
-	$(document).on('sortstop', function( event, ui ) {
-		acf.do_action('sortstop', ui.item, ui.placeholder);
-	});
-	
-	acf.add_action('sortstart', function( $item, $placeholder ){
-		
-		// if $item is a tr, apply some css to the elements
-		if( $item.is('tr') ) {
-			
-			// temp set as relative to find widths
-			$item.css('position', 'relative');
-			
-			
-			// set widths for td children		
-			$item.children().each(function(){
-			
-				$(this).width($(this).width());
-				
-			});
-			
-			
-			// revert position css
-			$item.css('position', 'absolute');
-			
-			
-			// add markup to the placeholder
-			$placeholder.html('<td style="height:' + $item.height() + 'px; padding:0;" colspan="' + $item.children('td').length + '"></td>');
-		
-		}
-		
-	});
-	
+	$.fn.exists = function() {
+		return $(this).length>0;
+	};
 	
 	
 	/*
-	*  before & after duplicate
+	*  outerHTML
 	*
-	*  This function will modify the DOM before it is cloned. Primarily fixes a cloning issue with select elements
+	*  This function will return a string containing the HTML of the selected element
 	*
 	*  @type	function
-	*  @date	16/05/2014
+	*  @date	19/11/2013
 	*  @since	5.0.0
 	*
-	*  @param	$post_id (int)
-	*  @return	$post_id (int)
+	*  @param	$.fn
+	*  @return	(string)
 	*/
 	
-	acf.add_action('before_duplicate', function( $orig ){
-		
-		// add 'selected' class
-		$orig.find('select option:selected').addClass('selected');
-		
-	});
+	$.fn.outerHTML = function() {
+	    return $(this).get(0).outerHTML;
+	};
 	
-	acf.add_action('after_duplicate', function( $orig, $duplicate ){
-		
-		// set select values
-		$duplicate.find('select').each(function(){
-			
-			// vars
-			var $select = $(this);
-			
-			
-			// bail early if is 'Stylized UI'
-			//if( $select.data('ui') ) return;
-
-
-			// vars
-			var val = [];
-			
-			
-			// loop
-			$select.find('option.selected').each(function(){
-				
-				val.push( $(this).val() );
-				
-		    });
-		    
-		    
-		    // set val
-			$select.val( val );
-			
-		});
-		
-		
-		// remove 'selected' class
-		$orig.find('select option.selected').removeClass('selected');
-		$duplicate.find('select option.selected').removeClass('selected');
-		
-	});
-	
-	
-	
-/*
-	acf.test_rtl = acf.model.extend({
-		
-		actions: {
-			'ready':	'ready',
-		},
-		
-		ready: function(){
-			
-			$('html').attr('dir', 'rtl');
-			
-		}
-		
-	});
-*/
-	
-	
-	
-/*
-	
-	
-	console.time("acf_test_ready");
-	console.time("acf_test_load");
-	
-	acf.add_action('ready', function(){
-		
-		console.timeEnd("acf_test_ready");
-		
-	}, 999);
-	
-	acf.add_action('load', function(){
-		
-		console.timeEnd("acf_test_load");
-		
-	}, 999);
-*/
-
-
 	/*
 	*  indexOf
 	*
@@ -4057,5 +2082,31 @@ var acf;
 	    };
 	    
 	}
+	
+	
+	// Set up actions from events
+	$(document).ready(function(){
+		acf.doAction('ready');
+	});
+	
+	$(window).on('load', function(){
+		acf.doAction('load');
+	});
+	
+	$(window).on('unload', function(){
+		acf.doAction('unload');
+	});
+	
+	$(window).on('resize', function(){
+		acf.doAction('resize');
+	});
+	
+	$(document).on('sortstart', function( event, ui ) {
+		acf.doAction('sortstart', ui.item, ui.placeholder);
+	});
+	
+	$(document).on('sortstop', function( event, ui ) {
+		acf.doAction('sortstop', ui.item, ui.placeholder);
+	});
 	
 })(jQuery);

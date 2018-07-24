@@ -1,574 +1,212 @@
-(function($){
+(function($, undefined){
 	
-	acf.media = acf.model.extend({
+	/**
+	*  acf.newMediaPopup
+	*
+	*  description
+	*
+	*  @date	10/1/18
+	*  @since	5.6.5
+	*
+	*  @param	type $var Description. Default.
+	*  @return	type Description.
+	*/
+	
+	acf.newMediaPopup = function( args ){
 		
-		frames: [],
-		mime_types: {},
+		// args
+		var popup = null;
+		var args = acf.parseArgs(args, {
+			mode:			'select',			// 'select', 'edit'
+			title:			'',					// 'Upload Image'
+			button:			'',					// 'Select Image'
+			type:			'',					// 'image', ''
+			field:			false,				// field instance
+			allowedTypes:	'',					// '.jpg, .png, etc'
+			library:		'all',				// 'all', 'uploadedTo'
+			multiple:		false,				// false, true, 'add'
+			attachment:		0,					// the attachment to edit
+			autoOpen:		true,				// open the popup automatically
+			open: 			function(){},		// callback after close
+			select: 		function(){},		// callback after select
+			close: 			function(){}		// callback after close
+		});
 		
-		actions: {
-			'ready': 'ready'
+		// initialize
+		if( args.mode == 'edit' ) {
+			popup = new acf.models.EditMediaPopup( args );
+		} else {
+			popup = new acf.models.SelectMediaPopup( args );
+		}
+		
+		// open popup (allow frame customization before opening)
+		if( args.autoOpen ) {
+			setTimeout(function(){
+				popup.open();
+			}, 1);
+		}
+		
+		// action
+		acf.doAction('new_media_popup', popup);
+		
+		// return
+		return popup;
+	};
+	
+	
+	/**
+	*  getPostID
+	*
+	*  description
+	*
+	*  @date	10/1/18
+	*  @since	5.6.5
+	*
+	*  @param	type $var Description. Default.
+	*  @return	type Description.
+	*/
+	
+	var getPostID = function() {
+		var postID = acf.get('post_id');
+		return $.isNumeric(postID) ? postID : 0;
+	}
+	
+	
+	/**
+	*  acf.getMimeTypes
+	*
+	*  description
+	*
+	*  @date	11/1/18
+	*  @since	5.6.5
+	*
+	*  @param	type $var Description. Default.
+	*  @return	type Description.
+	*/
+	
+	acf.getMimeTypes = function(){
+		return this.get('mimeTypes');
+	};
+	
+	acf.getMimeType = function( name ){
+		
+		// vars
+		var allTypes = acf.getMimeTypes();
+		
+		// search
+		if( allTypes[name] !== undefined ) {
+			return allTypes[name];
+		}
+		
+		// some types contain a mixed key such as "jpg|jpeg|jpe"
+		for( var key in allTypes ) {
+			if( key.indexOf(name) !== -1 ) {
+				return allTypes[key];
+			}
+		}
+		
+		// return
+		return false;
+	};
+	
+	
+	/**
+	*  MediaPopup
+	*
+	*  description
+	*
+	*  @date	10/1/18
+	*  @since	5.6.5
+	*
+	*  @param	type $var Description. Default.
+	*  @return	type Description.
+	*/
+	
+	var MediaPopup = acf.Model.extend({
+		
+		id: 'MediaPopup',
+		data: {},
+		defaults: {},
+		frame: false,
+		
+		setup: function( props ){
+			$.extend(this.data, props);
 		},
 		
-		
-		/*
-		*  frame
-		*
-		*  This function will return the current frame
-		*
-		*  @type	function
-		*  @date	11/04/2016
-		*  @since	5.3.2
-		*
-		*  @param	n/a
-		*  @return	frame (object)
-		*/
-		
-		frame: function(){
+		initialize: function(){
 			
 			// vars
-			var i = this.frames.length - 1;
+			var options = this.getFrameOptions();
 			
-			
-			// bail early if no index
-			if( i < 0 ) return false;
-			
-			
-			// return
-			return this.frames[ i ];
-				
-		},
-		
-		
-		/*
-		*  destroy
-		*
-		*  this function will destroy a frame
-		*
-		*  @type	function
-		*  @date	11/04/2016
-		*  @since	5.3.8
-		*
-		*  @return	frame (object)
-		*  @return	n/a
-		*/
-		
-		destroy: function( frame ) {
-			
-			// detach
-			frame.detach();
-			frame.dispose();
-					
-			
-			// remove frame
-			frame = null;
-			this.frames.pop();
-			
-		},
-		
-		
-		/*
-		*  popup
-		*
-		*  This function will create a wp media popup frame
-		*
-		*  @type	function
-		*  @date	11/04/2016
-		*  @since	5.3.8
-		*
-		*  @param	args (object)
-		*  @return	frame (object)
-		*/
-		
-		popup: function( args ) {
-			
-			// vars
-			var post_id = acf.get('post_id'),
-				frame = false;
-			
-			
-			// validate post_id
-			if( !$.isNumeric(post_id) ) post_id = 0;
-			
-			
-			// settings
-			var settings = acf.parse_args( args, {
-				mode:		'select',			// 'select', 'edit'
-				title:		'',					// 'Upload Image'
-				button:		'',					// 'Select Image'
-				type:		'',					// 'image', ''
-				field:		'',					// 'field_123'
-				mime_types:	'',					// 'pdf, etc'
-				library:	'all',				// 'all', 'uploadedTo'
-				multiple:	false,				// false, true, 'add'
-				attachment:	0,					// the attachment to edit
-				post_id:	post_id,			// the post being edited
-				select: 	function(){}
-			});
-			
-			
-			// id changed to attributes
-			if( settings.id ) settings.attachment = settings.id;
-			
+			// add states
+			this.addFrameStates( options );
 			
 			// create frame
-			var frame = this.new_media_frame( settings );
+			var frame = wp.media( options );
 			
+			// add args reference
+			frame.acf = this;
 			
-			// append
-			this.frames.push( frame );
+			// add events
+			this.addFrameEvents( frame, options );
 			
-			
-			// open popup (allow frame customization before opening)
-			setTimeout(function(){
-				
-				frame.open();
-				
-			}, 1);
-			
-			
-			// return
-			return frame;
-				
+			// strore frame
+			this.frame = frame;
 		},
 		
-		
-		/*
-		*  _get_media_frame_settings
-		*
-		*  This function will return an object containing frame settings
-		*
-		*  @type	function
-		*  @date	11/04/2016
-		*  @since	5.3.8
-		*
-		*  @param	frame (object)
-		*  @param	settings (object)
-		*  @return	frame (object)
-		*/
-		
-		_get_media_frame_settings: function( frame, settings ){
-			
-			// select
-			if( settings.mode === 'select' ) {
-					
-				frame = this._get_select_frame_settings( frame, settings );
-			
-			// edit	
-			} else if( settings.mode === 'edit' ) {
-				
-				frame = this._get_edit_frame_settings( frame, settings );
-				
-			}
-			
-			
-			// return
-			return frame;
-			
+		open: function(){
+			this.frame.open();
 		},
 		
-		_get_select_frame_settings: function( frame, settings ){
-			
-			// type
-			if( settings.type ) {
-				
-				frame.library.type = settings.type;
-				
-			}
-			
-			
-			// library
-			if( settings.library === 'uploadedTo' ) {
-			
-				frame.library.uploadedTo = settings.post_id;
-			
-			}
-			
-			
-			// button
-			frame._button = acf._e('media', 'select');
-			
-			
-			// return
-			return frame;
-			
+		close: function(){
+			this.frame.close();
 		},
 		
-		_get_edit_frame_settings: function( frame, settings ){
-
-			// post__in
-			frame.library.post__in = [ settings.attachment ];
-			
-			
-			// button
-			frame._button = acf._e('media', 'update');
-			
-			
-			// return 
-			return frame;
-			
+		remove: function(){
+			this.frame.detach();
+			this.frame.remove();
 		},
 		
-		
-		/*
-		*  _add_media_frame_events
-		*
-		*  This function will add events to the frame object
-		*
-		*  @type	function
-		*  @date	11/04/2016
-		*  @since	5.3.8
-		*
-		*  @param	$post_id (int)
-		*  @return	$post_id (int)
-		*/
-		
-		_add_media_frame_events: function( frame, settings ){
-			
-			// log events
-/*
-			frame.on('all', function( e ) {
-				
-				console.log( 'frame all: %o', e );
-			
-			});
-*/
-			
-			
-			// add class
-			frame.on('open',function() {
-				
-				// add class
-				this.$el.closest('.media-modal').addClass('acf-media-modal -' +settings.mode );
-					
-			}, frame);
-			
-						
-			// edit image view
-			// source: media-views.js:2410 editImageContent()
-			frame.on('content:render:edit-image', function(){
-				
-				var image = this.state().get('image'),
-					view = new wp.media.view.EditImage( { model: image, controller: this } ).render();
-	
-				this.content.set( view );
-	
-				// after creating the wrapper view, load the actual editor via an ajax call
-				view.loadEditor();
-				
-			}, frame);
-			
-			
-			// update toolbar button
-			frame.on( 'toolbar:create:select', function( toolbar ) {
-				
-				toolbar.view = new wp.media.view.Toolbar.Select({
-					text: frame.options._button,
-					controller: this
-				});
-				
-			}, frame );
-			
-			
-			// select image
-			frame.on('select', function() {
-				
-				// get selected images
-				var state = frame.state(),
-					image = state.get('image'),
-					selection = state.get('selection');
-				
-				
-				// if editing image
-				if( image ) {
-					
-					settings.select.apply( frame, [image, 0] );
-					
-					return;
-					
-				}
-				
-				
-				// if selecting images
-				if( selection ) {
-					
-					// vars
-					var i = 0;
-				
-					
-					// loop
-					selection.each(function( attachment ){
-						
-						settings.select.apply( frame, [attachment, i] );
-						
-						i++;
-						
-					});
-					
-					return;
-					
-				}
-				
-			});
-			
-			
-			// close popup
-			frame.on('close',function(){
-			
-				setTimeout(function(){
-					
-					acf.media.destroy( frame );
-					
-				}, 500);
-				
-			});
-			
-			
-			// select
-			if( settings.mode === 'select' ) {
-					
-				frame = this._add_select_frame_events( frame, settings );
-			
-			// edit	
-			} else if( settings.mode === 'edit' ) {
-				
-				frame = this._add_edit_frame_events( frame, settings );
-				
-			}
-			
-			
-			// return
-			return frame;
-			
-		},
-		
-		_add_select_frame_events: function( frame, settings ){
-			
-			// reference
-			var self = this;
-			
-			
-			// plupload
-			// adds _acfuploader param to validate uploads
-			if( acf.isset(_wpPluploadSettings, 'defaults', 'multipart_params') ) {
-				
-				// add _acfuploader so that Uploader will inherit
-				_wpPluploadSettings.defaults.multipart_params._acfuploader = settings.field;
-				
-				
-				// remove acf_field so future Uploaders won't inherit
-				frame.on('open', function(){
-					
-					delete _wpPluploadSettings.defaults.multipart_params._acfuploader;
-					
-				});
-				
-			}
-			
-			
-			// modify DOM
-			frame.on('content:activate:browse', function(){
-				
-				// populate above vars making sure to allow for failure
-				try {
-					
-					var toolbar = frame.content.get().toolbar,
-						filters = toolbar.get('filters'),
-						search = toolbar.get('search');
-				
-				} catch(e) {
-				
-					// one of the objects was 'undefined'... perhaps the frame open is Upload Files
-					// console.log( 'error %o', e );
-					return;
-					
-				}
-				
-				
-				// image
-				if( settings.type == 'image' ) {
-					
-					// update all
-					filters.filters.all.text = acf._e('image', 'all');
-					
-					
-					// remove some filters
-					delete filters.filters.audio;
-					delete filters.filters.video;
-					
-					
-					// update all filters to show images
-					$.each( filters.filters, function( k, filter ){
-						
-						if( filter.props.type === null ) {
-							
-							filter.props.type = 'image';
-							
-						}
-						
-					});
-					
-				}
-				
-				
-				// custom mime types
-				if( settings.mime_types ) {
-					
-					// explode
-					var extra_types = settings.mime_types.split(' ').join('').split('.').join('').split(',');
-					
-					
-					// loop through mime_types
-					$.each( extra_types, function( i, type ){
-						
-						// find mime
-						$.each( self.mime_types, function( t, mime ){
-							
-							// continue if key does not match
-							if( t.indexOf(type) === -1 ) {
-								
-								return;
-								
-							}
-							
-							
-							// create new filter
-							var filter = {
-								text: type,
-								props: {
-									status:  null,
-									type:    mime,
-									uploadedTo: null,
-									orderby: 'date',
-									order:   'DESC'
-								},
-								priority: 20
-							};			
-											
-							
-							// append filter
-							filters.filters[ mime ] = filter;
-														
-						});
-						
-					});
-					
-				}
-				
-				
-				// uploaded to post
-				if( settings.library == 'uploadedTo' ) {
-					
-					// remove some filters
-					delete filters.filters.unattached;
-					delete filters.filters.uploaded;
-					
-					
-					// add 'uploadedTo' text
-					filters.$el.parent().append('<span class="acf-uploadedTo">' + acf._e('image', 'uploadedTo') + '</span>');
-					
-					
-					// add uploadedTo to filters
-					$.each( filters.filters, function( k, filter ){
-						
-						filter.props.uploadedTo = settings.post_id;
-						
-					});
-					
-				}
-				
-				
-				// add _acfuploader to filters
-				$.each( filters.filters, function( k, filter ){
-					
-					filter.props._acfuploader = settings.field;
-					
-				});
-				
-				
-				// add _acfuplaoder to search
-				search.model.attributes._acfuploader = settings.field;
-				
-				
-				// render
-				if( typeof filters.refresh === 'function' ) {
-					
-					filters.refresh();
-				
-				}
-				
-			});
-			
-			
-			// return
-			return frame;
-			
-		},
-		
-		_add_edit_frame_events: function( frame, settings ){
-			
-			// add class
-			frame.on('open',function() {
-				
-				// add class
-				this.$el.closest('.media-modal').addClass('acf-expanded');
-				
-				
-				// set to browse
-				if( this.content.mode() != 'browse' ) {
-				
-					this.content.mode('browse');
-					
-				}
-				
-				
-				// set selection
-				var state 		= this.state(),
-					selection	= state.get('selection'),
-					attachment	= wp.media.attachment( settings.attachment );
-				
-				
-				selection.add( attachment );
-								
-			}, frame);
-
-			
-			// return 
-			return frame;
-			
-		},
-		
-		
-		/*
-		*  new_media_frame
-		*
-		*  this function will create a new media frame
-		*
-		*  @type	function
-		*  @date	11/04/2016
-		*  @since	5.3.8
-		*
-		*  @param	settings (object)
-		*  @return	frame (object)
-		*/
-		
-		new_media_frame: function( settings ){
+		getFrameOptions: function(){
 			
 			// vars
-			var attributes = {
-				title: settings.title,
-				multiple: settings.multiple,
-				library: {},
-				states:	[]
+			var options = {
+				title:		this.get('title'),
+				multiple:	this.get('multiple'),
+				library:	{},
+				states:		[]
 			};
 			
+			// type
+			if( this.get('type') ) {
+				options.library.type = this.get('type');
+			}
 			
-			// get options
-			attributes = this._get_media_frame_settings( attributes, settings );
-						
+			// type
+			if( this.get('library') === 'uploadedTo' ) {
+				options.library.uploadedTo = getPostID();
+			}
+			
+			// attachment
+			if( this.get('attachment') ) {
+				options.library.post__in = [ this.get('attachment') ];
+			}
+			
+			// button
+			if( this.get('button') ) {
+				options.button = {
+					text: this.get('button')
+				};
+			}
+			
+			// return
+			return options;
+		},
 		
-			// create query
-			var Query = wp.media.query( attributes.library );
+		addFrameStates: function( options ){
 			
+			// create query
+			var Query = wp.media.query( options.library );
 			
 			// add _acfuploader
 			// this is super wack!
@@ -577,285 +215,479 @@
 			// Adding any custom args will cause the Attahcments to not observe the uploader queue
 			// To bypass this security issue, we add in the args AFTER the Query has been initialized
 			// options.library._acfuploader = settings.field;
-			if( acf.isset(Query, 'mirroring', 'args') ) {
-				
-				Query.mirroring.args._acfuploader = settings.field;
-				
+			if( this.get('field') && acf.isset(Query, 'mirroring', 'args') ) {
+				Query.mirroring.args._acfuploader = this.get('field');
 			}
 			
-			
 			// add states
-			attributes.states = [
+			options.states.push(
 				
 				// main state
 				new wp.media.controller.Library({
 					library:		Query,
-					multiple: 		attributes.multiple,
-					title: 			attributes.title,
+					multiple: 		this.get('multiple'),
+					title: 			this.get('title'),
 					priority: 		20,
 					filterable: 	'all',
 					editable: 		true,
-
-					// If the user isn't allowed to edit fields,
-					// can they still edit it locally?
 					allowLocalEdits: true
 				})
 				
-			];
-			
+			);
 			
 			// edit image functionality (added in WP 3.9)
 			if( acf.isset(wp, 'media', 'controller', 'EditImage') ) {
-				
-				attributes.states.push( new wp.media.controller.EditImage() );
-				
+				options.states.push( new wp.media.controller.EditImage() );
 			}
-			
-			
-			// create frame
-			var frame = wp.media( attributes );
-			
-			
-			// add args reference
-			frame.acf = settings;
-			
-			
-			// add events
-			frame = this._add_media_frame_events( frame, settings );
-			
-			
-			// return
-			return frame;
-			
 		},
 		
-		ready: function(){
+		addFrameEvents: function( frame, options ){
 			
-			// vars
-			var version = acf.get('wp_version'),
-				browser = acf.get('browser'),
-				post_id = acf.get('post_id');
+			// log all events
+			//frame.on('all', function( e ) {
+			//	console.log( 'frame all: %o', e );
+			//});
 			
+			// add class
+			frame.on('open',function() {
+				this.$el.closest('.media-modal').addClass('acf-media-modal -' + this.acf.get('mode') );
+			}, frame);
 			
-			// update wp.media
-			if( acf.isset(window,'wp','media','view','settings','post') && $.isNumeric(post_id) ) {
+			// edit image view
+			// source: media-views.js:2410 editImageContent()
+			frame.on('content:render:edit-image', function(){
 				
-				wp.media.view.settings.post.id = post_id;
-					
-			}
+				var image = this.state().get('image');
+				var view = new wp.media.view.EditImage({ model: image, controller: this }).render();
+				this.content.set( view );
+	
+				// after creating the wrapper view, load the actual editor via an ajax call
+				view.loadEditor();
+				
+			}, frame);
 			
-			
-			// append browser
-			if( browser ) {
-				
-				$('body').addClass('browser-' + browser );
-				
-			}
-			
-			
-			// append version
-			if( version ) {
-				
-				// ensure is string
-				version = version + '';
-				
-				
-				// use only major version
-				major = version.substr(0,1);
-				
-				
-				// add body class
-				$('body').addClass('major-' + major);
-				
-			}
-			
-			
-			// customize wp.media views
-			if( acf.isset(window, 'wp', 'media', 'view') ) {
-				
-				//this.customize_Attachments();
-				//this.customize_Query();
-				//this.add_AcfEmbed();
-				this.customize_Attachment();
-				this.customize_AttachmentFiltersAll();
-				this.customize_AttachmentCompat();
-			
-			}
-			
-		},
-		
-		
+			// update toolbar button
 /*
-		add_AcfEmbed: function(){
-			
-			//test urls
-			//(image) jpg: 	http://www.ml24.net/img/ml24_design_process_scion_frs_3d_rendering.jpg
-			//(image) svg: 	http://kompozer.net/images/svg/Mozilla_Firefox.svg
-			//(file) pdf: 	http://martinfowler.com/ieeeSoftware/whenType.pdf
-			//(video) mp4:	https://videos.files.wordpress.com/kUJmAcSf/bbb_sunflower_1080p_30fps_normal_hd.mp4
+			frame.on( 'toolbar:create:select', function( toolbar ) {
 				
-			
-			
-			// add view
-			wp.media.view.AcfEmbed = wp.media.view.Embed.extend({
+				toolbar.view = new wp.media.view.Toolbar.Select({
+					text: frame.options._button,
+					controller: this
+				});
 				
-				initialize: function() {
-				
-					// set attachments
-					this.model.props.attributes = this.controller.acf.attachment || {};
-						
-					
-					// refresh
-					wp.media.view.Embed.prototype.initialize.apply( this, arguments );
-					
-				},
-				
-				refresh: function() {
-					
-					// vars
-					var attachment = acf.parse_args(this.model.props.attributes, {
-						url: '',
-						filename: '',
-						title: '',
-						caption: '',
-						alt: '',
-						description: '',
-						type: '',
-						ext: ''
-					});
-					
-					
-					// update attachment
-					if( attachment.url ) {
-						
-						// filename
-						attachment.filename = attachment.url.split('/').pop().split('?')[0];
-						
-						
-						// update
-						attachment.ext = attachment.filename.split('.').pop();
-						attachment.type = /(jpe?g|png|gif|svg)/i.test(attachment.ext) ? 'image': 'file';
-						
-					}
-					
-					
-					// auto generate title
-					if( attachment.filename && !attachment.title ) {
-						
-						// replace
-						attachment.title = attachment.filename.split('-').join(' ').split('_').join(' ');
-						
-						
-						// uppercase first word
-						attachment.title = attachment.title.charAt(0).toUpperCase() + attachment.title.slice(1);
-						
-						
-						// remove extension
-						attachment.title = attachment.title.replace('.'+attachment.ext, '');
-						
-						
-						// update model
-						this.model.props.attributes.title = attachment.title;
-						
-					}
-					
-					
-					// save somee extra data
-					this.model.props.attributes.filename = attachment.filename;
-					this.model.props.attributes.type = attachment.type;
-					
-						
-					// always show image view
-					// avoid this.model.set() to prevent listeners updating view
-					this.model.attributes.type = 'image';
-					
-					
-					// refresh
-					wp.media.view.Embed.prototype.refresh.apply( this, arguments );
-
-					
-					// append title
-					this.$el.find('.setting.caption').before([
-						'<label class="setting title">',
-							'<span>Title</span>',
-							'<input type="text" data-setting="title" value="' + attachment.title + '">',
-						'</label>'
-					].join(''));
-					
-					
-					// append description
-					this.$el.find('.setting.alt-text').after([
-						'<label class="setting description">',
-							'<span>Description</span>',
-							'<textarea type="text" data-setting="description">' + attachment.description + '</textarea>',
-						'</label>'
-					].join(''));
-					
-					
-					// hide alt
-					if( attachment.type !== 'image' ) {
-						
-						this.$el.find('.setting.alt-text').hide();
-						
-					}
-					
-				}
-				
-			});	
-			
-		},
+			}, frame );
 */
-/*
-		
-		customize_Attachments: function(){
-			
-			// vars
-			var Attachments = wp.media.model.Attachments;
-			
-			
-			wp.media.model.Attachments = Attachments.extend({
+			// on select
+			frame.on('select', function() {
 				
-				initialize: function( models, options ){
-					
-					// console.log('My Attachments initialize: %o %o %o', this, models, options);
-					
-					// return
-					return Attachments.prototype.initialize.apply( this, arguments );
-					
-				},
+				// vars
+				var selection = frame.state().get('selection');
 				
-				sync: function( method, model, options ) {
+				// if selecting images
+				if( selection ) {
 					
-					// console.log('My Attachments sync: %o %o %o %o', this, method, model, options);
-					
-					
-					// return
-					return Attachments.prototype.sync.apply( this, arguments );
-					
+					// loop
+					selection.each(function( attachment, i ){
+						frame.acf.get('select').apply( frame.acf, [attachment, i] );
+					});
 				}
-				
 			});
 			
+			// on close
+			frame.on('close',function(){
+				
+				// callback and remove
+				setTimeout(function(){
+					frame.acf.get('close').apply( frame.acf );
+					frame.acf.remove();
+				}, 1);
+			});
+		}
+	});
+	
+	
+	/**
+	*  acf.models.SelectMediaPopup
+	*
+	*  description
+	*
+	*  @date	10/1/18
+	*  @since	5.6.5
+	*
+	*  @param	type $var Description. Default.
+	*  @return	type Description.
+	*/
+	
+	acf.models.SelectMediaPopup = MediaPopup.extend({
+		id: 'SelectMediaPopup',
+		setup: function( props ){
+			
+			// default button
+			if( !props.button ) {
+				props.button = acf._x('Select', 'verb');
+			}
+			
+			// parent
+			MediaPopup.prototype.setup.apply(this, arguments);
 		},
 		
-		customize_Query: function(){
+		addFrameEvents: function( frame, options ){
 			
-			// console.log('customize Query!');
+			// plupload
+			// adds _acfuploader param to validate uploads
+			if( acf.isset(_wpPluploadSettings, 'defaults', 'multipart_params') ) {
+				
+				// add _acfuploader so that Uploader will inherit
+				_wpPluploadSettings.defaults.multipart_params._acfuploader = this.get('field');
+				
+				// remove acf_field so future Uploaders won't inherit
+				frame.on('open', function(){
+					delete _wpPluploadSettings.defaults.multipart_params._acfuploader;
+				});
+			}
+			
+			// browse
+			frame.on('content:activate:browse', function(){
+				
+				// vars
+				var toolbar = false;
+				
+				// populate above vars making sure to allow for failure
+				// perhaps toolbar does not exist because the frame open is Upload Files
+				try {
+					toolbar = frame.content.get().toolbar;
+				} catch(e) {
+					console.log(e);
+					return;
+				}
+				
+				// callback
+				frame.acf.customizeFilters.apply(frame.acf, [toolbar]);
+			});
+			
+			// parent
+			MediaPopup.prototype.addFrameEvents.apply(this, arguments);
+			
+		},
+		
+		customizeFilters: function( toolbar ){
 			
 			// vars
-			var Query = wp.media.model.Query;
+			var filters = toolbar.get('filters');
+			
+			// image
+			if( this.get('type') == 'image' ) {
+				
+				// update all
+				filters.filters.all.text = acf.__('All images');
+				
+				// remove some filters
+				delete filters.filters.audio;
+				delete filters.filters.video;
+				delete filters.filters.image;
+				
+				// update all filters to show images
+				$.each(filters.filters, function( i, filter ){
+					filter.props.type = filter.props.type || 'image';
+				});
+			}
+			
+			// specific types
+			if( this.get('allowedTypes') ) {
+				
+				// convert ".jpg, .png" into ["jpg", "png"]
+				var allowedTypes = this.get('allowedTypes').split(' ').join('').split('.').join('').split(',');
+				
+				// loop
+				allowedTypes.map(function( name ){
+					
+					// get type
+					var mimeType = acf.getMimeType( name );
+					
+					// bail early if no type
+					if( !mimeType ) return;
+					
+					// create new filter
+					var newFilter = {
+						text: mimeType,
+						props: {
+							status:  null,
+							type:    mimeType,
+							uploadedTo: null,
+							orderby: 'date',
+							order:   'DESC'
+						},
+						priority: 20
+					};			
+									
+					// append
+					filters.filters[ mimeType ] = newFilter;
+					
+				});
+			}
 			
 			
-			wp.media.model.Query = {};
 			
+			// uploaded to post
+			if( this.get('library') === 'uploadedTo' ) {
+				
+				// vars
+				var uploadedTo = this.frame.options.library.uploadedTo;
+				
+				// remove some filters
+				delete filters.filters.unattached;
+				delete filters.filters.uploaded;
+				
+				// add uploadedTo to filters
+				$.each(filters.filters, function( i, filter ){
+					filter.text += ' (' + acf.__('Uploaded to this post') + ')';
+					filter.props.uploadedTo = uploadedTo;
+				});
+			}
+			
+			// add _acfuploader to filters
+			var field = this.get('field');
+			$.each(filters.filters, function( k, filter ){
+				filter.props._acfuploader = field;
+			});
+			
+			// add _acfuplaoder to search
+			var search = toolbar.get('search');
+			search.model.attributes._acfuploader = field;
+			
+			// render (custom function added to prototype)
+			if( filters.renderFilters ) {
+				filters.renderFilters();
+			}
+		}
+	});
+	
+	
+	/**
+	*  acf.models.EditMediaPopup
+	*
+	*  description
+	*
+	*  @date	10/1/18
+	*  @since	5.6.5
+	*
+	*  @param	type $var Description. Default.
+	*  @return	type Description.
+	*/
+	
+	acf.models.EditMediaPopup = MediaPopup.extend({
+		id: 'SelectMediaPopup',
+		setup: function( props ){
+			
+			// default button
+			if( !props.button ) {
+				props.button = acf._x('Update', 'verb');
+			}
+			
+			// parent
+			MediaPopup.prototype.setup.apply(this, arguments);
 		},
-*/
 		
-		customize_Attachment: function(){
+		addFrameEvents: function( frame, options ){
+			
+			// add class
+			frame.on('open',function() {
+				
+				// add class
+				this.$el.closest('.media-modal').addClass('acf-expanded');
+				
+				// set to browse
+				if( this.content.mode() != 'browse' ) {
+					this.content.mode('browse');
+				}
+				
+				// set selection
+				var state 		= this.state();
+				var selection	= state.get('selection');
+				var attachment	= wp.media.attachment( frame.acf.get('attachment') );
+				selection.add( attachment );
+								
+			}, frame);
+			
+			// parent
+			MediaPopup.prototype.addFrameEvents.apply(this, arguments);
+			
+		}
+	});
+	
+	
+	/**
+	*  customizePrototypes
+	*
+	*  description
+	*
+	*  @date	11/1/18
+	*  @since	5.6.5
+	*
+	*  @param	type $var Description. Default.
+	*  @return	type Description.
+	*/
+	
+	var customizePrototypes = new acf.Model({
+		id: 'customizePrototypes',
+		wait: 'ready',
+		
+		initialize: function(){
+			
+			// bail early if no media views
+			if( !acf.isset(window, 'wp', 'media', 'view') ) {
+				return;
+			}
+			
+			// fix bug where CPT without "editor" does not set post.id setting which then prevents uploadedTo from working
+			var postID = getPostID();
+			if( postID && acf.isset(wp, 'media', 'view', 'settings', 'post') ) {
+				wp.media.view.settings.post.id = postID;
+			}
+			
+			// customize
+			this.customizeAttachmentsRouter();
+			this.customizeAttachmentFilters();
+			this.customizeAttachmentCompat();
+			this.customizeAttachmentLibrary();
+		},
+		
+		customizeAttachmentsRouter: function(){
+			
+			// validate
+			if( !acf.isset(wp, 'media', 'view', 'Router') ) {
+				return;
+			}
+			
+			// vars
+			var Parent = wp.media.view.Router;
+			
+			// extend
+			wp.media.view.Router = Parent.extend({
+				
+				addExpand: function(){
+					
+					// vars
+					var $a = $([
+						'<a href="#" class="acf-expand-details">',
+							'<span class="is-closed"><span class="acf-icon -left small grey"></span>' + acf.__('Expand Details') +  '</span>',
+							'<span class="is-open"><span class="acf-icon -right small grey"></span>' + acf.__('Collapse Details') +  '</span>',
+						'</a>'
+					].join('')); 
+					
+					// add events
+					$a.on('click', function( e ){
+						e.preventDefault();
+						var $div = $(this).closest('.media-modal');
+						if( $div.hasClass('acf-expanded') ) {
+							$div.removeClass('acf-expanded');
+						} else {
+							$div.addClass('acf-expanded');
+						}
+					});
+					
+					// append
+					this.$el.append( $a );
+				},
+				
+				initialize: function(){
+					
+					// initialize
+					Parent.prototype.initialize.apply( this, arguments );
+					
+					// add buttons
+					this.addExpand();
+					
+					// return
+					return this;
+				}
+			});	
+		},
+		
+		customizeAttachmentFilters: function(){
+			
+			// validate
+			if( !acf.isset(wp, 'media', 'view', 'AttachmentFilters', 'All') ) {
+				return;
+			}
+			
+			// vars
+			var Parent = wp.media.view.AttachmentFilters.All;
+			
+			// renderFilters
+			// copied from media-views.js:6939
+			Parent.prototype.renderFilters = function(){
+				
+				// Build `<option>` elements.
+				this.$el.html( _.chain( this.filters ).map( function( filter, value ) {
+					return {
+						el: $( '<option></option>' ).val( value ).html( filter.text )[0],
+						priority: filter.priority || 50
+					};
+				}, this ).sortBy('priority').pluck('el').value() );
+				
+			};
+		},
+		
+		customizeAttachmentCompat: function(){
+			
+			// validate
+			if( !acf.isset(wp, 'media', 'view', 'AttachmentCompat') ) {
+				return;
+			}
+			
+			// vars
+			var AttachmentCompat = wp.media.view.AttachmentCompat;
+			var timeout = false;
+			
+			// extend
+			wp.media.view.AttachmentCompat = AttachmentCompat.extend({
+				
+				render: function() {
+					
+					// WP bug
+					// When multiple media frames exist on the same page (WP content, WYSIWYG, image, file ),
+					// WP creates multiple instances of this AttachmentCompat view.
+					// Each instance will attempt to render when a new modal is created.
+					// Use a property to avoid this and only render once per instance.
+					if( this.rendered ) {
+						return this;
+					}
+					
+					// render HTML
+					AttachmentCompat.prototype.render.apply( this, arguments );
+					
+					// when uploading, render is called twice.
+					// ignore first render by checking for #acf-form-data element
+					if( !this.$('#acf-form-data').length ) {
+						return this;
+					}
+					
+					// clear timeout
+					clearTimeout( timeout );
+					
+					// setTimeout
+					timeout = setTimeout($.proxy(function(){
+						this.rendered = true;
+						acf.doAction('append', this.$el);
+					}, this), 50);
+					
+					// return
+					return this;
+				}
+			});
+
+		},
+		
+		customizeAttachmentLibrary: function(){
+			
+			// validate
+			if( !acf.isset(wp, 'media', 'view', 'Attachment', 'Library') ) {
+				return;
+			}
 			
 			// vars
 			var AttachmentLibrary = wp.media.view.Attachment.Library;
-			
 			
 			// extend
 			wp.media.view.Attachment.Library = AttachmentLibrary.extend({
@@ -863,20 +695,25 @@
 				render: function() {
 					
 					// vars
-					var frame = acf.media.frame(),
-						errors = acf.maybe_get(this, 'model.attributes.acf_errors');
+					var popup = acf.isget(this, 'controller', 'acf');
+					var attributes = acf.isget(this, 'model', 'attributes');
 					
-					
-					// add class
-					// also make sure frame exists to prevent this logic running on a WP popup (such as feature image)
-					if( frame && errors ) {
+					// check vars exist to avoid errors
+					if( popup && attributes ) {
 						
-						this.$el.addClass('acf-disabled');
+						// show errors
+						if( attributes.acf_errors ) {
+							this.$el.addClass('acf-disabled');
+						}
 						
+						// disable selected
+						var selected = popup.get('selected');
+						if( selected && selected.indexOf(attributes.id) > -1 ) {
+							this.$el.addClass('acf-selected');
+						}
 					}
-					
-					
-					// return
+										
+					// render
 					return AttachmentLibrary.prototype.render.apply( this, arguments );
 					
 				},
@@ -907,206 +744,51 @@
 					
 					
 					// vars
-					var frame = acf.media.frame(),
-						errors = acf.maybe_get(this, 'model.attributes.acf_errors'),
-						$sidebar = this.controller.$el.find('.media-frame-content .media-sidebar');
-					
+					var frame = this.controller;
+					var errors = acf.isget(this, 'model', 'attributes', 'acf_errors');
+					var $sidebar = frame.$el.find('.media-frame-content .media-sidebar');
 					
 					// remove previous error
 					$sidebar.children('.acf-selection-error').remove();
 					
-					
 					// show attachment details
 					$sidebar.children().removeClass('acf-hidden');
-					
 					
 					// add message
 					if( frame && errors ) {
 						
 						// vars
-						var filename = acf.maybe_get(this, 'model.attributes.filename', '');
-						
+						var filename = acf.isget(this, 'model', 'attributes', 'filename');
 						
 						// hide attachment details
 						// Gallery field continues to show previously selected attachment...
 						$sidebar.children().addClass('acf-hidden');
 						
-						
 						// append message
 						$sidebar.prepend([
 							'<div class="acf-selection-error">',
-								'<span class="selection-error-label">' + acf._e('restricted') +'</span>',
+								'<span class="selection-error-label">' + acf.__('Restricted') +'</span>',
 								'<span class="selection-error-filename">' + filename + '</span>',
 								'<span class="selection-error-message">' + errors + '</span>',
 							'</div>'
 						].join(''));
 						
-						
 						// reset selection (unselects all attachments)
 						selection.reset();
 						
-						
 						// set single (attachment displayed in sidebar)
 						selection.single( model );
-						
 						
 						// return and prevent 'select' form being fired
 						return;
 						
 					}
-									
 					
 					// return					
-					AttachmentLibrary.prototype.toggleSelection.apply( this, arguments );
-					
+					return AttachmentLibrary.prototype.toggleSelection.apply( this, arguments );
 				}
-				
 			});
-			
-		},
-		
-		customize_AttachmentFiltersAll: function(){
-			
-			// add function refresh
-			wp.media.view.AttachmentFilters.All.prototype.refresh = function(){
-				
-				// Build `<option>` elements.
-				this.$el.html( _.chain( this.filters ).map( function( filter, value ) {
-					return {
-						el: $( '<option></option>' ).val( value ).html( filter.text )[0],
-						priority: filter.priority || 50
-					};
-				}, this ).sortBy('priority').pluck('el').value() );
-				
-			};
-			
-		},
-		
-		customize_AttachmentCompat: function(){
-			
-			// vars
-			var AttachmentCompat = wp.media.view.AttachmentCompat;
-			
-			
-			// extend
-			wp.media.view.AttachmentCompat = AttachmentCompat.extend({
-				
-				add_acf_expand_button: function(){
-					
-					// vars
-					var $el = this.$el.closest('.media-modal');
-					
-					
-					// does button already exist?
-					if( $el.find('.media-frame-router .acf-expand-details').exists() ) return;
-					
-					
-					// create button
-					var $a = $([
-						'<a href="#" class="acf-expand-details">',
-							'<span class="is-closed"><span class="acf-icon -left small grey"></span>' + acf._e('expand_details') +  '</span>',
-							'<span class="is-open"><span class="acf-icon -right small grey"></span>' + acf._e('collapse_details') +  '</span>',
-						'</a>'
-					].join('')); 
-					
-					
-					// add events
-					$a.on('click', function( e ){
-						
-						e.preventDefault();
-						
-						if( $el.hasClass('acf-expanded') ) {
-						
-							$el.removeClass('acf-expanded');
-							
-						} else {
-							
-							$el.addClass('acf-expanded');
-							
-						}
-						
-					});
-					
-					
-					// append
-					$el.find('.media-frame-router').append( $a );
-					
-				},
-				
-				render: function() {
-					
-					// validate
-					if( this.ignore_render ) return this;
-					
-					
-					// reference
-					var self = this;
-					
-					
-					// add expand button
-					setTimeout(function(){
-						
-						self.add_acf_expand_button();
-						
-					}, 0);
-					
-					
-					// setup fields
-					// The clearTimout is needed to prevent many setup functions from running at the same time
-					clearTimeout( acf.media.render_timout );
-					acf.media.render_timout = setTimeout(function(){
-						
-						acf.do_action('append', self.$el);
-						
-					}, 50);
-					
-					
-					// return
-					return AttachmentCompat.prototype.render.apply( this, arguments );
-					
-				},
-				
-				
-				dispose: function() {
-					
-					// remove
-					acf.do_action('remove', this.$el);
-					
-					
-					// return
-					return AttachmentCompat.prototype.dispose.apply( this, arguments );
-					
-				},
-				
-				
-				save: function( e ) {
-				
-					if( e ) {
-						
-						e.preventDefault();
-						
-					}
-					
-					
-					// serialize form
-					var data = acf.serialize(this.$el);
-					
-					
-					// ignore render
-					this.ignore_render = true;
-					
-					
-					// save
-					this.model.saveCompat( data );
-					
-				}
-				
-			
-			});
-			
 		}
-		
-		
 	});
 
 })(jQuery);
