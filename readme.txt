@@ -66,6 +66,9 @@ From your WordPress dashboard
 
 == Changelog ==
 
+= 5.7.1 =
+* Core: Minor fixes and improvements
+
 = 5.7.0 =
 * Core: Major JavaScript updates
 * Core: Improved conditional logic with new types and more supported fields
