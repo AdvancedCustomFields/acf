@@ -165,17 +165,19 @@ function acf_get_field_groups( $args = false ) {
 	// query DB for child ids
 	} else {
 		
-		// query
-		$posts = get_posts(array(
-			'post_type'					=> 'acf-field-group',
-			'posts_per_page'			=> -1,
-			'orderby' 					=> 'menu_order title',
-			'order' 					=> 'asc',
-			'suppress_filters'			=> false, // allow WPML to modify the query
-			'post_status'				=> array('publish', 'acf-disabled'),
-			'update_post_meta_cache'	=> false
-		));
-		
+		$skip_database_field_groups = apply_filters('acf/skip_database_field_groups', false);
+		if(!$skip_database_field_groups) {
+			// query
+			$posts = get_posts(array(
+				'post_type'					=> 'acf-field-group',
+				'posts_per_page'			=> -1,
+				'orderby' 					=> 'menu_order title',
+				'order' 					=> 'asc',
+				'suppress_filters'			=> false, // allow WPML to modify the query
+				'post_status'				=> array('publish', 'acf-disabled'),
+				'update_post_meta_cache'	=> false
+			));
+		}		
 		
 		// loop
 		if( $posts ) {
