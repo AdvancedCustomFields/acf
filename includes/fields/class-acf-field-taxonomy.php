@@ -755,7 +755,7 @@ class acf_field_taxonomy extends acf_field {
 			'instructions'	=> __('Select the taxonomy to be displayed','acf'),
 			'type'			=> 'select',
 			'name'			=> 'taxonomy',
-			'choices'		=> acf_get_taxonomies(),
+			'choices'		=> acf_get_taxonomy_labels(),
 		));
 		
 		
@@ -890,7 +890,7 @@ class acf_field_taxonomy extends acf_field {
 		if( $args['term_name'] ) {
 			
 			// exists
-			if( term_exists($args['term_name'], $field['taxonomy']) ) {
+			if( term_exists($args['term_name'], $field['taxonomy'], $args['term_parent']) ) {
 				wp_send_json_error(array(
 					'error'	=> sprintf( __('%s already exists', 'acf'), $taxonomy_label )
 				));

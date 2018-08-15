@@ -272,7 +272,7 @@
 			
 			// action for 3rd party
 			acf.doAction('validation_begin', $form);
-				
+			
 			// data
 			var data = acf.serialize( $form );	
 			data.action = 'acf/validate_save_post';
@@ -478,7 +478,7 @@
 			
 			// vars
 			var $wrap = this.findSubmitWrap( $form );
-			var $submit = $wrap.find('.button, .acf-button');
+			var $submit = $wrap.find('.button, [type="submit"]');
 			var $spinner = $wrap.find('.spinner, .acf-spinner');
 			
 			// hide all spinners (hides the preview spinner)
@@ -493,7 +493,7 @@
 			
 			// vars
 			var $wrap = this.findSubmitWrap( $form );
-			var $submit = $wrap.find('.button, .acf-button');
+			var $submit = $wrap.find('.button, [type="submit"]');
 			var $spinner = $wrap.find('.spinner, .acf-spinner');
 			
 			// unlock

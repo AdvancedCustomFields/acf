@@ -102,7 +102,6 @@
 			
 			// initialize
 			this.$el = $('#acf-field-key-hide');
-			this.addEvents();
 			
 			// render
 			this.render();
@@ -247,8 +246,16 @@
 			return $('#' + this.getInputId() + '-' + name);
 		},
 		
+		$meta: function(){
+			return this.$('.meta:first');
+		},
+		
+		$handle: function(){
+			return this.$('.handle:first');
+		},
+		
 		$settings: function(){
-			return this.$('.acf-field-settings:first > .acf-field');
+			return this.$('.settings:first');
 		},
 		
 		$setting: function( name ){

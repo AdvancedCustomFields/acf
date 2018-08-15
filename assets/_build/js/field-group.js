@@ -102,7 +102,6 @@
 			
 			// initialize
 			this.$el = $('#acf-field-key-hide');
-			this.addEvents();
 			
 			// render
 			this.render();

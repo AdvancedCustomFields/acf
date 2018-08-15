@@ -31,6 +31,10 @@
 			return this.$('.search');
 		},
 		
+		$canvas: function(){
+			return this.$('.canvas');
+		},
+		
 		addClass: function( name ){
 			this.$control().addClass( name );
 		},
@@ -148,10 +152,6 @@
 			return this.$search().val();
 		},
 		
-		getCanvas: function(){
-			return this.$('.canvas');
-		},
-		
 		initialize: function(){
 			
 			// bail early if too early
@@ -189,7 +189,7 @@
 		    	autocomplete: {}
         	};
         	mapArgs = acf.applyFilters('google_map_args', mapArgs, this);       	
-        	var map = new google.maps.Map( this.getCanvas()[0], mapArgs );
+        	var map = new google.maps.Map( this.$canvas()[0], mapArgs );
         	this.addMapEvents( map, this );
         	
         	
@@ -229,15 +229,17 @@
 				// bind
 				autocomplete.bindTo('bounds', map);
 				
-				// event
+				// autocomplete event place_changed is triggered each time the input changes
+				// customize the place object with the current "search value" to allow users controll over the address text
 				google.maps.event.addListener(autocomplete, 'place_changed', function() {
-				    field.setPlace( this.getPlace() );
+					var place = this.getPlace();
+					place.address = field.getSearchVal();
+				    field.setPlace( place );
 				});
 	        }
 	        
 	        // click
 	        google.maps.event.addListener( map, 'click', function( e ) {
-				
 				// vars
 				var lat = e.latLng.lat();
 				var lng = e.latLng.lng();
@@ -251,7 +253,6 @@
 			
 			// dragend
 		    google.maps.event.addListener( marker, 'dragend', function(){
-		    	
 		    	// vars
 				var position = this.getPosition();
 				var lat = position.lat();
@@ -320,7 +321,7 @@
 			// vars
 			var lat = place.geometry.location.lat();
 			var lng = place.geometry.location.lng();
-			var address = place.formatted_address;
+			var address = place.address || place.formatted_address;
 			
 			// update
 			this.setValue({
@@ -356,7 +357,7 @@
 		    $wrap.addClass('-loading');
 		    
 		    // callback
-		    var callback = $.proxy(function( results, status ){
+		    var callback = this.proxy(function( results, status ){
 			    
 			    // remove class
 			    $wrap.removeClass('-loading');
@@ -373,7 +374,7 @@
 				} else {
 					lat = results[0].geometry.location.lat();
 					lng = results[0].geometry.location.lng();
-					address = results[0].formatted_address;
+					//address = results[0].formatted_address;
 				}
 				
 				// update val
@@ -385,7 +386,7 @@
 				
 				//acf.doAction('google_map_geocode_results', results, status, this.$el, this);
 				
-		    }, this);
+		    });
 		    
 		    // query
 		    api.geocoder.geocode({ 'address' : address }, callback);

@@ -983,10 +983,13 @@
 	};
 */
 	
-	
 	// Preferences
-	var preferences = localStorage.getItem('acf');
-	preferences = preferences ? JSON.parse(preferences) : {};
+	// - use try/catch to avoid JS error if cookies are disabled on front-end form
+	try {
+		var preferences = JSON.parse(localStorage.getItem('acf')) || {};
+	} catch(e) {
+		var preferences = {};
+	}
 	
 	
 	/**
@@ -2093,7 +2096,7 @@
 		acf.doAction('load');
 	});
 	
-	$(window).on('unload', function(){
+	$(window).on('beforeunload', function(){
 		acf.doAction('unload');
 	});
 	

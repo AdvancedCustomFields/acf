@@ -22,8 +22,8 @@
 		
 		getValue: function(){
 			var val = this.$input().val();
-			if( val === 'other' ) {
-				val = this.inputText().val();
+			if( val === 'other' && this.get('other_choice') ) {
+				val = this.$inputText().val();
 			}
 			return val;
 		},

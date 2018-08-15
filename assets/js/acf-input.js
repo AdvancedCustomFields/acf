@@ -983,10 +983,13 @@
 	};
 */
 	
-	
 	// Preferences
-	var preferences = localStorage.getItem('acf');
-	preferences = preferences ? JSON.parse(preferences) : {};
+	// - use try/catch to avoid JS error if cookies are disabled on front-end form
+	try {
+		var preferences = JSON.parse(localStorage.getItem('acf')) || {};
+	} catch(e) {
+		var preferences = {};
+	}
 	
 	
 	/**
@@ -2093,7 +2096,7 @@
 		acf.doAction('load');
 	});
 	
-	$(window).on('unload', function(){
+	$(window).on('beforeunload', function(){
 		acf.doAction('unload');
 	});
 	
@@ -5628,6 +5631,10 @@
 			return this.$('.search');
 		},
 		
+		$canvas: function(){
+			return this.$('.canvas');
+		},
+		
 		addClass: function( name ){
 			this.$control().addClass( name );
 		},
@@ -5745,10 +5752,6 @@
 			return this.$search().val();
 		},
 		
-		getCanvas: function(){
-			return this.$('.canvas');
-		},
-		
 		initialize: function(){
 			
 			// bail early if too early
@@ -5786,7 +5789,7 @@
 		    	autocomplete: {}
         	};
         	mapArgs = acf.applyFilters('google_map_args', mapArgs, this);       	
-        	var map = new google.maps.Map( this.getCanvas()[0], mapArgs );
+        	var map = new google.maps.Map( this.$canvas()[0], mapArgs );
         	this.addMapEvents( map, this );
         	
         	
@@ -5826,15 +5829,17 @@
 				// bind
 				autocomplete.bindTo('bounds', map);
 				
-				// event
+				// autocomplete event place_changed is triggered each time the input changes
+				// customize the place object with the current "search value" to allow users controll over the address text
 				google.maps.event.addListener(autocomplete, 'place_changed', function() {
-				    field.setPlace( this.getPlace() );
+					var place = this.getPlace();
+					place.address = field.getSearchVal();
+				    field.setPlace( place );
 				});
 	        }
 	        
 	        // click
 	        google.maps.event.addListener( map, 'click', function( e ) {
-				
 				// vars
 				var lat = e.latLng.lat();
 				var lng = e.latLng.lng();
@@ -5848,7 +5853,6 @@
 			
 			// dragend
 		    google.maps.event.addListener( marker, 'dragend', function(){
-		    	
 		    	// vars
 				var position = this.getPosition();
 				var lat = position.lat();
@@ -5917,7 +5921,7 @@
 			// vars
 			var lat = place.geometry.location.lat();
 			var lng = place.geometry.location.lng();
-			var address = place.formatted_address;
+			var address = place.address || place.formatted_address;
 			
 			// update
 			this.setValue({
@@ -5953,7 +5957,7 @@
 		    $wrap.addClass('-loading');
 		    
 		    // callback
-		    var callback = $.proxy(function( results, status ){
+		    var callback = this.proxy(function( results, status ){
 			    
 			    // remove class
 			    $wrap.removeClass('-loading');
@@ -5970,7 +5974,7 @@
 				} else {
 					lat = results[0].geometry.location.lat();
 					lng = results[0].geometry.location.lng();
-					address = results[0].formatted_address;
+					//address = results[0].formatted_address;
 				}
 				
 				// update val
@@ -5982,7 +5986,7 @@
 				
 				//acf.doAction('google_map_geocode_results', results, status, this.$el, this);
 				
-		    }, this);
+		    });
 		    
 		    // query
 		    api.geocoder.geocode({ 'address' : address }, callback);
@@ -6864,8 +6868,8 @@
 		
 		getValue: function(){
 			var val = this.$input().val();
-			if( val === 'other' ) {
-				val = this.inputText().val();
+			if( val === 'other' && this.get('other_choice') ) {
+				val = this.$inputText().val();
 			}
 			return val;
 		},
@@ -12092,7 +12096,7 @@
 			
 			// action for 3rd party
 			acf.doAction('validation_begin', $form);
-				
+			
 			// data
 			var data = acf.serialize( $form );	
 			data.action = 'acf/validate_save_post';
@@ -12298,7 +12302,7 @@
 			
 			// vars
 			var $wrap = this.findSubmitWrap( $form );
-			var $submit = $wrap.find('.button, .acf-button');
+			var $submit = $wrap.find('.button, [type="submit"]');
 			var $spinner = $wrap.find('.spinner, .acf-spinner');
 			
 			// hide all spinners (hides the preview spinner)
@@ -12313,7 +12317,7 @@
 			
 			// vars
 			var $wrap = this.findSubmitWrap( $form );
-			var $submit = $wrap.find('.button, .acf-button');
+			var $submit = $wrap.find('.button, [type="submit"]');
 			var $spinner = $wrap.find('.spinner, .acf-spinner');
 			
 			// unlock
