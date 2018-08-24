@@ -1080,7 +1080,7 @@ function _acf_get_field_by_name( $name = '', $db_only = false ) {
 *  @return	$field (array)
 */
 
-function acf_maybe_get_field( $selector, $post_id = false, $strict = true ) {
+function acf_maybe_get_field( $selector, $post_id = false, $strict = false ) {
 	
 	// init
 	acf_init();
