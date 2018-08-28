@@ -105,7 +105,7 @@
 			
 			// toolbar
 			var toolbar = args.toolbar;
-			if( toolbar && typeof toolbars[toolbar] !== 'undefined' ) {
+			if( toolbar && toolbars && toolbars[toolbar] ) {
 				
 				for( var i = 1; i <= 4; i++ ) {
 					init[ 'toolbar' + i ] = toolbars[toolbar][i] || '';

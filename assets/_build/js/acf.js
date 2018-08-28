@@ -474,7 +474,7 @@
             
             // extra
             ' ': '_',
-			'\'': '',
+			"'": '',
 			'?': '',
 			'/': '',
 			'\\': '',
@@ -496,7 +496,7 @@
 		// vars
 		var nonWord = /\W/g;
         var mapping = function (c) {
-            return map[c] || c; 
+            return (map[c] !== undefined) ? map[c] : c;
         };
         
         // replace
@@ -684,7 +684,7 @@
 	*/
 	
 	var buildObject = function( obj, name, value ){
-		//console.log('buildObject', obj, name);
+		
 		// replace [] with placeholder
 		name = name.replace('[]', '[%%index%%]');
 		
@@ -731,15 +731,14 @@
 				// crawl
 				ref = ref[ key ];
 			}
-			//console.log('ref:', ref);
 		}
 	};
 	
 	acf.serialize = function( $el, prefix ){
-		//console.time('serialize');		
+			
 		// vars
 		var obj = {};
-		var inputs = $el.find('select, textarea, input').serializeArray();
+		var inputs = acf.serializeArray( $el );
 		
 		// prefix
 		if( prefix !== undefined ) {
@@ -757,12 +756,90 @@
 		for( var i = 0; i < inputs.length; i++ ) {
 			buildObject( obj, inputs[i].name, inputs[i].value );
 		}
-		//console.timeEnd('serialize');
 		
 		// return
 		return obj;
 	};
 	
+	/**
+	*  acf.serializeArray
+	*
+	*  Similar to $.serializeArray() but works with a parent wrapping element.
+	*
+	*  @date	19/8/18
+	*  @since	5.7.3
+	*
+	*  @param	jQuery $el The element or form to serialize.
+	*  @return	array
+	*/
+	
+	acf.serializeArray = function( $el ){
+		return $el.find('select, textarea, input').serializeArray();
+	}
+	
+	
+	/**
+	*  acf.serializeAjax
+	*
+	*  Returns an object containing name => value data ready to be encoded for Ajax.
+	*
+	*  @date	15/8/18
+	*  @since	5.7.3
+	*
+	*  @param	jQUery $el The element or form to serialize.
+	*  @param	string prefix The input prefix to scope to.
+	*  @return	object
+	*/
+	
+/*
+	acf.serializeAjax = function( $el, prefix ){
+			
+		// vars
+		var data = {};
+		var index = {};
+		var inputs = $el.find('select, textarea, input').serializeArray();
+		
+		// remove prefix
+		if( prefix !== undefined ) {
+			
+			// filter and modify
+			inputs = inputs.filter(function( item ){
+				return item.name.indexOf(prefix) === 0;
+			}).map(function( item ){
+				
+				// remove prefix from name
+				item.name = item.name.slice(prefix.length);
+				
+				// fix [foo][bar] to foo[bar]
+				if( item.name.slice(0, 1) == '[' ) {
+					item.name = item.name.slice(1).replace(']', '');
+				}
+				return item;
+			});
+		}
+		
+		// build object
+		inputs.map(function( item ){
+			
+			// fix foo[] to foo[0], foo[1], etc
+			if( item.name.slice(-2) === '[]' ) {
+				
+				// ensure index exists
+				index[ item.name ] = index[ item.name ] || 0;
+				index[ item.name ]++;
+				
+				// replace [] with [0]
+				item.name = item.name.replace('[]', '[' + (index[ item.name ]-1) + ']');
+			}
+			
+			// append to data
+			data[ item.name ] = item.value;
+		});
+		
+		// return
+		return data;
+	};
+*/
 	
 	/**
 	*  addAction
@@ -1451,7 +1528,7 @@
 	acf.updateUserSetting = function( name, value ){
 		
 		var ajaxData = {
-			action: 'acf/update_user_setting',
+			action: 'acf/ajax/user_setting',
 			name: name,
 			value: value
 		};
@@ -1757,7 +1834,7 @@
 	
 	acf.isset = function( obj /*, level1, level2, ... */ ) {
 		for( var i = 1; i < arguments.length; i++ ) {
-			if( !obj.hasOwnProperty(arguments[i]) ) {
+			if( !obj || !obj.hasOwnProperty(arguments[i]) ) {
 				return false;
 			}
 			obj = obj[ arguments[i] ];
@@ -1779,7 +1856,7 @@
 	
 	acf.isget = function( obj /*, level1, level2, ... */ ) {
 		for( var i = 1; i < arguments.length; i++ ) {
-			if( !obj.hasOwnProperty(arguments[i]) ) {
+			if( !obj || !obj.hasOwnProperty(arguments[i]) ) {
 				return null;
 			}
 			obj = obj[ arguments[i] ];

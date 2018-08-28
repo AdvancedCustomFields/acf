@@ -432,28 +432,13 @@ class acf_wpml_compatibility {
 	
 	function verify_ajax() {
 		
-		// globals
-		global $sitepress;
-		
-		
-		// vars
-		$lang = acf_maybe_get($_POST, 'lang');
-		
-		
-		// bail early if no lang
-		if( !$lang ) return;
-		
-		
-		// switch lang
+		// set the language for this AJAX request
 		// this will allow get_posts to work as expected (load posts from the correct language)
-		$sitepress->switch_lang( $_REQUEST['lang'] );
-			
-		
-		// remove post_id
-		// this will prevent WPML from setting the current language based on the current post being edited
-		// in theory, WPML is correct, however, when adding a new post, the post's lang is not found and will default to 'en'
-		unset( $_REQUEST['post_id'] );
-		
+		if( isset($_REQUEST['lang']) ) {
+			global $sitepress;
+			$sitepress->switch_lang( $_REQUEST['lang'] );
+			//$sitepress->set_default_language($_REQUEST['lang']);
+		}
 	}
 	
 	

@@ -190,7 +190,7 @@
 		type: 'contains',
 		operator: '==contains',
 		label: __('Value contains'),
-		fieldTypes: [ 'text', 'textarea', 'number', 'email', 'url', 'password', 'wysiwyg', 'oembed' ],
+		fieldTypes: [ 'text', 'textarea', 'number', 'email', 'url', 'password', 'wysiwyg', 'oembed', 'select' ],
 		match: function( rule, field ){
 			return containsString( field.val(), rule.value );
 		},

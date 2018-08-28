@@ -297,6 +297,11 @@
 					$row = $();
 				}
 				
+				// rtl
+				if( acf.get('rtl') ) {
+					thisLeft = Math.ceil( $field.parent().width() - (position.left + $field.outerWidth()) );
+				}
+				
 				// add classes
 				if( thisTop == 0 ) {
 					$field.addClass('-r0');

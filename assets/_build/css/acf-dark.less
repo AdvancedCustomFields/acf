@@ -1,0 +1,401 @@
+/**
+*  acf-dark.scss
+*
+*  Dark Mode Styles for ACF.
+*  WordPress plugin: https://en-au.wordpress.org/plugins/dark-mode/
+*  Github Documentation: https://github.com/danieltj27/Dark-Mode/wiki/Help:-Plugin-Compatibility-Guide
+*
+*  @date	14/8/18
+*  @since	5.7.3
+*/
+
+@white:           #ffffff;
+@black:           #000000;
+@blue:            #0073aa;
+@medium-blue:     #00a0d2;
+@clear:           transparent;
+
+@accent-red:      #dc3232;
+@accent-orange:   #f56e28;
+@accent-yellow:   #ffb900;
+@accent-green:    #46b450;
+@accent-blue:     @blue;
+@accent-purple:   #826eb4;
+
+@base-grey:       #23282d;
+@light-grey:      #bbc8d4;
+@heavy-grey:      #37444c;
+@dark-grey:       #32373c;
+@ultra-grey:      #191f25;
+@dark-silver:     #50626f;
+@base-blue:       #2e74aa;
+@light-blue:      #4092d2;
+@dark-blue:       #2c5f88;
+@ultra-blue:      #1f3f58;
+@bright-blue:     #30ceff;
+
+@editor-lavender: #c678dd;
+@editor-sunglo:   #e06c75;
+@editor-olivine:  #98c379;
+
+@body_text: 			#bbc8d4;
+@body_background: 		#23282d;
+@body_background2: 		#191f25;
+@postbox_background: 	#32373c;
+@postbox_border: 		#191f25;
+@postbox_divider: 		#23282d;
+@input_background: 		#50626f;
+@input_text: 			#fff;
+@input_border: 			#191f25;
+
+.dark-text() {
+	color: @body_text;
+}
+.dark-heading() {
+	color: @body_text;
+}
+.dark-border() {
+	border-color: @postbox_border;
+}
+.dark-background() {
+	background: @body_background;
+}
+.darker-background() {
+	background: darken(@body_background, 5%);
+}
+.dark-postbox() {
+	background-color: @postbox_background;
+	border-color: @postbox_border;
+	color: @body_text;
+}
+.dark-postbox-block() {
+	background-color: #2d3136;
+	border-color: @postbox_divider;
+}
+.dark-divider() {
+	border-color: @postbox_divider;
+}
+.dark-input() {
+	background-color: @input_background;
+	border-color: @input_border;
+	color: @input_text;
+}
+
+
+/*---------------------------------------------------------------------------------------------
+*
+*  Global
+*
+*---------------------------------------------------------------------------------------------*/
+
+// acf-box
+.acf-box {
+	.dark-postbox();
+			
+	.title,
+	.footer {
+		.dark-divider();
+	}
+	
+	h2 {
+		.dark-heading();
+	}
+	
+	table, tbody, tr {
+		background: transparent !important;
+	}
+}
+
+// thead
+.acf-thead {
+	.dark-heading();
+	.dark-border();
+}
+.acf-tfoot {
+	.dark-postbox-block();
+}
+
+// table clear
+.acf-table.-clear,
+.acf-table.-clear tr {
+	background: transparent !important;
+}
+
+// loading overlay
+.acf-loading-overlay {
+	background: rgba(0,0,0,0.5);
+}
+
+
+/*---------------------------------------------------------------------------------------------
+*
+*  Fields
+*
+*---------------------------------------------------------------------------------------------*/
+
+// fields
+.acf-fields {
+	
+	// field
+	> .acf-field {
+		.dark-divider();
+	}
+}
+
+// fields (left)
+.acf-fields.-left {
+	
+	> .acf-field {
+		&:before {
+			background: rgba(0,0,0,0.1);
+			.dark-divider();
+		}
+	}
+}
+
+// fields (border)
+.acf-fields.-border {
+	.dark-postbox();
+}
+
+// width
+.acf-field[data-width] + .acf-field[data-width] {
+	.dark-divider();
+}
+
+// text
+.acf-input-prepend, 
+.acf-input-append {
+	.dark-postbox();
+}
+
+// tab
+.acf-tab-wrap {
+	
+	
+}
+
+.acf-fields > .acf-tab-wrap {
+	.dark-postbox();
+	
+	.acf-tab-group {
+		.dark-postbox-block();
+		
+		li {
+			a {
+				.dark-postbox-block();
+				
+				&:hover {
+					.dark-postbox-block();
+					.dark-text();
+				}
+			}
+			
+			&.active a {
+				.dark-postbox();
+			}
+		}
+		
+	}
+}
+
+// file
+.acf-file-uploader {
+	
+	.show-if-value {
+		.dark-postbox();
+		
+		.file-icon {
+			.dark-postbox-block();
+		}
+	}
+}
+
+// acf-oembed
+.acf-oembed {
+	.dark-postbox-block();
+	
+	.title {
+		.dark-input();
+	}
+}
+
+// gallery
+.acf-gallery {
+	.dark-postbox-block();
+	
+	.acf-gallery-main {
+		.dark-background();
+	}
+	
+	.acf-gallery-attachment {
+		.margin {
+			.dark-postbox-block();
+		}
+	}	
+		
+	.acf-gallery-side {
+		.dark-postbox-block();
+		
+		.acf-gallery-side-info {
+			.dark-postbox-block();
+		}
+	}
+	
+	.acf-gallery-toolbar {
+		.dark-postbox-block();
+	}
+}
+
+// button group
+.acf-button-group {
+	
+	label:not(.selected) {
+		.dark-postbox-block();
+	}
+}
+
+// switch
+.acf-switch:not(.-on) {
+	.dark-postbox-block();
+	.acf-switch-slider {
+		.dark-input();
+	}
+}
+
+// link
+.acf-link .link-wrap {
+	.dark-postbox-block();
+}
+
+// relationship
+.acf-relationship {
+	.filters {
+		.dark-postbox();
+	}
+	.selection {
+		.dark-postbox-block();
+		.choices,
+		.choices-list,
+		.values {
+			.dark-postbox-block();	
+		}
+	}
+}
+
+// checkbox
+.acf-taxonomy-field .categorychecklist-holder {
+	.dark-postbox-block();
+}
+
+// google map
+.acf-google-map {
+	.dark-postbox-block();
+	
+	.title {
+		.dark-input();
+	}
+}
+
+// accordion
+.acf-accordion {
+	.dark-postbox();
+}
+.acf-field.acf-accordion .acf-accordion-content > .acf-fields {
+	.dark-border();
+}
+
+// flexible content
+.acf-flexible-content {
+	.layout {
+		.dark-postbox();
+		
+		.acf-fc-layout-handle {
+			.dark-postbox-block();
+		}
+	}
+}
+
+// repeater
+#wpbody .acf-repeater {
+	> .acf-table {
+		.dark-postbox-block();
+		
+		> tbody,
+		> thead {
+			> tr {
+				background: transparent;
+				
+				> td,
+				> th {
+					.dark-border();
+				}
+			}
+		}
+	}
+}
+
+/*---------------------------------------------------------------------------------------------
+*
+*  Field Group
+*
+*---------------------------------------------------------------------------------------------*/
+
+// fields
+#acf-field-group-fields {
+	
+	// field list
+	.acf-field-list-wrap {
+		.dark-postbox();
+	}
+	
+	// field
+	.acf-field-object {
+		.dark-postbox();
+		.dark-divider();
+		
+		
+		table, tbody, tr, td, th {
+			background: transparent;
+			.dark-divider();
+		}
+		
+		.acf-field {
+			.acf-label {
+				.dark-postbox-block();
+			}
+		}
+		
+		// sortable
+		&.ui-sortable-helper {
+			.dark-border();
+			box-shadow: none;
+		}
+		
+		&.ui-sortable-placeholder {
+			.dark-postbox-block();
+			box-shadow: none;
+		}
+	}
+	
+	.acf-field-object + .acf-field-object-tab::before,
+	.acf-field-object + .acf-field-object-accordion::before {
+		.dark-postbox-block();
+	}
+}
+
+
+/*---------------------------------------------------------------------------------------------
+*
+*  Admin: Tools
+*
+*---------------------------------------------------------------------------------------------*/
+
+// tools
+.acf-meta-box-wrap {
+	
+	.acf-fields {
+		.dark-input();
+		background: transparent;
+	}
+}

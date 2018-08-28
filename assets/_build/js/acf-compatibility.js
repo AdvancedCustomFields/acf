@@ -746,7 +746,8 @@
 	acf.newCompatibility(acf.screen, {
 		update: function(){
 			return this.set.apply(this, arguments);
-		}
+		},
+		fetch: acf.screen.check
 	});
 	_acf.ajax = acf.screen;
 	

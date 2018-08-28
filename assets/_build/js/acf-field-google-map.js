@@ -57,8 +57,8 @@
 				val[ $(this).data('name') ] = $(this).val();
 			});
 			
-			// return false if no address
-			if( !val.address ) {
+			// return false if no lat/lng
+			if( !val.lat || !val.lng ) {
 				val = false;
 			}
 			
@@ -80,8 +80,8 @@
 				acf.val( this.$input(name), val[name] );
 			}
 			
-			// return false if no address
-			if( !val.address ) {
+			// return false if no lat/lng
+			if( !val.lat || !val.lng ) {
 				val = false;
 			}
 			
