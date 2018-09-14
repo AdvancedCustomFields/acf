@@ -652,13 +652,13 @@
 	var findSubmitWrap = function( $form ){
 		
 		// default post submit div
-		var $wrap = $('#submitdiv');
+		var $wrap = $form.find('#submitdiv');
 		if( $wrap.length ) {
 			return $wrap;
 		}
 		
 		// 3rd party publish box
-		var $wrap = $('#submitpost');
+		var $wrap = $form.find('#submitpost');
 		if( $wrap.length ) {
 			return $wrap;
 		}

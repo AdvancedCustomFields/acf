@@ -1228,30 +1228,20 @@ function acf_get_locale() {
 
 function acf_get_terms( $args ) {
 	
-	// global
-	global $wp_version;
+	// defaults
+	$args = wp_parse_args($args, array(
+		'taxonomy'					=> null,
+		'hide_empty'				=> false,
+		'update_term_meta_cache'	=> false,
+	));
 	
-	
-	// vars
-	$terms = array();
-	
-		
-	// WP 4.5+
-	if( version_compare($wp_version, '4.5', '>=' ) ) {
-		
-		$terms = get_terms( $args );
-
-	// WP < 4.5
-	} else {
-		
-		$terms = get_terms( $args['taxonomy'], $args );
-	
+	// parameters changed in version 4.5
+	if( acf_version_compare('wp', '<', '4.5') ) {
+		return get_terms( $args['taxonomy'], $args );
 	}
 	
-	
 	// return
-	return $terms;
-	
+	return get_terms( $args );
 }
 
 
@@ -1323,36 +1313,6 @@ function acf_get_taxonomy_terms( $taxonomies = array() ) {
 	
 	// return
 	return $r;
-	
-}
-
-
-function acf_get_term_title( $term ) {
-	
-	// title
-	$title = $term->name;
-	
-	
-	// empty
-	if( $title === '' ) {
-		
-		$title = __('(no title)', 'acf');
-		
-	}
-	
-	
-	// ancestors
-	if( is_taxonomy_hierarchical($term->taxonomy) ) {
-		
-		$ancestors = get_ancestors( $term->term_id, $term->taxonomy );
-		
-		$title = str_repeat('- ', count($ancestors)) . $title;
-		
-	}
-	
-	
-	// return
-	return $title;
 	
 }
 
@@ -4081,11 +4041,22 @@ function acf_validate_attachment( $attachment, $field, $context = 'prepare' ) {
 	}
 	
 	
-	// filter for 3rd party customization
-	$errors = apply_filters("acf/validate_attachment", $errors, $file, $attachment, $field, $context);
-	$errors = apply_filters("acf/validate_attachment/type={$field['type']}", $errors, $file, $attachment, $field, $context );
-	$errors = apply_filters("acf/validate_attachment/name={$field['name']}", $errors, $file, $attachment, $field, $context );
-	$errors = apply_filters("acf/validate_attachment/key={$field['key']}", $errors, $file, $attachment, $field, $context );
+	/**
+	*  Filters the errors for a file before it is uploaded or displayed in the media modal.
+	*
+	*  @date	3/07/2015
+	*  @since	5.2.3
+	*
+	*  @param	array $errors An array of errors.
+	*  @param	array $file An array of data for a single file.
+	*  @param	array $attachment An array of attachment data which differs based on the context.
+	*  @param	array $field The field array.
+	*  @param	string $context The curent context (uploading, preparing)
+	*/
+	$errors = apply_filters( "acf/validate_attachment/type={$field['type']}",	$errors, $file, $attachment, $field, $context );
+	$errors = apply_filters( "acf/validate_attachment/name={$field['_name']}", 	$errors, $file, $attachment, $field, $context );
+	$errors = apply_filters( "acf/validate_attachment/key={$field['key']}", 	$errors, $file, $attachment, $field, $context );
+	$errors = apply_filters( "acf/validate_attachment", 						$errors, $file, $attachment, $field, $context );
 	
 	
 	// return

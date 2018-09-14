@@ -66,6 +66,15 @@ From your WordPress dashboard
 
 == Changelog ==
 
+= 5.7.6 =
+*Release Date - 12 September 2018*
+
+* Fix - Fixed unload prompt not working.
+* Dev - Reduced number of queries needed to populate the relationship field taxonomy filter.
+* Dev - Added 'nav_menu_item_id' and 'nav_menu_item_depth' to get_field_groups() query.
+* Dev - Reordered various actions and filters for more usefulness.
+* i18n - Updated Polish language thanks to Dariusz Zielonka
+
 = 5.7.5 =
 *Release Date - 6 September 2018*
 

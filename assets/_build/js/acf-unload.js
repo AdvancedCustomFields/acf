@@ -7,12 +7,12 @@
 		changed: false,
 		
 		actions: {
-			'change_field': 'startListening',
-			'validation_failure': 'startListening'
+			'validation_failure':	'startListening'
 		},
 		
 		events: {
-			'submit form':	'stopListening'
+			'change .acf-field':	'startListening',
+			'submit form':			'stopListening'
 		},
 				
 		reset: function(){

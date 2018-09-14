@@ -57,7 +57,7 @@
 		},
 		
 		choices: function( field ){
-			return '<intput type="text" />';
+			return '<input type="text" />';
 		}
 	});
 	

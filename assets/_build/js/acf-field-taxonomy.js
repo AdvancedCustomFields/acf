@@ -125,6 +125,7 @@
 				
 				// prevent
 				e.preventDefault();
+				e.stopImmediatePropagation();
 				
 				// basic validation
 				if( $name.val() === '' ) {
