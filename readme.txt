@@ -66,6 +66,15 @@ From your WordPress dashboard
 
 == Changelog ==
 
+= 5.7.4 =
+*Release Date - 30 August 2018*
+
+* Fix - Fixed bug causing field groups to disappear when selecting a taxonomy term with WPML active.
+* Tweak - Added more Dark Mode styles.
+* Tweak - Improved DB upgrade prompt, functions and AJAX logic.
+* Tweak - Improved the "What's New" admin page seen after DB Upgrade.
+* Dev - Added new location rules filters.
+
 = 5.7.3 =
 *Release Date - 20 August 2018*
 

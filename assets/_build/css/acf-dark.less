@@ -172,7 +172,6 @@
 // tab
 .acf-tab-wrap {
 	
-	
 }
 
 .acf-fields > .acf-tab-wrap {
@@ -195,7 +194,28 @@
 				.dark-postbox();
 			}
 		}
+	}
+}
+
+.acf-fields.-sidebar {
+	&:before {
+		.dark-postbox-block();
+	}
+}
+
+.acf-fields.-sidebar.-left {
+	&:before {
+		.dark-postbox-block();
+		background: @body_background;
+	}
+	> .acf-tab-wrap.-left {
+		.acf-tab-group li a {
+			.dark-postbox-block();
+		}
 		
+		.acf-tab-group li.active a {
+			.dark-postbox-block();
+		}
 	}
 }
 
@@ -312,26 +332,35 @@
 		
 		.acf-fc-layout-handle {
 			.dark-postbox-block();
+			
+			.acf-fc-layout-order {
+				.dark-postbox();
+			}
 		}
 	}
 }
 
 // repeater
-#wpbody .acf-repeater {
-	> .acf-table {
-		.dark-postbox-block();
-		
-		> tbody,
-		> thead {
-			> tr {
-				background: transparent;
-				
-				> td,
-				> th {
-					.dark-border();
-				}
+#wpbody .acf-table {
+	.dark-postbox-block();
+	
+	> tbody,
+	> thead {
+		> tr {
+			background: transparent;
+			
+			> td,
+			> th {
+				.dark-border();
 			}
 		}
+	}
+}
+
+// Select
+.acf-field select {
+	optgroup, optgroup:nth-child(2n) {
+		background: @input_background;
 	}
 }
 
@@ -347,6 +376,12 @@
 	// field list
 	.acf-field-list-wrap {
 		.dark-postbox();
+	}
+	
+	.acf-field-list {
+		.no-fields-message {
+			.dark-postbox();
+		}
 	}
 	
 	// field

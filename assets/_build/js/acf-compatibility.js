@@ -547,7 +547,9 @@
 				type: 'warning',
 				timeout: 1000
 			});
-		}
+		},
+		enableSubmit: acf.enableSubmit,
+		disableSubmit: acf.disableSubmit
 	});
 	
 	

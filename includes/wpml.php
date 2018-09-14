@@ -48,8 +48,8 @@ class acf_wpml_compatibility {
 		
 		
 		// actions
-		add_action('acf/update_500',					array($this, 'update_500'), 10);
-		add_action('acf/update_500_field_group',		array($this, 'update_500_field_group'), 10, 2);
+		add_action('acf/upgrade_500',					array($this, 'upgrade_500'), 10);
+		add_action('acf/upgrade_500_field_group',		array($this, 'upgrade_500_field_group'), 10, 2);
 		add_action('acf/update_field_group',			array($this, 'update_field_group'), 2, 1);
 		add_action('icl_make_duplicate',				array($this, 'icl_make_duplicate'), 10, 4);
 		
@@ -112,7 +112,7 @@ class acf_wpml_compatibility {
 	
 	
 	/*
-	*  update_500
+	*  upgrade_500
 	*
 	*  This function will update the WPML settings to allow 'acf-field-group' to be translatable
 	*
@@ -124,7 +124,7 @@ class acf_wpml_compatibility {
 	*  @return	$post_id (int)
 	*/
 	
-	function update_500() {
+	function upgrade_500() {
 		
 		// global
 		global $sitepress;
@@ -153,7 +153,7 @@ class acf_wpml_compatibility {
 	
 	
 	/*
-	*  update_500_field_group
+	*  upgrade_500_field_group
 	*
 	*  This function will update the icl_translations table data when creating the fiedl groups
 	*
@@ -165,7 +165,7 @@ class acf_wpml_compatibility {
 	*  @return	n/a
 	*/
 	
-	function update_500_field_group($field_group, $ofg) {
+	function upgrade_500_field_group($field_group, $ofg) {
 		
 		// global
 		global $wpdb;

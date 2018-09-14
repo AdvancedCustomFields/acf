@@ -12257,7 +12257,7 @@
 				// create new event to avoid conflicts with prevenDefault (as used in taxonomy form)
 				var event = $.Event(null, args.event);
 				args.success = function(){
-					$(event.target).trigger( event );
+					acf.enableSubmit( $(event.target) ).trigger( event );
 				}
 			}
 			
@@ -12420,19 +12420,13 @@
 		showSpinner: function( $spinner ){
 			$spinner.addClass('is-active');				// add class (WP > 4.2)
 			$spinner.css('display', 'inline-block');	// css (WP < 4.2)
+			return $spinner;
 		},
 		
 		hideSpinner: function( $spinner ){
 			$spinner.removeClass('is-active');			// add class (WP > 4.2)
 			$spinner.css('display', 'none');			// css (WP < 4.2)
-		},
-		
-		disableSubmit: function( $submit ){
-			$submit.prop('disabled', true).addClass('disabled');
-		},
-		
-		enableSubmit: function( $submit ){
-			$submit.prop('disabled', false).removeClass('disabled');
+			return $spinner;
 		},
 		
 		findSubmitWrap: function( $form ){
@@ -12476,7 +12470,7 @@
 			this.hideSpinner( $spinner );
 			
 			// lock
-			this.disableSubmit( $submit );
+			acf.disableSubmit( $submit );
 			this.showSpinner( $spinner.last() );
 		},
 		
@@ -12488,7 +12482,7 @@
 			var $spinner = $wrap.find('.spinner, .acf-spinner');
 			
 			// unlock
-			this.enableSubmit( $submit );
+			acf.enableSubmit( $submit );
 			this.hideSpinner( $spinner );
 		}
 		
@@ -12572,6 +12566,36 @@
 		
 		// return false preventing form submit
 		return false;
+	};
+	
+	/**
+	*  acf.enableSubmit
+	*
+	*  Enables a submit button and returns the element.
+	*
+	*  @date	30/8/18
+	*  @since	5.7.4
+	*
+	*  @param	jQuery $submit The submit button.
+	*  @return	jQuery
+	*/
+	acf.enableSubmit = function( $submit ){
+		return $submit.prop('disabled', false).removeClass('disabled');
+	};
+		
+	/**
+	*  acf.disableSubmit
+	*
+	*  Disables a submit button and returns the element.
+	*
+	*  @date	30/8/18
+	*  @since	5.7.4
+	*
+	*  @param	jQuery $submit The submit button.
+	*  @return	jQuery
+	*/
+	acf.disableSubmit = function( $submit ){
+		return $submit.prop('disabled', true).addClass('disabled');
 	};
 	
 })(jQuery);
@@ -13459,7 +13483,9 @@
 				type: 'warning',
 				timeout: 1000
 			});
-		}
+		},
+		enableSubmit: acf.enableSubmit,
+		disableSubmit: acf.disableSubmit
 	});
 	
 	

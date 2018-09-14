@@ -241,14 +241,14 @@ function acf_get_pretty_taxonomies( $taxonomies = array() ) {
 *  @date	19/8/18
 *  @since	5.7.3
 *
-*  @param	mixed $term_id The term ID or a string of "slug:taxonomy".
+*  @param	mixed $term_id The term ID or a string of "taxonomy:slug".
 *  @param	string $taxonomy The taxonomyname.
 *  @return	WP_Term
 */
 
 function acf_get_term( $term_id, $taxonomy = '' ) {
 	
-	// allow $term_id parameter to be a string of "slug:taxonomy" of "slug:id"
+	// allow $term_id parameter to be a string of "taxonomy:slug" or "taxonomy:id"
 	if( is_string($term_id) && strpos($term_id, ':') ) {
 		list( $taxonomy, $term_id ) = explode(':', $term_id);
 		$term = get_term_by( 'slug', $term_id, $taxonomy );
@@ -259,5 +259,41 @@ function acf_get_term( $term_id, $taxonomy = '' ) {
 	return get_term( $term_id, $taxonomy );
 }
 
+/**
+*  acf_encode_term
+*
+*  Returns a "taxonomy:slug" string for a given WP_Term.
+*
+*  @date	27/8/18
+*  @since	5.7.4
+*
+*  @param	WP_Term $term The term object.
+*  @return	string
+*/
+function acf_encode_term( $term ) {
+	return "{$term->taxonomy}:{$term->slug}";
+}
+
+/**
+*  acf_decode_term
+*
+*  Decodes a "taxonomy:slug" string into an array of taxonomy and slug.
+*
+*  @date	27/8/18
+*  @since	5.7.4
+*
+*  @param	WP_Term $term The term object.
+*  @return	string
+*/
+function acf_decode_term( $string ) {
+	if( is_string($string) && strpos($string, ':') ) {
+		list( $taxonomy, $slug ) = explode(':', $string);
+		return array(
+			'taxonomy'	=> $taxonomy,
+			'slug'		=> $slug
+		);
+	}
+	return false;
+}
 
 ?>
