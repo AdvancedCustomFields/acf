@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Advanced Custom Fields\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
-"POT-Creation-Date: 2018-08-30 15:53+1000\n"
+"POT-Creation-Date: 2018-09-06 12:21+1000\n"
 "PO-Revision-Date: 2015-06-11 13:00+1000\n"
 "Last-Translator: Elliot Condon <e@elliotcondon.com>\n"
 "Language-Team: Elliot Condon <e@elliotcondon.com>\n"
@@ -379,14 +379,14 @@ msgstr ""
 msgid "Tools"
 msgstr ""
 
-#: includes/admin/admin-upgrade.php:47 includes/admin/admin-upgrade.php:92
-#: includes/admin/admin-upgrade.php:154
+#: includes/admin/admin-upgrade.php:47 includes/admin/admin-upgrade.php:94
+#: includes/admin/admin-upgrade.php:156
 #: includes/admin/views/html-admin-page-upgrade-network.php:24
 #: includes/admin/views/html-admin-page-upgrade.php:26
 msgid "Upgrade Database"
 msgstr ""
 
-#: includes/admin/admin-upgrade.php:178
+#: includes/admin/admin-upgrade.php:180
 msgid "Review sites & upgrade"
 msgstr ""
 
@@ -838,25 +838,29 @@ msgid ""
 "Database Upgrade complete. <a href=\"%s\">Return to network dashboard</a>"
 msgstr ""
 
-#: includes/admin/views/html-admin-page-upgrade-network.php:112
+#: includes/admin/views/html-admin-page-upgrade-network.php:113
+msgid "Please select at least one site to upgrade."
+msgstr ""
+
+#: includes/admin/views/html-admin-page-upgrade-network.php:117
 #: includes/admin/views/html-notice-upgrade.php:38
 msgid ""
 "It is strongly recommended that you backup your database before proceeding. "
 "Are you sure you wish to run the updater now?"
 msgstr ""
 
-#: includes/admin/views/html-admin-page-upgrade-network.php:139
+#: includes/admin/views/html-admin-page-upgrade-network.php:144
 #: includes/admin/views/html-admin-page-upgrade.php:31
 #, php-format
 msgid "Upgrading data to version %s"
 msgstr ""
 
-#: includes/admin/views/html-admin-page-upgrade-network.php:162
+#: includes/admin/views/html-admin-page-upgrade-network.php:167
 msgid "Upgrade complete."
 msgstr ""
 
-#: includes/admin/views/html-admin-page-upgrade-network.php:171
-#: includes/admin/views/html-admin-page-upgrade-network.php:180
+#: includes/admin/views/html-admin-page-upgrade-network.php:176
+#: includes/admin/views/html-admin-page-upgrade-network.php:185
 #: includes/admin/views/html-admin-page-upgrade.php:78
 #: includes/admin/views/html-admin-page-upgrade.php:87
 msgid "Upgrade failed."

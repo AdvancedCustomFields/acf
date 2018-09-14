@@ -548,8 +548,13 @@
 				timeout: 1000
 			});
 		},
-		enableSubmit: acf.enableSubmit,
-		disableSubmit: acf.disableSubmit
+		fetch:			acf.validateForm,
+		enableSubmit: 	acf.enableSubmit,
+		disableSubmit: 	acf.disableSubmit,
+		showSpinner:	acf.showSpinner,
+		hideSpinner:	acf.hideSpinner,
+		unlockForm:		acf.unlockForm,
+		lockForm:		acf.lockForm
 	});
 	
 	

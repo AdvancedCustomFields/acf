@@ -187,8 +187,8 @@
 			// trigger events
 			if( !silent ) {
 				this.changed = true;
-				this.trigger('changed:' + name, [value]);
-				this.trigger('changed', [name, value]);
+				this.trigger('changed:' + name, [value, prevValue]);
+				this.trigger('changed', [name, value, prevValue]);
 			}
 			
 			// return

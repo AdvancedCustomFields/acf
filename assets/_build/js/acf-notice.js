@@ -61,6 +61,10 @@
 			
 			// re-initialize
 			this.initialize();
+			
+			// refresh events
+			this.removeEvents();
+			this.addEvents();
 		},
 		
 		show: function(){

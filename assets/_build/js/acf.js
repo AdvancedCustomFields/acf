@@ -1461,6 +1461,11 @@
 		data.nonce = acf.get('nonce');
 		data.post_id = acf.get('post_id');
 		
+		// language
+		if( acf.has('language') ) {
+			data.lang = acf.get('language');
+		}
+		
 		// filter for 3rd party customization
 		data = acf.applyFilters('prepare_for_ajax', data);	
 		

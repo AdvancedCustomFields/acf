@@ -108,6 +108,11 @@
 				// prevent default
 				e.preventDefault();
 				
+				// bail early if no selection
+				if( !this.$inputs().length ) {
+					return alert('<?php _e('Please select at least one site to upgrade.', 'acf'); ?>');
+				}
+				
 				// confirm action
 				if( !confirm("<?php _e('It is strongly recommended that you backup your database before proceeding. Are you sure you wish to run the updater now?', 'acf'); ?>") ) {
 					return;

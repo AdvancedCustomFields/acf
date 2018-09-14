@@ -38,7 +38,7 @@
 				e.preventDefault();
 				
 				// unlock form
-				acf.validation.unlockForm( $el );
+				acf.unlockForm( $el );
 				
 				// alert
 				alert( acf.__('Field group title is required') );

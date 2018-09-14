@@ -66,6 +66,15 @@ From your WordPress dashboard
 
 == Changelog ==
 
+= 5.7.5 =
+*Release Date - 6 September 2018*
+
+* Fix - Fixed bug causing multisite login redirect issues.
+* Fix - Fixed bug causing validation issues in older versions of Firefox.
+* Fix - Fixed bug causing duplicate Select2 instances when adding a widget via drag/drop.
+* Dev - Improved WPML compatibility by using `$sitepress->get_current_language()` instead of `ICL_LANGUAGE_CODE`.
+* Dev - Improved validation JS with new Validator model and logic.
+
 = 5.7.4 =
 *Release Date - 30 August 2018*
 
