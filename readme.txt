@@ -6,7 +6,7 @@ Tested up to: 4.9.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Customise WordPress with powerful, professional and intuitive fields.
+Customize WordPress with powerful, professional and intuitive fields.
 
 == Description ==
 
@@ -333,7 +333,7 @@ From your WordPress dashboard
 
 = 5.5.1 =
 * Select field: Fixed bug preventing some field settings from being selected
-* Date picker field: Improved compatibility with customised values
+* Date picker field: Improved compatibility with customized values
 * Core: Added new 'enqueue_datepicker' setting which can be used to prevent the library from being enqueued
 * Core: Added new 'enqueue_datetimepicker' setting which can be used to prevent the library from being enqueued
 * Core: Minor fixes and improvements
