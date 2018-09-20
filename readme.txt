@@ -50,9 +50,9 @@ From your WordPress dashboard
 
 = What kind of support do you provide? =
 
-**Help Desk.** Support is currently provided via our email help desk. Questions are generally answered within 24 hours, with the exception of weekends and holidays. We answer questions related to ACF, it’s usage and provide minor customization guidance. We cannot guarantee support for questions which include custom theme code, or 3rd party plugin conflicts & compatibility. [Open a Support Ticket](http://support.advancedcustomfields.com/new-ticket/)
+**Help Desk.** Support is currently provided via our email help desk. Questions are generally answered within 24 hours, with the exception of weekends and holidays. We answer questions related to ACF, it’s usage and provide minor customization guidance. We cannot guarantee support for questions which include custom theme code, or 3rd party plugin conflicts & compatibility. [Open a Support Ticket](https://support.advancedcustomfields.com/new-ticket/)
 
-**Support Forums.** Our Community Forums provide a great resource for searching and finding previously answered and asked support questions. You may create a new thread on these forums, however, it is not guaranteed that you will receive an answer from our support team. This is more of an area for developers to talk to one another, post ideas, plugins and provide basic help. [View the Support Forum](http://support.advancedcustomfields.com)
+**Support Forums.** Our Community Forums provide a great resource for searching and finding previously answered and asked support questions. You may create a new thread on these forums, however, it is not guaranteed that you will receive an answer from our support team. This is more of an area for developers to talk to one another, post ideas, plugins and provide basic help. [View the Support Forum](https://support.advancedcustomfields.com)
 
 
 == Screenshots ==
@@ -96,7 +96,7 @@ From your WordPress dashboard
 = 5.7.3 =
 *Release Date - 20 August 2018*
 
-* New - Added Dark Mode styles for the [Dark Mode Plugin](https://en-au.wordpress.org/plugins/dark-mode/).
+* New - Added Dark Mode styles for the [Dark Mode Plugin](https://wordpress.org/plugins/dark-mode/).
 * New - Added "Value Contains" condition to the Select field type.
 * New - Added support for the WooCommerce product type dropdown to trigger "update metaboxes".
 * Tweak - Improved acf.screen model responsible for "updating metaboxes" when changing post data.
@@ -108,7 +108,7 @@ From your WordPress dashboard
 = 5.7.2 =
 *Release Date - 6 August 2018*
 
-* Fix - Fixed bug preventing the Google Maps Field address from being customised.
+* Fix - Fixed bug preventing the Google Maps Field address from being customized.
 * Fix - Improved logic to request and cache plugin update information.
 * Fix - Fixed bug preventing JS initialization when editing widgets in accessibility mode.
 * Fix - Added missing $parent argument to term_exists() function when adding a new term via taxonomy field popup.
@@ -434,7 +434,7 @@ View full changelog: https://www.advancedcustomfields.com/changelog/
 == Upgrade Notice ==
 
 = 5.2.7 =
-* Field class names have changed slightly in v5.2.7 from `field_type-{$type}` to `acf-field-{$type}`. This change was introduced to better optimise JS performance. The previous class names can be added back in with the following filter: https://www.advancedcustomfields.com/resources/acfcompatibility/
+* Field class names have changed slightly in v5.2.7 from `field_type-{$type}` to `acf-field-{$type}`. This change was introduced to better optimize JS performance. The previous class names can be added back in with the following filter: https://www.advancedcustomfields.com/resources/acfcompatibility/
 
 = 3.0.0 =
 * Editor is broken in WordPress 3.3
