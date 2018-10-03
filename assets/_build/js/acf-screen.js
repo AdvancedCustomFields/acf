@@ -22,22 +22,6 @@
 		
 		initialize: function(){
 			
-/*
-			// disable if not active
-			if( !this.active ) {
-				this.events = {};
-			}
-			
-			// bail early if not for post
-			if( acf.get('screen') !== 'post' ) {
-				return;
-			}
-			
-			'check_screen_data'
-			
-			'check_screen_events'
-				
-*/
 		},
 /*
 		
@@ -198,7 +182,7 @@
 			var ajaxData = acf.parseArgs(this.data, {
 				action:	'acf/ajax/check_screen',
 				screen: acf.get('screen'),
-				exclude: []
+				exists: []
 			});
 			
 			// post id
@@ -231,10 +215,15 @@
 				ajaxData.post_terms = postTerms;
 			}
 			
-			// exclude existing postboxes
-			$('.acf-postbox').not('.acf-hidden').each(function(){
-				ajaxData.exclude.push( $(this).attr('id').substr(4) );
+			// add array of existing postboxes to increase performance and reduce JSON HTML
+			acf.getPostboxes().map(function( postbox ){
+				if( postbox.hasHTML() ) {
+					ajaxData.exists.push( postbox.get('key') );
+				}
 			});
+			
+			// filter
+			ajaxData = acf.applyFilters('check_screen_args', ajaxData);
 			
 			// success
 			var onSuccess = function( json ){
@@ -244,51 +233,40 @@
 					return;
 				}
 				
-				// hide
-				$('.acf-postbox').addClass('acf-hidden');
-				$('.acf-postbox-toggle').addClass('acf-hidden');
-				
-				// reset style
-				$('#acf-style').html('');
+				// vars
+				var visible = [];
 				
 				// loop
-				json.data.map(function( fieldGroup, i ){
+				json.data.results.map(function( fieldGroup, i ){
 					
 					// vars
-					var $postbox = $('#acf-' + fieldGroup.key);
-					var $toggle = $('#acf-' + fieldGroup.key + '-hide');
-					var $label = $toggle.parent();
-						
-					// show
-					// use show() to force display when postbox has been hidden by 'Show on screen' toggle
-					$postbox.removeClass('acf-hidden hide-if-js').show();
-					$label.removeClass('acf-hidden hide-if-js').show();
-					$toggle.prop('checked', true);
+					var id = 'acf-' + fieldGroup.key;
+					var postbox = acf.getPostbox( id );
 					
-					// replace HTML if needed
-					var $replace = $postbox.find('.acf-replace-with-fields');
-					if( $replace.exists() ) {
-						$replace.replaceWith( fieldGroup.html );
-						acf.doAction('append', $postbox);
+					// show postbox
+					postbox.showEnable();
+					
+					// append
+					visible.push( id );
+					
+					// update HTML
+					if( !postbox.hasHTML() && fieldGroup.html ) {
+						postbox.html( fieldGroup.html );
 					}
-					
-					// update style if needed
-					if( i === 0 ) {
-						$('#acf-style').html( fieldGroup.style );
-					}
-					
-					// enable inputs
-					acf.enable( $postbox, 'postbox' );
 				});
-			};
-			
-			// complete
-			var onComplete = function( json ){
 				
-				// disable inputs
-				$('.acf-postbox.acf-hidden').each(function(){
-					acf.disable( $(this), 'postbox' );
+				// hide other postboxes
+				acf.getPostboxes().map(function( postbox ){
+					if( visible.indexOf( postbox.get('id') ) === -1 ) {
+						postbox.hideDisable();
+					}
 				});
+				
+				// reset style
+				$('#acf-style').html( json.data.style );
+				
+				// action
+				acf.doAction('check_screen_complete', json.data, ajaxData);
 			};
 			
 			// ajax
@@ -298,8 +276,7 @@
 				type: 'post',
 				dataType: 'json',
 				context: this,
-				success: onSuccess,
-				complete: onComplete
+				success: onSuccess
 			});
 		},
 		

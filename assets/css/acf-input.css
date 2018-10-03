@@ -344,10 +344,6 @@ html[dir="rtl"] .acf-fields.-left > .acf-field > .acf-input {
     padding: 0;
   }
 }
-/* override WP CSS */
-.metabox-prefs label.acf-hidden {
-  display: none;
-}
 /*---------------------------------------------------------------------------------------------
 *
 *  Inputs

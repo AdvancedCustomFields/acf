@@ -1,67 +1,217 @@
 (function($, undefined){
 	
+	/**
+	*  acf.getPostbox
+	*
+	*  Returns a postbox instance.
+	*
+	*  @date	23/9/18
+	*  @since	5.7.7
+	*
+	*  @param	mixed $el Either a jQuery element or the postbox id.
+	*  @return	object
+	*/
+	acf.getPostbox = function( $el ){
+		
+		// allow string parameter
+		if( typeof arguments[0] == 'string' ) {
+			$el = $('#' + arguments[0]);
+		}
+		
+		// return instance
+		return acf.getInstance( $el );
+	};
+	
+	/**
+	*  acf.getPostboxes
+	*
+	*  Returns an array of postbox instances.
+	*
+	*  @date	23/9/18
+	*  @since	5.7.7
+	*
+	*  @param	void
+	*  @return	array
+	*/
+	acf.getPostboxes = function(){
+		
+		// find all postboxes
+		var $postboxes = $('.acf-postbox');
+		
+		// return instances
+		return acf.getInstances( $postboxes );
+	};
+	
+	/**
+	*  acf.newPostbox
+	*
+	*  Returns a new postbox instance for the given props.
+	*
+	*  @date	20/9/18
+	*  @since	5.7.6
+	*
+	*  @param	object props The postbox properties.
+	*  @return	object
+	*/
+	acf.newPostbox = function( props ){
+		return new acf.models.Postbox( props );
+	};
+	
+	/**
+	*  acf.models.Postbox
+	*
+	*  The postbox model.
+	*
+	*  @date	20/9/18
+	*  @since	5.7.6
+	*
+	*  @param	void
+	*  @return	void
+	*/
 	acf.models.Postbox = acf.Model.extend({
 		
 		data: {
-			id: 		'',
+			id:			'',
 			key:		'',
 			style: 		'default',
 			label: 		'top',
-			editLink:	'',
-			editTitle:	'',
-			visibility:	true
+			visible: 	true,
+			edit:		'',
+			html: 		true,
 		},
 		
 		setup: function( props ){
+			
+			// compatibilty
+			if( props.editLink ) {
+				props.edit = props.editLink;
+			}
+			
+			// extend data
 			$.extend(this.data, props);
+			
+			// set $el
+			this.$el = this.$postbox();
+		},
+		
+		$postbox: function(){
+			return $('#' + this.get('id'));
+		},
+		
+		$placeholder: function(){
+			return $('#' + this.get('id') + '-placeholder');
+		},
+		
+		$hide: function(){
+			return $('#' + this.get('id') + '-hide');
+		},
+		
+		$hideLabel: function(){
+			return this.$hide().parent();
+		},
+		
+		$hndle: function(){
+			return this.$('> .hndle');
+		},
+		
+		$inside: function(){
+			return this.$('> .inside');
+		},
+		
+		isVisible: function(){
+			return this.get('visible');
+		},
+		
+		hasHTML: function(){
+			return this.get('html');
 		},
 		
 		initialize: function(){
 			
-			// vars
-			var id = this.get('id');
-			var $postbox = $('#' + id);
-			var $toggle = $('#' + id + '-hide');
-			var $label = $toggle.parent();
+			// Add default class.
+			this.$el.addClass('acf-postbox');
 			
-			// add class
-			$postbox.addClass('acf-postbox');
-			$label.addClass('acf-postbox-toggle');
+			// Remove 'hide-if-js class.
+			// This class is added by WP to postboxes that are hidden via the "Screen Options" tab.
+			this.$el.removeClass('hide-if-js');
 			
-			// remove class
-			$postbox.removeClass('hide-if-js');
-			$label.removeClass('hide-if-js');
-			
-			// field group style
+			// Add field group style class.
 			var style = this.get('style');
 			if( style !== 'default' ) {
-				$postbox.addClass( style );
+				this.$el.addClass( style );
 			}
 			
-			// .inside class
-			$postbox.children('.inside').addClass('acf-fields').addClass('-' + this.get('label'));
+			// Add .inside class.
+			this.$inside().addClass('acf-fields').addClass('-' + this.get('label'));
 			
-				
-			// visibility
-			if( this.get('visibility') ) {
-				$toggle.prop('checked', true);
+			// Append edit link.
+			var edit = this.get('edit');
+			if( edit ) {
+				this.$hndle().append('<a href="' + edit + '" class="dashicons dashicons-admin-generic acf-hndle-cog acf-js-tooltip" title="' + acf.__('Edit field group') + '"></a>');
+			}
+			
+			// Show postbox.
+			if( this.isVisible() ) {
+				this.show();
+			
+			// Hide postbox.
+			// Hidden postboxes do not contain HTML and are used as placeholders.
 			} else {
-				$postbox.addClass('acf-hidden');
-				$label.addClass('acf-hidden');
+				this.set('html', false);
+				this.hide();
 			}
+		},
+		
+		show: function(){
 			
-			// edit link
-			var editLink = this.get('editLink');
-			var editTitle = this.get('editTitle');
-			if( editLink ) {
-				
-				$postbox.children('.hndle').append('<a href="' + editLink + '" class="dashicons dashicons-admin-generic acf-hndle-cog acf-js-tooltip" title="' + editTitle + '"></a>');
-			}
+			// Show label.
+			this.$hideLabel().show();
+			
+			// toggle on checkbox
+			this.$hide().prop('checked', true);
+			
+			// Show postbox
+			this.$el.show();
+		},
+		
+		enable: function(){
+			acf.enable( this.$el, 'postbox' );
+		},
+		
+		showEnable: function(){
+			this.show();
+			this.enable();
+		},
+		
+		hide: function(){
+			
+			// Hide label.
+			this.$hideLabel().hide();
+			
+			// Hide postbox
+			this.$el.hide();
+		},
+		
+		disable: function(){
+			acf.disable( this.$el, 'postbox' );
+		},
+		
+		hideDisable: function(){
+			this.hide();
+			this.disable();
+		},
+		
+		html: function( html ){
+			
+			// Update HTML.
+			this.$inside().html( html );
+			
+			// Keep a record that this postbox has HTML.
+			this.set('html', true);
+			
+			// Do action.
+			acf.doAction('append', this.$el);
 		}
 	});
-	
-	acf.newPostbox = function( props ){
-		return new acf.models.Postbox( props );
-	};
-			
+		
 })(jQuery);
