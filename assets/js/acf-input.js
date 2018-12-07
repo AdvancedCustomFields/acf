@@ -3889,7 +3889,7 @@
 			this.$hide().prop('checked', true);
 			
 			// Show postbox
-			this.$el.show();
+			this.$el.show().removeClass('acf-hidden');
 		},
 		
 		enable: function(){
@@ -3907,7 +3907,7 @@
 			this.$hideLabel().hide();
 			
 			// Hide postbox
-			this.$el.hide();
+			this.$el.hide().addClass('acf-hidden');
 		},
 		
 		disable: function(){
@@ -13125,19 +13125,23 @@
 			// if $item is a tr, apply some css to the elements
 			if( $item.is('tr') ) {
 				
-				// temp set as relative to find widths
-				$item.css('position', 'relative');
+				// replace $placeholder children with a single td
+				// fixes "width calculation issues" due to conditional logic hiding some children
+				$placeholder.html('<td style="padding:0;" colspan="100"></td>');
 				
-				// set widths for td children		
+				// add helper class to remove absolute positioning
+				$item.addClass('acf-sortable-tr-helper');
+				
+				// set fixed widths for children		
 				$item.children().each(function(){
-					$(this).width($(this).width());
+					$(this).width( $(this).width() );
 				});
 				
-				// revert position css
-				$item.css('position', 'absolute');
+				// mimic height
+				$placeholder.height( $item.height() + 'px' );
 				
-				// add markup to the placeholder
-				$placeholder.html('<td style="height:' + $item.height() + 'px; padding:0;" colspan="' + $item.children('td').length + '"></td>');
+				// remove class 
+				$item.removeClass('acf-sortable-tr-helper');
 			}
 		}
 	});

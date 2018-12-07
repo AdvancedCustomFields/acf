@@ -97,7 +97,7 @@
 	}
 	
 	// table
-	&td, &tr {
+	td&, tr& {
 		margin: 0;
 	}
 }
@@ -124,7 +124,7 @@
 	}
 	
 	// table
-	&td, &tr {
+	td&, tr& {
 		float: none;
 	}
 	
@@ -362,6 +362,11 @@
 		margin: 0;
 		border-left-color: #E1E1E1;
 	}
+}
+
+.acf-sortable-tr-helper {
+	position: relative !important;
+	display: table-row !important;
 }
 
 
@@ -3622,34 +3627,3 @@ p.submit .acf-spinner {
 .acf-postbox.acf-hidden {
 	display: none !important;
 }
-
-
-/*--------------------------------------------------------------------------------------------
-*
-*	Gutenberg
-*
-*--------------------------------------------------------------------------------------------*/
-
-/*
-#editor {
-	
-	.edit-post-layout__metaboxes {
-		//border-top: none;
-	}
-	
-	.edit-post-meta-boxes-area {
-		max-width: 80%;
-		
-		.postbox {
-			border: #e2e4e7 solid 1px;
-			border-bottom: none;
-			margin: 20px 0;
-		}
-		
-		input {
-			max-width: none;
-		}
-	}
-
-}
-*/

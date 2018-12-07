@@ -171,7 +171,7 @@
 			this.$hide().prop('checked', true);
 			
 			// Show postbox
-			this.$el.show();
+			this.$el.show().removeClass('acf-hidden');
 		},
 		
 		enable: function(){
@@ -189,7 +189,7 @@
 			this.$hideLabel().hide();
 			
 			// Hide postbox
-			this.$el.hide();
+			this.$el.hide().addClass('acf-hidden');
 		},
 		
 		disable: function(){

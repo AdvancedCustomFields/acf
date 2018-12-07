@@ -619,7 +619,7 @@ class acf_admin_field_groups {
 	<div class="acf-box">
 		<div class="inner">
 			<h2><?php echo acf_get_setting('name'); ?></h2>
-			<p><?php _e('Customise WordPress with powerful, professional and intuitive fields.','acf'); ?></p>
+			<p><?php _e('Customize WordPress with powerful, professional and intuitive fields.','acf'); ?></p>
 			
 			<h3><?php _e("Changelog",'acf'); ?></h3>
 			<p><?php 

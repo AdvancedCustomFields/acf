@@ -50,7 +50,7 @@ From your WordPress dashboard
 
 = What kind of support do you provide? =
 
-**Help Desk.** Support is currently provided via our email help desk. Questions are generally answered within 24 hours, with the exception of weekends and holidays. We answer questions related to ACF, it’s usage and provide minor customization guidance. We cannot guarantee support for questions which include custom theme code, or 3rd party plugin conflicts & compatibility. [Open a Support Ticket](https://www.advancedcustomfields.com/support/)
+**Help Desk.** Support is currently provided via our email help desk. Questions are generally answered within 24 hours, with the exception of weekends and holidays. We answer questions related to ACF, its usage and provide minor customization guidance. We cannot guarantee support for questions which include custom theme code, or 3rd party plugin conflicts & compatibility. [Open a Support Ticket](https://www.advancedcustomfields.com/support/)
 
 **Support Forums.** Our Community Forums provide a great resource for searching and finding previously answered and asked support questions. You may create a new thread on these forums, however, it is not guaranteed that you will receive an answer from our support team. This is more of an area for developers to talk to one another, post ideas, plugins and provide basic help. [View the Support Forum](https://support.advancedcustomfields.com/)
 
@@ -65,6 +65,16 @@ From your WordPress dashboard
 
 
 == Changelog ==
+
+= 5.7.8 =
+*Release Date - 7 December 2018*
+
+* Fix - Fixed vulnerability allowing author role to save unfiltered HTML values.
+* Fix - Fixed all metaboxes appearing when editing a post in WP 5.0.
+* i18n - Updated Polish translation thanks to Dariusz Zielonka.
+* i18n - Updated Czech translation thanks to Veronika Hanzlíková.
+* i18n - Update Turkish translation thanks to Emre Erkan.
+* i18n - Updated Portuguese language thanks to Pedro Mendonça.
 
 = 5.7.7 =
 *Release Date - 1 October 2018*

@@ -231,7 +231,7 @@ class acf_field_google_map extends acf_field {
 		// allow_null
 		acf_render_field_setting( $field, array(
 			'label'			=> __('Height','acf'),
-			'instructions'	=> __('Customise the map height','acf'),
+			'instructions'	=> __('Customize the map height','acf'),
 			'type'			=> 'text',
 			'name'			=> 'height',
 			'append'		=> 'px',
