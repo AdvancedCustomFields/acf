@@ -278,6 +278,8 @@ html[dir="rtl"] .acf-fields.-left > .acf-field > .acf-input {
 *--------------------------------------------------------------------------------------------*/
 .acf-postbox {
   position: relative;
+  padding: 16px; 
+  /* fix to wordpress 5.0 editor , to show the fields properly */
 }
 #acf_after_title-sortables .acf-postbox {
   margin: 20px 0 0;
