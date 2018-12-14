@@ -36,6 +36,9 @@ class ACF_WPML_Compatibility {
 		
 		// prevent 'acf-field' from being translated
 		add_filter('get_translatable_documents', array($this, 'get_translatable_documents'));
+
+		// skip the validation of post id's, see acf_get_posts()
+		add_filter('acf_get_posts_validate_order', '__return_false');
 		
 		// check if 'acf-field-group' is translatable
 		if( $this->is_translatable() ) {

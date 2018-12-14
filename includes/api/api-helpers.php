@@ -1598,10 +1598,12 @@ function acf_get_posts( $args = array() ) {
 	
 	// remove this filter (only once)
 	//remove_filter('query', '_acf_query_remove_post_type');
-	
-	
+
+    // able to skip the order validation, useful when the post_ids are modified by another plugin like WPML
+    $validate_order = apply_filters('acf_get_posts_validate_order', true);
+
 	// validate order
-	if( $posts && $args['post__in'] ) {
+	if( $validate_order && $posts && $args['post__in'] ) {
 		
 		// vars
 		$order = array();
