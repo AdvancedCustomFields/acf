@@ -674,6 +674,24 @@
 					
 					// return
 					return this;
+				},
+				
+				save: function( event ) {
+					var data = {};
+			
+					if ( event ) {
+						event.preventDefault();
+					}
+					
+					//_.each( this.$el.serializeArray(), function( pair ) {
+					//	data[ pair.name ] = pair.value;
+					//});
+					
+					// Serialize data more thoroughly to allow chckbox inputs to save.
+					data = acf.serializeForAjax(this.$el);
+					
+					this.controller.trigger( 'attachment:compat:waiting', ['waiting'] );
+					this.model.saveCompat( data ).always( _.bind( this.postSave, this ) );
 				}
 			});
 

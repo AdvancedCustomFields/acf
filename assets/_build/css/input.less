@@ -379,11 +379,6 @@
 .acf-postbox {
 	position: relative;
 	
-	// position high
-	#acf_after_title-sortables & {
-		margin: 20px 0 0;
-	}
-	
 	// inside
 	> .inside {
 		margin: 0 !important; /* override WP style - do not delete - you have tried this before */
@@ -421,6 +416,10 @@
 	}
 }
 
+// Correct margin around #acf_after_title
+#post-body-content #acf_after_title-sortables {
+	margin: 20px 0 -20px;
+}
 
 /* seamless */
 .acf-postbox.seamless {

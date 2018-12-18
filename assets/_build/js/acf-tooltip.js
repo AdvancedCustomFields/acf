@@ -100,46 +100,47 @@
 			var $target = this.get('target');
 			if( !$target ) return;
 			
-			// reset class
-			$tooltip.removeClass('right left bottom top');
+			// Reset position.
+			$tooltip.removeClass('right left bottom top').css({ top: 0, left: 0 });
 			
-			// position
+			// Declare tollerance to edge of screen.
 			var tolerance = 10;
-			var target_w = $target.outerWidth();
-			var target_h = $target.outerHeight();
-			var target_t = $target.offset().top;
-			var target_l = $target.offset().left;
-			var tooltip_w = $tooltip.outerWidth();
-			var tooltip_h = $tooltip.outerHeight();
 			
-			// calculate top
-			var top = target_t - tooltip_h;
-			var left = target_l + (target_w / 2) - (tooltip_w / 2);
+			// Find target position.
+			var targetWidth = $target.outerWidth();
+			var targetHeight = $target.outerHeight();
+			var targetTop = $target.offset().top;
+			var targetLeft = $target.offset().left;
 			
-			// too far left
+			// Find tooltip position.
+			var tooltipWidth = $tooltip.outerWidth();
+			var tooltipHeight = $tooltip.outerHeight();
+			var tooltipTop = $tooltip.offset().top; // Should be 0, but WP media grid causes this to be 32 (toolbar padding).
+			
+			// Assume default top alignment.
+			var top = targetTop - tooltipHeight - tooltipTop;
+			var left = targetLeft + (targetWidth / 2) - (tooltipWidth / 2);
+			
+			// Check if too far left.
 			if( left < tolerance ) {
-				
 				$tooltip.addClass('right');
-				left = target_l + target_w;
-				top = target_t + (target_h / 2) - (tooltip_h / 2);
+				left = targetLeft + targetWidth;
+				top = targetTop + (targetHeight / 2) - (tooltipHeight / 2) - tooltipTop;
 			
-			// too far right
-			} else if( (left + tooltip_w + tolerance) > $(window).width() ) {
-				
+			// Check if too far right.
+			} else if( (left + tooltipWidth + tolerance) > $(window).width() ) {
 				$tooltip.addClass('left');
-				left = target_l - tooltip_w;
-				top = target_t + (target_h / 2) - (tooltip_h / 2);
+				left = targetLeft - tooltipWidth;
+				top = targetTop + (targetHeight / 2) - (tooltipHeight / 2) - tooltipTop;
 			
-			// too far top
+			// Check if too far up.
 			} else if( top - $(window).scrollTop() < tolerance ) {
-				
 				$tooltip.addClass('bottom');
-				top = target_t + target_h;
-
+				top = targetTop + targetHeight - tooltipTop;
+				
+			// No colision with edges.
 			} else {
-				
 				$tooltip.addClass('top');
-				
 			}
 			
 			// update css

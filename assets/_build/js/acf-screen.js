@@ -20,30 +20,6 @@
 			'change #product-type':							'onChange'
 		},
 		
-		initialize: function(){
-			
-		},
-/*
-		
-		checkScreenEvents: function(){
-			
-			// vars
-			var events = [
-				'change #page_template',
-				'change #parent_id',
-				'change #post-formats-select input',
-				'change .categorychecklist input',
-				'change .categorychecklist select',
-				'change .acf-taxonomy-field[data-save="1"] input',
-				'change .acf-taxonomy-field[data-save="1"] select',
-				'change #product-type'	
-			];
-			
-			acf.screen.on('change', '#product-type', 'fetch');
-		},
-*/
-		
-		
 		isPost: function(){
 			return acf.get('screen') === 'post';
 		},
@@ -86,6 +62,10 @@
 			return this.getPageParent() ? 'child' : 'parent';
 		},
 		
+		getPostType: function(){
+			return $('#post_type').val();
+		},
+		
 		getPostFormat: function( e, $el ){
 			var $el = $('#post-formats-select input:checked');
 			if( $el.length ) {
@@ -95,7 +75,7 @@
 			return null;
 		},
 		
-		getPostTerms: function(){
+		getPostCoreTerms: function(){
 			
 			// vars
 			var terms = {};
@@ -120,6 +100,15 @@
 					terms[tax] = terms[tax].split(', ');
 				}
 			}
+			
+			// return
+			return terms;
+		},
+		
+		getPostTerms: function(){
+			
+			// Get core terms.
+			var terms = this.getPostCoreTerms();
 			
 			// loop over taxonomy fields and add their values
 			acf.getFields({type: 'taxonomy'}).map(function( field ){
@@ -188,6 +177,11 @@
 			// post id
 			if( this.isPost() ) {
 				ajaxData.post_id = acf.get('post_id');
+			}
+			
+			// post type
+			if( (postType = this.getPostType()) !== null ) {
+				ajaxData.post_type = postType;
 			}
 			
 			// page template
@@ -285,46 +279,112 @@
 		}
 	});
 	
-/*	
-	// tests
-	acf.registerScreenChange('#page_template', function( e, $el ){
-		return $('#page_template').val();
-	});
-	
-	acf.registerScreenData({
-		name: 'page_template',
-		change: '#page_template',
-		val: function(){
-			var $input = $(this.el);
-			return $input.length ? $input.val() : null;
-		}
-	});
-	
-	acf.registerScreenData({
-		name: 'post_terms',
-		change: '.acf-taxonomy-field[data-save="1"]',
-		val: function(){
-			var $input = $(this.el);
-			return $input.length ? $input.val() : null;
-		}
-	});
-	
-	acf.registerScreenData({
-		name: 'post_terms',
-		change: '#product-type',
-		val: function( terms ){
-			var $select = $('#product-type');
-			if( $select.length ) {
-				terms.push('product_cat:'+$select.val());
+	/**
+	*  gutenScreen
+	*
+	*  Adds compatibility with the Gutenberg edit screen.
+	*
+	*  @date	11/12/18
+	*  @since	5.8.0
+	*
+	*  @param	void
+	*  @return	void
+	*/
+	var gutenScreen = new acf.Model({
+		
+		// Wait until load to avoid 'core' issues when loading taxonomies.
+		wait: 'load',
+
+		initialize: function(){
+			
+			// Bail early if not Gutenberg.
+			if( !acf.isGutenberg() ) {
+				return;
 			}
+			
+			// Listen for changes.
+			wp.data.subscribe(this.proxy(this.onChange));
+			
+			// Customize "acf.screen.get" functions.
+			acf.screen.getPageTemplate = this.getPageTemplate;
+			acf.screen.getPageParent = this.getPageParent;
+			acf.screen.getPostType = this.getPostType;
+			acf.screen.getPostFormat = this.getPostFormat;
+			acf.screen.getPostCoreTerms = this.getPostCoreTerms;
+		},
+		
+		onChange: function(){
+			
+			// Get edits.
+			var edits = wp.data.select( 'core/editor' ).getPostEdits();
+			
+			// Check specific attributes.
+			var attributes = [
+				'template',
+				'parent',
+				'format'
+			];
+			
+			// Append taxonomy attributes.
+			var taxonomies = wp.data.select( 'core' ).getTaxonomies() || [];
+			taxonomies.map(function( taxonomy ){
+				attributes.push( taxonomy.rest_base );
+			});
+			
+			// Filter out attributes that have not changed.
+			attributes = attributes.filter(this.proxy(function( attr ){
+				return ( edits[attr] && edits[attr] !== this.get(attr) );
+			}));
+			
+			// Trigger change if has attributes.
+			if( attributes.length ) {
+				this.triggerChange( edits )
+			}
+		},
+		
+		triggerChange: function( edits ){
+			
+			// Update this.data if edits are provided.
+			if( edits !== undefined ) {
+				this.data = edits;
+			}
+			
+			// Check screen.
+			acf.screen.check();
+		},
+				
+		getPageTemplate: function(){
+			return wp.data.select( 'core/editor' ).getEditedPostAttribute( 'template' );
+		},
+		
+		getPageParent: function( e, $el ){
+			return wp.data.select( 'core/editor' ).getEditedPostAttribute( 'parent' );
+		},
+		
+		getPostType: function(){
+			return wp.data.select( 'core/editor' ).getEditedPostAttribute( 'type' );
+		},
+		
+		getPostFormat: function( e, $el ){
+			return wp.data.select( 'core/editor' ).getEditedPostAttribute( 'format' );
+		},
+		
+		getPostCoreTerms: function(){
+			
+			// vars
+			var terms = {};
+			
+			// Loop over taxonomies.
+			var taxonomies = wp.data.select( 'core' ).getTaxonomies() || [];
+			taxonomies.map(function( taxonomy ){
+				
+				// Append selected taxonomies to terms object.
+				terms[ taxonomy.slug ] = wp.data.select( 'core/editor' ).getEditedPostAttribute( taxonomy.rest_base );
+			});
+			
+			// return
 			return terms;
-		}
+		},
 	});
-	
-	
-	acf.screen.get('post_terms');
-	acf.screen.getPostTerms();
-	
-*/
 
 })(jQuery);

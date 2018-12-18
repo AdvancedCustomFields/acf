@@ -175,8 +175,7 @@
 			var lat = this.get('lat');
 			var lng = this.get('lng');
 			
-			
-			// map
+			// Create Map.
 			var mapArgs = {
 				scrollwheel:	false,
         		zoom:			parseInt( zoom ),
@@ -190,10 +189,8 @@
         	};
         	mapArgs = acf.applyFilters('google_map_args', mapArgs, this);       	
         	var map = new google.maps.Map( this.$canvas()[0], mapArgs );
-        	this.addMapEvents( map, this );
         	
-        	
-        	// marker
+        	// Create Marker.
         	var markerArgs = acf.parseArgs(mapArgs.marker, {
 				draggable: 		true,
 				raiseOnDrag: 	true,
@@ -201,12 +198,23 @@
         	});
 		    markerArgs = acf.applyFilters('google_map_marker_args', markerArgs, this);
 			var marker = new google.maps.Marker( markerArgs );
-        	this.addMarkerEvents( marker, this );
         	
+        	// Maybe Create Autocomplete.
+        	var autocomplete = false;
+	        if( acf.isset(google, 'maps', 'places', 'Autocomplete') ) {
+		        var autocompleteArgs = mapArgs.autocomplete || {};
+		        autocompleteArgs = acf.applyFilters('google_map_autocomplete_args', autocompleteArgs, this);
+		        autocomplete = new google.maps.places.Autocomplete( this.$search()[0], autocompleteArgs );
+		        autocomplete.bindTo('bounds', map);
+	        }
+	        
+	        // Add map events.
+	        this.addMapEvents( this, map, marker, autocomplete );
         	
-        	// reference
+        	// Append references.
         	map.acf = this;
         	map.marker = marker;
+        	map.autocomplete = autocomplete;
         	this.map = map;
         	
         	// action for 3rd party customization
@@ -217,29 +225,11 @@
 		    this.renderVal( val );
 		},
 		
-		addMapEvents: function( map, field ){
+		addMapEvents: function( field, map, marker, autocomplete ){
 			
-			// autocomplete
-	        if( acf.isset(window, 'google', 'maps', 'places', 'Autocomplete') ) {
-		        
-		        // vars
-		        var autocompleteArgs = map.autocomplete || {};
-		        var autocomplete = new google.maps.places.Autocomplete( this.$search()[0], autocompleteArgs );
-				
-				// bind
-				autocomplete.bindTo('bounds', map);
-				
-				// autocomplete event place_changed is triggered each time the input changes
-				// customize the place object with the current "search value" to allow users controll over the address text
-				google.maps.event.addListener(autocomplete, 'place_changed', function() {
-					var place = this.getPlace();
-					place.address = field.getSearchVal();
-				    field.setPlace( place );
-				});
-	        }
-	        
-	        // click
+			// Click map.
 	        google.maps.event.addListener( map, 'click', function( e ) {
+		        
 				// vars
 				var lat = e.latLng.lat();
 				var lng = e.latLng.lng();
@@ -247,12 +237,10 @@
 				 // search
 				field.searchPosition( lat, lng );
 			});
-		},
-		
-		addMarkerEvents: function( marker, field ){
 			
-			// dragend
+			// Drag marker.
 		    google.maps.event.addListener( marker, 'dragend', function(){
+			    
 		    	// vars
 				var position = this.getPosition();
 				var lat = position.lat();
@@ -261,6 +249,18 @@
 			    // search
 				field.searchPosition( lat, lng );
 			});
+			
+			// Autocomplete search.
+	        if( autocomplete ) {
+		        
+				// autocomplete event place_changed is triggered each time the input changes
+				// customize the place object with the current "search value" to allow users controll over the address text
+				google.maps.event.addListener(autocomplete, 'place_changed', function() {
+					var place = this.getPlace();
+					place.address = field.getSearchVal();
+				    field.setPlace( place );
+				});
+	        }
 		},
 		
 		searchPosition: function( lat, lng ){

@@ -18,6 +18,15 @@
 			return this.$('input[type="text"]');
 		},
 		
+		setValue: function( val ){
+			
+			// update input (with change)
+			acf.val( this.$input(), val );
+			
+			// update iris
+			this.$inputText().iris('color', val);
+		},
+		
 		initialize: function(){
 			
 			// vars

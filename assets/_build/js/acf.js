@@ -777,69 +777,42 @@
 		return $el.find('select, textarea, input').serializeArray();
 	}
 	
-	
 	/**
-	*  acf.serializeAjax
+	*  acf.serializeForAjax
 	*
 	*  Returns an object containing name => value data ready to be encoded for Ajax.
 	*
-	*  @date	15/8/18
-	*  @since	5.7.3
+	*  @date	17/12/18
+	*  @since	5.8.0
 	*
 	*  @param	jQUery $el The element or form to serialize.
-	*  @param	string prefix The input prefix to scope to.
 	*  @return	object
 	*/
-	
-/*
-	acf.serializeAjax = function( $el, prefix ){
+	acf.serializeForAjax = function( $el ){
 			
 		// vars
 		var data = {};
 		var index = {};
-		var inputs = $el.find('select, textarea, input').serializeArray();
 		
-		// remove prefix
-		if( prefix !== undefined ) {
-			
-			// filter and modify
-			inputs = inputs.filter(function( item ){
-				return item.name.indexOf(prefix) === 0;
-			}).map(function( item ){
-				
-				// remove prefix from name
-				item.name = item.name.slice(prefix.length);
-				
-				// fix [foo][bar] to foo[bar]
-				if( item.name.slice(0, 1) == '[' ) {
-					item.name = item.name.slice(1).replace(']', '');
-				}
-				return item;
-			});
-		}
+		// Serialize inputs.
+		var inputs = acf.serializeArray( $el );
 		
-		// build object
+		// Loop over inputs and build data.
 		inputs.map(function( item ){
 			
-			// fix foo[] to foo[0], foo[1], etc
+			// Append to array.
 			if( item.name.slice(-2) === '[]' ) {
-				
-				// ensure index exists
-				index[ item.name ] = index[ item.name ] || 0;
-				index[ item.name ]++;
-				
-				// replace [] with [0]
-				item.name = item.name.replace('[]', '[' + (index[ item.name ]-1) + ']');
+				data[ item.name ] = data[ item.name ] || [];
+				data[ item.name ].push( item.value );
+			// Append	
+			} else {
+				data[ item.name ] = item.value;
 			}
-			
-			// append to data
-			data[ item.name ] = item.value;
 		});
 		
 		// return
 		return data;
 	};
-*/
 	
 	/**
 	*  addAction
@@ -2110,6 +2083,21 @@
 	
 	acf.isLocked = function( $el, type ){
 		return ( getLocks( $el, type ).length > 0 );
+	};
+	
+	/**
+	*  acf.isGutenberg
+	*
+	*  Returns true if the Gutenberg editor is being used.
+	*
+	*  @date	14/11/18
+	*  @since	5.8.0
+	*
+	*  @param	vois
+	*  @return	bool
+	*/
+	acf.isGutenberg = function(){
+		return ( window.wp && wp.blocks );
 	};
 	
 	/*
