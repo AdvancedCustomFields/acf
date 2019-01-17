@@ -2100,6 +2100,23 @@
 		return ( window.wp && wp.blocks );
 	};
 	
+	/**
+	*  acf.objectToArray
+	*
+	*  Returns an array of items from the given object.
+	*
+	*  @date	20/11/18
+	*  @since	5.8.0
+	*
+	*  @param	object obj The object of items.
+	*  @return	array
+	*/
+	acf.objectToArray = function( obj ){
+		return Object.keys( obj ).map(function( key ){
+			return obj[key];
+		});
+	};
+	
 	/*
 	*  exists
 	*

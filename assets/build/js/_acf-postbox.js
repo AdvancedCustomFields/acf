@@ -34,12 +34,7 @@
 	*  @return	array
 	*/
 	acf.getPostboxes = function(){
-		
-		// find all postboxes
-		var $postboxes = $('.acf-postbox');
-		
-		// return instances
-		return acf.getInstances( $postboxes );
+		return acf.getInstances( $('.acf-postbox') );
 	};
 	
 	/**
@@ -75,9 +70,7 @@
 			key:		'',
 			style: 		'default',
 			label: 		'top',
-			visible: 	true,
-			edit:		'',
-			html: 		true,
+			edit:		''
 		},
 		
 		setup: function( props ){
@@ -98,10 +91,6 @@
 			return $('#' + this.get('id'));
 		},
 		
-		$placeholder: function(){
-			return $('#' + this.get('id') + '-placeholder');
-		},
-		
 		$hide: function(){
 			return $('#' + this.get('id') + '-hide');
 		},
@@ -119,11 +108,7 @@
 		},
 		
 		isVisible: function(){
-			return this.get('visible');
-		},
-		
-		hasHTML: function(){
-			return this.get('html');
+			return this.$el.hasClass('acf-hidden');
 		},
 		
 		initialize: function(){
@@ -151,15 +136,7 @@
 			}
 			
 			// Show postbox.
-			if( this.isVisible() ) {
-				this.show();
-			
-			// Hide postbox.
-			// Hidden postboxes do not contain HTML and are used as placeholders.
-			} else {
-				this.set('html', false);
-				this.hide();
-			}
+			this.show();
 		},
 		
 		show: function(){
@@ -205,9 +182,6 @@
 			
 			// Update HTML.
 			this.$inside().html( html );
-			
-			// Keep a record that this postbox has HTML.
-			this.set('html', true);
 			
 			// Do action.
 			acf.doAction('append', this.$el);

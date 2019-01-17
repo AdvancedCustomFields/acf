@@ -87,7 +87,7 @@
 			}
 			
 			// add icon
-			$label.prepend('<i class="acf-accordion-icon dashicons dashicons-arrow-' + (this.get('open') ? 'down' : 'right') + '"></i>');
+			$label.prepend( accordionManager.iconHtml({ open: this.get('open') }) );
 			
 			// classes
 			// - remove 'inside' which is a #poststuff WP class
@@ -142,11 +142,24 @@
 			}
 		},
 		
+		iconHtml: function( props ){
+			
+			// Determine icon.
+			//if( acf.isGutenberg() ) {
+			//	var icon = props.open ? 'arrow-up-alt2' : 'arrow-down-alt2';
+			//} else {
+				var icon = props.open ? 'arrow-down' : 'arrow-right';
+			//}
+			
+			// Return HTML.
+			return '<i class="acf-accordion-icon dashicons dashicons-' + icon + '"></i>';
+		},
+		
 		open: function( $el ){
 			
 			// open
 			$el.find('.acf-accordion-content:first').slideDown().css('display', 'block');
-			$el.find('.acf-accordion-icon:first').removeClass('dashicons-arrow-right').addClass('dashicons-arrow-down');
+			$el.find('.acf-accordion-icon:first').replaceWith( this.iconHtml({ open: true }) );
 			$el.addClass('-open');
 			
 			// action
@@ -164,7 +177,7 @@
 			
 			// close
 			$el.find('.acf-accordion-content:first').slideUp();
-			$el.find('.acf-accordion-icon:first').removeClass('dashicons-arrow-down').addClass('dashicons-arrow-right');
+			$el.find('.acf-accordion-icon:first').replaceWith( this.iconHtml({ open: false }) );
 			$el.removeClass('-open');
 			
 			// action

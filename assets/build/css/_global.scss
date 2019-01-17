@@ -1,9 +1,6 @@
-@import '../css/vars.less';
-
-
 /*--------------------------------------------------------------------------------------------
 *
-*	General
+*  Global
 *
 *--------------------------------------------------------------------------------------------*/
 
@@ -259,7 +256,7 @@
 	background: rgba(249, 249, 249, 0.5);
 	
 	i {
-		.centered;
+		@include centered();
 	}
 }
 
@@ -433,13 +430,13 @@ a.acf-icon {
 	/* states */
 	&:hover {
 		border-color: transparent;
-		background: @acf_blue;
+		background: $acf_blue;
 		color: #fff;
 	}
 	
 	&:active {
 		color: #fff;
-		background-color: darken(@acf_blue, 5%);
+		background-color: darken($acf_blue, 5%);
 	}
 	
 	
@@ -637,8 +634,8 @@ a.acf-icon.-cancel.grey:hover {
 	color: #fff;
 	margin: 5px 0 15px;
 	padding: 3px 12px;
-	background: @acf_notice;
-	border-left: darken(@acf_notice, 8%) solid 4px;
+	background: $acf_notice;
+	border-left: darken($acf_notice, 8%) solid 4px;
 	
 	p {
 		font-size: 13px;
@@ -668,20 +665,20 @@ a.acf-icon.-cancel.grey:hover {
 	
 	// error
 	&.-error {
-		background: @acf_error;
-		border-color: darken(@acf_error, 8%);
+		background: $acf_error;
+		border-color: darken($acf_error, 8%);
 	}
 	
 	// success
 	&.-success {
-		background: @acf_success;
-		border-color: darken(@acf_success, 8%);
+		background: $acf_success;
+		border-color: darken($acf_success, 8%);
 	}
 	
 	// warning
 	&.-warning {
-		background: @acf_warning;
-		border-color: darken(@acf_warning, 8%);
+		background: $acf_warning;
+		border-color: darken($acf_warning, 8%);
 	}
 }
 
@@ -897,7 +894,7 @@ a.acf-icon.-cancel.grey:hover {
 .acf-columns-2 {
 	margin-right: 300px;
 	clear: both;
-	.clearfix;
+	@include clearfix();
 	
 	/* rtl */
 	html[dir="rtl"] & {
@@ -1122,7 +1119,7 @@ a.acf-icon.-cancel.grey:hover {
 		border-color: #aaaaaa;
 		box-shadow: 0 5px 30px -5px rgba(0, 0, 0, 0.25);
 		text-align: left;
-		.rtl;
+		@include rtl();
 		
 		// title
 		.title {
@@ -1163,7 +1160,7 @@ a.acf-icon.-cancel.grey:hover {
 			display: none;
 			
 			i {
-				.centered;
+				@include centered();
 			}
 		}
 		
@@ -1203,7 +1200,7 @@ a.acf-icon.-cancel.grey:hover {
 	background: #fff;
 	border-left: 4px solid #00a0d2;
 	padding: 20px;
-	.clearfix();
+	@include clearfix();
 	
 	.col-content {
 		float: left;
@@ -1239,7 +1236,7 @@ a.acf-icon.-cancel.grey:hover {
 	}
 	
 	// mobile
-	@media screen and (max-width: @sm) {
+	@media screen and (max-width: $sm) {
 		
 		.col-content,
 		.col-actions {
@@ -1306,11 +1303,11 @@ a.acf-icon.-cancel.grey:hover {
 			min-width: 31%;
 			max-width: 31%;
 			
-			@media screen and (max-width: @md) {
+			@media screen and (max-width: $md) {
 				min-width: 48%;
 			}
 			
-			@media screen and (max-width: @sm) {
+			@media screen and (max-width: $sm) {
 				min-width: 100%;
 			}
 		}
@@ -1360,7 +1357,7 @@ a.acf-icon.-cancel.grey:hover {
 
 
 /* mobile */
-@media screen and (max-width: @sm) {
+@media screen and (max-width: $sm) {
 	
 	.acf-hl[data-cols] {
 		margin-left: 0;
@@ -1521,7 +1518,7 @@ html[dir="rtl"] .acf-table > tbody > tr > td.order + td {
 *---------------------------------------------------------------------------------------------*/
 
 .acf-postbox-columns {
-	.clearfix;
+	@include clearfix();
 	position: relative;
 	margin-top: -11px;
 	margin-bottom: -11px;
@@ -1530,7 +1527,7 @@ html[dir="rtl"] .acf-table > tbody > tr > td.order + td {
 	
 	.acf-postbox-main,
 	.acf-postbox-side {
-		.border-box;
+		@include border-box();
 		padding: 0 12px 12px;
 	}
 	
@@ -1663,7 +1660,7 @@ html[dir="rtl"] .acf-table > tbody > tr > td.order + td {
 	margin-top: 10px;
 	
 	.postbox {
-		.border-box;
+		@include border-box();
 		
 		.inside {
 			margin-bottom: 0;

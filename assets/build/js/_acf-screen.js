@@ -211,9 +211,7 @@
 			
 			// add array of existing postboxes to increase performance and reduce JSON HTML
 			acf.getPostboxes().map(function( postbox ){
-				if( postbox.hasHTML() ) {
-					ajaxData.exists.push( postbox.get('key') );
-				}
+				ajaxData.exists.push( postbox.get('key') );
 			});
 			
 			// filter
@@ -222,42 +220,18 @@
 			// success
 			var onSuccess = function( json ){
 				
-				// bail early if not success
-				if( !acf.isAjaxSuccess(json) ) {
-					return;
+				// Check success.
+				if( acf.isAjaxSuccess(json) ) {
+					
+					// Render post screen.
+					if( acf.get('screen') == 'post' ) {
+						this.renderPostScreen( json.data );
+					
+					// Render user screen.
+					} else if( acf.get('screen') == 'user' ) {
+						this.renderUserScreen( json.data );
+					}
 				}
-				
-				// vars
-				var visible = [];
-				
-				// loop
-				json.data.results.map(function( fieldGroup, i ){
-					
-					// vars
-					var id = 'acf-' + fieldGroup.key;
-					var postbox = acf.getPostbox( id );
-					
-					// show postbox
-					postbox.showEnable();
-					
-					// append
-					visible.push( id );
-					
-					// update HTML
-					if( !postbox.hasHTML() && fieldGroup.html ) {
-						postbox.html( fieldGroup.html );
-					}
-				});
-				
-				// hide other postboxes
-				acf.getPostboxes().map(function( postbox ){
-					if( visible.indexOf( postbox.get('id') ) === -1 ) {
-						postbox.hideDisable();
-					}
-				});
-				
-				// reset style
-				$('#acf-style').html( json.data.style );
 				
 				// action
 				acf.doAction('check_screen_complete', json.data, ajaxData);
@@ -276,6 +250,162 @@
 		
 		onChange: function( e, $el ){
 			this.setTimeout(this.check, 1);
+		},
+		
+		renderPostScreen: function( data ){
+			
+			// vars
+			var visible = [];
+			
+			// Helper function to copy events
+			var copyEvents = function( $from, $to ){
+				var events = $._data($from[0]).events;
+				for( var type in events ) {
+					for( var i = 0; i < events[type].length; i++ ) {
+						$to.on( type, events[type][i].handler );
+					}
+				}
+			}
+			
+			// Helper function to sort metabox.
+			var sortMetabox = function( id, ids ){
+				
+				// Find position of id within ids.
+				var index = ids.indexOf( id );
+				
+				// Bail early if index not found.
+				if( index == -1 ) {
+					return false;
+				}
+				
+				// Loop over metaboxes behind (in reverse order).
+				for( var i = index-1; i >= 0; i-- ) {
+					if( $('#'+ids[i]).length ) {
+						return $('#'+ids[i]).after( $('#'+id) );
+					}
+				}
+				
+				// Loop over metaboxes infront.
+				for( var i = index+1; i < ids.length; i++ ) {
+					if( $('#'+ids[i]).length ) {
+						return $('#'+ids[i]).before( $('#'+id) );
+					}
+				}
+				
+				// Return false if not sorted.
+				return false;
+			};
+			
+			// Show these postboxes.
+			data.results.map(function( result, i ){
+				
+				// vars
+				var postbox = acf.getPostbox( result.id );
+				
+				// Create postbox if doesn't exist.
+				if( !postbox ) {
+					
+					// Create it.
+					var $postbox = $([
+						'<div id="' + result.id + '" class="postbox">',
+							'<button type="button" class="handlediv" aria-expanded="false">',
+								'<span class="screen-reader-text">Toggle panel: ' + result.title + '</span>',
+								'<span class="toggle-indicator" aria-hidden="true"></span>',
+							'</button>',
+							'<h2 class="hndle ui-sortable-handle">',
+								'<span>' + result.title + '</span>',
+							'</h2>',
+							'<div class="inside">',
+								result.html,
+							'</div>',
+						'</div>'
+					].join(''));
+					
+					// Create new hide toggle.
+					if( $('#adv-settings').length ) {
+						var $prefs = $('#adv-settings .metabox-prefs');
+						var $label = $([
+							'<label for="' + result.id + '-hide">',
+								'<input class="hide-postbox-tog" name="' + result.id + '-hide" type="checkbox" id="' + result.id + '-hide" value="' + result.id + '" checked="checked">',
+								' ' + result.title,
+							'</label>'
+						].join(''));
+						
+						// Copy default WP events onto checkbox.
+						copyEvents( $prefs.find('input').first(), $label.find('input') );
+						
+						// Append hide label
+						$prefs.append( $label );
+					}
+					
+					// Append metabox to the bottom of "side-sortables".
+					if( result.position === 'side' ) {
+						$('#' + result.position + '-sortables').append( $postbox );
+					
+					// Prepend metabox to the top of "normal-sortbables".
+					} else {
+						$('#' + result.position + '-sortables').prepend( $postbox );
+					}
+					
+					// Position metabox amongst existing ACF metaboxes within the same location.
+					var order = [];
+					data.results.map(function( _result ){
+						if( result.position === _result.position && $('#' + result.position + '-sortables #' + _result.id).length ) {
+							order.push( _result.id );
+						}
+					});
+					sortMetabox(result.id, order)
+					
+					// Check 'sorted' for user preference.
+					if( data.sorted ) {
+						
+						// Loop over each position (acf_after_title, side, normal).
+						for( var position in data.sorted ) {
+							
+							// Explode string into array of ids.
+							var order = data.sorted[position].split(',');
+							
+							// Position metabox relative to order.
+							if( sortMetabox(result.id, order) ) {
+								break;
+							}
+						}
+					}
+					
+					// Copy default WP events onto metabox.
+					var $submitdiv = $('#submitdiv');
+					if( $('#submitdiv').length ) {
+						copyEvents( $submitdiv.children('.handlediv'), $postbox.children('.handlediv') );
+						copyEvents( $submitdiv.children('.hndle'), $postbox.children('.hndle') );
+					}
+					
+					// Trigger action.
+					acf.doAction('append', $postbox);
+					
+					// Initalize it.
+					postbox = acf.newPostbox( result );
+				}
+				
+				// show postbox
+				postbox.showEnable();
+				
+				// append
+				visible.push( result.id );
+			});
+			
+			// Hide these postboxes.
+			acf.getPostboxes().map(function( postbox ){
+				if( visible.indexOf( postbox.get('id') ) === -1 ) {
+					postbox.hideDisable();
+				}
+			});
+			
+			// Update style.
+			$('#acf-style').html( data.style );	
+		},
+		
+		renderUserScreen: function( json ){
+			
 		}
 	});
 	
@@ -379,7 +509,10 @@
 			taxonomies.map(function( taxonomy ){
 				
 				// Append selected taxonomies to terms object.
-				terms[ taxonomy.slug ] = wp.data.select( 'core/editor' ).getEditedPostAttribute( taxonomy.rest_base );
+				var postTerms = wp.data.select( 'core/editor' ).getEditedPostAttribute( taxonomy.rest_base );
+				if( postTerms ) {
+					terms[ taxonomy.slug ] = postTerms;
+				}
 			});
 			
 			// return

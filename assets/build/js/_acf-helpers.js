@@ -53,7 +53,7 @@
 				
 				// replace $placeholder children with a single td
 				// fixes "width calculation issues" due to conditional logic hiding some children
-				$placeholder.html('<td style="padding:0;" colspan="100"></td>');
+				$placeholder.html('<td style="padding:0;" colspan="' + $placeholder.children().length + '"></td>');
 				
 				// add helper class to remove absolute positioning
 				$item.addClass('acf-sortable-tr-helper');

@@ -1,6 +1,3 @@
-@import '../css/vars.less';
-
-
 /*--------------------------------------------------------------------------------------------
 *
 *	acf-field
@@ -97,11 +94,10 @@
 	}
 	
 	// table
-	td&, tr& {
+	@at-root td#{&}, tr#{&} {
 		margin: 0;
 	}
 }
-
 
 // width
 .acf-field[data-width] {
@@ -124,13 +120,13 @@
 	}
 	
 	// table
-	td&, tr& {
+	@at-root td#{&}, tr#{&} {
 		float: none;
 	}
 	
 	// mobile
 /*
-	@media screen and (max-width: @sm) {
+	@media screen and (max-width: $sm) {
 		float: none;
 		width: auto;
 		border-left-width: 0;
@@ -167,7 +163,7 @@
 	position: relative;
 	
 	// clearifx
-	.clearfix;
+	@include clearfix();
 	
 	// border
 	&.-border {
@@ -179,7 +175,7 @@
 	> .acf-field {
 		position: relative;
 		margin: 0;
-		padding: @field_padding;
+		padding: $field_padding;
 		border-top: #EEEEEE solid 1px;
 		
 		// first
@@ -189,7 +185,7 @@
 	}
 	
 	// table
-	td& {
+	@at-root td#{&} {
 		padding: 0 !important;
 	}
 }
@@ -231,10 +227,10 @@
 *--------------------------------------------------------------------------------------------*/
 
 .acf-fields.-left > .acf-field {
-	padding: @fy 0;
+	padding: $fy 0;
 	
 	// clearifx
-	.clearfix;
+	@include clearfix();
 	
 	// sidebar
 	&:before {
@@ -265,7 +261,7 @@
 		float: left;
 		width: 20%;
 		margin: 0;
-		padding: 0 @fx;
+		padding: 0 $fx;
 	}
 	
 	// input
@@ -273,7 +269,7 @@
 		float: left;
 		width: 80%;
 		margin: 0;
-		padding: 0 @fx;
+		padding: 0 $fx;
 	}
 	
 	// rtl
@@ -298,7 +294,7 @@
 	}
 	
 	// mobile
-	@media screen and (max-width: @sm) {
+	@media screen and (max-width: $sm) {
 		
 		// sidebar
 		&:before { 
@@ -350,7 +346,7 @@
 	
 	// label
 	> td.acf-label {
-		padding: @fp;
+		padding: $fp;
 		margin: 0;
 		background: #F9F9F9;
 	    width: 20%;
@@ -358,7 +354,7 @@
 	
 	// input
 	> td.acf-input {
-		padding: @fp;
+		padding: $fp;
 		margin: 0;
 		border-left-color: #E1E1E1;
 	}
@@ -438,8 +434,8 @@
 	/* inside */
 	> .inside {
 		display: block !important; /* stop metabox from hiding when closed */
-		margin-left: -@field_padding_x !important;
-		margin-right: -@field_padding_x !important;
+		margin-left: -$field_padding_x !important;
+		margin-right: -$field_padding_x !important;
 		
 		> .acf-field {
 			border-color: transparent;
@@ -816,64 +812,72 @@ html[dir="rtl"] .select2-container.-acf {
 *
 *---------------------------------------------------------------------------------------------*/
 
+// Fix unneeded bottom margin.
 .select2-container.-acf {
-	
 	li{
 		margin-bottom: 0;
 	}
-	
 }
 
+// Default wrap.
 .select2-container--default.-acf {
 	
-	 .select2-selection--multiple {
-		 
+	// Multiple wrap.
+	.select2-selection--multiple {
+		
+		// If no value, increase hidden search input full width.
+		// Overrides calculated px width issues.
 		.select2-search--inline:first-child {
 			float: none;
-			input { width: 100% !important; }
+			input { 
+				width: 100% !important;
+			}
 		}
-		 
-		 /* multiple choice item */
-		 .select2-selection__choice {
-			 background-color: #f7f7f7;
-			 border-color: #cccccc;
-			 
-			 
-			 /* sortable item*/
-			 &.ui-sortable-helper {
-				 background: #5897fb;
-				 border-color: darken(#5897fb, 5%);
-				 color: #fff;
-				 box-shadow: 0 0 3px rgba(0,0,0,0.1);
-				 
-				 span {
-					 visibility: hidden;
-				 }
-			 }
-			 
-			 
-			 /* sortable shadow */
-			 &.ui-sortable-placeholder {
-				 background-color: #f7f7f7;
-				 border-color: #f7f7f7;
-				 visibility: visible !important;
-			 }
-		 }
-		 
-	 }
-	 
+		
+		// ul: Remove padding because li already has margin-right.
+		.select2-selection__rendered {
+			padding-right: 0;
+		}
+		
+		// li
+		.select2-selection__choice {
+			background-color: #f7f7f7;
+			border-color: #cccccc;
+			
+			// Allow choice to wrap multiple lines.
+			max-width: 100%;
+			overflow: hidden;
+			word-wrap: normal !important;
+			white-space: normal;
+			
+			// Sortable.
+			&.ui-sortable-helper {
+				background: #5897fb;
+				border-color: darken(#5897fb, 5%);
+				color: #fff;
+				box-shadow: 0 0 3px rgba(0,0,0,0.1);
+				
+				span {
+				visibility: hidden;
+				}
+			}
+			
+			// Sortable shadow
+			&.ui-sortable-placeholder {
+				background-color: #f7f7f7;
+				border-color: #f7f7f7;
+				visibility: visible !important;
+			}
+		}
+	}
 }
 
+// z-index helper.
 .select2-container {
-	
 	.select2-dropdown {
 		z-index: 900000;
 	}
-	
 }
-
-
-
 
 /*---------------------------------------------------------------------------------------------
 *
@@ -1143,7 +1147,7 @@ ul.acf-checkbox-list {
 	
 	.acf-switch-on {
 		color: #fff;
-		text-shadow: darken(@acf_blue, 10%) 0 1px 0;
+		text-shadow: darken($acf_blue, 10%) 0 1px 0;
 	}
 	
 	.acf-switch-off {
@@ -1208,8 +1212,8 @@ ul.acf-checkbox-list {
 		&.-on {
 			
 			.acf-switch-slider {
-				border-color: darken(@acf_blue, 20%);
-				box-shadow: 0 0 2px darken(@acf_blue, 10%);
+				border-color: darken($acf_blue, 20%);
+				box-shadow: 0 0 2px darken($acf_blue, 10%);
 			}
 		}
 		
@@ -1388,7 +1392,7 @@ html[dir="rtl"] .pac-container .pac-item {
 	
 	/* filters (top) */
 	.filters {
-		.clearfix;
+		@include clearfix();
 		border: #DFDFDF solid 1px;
 		background: #fff;
 		
@@ -1551,7 +1555,7 @@ html[dir="rtl"] .pac-container .pac-item {
 	
 	/* selection (bottom) */
 	.selection {
-		.clearfix;
+		@include clearfix();
 		border: #DFDFDF solid 1px;
 		position: relative;
 		margin-top: -1px;
@@ -1802,7 +1806,7 @@ html[dir="rtl"] .pac-container .pac-item {
 		padding-left: 20%;
 		
 		/* mobile */
-		@media screen and (max-width: @sm) {
+		@media screen and (max-width: $sm) {
 			padding-left: 10px;
 		}
 		
@@ -2012,8 +2016,8 @@ html[dir="rtl"] .pac-container .pac-item {
 	> .acf-fields > .acf-tab-wrap {
 		background: transparent;
 		margin-bottom: 10px;
-		padding-left: @fx;
-		padding-right: @fx;
+		padding-left: $fx;
+		padding-right: $fx;
 		
 		.acf-tab-group {
 			border-top: 0 none;
@@ -2175,7 +2179,7 @@ html[dir="rtl"] .pac-container .pac-item {
 		}
 		
 		.acf-icon.-picture {
-			.centered;
+			@include centered();
 			z-index: 0;
 			
 			height: 42px;
@@ -2229,7 +2233,7 @@ html[dir="rtl"] .pac-container .pac-item {
 *--------------------------------------------------------------------------------------------*/
 
 .acf-image-uploader {
-	.clearfix;
+	@include clearfix();
 	position: relative;
 	
 	
@@ -2609,7 +2613,7 @@ html[dir="rtl"] .pac-container .pac-item {
 			border-top: #EEEEEE solid 1px;
 			
 			&.-clear {
-				padding: 0 @fx @fy;
+				padding: 0 $fx $fy;
 			}
 		}
 	}
@@ -2693,8 +2697,8 @@ tr.acf-accordion {
 
 /* seamless */
 .acf-postbox.seamless > .acf-fields > .acf-accordion {
-	margin-left: @field_padding_x !important;
-	margin-right: @field_padding_x !important;
+	margin-left: $field_padding_x !important;
+	margin-right: $field_padding_x !important;
 }
 
 
@@ -2760,869 +2764,4 @@ html[dir="rtl"] .acf-accordion {
 	.compat-attachment-fields > tbody > tr > td {
 		padding-bottom: 5px;
 	}
-}
-
-
-
-/*---------------------------------------------------------------------------------------------
-*
-*  Attachment Form (single page)
-*
-*---------------------------------------------------------------------------------------------*/
-
-#post .compat-attachment-fields {
-	
-	.compat-field-acf-form-data {
-		display: none;
-	}
-	
-	&,
-	> tbody,
-	> tbody > tr,
-	> tbody > tr > th,
-	> tbody > tr > td {
-		display: block;
-	}
-	
-	> tbody > .acf-field {
-		margin: 15px 0;
-		
-		> .acf-label {
-			margin: 0;
-			
-			label {
-				margin: 0;
-				padding: 0;
-				
-				p {
-					margin: 0 0 3px !important;
-				}
-			}
-		}
-		
-		> .acf-input {
-			margin: 0;
-		}
-	} 
-}
-
-
-/*---------------------------------------------------------------------------------------------
-*
-*  Media Model
-*
-*---------------------------------------------------------------------------------------------*/
-
-/* WP sets tables to act as divs. ACF uses tables, so these muct be reset */
-.media-modal .compat-attachment-fields td.acf-input {
-	
-	table {
-		display: table;
-		table-layout: auto;
-		
-		tbody {
-			display: table-row-group;
-		}
-		
-		tr {
-			display: table-row;
-		}
-		
-		td, th {
-			display: table-cell;
-		}
-		
-	}
-	
-}
-
-
-/* field widths floats */
-.media-modal .compat-attachment-fields > tbody > .acf-field {
-	margin: 5px 0;
-	
-	> .acf-label {
-		min-width: 30%;
-		margin: 0;
-		padding: 0;
-		float: left;
-	    text-align: right;
-	    display: block;
-	    float: left;
-	    
-	    > label {
-		    padding-top: 6px;
-			margin: 0;
-			color: #666666;
-		    font-weight: 400;
-		    line-height: 16px;
-	    }
-	}
-	
-	> .acf-input {
-		width: 65%;
-		margin: 0;
-		padding: 0;
-	    float: right;
-	    display: block;
-	}
-	
-	p.description {
-		margin: 0;
-	}
-}
-
-
-/* restricted selection (copy of WP .upload-errors)*/
-.acf-selection-error {
-	background: #ffebe8;
-    border: 1px solid #c00;
-    border-radius: 3px;
-    padding: 8px;
-    margin: 20px 0 0;
-    
-    .selection-error-label {
-		background: #CC0000;
-	    border-radius: 3px;
-	    color: #fff;
-	    font-weight: bold;
-	    margin-right: 8px;
-	    padding: 2px 4px;
-	}
-	
-	.selection-error-message {
-		color: #b44;
-	    display: block;
-	    padding-top: 8px;
-	    word-wrap: break-word;
-	    white-space: pre-wrap;
-	}
-}
-
-
-/* disabled attachment */
-.media-modal .attachment.acf-disabled {
-	
-	.thumbnail {
-		opacity: 0.25 !important;
-	}
-		
-	.attachment-preview:before {
-		background: rgba(0,0,0,0.15);
-		z-index: 1;
-		position: relative;
-	}
-
-}
-
-
-/* misc */
-.media-modal {
-	
-	/* compat-item */
-	.compat-field-acf-form-data,
-	.compat-field-acf-blank {
-		display: none !important;
-	}
-	
-	
-	/* allow line breaks in upload error */
-	.upload-error-message {
-		white-space: pre-wrap;
-	}
-	
-	
-	/* fix required span */
-	.acf-required {
-		padding: 0 !important;
-		margin: 0 !important;
-		float: none !important;
-		color: #f00 !important;
-	}
-	
-	
-	/* sidebar */
-	.media-sidebar {
-		
-		.compat-item{
-			padding-bottom: 20px;
-		}
-		
-	}
-	
-	
-	/* mobile md */
-	@media (max-width: 900px) {
-		
-		/* label */
-		.setting span, 
-		.compat-attachment-fields > tbody > .acf-field > .acf-label {
-			width: 98%;
-			float: none;
-			text-align: left;
-			min-height: 0;
-			padding: 0;
-		}
-		
-		
-		/* field */
-		.setting input, 
-		.setting textarea, 
-		.compat-attachment-fields > tbody > .acf-field > .acf-input {
-			float: none;
-		    height: auto;
-		    max-width: none;
-		    width: 98%;
-		}
-
-	}
-
-	
-}
-
-
-
-/*---------------------------------------------------------------------------------------------
-*
-*  Media Model (expand details)
-*
-*---------------------------------------------------------------------------------------------*/
-
-.media-modal .acf-expand-details {
-	float: right;
-	padding: 1px 10px;
-	margin-right: 6px;
-	height: 18px;
-	line-height: 18px;
-	color: #AAAAAA;
-	font-size: 12px;
-	
-	&:focus, &:active {
-		outline: 0 none;
-		box-shadow: none;
-		color: #AAAAAA;
-	}
-	
-	&:hover {
-		color: #666666 !important;
-	}
-	
-	span {
-		display: block;
-		float: left;
-	}
-	
-	.acf-icon {
-		margin: 0 4px 0 0;
-	}
-	
-	&:hover .acf-icon {
-		border-color: #AAAAAA;
-	}
-	
-	.is-open { display: none; }
-	.is-closed { display: block; }
-	
-	
-	/* mobile sm */
-	@media (max-width: @sm) {
-		display: none;
-	}
-}
-
-
-/* expanded */
-.media-modal.acf-expanded {
-	
-	/* toggle */
-	.acf-expand-details {
-		
-		.is-open { display: block; }
-		.is-closed { display: none; }
-		
-	}
-	
-	
-	/* resize */
-	.attachments-browser .media-toolbar, 
-	.attachments-browser .attachments { right: 740px; }
-	.media-sidebar { width: 708px; }
-	
-	
-	/* label & fields */
-	.media-sidebar {
-		
-		/* label */
-		.attachment-info .thumbnail,
-		.setting span, 
-		.compat-attachment-fields > tbody > .acf-field > .acf-label {
-			min-width: 20%;
-		}
-		
-		
-		/* field */
-		.attachment-info .details,
-		.setting input, 
-		.setting textarea, 
-		.compat-attachment-fields > tbody > .acf-field > .acf-input {
-			min-width: 77%;
-		}
-		
-		.setting span {
-			margin-right: 2%;
-		}
-		
-		
-		/* larger thumbnail */
-		.attachment-info {
-			
-			.thumbnail {
-				max-height: none;
-				
-				img {
-					max-width: 100%;
-					max-height: 200px;
-				}
-				
-			}
-			
-			.details {
-				float: right;
-				
-			}
-			
-		}
-		
-	}
-	
-	
-	/* mobile md */
-	@media (max-width: 900px) {
-		
-		/* resize */
-		.attachments-browser .media-toolbar { display: none; }
-		.attachments { display: none; }
-		.media-sidebar { width: auto; max-width: none !important; }
-		
-		
-		.media-sidebar {
-			
-			.attachment-info {
-				
-				.thumbnail {
-					min-width: 30%;
-					margin: 0;
-				}
-				
-				.details {
-					min-width: 67%;
-				}
-				
-			}
-				
-		}
-		
-	}
-	
-}
-
-
-
-/*---------------------------------------------------------------------------------------------
-*
-*  ACF Media Model
-*
-*---------------------------------------------------------------------------------------------*/
-
-.acf-media-modal {
-	
-	/* hide embed settings */
-	.media-embed {
-		
-		.setting.align,
-		.setting.link-to {
-			display: none;
-		}
-		
-	}
-	
-	// only allow for devices larger than mobile
-	@media screen and (min-width: 1024px) {
-		
-		// - requires long selector to override WP core
-		.media-modal-content .media-frame .media-toolbar-secondary {
-			max-width: none;
-			
-			select.attachment-filters {
-				width: auto;
-				min-width: 150px;
-				max-width: none;
-				margin: 11px 6px 0 0;
-				vertical-align: middle;
-			}
-		}
-	}
-}
-
-
-/*---------------------------------------------------------------------------------------------
-*
-*  ACF Media Model (Select Mode)
-*
-*---------------------------------------------------------------------------------------------*/
-
-.acf-media-modal.-select {
-	
-	
-	
-}
-
-
-/*---------------------------------------------------------------------------------------------
-*
-*  ACF Media Model (Edit Mode)
-*
-*---------------------------------------------------------------------------------------------*/
-
-.acf-media-modal.-edit {
-	
-	/* resize modal */
-	left: 15%;
-	right: 15%;
-	top: 100px;
-	bottom: 100px;
-	
-	
-	/* hide elements */
-	.media-frame-menu,
-	.media-frame-router,
-	.media-frame-content .attachments,
-	.media-frame-content .media-toolbar {
-	    display: none;
-	}
-	
-	
-	/* full width */
-	.media-frame-title,
-	.media-frame-content,
-	.media-frame-toolbar,
-	.media-sidebar {
-		width: auto;
-		left: 0;
-		right: 0;
-	}
-	
-	
-	/* tidy up incorrect distance */
-	.media-frame-content {
-	    top: 50px;
-	}
-	
-	
-	/* title box shadow (to match media grid) */
-	.media-frame-title {
-	    border-bottom: 1px solid #DFDFDF;
-	    box-shadow: 0 4px 4px -4px rgba(0, 0, 0, 0.1);
-	}
-	
-	
-	/* sidebar */
-	.media-sidebar {
-		
-		padding: 0 16px;
-		
-		/* WP details */
-		.attachment-details {
-			
-			overflow: visible;
-			
-			/* hide 'Attachment Details' heading */
-			> h3, > h2 {
-				display: none;
-			}
-			
-			
-			/* remove overflow */
-			.attachment-info {
-				background: #fff;
-				border-bottom: #dddddd solid 1px;
-				padding: 16px;
-				margin: 0 -16px 16px;
-			}
-			
-			/* move thumbnail */
-			.thumbnail {
-				margin: 0 16px 0 0;
-			}
-			
-			.setting {
-				display: block;
-				overflow: hidden;
-				float: none;
-				width: auto;
-				margin: 0 0 5px;
-				
-				span {
-					margin: 0;
-				}
-			}
-			
-		}
-		
-		
-		/* ACF fields */
-		.compat-attachment-fields {
-			
-			> tbody > .acf-field {
-				margin: 0 0 5px;
-				
-				p.description {
-					margin-top: 3px;
-				}
-			}
-			
-		}
-		
-		
-		/* WP required message */
-		.media-types-required-info { display: none; }
-		
-	}
-	
-	
-	/* mobile md */
-	@media (max-width: 900px) {
-		
-		& {
-			top: 30px;
-			right: 30px;
-			bottom: 30px;
-			left: 30px;
-		}
-		
-	}
-	
-	
-	/* mobile sm */
-	@media (max-width: 640px) {
-		
-		& {
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-		}
-		
-		.media-sidebar {
-			bottom: 0 !important;
-		}
-
-	}
-		
-}
-
-
-/*--------------------------------------------------------------------------------------------
-*
-*	User
-*
-*--------------------------------------------------------------------------------------------*/
-
-.form-table > tbody {
-	
-	/* field */
-	> .acf-field {
-		
-		/* label */
-		> .acf-label {
-			padding: 20px 10px 20px 0;
-		    width: 210px;
-		    
-		    /* rtl */
-			html[dir="rtl"] & {
-				padding: 20px 0 20px 10px;
-			}
-			
-		    label {
-				font-size: 14px;
-				color: #23282d;
-			}
-		    
-		}
-		
-		
-		/* input */
-		> .acf-input {
-			padding: 15px 10px;
-			
-			/* rtl */
-			html[dir="rtl"] & {
-				padding: 15px 10px 15px 5%;
-			}
-		}
-		
-	}
-	
-	
-	/* tab wrap */
-	> .acf-tab-wrap td {
-		padding: 15px 5% 15px 0;
-		
-		/* rtl */
-		html[dir="rtl"] & {
-			padding: 15px 0 15px 5%;
-		}
-		
-	}
-	
-	
-	/* misc */
-	.form-table th.acf-th {
-		width: auto;
-	}
-	
-}
-
-#your-profile,
-#createuser {
-	
-	/* override for user css */
-	.acf-field input[type="text"],
-	.acf-field input[type="password"],
-	.acf-field input[type="number"],
-	.acf-field input[type="search"],
-	.acf-field input[type="email"],
-	.acf-field input[type="url"],
-	.acf-field select {
-	    max-width: 25em;
-	}
-	
-	.acf-field textarea {
-		max-width: 500px;
-	}
-	
-	
-	/* allow sub fields to display correctly */
-	.acf-field .acf-field input[type="text"],
-	.acf-field .acf-field input[type="password"],
-	.acf-field .acf-field input[type="number"],
-	.acf-field .acf-field input[type="search"],
-	.acf-field .acf-field input[type="email"],
-	.acf-field .acf-field input[type="url"],
-	.acf-field .acf-field textarea,
-	.acf-field .acf-field select {
-	    max-width: none;
-	}
-}
-
-#registerform {
-	
-	h2 {
-		margin: 1em 0;
-	}
-	
-	.acf-field .acf-label {
-		margin-bottom: 0;
-		
-		label {
-			font-weight: normal;
-			font-size: 14px;
-		}
-	}
-	
-	p.submit {
-		text-align: right;
-	}
-
-}
-
-/*--------------------------------------------------------------------------------------------
-*
-*	Term
-*
-*--------------------------------------------------------------------------------------------*/
-
-// add term
-#acf-term-fields {
-	padding-right: 5%;
-	
-	> .acf-field {
-		
-		> .acf-label {
-			margin: 0;
-			
-			label {
-				font-size: 12px;
-				font-weight: normal;
-			}
-		}
-	}
-	
-}
-
-p.submit .spinner,
-p.submit .acf-spinner {
-	vertical-align: top;
-	float: none;
-	margin: 4px 4px 0;
-}
-
-
-// edit term
-#edittag .acf-fields.-left {
-	
-	> .acf-field {
-		padding-left: 220px;
-		
-		&:before {
-			width: 209px;
-		}
-		
-		> .acf-label {
-			width: 220px;
-			margin-left: -220px;
-			padding: 0 10px;
-		}
-		
-		> .acf-input {
-			padding: 0;
-		}
-	}
-}
-
-#edittag > .acf-fields.-left {
-	width: 96%;
-	
-	> .acf-field { 
-		
-		> .acf-label {
-			padding-left: 0;
-		}
-	}
-}
-
-
-/*--------------------------------------------------------------------------------------------
-*
-*	Comment
-*
-*--------------------------------------------------------------------------------------------*/
-
-.editcomment td:first-child {
-    white-space: nowrap;
-    width: 131px;
-}
-
-
-/*--------------------------------------------------------------------------------------------
-*
-*	Widget
-*
-*--------------------------------------------------------------------------------------------*/
-
-#widgets-right .widget .acf-field .description {
-	padding-left: 0;
-	padding-right: 0;
-}
-
-.acf-widget-fields {
-	
-	> .acf-field {
-		
-		.acf-label {
-			margin-bottom: 5px;
-			
-			label {
-				font-weight: normal;
-				margin: 0;
-			}
-		}
-	}
-}
-
-/*--------------------------------------------------------------------------------------------
-*
-*	Nav Menu
-*
-*--------------------------------------------------------------------------------------------*/
-
-.acf-menu-settings {
-	border-top: 1px solid #eee;
-    margin-top: 2em;
-	
-	// seamless
-	&.-seamless {
-		border-top: none;
-		margin-top: 15px;
-		
-		> h2 { display: none; }
-	}
-}
-
-.acf-menu-item-fields {
-	margin-right: 10px;
-	float: left;
-}
-
-
-/*--------------------------------------------------------------------------------------------
-*
-*	Confirm remove
-*
-*--------------------------------------------------------------------------------------------*/
-
-.acf-temp-remove {
-	position: relative;
-	opacity: 1;
-	-webkit-transition: all 0.25s ease;
-	-moz-transition: all 0.25s ease;
-	-o-transition: all 0.25s ease;
-	transition: all 0.25s ease;
-	overflow: hidden;
-	
-	/* overlay prevents hover */
-	&:after {
-		display: block;
-		content: "";
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		z-index: 99;
-	}
-}
-
-
-/*--------------------------------------------------------------------------
-*
-*	Conditional Logic
-*	
-*-------------------------------------------------------------------------*/
-
-/* Hide */
-.hidden-by-conditional-logic {
-    display: none !important;
-}
-
-
-/* Hide (appear empty) */
-.hidden-by-conditional-logic.appear-empty {
-    display: table-cell !important;
-}
-
-.hidden-by-conditional-logic.appear-empty .acf-input {
-	display: none !important;
-}
-
-
-/*--------------------------------------------------------------------------
-*
-*	3rd Party
-*	
-*-------------------------------------------------------------------------*/
-
-/* Tabify shows hidden postboxes */
-.acf-postbox.acf-hidden {
-	display: none !important;
 }

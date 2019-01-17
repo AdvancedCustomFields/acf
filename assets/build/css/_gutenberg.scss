@@ -1,0 +1,220 @@
+/*--------------------------------------------------------------------------------------------
+*
+*	Gutenberg
+*
+*--------------------------------------------------------------------------------------------*/
+#editor {
+	
+	// main column is split into "editor" and "metaboxes".
+	// remove WP flex that pushed metaboxes to bottom
+	.edit-post-visual-editor,
+	.edit-post-layout__metaboxes {
+		flex-basis: 0%;
+		flex-grow: 0;
+	}
+	
+	// metabox wrap
+	.edit-post-layout__metaboxes {
+		background: transparent;
+		border-top: 0 none;
+		margin-top: 0;
+		padding: 46px 14px;
+		
+		@media screen and (min-width: 600px) {
+			padding: 46px;
+		}
+		@media screen and (min-width: 1200px) {
+			padding: 56px 66px;
+		}
+		
+		&:empty {
+			display: none;
+		};
+		
+		.edit-post-meta-boxes-area {
+			margin: 0;
+		}
+		
+		// make postbox look like a classic box
+		.postbox {
+			border: #e2e4e7 solid 1px;
+			border-bottom: none;
+			margin: 0 0 20px;
+			
+			input {
+				max-width: none;
+			}
+		}
+	}
+	
+	// improve handle style
+	.postbox {
+		.handlediv {
+			height: 46px;
+			width: auto;
+			padding: 0 14px 0 5px;
+		}
+		.hndle {
+			color: #191e23 !important;
+			font-size: 13px;
+			line-height: 16px;
+			
+			.acf-hndle-cog {
+				line-height: 16px;
+			}
+		}
+		
+		// change icons to match gutenberg sidebar accordions
+		.handlediv .toggle-indicator {
+			color: #191e23;
+		}
+		.handlediv .toggle-indicator:before {
+			content: "\f343";
+			font-size: 18px;
+			width: auto;
+		}
+		&.closed .handlediv .toggle-indicator:before {
+			content: "\f347";
+		}
+	}
+	
+	// acf-input-wrap
+	.acf-input-prepend,
+	.acf-input-append {
+		box-sizing: border-box;
+		height: 28px;
+	}
+	
+	// accordion
+	.acf-accordion {
+		padding: 0 !important;
+		
+		.acf-accordion-title {
+			color: #191e23;
+			font-weight: 600;
+			
+			&:hover {
+				background: #f8f9f9;
+			}
+			
+			label {
+				font-weight: inherit;
+			}
+		}
+	}
+	
+	// table
+	.acf-table {
+		box-sizing: border-box;
+		
+		.acf-row-handle {
+			width: 32px;
+		}
+	}
+	
+	// main error message
+	.components-notice-list .acf-notice.-error {
+		margin: 0 0 5px;
+		min-height: 50px;
+		padding: 6px 12px;
+		border-left: 4px solid #00a0d2;
+		color: #191e23;
+		background-color: #f9e2e2;
+		border-left-color: #d94f4f;
+		
+		p {
+			margin: 1em 0;
+		}
+		
+		.acf-notice-dismiss {
+			top: 15px;
+			right: 15px;
+		}
+	}
+}
+
+// acf-block
+.acf-block {
+	
+}
+
+// block body
+.acf-block-body {
+	
+	.acf-block-fields {
+		border: #e2e4e7 solid 1px;
+		
+		div.acf-field {
+			padding: 16px 20px;
+		}
+	}
+}
+
+// block panel
+.acf-block-panel {
+	
+	// panel actions
+	.acf-block-panel-actions {
+		margin: 16px -16px;
+		padding: 0 16px;
+		
+		button {
+			padding: 0 12px 2px;
+			font-size: 13px;
+			margin: 2px;
+			height: 33px;
+			line-height: 32px;
+			width: 100%;
+		}
+	}
+	
+	// fields
+	.acf-block-fields {
+		border: none;
+		border-top: #e2e4e7 solid 1px;
+		margin: 0 -16px -16px;
+		padding: 0;
+		
+		// field
+		div.acf-field {
+			padding: 16px;
+			
+			width: auto !important;
+			min-height: 0 !important;
+			border-left: none !important;
+			float: none !important;
+		}
+	}
+	
+	// accordion
+	.acf-accordion .acf-accordion-title .acf-accordion-icon {
+		font-size: 18px;
+		line-height: inherit;
+		
+		// open
+		&.dashicons-arrow-down:before {
+			content: "\f343";
+		}
+		
+		// closed
+		&.dashicons-arrow-right:before {
+			content: "\f347";
+		}
+	}
+}
+
+// block loading
+.acf-block-loading {
+	background: #f3f3f4;
+	min-height: 200px;
+	position: relative;
+	
+	i {
+		@include centered();
+	}
+}
+
+// hide is-loading
+.acf-block-fields.is-loading {
+	display: none;
+}

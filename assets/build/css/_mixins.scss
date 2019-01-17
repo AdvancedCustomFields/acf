@@ -1,0 +1,39 @@
+/*--------------------------------------------------------------------------------------------
+*
+*  Mixins
+*
+*--------------------------------------------------------------------------------------------*/
+@mixin clearfix() {
+	&:after {
+		display: block;
+		clear: both;
+		content: "";
+	}
+}
+
+@mixin border-box() {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+@mixin centered() {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+@mixin animate( $properties: 'all' ) {
+	-webkit-transition: $properties 0.3s ease;  // Safari 3.2+, Chrome
+    -moz-transition: $properties 0.3s ease;  	// Firefox 4-15
+    -o-transition: $properties 0.3s ease;  		// Opera 10.5–12.00
+    transition: $properties 0.3s ease;  		// Firefox 16+, Opera 12.50+
+}
+
+@mixin rtl() {
+	html[dir="rtl"] & {
+		text-align: right;
+		@content;
+	}
+}

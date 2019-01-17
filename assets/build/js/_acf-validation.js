@@ -346,7 +346,7 @@
 			acf.lockForm( this.$el );
 						
 			// loading callback
-			args.loading( this.$el );
+			args.loading( this.$el, this );
 			
 			// update status
 			this.set('status', 'validating');
@@ -360,7 +360,7 @@
 				}
 				
 				// filter
-				var data = acf.applyFilters('validation_complete', json.data, this.$el);
+				var data = acf.applyFilters('validation_complete', json.data, this.$el, this);
 				
 				// add errors
 				if( !data.valid ) {
@@ -381,13 +381,13 @@
 					this.set('status', 'invalid');
 			
 					// action
-					acf.doAction('validation_failure', this.$el);
+					acf.doAction('validation_failure', this.$el, this);
 					
 					// display errors
 					this.showErrors();
 					
 					// failure callback
-					args.failure( this.$el );
+					args.failure( this.$el, this );
 				
 				// success
 				} else {
@@ -405,11 +405,11 @@
 					}
 					
 					// action
-					acf.doAction('validation_success', this.$el);
+					acf.doAction('validation_success', this.$el, this);
 					acf.doAction('submit', this.$el);
 					
 					// success callback (submit form)
-					args.success( this.$el );
+					args.success( this.$el, this );
 					
 					// lock form
 					acf.lockForm( this.$el );
@@ -421,7 +421,7 @@
 				}
 				
 				// complete callback
-				args.complete( this.$el );
+				args.complete( this.$el, this );
 				
 				// clear errors
 				this.clearErrors();
@@ -441,6 +441,9 @@
 				success: onSuccess,
 				complete: onComplete
 			});
+			
+			// return false to fail validation and allow AJAX
+			return false
 		},
 		
 		/**
@@ -712,6 +715,7 @@
 		events: {
 			'click input[type="submit"]':	'onClickSubmit',
 			'click button[type="submit"]':	'onClickSubmit',
+			//'click #editor .editor-post-publish-button': 'onClickSubmitGutenberg',
 			'click #save-post':				'onClickSave',
 			'mousedown #post-preview':		'onClickPreview', // use mousedown to hook in before WP click event
 			'submit form':					'onSubmit',
@@ -895,6 +899,39 @@
 			// added a custom 'submit.edit-post' event which causes the input buttons to become disabled.
 			// remove this event to prevent UX issues.
 			$('form#post').off('submit.edit-post');
+		},
+		
+		/**
+		*  onClickSubmitGutenberg
+		*
+		*  Custom validation event for the gutenberg editor.
+		*
+		*  @date	29/10/18
+		*  @since	5.8.0
+		*
+		*  @param	object e The event object.
+		*  @param	jQuery $el The input element.
+		*  @return	void
+		*/
+		onClickSubmitGutenberg: function( e, $el ){
+			
+			// validate
+			var valid = acf.validateForm({
+				form: $('#editor'),
+				event: e,
+				reset: true,
+				failure: function( $form, validator ){
+					var $notice = validator.get('notice').$el;
+					$notice.appendTo('.components-notice-list');
+					$notice.find('.acf-notice-dismiss').removeClass('small');
+				}
+			});
+			
+			// if not valid, stop event and allow validation to continue
+			if( !valid ) {
+				e.preventDefault();
+				e.stopImmediatePropagation();
+			}
 		},
 		
 		/**

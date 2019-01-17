@@ -1,0 +1,61 @@
+/*--------------------------------------------------------------------------------------------
+*
+*	Confirm remove
+*
+*--------------------------------------------------------------------------------------------*/
+
+.acf-temp-remove {
+	position: relative;
+	opacity: 1;
+	-webkit-transition: all 0.25s ease;
+	-moz-transition: all 0.25s ease;
+	-o-transition: all 0.25s ease;
+	transition: all 0.25s ease;
+	overflow: hidden;
+	
+	/* overlay prevents hover */
+	&:after {
+		display: block;
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 99;
+	}
+}
+
+
+/*--------------------------------------------------------------------------
+*
+*	Conditional Logic
+*	
+*-------------------------------------------------------------------------*/
+
+/* Hide */
+.hidden-by-conditional-logic {
+    display: none !important;
+}
+
+
+/* Hide (appear empty) */
+.hidden-by-conditional-logic.appear-empty {
+    display: table-cell !important;
+}
+
+.hidden-by-conditional-logic.appear-empty .acf-input {
+	display: none !important;
+}
+
+
+/*--------------------------------------------------------------------------
+*
+*	3rd Party
+*	
+*-------------------------------------------------------------------------*/
+
+/* Tabify shows hidden postboxes */
+.acf-postbox.acf-hidden {
+	display: none !important;
+}

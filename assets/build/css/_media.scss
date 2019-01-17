@@ -1,0 +1,513 @@
+/*---------------------------------------------------------------------------------------------
+*
+*  Media Model
+*
+*---------------------------------------------------------------------------------------------*/
+
+/* WP sets tables to act as divs. ACF uses tables, so these muct be reset */
+.media-modal .compat-attachment-fields td.acf-input {
+	
+	table {
+		display: table;
+		table-layout: auto;
+		
+		tbody {
+			display: table-row-group;
+		}
+		
+		tr {
+			display: table-row;
+		}
+		
+		td, th {
+			display: table-cell;
+		}
+		
+	}
+	
+}
+
+
+/* field widths floats */
+.media-modal .compat-attachment-fields > tbody > .acf-field {
+	margin: 5px 0;
+	
+	> .acf-label {
+		min-width: 30%;
+		margin: 0;
+		padding: 0;
+		float: left;
+	    text-align: right;
+	    display: block;
+	    float: left;
+	    
+	    > label {
+		    padding-top: 6px;
+			margin: 0;
+			color: #666666;
+		    font-weight: 400;
+		    line-height: 16px;
+	    }
+	}
+	
+	> .acf-input {
+		width: 65%;
+		margin: 0;
+		padding: 0;
+	    float: right;
+	    display: block;
+	}
+	
+	p.description {
+		margin: 0;
+	}
+}
+
+
+/* restricted selection (copy of WP .upload-errors)*/
+.acf-selection-error {
+	background: #ffebe8;
+    border: 1px solid #c00;
+    border-radius: 3px;
+    padding: 8px;
+    margin: 20px 0 0;
+    
+    .selection-error-label {
+		background: #CC0000;
+	    border-radius: 3px;
+	    color: #fff;
+	    font-weight: bold;
+	    margin-right: 8px;
+	    padding: 2px 4px;
+	}
+	
+	.selection-error-message {
+		color: #b44;
+	    display: block;
+	    padding-top: 8px;
+	    word-wrap: break-word;
+	    white-space: pre-wrap;
+	}
+}
+
+
+/* disabled attachment */
+.media-modal .attachment.acf-disabled {
+	
+	.thumbnail {
+		opacity: 0.25 !important;
+	}
+		
+	.attachment-preview:before {
+		background: rgba(0,0,0,0.15);
+		z-index: 1;
+		position: relative;
+	}
+
+}
+
+
+/* misc */
+.media-modal {
+	
+	/* compat-item */
+	.compat-field-acf-form-data,
+	.compat-field-acf-blank {
+		display: none !important;
+	}
+	
+	
+	/* allow line breaks in upload error */
+	.upload-error-message {
+		white-space: pre-wrap;
+	}
+	
+	
+	/* fix required span */
+	.acf-required {
+		padding: 0 !important;
+		margin: 0 !important;
+		float: none !important;
+		color: #f00 !important;
+	}
+	
+	
+	/* sidebar */
+	.media-sidebar {
+		
+		.compat-item{
+			padding-bottom: 20px;
+		}
+		
+	}
+	
+	
+	/* mobile md */
+	@media (max-width: 900px) {
+		
+		/* label */
+		.setting span, 
+		.compat-attachment-fields > tbody > .acf-field > .acf-label {
+			width: 98%;
+			float: none;
+			text-align: left;
+			min-height: 0;
+			padding: 0;
+		}
+		
+		
+		/* field */
+		.setting input, 
+		.setting textarea, 
+		.compat-attachment-fields > tbody > .acf-field > .acf-input {
+			float: none;
+		    height: auto;
+		    max-width: none;
+		    width: 98%;
+		}
+
+	}
+
+	
+}
+
+
+
+/*---------------------------------------------------------------------------------------------
+*
+*  Media Model (expand details)
+*
+*---------------------------------------------------------------------------------------------*/
+
+.media-modal .acf-expand-details {
+	float: right;
+	padding: 1px 10px;
+	margin-right: 6px;
+	height: 18px;
+	line-height: 18px;
+	color: #AAAAAA;
+	font-size: 12px;
+	
+	&:focus, &:active {
+		outline: 0 none;
+		box-shadow: none;
+		color: #AAAAAA;
+	}
+	
+	&:hover {
+		color: #666666 !important;
+	}
+	
+	span {
+		display: block;
+		float: left;
+	}
+	
+	.acf-icon {
+		margin: 0 4px 0 0;
+	}
+	
+	&:hover .acf-icon {
+		border-color: #AAAAAA;
+	}
+	
+	.is-open { display: none; }
+	.is-closed { display: block; }
+	
+	
+	/* mobile sm */
+	@media (max-width: $sm) {
+		display: none;
+	}
+}
+
+
+/* expanded */
+.media-modal.acf-expanded {
+	
+	/* toggle */
+	.acf-expand-details {
+		
+		.is-open { display: block; }
+		.is-closed { display: none; }
+		
+	}
+	
+	
+	/* resize */
+	.attachments-browser .media-toolbar, 
+	.attachments-browser .attachments { right: 740px; }
+	.media-sidebar { width: 708px; }
+	
+	
+	/* label & fields */
+	.media-sidebar {
+		
+		/* label */
+		.attachment-info .thumbnail,
+		.setting span, 
+		.compat-attachment-fields > tbody > .acf-field > .acf-label {
+			min-width: 20%;
+		}
+		
+		
+		/* field */
+		.attachment-info .details,
+		.setting input, 
+		.setting textarea, 
+		.compat-attachment-fields > tbody > .acf-field > .acf-input {
+			min-width: 77%;
+		}
+		
+		.setting span {
+			margin-right: 2%;
+		}
+		
+		
+		/* larger thumbnail */
+		.attachment-info {
+			
+			.thumbnail {
+				max-height: none;
+				
+				img {
+					max-width: 100%;
+					max-height: 200px;
+				}
+				
+			}
+			
+			.details {
+				float: right;
+				
+			}
+			
+		}
+		
+	}
+	
+	
+	/* mobile md */
+	@media (max-width: 900px) {
+		
+		/* resize */
+		.attachments-browser .media-toolbar { display: none; }
+		.attachments { display: none; }
+		.media-sidebar { width: auto; max-width: none !important; }
+		
+		
+		.media-sidebar {
+			
+			.attachment-info {
+				
+				.thumbnail {
+					min-width: 30%;
+					margin: 0;
+				}
+				
+				.details {
+					min-width: 67%;
+				}
+				
+			}
+				
+		}
+		
+	}
+	
+}
+
+
+
+/*---------------------------------------------------------------------------------------------
+*
+*  ACF Media Model
+*
+*---------------------------------------------------------------------------------------------*/
+
+.acf-media-modal {
+	
+	/* hide embed settings */
+	.media-embed {
+		
+		.setting.align,
+		.setting.link-to {
+			display: none;
+		}
+		
+	}
+	
+	// only allow for devices larger than mobile
+	@media screen and (min-width: 1024px) {
+		
+		// - requires long selector to override WP core
+		.media-modal-content .media-frame .media-toolbar-secondary {
+			max-width: none;
+			
+			select.attachment-filters {
+				width: auto;
+				min-width: 150px;
+				max-width: none;
+				margin: 11px 6px 0 0;
+				vertical-align: middle;
+			}
+		}
+	}
+}
+
+
+/*---------------------------------------------------------------------------------------------
+*
+*  ACF Media Model (Select Mode)
+*
+*---------------------------------------------------------------------------------------------*/
+
+.acf-media-modal.-select {
+	
+	
+	
+}
+
+
+/*---------------------------------------------------------------------------------------------
+*
+*  ACF Media Model (Edit Mode)
+*
+*---------------------------------------------------------------------------------------------*/
+
+.acf-media-modal.-edit {
+	
+	/* resize modal */
+	left: 15%;
+	right: 15%;
+	top: 100px;
+	bottom: 100px;
+	
+	
+	/* hide elements */
+	.media-frame-menu,
+	.media-frame-router,
+	.media-frame-content .attachments,
+	.media-frame-content .media-toolbar {
+	    display: none;
+	}
+	
+	
+	/* full width */
+	.media-frame-title,
+	.media-frame-content,
+	.media-frame-toolbar,
+	.media-sidebar {
+		width: auto;
+		left: 0;
+		right: 0;
+	}
+	
+	
+	/* tidy up incorrect distance */
+	.media-frame-content {
+	    top: 50px;
+	}
+	
+	
+	/* title box shadow (to match media grid) */
+	.media-frame-title {
+	    border-bottom: 1px solid #DFDFDF;
+	    box-shadow: 0 4px 4px -4px rgba(0, 0, 0, 0.1);
+	}
+	
+	
+	/* sidebar */
+	.media-sidebar {
+		
+		padding: 0 16px;
+		
+		/* WP details */
+		.attachment-details {
+			
+			overflow: visible;
+			
+			/* hide 'Attachment Details' heading */
+			> h3, > h2 {
+				display: none;
+			}
+			
+			
+			/* remove overflow */
+			.attachment-info {
+				background: #fff;
+				border-bottom: #dddddd solid 1px;
+				padding: 16px;
+				margin: 0 -16px 16px;
+			}
+			
+			/* move thumbnail */
+			.thumbnail {
+				margin: 0 16px 0 0;
+			}
+			
+			.setting {
+				display: block;
+				overflow: hidden;
+				float: none;
+				width: auto;
+				margin: 0 0 5px;
+				
+				span {
+					margin: 0;
+				}
+			}
+			
+		}
+		
+		
+		/* ACF fields */
+		.compat-attachment-fields {
+			
+			> tbody > .acf-field {
+				margin: 0 0 5px;
+				
+				p.description {
+					margin-top: 3px;
+				}
+			}
+			
+		}
+		
+		
+		/* WP required message */
+		.media-types-required-info { display: none; }
+		
+	}
+	
+	
+	/* mobile md */
+	@media (max-width: 900px) {
+		
+		& {
+			top: 30px;
+			right: 30px;
+			bottom: 30px;
+			left: 30px;
+		}
+		
+	}
+	
+	
+	/* mobile sm */
+	@media (max-width: 640px) {
+		
+		& {
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+		}
+		
+		.media-sidebar {
+			bottom: 0 !important;
+		}
+
+	}
+		
+}

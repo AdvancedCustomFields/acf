@@ -1,6 +1,3 @@
-@import '../css/vars.less';
-
-
 /*---------------------------------------------------------------------------------------------
 *
 *  Global
@@ -224,8 +221,8 @@
 		}
 		
 		> .handle {
-			background: @acf_blue;
-			border: darken(@acf_blue, 2%) solid 1px;
+			background: $acf_blue;
+			border: darken($acf_blue, 2%) solid 1px;
 			text-shadow: #268FBB 0 1px 0;
 			color: #fff;
 			position: relative;
@@ -442,7 +439,8 @@ table.conditional-logic-rules tbody td {
 *	
 *---------------------------------------------------------------------------------------------*/
 
-.acf-field-object-accordion:extend( .acf-field-object-tab all ) {
+.acf-field-object-accordion {
+	@extend .acf-field-object-tab;
 	
 	// show settings
 	.acf-field-setting-instructions {
