@@ -160,6 +160,45 @@ class acf_field_text extends acf_field {
 		
 	}
 	
+
+
+	/*
+	*  validate_value
+	*
+	*  description
+	*
+	*  @type	filter ["acf/validate_value"]
+	*  @date	22/01/2019
+	*  @since	5.7.11
+	*
+	*  @param	$valid (bool|string)
+	*  @param	$value (mixed)
+	*  @param	$field (array)
+	*  @param	$input (string)
+	*  @return	$valid (bool|string)
+	*/
+
+	function validate_value( $valid, $value, $field, $input ){
+
+		// bail early if no restrictions
+		if ( ! $field['maxlength'] ) {
+			return $valid;
+		}
+
+		// maxlength
+		if( mb_strlen( $value ) > $field['maxlength'] ) {
+
+			$valid = sprintf(__('Value must not longer than %d characters', 'acf'), $field['maxlength'] );
+
+		}
+
+
+
+		// return
+		return $valid;
+
+	}
+
 }
 
 
