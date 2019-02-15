@@ -379,11 +379,11 @@
 						copyEvents( $submitdiv.children('.hndle'), $postbox.children('.hndle') );
 					}
 					
+					// Initalize it (modifies HTML).
+					postbox = acf.newPostbox( result );
+					
 					// Trigger action.
 					acf.doAction('append', $postbox);
-					
-					// Initalize it.
-					postbox = acf.newPostbox( result );
 				}
 				
 				// show postbox
@@ -463,7 +463,7 @@
 			
 			// Filter out attributes that have not changed.
 			attributes = attributes.filter(this.proxy(function( attr ){
-				return ( edits[attr] && edits[attr] !== this.get(attr) );
+				return ( edits[attr] !== undefined && edits[attr] !== this.get(attr) );
 			}));
 			
 			// Trigger change if has attributes.

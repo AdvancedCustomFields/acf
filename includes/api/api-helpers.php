@@ -546,10 +546,7 @@ function acf_parse_args( $args, $defaults = array() ) {
 */
 
 function acf_parse_types( $array ) {
-	
-	// return
 	return array_map( 'acf_parse_type', $array );
-	
 }
 
 
@@ -567,26 +564,21 @@ function acf_parse_types( $array ) {
 */
 
 function acf_parse_type( $v ) {
+	
+	// Check if is string.
+	if( is_string($v) ) {
 		
-	// bail early if not string
-	if( !is_string($v) ) return $v;
-	
-	
-	// trim
-	$v = trim($v);
-	
-	
-	// convert int (string) to int
-	if( is_numeric($v) && strval((int)$v) === $v ) {
+		// Trim ("Word " = "Word").
+		$v = trim( $v );
 		
-		$v = intval( $v );
-		
+		// Convert int strings to int ("123" = 123).
+		if( is_numeric($v) && strpos($v, '.') === false ) {
+			$v = intval( $v );
+		}
 	}
 	
-	
-	// return
+	// return.
 	return $v;
-	
 }
 
 
@@ -3607,14 +3599,6 @@ function acf_str_join( $s1 = '', $s2 = '' ) {
 	return $s1 . $s2;
 }
 
-// Tests.
-//acf_test( acf_str_join('http://multisite.local/sub1/', '/sample-page/'), 'http://multisite.local/sub1/sample-page/' );
-//acf_test( acf_str_join('http://multisite.local/sub1/', 'sample-page/'), 'http://multisite.local/sub1/sample-page/' );
-//acf_test( acf_str_join('http://multisite.local/sub1/', '/sub1'), 'http://multisite.local/sub1/sub1' );
-//acf_test( acf_str_join('http://multisite.local/sub1/', '/sub1/sample-page/'), 'http://multisite.local/sub1/sample-page/' );
-//acf_test( acf_str_join('http://multisite.local/', '/sub1/sample-page/'), 'http://multisite.local/sub1/sample-page/' );
-
-
 /*
 *  acf_current_user_can_admin
 *
@@ -4474,6 +4458,20 @@ function acf_format_date( $value, $format ) {
 	
 }
 
+/**
+ * acf_clear_log
+ *
+ * Deletes the debug.log file.
+ *
+ * @date	21/1/19
+ * @since	5.7.10
+ *
+ * @param	type $var Description. Default.
+ * @return	type Description.
+ */
+function acf_clear_log() {
+	unlink( WP_CONTENT_DIR . '/debug.log' );
+}
 
 /*
 *  acf_log
@@ -4529,23 +4527,6 @@ function acf_dev_log() {
 		call_user_func_array('acf_log', func_get_args());
 	}
 }
-
-/**
-*  acf_test
-*
-*  Tests a function against an expected result and logs the pass/fail.
-*
-*  @date	19/11/18
-*  @since	5.8.0
-*
-*  @param	type $var Description. Default.
-*  @return	type Description.
-*/
-function acf_test( $result, $expected_result ) {
-	$success = ($result === $expected_result);
-	acf_log('ACF Test', $success ? '(Pass)' : '(Fail)', $result, $expected_result);
-}
-
 
 /*
 *  acf_doing
@@ -5177,42 +5158,6 @@ function acf_decrypt( $data = '' ) {
     
     // decrypt
     return openssl_decrypt($encrypted_data, 'aes-256-cbc', $key, 0, $iv);
-	
-}
-
-
-/*
-*  acf_get_post_templates
-*
-*  This function will return an array of all post templates (including parent theme templates)
-*
-*  @type	function
-*  @date	29/8/17
-*  @since	5.6.2
-*
-*  @param	n/a
-*  @return	(array)
-*/
-
-function acf_get_post_templates() {
-	
-	// vars
-	$post_types = acf_get_post_types();
-	$post_templates = array();
-	
-	
-	// loop
-	foreach( $post_types as $post_type ) {
-		$post_templates[ $post_type ] = wp_get_theme()->get_page_templates(null, $post_type);
-	}
-	
-	
-	// remove empty templates
-	$post_templates = array_filter( $post_templates );
-	
-	
-	// return
-	return $post_templates;
 	
 }
 

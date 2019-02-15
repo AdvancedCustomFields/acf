@@ -87,6 +87,10 @@
 			
 			// render
 			this.renderVal( val );
+			
+			// action
+			var latLng = this.newLatLng( val.lat, val.lng );
+			acf.doAction('google_map_change', latLng, this.map, this);
 		},
 		
 		renderVal: function( val ){
@@ -117,9 +121,6 @@
 			
 			// show marker
 			this.map.marker.setVisible( true );
-			
-			// action
-			acf.doAction('google_map_change', latLng, this.map, this);
 			
 			// center
 			this.center();

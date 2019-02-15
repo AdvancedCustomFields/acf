@@ -1991,7 +1991,7 @@
 				
 				// option
 				} else {
-					itemsHtml += '<option value="' + id + '"' + (item.disabled ? ' disabled="disabled"' : '') + '>' + acf.strEscape(text) + '</option>';
+					itemsHtml += '<option value="' + id + '"' + (item.disabled ? ' disabled="disabled"' : '') + '>' + text + '</option>';
 				}
 			});
 			
@@ -5934,6 +5934,10 @@
 			
 			// render
 			this.renderVal( val );
+			
+			// action
+			var latLng = this.newLatLng( val.lat, val.lng );
+			acf.doAction('google_map_change', latLng, this.map, this);
 		},
 		
 		renderVal: function( val ){
@@ -5964,9 +5968,6 @@
 			
 			// show marker
 			this.map.marker.setVisible( true );
-			
-			// action
-			acf.doAction('google_map_change', latLng, this.map, this);
 			
 			// center
 			this.center();
@@ -11037,11 +11038,11 @@
 						copyEvents( $submitdiv.children('.hndle'), $postbox.children('.hndle') );
 					}
 					
+					// Initalize it (modifies HTML).
+					postbox = acf.newPostbox( result );
+					
 					// Trigger action.
 					acf.doAction('append', $postbox);
-					
-					// Initalize it.
-					postbox = acf.newPostbox( result );
 				}
 				
 				// show postbox
@@ -11121,7 +11122,7 @@
 			
 			// Filter out attributes that have not changed.
 			attributes = attributes.filter(this.proxy(function( attr ){
-				return ( edits[attr] && edits[attr] !== this.get(attr) );
+				return ( edits[attr] !== undefined && edits[attr] !== this.get(attr) );
 			}));
 			
 			// Trigger change if has attributes.
