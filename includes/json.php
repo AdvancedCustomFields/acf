@@ -202,7 +202,7 @@ endif; // class_exists check
 function acf_write_json_field_group( $field_group ) {
 	
 	// vars
-	$path = acf_get_setting('save_json');
+	$path = apply_filters('acf/settings/save_json/group_field=' . $field_group['key'], acf_get_setting('save_json'));
 	$file = $field_group['key'] . '.json';
 	
 	
