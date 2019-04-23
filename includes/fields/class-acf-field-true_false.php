@@ -71,6 +71,11 @@ class acf_field_true_false extends acf_field {
 		// checked
 		if( $active ) $input['checked'] = 'checked';
 		
+		// disabled
+		if( array_key_exists( 'disabled', $field ) && $field['disabled']) {
+			$input['disabled'] = true;
+			$hidden['value'] = $field['value'] ? true : false;
+		}		
 		
 		// ui
 		if( $field['ui'] ) {
