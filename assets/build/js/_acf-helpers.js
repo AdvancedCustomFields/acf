@@ -29,6 +29,30 @@
 		}
 	});
 	
+	/**
+	 * mountHelper
+	 *
+	 * Adds compatiblity for the 'unmount' and 'remount' actions added in 5.8.0
+	 *
+	 * @date	7/3/19
+	 * @since	5.7.14
+	 *
+	 * @param	void
+	 * @return	void
+	 */
+	var mountHelper = new acf.Model({
+		priority: 1,
+		actions: {
+			'sortstart': 'onSortstart',
+			'sortstop': 'onSortstop'
+		},
+		onSortstart: function( $item ){
+			acf.doAction('unmount', $item);
+		},
+		onSortstop: function( $item ){
+			acf.doAction('remount', $item);
+		}
+	});
 	
 	/**
 	*  sortableHelper

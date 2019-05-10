@@ -996,7 +996,10 @@
 			this.set('ignore', false);
 			
 			// Reset "originalEvent" object.
-			this.set('originalEvent', false)
+			this.set('originalEvent', false);
+			
+			// Return true
+			return true;
 		}
 	});
 	

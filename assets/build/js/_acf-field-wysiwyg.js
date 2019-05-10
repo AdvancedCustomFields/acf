@@ -8,8 +8,8 @@
 		
 		events: {
 			'mousedown .acf-editor-wrap.delay':	'onMousedown',
-			'sortstartField': 'disableEditor',
-			'sortstopField': 'enableEditor',
+			'unmountField': 'disableEditor',
+			'remountField': 'enableEditor',
 			'removeField': 'disableEditor'
 		},
 		

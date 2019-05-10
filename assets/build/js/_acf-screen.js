@@ -449,8 +449,11 @@
 			acf.screen.getPostFormat = this.getPostFormat;
 			acf.screen.getPostCoreTerms = this.getPostCoreTerms;
 			
+			// Disable unload
+			acf.unload.disable();
+			
 			// Add actions.
-			this.addAction( 'append_postbox', acf.screen.refreshAvailableMetaBoxesPerLocation );
+			//this.addAction( 'append_postbox', acf.screen.refreshAvailableMetaBoxesPerLocation );
 		},
 		
 		onChange: function(){
@@ -534,6 +537,9 @@
 	 * acf.screen.refreshAvailableMetaBoxesPerLocation
 	 *
 	 * Refreshes the WP data state based on metaboxes found in the DOM.
+	 *
+	 * Caution. Not safe to use.
+	 * Causes duplicate dispatch listeners when saving post resulting in duplicate postmeta.
 	 *
 	 * @date	6/3/19
 	 * @since	5.7.13

@@ -388,6 +388,7 @@
 	text-align: center;
 	text-decoration: none;
 	vertical-align: top;
+	box-sizing: content-box;
 }
 
 
@@ -699,7 +700,7 @@ a.acf-icon.-cancel.grey:hover {
 	margin: 0;
     width: 100%;
     clear: both;
-    
+    box-sizing: content-box;
     
     /* defaults */
     > tbody > tr,
@@ -1017,11 +1018,9 @@ a.acf-icon.-cancel.grey:hover {
 *--------------------------------------------------------------------------------------------*/
 
 .acf-settings-wrap {
-	
-}
-
-.acf-settings-wrap .acf-box {
-	margin: 20px 0;
+	#poststuff {
+		padding-top: 15px;
+	}
 }
 
 .acf-settings-wrap table {

@@ -9,7 +9,7 @@
 			'change [data-filter]': 				'onChangeFilter',
 			'keyup [data-filter]': 					'onChangeFilter',
 			'click .choices-list .acf-rel-item': 	'onClickAdd',
-			'click [data-name="remove_item"]': 		'onClickRemove',
+			'click [data-name="remove_item"]': 	'onClickRemove',
 			'mouseover': 							'onHover'
 		},
 		
@@ -185,15 +185,16 @@
 		
 		onClickRemove: function( e, $el ){
 			
+			// Prevent default here because generic handler wont be triggered.
+			e.preventDefault();
+			
 			// vars
 			var $span = $el.parent();
 			var $li = $span.parent();
 			var id = $span.data('id');
 			
 			// remove value
-			setTimeout(function(){
-				$li.remove();
-			}, 1);
+			$li.remove();
 			
 			// show choice
 			this.$listItem('choices', id).removeClass('disabled');
@@ -228,6 +229,9 @@
 			// extra
 			ajaxData.action = 'acf/fields/relationship/query';
 			ajaxData.field_key = this.get('key');
+			
+			// Filter.
+			ajaxData = acf.applyFilters( 'relationship_ajax_data', ajaxData, this );
 			
 			// return
 			return ajaxData;

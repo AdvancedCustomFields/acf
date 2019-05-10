@@ -517,13 +517,17 @@
 *
 *---------------------------------------------------------------------------------------------*/
 .acf-input-prepend,
+.acf-input-append,
+.acf-input-wrap {
+	box-sizing: border-box;
+	height: 28px;
+}
+
+.acf-input-prepend,
 .acf-input-append {
 	font-size: 13px;
 	line-height: 20px;
-	height: 20px;
-	
 	padding: 3px 7px;
-	
 	background: #F4F4F4;
 	border: #DFDFDF solid 1px;
 }
@@ -543,11 +547,11 @@
 .acf-input-wrap {
 	position: relative;
 	overflow: hidden;
-}
-
-.acf-input-wrap input {
-	height: 28px;
-	margin: 0;
+	
+	input {
+		height: 28px;
+		margin: 0;
+	}
 }
 
 input.acf-is-prepended {
@@ -868,6 +872,11 @@ html[dir="rtl"] .select2-container.-acf {
 				border-color: #f7f7f7;
 				visibility: visible !important;
 			}
+		}
+		
+		// search
+		.select2-search__field {
+			box-shadow: none !important;
 		}
 	}
 }
@@ -1639,7 +1648,7 @@ html[dir="rtl"] .pac-container .pac-item {
 
 .acf-editor-wrap {
 	
-	/* delay */
+	// Delay.
 	&.delay {
 		
 		.acf-editor-toolbar {
@@ -1653,37 +1662,28 @@ html[dir="rtl"] .pac-container .pac-item {
 		
 		textarea {
 		    padding: 10px;
+		    border: none;
 		}
-		
+	}
+	
+	iframe{ 
+		min-height: 200px;
+	}
+	
+	.wp-editor-container{ 
+		border: 1px solid #E5E5E5;
+		box-shadow: none !important;
+	}
+	
+	.wp-editor-tabs {
+		box-sizing: content-box;
 	}
 }
 
-.acf-editor-wrap iframe{ 
-	min-height: 200px;
-}
-
-.acf-editor-wrap .wp-editor-container{ 
-	border: 1px solid #E5E5E5;
-	box-shadow: none;
-}
-
+// Full Screen Mode.
 #mce_fullscreen_container {
 	z-index: 900000 !important;
 }
-
-
-/* WP < 4.1 */
-.acf-editor-wrap .wp-switch-editor {
-	float: left;
-	-moz-box-sizing: content-box;
-	-webkit-box-sizing: content-box;
-	box-sizing: content-box;
-}
-
-.acf-editor-wrap.tmce-active .wp-editor-area {
-	color: #333 !important;
-}
-
 
 /*---------------------------------------------------------------------------------------------
 *
@@ -2212,7 +2212,7 @@ html[dir="rtl"] .pac-container .pac-item {
 	// has value
 	&.has-value {
 		.canvas {
-			min-height: 50;
+			min-height: 50px;
 		}
 		
 		.input-search {
@@ -2594,11 +2594,11 @@ html[dir="rtl"] .pac-container .pac-item {
 
 /* field specific */
 .acf-field.acf-accordion {
-	padding: 0;
+	padding: 0 !important;
 	border-color: #dfdfdf;
 	
 	.acf-accordion-title {
-		padding: 12px !important;
+		padding: 12px;
 		width: auto !important;
 		float: none !important;
 		width: auto !important;

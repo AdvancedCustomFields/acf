@@ -120,14 +120,23 @@
 					$textarea.trigger('change');
 				});
 				
-				$( ed.getWin() ).on('unload', function() {
-					acf.tinymce.remove( id );
+				// Fix bug where Gutenberg does not hear "mouseup" event and tries to select multiple blocks.
+				ed.on('mouseup', function(e) {
+					var event = new MouseEvent('mouseup');
+					window.dispatchEvent(event);
 				});
 				
+				// Temporarily comment out. May not be necessary due to wysiwyg field actions.
+				//ed.on('unload', function(e) {
+				//	acf.tinymce.remove( id );
+				//});				
 			};
 			
 			// disable wp_autoresize_on (no solution yet for fixed toolbar)
 			init.wp_autoresize_on = false;
+			
+			// Enable wpautop allowing value to save without <p> tags.
+			init.wpautop = true;
 			
 			// hook for 3rd party customization
 			init = acf.applyFilters('wysiwyg_tinymce_settings', init, id, field);
@@ -354,6 +363,12 @@
 			}
 		},
 		onReady: function(){
+			
+			// Restore wp.editor functions used by tinymce removed in WP5.
+			if( acf.isset(window,'wp','oldEditor') ) {
+				wp.editor.autop = wp.oldEditor.autop;
+				wp.editor.removep = wp.oldEditor.removep;
+			}
 			
 			// bail early if no tinymce
 			if( !acf.isset(window,'tinymce','on') ) return;
