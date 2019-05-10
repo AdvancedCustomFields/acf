@@ -19,16 +19,8 @@ $acf_instances = array();
  * @return	object The instance.
  */
 function acf_new_instance( $class = '' ) {
-	
-	// Create instance.
-	$instance = new $class();
-	
-	// Register instance.
 	global $acf_instances;
-	$acf_instances[ $class ] = $instance;
-	
-	// Return instance.
-	return $instance;
+	return $acf_instances[ $class ] = new $class();
 }
 
 /**
@@ -44,7 +36,10 @@ function acf_new_instance( $class = '' ) {
  */
 function acf_get_instance( $class = '' ) {
 	global $acf_instances;
-	return isset( $acf_instances[ $class ] ) ? $acf_instances[ $class ] : false;
+	if( !isset($acf_instances[ $class ]) ) {
+		$acf_instances[ $class ] = new $class();
+	}
+	return $acf_instances[ $class ];
 }
 
 /**

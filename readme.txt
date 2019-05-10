@@ -66,6 +66,19 @@ From your WordPress dashboard
 
 == Changelog ==
 
+= 5.7.13 =
+*Release Date - 6 March 2019*
+
+* Fix - Fixed bug causing issues with registered fields during `switch_to_blog()`.
+* Fix - Fixed bug preventing sub fields from being reused across multiple parents.
+* Fix - Fixed bug causing the `get_sub_field()` function to fail if a tab field exists with the same name as the selected field.
+* Fix - Fixed bug corrupting field settings since WP 5.1 when instructions contain `< a target="" >`.
+* Fix - Fixed bug in Gutenberg where custom metabox location (acf_after_title) did not show on initial page load.
+* Fix - Fixed bug causing issues when importing/syncing multiple field groups which contain a clone field.
+* Fix - Fixed bug preventing the AMP plugin preview from working.
+* Dev - Added new 'pre' filters to get, update and delete meta functions.
+* i18n - Update Turkish translation thanks to Emre Erkan.
+
 = 5.7.12 =
 *Release Date - 15 February 2019*
 

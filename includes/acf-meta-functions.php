@@ -16,7 +16,7 @@ function acf_decode_post_id( $post_id = 0 ) {
 	// Default data
 	$data = array(
 		'type'	=> 'post',
-		'id'	=> $post_id
+		'id'	=> 0
 	);
 	
 	// Check if is numeric.
@@ -31,13 +31,13 @@ function acf_decode_post_id( $post_id = 0 ) {
 		$id = array_pop( $bits );
 		$type = implode( '_', $bits );
 		
-		// Check if $type is meta.
-		if( function_exists("get_{$type}_meta") ) {
+		// Check if is meta type.
+		if( function_exists("get_{$type}_meta") && is_numeric($id) ) {
 			$data['type'] = $type;
 			$data['id'] = (int) $id;
 		
 		// Check if is taxonomy name.
-		} elseif( taxonomy_exists($type) ) {
+		} elseif( taxonomy_exists($type) && is_numeric($id) ) {
 			$data['type'] = 'term';
 			$data['id'] = (int) $id;
 			
@@ -177,6 +177,12 @@ function acf_get_option_meta( $prefix = '' ) {
  */
 function acf_get_metadata( $post_id = 0, $name = '', $hidden = false ) {
 	
+	// Allow filter to short-circuit logic.
+	$pre = apply_filters( "acf/pre_load_metadata", null, $post_id, $name, $hidden );
+    if( $pre !== null ) {
+	    return $pre;
+    }
+    
 	// Decode $post_id for $type and $id.
 	extract( acf_decode_post_id($post_id) );
 	
@@ -215,6 +221,12 @@ function acf_get_metadata( $post_id = 0, $name = '', $hidden = false ) {
  */
 function acf_update_metadata( $post_id = 0, $name = '', $value = '', $hidden = false ) {
 	
+	// Allow filter to short-circuit logic.
+	$pre = apply_filters( "acf/pre_update_metadata", null, $post_id, $name, $value, $hidden );
+    if( $pre !== null ) {
+	    return $pre;
+    }
+    
 	// Decode $post_id for $type and $id.
 	extract( acf_decode_post_id($post_id) );
 	
@@ -255,6 +267,12 @@ function acf_update_metadata( $post_id = 0, $name = '', $value = '', $hidden = f
  */
 function acf_delete_metadata( $post_id = 0, $name = '', $hidden = false ) {
 	
+	// Allow filter to short-circuit logic.
+	$pre = apply_filters( "acf/pre_delete_metadata", null, $post_id, $name, $hidden );
+    if( $pre !== null ) {
+	    return $pre;
+    }
+    
 	// Decode $post_id for $type and $id.
 	extract( acf_decode_post_id($post_id) );
 	
@@ -353,3 +371,69 @@ function acf_get_meta_field( $key = 0, $post_id = 0 ) {
 	// Return false.
 	return false;
 }
+
+/**
+ * acf_get_metaref
+ *
+ * Retrieves reference metadata from the database.
+ *
+ * @date	16/10/2015
+ * @since	5.2.3
+ *
+ * @param	(int|string) $post_id The post id.
+ * @param	string type The reference type (fields|groups).
+ * @param	string $name An optional specific name
+ * @return	mixed
+ */
+function acf_get_metaref( $post_id = 0, $type = 'fields', $name = '' ) {
+	
+	// Load existing meta.
+	$meta = acf_get_metadata( $post_id, "_acf_$type" );
+	
+	// Handle no meta.
+	if( !$meta ) {
+		return $name ? '' : array();
+	}
+	
+	// Return specific reference.
+	if( $name ) {
+		return isset($meta[ $name ]) ? $meta[ $name ] : '';
+	
+	// Or return all references.
+	} else {
+		return $meta;
+	}
+}
+
+/**
+ * acf_update_metaref
+ *
+ * Updates reference metadata in the database.
+ *
+ * @date	16/10/2015
+ * @since	5.2.3
+ *
+ * @param	(int|string) $post_id The post id.
+ * @param	string type The reference type (fields|groups).
+ * @param	array $references An array of references.
+ * @return	(int|bool) Meta ID if the key didn't exist, true on successful update, false on failure.
+ */
+function acf_update_metaref( $post_id = 0, $type = 'fields', $references = array() ) {
+	
+	// Get current references.
+	$current = acf_get_metaref( $post_id, $type );
+	
+	// Merge in new references.
+	$references = array_merge( $current, $references );
+	
+	// Simplify groups
+	if( $type === 'groups' ) {
+		$references = array_values($references);
+	}
+	
+	// Remove duplicate references.
+	$references = array_unique($references);
+	
+	// Update metadata.
+	return acf_update_metadata( $post_id, "_acf_$type", $references );
+} 

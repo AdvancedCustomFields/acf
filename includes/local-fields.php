@@ -1,8 +1,8 @@
 <?php 
 
 // Register notices stores.
-acf_register_store( 'local-fields' )->prop( 'multisite', true );
-acf_register_store( 'local-groups' )->prop( 'multisite', true );
+acf_register_store( 'local-fields' );
+acf_register_store( 'local-groups' );
 acf_register_store( 'local-empty' );
 
 // Register filter.
@@ -361,16 +361,42 @@ function acf_add_local_field( $field, $prepared = false ) {
 		$field['key'] = "field_{$field['name']}";
 	}
 	
-	// If already prepared via field group function, add to store with alias.
-	if( $prepared ) {
-		acf_get_local_store( 'fields' )
-			->set( $field['key'], $field )
-			->alias( $field['key'], $field['name'] );
-	
-	// Otherwise, Add a list of fields allowing them to be correctly prepared.
-	} else {
-		acf_add_local_fields(array( $field ));
+	// If called directly, allow sub fields to be correctly prepared.
+	if( !$prepared ) {
+		return acf_add_local_fields( array( $field ) );
 	}
+	
+	// Extract attributes.
+	$key = $field['key'];
+	$name = $field['name'];
+	
+	// Allow sub field to be added multipel times to different parents.
+	$store = acf_get_local_store( 'fields' );
+	if( $store->is($key) ) {
+		$old_key = _acf_generate_local_key( $store->get($key) );
+		$new_key = _acf_generate_local_key( $field );
+		if( $old_key !== $new_key ) {
+			$key = $new_key;
+		}
+	}
+	
+	// Add field.
+	$store->set( $key, $field )->alias( $key, $name );
+}
+
+/**
+ * _acf_generate_local_key
+ *
+ * Generates a unique key based on the field's parent.
+ *
+ * @date	22/1/19
+ * @since	5.7.10
+ *
+ * @param	string $key The field key.
+ * @return	bool
+ */
+function _acf_generate_local_key( $field ) {
+	return "{$field['key']}:{$field['parent']}";
 }
 
 /**
@@ -533,11 +559,16 @@ add_filter( 'acf/is_field_group_key', '_acf_apply_is_local_field_group_key', 20,
  */
 function _acf_do_prepare_local_fields() {
 	
-	// Get and re-add fields (will prepare them).
-	acf_add_local_fields( acf_get_local_fields() );
+	// Get fields.
+	$fields = acf_get_local_fields();
+	
+	// If fields have been registered early, re-add to correctly prepare them.
+	if( $fields ) {
+		acf_add_local_fields( $fields );
+	}
 }
 
 // Hook into action.
-add_action( 'acf/include_fields', '_acf_do_prepare_local_fields', 0, 5 );
+add_action( 'acf/include_fields', '_acf_do_prepare_local_fields', 0, 1 );
 
 ?>

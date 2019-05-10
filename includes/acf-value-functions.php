@@ -209,6 +209,33 @@ function acf_update_value( $value = null, $post_id = 0, $field ) {
 acf_add_filter_variations( 'acf/update_value', array('type', 'name', 'key'), 2 );
 
 /**
+ * acf_update_values
+ *
+ * Updates an array of values.
+ *
+ * @date	26/2/19
+ * @since	5.7.13
+ *
+ * @param	array values The array of values.
+ * @param	(int|string) $post_id The post id.
+ * @return	void
+ */
+function acf_update_values( $values = array(), $post_id = 0 ) {
+	
+	// Loop over values.
+	foreach( $values as $key => $value ) {
+		
+		// Get field.
+		$field = acf_get_field( $key );
+		
+		// Update value.
+		if( $field ) {
+			acf_update_value( $value, $post_id, $field );
+		}
+	}
+}
+
+/**
  * acf_flush_value_cache
  *
  * Deletes all cached data for this value.

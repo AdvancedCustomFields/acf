@@ -75,3 +75,151 @@ function acf_cache_key( $key = '' ) {
 	 */
 	return apply_filters( "acf/get_cache_key", $key, $key );
 }
+
+/**
+ * acf_request_args
+ *
+ * Returns an array of $_REQUEST values using the provided defaults.
+ *
+ * @date	28/2/19
+ * @since	5.7.13
+ *
+ * @param	array $args An array of args.
+ * @return	array
+ */
+function acf_request_args( $args = array() ) {
+	foreach( $args as $k => $v ) {
+		$args[ $k ] = isset($_REQUEST[ $k ]) ? $_REQUEST[ $k ] : $args[ $k ];
+	}
+	return $args;
+}
+
+// Register store.
+acf_register_store( 'filters' );
+
+/**
+ * acf_enable_filter
+ *
+ * Enables a filter with the given name.
+ *
+ * @date	14/7/16
+ * @since	5.4.0
+ *
+ * @param	string name The modifer name.
+ * @return	void
+ */
+function acf_enable_filter( $name = '' ) {
+	acf_get_store( 'filters' )->set( $name, true );
+}
+
+/**
+ * acf_disable_filter
+ *
+ * Disables a filter with the given name.
+ *
+ * @date	14/7/16
+ * @since	5.4.0
+ *
+ * @param	string name The modifer name.
+ * @return	void
+ */
+function acf_disable_filter( $name = '' ) {
+	acf_get_store( 'filters' )->set( $name, false );
+}
+
+/**
+ * acf_is_filter_enabled
+ *
+ * Returns the state of a filter for the given name.
+ *
+ * @date	14/7/16
+ * @since	5.4.0
+ *
+ * @param	string name The modifer name.
+ * @return	array
+ */
+function acf_is_filter_enabled( $name = '' ) {
+	return acf_get_store( 'filters' )->get( $name );
+}
+
+/**
+ * acf_get_filters
+ *
+ * Returns an array of filters in their current state.
+ *
+ * @date	14/7/16
+ * @since	5.4.0
+ *
+ * @param	void
+ * @return	array
+ */
+function acf_get_filters() {
+	return acf_get_store( 'filters' )->get();
+}
+
+/**
+ * acf_set_filters
+ *
+ * Sets an array of filter states.
+ *
+ * @date	14/7/16
+ * @since	5.4.0
+ *
+ * @param	array $filters An Array of modifers
+ * @return	array
+ */
+function acf_set_filters( $filters = array() ) {
+	acf_get_store( 'filters' )->set( $filters );
+}
+
+/**
+ * acf_disable_filters
+ *
+ * Disables all filters and returns the previous state.
+ *
+ * @date	14/7/16
+ * @since	5.4.0
+ *
+ * @param	void
+ * @return	array
+ */
+function acf_disable_filters() {
+	
+	// Get state.
+	$prev_state = acf_get_filters();
+	
+	// Set all modifers as false.
+	acf_set_filters( array_map('__return_false', $prev_state) );
+	
+	// Return prev state.
+	return $prev_state;
+}
+
+/**
+ * acf_enable_filters
+ *
+ * Enables all or an array of specific filters and returns the previous state.
+ *
+ * @date	14/7/16
+ * @since	5.4.0
+ *
+ * @param	array $filters An Array of modifers
+ * @return	array
+ */
+function acf_enable_filters( $filters = array() ) {
+	
+	// Get state.
+	$prev_state = acf_get_filters();
+	
+	// Allow specific filters to be enabled.
+	if( $filters ) {
+		acf_set_filters( $filters );
+		
+	// Set all modifers as true.	
+	} else {
+		acf_set_filters( array_map('__return_true', $prev_state) );
+	}
+	
+	// Return prev state.
+	return $prev_state;
+}

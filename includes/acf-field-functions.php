@@ -989,6 +989,9 @@ function acf_update_field( $field, $specific = array() ) {
 		$save = acf_get_sub_array( $save, $specific );
 	}
 	
+	// Unhook wp_targeted_link_rel() filter from WP 5.1 corrupting serialized data.
+	remove_filter( 'content_save_pre', 'wp_targeted_link_rel' );
+	
 	// Slash data.
 	// WP expects all data to be slashed and will unslash it (fixes '\' character issues).
 	$save = wp_slash( $save );
@@ -1274,9 +1277,12 @@ acf_add_filter_variations( 'acf/get_sub_field', array('type'), 2 );
  */
 function acf_search_fields( $id, $fields ) {
 	
-	// Loop over fields.
-	foreach( $fields as $field ) {
-		foreach( array( 'key', 'name', '_name', '__name' ) as $key ) {
+	// Loop over searchable keys in order of priority.
+	// Important to search "name" on all fields before "_name" backup.
+	foreach( array( 'key', 'name', '_name', '__name' ) as $key ) {
+		
+		// Loop over fields and compare.
+		foreach( $fields as $field ) {
 			if( isset($field[$key]) && $field[$key] === $id ) {
 				return $field;
 			}

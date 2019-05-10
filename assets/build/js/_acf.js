@@ -2097,7 +2097,7 @@
 	*  @return	bool
 	*/
 	acf.isGutenberg = function(){
-		return ( window.wp && wp.blocks );
+		return ( window.wp && wp.data && wp.data.select && wp.data.select( 'core/editor' ) );
 	};
 	
 	/**

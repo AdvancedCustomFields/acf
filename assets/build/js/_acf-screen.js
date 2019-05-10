@@ -384,10 +384,14 @@
 					
 					// Trigger action.
 					acf.doAction('append', $postbox);
+					acf.doAction('append_postbox', postbox);
 				}
 				
 				// show postbox
 				postbox.showEnable();
+				
+				// Do action.
+				acf.doAction('show_postbox', postbox);
 				
 				// append
 				visible.push( result.id );
@@ -397,6 +401,9 @@
 			acf.getPostboxes().map(function( postbox ){
 				if( visible.indexOf( postbox.get('id') ) === -1 ) {
 					postbox.hideDisable();
+					
+					// Do action.
+					acf.doAction('hide_postbox', postbox);
 				}
 			});
 			
@@ -441,6 +448,9 @@
 			acf.screen.getPostType = this.getPostType;
 			acf.screen.getPostFormat = this.getPostFormat;
 			acf.screen.getPostCoreTerms = this.getPostCoreTerms;
+			
+			// Add actions.
+			this.addAction( 'append_postbox', acf.screen.refreshAvailableMetaBoxesPerLocation );
 		},
 		
 		onChange: function(){
@@ -517,7 +527,61 @@
 			
 			// return
 			return terms;
-		},
+		}
 	});
+	
+	/**
+	 * acf.screen.refreshAvailableMetaBoxesPerLocation
+	 *
+	 * Refreshes the WP data state based on metaboxes found in the DOM.
+	 *
+	 * @date	6/3/19
+	 * @since	5.7.13
+	 *
+	 * @param	void
+	 * @return	void
+	 */
+	acf.screen.refreshAvailableMetaBoxesPerLocation = function() {
+		
+		// Extract vars.
+		var select = wp.data.select( 'core/edit-post' );
+		var dispatch = wp.data.dispatch( 'core/edit-post' );
+		
+		// Load current metabox locations and data.
+		var data = {};
+		select.getActiveMetaBoxLocations().map(function( location ){
+			data[ location ] = select.getMetaBoxesPerLocation( location );
+		});
+		
+		// Generate flat array of existing ids.
+		var ids = [];
+		for( var k in data ) {
+			ids = ids.concat( data[k].map(function(m){ return m.id; }) );
+		}
+		
+		// Append ACF metaboxes.
+		acf.getPostboxes().map(function( postbox ){
+			
+			// Ignore if already exists in data.
+			if( ids.indexOf( postbox.get('id') ) !== -1 ) {
+				return;
+			}
+			
+			// Get metabox location looking at parent form.
+			var location = postbox.$el.closest('form').attr('class').replace('metabox-location-', '');
+			
+			// Ensure location exists.
+			data[ location ] = data[ location ] || [];
+			
+			// Append.
+			data[ location ].push({
+				id: postbox.get('id'),
+				title: postbox.get('title')
+			});
+		});
+		
+		// Update state.
+		dispatch.setAvailableMetaBoxesPerLocation(data);	
+	};
 
 })(jQuery);
