@@ -267,16 +267,13 @@
 			}, frame);
 			
 			// update toolbar button
-/*
-			frame.on( 'toolbar:create:select', function( toolbar ) {
-				
-				toolbar.view = new wp.media.view.Toolbar.Select({
-					text: frame.options._button,
-					controller: this
-				});
-				
-			}, frame );
-*/
+			//frame.on( 'toolbar:create:select', function( toolbar ) {
+			//	toolbar.view = new wp.media.view.Toolbar.Select({
+			//		text: frame.options._button,
+			//		controller: this
+			//	});
+			//}, frame );
+
 			// on select
 			frame.on('select', function() {
 				
@@ -546,10 +543,33 @@
 			}
 			
 			// customize
+			this.customizeAttachmentsButton();
 			this.customizeAttachmentsRouter();
 			this.customizeAttachmentFilters();
 			this.customizeAttachmentCompat();
 			this.customizeAttachmentLibrary();
+		},
+		
+		customizeAttachmentsButton: function(){
+			
+			// validate
+			if( !acf.isset(wp, 'media', 'view', 'Button') ) {
+				return;
+			}
+			
+			// Extend
+			var Button = wp.media.view.Button;
+			wp.media.view.Button = Button.extend({
+				
+				// Fix bug where "Select" button appears blank after editing an image.
+				// Do this by simplifying Button initialize function and avoid deleting this.options.
+				initialize: function() {
+					var options = _.defaults( this.options, this.defaults );
+					this.model = new Backbone.Model( options );
+					this.listenTo( this.model, 'change', this.render );
+				}
+			});
+			
 		},
 		
 		customizeAttachmentsRouter: function(){

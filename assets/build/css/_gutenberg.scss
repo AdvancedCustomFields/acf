@@ -6,7 +6,7 @@
 #editor {
 	
 	// main column is split into "editor" and "metaboxes".
-	// remove WP flex that pushed metaboxes to bottom
+	// remove WP flex that pushed metaboxes to bottom.
 	.edit-post-visual-editor,
 	.edit-post-layout__metaboxes {
 		flex-basis: 0%;
@@ -18,32 +18,21 @@
 		background: transparent;
 		border-top: 0 none;
 		margin-top: 0;
-		padding: 46px 14px;
+		padding: 30px;
 		
 		@media screen and (min-width: 600px) {
 			padding: 46px;
 		}
-		@media screen and (min-width: 1200px) {
-			padding: 56px 66px;
-		}
-		
-		&:empty {
-			display: none;
-		};
 		
 		.edit-post-meta-boxes-area {
 			margin: 0;
 		}
 		
-		// make postbox look like a classic box
+		// make postbox look like a classic box.
 		.postbox {
 			border: #e2e4e7 solid 1px;
 			border-bottom: none;
 			margin: 0 0 20px;
-			
-			input {
-				max-width: none;
-			}
 		}
 	}
 	
@@ -131,90 +120,4 @@
 			right: 15px;
 		}
 	}
-}
-
-// acf-block
-.acf-block {
-	
-}
-
-// block body
-.acf-block-body {
-	
-	.acf-block-fields {
-		border: #e2e4e7 solid 1px;
-		
-		div.acf-field {
-			padding: 16px 20px;
-		}
-	}
-}
-
-// block panel
-.acf-block-panel {
-	
-	// panel actions
-	.acf-block-panel-actions {
-		margin: 16px -16px;
-		padding: 0 16px;
-		
-		button {
-			padding: 0 12px 2px;
-			font-size: 13px;
-			margin: 2px;
-			height: 33px;
-			line-height: 32px;
-			width: 100%;
-		}
-	}
-	
-	// fields
-	.acf-block-fields {
-		border: none;
-		border-top: #e2e4e7 solid 1px;
-		margin: 0 -16px -16px;
-		padding: 0;
-		
-		// field
-		div.acf-field {
-			padding: 16px;
-			
-			width: auto !important;
-			min-height: 0 !important;
-			border-left: none !important;
-			float: none !important;
-		}
-	}
-	
-	// accordion
-	.acf-accordion .acf-accordion-title .acf-accordion-icon {
-		font-size: 18px;
-		line-height: inherit;
-		
-		// open
-		&.dashicons-arrow-down:before {
-			content: "\f343";
-		}
-		
-		// closed
-		&.dashicons-arrow-right:before {
-			content: "\f347";
-		}
-	}
-}
-
-// block loading
-.acf-block-loading {
-	background: #f3f3f4;
-	min-height: 200px;
-	position: relative;
-	
-	i {
-		@include centered();
-	}
-}
-
-// hide is-loading
-.acf-block-fields.is-loading {
-	display: none;
 }

@@ -227,94 +227,97 @@
 	
 	/* toggle */
 	.acf-expand-details {
-		
 		.is-open { display: block; }
 		.is-closed { display: none; }
 		
 	}
 	
-	
-	/* resize */
+	// Components.
 	.attachments-browser .media-toolbar, 
 	.attachments-browser .attachments { right: 740px; }
 	.media-sidebar { width: 708px; }
 	
-	
-	/* label & fields */
+	// Sidebar.
 	.media-sidebar {
 		
-		/* label */
-		.attachment-info .thumbnail,
-		.setting span, 
-		.compat-attachment-fields > tbody > .acf-field > .acf-label {
-			min-width: 20%;
-		}
-		
-		
-		/* field */
-		.attachment-info .details,
-		.setting input, 
-		.setting textarea, 
-		.compat-attachment-fields > tbody > .acf-field > .acf-input {
-			min-width: 77%;
-		}
-		
-		.setting span {
-			margin-right: 2%;
-		}
-		
-		
-		/* larger thumbnail */
+		// Attachment info.
 		.attachment-info {
-			
 			.thumbnail {
+				float: left;
 				max-height: none;
-				
+
 				img {
 					max-width: 100%;
 					max-height: 200px;
 				}
-				
 			}
 			
 			.details {
 				float: right;
-				
 			}
-			
 		}
 		
+		// Label
+		.attachment-info .thumbnail,
+		.attachment-details .setting span, 
+		.compat-attachment-fields > tbody > .acf-field > .acf-label {
+			min-width: 20%;
+			margin-right: 0;
+		}
+		
+		// Input
+		.attachment-info .details,
+		.attachment-details .setting input, 
+		.attachment-details .setting textarea,
+		.attachment-details .setting + .description,
+		.compat-attachment-fields > tbody > .acf-field > .acf-input {
+			min-width: 77%;
+		}
 	}
 	
-	
-	/* mobile md */
+	// Screen: Medium.
 	@media (max-width: 900px) {
 		
-		/* resize */
+		// Components.
 		.attachments-browser .media-toolbar { display: none; }
 		.attachments { display: none; }
-		.media-sidebar { width: auto; max-width: none !important; }
+		.media-sidebar { width: auto; max-width: none !important; bottom: 0 !important; }
 		
-		
+		// Sidebar.
 		.media-sidebar {
 			
+			// Attachment info.
 			.attachment-info {
-				
 				.thumbnail {
-					min-width: 30%;
-					margin: 0;
+					min-width: 0;
+					max-width: none;
+					width: 30%;
 				}
 				
 				.details {
-					min-width: 67%;
+					min-width: 0;
+					max-width: none;
+					width: 67%;
 				}
 				
-			}
-				
+			}	
 		}
-		
 	}
 	
+	// Screen: small.
+	@media (max-width: 640px) {
+		
+		// Sidebar.
+		.media-sidebar {
+			
+			// Attachment info.
+			.attachment-info {
+				.thumbnail, .details {
+					width: 100%;
+				}
+			}	
+		}
+	}
 }
 
 
@@ -447,10 +450,6 @@
 			}
 			
 			.setting {
-				display: block;
-				overflow: hidden;
-				float: none;
-				width: auto;
 				margin: 0 0 5px;
 				
 				span {
@@ -483,31 +482,24 @@
 	
 	/* mobile md */
 	@media (max-width: 900px) {
-		
-		& {
-			top: 30px;
-			right: 30px;
-			bottom: 30px;
-			left: 30px;
-		}
-		
+		top: 30px;
+		right: 30px;
+		bottom: 30px;
+		left: 30px;
 	}
 	
 	
 	/* mobile sm */
 	@media (max-width: 640px) {
-		
-		& {
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-		}
-		
-		.media-sidebar {
-			bottom: 0 !important;
-		}
-
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
 	}
-		
+	
+	@media (max-width: 480px) {
+		.media-frame-content {
+		    top: 40px;
+		}
+	}
 }

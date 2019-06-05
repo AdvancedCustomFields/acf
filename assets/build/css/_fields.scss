@@ -520,7 +520,6 @@
 .acf-input-append,
 .acf-input-wrap {
 	box-sizing: border-box;
-	height: 28px;
 }
 
 .acf-input-prepend,
@@ -818,13 +817,11 @@ html[dir="rtl"] .select2-container.-acf {
 
 // Fix unneeded bottom margin.
 .select2-container.-acf {
+	
+	// Reset WP default style.
 	li{
 		margin-bottom: 0;
 	}
-}
-
-// Default wrap.
-.select2-container--default.-acf {
 	
 	// Multiple wrap.
 	.select2-selection--multiple {
@@ -877,6 +874,19 @@ html[dir="rtl"] .select2-container.-acf {
 		// search
 		.select2-search__field {
 			box-shadow: none !important;
+		}
+	}
+	
+	// Single choice.
+	.select2-selection--single {
+		
+	}
+	
+	// Fix single select pushing out repeater field table width.
+	.acf-row & .select2-selection--single {
+		overflow: hidden;
+		.select2-selection__rendered {
+			white-space: normal;
 		}
 	}
 }
@@ -1660,9 +1670,10 @@ html[dir="rtl"] .pac-container .pac-item {
 			padding: 10px;
 		}
 		
-		textarea {
+		.wp-editor-area {
 		    padding: 10px;
 		    border: none;
+		    color: inherit; // Fixes Gutenberg white text bug.
 		}
 	}
 	

@@ -136,7 +136,10 @@
 			init.wp_autoresize_on = false;
 			
 			// Enable wpautop allowing value to save without <p> tags.
-			init.wpautop = true;
+			// Only if the "TinyMCE Advanced" plugin hasn't already set this functionality.
+			if( !init.tadv_noautop ) {
+				init.wpautop = true;
+			}
 			
 			// hook for 3rd party customization
 			init = acf.applyFilters('wysiwyg_tinymce_settings', init, id, field);

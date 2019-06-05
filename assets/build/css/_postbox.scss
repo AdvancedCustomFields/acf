@@ -1,0 +1,50 @@
+// Postbox.
+
+// Gutenberg specific styles.
+#editor {
+	
+	// Postbox container.
+	.edit-post-layout__metaboxes {
+		padding: 0;
+	}
+	
+	// Alter postbox to look like panel component.
+	.postbox {
+		color: #444;
+		
+		.handlediv {
+			color: #191e23 !important;
+			height: 46px;
+			width: auto;
+			padding: 0 14px 0 5px;
+			position: relative;
+			z-index: 2;
+		}
+		.hndle {
+			color: #191e23 !important;
+			font-size: 13px;
+			line-height: normal;
+			padding: 15px;
+			
+			&:hover {
+				background: #f2f4f5;
+			}
+			.acf-hndle-cog {
+				line-height: 16px;
+			}
+		}
+		
+		// change icons to match gutenberg sidebar accordions
+		.handlediv .toggle-indicator {
+			color: inherit;
+			&:before {
+				content: "\f343";
+				font-size: 18px;
+				width: auto;
+			}
+		}
+		&.closed .handlediv .toggle-indicator:before {
+			content: "\f347";
+		}
+	}
+}

@@ -1,6 +1,25 @@
 (function($, undefined){
 	
 	/**
+	 * postboxManager
+	 *
+	 * Manages postboxes on the screen.
+	 *
+	 * @date	25/5/19
+	 * @since	5.8.1
+	 *
+	 * @param	void
+	 * @return	void
+	 */
+	var postboxManager = new acf.Model({
+		wait: 'prepare',
+		priority: 1,
+		initialize: function(){
+			(acf.get('postboxes') || []).map( acf.newPostbox );
+		},
+	});
+	
+	/**
 	*  acf.getPostbox
 	*
 	*  Returns a postbox instance.
@@ -120,10 +139,12 @@
 			// This class is added by WP to postboxes that are hidden via the "Screen Options" tab.
 			this.$el.removeClass('hide-if-js');
 			
-			// Add field group style class.
-			var style = this.get('style');
-			if( style !== 'default' ) {
-				this.$el.addClass( style );
+			// Add field group style class (ignore in block editor).
+			if( acf.get('editor') !== 'block' ) {
+				var style = this.get('style');
+				if( style !== 'default' ) {
+					this.$el.addClass( style );
+				}
 			}
 			
 			// Add .inside class.
