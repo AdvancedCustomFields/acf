@@ -3253,7 +3253,7 @@ msgstr "Minimalna liczba wierszy"
 
 #: pro/fields/class-acf-field-repeater.php:433
 msgid "Maximum Rows"
-msgstr "Minimalna liczba wierszy"
+msgstr "Maksymalna liczba wierszy"
 
 #: pro/locations/class-acf-location-options-page.php:79
 msgid "No options pages exist"
