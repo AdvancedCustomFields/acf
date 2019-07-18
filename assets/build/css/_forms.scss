@@ -97,13 +97,27 @@
 		margin: 1em 0;
 	}
 	
-	.acf-field .acf-label {
-		margin-bottom: 0;
+	.acf-field  {
+		margin-top: 0;
 		
-		label {
-			font-weight: normal;
-			font-size: 14px;
+		.acf-label {
+			margin-bottom: 0;
+			
+			label {
+				font-weight: normal;
+				line-height: 1.5;
+			}
 		}
+		
+/*
+		.acf-input {
+			input {
+				font-size: 24px;
+				padding: 5px;
+				height: auto;
+			}
+		}
+*/
 	}
 	
 	p.submit {

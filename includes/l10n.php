@@ -74,6 +74,7 @@ function acf_get_locale() {
 		//'zh_TW'	=> 'zh_CN',		// Chinese (Taiwan)
 		'nl_BE'	=> 'nl_NL',		// Dutch (Belgium)
 		'fr_BE'	=> 'fr_FR',		// French (Belgium)
+		'fr_CA'	=> 'fr_FR',		// French (Canadian)
 		'nn_NO'	=> 'nb_NO',		// Norwegian (Nynorsk)
 		'fa_AF'	=> 'fa_IR',		// Persian (Afghanistan)
 		'ru_UA'	=> 'ru_RU',		// Russian (Ukraine)

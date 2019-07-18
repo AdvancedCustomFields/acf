@@ -10770,7 +10770,7 @@
 			// convert any string values (tags) into array format
 			for( var tax in terms ) {
 				if( !acf.isArray(terms[tax]) ) {
-					terms[tax] = terms[tax].split(', ');
+					terms[tax] = terms[tax].split(/,[\s]?/);
 				}
 			}
 			

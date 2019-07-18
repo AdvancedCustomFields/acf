@@ -1018,17 +1018,22 @@ a.acf-icon.-cancel.grey:hover {
 *--------------------------------------------------------------------------------------------*/
 
 .acf-settings-wrap {
+	
 	#poststuff {
 		padding-top: 15px;
 	}
-}
-
-.acf-settings-wrap table {
-	margin: 0;
-}
-
-.acf-settings-wrap table .button {
-	vertical-align: middle;
+	
+	.acf-box {
+		margin: 20px 0;
+	}
+	
+	table {
+		margin: 0;
+		
+		.button {
+			vertical-align: middle;
+		}
+	}
 }
 
 

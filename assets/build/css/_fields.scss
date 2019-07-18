@@ -1673,7 +1673,7 @@ html[dir="rtl"] .pac-container .pac-item {
 		.wp-editor-area {
 		    padding: 10px;
 		    border: none;
-		    color: inherit; // Fixes Gutenberg white text bug.
+		    color: inherit !important; // Fixes white text bug.
 		}
 	}
 	
