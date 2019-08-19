@@ -7170,15 +7170,15 @@
 			return this.$('input[type="number"]');
 		},
 		
-		setValue: function( val ){
-			
+		setValue: function( val ){			
 			this.busy = true;
 			
-			// update range input (with change)
+			// Update range input (with change).
 			acf.val( this.$input(), val );
 			
-			// update alt input (without change)
-			acf.val( this.$inputAlt(), val, true );
+			// Update alt input (without change).
+			// Read in input value to inherit min/max validation.
+			acf.val( this.$inputAlt(), this.$input().val(), true );
 			
 			this.busy = false;
 		},

@@ -126,3 +126,24 @@ function acf_get_field_reference( $field_name, $post_id ) {
 	// Return reference.
 	return acf_get_reference( $field_name, $post_id );
 }
+
+/**
+ * acf_get_dir
+ *
+ * Returns the plugin url to a specified file.
+ *
+ * @date	28/09/13
+ * @since	5.0.0
+ * @deprecated	5.6.8
+ *
+ * @param	string $filename The specified file.
+ * @return	string
+ */
+function acf_get_dir( $filename = '' ) {
+	
+	// Warning.
+	_deprecated_function( __FUNCTION__, '5.6.8', 'acf_get_url()' );
+	
+	// Return.
+	return acf_get_url( $filename );
+}

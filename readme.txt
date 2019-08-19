@@ -67,6 +67,17 @@ From your WordPress dashboard
 
 == Changelog ==
 
+= 5.8.3 =
+*Release Date - 7 August 2019*
+
+* Tweak - Changed Options Page location rules to show "page_title" instead of "menu_title".
+* Fix - Fixed bug causing Textarea field to incorrectly validate maxlength.
+* Fix - Fixed bug allowing Range field values outside of the min and max settings.
+* Fix - Fixed bug in block RegExp causing some blocks to miss the "acf/pre_save_block" filter.
+* Dev - Added `$block_type` parameter to block settings "enqueue_assets" callback.
+* i18n - Added French Canadian language thanks to Bérenger Zyla.
+* i18n - Updated French language thanks to Bérenger Zyla.
+
 = 5.8.2 =
 *Release Date - 15 July 2019*
 

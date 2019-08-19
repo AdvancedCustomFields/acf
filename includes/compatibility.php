@@ -468,4 +468,17 @@ acf_new_instance('ACF_Compatibility');
 
 endif; // class_exists check
 
-?>
+/*
+ * acf_get_compatibility
+ *
+ * Returns true if compatibility is enabled for the given component.
+ *
+ * @date	20/1/15
+ * @since	5.1.5
+ *
+ * @param	string $name The name of the component to check.
+ * @return	bool
+ */
+function acf_get_compatibility( $name ) {
+	return apply_filters( "acf/compatibility/{$name}", false );
+}
