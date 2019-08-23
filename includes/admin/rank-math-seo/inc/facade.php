@@ -1,14 +1,8 @@
 <?php
 /**
- * ACF Content Analysis for Yoast SEO plugin file.
- *
- * @package YoastACFAnalysis
+ * Class RankMath_ACF_Analysis_Facade
  */
-
-/**
- * Class Yoast_ACF_Analysis_Facade
- */
-class Yoast_ACF_Analysis_Facade {
+class RankMath_ACF_Analysis_Facade {
 
 	/**
 	 * Returns the identifier of the plugin.
@@ -22,13 +16,13 @@ class Yoast_ACF_Analysis_Facade {
 	/**
 	 * Retrieves the registry to use.
 	 *
-	 * @return Yoast_ACF_Analysis_Registry
+	 * @return RankMath_ACF_Analysis_Registry
 	 */
 	public static function get_registry() {
 		static $registry = null;
 
 		if ( null === $registry ) {
-			$registry = new Yoast_ACF_Analysis_Registry();
+			$registry = new RankMath_ACF_Analysis_Registry();
 		}
 
 		return $registry;

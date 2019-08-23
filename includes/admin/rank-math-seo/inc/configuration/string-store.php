@@ -1,23 +1,17 @@
 <?php
 /**
- * ACF Content Analysis for Yoast SEO plugin file.
- *
- * @package YoastACFAnalysis
- */
-
-/**
- * Class Yoast_ACF_Analysis_String_Store
+ * Class RankMath_ACF_Analysis_String_Store
  *
  * Stores a collection of strings.
  */
-class Yoast_ACF_Analysis_String_Store {
+class RankMath_ACF_Analysis_String_Store {
 
 	/**
 	 * List of stored items.
 	 *
 	 * @var array
 	 */
-	protected $items = array();
+	protected $items = [];
 
 	/**
 	 * Adds an item to the store.

@@ -24,7 +24,7 @@
     }
     return r
 })()({1: [function(require, module, exports) {
-/* global YoastSEO, acf, _, jQuery, wp */
+/* global RankMathSEO, acf, _, jQuery, wp */
 var config = require( "./config/config.js" );
 var helper = require( "./helper.js" );
 var collect = require( "./collect/collect.js" );
@@ -88,7 +88,7 @@ var refresh = function( attachment_ids ) {
 	} ).done( function( attachments ) {
 		_.each( attachments, function( attachment ) {
 			cache.set( attachment.id, attachment, "attachment" );
-			window.YoastACFAnalysis.maybeRefresh();
+			window.RankMathACFAnalysis.maybeRefresh();
 		} );
 	} );
 };
@@ -351,8 +351,8 @@ Collect.prototype.sort = function( field_data ) {
 module.exports = new Collect();
 
 },{"./../config/config.js":7,"./../helper.js":8,"./../scraper-store.js":11,"./collect-v4.js":4,"./collect-v5.js":5}],7:[function(require,module,exports){
-/* globals YoastACFAnalysisConfig */
-module.exports = YoastACFAnalysisConfig;
+/* globals RankMathACFAnalysisConfig */
+module.exports = RankMathACFAnalysisConfig;
 
 },{}],8:[function(require,module,exports){
 var config = require( "./config/config.js" );
@@ -362,21 +362,22 @@ module.exports = {
 };
 
 },{"./config/config.js":7}],9:[function(require,module,exports){
-/* global jQuery, YoastSEO, YoastACFAnalysis: true */
-/* exported YoastACFAnalysis */
+/* global jQuery, RankMathSEO, RankMathACFAnalysis: true */
+/* exported RankMathACFAnalysis */
 
 var App = require( "./app.js" );
 
 ( function( $ ) {
 	$( document ).ready( function() {
+		alert('ok');
 		if ( "undefined" !== typeof RankMathApp ) {
-			YoastACFAnalysis = new App();
+			RankMathACFAnalysis = new App();
 		}
 	} );
 }( jQuery ) );
 
 },{"./app.js":1}],10:[function(require,module,exports){
-/* global _, jQuery, YoastSEO */
+/* global _, jQuery, RankMathSEO */
 
 var config = require( "./config/config.js" );
 

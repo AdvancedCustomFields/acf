@@ -1,21 +1,15 @@
 <?php
 /**
- * ACF Content Analysis for Yoast SEO plugin file.
- *
- * @package YoastACFAnalysis
+ * Class RankMath_ACF_Analysis_Registry
  */
-
-/**
- * Class Yoast_ACF_Analysis_Registry
- */
-class Yoast_ACF_Analysis_Registry {
+class RankMath_ACF_Analysis_Registry {
 
 	/**
 	 * Registry storage array
 	 *
 	 * @var array
 	 */
-	private $storage = array();
+	private $storage = [];
 
 	/**
 	 * Adds an item to the registry.
