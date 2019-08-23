@@ -10,7 +10,7 @@ var Scraper = function() {};
 var isTinyMCEAvailable = function( editorID ) {
 	if ( 'undefined' === typeof tinyMCE ||
 		 'undefined' === typeof tinyMCE.editors ||
-		 0=== tinyMCE.editors.length  ||
+		 0 === tinyMCE.editors.length  ||
 		 null === tinyMCE.get( editorID ) ||
 		 tinyMCE.get( editorID ).isHidden() ) {
 		return false;
@@ -27,9 +27,9 @@ var isTinyMCEAvailable = function( editorID ) {
  * @returns {string} The content of the field.
  */
 var getContentTinyMCE = function( field ) {
-	var textarea = field.$el.find( 'textarea' )[ 0 ];
-	var editorID = textarea.id;
-	var val = textarea.value;
+	var textarea = field.$el.find( 'textarea' )[ 0 ],
+			editorID = textarea.id,
+			val      = textarea.value;
 
 	if ( isTinyMCEAvailable( editorID ) ) {
 		val = tinyMCE.get( editorID ) && tinyMCE.get( editorID ).getContent() || '';
@@ -43,7 +43,6 @@ Scraper.prototype.scrape = function( fields ) {
 		if ( 'wysiwyg' !== field.type ) {
 			return field;
 		}
-
 		field.content = getContentTinyMCE( field );
 
 		return field;

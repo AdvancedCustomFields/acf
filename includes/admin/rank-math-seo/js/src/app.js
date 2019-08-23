@@ -1,25 +1,11 @@
-var config = require( './config/config.js' );
-var collect = require( './collect/collect.js' );
+var collect = require( './collect.js' );
 
 var analysisTimeout = 0;
 
 var App = function() {
-	RankMathApp.registerPlugin( config.pluginName );
-	wp.hooks.addFilter( 'rank_math_content', config.pluginName, collect.append.bind( collect ) );
+	RankMathApp.registerPlugin( RankMathACFAnalysisConfig.pluginName );
+	wp.hooks.addFilter( 'rank_math_content', RankMathACFAnalysisConfig.pluginName, collect.append.bind( collect ) );
 
-	this.bindListeners();
-};
-
-App.prototype.bindListeners = function() {
-	jQuery( this.acfListener.bind( this ) );
-};
-
-/**
- * ACF Listener.
- *
- * @returns {void}
- */
-App.prototype.acfListener = function() {
 	acf.add_action( 'change remove append sortstop', this.maybeRefresh );
 };
 
@@ -29,12 +15,12 @@ App.prototype.maybeRefresh = function() {
 	}
 
 	analysisTimeout = window.setTimeout( function() {
-		if ( config.debug ) {
+		if ( RankMathACFAnalysisConfig.debug ) {
 			console.log( 'Recalculate...' + new Date() + '(Internal)' );
 		}
 
-		RankMathApp.reloadPlugin( config.pluginName );
-	}, config.refreshRate );
+		RankMathApp.reloadPlugin( RankMathACFAnalysisConfig.pluginName );
+	}, RankMathACFAnalysisConfig.refreshRate );
 };
 
 module.exports = App;

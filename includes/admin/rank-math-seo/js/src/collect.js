@@ -1,5 +1,4 @@
-var config        = require( './../config/config.js' );
-var scraper_store = require( './../scraper-store.js' );
+var scraper_store = require( './scraper-store.js' );
 
 var Collect = function() {};
 
@@ -8,7 +7,7 @@ Collect.prototype.getFieldData = function() {
 
 	var used_types = _.uniq( _.pluck( field_data, 'type' ) );
 
-	if ( config.debug ) {
+	if ( RankMathACFAnalysisConfig.debug ) {
 		console.log( 'Used types:' );
 		console.log( used_types );
 	}
@@ -21,26 +20,24 @@ Collect.prototype.getFieldData = function() {
 };
 
 Collect.prototype.append = function( data ) {
-	if ( config.debug ) {
+	if ( RankMathACFAnalysisConfig.debug ) {
 		console.log( 'Recalculate...' + new Date() );
 	}
 
 	var field_data = this.getFieldData();
-
 	_.each( field_data, function( field ) {
 		if ( 'undefined' !== typeof field.content && '' !== field.content ) {
 			if ( field.order < 0 ) {
-				data = field.content + "\n" + data;
+				data = field.content + '\n' + data;
 				return;
 			}
-			data += "\n" + field.content;
+			data += '\n' + field.content;
 		}
 	});
 
-	if ( config.debug ) {
+	if ( RankMathACFAnalysisConfig.debug ) {
 		console.log( 'Field data:' );
 		console.table( field_data );
-
 		console.log( 'Data:' );
 		console.log( data );
 	}
@@ -63,7 +60,7 @@ Collect.prototype.getData = function() {
 				field_data.post_meta_key = field_data.name;
 
 				// Collect nested and parent
-				if ( outerFieldsName.indexOf( field_data.type ) === -1 ) {
+				if ( -1 === outerFieldsName.indexOf( field_data.type ) ) {
 					innerFields.push( field_data );
 				} else {
 					outerFields.push( field_data );
@@ -72,7 +69,7 @@ Collect.prototype.getData = function() {
 				return field_data;
 			});
 
-	if ( outerFields.length === 0 ) {
+	if ( 0 === outerFields.length ) {
 		return fields;
 	}
 
@@ -103,13 +100,13 @@ Collect.prototype.getData = function() {
 
 Collect.prototype.filterBlacklistType = function( field_data ) {
 	return _.filter( field_data, function( field ) {
-		return ! _.contains( config.blacklistType, field.type );
+		return ! _.contains( RankMathACFAnalysisConfig.blacklistType, field.type );
 	});
 };
 
 Collect.prototype.filterBlacklistName = function( field_data ) {
 	return _.filter( field_data, function( field ) {
-		return ! _.contains( config.blacklistName, field.name );
+		return ! _.contains( RankMathACFAnalysisConfig.blacklistName, field.name );
 	});
 };
 
@@ -120,12 +117,12 @@ Collect.prototype.filterBroken = function( field_data ) {
 };
 
 Collect.prototype.sort = function( field_data ) {
-	if ( 'undefined' === typeof config.fieldOrder  || ! config.fieldOrder ) {
+	if ( 'undefined' === typeof RankMathACFAnalysisConfig.fieldOrder  || ! RankMathACFAnalysisConfig.fieldOrder ) {
 		return field_data;
 	}
 
 	_.each( field_data, function( field ) {
-		field.order = ( 'undefined' === typeof config.fieldOrder[ field.key ] ) ? 0 : config.fieldOrder[ field.key ];
+		field.order = ( 'undefined' === typeof RankMathACFAnalysisConfig.fieldOrder[ field.key ] ) ? 0 : RankMathACFAnalysisConfig.fieldOrder[ field.key ];
 	});
 
 	return field_data.sort( function( a, b ) {

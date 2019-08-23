@@ -1,5 +1,3 @@
-require( './../scraper-store.js' );
-
 var Scraper = function() {};
 
 /**
@@ -19,12 +17,11 @@ Scraper.prototype.scrape = function( fields ) {
 			return field;
 		}
 
-		var title = field.$el.find( 'input[type=hidden].input-title' ).val(),
-			url = field.$el.find( 'input[type=hidden].input-url' ).val(),
-			target = field.$el.find( 'input[type=hidden].input-target' ).val();
+		var title  = field.$el.find( 'input[type=hidden].input-title' ).val(),
+				url    = field.$el.find( 'input[type=hidden].input-url' ).val(),
+				target = field.$el.find( 'input[type=hidden].input-target' ).val();
 
-		field.content = "<a href=\"" + url + "\" target=\"" + target + "\">" + title + "</a>";
-
+		field.content = '<a href="' + url + '" target="' + target + '">' + title + '</a>';
 		return field;
 	});
 };

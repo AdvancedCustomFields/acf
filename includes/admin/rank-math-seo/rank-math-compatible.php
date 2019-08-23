@@ -9,28 +9,15 @@ class Rank_Math_SEO {
 	 * The Constructor.
 	 */
 	public function __construct() {
-		add_action( 'admin_init', array( $this, 'init' ) );
-	}
-
-	/**
-	 * Initialize Rank Math code.
-	 *
-	 * @return void
-	 */
-	public function init() {
+		add_filter( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ), 11 );
+		add_filter( 'rank-math-acf/scraper_config', [ $this, 'filter_scraper_config' ] );
 		$this->includes();
-		$this->config();
-		$this->register_config_filters();
-
-		$assets = new RankMath_ACF_Analysis_Assets();
-		$assets->init();
 	}
 
 	/**
 	 * Include required files.
 	 */
 	public function includes() {
-		acf_include( 'includes/admin/rank-math-seo/inc/facade.php' );
 		acf_include( 'includes/admin/rank-math-seo/inc/registry.php' );
 		acf_include( 'includes/admin/rank-math-seo/inc/configuration/configuration.php' );
 		acf_include( 'includes/admin/rank-math-seo/inc/configuration/string-store.php' );
@@ -38,45 +25,30 @@ class Rank_Math_SEO {
 	}
 
 	/**
-	 * Configure the plugin.
-	 *
-	 * @return void
+	 * Enqueue JavaScript file to feed data to RankMath Content Analyses.
 	 */
-	public function config() {
-		$registry      = RankMath_ACF_Analysis_Facade::get_registry();
-		$configuration = $registry->get( 'config' );
-
-		if ( null !== $configuration && $configuration instanceof RankMath_ACF_Analysis_Configuration ) {
-			return;
-		}
-
-		$configuration = new RankMath_ACF_Analysis_Configuration(
-			$this->get_blacklist_type(),
-			$this->get_blacklist_name(),
-			$this->get_field_selectors()
+	public function enqueue_scripts() {
+		// Post page enqueue.
+		wp_enqueue_script(
+			'rank-math-acf-analysis-post',
+			acf_get_url( 'includes/admin/rank-math-seo/js/rank-math-acf-analysis.js' ),
+			[ 'jquery', 'rank-math-post-metabox', 'underscore' ],
+			acf_get_setting('version'),
+			true
 		);
 
-		/**
-		 * Filters the plugin configuration instance.
-		 *
-		 * @param RankMath_ACF_Analysis_Configuration $configuration Plugin configuration instance
-		 */
-		$custom_configuration = apply_filters( RankMath_ACF_Analysis_Facade::get_filter_name( 'config' ), $configuration );
-		if ( $custom_configuration instanceof RankMath_ACF_Analysis_Configuration ) {
-			$configuration = $custom_configuration;
-		}
+		wp_localize_script( 'rank-math-acf-analysis-post', 'RankMathACFAnalysisConfig', $this->get_config() );
 
-		$registry->add( 'config', $configuration );
-	}
-
-	/**
-	 * Filters the Scraper Configuration to add the headlines configuration for the text scraper.
-	 *
-	 * @return void
-	 */
-	protected function register_config_filters() {
-		add_filter( RankMath_ACF_Analysis_Facade::get_filter_name( 'scraper_config' ), [ $this, 'filter_scraper_config' ]
+		// Term page enqueue.
+		wp_enqueue_script(
+			'rank-math-acf-analysis-term',
+			acf_get_url( 'includes/admin/rank-math-seo/js/rank-math-acf-analysis.js' ),
+			[ 'jquery', 'rank-math-term-metabox' ],
+			acf_get_setting('version'),
+			true
 		);
+
+		wp_localize_script( 'rank-math-acf-analysis-term', 'RankMathACFAnalysisConfig', $this->get_config() );
 	}
 
 	/**
@@ -88,46 +60,36 @@ class Rank_Math_SEO {
 	 */
 	public function filter_scraper_config( $scraper_config ) {
 		$scraper_config['text'] = [
-			'headlines' => apply_filters( RankMath_ACF_Analysis_Facade::get_filter_name( 'headlines' ), [] ),
+			'headlines' => apply_filters( 'rank-math-acf/headlines', [] ),
 		];
 		return $scraper_config;
 	}
 
 	/**
-	 * Retrieves the default field selectors for ACF4.
+	 * Get Config data
 	 *
-	 * @return RankMath_ACF_Analysis_String_Store The blacklist string store.
+	 * @return array The config data.
 	 */
-	protected function get_field_selectors() {
-		$field_selectors = new RankMath_ACF_Analysis_String_Store();
-
-		$default_field_selectors = [
-			'input[type=text][id^=acf]',
-			'textarea[id^=acf]',
-			'input[type=email][id^=acf]',
-			'input[type=url][id^=acf]',
-			'textarea[id^=wysiwyg-acf]',
-			'input[type=hidden].acf-image-value',
-			'.acf-taxonomy-field',
-		];
-
-		foreach ( $default_field_selectors as $field_selector ) {
-			$field_selectors->add( $field_selector );
-		}
-
-		return $field_selectors;
+	private function get_config() {
+		return apply_filters( 'rank-math-acf/config', [
+			'pluginName'     => 'rank-math-acf',
+			'debug'          => defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG === true,
+			'refreshRate'    => apply_filters( 'rank-math-acf/refresh_rate', 1000 ),
+			'scraper'        => apply_filters( 'rank-math-acf/scraper_config', [] ),
+			'fieldOrder'     => apply_filters( 'rank-math-acf/field_order', [] ),
+			'blacklistName'  => apply_filters( 'rank-math-acf/blacklist_name', [] ),
+			'blacklistType'  => $this->get_blacklist_type(),
+			'fieldSelectors' => $this->get_field_selectors(),
+		] );
 	}
 
 	/**
-	 * Retrieves the default blacklist.
+	 * Retrieves the blacklist type store.
 	 *
-	 * @return RankMath_ACF_Analysis_String_Store The blacklist string store.
+	 * @return array Array of Blacklist type data.
 	 */
-	protected function get_blacklist_type() {
-
-		$blacklist = new RankMath_ACF_Analysis_String_Store();
-
-		$default_blacklist = [
+	private function get_blacklist_type() {
+		$blacklist_type = [
 			'number',
 			'password',
 			'file',
@@ -148,21 +110,34 @@ class Rank_Math_SEO {
 			'group',
 		];
 
-		foreach ( $default_blacklist as $type ) {
-			$blacklist->add( $type );
-		}
-
-		return $blacklist;
+		/**
+		 * Filters the fields to ignore based on field type.
+		 */
+		return apply_filters( 'rank-math-acf/blacklist_type', $blacklist_type );
 	}
 
 	/**
-	 * Gets a new string store.
+	 * Retrieves the field selectors store.
 	 *
-	 * @return RankMath_ACF_Analysis_String_Store A new blacklist string store.
+	 * @return array Array of Field selectors type data.
 	 */
-	protected function get_blacklist_name() {
-		return new RankMath_ACF_Analysis_String_Store();
+	private function get_field_selectors() {
+		$field_selectors = [
+			'input[type=text][id^=acf]',
+			'textarea[id^=acf]',
+			'input[type=email][id^=acf]',
+			'input[type=url][id^=acf]',
+			'textarea[id^=wysiwyg-acf]',
+			'input[type=hidden].acf-image-value',
+			'.acf-taxonomy-field',
+		];
+
+		/**
+		 * Filters the CSS selectors that are used to find the fields when using ACF4.
+		 */
+		return apply_filters( 'rank-math-acf/field_selectors', $field_selectors );
 	}
+
 }
 
 new Rank_Math_SEO();

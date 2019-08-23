@@ -1,5 +1,3 @@
-var config = require( './../config/config.js' );
-
 var Scraper = function() {};
 
 Scraper.prototype.scrape = function( fields ) {
@@ -21,6 +19,7 @@ Scraper.prototype.scrape = function( fields ) {
 
 Scraper.prototype.wrapInHeadline = function( field ) {
 	var level = this.isHeadline( field );
+
 	if ( level ) {
 		field.content = '<h' + level + '>' + field.content + '</h' + level + '>';
 	} else {
@@ -31,9 +30,9 @@ Scraper.prototype.wrapInHeadline = function( field ) {
 };
 
 Scraper.prototype.isHeadline = function( field ) {
-	var level = _.find( config.scraper.text.headlines, function( value, key ) {
+	var level = _.find( RankMathACFAnalysisConfig.scraper.text.headlines, function( value, key ) {
 		return field.key === key;
-	} );
+	});
 
 	// It has to be an integer
 	if ( level ) {

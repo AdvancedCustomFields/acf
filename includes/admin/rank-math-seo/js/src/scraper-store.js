@@ -1,5 +1,3 @@
-var config = require( './config/config.js' );
-
 var scraperObjects = {
 	text: require( './scraper/scraper.text.js' ),
 	textarea: require( './scraper/scraper.textarea.js' ),
@@ -22,9 +20,7 @@ var scrapers = {};
  * @returns {boolean} True if the scraper is already defined.
  */
 var hasScraper = function( type ) {
-	return (
-		type in scrapers
-	);
+	return ( type in scrapers );
 };
 
 /**
@@ -36,7 +32,7 @@ var hasScraper = function( type ) {
  * @returns {Object} Added scraper.
  */
 var setScraper = function( scraper, type ) {
-	if ( config.debug && hasScraper( type ) ) {
+	if ( RankMathACFAnalysisConfig.debug && hasScraper( type ) ) {
 		console.warn( 'Scraper for ' + type + ' already exists and will be overwritten.' );
 	}
 
@@ -65,7 +61,7 @@ var getScraper = function( type ) {
 	// If we do not have a scraper just pass the fields through so it will be filtered out by the app.
 	return {
 		scrape: function( fields ) {
-			if ( config.debug ) {
+			if ( RankMathACFAnalysisConfig.debug ) {
 				console.warn( 'No Scraper for field type: ' + type );
 			}
 			return fields;
