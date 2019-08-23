@@ -1,8 +1,7 @@
 <?php
 /**
- * ACF Content Analysis for Rank Math SEO plugin file.
+ * The Rank_Math_SEO Class
  */
-
 class Rank_Math_SEO {
 
 	/**
@@ -10,7 +9,7 @@ class Rank_Math_SEO {
 	 */
 	public function __construct() {
 		add_filter( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ), 11 );
-		add_filter( 'rank-math-acf/scraper_config', [ $this, 'filter_scraper_config' ] );
+		add_filter( 'rank_math_acf/scraper_config', [ $this, 'filter_scraper_config' ] );
 		$this->includes();
 	}
 
@@ -33,7 +32,7 @@ class Rank_Math_SEO {
 			'rank-math-acf-analysis-post',
 			acf_get_url( 'includes/admin/rank-math-seo/js/rank-math-acf-analysis.js' ),
 			[ 'jquery', 'rank-math-post-metabox', 'underscore' ],
-			acf_get_setting('version'),
+			acf_get_setting( 'version' ),
 			true
 		);
 
@@ -44,7 +43,7 @@ class Rank_Math_SEO {
 			'rank-math-acf-analysis-term',
 			acf_get_url( 'includes/admin/rank-math-seo/js/rank-math-acf-analysis.js' ),
 			[ 'jquery', 'rank-math-term-metabox' ],
-			acf_get_setting('version'),
+			acf_get_setting( 'version' ),
 			true
 		);
 
@@ -60,7 +59,7 @@ class Rank_Math_SEO {
 	 */
 	public function filter_scraper_config( $scraper_config ) {
 		$scraper_config['text'] = [
-			'headlines' => apply_filters( 'rank-math-acf/headlines', [] ),
+			'headlines' => apply_filters( 'rank_math_acf/headlines', [] ),
 		];
 		return $scraper_config;
 	}
@@ -71,16 +70,18 @@ class Rank_Math_SEO {
 	 * @return array The config data.
 	 */
 	private function get_config() {
-		return apply_filters( 'rank-math-acf/config', [
+		$config = [
 			'pluginName'     => 'rank-math-acf',
 			'debug'          => defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG === true,
-			'refreshRate'    => apply_filters( 'rank-math-acf/refresh_rate', 1000 ),
-			'scraper'        => apply_filters( 'rank-math-acf/scraper_config', [] ),
-			'fieldOrder'     => apply_filters( 'rank-math-acf/field_order', [] ),
-			'blacklistName'  => apply_filters( 'rank-math-acf/blacklist_name', [] ),
+			'refreshRate'    => apply_filters( 'rank_math_acf/refresh_rate', 1000 ),
+			'scraper'        => apply_filters( 'rank_math_acf/scraper_config', [] ),
+			'fieldOrder'     => apply_filters( 'rank_math_acf/field_order', [] ),
+			'blacklistName'  => apply_filters( 'rank_math_acf/blacklist_name', [] ),
 			'blacklistType'  => $this->get_blacklist_type(),
 			'fieldSelectors' => $this->get_field_selectors(),
-		] );
+		];
+
+		return apply_filters( 'rank_math_acf/config', $config );
 	}
 
 	/**
@@ -113,7 +114,7 @@ class Rank_Math_SEO {
 		/**
 		 * Filters the fields to ignore based on field type.
 		 */
-		return apply_filters( 'rank-math-acf/blacklist_type', $blacklist_type );
+		return apply_filters( 'rank_math_acf/blacklist_type', $blacklist_type );
 	}
 
 	/**
@@ -135,7 +136,7 @@ class Rank_Math_SEO {
 		/**
 		 * Filters the CSS selectors that are used to find the fields when using ACF4.
 		 */
-		return apply_filters( 'rank-math-acf/field_selectors', $field_selectors );
+		return apply_filters( 'rank_math_acf/field_selectors', $field_selectors );
 	}
 
 }

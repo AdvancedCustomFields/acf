@@ -47,9 +47,7 @@ var Collect = function() {};
 
 Collect.prototype.getFieldData = function() {
 	var field_data = this.sort( this.filterBroken( this.filterBlacklistName( this.filterBlacklistType( this.getData() ) ) ) );
-
 	var used_types = _.uniq( _.pluck( field_data, 'type' ) );
-
 	if ( RankMathACFAnalysisConfig.debug ) {
 		console.log( 'Used types:' );
 		console.log( used_types );
@@ -58,7 +56,7 @@ Collect.prototype.getFieldData = function() {
 	_.each( used_types, function( type ) {
 		field_data = scraper_store.getScraper( type ).scrape( field_data );
 	});
-
+	console.log(field_data);
 	return field_data;
 };
 
@@ -96,21 +94,22 @@ Collect.prototype.getData = function() {
 	];
 
 	var innerFields = [],
-			outerFields = [],
-			fields = _.map( acf.get_fields(), function( field ) {
-				var field_data = jQuery.extend( true, {}, acf.get_data( jQuery( field ) ) );
-				field_data.$el = jQuery( field );
-				field_data.post_meta_key = field_data.name;
+			outerFields = [];
 
-				// Collect nested and parent
-				if ( -1 === outerFieldsName.indexOf( field_data.type ) ) {
-					innerFields.push( field_data );
-				} else {
-					outerFields.push( field_data );
-				}
+	var fields = _.map( acf.get_fields(), function( field ) {
+		var field_data = jQuery.extend( true, {}, acf.get_data( jQuery( field ) ) );
+		field_data.$el = jQuery( field );
+		field_data.post_meta_key = field_data.name;
 
-				return field_data;
-			});
+		// Collect nested and parent
+		if ( -1 === outerFieldsName.indexOf( field_data.type ) ) {
+			innerFields.push( field_data );
+		} else {
+			outerFields.push( field_data );
+		}
+
+		return field_data;
+	});
 
 	if ( 0 === outerFields.length ) {
 		return fields;
@@ -124,14 +123,14 @@ Collect.prototype.getData = function() {
 				if ( 'flexible_content' === outer.type  || 'repeater' === outer.type ) {
 					outer.children = outer.children || [];
 					outer.children.push( inner );
-					inner.parent = outer;
+					inner.parent        = outer;
 					inner.post_meta_key = outer.name + "_" + ( outer.children.length - 1 ) + "_" + inner.name;
 				}
 
 				// Types that hold single children.
 				if ( 'group' === outer.type ) {
-					outer.children = [ inner ];
-					inner.parent = outer;
+					outer.children      = [ inner ];
+					inner.parent        = outer;
 					inner.post_meta_key = outer.name + "_" + inner.name;
 				}
 			}
