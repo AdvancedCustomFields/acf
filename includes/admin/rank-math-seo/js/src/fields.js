@@ -47,25 +47,20 @@ var setField = function( field, type ) {
  *
  * @returns {Object} The field for the specified type.
  */
-var getField = function( type, fields_data ) {
+var getField = function( type ) {
 	if ( hasField( type ) ) {
 		return fields[ type ];
 	}
 
 	if ( type in fieldObjects ) {
-		return setField( new fieldObjects[ type ]( fields_data ), type );
+		return setField( new fieldObjects[ type ](), type );
 	}
 
 	return {
 		analyze: function( fields ) {
-			if ( RankMathACFAnalysisConfig.debug ) {
-				console.warn( 'No Scraper for field type: ' + type );
-			}
 			return fields;
 		},
 	};
-
-	return fields_data;
 };
 
 module.exports = {

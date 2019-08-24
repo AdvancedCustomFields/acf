@@ -71,14 +71,11 @@ class Rank_Math_SEO {
 	 */
 	private function get_config() {
 		$config = [
-			'pluginName'     => 'rank-math-acf',
-			'debug'          => false,
-			'refreshRate'    => apply_filters( 'rank_math_acf/refresh_rate', 1000 ),
-			'scraper'        => apply_filters( 'rank_math_acf/scraper_config', [] ),
-			'fieldOrder'     => apply_filters( 'rank_math_acf/field_order', [] ),
-			'blacklistName'  => apply_filters( 'rank_math_acf/blacklist_name', [] ),
-			'blacklistType'  => $this->get_blacklist_type(),
-			'fieldSelectors' => $this->get_field_selectors(),
+			'pluginName'      => 'rank-math-acf',
+			'debug'           => defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG === false,
+			'refreshRate'     => apply_filters( 'rank_math_acf/refresh_rate', 1000 ),
+			'scraper'         => apply_filters( 'rank_math_acf/scraper_config', [] ),
+			'blacklistFields' => $this->get_blacklist_fields(),
 		];
 
 		return apply_filters( 'rank_math_acf/config', $config );
@@ -89,7 +86,7 @@ class Rank_Math_SEO {
 	 *
 	 * @return array Array of Blacklist type data.
 	 */
-	private function get_blacklist_type() {
+	private function get_blacklist_fields() {
 		$blacklist_type = [
 			'number',
 			'password',
@@ -111,32 +108,10 @@ class Rank_Math_SEO {
 			'group',
 		];
 
-		/**
-		 * Filters the fields to ignore based on field type.
-		 */
-		return apply_filters( 'rank_math_acf/blacklist_type', $blacklist_type );
-	}
-
-	/**
-	 * Retrieves the field selectors store.
-	 *
-	 * @return array Array of Field selectors type data.
-	 */
-	private function get_field_selectors() {
-		$field_selectors = [
-			'input[type=text][id^=acf]',
-			'textarea[id^=acf]',
-			'input[type=email][id^=acf]',
-			'input[type=url][id^=acf]',
-			'textarea[id^=wysiwyg-acf]',
-			'input[type=hidden].acf-image-value',
-			'.acf-taxonomy-field',
+		return [
+			'type' => apply_filters( 'rank_math_acf/blacklist_type', $blacklist_type ),
+			'name' => apply_filters( 'rank_math_acf/blacklist_name', [] ),
 		];
-
-		/**
-		 * Filters the CSS selectors that are used to find the fields when using ACF4.
-		 */
-		return apply_filters( 'rank_math_acf/field_selectors', $field_selectors );
 	}
 
 }

@@ -1,4 +1,3 @@
-/* global _ */
 var Cache = function() {
 	this.clear( 'all' );
 };

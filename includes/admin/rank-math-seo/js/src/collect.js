@@ -3,7 +3,7 @@ var fields = require( './fields.js' );
 var Collect = function() {};
 
 Collect.prototype.getFieldData = function() {
-	var field_data = this.sort( this.filterBroken( this.filterBlacklistName( this.filterBlacklistType( this.getData() ) ) ) );
+	var field_data = this.filterBroken( this.filterBlacklistName( this.filterBlacklistType( this.getData() ) ) );
 	var used_types = _.uniq( _.pluck( field_data, 'type' ) );
 	if ( RankMathACFAnalysisConfig.debug ) {
 		console.log( 'Used types:' );
@@ -88,33 +88,19 @@ Collect.prototype.getData = function() {
 
 Collect.prototype.filterBlacklistType = function( field_data ) {
 	return _.filter( field_data, function( field ) {
-		return ! _.contains( RankMathACFAnalysisConfig.blacklistType, field.type );
+		return ! _.contains( RankMathACFAnalysisConfig.blacklistFields.type, field.type );
 	});
 };
 
 Collect.prototype.filterBlacklistName = function( field_data ) {
 	return _.filter( field_data, function( field ) {
-		return ! _.contains( RankMathACFAnalysisConfig.blacklistName, field.name );
+		return ! _.contains( RankMathACFAnalysisConfig.blacklistFields.name, field.name );
 	});
 };
 
 Collect.prototype.filterBroken = function( field_data ) {
 	return _.filter( field_data, function( field ) {
 		return ( 'key' in field );
-	});
-};
-
-Collect.prototype.sort = function( field_data ) {
-	if ( 'undefined' === typeof RankMathACFAnalysisConfig.fieldOrder  || ! RankMathACFAnalysisConfig.fieldOrder ) {
-		return field_data;
-	}
-
-	_.each( field_data, function( field ) {
-		field.order = ( 'undefined' === typeof RankMathACFAnalysisConfig.fieldOrder[ field.key ] ) ? 0 : RankMathACFAnalysisConfig.fieldOrder[ field.key ];
-	});
-
-	return field_data.sort( function( a, b ) {
-		return a.order > b.order;
 	});
 };
 

@@ -197,11 +197,6 @@ class ACF {
 			acf_include('includes/admin/admin-tools.php');
 			acf_include('includes/admin/admin-upgrade.php');
 			acf_include('includes/admin/settings-info.php');
-
-			// Rank Math SEO compatiblity
-			// if ( defined( 'RANK_MATH_FILE' ) ) {
-				acf_include('includes/admin/rank-math-seo/class-rank-math-seo.php');
-			// }
 		}
 
 		// pro

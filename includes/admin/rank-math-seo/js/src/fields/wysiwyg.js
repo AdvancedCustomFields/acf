@@ -1,7 +1,7 @@
 var WYSIWYG = function() {};
 
 /**
- * Adapted from wp-seo-post-scraper-plugin-310.js:196-210
+ * Check if is TinyMCEAvailable
  *
  * @param {string} editorID TinyMCE identifier to look up.
  *
@@ -20,7 +20,7 @@ var isTinyMCEAvailable = function( editorID ) {
 };
 
 /**
- * Adapted from wp-seo-shortcode-plugin-305.js:115-126
+ * Get content from the TinyMCE editor.
  *
  * @param {Object} field Field to get the content for.
  *

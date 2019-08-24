@@ -48,7 +48,7 @@ var fields = require( './fields.js' );
 var Collect = function() {};
 
 Collect.prototype.getFieldData = function() {
-	var field_data = this.sort( this.filterBroken( this.filterBlacklistName( this.filterBlacklistType( this.getData() ) ) ) );
+	var field_data = this.filterBroken( this.filterBlacklistName( this.filterBlacklistType( this.getData() ) ) );
 	var used_types = _.uniq( _.pluck( field_data, 'type' ) );
 	if ( RankMathACFAnalysisConfig.debug ) {
 		console.log( 'Used types:' );
@@ -133,33 +133,19 @@ Collect.prototype.getData = function() {
 
 Collect.prototype.filterBlacklistType = function( field_data ) {
 	return _.filter( field_data, function( field ) {
-		return ! _.contains( RankMathACFAnalysisConfig.blacklistType, field.type );
+		return ! _.contains( RankMathACFAnalysisConfig.blacklistFields.type, field.type );
 	});
 };
 
 Collect.prototype.filterBlacklistName = function( field_data ) {
 	return _.filter( field_data, function( field ) {
-		return ! _.contains( RankMathACFAnalysisConfig.blacklistName, field.name );
+		return ! _.contains( RankMathACFAnalysisConfig.blacklistFields.name, field.name );
 	});
 };
 
 Collect.prototype.filterBroken = function( field_data ) {
 	return _.filter( field_data, function( field ) {
 		return ( 'key' in field );
-	});
-};
-
-Collect.prototype.sort = function( field_data ) {
-	if ( 'undefined' === typeof RankMathACFAnalysisConfig.fieldOrder  || ! RankMathACFAnalysisConfig.fieldOrder ) {
-		return field_data;
-	}
-
-	_.each( field_data, function( field ) {
-		field.order = ( 'undefined' === typeof RankMathACFAnalysisConfig.fieldOrder[ field.key ] ) ? 0 : RankMathACFAnalysisConfig.fieldOrder[ field.key ];
-	});
-
-	return field_data.sort( function( a, b ) {
-		return a.order > b.order;
 	});
 };
 
@@ -215,25 +201,20 @@ var setField = function( field, type ) {
  *
  * @returns {Object} The field for the specified type.
  */
-var getField = function( type, fields_data ) {
+var getField = function( type ) {
 	if ( hasField( type ) ) {
 		return fields[ type ];
 	}
 
 	if ( type in fieldObjects ) {
-		return setField( new fieldObjects[ type ]( fields_data ), type );
+		return setField( new fieldObjects[ type ](), type );
 	}
 
 	return {
 		analyze: function( fields ) {
-			if ( RankMathACFAnalysisConfig.debug ) {
-				console.warn( 'No Scraper for field type: ' + type );
-			}
 			return fields;
 		},
 	};
-
-	return fields_data;
 };
 
 module.exports = {
@@ -289,7 +270,6 @@ module.exports = {
 };
 
 },{"./cache.js":6}],6:[function(require,module,exports){
-/* global _ */
 var Cache = function() {
 	this.clear( 'all' );
 };
@@ -579,7 +559,7 @@ module.exports = URL;
 var WYSIWYG = function() {};
 
 /**
- * Adapted from wp-seo-post-scraper-plugin-310.js:196-210
+ * Check if is TinyMCEAvailable
  *
  * @param {string} editorID TinyMCE identifier to look up.
  *
@@ -598,7 +578,7 @@ var isTinyMCEAvailable = function( editorID ) {
 };
 
 /**
- * Adapted from wp-seo-shortcode-plugin-305.js:115-126
+ * Get content from the TinyMCE editor.
  *
  * @param {Object} field Field to get the content for.
  *
