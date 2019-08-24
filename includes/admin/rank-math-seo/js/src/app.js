@@ -5,8 +5,10 @@ var analysisTimeout = 0;
 var App = function() {
 	RankMathApp.registerPlugin( RankMathACFAnalysisConfig.pluginName );
 	wp.hooks.addFilter( 'rank_math_content', RankMathACFAnalysisConfig.pluginName, collect.append.bind( collect ) );
-	if( RankMathACFAnalysisConfig.enableReload )
-	this.events();
+
+	if( RankMathACFAnalysisConfig.enableReload ) {
+		this.events();
+	}
 };
 
 App.prototype.events = function() {

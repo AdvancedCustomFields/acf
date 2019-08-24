@@ -59,7 +59,7 @@ class Rank_Math_SEO {
 			'pluginName'         => 'rank-math-acf',
 			'refreshRate'        => apply_filters( 'rank_math_acf/refresh_rate', 1000 ),
 			'headlines'          => apply_filters( 'rank_math_acf/headlines', [] ),
-			'enableReload' => apply_filters( 'rank_math_acf/enable_reload', false ),
+			'enableReload' => apply_filters( 'rank_math_acf/enable_reload', true ),
 			'blacklistFields'    => $this->get_blacklist_fields(),
 		];
 

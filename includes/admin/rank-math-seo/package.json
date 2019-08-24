@@ -1,7 +1,15 @@
 {
-  "name": "rank-math-seo",
-  "version": "1.0",
-  "description": "WordPress plugin that adds the content of all ACF fields to the Rank SEO score analysis.",
+  "name": "rank-math-content-analysis",
+  "version": "1.0.0",
+  "description": "Add the content of all ACF fields to the Rank SEO score analysis.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdvancedCustomFields/acf.git"
+  },
   "keywords": [
     "rank math",
     "seo",
@@ -10,27 +18,21 @@
     "custom",
     "fields",
     "analysis",
-    "search",
-    "engine",
-    "optimization",
-    "seo",
     "score"
   ],
-  "homepage": "https://wordpress.org/plugins/advanced-custom-fields/",
+  "author": "support@acf.com",
+  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/AdvancedCustomFields/acf",
-    "email": "support@acf.com"
+    "url": "https://github.com/AdvancedCustomFields/acf/issues"
   },
-  "license": "GPL-3.0",
-  "repository": "AdvancedCustomFields/acf",
+  "homepage": "https://github.com/AdvancedCustomFields/acf#readme",
   "scripts": {
     "build": "browserify js/main.js -o js/rank-math-acf-analysis.js",
     "watch": "watchify js/main.js -o js/rank-math-acf-analysis.js --poll --verbose --debug"
   },
-  "dependencies": {},
-  "devDependencies": {
-    "browserify": "^15.0.0",
-    "grunt": "^1.0.1",
-    "watchify": "^3.9.0"
+  "dependencies": {
+    "browserify": "^16.5.0",
+    "grunt": "^1.0.4",
+    "watchify": "^3.11.1"
   }
 }
