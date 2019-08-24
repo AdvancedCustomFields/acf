@@ -1,4 +1,15 @@
-var WYSIWYG = function() {};
+var WYSIWYG = function( fields ) {
+	fields = _.map( fields, function( field ) {
+		if ( 'wysiwyg' !== field.type ) {
+			return field;
+		}
+		field.content = getContentTinyMCE( field );
+
+		return field;
+	});
+
+	return fields;
+};
 
 /**
  * Check if is TinyMCEAvailable
@@ -36,19 +47,6 @@ var getContentTinyMCE = function( field ) {
 	}
 
 	return val;
-};
-
-WYSIWYG.prototype.analyze = function( fields ) {
-	fields = _.map( fields, function( field ) {
-		if ( 'wysiwyg' !== field.type ) {
-			return field;
-		}
-		field.content = getContentTinyMCE( field );
-
-		return field;
-	});
-
-	return fields;
 };
 
 module.exports = WYSIWYG;

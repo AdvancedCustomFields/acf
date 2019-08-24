@@ -1,7 +1,5 @@
 var attachmentCache = require( './cache.attachments.js' );
-var Gallery = function() {};
-
-Gallery.prototype.analyze = function( fields ) {
+var Gallery = function( fields ) {
 	var attachment_ids = [];
 
 	fields = _.map( fields, function( field ) {

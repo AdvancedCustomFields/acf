@@ -1,5 +1,4 @@
-var Taxonomy = function() {};
-Taxonomy.prototype.analyze = function( fields ) {
+var Taxonomy = function( fields ) {
 	fields = _.map( fields, function( field ) {
 		if ( 'taxonomy' !== field.type ) {
 			return field;

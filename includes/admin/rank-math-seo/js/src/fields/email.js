@@ -1,6 +1,4 @@
-var Email = function() {};
-
-Email.prototype.analyze = function( fields ) {
+var Email = function( fields ) {
 	fields = _.map( fields, function( field ) {
 		if ( 'email' !== field.type ) {
 			return field;

@@ -1,9 +1,19 @@
-var fields = require( './fields.js' );
-
 var Collect = function() {};
 
-Collect.prototype.getFieldData = function() {
-	var field_data = this.filterBroken( this.filterBlacklistName( this.filterBlacklistType( this.getData() ) ) );
+var fields = {
+	text: require( './fields/text.js' ),
+	textarea: require( './fields/textarea.js' ),
+	email: require( './fields/email.js' ),
+	url: require( './fields/url.js' ),
+	link: require( './fields/link.js' ),
+	wysiwyg: require( './fields/wysiwyg.js' ),
+	image: require( './fields/image.js' ),
+	gallery: require( './fields/gallery.js' ),
+	taxonomy: require( './fields/taxonomy.js' ),
+};
+
+Collect.prototype.getContent = function() {
+	var field_data = this.filterFields( this.getData() );
 	var used_types = _.uniq( _.pluck( field_data, 'type' ) );
 	if ( RankMathACFAnalysisConfig.debug ) {
 		console.log( 'Used types:' );
@@ -11,20 +21,18 @@ Collect.prototype.getFieldData = function() {
 	}
 
 	_.each( used_types, function( type ) {
-		field_data = fields.getField( type ).analyze( field_data );
+		if ( type in fields ) {
+			field_data = new fields[ type ]( field_data );
+		}
 	});
 
 	return field_data;
 };
 
 Collect.prototype.append = function( data ) {
-	var field_data = this.getFieldData();
+	var field_data = this.getContent();
 	_.each( field_data, function( field ) {
 		if ( 'undefined' !== typeof field.content && '' !== field.content ) {
-			if ( field.order < 0 ) {
-				data = field.content + '\n' + data;
-				return;
-			}
 			data += '\n' + field.content;
 		}
 	});
@@ -86,22 +94,14 @@ Collect.prototype.getData = function() {
 	return acf_fields;
 };
 
-Collect.prototype.filterBlacklistType = function( field_data ) {
+Collect.prototype.filterFields = function( field_data ) {
 	return _.filter( field_data, function( field ) {
-		return ! _.contains( RankMathACFAnalysisConfig.blacklistFields.type, field.type );
+		return ! _.contains( RankMathACFAnalysisConfig.blacklistFields.type, field.type ) &&
+					! _.contains( RankMathACFAnalysisConfig.blacklistFields.name, field.name ) &&
+					( 'key' in field );
 	});
-};
 
-Collect.prototype.filterBlacklistName = function( field_data ) {
-	return _.filter( field_data, function( field ) {
-		return ! _.contains( RankMathACFAnalysisConfig.blacklistFields.name, field.name );
-	});
-};
-
-Collect.prototype.filterBroken = function( field_data ) {
-	return _.filter( field_data, function( field ) {
-		return ( 'key' in field );
-	});
+	return field_data;
 };
 
 module.exports = new Collect();

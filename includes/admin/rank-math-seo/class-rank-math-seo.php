@@ -9,7 +9,6 @@ class Rank_Math_SEO {
 	 */
 	public function __construct() {
 		add_filter( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ), 11 );
-		add_filter( 'rank_math_acf/scraper_config', [ $this, 'filter_scraper_config' ] );
 		$this->includes();
 	}
 
@@ -51,20 +50,6 @@ class Rank_Math_SEO {
 	}
 
 	/**
-	 * Enhances the scraper config with headlines configuration.
-	 *
-	 * @param array $scraper_config The scraper configuration.
-	 *
-	 * @return array The enhanched scraper config.
-	 */
-	public function filter_scraper_config( $scraper_config ) {
-		$scraper_config['text'] = [
-			'headlines' => apply_filters( 'rank_math_acf/headlines', [] ),
-		];
-		return $scraper_config;
-	}
-
-	/**
 	 * Get Config data
 	 *
 	 * @return array The config data.
@@ -74,7 +59,7 @@ class Rank_Math_SEO {
 			'pluginName'      => 'rank-math-acf',
 			'debug'           => defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG === false,
 			'refreshRate'     => apply_filters( 'rank_math_acf/refresh_rate', 1000 ),
-			'scraper'         => apply_filters( 'rank_math_acf/scraper_config', [] ),
+			'headlines'       => apply_filters( 'rank_math_acf/headlines', [] ),
 			'blacklistFields' => $this->get_blacklist_fields(),
 		];
 
@@ -82,9 +67,9 @@ class Rank_Math_SEO {
 	}
 
 	/**
-	 * Retrieves the blacklist type store.
+	 * Get blacklisted fields.
 	 *
-	 * @return array Array of Blacklist type data.
+	 * @return array The Blacklisted fields.
 	 */
 	private function get_blacklist_fields() {
 		$blacklist_type = [

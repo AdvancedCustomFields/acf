@@ -1,5 +1,4 @@
-var Text = function() {}
-Text.prototype.analyze = function( fields ) {
+var Text = function( fields ) {
 	var that = this;
 
 	fields = _.map( fields, function( field ) {
@@ -29,7 +28,8 @@ Text.prototype.wrapInHeadline = function( field ) {
 };
 
 Text.prototype.isHeadline = function( field ) {
-	var level = _.find( RankMathACFAnalysisConfig.scraper.text.headlines, function( value, key ) {
+
+	var level = _.find( RankMathACFAnalysisConfig.headlines, function( value, key ) {
 		return field.key === key;
 	});
 

@@ -1,5 +1,4 @@
-var Link = function() {};
-Link.prototype.analyze = function( fields ) {
+var Link = function( fields ) {
 	/**
 	 * Set content for all link fields as a-tag with title, url and target.
 	 * Return the fields object containing all fields.

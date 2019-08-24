@@ -1,5 +1,4 @@
-var URL = function(){};
-URL.prototype.analyze = function( fields ) {
+var URL = function( fields ) {
 	fields = _.map( fields, function( field ) {
 		if ( 'url' !== field.type ) {
 			return field;

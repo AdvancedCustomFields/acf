@@ -43,12 +43,22 @@ App.prototype.maybeRefresh = function() {
 module.exports = App;
 
 },{"./collect.js":3}],3:[function(require,module,exports){
-var fields = require( './fields.js' );
-
 var Collect = function() {};
 
-Collect.prototype.getFieldData = function() {
-	var field_data = this.filterBroken( this.filterBlacklistName( this.filterBlacklistType( this.getData() ) ) );
+var fields = {
+	text: require( './fields/text.js' ),
+	textarea: require( './fields/textarea.js' ),
+	email: require( './fields/email.js' ),
+	url: require( './fields/url.js' ),
+	link: require( './fields/link.js' ),
+	wysiwyg: require( './fields/wysiwyg.js' ),
+	image: require( './fields/image.js' ),
+	gallery: require( './fields/gallery.js' ),
+	taxonomy: require( './fields/taxonomy.js' ),
+};
+
+Collect.prototype.getContent = function() {
+	var field_data = this.filterFields( this.getData() );
 	var used_types = _.uniq( _.pluck( field_data, 'type' ) );
 	if ( RankMathACFAnalysisConfig.debug ) {
 		console.log( 'Used types:' );
@@ -56,20 +66,18 @@ Collect.prototype.getFieldData = function() {
 	}
 
 	_.each( used_types, function( type ) {
-		field_data = fields.getField( type ).analyze( field_data );
+		if ( type in fields ) {
+			field_data = new fields[ type ]( field_data );
+		}
 	});
 
 	return field_data;
 };
 
 Collect.prototype.append = function( data ) {
-	var field_data = this.getFieldData();
+	var field_data = this.getContent();
 	_.each( field_data, function( field ) {
 		if ( 'undefined' !== typeof field.content && '' !== field.content ) {
-			if ( field.order < 0 ) {
-				data = field.content + '\n' + data;
-				return;
-			}
 			data += '\n' + field.content;
 		}
 	});
@@ -131,98 +139,19 @@ Collect.prototype.getData = function() {
 	return acf_fields;
 };
 
-Collect.prototype.filterBlacklistType = function( field_data ) {
+Collect.prototype.filterFields = function( field_data ) {
 	return _.filter( field_data, function( field ) {
-		return ! _.contains( RankMathACFAnalysisConfig.blacklistFields.type, field.type );
+		return ! _.contains( RankMathACFAnalysisConfig.blacklistFields.type, field.type ) &&
+					! _.contains( RankMathACFAnalysisConfig.blacklistFields.name, field.name ) &&
+					( 'key' in field );
 	});
-};
 
-Collect.prototype.filterBlacklistName = function( field_data ) {
-	return _.filter( field_data, function( field ) {
-		return ! _.contains( RankMathACFAnalysisConfig.blacklistFields.name, field.name );
-	});
-};
-
-Collect.prototype.filterBroken = function( field_data ) {
-	return _.filter( field_data, function( field ) {
-		return ( 'key' in field );
-	});
+	return field_data;
 };
 
 module.exports = new Collect();
 
-},{"./fields.js":4}],4:[function(require,module,exports){
-var fieldObjects = {
-	text: require( './fields/text.js' ),
-	textarea: require( './fields/textarea.js' ),
-	email: require( './fields/email.js' ),
-	url: require( './fields/url.js' ),
-	link: require( './fields/link.js' ),
-	wysiwyg: require( './fields/wysiwyg.js' ),
-	image: require( './fields/image.js' ),
-	gallery: require( './fields/gallery.js' ),
-	taxonomy: require( './fields/taxonomy.js' ),
-};
-
-var fields = {};
-
-/**
- * Checks if there already is a field for a field type in the store.
- *
- * @param {string} type Type of field to find.
- *
- * @returns {boolean} True if the field is already defined.
- */
-var hasField = function( type ) {
-	return ( type in fields );
-};
-
-/**
- * Set a field object on the store. Existing fields will be overwritten.
- *
- * @param {Object} field The field to add.
- * @param {string} type Type of field.
- *
- * @returns {Object} Added field.
- */
-var setField = function( field, type ) {
-	if ( hasField( type ) ) {
-		console.warn( 'Field for ' + type + ' already exists and will be overwritten.' );
-	}
-
-	fields[ type ] = field;
-	return field;
-};
-
-/**
- * Returns the field object for a field type.
- *
- * @param {string} type Type of field to fetch.
- *
- * @returns {Object} The field for the specified type.
- */
-var getField = function( type ) {
-	if ( hasField( type ) ) {
-		return fields[ type ];
-	}
-
-	if ( type in fieldObjects ) {
-		return setField( new fieldObjects[ type ](), type );
-	}
-
-	return {
-		analyze: function( fields ) {
-			return fields;
-		},
-	};
-};
-
-module.exports = {
-	setField: setField,
-	getField: getField,
-};
-
-},{"./fields/email.js":7,"./fields/gallery.js":8,"./fields/image.js":9,"./fields/link.js":10,"./fields/taxonomy.js":11,"./fields/text.js":12,"./fields/textarea.js":13,"./fields/url.js":14,"./fields/wysiwyg.js":15}],5:[function(require,module,exports){
+},{"./fields/email.js":6,"./fields/gallery.js":7,"./fields/image.js":8,"./fields/link.js":9,"./fields/taxonomy.js":10,"./fields/text.js":11,"./fields/textarea.js":12,"./fields/url.js":13,"./fields/wysiwyg.js":14}],4:[function(require,module,exports){
 var cache = require( './cache.js' );
 
 var refresh = function( attachment_ids ) {
@@ -269,7 +198,7 @@ module.exports = {
 	get: get,
 };
 
-},{"./cache.js":6}],6:[function(require,module,exports){
+},{"./cache.js":5}],5:[function(require,module,exports){
 var Cache = function() {
 	this.clear( 'all' );
 };
@@ -321,10 +250,8 @@ Cache.prototype.clear =  function( store ) {
 
 module.exports = new Cache();
 
-},{}],7:[function(require,module,exports){
-var Email = function() {};
-
-Email.prototype.analyze = function( fields ) {
+},{}],6:[function(require,module,exports){
+var Email = function( fields ) {
 	fields = _.map( fields, function( field ) {
 		if ( 'email' !== field.type ) {
 			return field;
@@ -340,11 +267,9 @@ Email.prototype.analyze = function( fields ) {
 
 module.exports = Email;
 
-},{}],8:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 var attachmentCache = require( './cache.attachments.js' );
-var Gallery = function() {};
-
-Gallery.prototype.analyze = function( fields ) {
+var Gallery = function( fields ) {
 	var attachment_ids = [];
 
 	fields = _.map( fields, function( field ) {
@@ -375,10 +300,9 @@ Gallery.prototype.analyze = function( fields ) {
 
 module.exports = Gallery;
 
-},{"./cache.attachments.js":5}],9:[function(require,module,exports){
+},{"./cache.attachments.js":4}],8:[function(require,module,exports){
 var attachmentCache = require( './cache.attachments.js' );
-var Image = function() {};
-Image.prototype.analyze = function( fields ) {
+var Image = function( fields ) {
 	var attachment_ids = [];
 
 	fields = _.map( fields, function( field ) {
@@ -406,9 +330,8 @@ Image.prototype.analyze = function( fields ) {
 
 module.exports = Image;
 
-},{"./cache.attachments.js":5}],10:[function(require,module,exports){
-var Link = function() {};
-Link.prototype.analyze = function( fields ) {
+},{"./cache.attachments.js":4}],9:[function(require,module,exports){
+var Link = function( fields ) {
 	/**
 	 * Set content for all link fields as a-tag with title, url and target.
 	 * Return the fields object containing all fields.
@@ -429,9 +352,8 @@ Link.prototype.analyze = function( fields ) {
 
 module.exports = Link;
 
-},{}],11:[function(require,module,exports){
-var Taxonomy = function() {};
-Taxonomy.prototype.analyze = function( fields ) {
+},{}],10:[function(require,module,exports){
+var Taxonomy = function( fields ) {
 	fields = _.map( fields, function( field ) {
 		if ( 'taxonomy' !== field.type ) {
 			return field;
@@ -467,9 +389,8 @@ Taxonomy.prototype.analyze = function( fields ) {
 
 module.exports = Taxonomy;
 
-},{}],12:[function(require,module,exports){
-var Text = function() {}
-Text.prototype.analyze = function( fields ) {
+},{}],11:[function(require,module,exports){
+var Text = function( fields ) {
 	var that = this;
 
 	fields = _.map( fields, function( field ) {
@@ -499,7 +420,8 @@ Text.prototype.wrapInHeadline = function( field ) {
 };
 
 Text.prototype.isHeadline = function( field ) {
-	var level = _.find( RankMathACFAnalysisConfig.scraper.text.headlines, function( value, key ) {
+
+	var level = _.find( RankMathACFAnalysisConfig.headlines, function( value, key ) {
 		return field.key === key;
 	});
 
@@ -518,9 +440,8 @@ Text.prototype.isHeadline = function( field ) {
 
 module.exports = Text;
 
-},{}],13:[function(require,module,exports){
-var TextArea = function() {}
-TextArea.prototype.analyze = function( fields ) {
+},{}],12:[function(require,module,exports){
+var TextArea = function( fields ) {
 	fields = _.map( fields, function( field ) {
 		if ( 'textarea' !== field.type ) {
 			return field;
@@ -535,9 +456,8 @@ TextArea.prototype.analyze = function( fields ) {
 
 module.exports = TextArea;
 
-},{}],14:[function(require,module,exports){
-var URL = function(){};
-URL.prototype.analyze = function( fields ) {
+},{}],13:[function(require,module,exports){
+var URL = function( fields ) {
 	fields = _.map( fields, function( field ) {
 		if ( 'url' !== field.type ) {
 			return field;
@@ -555,8 +475,19 @@ URL.prototype.analyze = function( fields ) {
 
 module.exports = URL;
 
-},{}],15:[function(require,module,exports){
-var WYSIWYG = function() {};
+},{}],14:[function(require,module,exports){
+var WYSIWYG = function( fields ) {
+	fields = _.map( fields, function( field ) {
+		if ( 'wysiwyg' !== field.type ) {
+			return field;
+		}
+		field.content = getContentTinyMCE( field );
+
+		return field;
+	});
+
+	return fields;
+};
 
 /**
  * Check if is TinyMCEAvailable
@@ -594,19 +525,6 @@ var getContentTinyMCE = function( field ) {
 	}
 
 	return val;
-};
-
-WYSIWYG.prototype.analyze = function( fields ) {
-	fields = _.map( fields, function( field ) {
-		if ( 'wysiwyg' !== field.type ) {
-			return field;
-		}
-		field.content = getContentTinyMCE( field );
-
-		return field;
-	});
-
-	return fields;
 };
 
 module.exports = WYSIWYG;

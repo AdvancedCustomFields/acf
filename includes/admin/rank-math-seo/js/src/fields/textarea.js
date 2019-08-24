@@ -1,5 +1,4 @@
-var TextArea = function() {}
-TextArea.prototype.analyze = function( fields ) {
+var TextArea = function( fields ) {
 	fields = _.map( fields, function( field ) {
 		if ( 'textarea' !== field.type ) {
 			return field;

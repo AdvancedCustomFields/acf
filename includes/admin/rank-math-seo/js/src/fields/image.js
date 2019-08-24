@@ -1,6 +1,5 @@
 var attachmentCache = require( './cache.attachments.js' );
-var Image = function() {};
-Image.prototype.analyze = function( fields ) {
+var Image = function( fields ) {
 	var attachment_ids = [];
 
 	fields = _.map( fields, function( field ) {
