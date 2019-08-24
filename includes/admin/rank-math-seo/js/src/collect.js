@@ -15,10 +15,6 @@ var fields = {
 Collect.prototype.getContent = function() {
 	var field_data = this.filterFields( this.getData() );
 	var used_types = _.uniq( _.pluck( field_data, 'type' ) );
-	if ( RankMathACFAnalysisConfig.debug ) {
-		console.log( 'Used types:' );
-		console.log( used_types );
-	}
 
 	_.each( used_types, function( type ) {
 		if ( type in fields ) {
@@ -69,11 +65,9 @@ Collect.prototype.getData = function() {
 		return acf_fields;
 	}
 
-	// Transform field names for nested acf_fields.
 	_.each( innerFields, function( inner ) {
 		_.each( outerFields, function( outer ) {
 			if ( jQuery.contains( outer.$el[ 0 ], inner.$el[ 0 ] ) ) {
-				// Types that hold multiple children.
 				if ( 'flexible_content' === outer.type  || 'repeater' === outer.type ) {
 					outer.children = outer.children || [];
 					outer.children.push( inner );

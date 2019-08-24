@@ -23,7 +23,7 @@ class Rank_Math_SEO {
 	}
 
 	/**
-	 * Enqueue JavaScript file to feed data to RankMath Content Analyses.
+	 * Enqueue JavaScript file.
 	 */
 	public function enqueue_scripts() {
 		// Post page enqueue.
@@ -56,11 +56,11 @@ class Rank_Math_SEO {
 	 */
 	private function get_config() {
 		$config = [
-			'pluginName'      => 'rank-math-acf',
-			'debug'           => defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG === false,
-			'refreshRate'     => apply_filters( 'rank_math_acf/refresh_rate', 1000 ),
-			'headlines'       => apply_filters( 'rank_math_acf/headlines', [] ),
-			'blacklistFields' => $this->get_blacklist_fields(),
+			'pluginName'         => 'rank-math-acf',
+			'refreshRate'        => apply_filters( 'rank_math_acf/refresh_rate', 1000 ),
+			'headlines'          => apply_filters( 'rank_math_acf/headlines', [] ),
+			'enableReload' => apply_filters( 'rank_math_acf/enable_reload', false ),
+			'blacklistFields'    => $this->get_blacklist_fields(),
 		];
 
 		return apply_filters( 'rank_math_acf/config', $config );

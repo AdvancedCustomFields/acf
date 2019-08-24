@@ -1,16 +1,11 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
-/* global jQuery, RankMathApp */
-/* exported RankMathACFAnalysis */
+var App = require( './src/app.js' );
 
-var App = require( "./src/app.js" );
-
-( function( $ ) {
-	$( document ).ready( function() {
-		if ( "undefined" !== typeof RankMathApp ) {
-			RankMathACFAnalysis = new App();
-		}
-	});
-}( jQuery ) );
+$( document ).ready( function() {
+	if ( 'undefined' !== typeof RankMathApp ) {
+		RankMathACFAnalysis = new App();
+	}
+});
 
 },{"./src/app.js":2}],2:[function(require,module,exports){
 var collect = require( './collect.js' );
@@ -20,6 +15,7 @@ var analysisTimeout = 0;
 var App = function() {
 	RankMathApp.registerPlugin( RankMathACFAnalysisConfig.pluginName );
 	wp.hooks.addFilter( 'rank_math_content', RankMathACFAnalysisConfig.pluginName, collect.append.bind( collect ) );
+	if( RankMathACFAnalysisConfig.enableReload )
 	this.events();
 };
 
@@ -60,10 +56,6 @@ var fields = {
 Collect.prototype.getContent = function() {
 	var field_data = this.filterFields( this.getData() );
 	var used_types = _.uniq( _.pluck( field_data, 'type' ) );
-	if ( RankMathACFAnalysisConfig.debug ) {
-		console.log( 'Used types:' );
-		console.log( used_types );
-	}
 
 	_.each( used_types, function( type ) {
 		if ( type in fields ) {
@@ -114,11 +106,9 @@ Collect.prototype.getData = function() {
 		return acf_fields;
 	}
 
-	// Transform field names for nested acf_fields.
 	_.each( innerFields, function( inner ) {
 		_.each( outerFields, function( outer ) {
 			if ( jQuery.contains( outer.$el[ 0 ], inner.$el[ 0 ] ) ) {
-				// Types that hold multiple children.
 				if ( 'flexible_content' === outer.type  || 'repeater' === outer.type ) {
 					outer.children = outer.children || [];
 					outer.children.push( inner );
@@ -273,7 +263,6 @@ var Gallery = function( fields ) {
 	var attachment_ids = [];
 
 	fields = _.map( fields, function( field ) {
-		console.log(field);
 		if ( 'gallery' !== field.type ) {
 			return field;
 		}
@@ -332,10 +321,6 @@ module.exports = Image;
 
 },{"./cache.attachments.js":4}],9:[function(require,module,exports){
 var Link = function( fields ) {
-	/**
-	 * Set content for all link fields as a-tag with title, url and target.
-	 * Return the fields object containing all fields.
-	 */
 	return _.map( fields, function( field ) {
 		if ( 'link' !== field.type ) {
 			return field;

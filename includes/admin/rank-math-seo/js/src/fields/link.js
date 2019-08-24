@@ -1,8 +1,4 @@
 var Link = function( fields ) {
-	/**
-	 * Set content for all link fields as a-tag with title, url and target.
-	 * Return the fields object containing all fields.
-	 */
 	return _.map( fields, function( field ) {
 		if ( 'link' !== field.type ) {
 			return field;

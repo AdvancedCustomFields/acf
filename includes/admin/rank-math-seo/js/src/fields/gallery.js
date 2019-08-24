@@ -3,7 +3,6 @@ var Gallery = function( fields ) {
 	var attachment_ids = [];
 
 	fields = _.map( fields, function( field ) {
-		console.log(field);
 		if ( 'gallery' !== field.type ) {
 			return field;
 		}
