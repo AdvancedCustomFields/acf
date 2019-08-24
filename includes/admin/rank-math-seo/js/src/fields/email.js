@@ -1,6 +1,6 @@
-var Scraper = function() {};
+var Email = function() {};
 
-Scraper.prototype.scrape = function( fields ) {
+Email.prototype.analyze = function( fields ) {
 	fields = _.map( fields, function( field ) {
 		if ( 'email' !== field.type ) {
 			return field;
@@ -14,4 +14,4 @@ Scraper.prototype.scrape = function( fields ) {
 	return fields;
 };
 
-module.exports = Scraper;
+module.exports = Email;

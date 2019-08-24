@@ -1,4 +1,4 @@
-var scraper_store = require( './scraper-store.js' );
+var fields = require( './fields.js' );
 
 var Collect = function() {};
 
@@ -11,17 +11,13 @@ Collect.prototype.getFieldData = function() {
 	}
 
 	_.each( used_types, function( type ) {
-		field_data = scraper_store.getScraper( type ).scrape( field_data );
+		field_data = fields.getField( type ).analyze( field_data );
 	});
 
 	return field_data;
 };
 
 Collect.prototype.append = function( data ) {
-	if ( RankMathACFAnalysisConfig.debug ) {
-		console.log( 'Recalculate...' + new Date() );
-	}
-
 	var field_data = this.getFieldData();
 	_.each( field_data, function( field ) {
 		if ( 'undefined' !== typeof field.content && '' !== field.content ) {
@@ -32,13 +28,6 @@ Collect.prototype.append = function( data ) {
 			data += '\n' + field.content;
 		}
 	});
-
-	if ( RankMathACFAnalysisConfig.debug ) {
-		console.log( 'Field data:' );
-		console.table( field_data );
-		console.log( 'Data:' );
-		console.log( data );
-	}
 
 	return data;
 };
@@ -53,7 +42,7 @@ Collect.prototype.getData = function() {
 	var innerFields = [],
 			outerFields = [];
 
-	var fields = _.map( acf.get_fields(), function( field ) {
+	var acf_fields = _.map( acf.get_fields(), function( field ) {
 		var field_data = jQuery.extend( true, {}, acf.get_data( jQuery( field ) ) );
 		field_data.$el = jQuery( field );
 		field_data.post_meta_key = field_data.name;
@@ -69,10 +58,10 @@ Collect.prototype.getData = function() {
 	});
 
 	if ( 0 === outerFields.length ) {
-		return fields;
+		return acf_fields;
 	}
 
-	// Transform field names for nested fields.
+	// Transform field names for nested acf_fields.
 	_.each( innerFields, function( inner ) {
 		_.each( outerFields, function( outer ) {
 			if ( jQuery.contains( outer.$el[ 0 ], inner.$el[ 0 ] ) ) {
@@ -94,7 +83,7 @@ Collect.prototype.getData = function() {
 		});
 	});
 
-	return fields;
+	return acf_fields;
 };
 
 Collect.prototype.filterBlacklistType = function( field_data ) {

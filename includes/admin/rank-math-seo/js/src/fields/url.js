@@ -1,6 +1,5 @@
-var Scraper = function() {};
-
-Scraper.prototype.scrape = function( fields ) {
+var URL = function(){};
+URL.prototype.analyze = function( fields ) {
 	fields = _.map( fields, function( field ) {
 		if ( 'url' !== field.type ) {
 			return field;
@@ -16,4 +15,4 @@ Scraper.prototype.scrape = function( fields ) {
 	return fields;
 };
 
-module.exports = Scraper;
+module.exports = URL;

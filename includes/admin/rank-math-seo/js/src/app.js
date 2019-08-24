@@ -5,8 +5,14 @@ var analysisTimeout = 0;
 var App = function() {
 	RankMathApp.registerPlugin( RankMathACFAnalysisConfig.pluginName );
 	wp.hooks.addFilter( 'rank_math_content', RankMathACFAnalysisConfig.pluginName, collect.append.bind( collect ) );
+	this.events();
+};
 
-	acf.add_action( 'change remove append sortstop', this.maybeRefresh );
+App.prototype.events = function() {
+	var self = this;
+	jQuery( '.acf-field' ).on( 'change', function() {
+		self.maybeRefresh();
+	});
 };
 
 App.prototype.maybeRefresh = function() {
@@ -15,10 +21,6 @@ App.prototype.maybeRefresh = function() {
 	}
 
 	analysisTimeout = window.setTimeout( function() {
-		if ( RankMathACFAnalysisConfig.debug ) {
-			console.log( 'Recalculate...' + new Date() + '(Internal)' );
-		}
-
 		RankMathApp.reloadPlugin( RankMathACFAnalysisConfig.pluginName );
 	}, RankMathACFAnalysisConfig.refreshRate );
 };

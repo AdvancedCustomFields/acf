@@ -72,7 +72,7 @@ class Rank_Math_SEO {
 	private function get_config() {
 		$config = [
 			'pluginName'     => 'rank-math-acf',
-			'debug'          => defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG === true,
+			'debug'          => false,
 			'refreshRate'    => apply_filters( 'rank_math_acf/refresh_rate', 1000 ),
 			'scraper'        => apply_filters( 'rank_math_acf/scraper_config', [] ),
 			'fieldOrder'     => apply_filters( 'rank_math_acf/field_order', [] ),

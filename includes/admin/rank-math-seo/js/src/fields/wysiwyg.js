@@ -1,4 +1,4 @@
-var Scraper = function() {};
+var WYSIWYG = function() {};
 
 /**
  * Adapted from wp-seo-post-scraper-plugin-310.js:196-210
@@ -38,7 +38,7 @@ var getContentTinyMCE = function( field ) {
 	return val;
 };
 
-Scraper.prototype.scrape = function( fields ) {
+WYSIWYG.prototype.analyze = function( fields ) {
 	fields = _.map( fields, function( field ) {
 		if ( 'wysiwyg' !== field.type ) {
 			return field;
@@ -51,4 +51,4 @@ Scraper.prototype.scrape = function( fields ) {
 	return fields;
 };
 
-module.exports = Scraper;
+module.exports = WYSIWYG;

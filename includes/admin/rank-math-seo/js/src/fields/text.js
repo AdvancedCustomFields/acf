@@ -1,6 +1,5 @@
-var Scraper = function() {};
-
-Scraper.prototype.scrape = function( fields ) {
+var Text = function() {}
+Text.prototype.analyze = function( fields ) {
 	var that = this;
 
 	fields = _.map( fields, function( field ) {
@@ -17,7 +16,7 @@ Scraper.prototype.scrape = function( fields ) {
 	return fields;
 };
 
-Scraper.prototype.wrapInHeadline = function( field ) {
+Text.prototype.wrapInHeadline = function( field ) {
 	var level = this.isHeadline( field );
 
 	if ( level ) {
@@ -29,7 +28,7 @@ Scraper.prototype.wrapInHeadline = function( field ) {
 	return field;
 };
 
-Scraper.prototype.isHeadline = function( field ) {
+Text.prototype.isHeadline = function( field ) {
 	var level = _.find( RankMathACFAnalysisConfig.scraper.text.headlines, function( value, key ) {
 		return field.key === key;
 	});
@@ -47,4 +46,4 @@ Scraper.prototype.isHeadline = function( field ) {
 	return level;
 };
 
-module.exports = Scraper;
+module.exports = Text;

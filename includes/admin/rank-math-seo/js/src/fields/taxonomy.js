@@ -1,6 +1,5 @@
-var Scraper = function() {};
-
-Scraper.prototype.scrape = function( fields ) {
+var Taxonomy = function() {};
+Taxonomy.prototype.analyze = function( fields ) {
 	fields = _.map( fields, function( field ) {
 		if ( 'taxonomy' !== field.type ) {
 			return field;
@@ -34,4 +33,4 @@ Scraper.prototype.scrape = function( fields ) {
 	return fields;
 };
 
-module.exports = Scraper;
+module.exports = Taxonomy;

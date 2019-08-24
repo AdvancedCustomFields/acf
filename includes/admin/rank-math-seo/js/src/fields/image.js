@@ -1,8 +1,6 @@
 var attachmentCache = require( './cache.attachments.js' );
-
-var Scraper = function() {};
-
-Scraper.prototype.scrape = function( fields ) {
+var Image = function() {};
+Image.prototype.analyze = function( fields ) {
 	var attachment_ids = [];
 
 	fields = _.map( fields, function( field ) {
@@ -28,4 +26,4 @@ Scraper.prototype.scrape = function( fields ) {
 	return fields;
 };
 
-module.exports = Scraper;
+module.exports = Image;

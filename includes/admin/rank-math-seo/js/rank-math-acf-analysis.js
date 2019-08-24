@@ -20,8 +20,14 @@ var analysisTimeout = 0;
 var App = function() {
 	RankMathApp.registerPlugin( RankMathACFAnalysisConfig.pluginName );
 	wp.hooks.addFilter( 'rank_math_content', RankMathACFAnalysisConfig.pluginName, collect.append.bind( collect ) );
+	this.events();
+};
 
-	acf.add_action( 'change remove append sortstop', this.maybeRefresh );
+App.prototype.events = function() {
+	var self = this;
+	jQuery( '.acf-field' ).on( 'change', function() {
+		self.maybeRefresh();
+	});
 };
 
 App.prototype.maybeRefresh = function() {
@@ -30,10 +36,6 @@ App.prototype.maybeRefresh = function() {
 	}
 
 	analysisTimeout = window.setTimeout( function() {
-		if ( RankMathACFAnalysisConfig.debug ) {
-			console.log( 'Recalculate...' + new Date() + '(Internal)' );
-		}
-
 		RankMathApp.reloadPlugin( RankMathACFAnalysisConfig.pluginName );
 	}, RankMathACFAnalysisConfig.refreshRate );
 };
@@ -41,7 +43,7 @@ App.prototype.maybeRefresh = function() {
 module.exports = App;
 
 },{"./collect.js":3}],3:[function(require,module,exports){
-var scraper_store = require( './scraper-store.js' );
+var fields = require( './fields.js' );
 
 var Collect = function() {};
 
@@ -54,17 +56,13 @@ Collect.prototype.getFieldData = function() {
 	}
 
 	_.each( used_types, function( type ) {
-		field_data = scraper_store.getScraper( type ).scrape( field_data );
+		field_data = fields.getField( type ).analyze( field_data );
 	});
-	console.log(field_data);
+
 	return field_data;
 };
 
 Collect.prototype.append = function( data ) {
-	if ( RankMathACFAnalysisConfig.debug ) {
-		console.log( 'Recalculate...' + new Date() );
-	}
-
 	var field_data = this.getFieldData();
 	_.each( field_data, function( field ) {
 		if ( 'undefined' !== typeof field.content && '' !== field.content ) {
@@ -75,13 +73,6 @@ Collect.prototype.append = function( data ) {
 			data += '\n' + field.content;
 		}
 	});
-
-	if ( RankMathACFAnalysisConfig.debug ) {
-		console.log( 'Field data:' );
-		console.table( field_data );
-		console.log( 'Data:' );
-		console.log( data );
-	}
 
 	return data;
 };
@@ -96,7 +87,7 @@ Collect.prototype.getData = function() {
 	var innerFields = [],
 			outerFields = [];
 
-	var fields = _.map( acf.get_fields(), function( field ) {
+	var acf_fields = _.map( acf.get_fields(), function( field ) {
 		var field_data = jQuery.extend( true, {}, acf.get_data( jQuery( field ) ) );
 		field_data.$el = jQuery( field );
 		field_data.post_meta_key = field_data.name;
@@ -112,10 +103,10 @@ Collect.prototype.getData = function() {
 	});
 
 	if ( 0 === outerFields.length ) {
-		return fields;
+		return acf_fields;
 	}
 
-	// Transform field names for nested fields.
+	// Transform field names for nested acf_fields.
 	_.each( innerFields, function( inner ) {
 		_.each( outerFields, function( outer ) {
 			if ( jQuery.contains( outer.$el[ 0 ], inner.$el[ 0 ] ) ) {
@@ -137,7 +128,7 @@ Collect.prototype.getData = function() {
 		});
 	});
 
-	return fields;
+	return acf_fields;
 };
 
 Collect.prototype.filterBlacklistType = function( field_data ) {
@@ -174,84 +165,83 @@ Collect.prototype.sort = function( field_data ) {
 
 module.exports = new Collect();
 
-},{"./scraper-store.js":4}],4:[function(require,module,exports){
-var scraperObjects = {
-	text: require( './scraper/scraper.text.js' ),
-	textarea: require( './scraper/scraper.textarea.js' ),
-	email: require( './scraper/scraper.email.js' ),
-	url: require( './scraper/scraper.url.js' ),
-	link: require( './scraper/scraper.link.js' ),
-	wysiwyg: require( './scraper/scraper.wysiwyg.js' ),
-	image: require( './scraper/scraper.image.js' ),
-	gallery: require( './scraper/scraper.gallery.js' ),
-	taxonomy: require( './scraper/scraper.taxonomy.js' ),
+},{"./fields.js":4}],4:[function(require,module,exports){
+var fieldObjects = {
+	text: require( './fields/text.js' ),
+	textarea: require( './fields/textarea.js' ),
+	email: require( './fields/email.js' ),
+	url: require( './fields/url.js' ),
+	link: require( './fields/link.js' ),
+	wysiwyg: require( './fields/wysiwyg.js' ),
+	image: require( './fields/image.js' ),
+	gallery: require( './fields/gallery.js' ),
+	taxonomy: require( './fields/taxonomy.js' ),
 };
 
-var scrapers = {};
+var fields = {};
 
 /**
- * Checks if there already is a scraper for a field type in the store.
+ * Checks if there already is a field for a field type in the store.
  *
- * @param {string} type Type of scraper to find.
+ * @param {string} type Type of field to find.
  *
- * @returns {boolean} True if the scraper is already defined.
+ * @returns {boolean} True if the field is already defined.
  */
-var hasScraper = function( type ) {
-	return ( type in scrapers );
-};
-
-/**
- * Set a scraper object on the store. Existing scrapers will be overwritten.
- *
- * @param {Object} scraper The scraper to add.
- * @param {string} type Type of scraper.
- *
- * @returns {Object} Added scraper.
- */
-var setScraper = function( scraper, type ) {
-	if ( RankMathACFAnalysisConfig.debug && hasScraper( type ) ) {
-		console.warn( 'Scraper for ' + type + ' already exists and will be overwritten.' );
-	}
-
-	scrapers[ type ] = scraper;
-
-	return scraper;
+var hasField = function( type ) {
+	return ( type in fields );
 };
 
 /**
- * Returns the scraper object for a field type.
- * If there is no scraper object for this field type a no-op scraper is returned.
+ * Set a field object on the store. Existing fields will be overwritten.
  *
- * @param {string} type Type of scraper to fetch.
+ * @param {Object} field The field to add.
+ * @param {string} type Type of field.
  *
- * @returns {Object} The scraper for the specified type.
+ * @returns {Object} Added field.
  */
-var getScraper = function( type ) {
-	if ( hasScraper( type ) ) {
-		return scrapers[ type ];
+var setField = function( field, type ) {
+	if ( hasField( type ) ) {
+		console.warn( 'Field for ' + type + ' already exists and will be overwritten.' );
 	}
 
-	if ( type in scraperObjects ) {
-		return setScraper( new scraperObjects[ type ](), type );
+	fields[ type ] = field;
+	return field;
+};
+
+/**
+ * Returns the field object for a field type.
+ *
+ * @param {string} type Type of field to fetch.
+ *
+ * @returns {Object} The field for the specified type.
+ */
+var getField = function( type, fields_data ) {
+	if ( hasField( type ) ) {
+		return fields[ type ];
 	}
 
-	// If we do not have a scraper just pass the fields through so it will be filtered out by the app.
+	if ( type in fieldObjects ) {
+		return setField( new fieldObjects[ type ]( fields_data ), type );
+	}
+
 	return {
-		scrape: function( fields ) {
+		analyze: function( fields ) {
 			if ( RankMathACFAnalysisConfig.debug ) {
 				console.warn( 'No Scraper for field type: ' + type );
 			}
 			return fields;
 		},
 	};
+
+	return fields_data;
 };
 
 module.exports = {
-	setScraper: setScraper,
-	getScraper: getScraper,
+	setField: setField,
+	getField: getField,
 };
 
-},{"./scraper/scraper.email.js":7,"./scraper/scraper.gallery.js":8,"./scraper/scraper.image.js":9,"./scraper/scraper.link.js":10,"./scraper/scraper.taxonomy.js":11,"./scraper/scraper.text.js":12,"./scraper/scraper.textarea.js":13,"./scraper/scraper.url.js":14,"./scraper/scraper.wysiwyg.js":15}],5:[function(require,module,exports){
+},{"./fields/email.js":7,"./fields/gallery.js":8,"./fields/image.js":9,"./fields/link.js":10,"./fields/taxonomy.js":11,"./fields/text.js":12,"./fields/textarea.js":13,"./fields/url.js":14,"./fields/wysiwyg.js":15}],5:[function(require,module,exports){
 var cache = require( './cache.js' );
 
 var refresh = function( attachment_ids ) {
@@ -352,9 +342,9 @@ Cache.prototype.clear =  function( store ) {
 module.exports = new Cache();
 
 },{}],7:[function(require,module,exports){
-var Scraper = function() {};
+var Email = function() {};
 
-Scraper.prototype.scrape = function( fields ) {
+Email.prototype.analyze = function( fields ) {
 	fields = _.map( fields, function( field ) {
 		if ( 'email' !== field.type ) {
 			return field;
@@ -368,17 +358,17 @@ Scraper.prototype.scrape = function( fields ) {
 	return fields;
 };
 
-module.exports = Scraper;
+module.exports = Email;
 
 },{}],8:[function(require,module,exports){
 var attachmentCache = require( './cache.attachments.js' );
+var Gallery = function() {};
 
-var Scraper = function() {};
-
-Scraper.prototype.scrape = function( fields ) {
+Gallery.prototype.analyze = function( fields ) {
 	var attachment_ids = [];
 
 	fields = _.map( fields, function( field ) {
+		console.log(field);
 		if ( 'gallery' !== field.type ) {
 			return field;
 		}
@@ -403,14 +393,12 @@ Scraper.prototype.scrape = function( fields ) {
 	return fields;
 };
 
-module.exports = Scraper;
+module.exports = Gallery;
 
 },{"./cache.attachments.js":5}],9:[function(require,module,exports){
 var attachmentCache = require( './cache.attachments.js' );
-
-var Scraper = function() {};
-
-Scraper.prototype.scrape = function( fields ) {
+var Image = function() {};
+Image.prototype.analyze = function( fields ) {
 	var attachment_ids = [];
 
 	fields = _.map( fields, function( field ) {
@@ -436,19 +424,11 @@ Scraper.prototype.scrape = function( fields ) {
 	return fields;
 };
 
-module.exports = Scraper;
+module.exports = Image;
 
 },{"./cache.attachments.js":5}],10:[function(require,module,exports){
-var Scraper = function() {};
-
-/**
- * Scraper for the link field type.
- *
- * @param {Object} fields Fields to parse.
- *
- * @returns {Object} Mapped list of fields.
- */
-Scraper.prototype.scrape = function( fields ) {
+var Link = function() {};
+Link.prototype.analyze = function( fields ) {
 	/**
 	 * Set content for all link fields as a-tag with title, url and target.
 	 * Return the fields object containing all fields.
@@ -467,12 +447,11 @@ Scraper.prototype.scrape = function( fields ) {
 	});
 };
 
-module.exports = Scraper;
+module.exports = Link;
 
 },{}],11:[function(require,module,exports){
-var Scraper = function() {};
-
-Scraper.prototype.scrape = function( fields ) {
+var Taxonomy = function() {};
+Taxonomy.prototype.analyze = function( fields ) {
 	fields = _.map( fields, function( field ) {
 		if ( 'taxonomy' !== field.type ) {
 			return field;
@@ -506,12 +485,11 @@ Scraper.prototype.scrape = function( fields ) {
 	return fields;
 };
 
-module.exports = Scraper;
+module.exports = Taxonomy;
 
 },{}],12:[function(require,module,exports){
-var Scraper = function() {};
-
-Scraper.prototype.scrape = function( fields ) {
+var Text = function() {}
+Text.prototype.analyze = function( fields ) {
 	var that = this;
 
 	fields = _.map( fields, function( field ) {
@@ -528,7 +506,7 @@ Scraper.prototype.scrape = function( fields ) {
 	return fields;
 };
 
-Scraper.prototype.wrapInHeadline = function( field ) {
+Text.prototype.wrapInHeadline = function( field ) {
 	var level = this.isHeadline( field );
 
 	if ( level ) {
@@ -540,7 +518,7 @@ Scraper.prototype.wrapInHeadline = function( field ) {
 	return field;
 };
 
-Scraper.prototype.isHeadline = function( field ) {
+Text.prototype.isHeadline = function( field ) {
 	var level = _.find( RankMathACFAnalysisConfig.scraper.text.headlines, function( value, key ) {
 		return field.key === key;
 	});
@@ -558,31 +536,28 @@ Scraper.prototype.isHeadline = function( field ) {
 	return level;
 };
 
-module.exports = Scraper;
+module.exports = Text;
 
 },{}],13:[function(require,module,exports){
-var Scraper = function() {};
-
-Scraper.prototype.scrape = function( fields ) {
+var TextArea = function() {}
+TextArea.prototype.analyze = function( fields ) {
 	fields = _.map( fields, function( field ) {
 		if ( 'textarea' !== field.type ) {
 			return field;
 		}
 
 		field.content = '<p>' + field.$el.find( 'textarea[id^=acf]' ).val() + '</p>';
-
 		return field;
 	});
 
 	return fields;
 };
 
-module.exports = Scraper;
+module.exports = TextArea;
 
 },{}],14:[function(require,module,exports){
-var Scraper = function() {};
-
-Scraper.prototype.scrape = function( fields ) {
+var URL = function(){};
+URL.prototype.analyze = function( fields ) {
 	fields = _.map( fields, function( field ) {
 		if ( 'url' !== field.type ) {
 			return field;
@@ -598,10 +573,10 @@ Scraper.prototype.scrape = function( fields ) {
 	return fields;
 };
 
-module.exports = Scraper;
+module.exports = URL;
 
 },{}],15:[function(require,module,exports){
-var Scraper = function() {};
+var WYSIWYG = function() {};
 
 /**
  * Adapted from wp-seo-post-scraper-plugin-310.js:196-210
@@ -641,7 +616,7 @@ var getContentTinyMCE = function( field ) {
 	return val;
 };
 
-Scraper.prototype.scrape = function( fields ) {
+WYSIWYG.prototype.analyze = function( fields ) {
 	fields = _.map( fields, function( field ) {
 		if ( 'wysiwyg' !== field.type ) {
 			return field;
@@ -654,6 +629,6 @@ Scraper.prototype.scrape = function( fields ) {
 	return fields;
 };
 
-module.exports = Scraper;
+module.exports = WYSIWYG;
 
 },{}]},{},[1]);

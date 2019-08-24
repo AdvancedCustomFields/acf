@@ -1,11 +1,11 @@
 var attachmentCache = require( './cache.attachments.js' );
+var Gallery = function() {};
 
-var Scraper = function() {};
-
-Scraper.prototype.scrape = function( fields ) {
+Gallery.prototype.analyze = function( fields ) {
 	var attachment_ids = [];
 
 	fields = _.map( fields, function( field ) {
+		console.log(field);
 		if ( 'gallery' !== field.type ) {
 			return field;
 		}
@@ -30,4 +30,4 @@ Scraper.prototype.scrape = function( fields ) {
 	return fields;
 };
 
-module.exports = Scraper;
+module.exports = Gallery;

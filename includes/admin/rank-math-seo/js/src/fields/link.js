@@ -1,13 +1,5 @@
-var Scraper = function() {};
-
-/**
- * Scraper for the link field type.
- *
- * @param {Object} fields Fields to parse.
- *
- * @returns {Object} Mapped list of fields.
- */
-Scraper.prototype.scrape = function( fields ) {
+var Link = function() {};
+Link.prototype.analyze = function( fields ) {
 	/**
 	 * Set content for all link fields as a-tag with title, url and target.
 	 * Return the fields object containing all fields.
@@ -26,4 +18,4 @@ Scraper.prototype.scrape = function( fields ) {
 	});
 };
 
-module.exports = Scraper;
+module.exports = Link;
