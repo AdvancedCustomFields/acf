@@ -71,7 +71,7 @@ class acf_field_google_map extends acf_field {
 			'key'		=> acf_get_setting('google_api_key'),
 			'client'	=> acf_get_setting('google_api_client'),
 			'libraries'	=> 'places',
-			'v'			=> 'weekly', // version
+			'v'		=> 'weekly', // version
 			'callback'	=> '',
 			'language'	=> acf_get_locale()
 	   	);
@@ -119,12 +119,12 @@ class acf_field_google_map extends acf_field {
 		
 		// value
 		$field['value'] = wp_parse_args($field['value'], array(
-			'address'			=> '',
-			'lat'				=> '',
-			'lng'				=> '',
-			'city'				=> '',
-			'city_alt'			=> '',
-			'country'			=> '',
+			'address'		=> '',
+			'lat'			=> '',
+			'lng'			=> '',
+			'city'			=> '',
+			'city_alt'		=> '',
+			'country'		=> '',
 			'country_code'		=> ''
 		));
 		
