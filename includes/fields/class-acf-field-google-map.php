@@ -71,7 +71,7 @@ class acf_field_google_map extends acf_field {
 			'key'		=> acf_get_setting('google_api_key'),
 			'client'	=> acf_get_setting('google_api_client'),
 			'libraries'	=> 'places',
-			'ver'		=> 3,
+			'v'		    => 'weekly', // version
 			'callback'	=> '',
 			'language'	=> acf_get_locale()
 	   	);
