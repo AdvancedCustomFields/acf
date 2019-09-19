@@ -5934,7 +5934,9 @@
 			});
 			
 			this.$('input[type="hidden"]').each(function () {
-				this.remove();
+				if (!val.hasOwnProperty(this.getAttribute("data-name"))) {
+					this.remove();
+				}
 			});
 			for (var name in val) {
 				if (! this.inputExists(this.$input(name))) {
@@ -5948,7 +5950,7 @@
 
 					this.$('.acf-hidden')[0].appendChild(input);
 				}
-				
+
 				acf.val(this.$input(name), val[name]);
 			}
 			
