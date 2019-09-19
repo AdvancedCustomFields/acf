@@ -115,17 +115,13 @@ class acf_field_google_map extends acf_field {
 		if( empty($field['value']) ) {
 			$field['value'] = array();
 		}
-		
+  
 		
 		// value
 		$field['value'] = wp_parse_args($field['value'], array(
 			'address'		=> '',
 			'lat'			=> '',
 			'lng'			=> '',
-			'city'			=> '',
-			'city_alt'		=> '',
-			'country'		=> '',
-			'country_code'		=> ''
 		));
 		
 		
@@ -137,7 +133,7 @@ class acf_field_google_map extends acf_field {
 			}
 				
 		}
-		
+		// wp_die(var_dump($field['value']));
 		
 		// vars
 		$atts = array(

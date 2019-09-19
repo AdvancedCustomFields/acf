@@ -5896,6 +5896,10 @@
 		removeClass: function( name ){
 			this.$control().removeClass( name );
 		},
+
+		inputExists: function (selector) {
+			return selector.length > 0;
+		},
 		
 		getValue: function(){
 			
@@ -5903,11 +5907,7 @@
 			var val = {
 				lat: '',
 				lng: '',
-				address: '',
-				city: '',
-				city_alt: '',
-				country: '',
-				country_code: ''
+				address: ''
 			};
 			
 			// loop
@@ -5930,16 +5930,26 @@
 			val = acf.parseArgs(val, {
 				lat: '',
 				lng: '',
-				address: '',
-				city: '',
-				city_alt: '',
-				country: '',
-				country_code: ''
+				address: ''
 			});
 			
-			// loop
-			for( var name in val ) {
-				acf.val( this.$input(name), val[name] );
+			this.$('input[type="hidden"]').each(function () {
+				this.remove();
+			});
+			for (var name in val) {
+				if (! this.inputExists(this.$input(name))) {
+					var input = document.createElement('input');
+
+					input.setAttribute('type', 'hidden');
+
+					input.setAttribute('name', 'acf[' + this.data.key + '][' + name + ']');
+
+					input.setAttribute('data-name', name);
+
+					this.$('.acf-hidden')[0].appendChild(input);
+				}
+				
+				acf.val(this.$input(name), val[name]);
 			}
 			
 			// return false if no lat/lng
@@ -6149,52 +6159,27 @@
 				} else {
 					address = results[0].formatted_address;
 
-					// extract more info: city, region, and country
-					var country = null, countryCode = null, city = null, cityAlt = null;
-					var c, lc, component;
-					for (var r = 0, rl = results.length; r < rl; r += 1) {
-						var result = results[r];
-
-						if (!city && result.types[0] === 'locality') {
-							for (c = 0, lc = result.address_components.length; c < lc; c += 1) {
-								component = result.address_components[c];
-
-								if (component.types[0] === 'locality') {
-									city = component.long_name;
-									break;
-								}
-							}
-						}
-						else if (!city && !cityAlt && result.types[0] === 'administrative_area_level_1') {
-							for (c = 0, lc = result.address_components.length; c < lc; c += 1) {
-								component = result.address_components[c];
-
-								if (component.types[0] === 'administrative_area_level_1') {
-									cityAlt = component.long_name;
-									break;
-				                }
-							}
-						} else if (!country && result.types[0] === 'country') {
-							country = result.address_components[0].long_name;
-							countryCode = result.address_components[0].short_name;
-						}
-
-						if (city && country) {
-							break;
+					// results object
+					var obj = {
+						lat: lat,
+						lng: lng,
+						address: address,
+					};
+					var extra_obj = acf.applyFilters('google_map_results', results);
+					if (typeof extra_obj === 'object' && extra_obj !== results) {
+						for (var el in extra_obj) {
+							obj[el] = extra_obj[el];
 						}
 					}
+					this.val(obj);
 				}
 
 				// update val
-				this.val({
-					lat: lat,
-					lng: lng,
-					address: address,
-					city: city,
-					city_alt: cityAlt,
-					country: country,
-					country_code: countryCode
-				});
+				// this.val({
+				// 	lat: lat,
+				// 	lng: lng,
+				// 	address: address
+				// });
 				
 		    }, this);
 		    
@@ -6219,46 +6204,26 @@
 			var lng = place.geometry.location.lng();
 			var address = place.address || place.formatted_address;
 
-			var result = place;
-			var country = null, countryCode = null, city = null, cityAlt = null;
-			var c, component;
-
-			for (c = 0; c < result.address_components.length; c += 1) {
-				component = result.address_components[c];
-
-				if (component.types[0] === 'locality') {
-					city = component.long_name;
-					break;
-				}
-			}
-			for (c = 0; c < result.address_components.length; c += 1) {
-				component = result.address_components[c];
-
-				if (component.types[0] === 'administrative_area_level_1') {
-					cityAlt = component.long_name;
-					break;
-				}
-			}
-			for (c = 0; c < result.address_components.length; c += 1) {
-				component = result.address_components[c];
-
-				if (component.types[0] === 'country') {
-					country = result.address_components[c].long_name;
-					countryCode = result.address_components[c].short_name;
-					break;
-				}
-			}
-
 			// update
-			this.setValue({
+			// this.setValue({
+			// 	lat: lat,
+			// 	lng: lng,
+			// 	address: address
+			// });
+			
+			// results object
+			var obj = {
 				lat: lat,
 				lng: lng,
 				address: address,
-				city: city,
-				city_alt: cityAlt,
-				country: country,
-				country_code: countryCode
-			});
+			};
+			var extra_obj = acf.applyFilters('google_map_results', [place]);
+			if (typeof extra_obj === 'object' && extra_obj !== results) {
+				for (var el in extra_obj) {
+					obj[el] = extra_obj[el];
+				}
+			}
+			this.val(obj);
 			
 		    // return
 		    return this;
@@ -6306,49 +6271,27 @@
 					lng = results[0].geometry.location.lng();
 					//address = results[0].formatted_address;
 
-					// extract more info: city, region, and country
-					var result = results[0];
-					var country = null, countryCode = null, city = null, cityAlt = null;
-					var c, component;
-
-					for (c = 0; c < result.address_components.length; c += 1) {
-						component = result.address_components[c];
-
-						if (component.types[0] === 'locality') {
-							city = component.long_name;
-							break;
+					// results object
+					var obj = {
+						lat: lat,
+						lng: lng,
+						address: address,
+					};
+					var extra_obj = acf.applyFilters('google_map_results', results);
+					if (typeof extra_obj === 'object' && extra_obj !== results) {
+						for (var el in extra_obj) {
+							obj[el] = extra_obj[el];
 						}
 					}
-					for (c = 0; c < result.address_components.length; c += 1) {
-						component = result.address_components[c];
-
-						if (component.types[0] === 'administrative_area_level_1') {
-							cityAlt = component.long_name;
-							break;
-						}
-					}
-					for (c = 0; c < result.address_components.length; c += 1) {
-						component = result.address_components[c];
-
-						if (component.types[0] === 'country') {
-							country = result.address_components[c].long_name;
-							countryCode = result.address_components[c].short_name;
-							break;
-						}
-					}
+					this.val(obj);
 				}
 
 				// update val
-				this.val({
-					lat: lat,
-					lng: lng,
-					address: address,
-					city: city,
-					city_alt: cityAlt,
-					country: country,
-					country_code: countryCode
-				});
-				//acf.doAction('google_map_geocode_results', results, status, this.$el, this);
+				// this.val({
+				// 	lat: lat,
+				// 	lng: lng,
+				// 	address: address
+				// });
 				
 		    });
 		    
