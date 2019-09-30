@@ -529,6 +529,10 @@
 	padding: 3px 7px;
 	background: #F4F4F4;
 	border: #DFDFDF solid 1px;
+	
+	.block-editor-page & {
+		height: auto;
+	}
 }
 
 .acf-input-prepend {
