@@ -335,7 +335,7 @@
 			// bail early
 			if( typeof switchEditors === 'undefined' ) return false;
 			
-			// bail ealry if not initialized
+			// bail early if not initialized
 			if( typeof tinyMCEPreInit.mceInit[ id ] === 'undefined' ) return false;
 						
 			// toggle			

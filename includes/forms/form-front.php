@@ -364,7 +364,7 @@ class acf_form_front {
 		if( !acf_verify_nonce('acf_form') ) return;
 		
 		
-		// bail ealry if form not submit
+		// bail early if form not submit
 		if( empty($_POST['_acf_form']) ) return;
 		
 		
@@ -372,7 +372,7 @@ class acf_form_front {
     	$form = json_decode( acf_decrypt($_POST['_acf_form']), true );
 		
 		
-		// bail ealry if form is corrupt
+		// bail early if form is corrupt
     	if( empty($form) ) return;
     	
     	
@@ -492,7 +492,7 @@ class acf_form_front {
 		$post_id = $args['post_id'];
 		
 		
-		// dont load values for 'new_post'
+		// don't load values for 'new_post'
 		if( $post_id === 'new_post' ) $post_id = false;
 		
 		

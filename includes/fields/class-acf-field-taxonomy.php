@@ -177,7 +177,7 @@ class acf_field_taxonomy extends acf_field {
 			$parent = acf_maybe_get( $args, 'child_of', $parent );
 			
 			
-			// this will fail if a search has taken place because parents wont exist
+			// this will fail if a search has taken place because parents won't exist
 			if( !$is_search ) {
 				
 				// order terms
@@ -474,7 +474,7 @@ class acf_field_taxonomy extends acf_field {
 	
 	function save_post( $post_id ) {
 		
-		// bail ealry if no terms
+		// bail early if no terms
 		if( empty($this->save_post_terms) ) return;
 		
 		

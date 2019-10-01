@@ -125,7 +125,7 @@ class ACF_WPML_Compatibility {
 			'post_acf-field-group', $field_group['ID']
 		), ARRAY_A);
 		
-		// bail ealry if no rows
+		// bail early if no rows
 		if( !$old_row || !$new_row ) {
 			return;
 		}

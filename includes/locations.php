@@ -100,7 +100,7 @@ class acf_locations {
 		// loop
 		foreach( $this->locations as $location ) {
 			
-			// bail ealry if not public
+			// bail early if not public
 			if( !$location->public ) continue;
 			
 			

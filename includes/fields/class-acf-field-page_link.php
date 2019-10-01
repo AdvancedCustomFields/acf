@@ -155,7 +155,7 @@ class acf_field_page_link extends acf_field {
 				$archive_link = get_post_type_archive_link( $post_type );
 				
 				
-				// bail ealry if no link
+				// bail early if no link
 				if( !$archive_link ) continue;
 				
 				

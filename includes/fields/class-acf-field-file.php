@@ -393,11 +393,11 @@ class acf_field_file extends acf_field {
 		if( empty($value) ) return $valid;
 		
 		
-		// bail ealry if is numeric
+		// bail early if is numeric
 		if( is_numeric($value) ) return $valid;
 		
 		
-		// bail ealry if not basic string
+		// bail early if not basic string
 		if( !is_string($value) ) return $valid;
 		
 		

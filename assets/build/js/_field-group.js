@@ -148,7 +148,7 @@
 		
 		onNewField: function( field ){
 			
-			// bail ealry if not append
+			// bail early if not append
 			if( !field.has('append') ) return;
 			
 			// vars

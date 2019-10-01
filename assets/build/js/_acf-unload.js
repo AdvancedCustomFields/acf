@@ -30,7 +30,7 @@
 		
 		startListening: function(){
 			
-			// bail ealry if already changed, not active
+			// bail early if already changed, not active
 			if( this.changed || !this.active ) {
 				return;
 			}

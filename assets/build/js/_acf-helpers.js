@@ -289,7 +289,7 @@
 				return false;
 			}
 			
-			// bail ealry if is .-left
+			// bail early if is .-left
 			if( $el.hasClass('-left') ) {
 				$fields.removeAttr('data-width');
 				$fields.css('width', 'auto');

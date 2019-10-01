@@ -659,7 +659,7 @@
 			var l10n = acf.get('select2L10n');
 			var version = getVersion();
 			
-			// bail ealry if no l10n
+			// bail early if no l10n
 			if( !l10n ) {
 				return false;
 			}

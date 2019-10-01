@@ -60,7 +60,7 @@ class acf_field_google_map extends acf_field {
 	   	));
 	   	
 	   	
-		// bail ealry if no enqueue
+		// bail early if no enqueue
 	   	if( !acf_get_setting('enqueue_google_maps') ) {
 		   	return;
 	   	}

@@ -56,12 +56,12 @@
 			var rtl = acf.get('rtl');
 			var l10n = acf.get('dateTimePickerL10n');
 			
-			// bail ealry if no l10n
+			// bail early if no l10n
 			if( !l10n ) {
 				return false;
 			}
 			
-			// bail ealry if no datepicker library
+			// bail early if no datepicker library
 			if( typeof $.timepicker === 'undefined' ) {
 				return false;
 			}
@@ -79,7 +79,7 @@
 	// add
 	acf.newDateTimePicker = function( $input, args ){
 		
-		// bail ealry if no datepicker library
+		// bail early if no datepicker library
 		if( typeof $.timepicker === 'undefined' ) {
 			return false;
 		}

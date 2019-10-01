@@ -14,7 +14,7 @@ global $field_group;
 			
 			<?php foreach( $field_group['location'] as $i => $group ): 
 				
-				// bail ealry if no group
+				// bail early if no group
 				if( empty($group) ) return;
 				
 				

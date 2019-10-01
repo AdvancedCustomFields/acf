@@ -3,7 +3,7 @@
 /**
 *  acf_has_upgrade
 *
-*  Returns true if this site has an upgrade avaialble.
+*  Returns true if this site has an upgrade available.
 *
 *  @date	24/8/18
 *  @since	5.7.4
@@ -33,7 +33,7 @@ function acf_has_upgrade() {
 /**
 *  acf_upgrade_all
 *
-*  Returns true if this site has an upgrade avaialble.
+*  Returns true if this site has an upgrade available.
 *
 *  @date	24/8/18
 *  @since	5.7.4

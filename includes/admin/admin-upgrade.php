@@ -37,7 +37,7 @@ class ACF_Admin_Upgrade {
 	*/
 	function admin_menu() {
 		
-		// check if upgrade is avaialble
+		// check if upgrade is available
 		if( acf_has_upgrade() ) {
 			
 			// add notice
@@ -84,7 +84,7 @@ class ACF_Admin_Upgrade {
 			restore_current_blog();
 		}}
 		
-		// check if upgrade is avaialble
+		// check if upgrade is available
 		if( $has_upgrade ) {
 			
 			// add notice

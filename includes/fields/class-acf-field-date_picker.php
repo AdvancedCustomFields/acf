@@ -47,7 +47,7 @@ class acf_field_date_picker extends acf_field {
 	
 	function input_admin_enqueue_scripts() {
 		
-		// bail ealry if no enqueue
+		// bail early if no enqueue
 	   	if( !acf_get_setting('enqueue_datepicker') ) {
 		   	return;
 	   	}
