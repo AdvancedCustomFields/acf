@@ -82,7 +82,7 @@
 		// - this field is used to setup the conditional logic events
 		var field = target.getField( rule.field );
 		
-		// bail ealry if no target or no field (possible if field doesn't exist due to HTML error)
+		// bail early if no target or no field (possible if field doesn't exist due to HTML error)
 		if( !target || !field ) {
 			return false;
 		}

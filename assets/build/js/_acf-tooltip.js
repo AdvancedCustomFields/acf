@@ -286,7 +286,7 @@
 			// vars
 			var title = $el.attr('title');
 			
-			// bail ealry if no title
+			// bail early if no title
 			if( !title ) {
 				return;
 			}

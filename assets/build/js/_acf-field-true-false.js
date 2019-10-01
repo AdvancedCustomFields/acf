@@ -32,7 +32,7 @@
 			// vars
 			var $switch = this.$switch();
 				
-			// bail ealry if no $switch
+			// bail early if no $switch
 			if( !$switch.length ) return;
 			
 			// vars
@@ -40,7 +40,7 @@
 			var $off = $switch.children('.acf-switch-off');
 			var width = Math.max( $on.width(), $off.width() );
 			
-			// bail ealry if no width
+			// bail early if no width
 			if( !width ) return;
 			
 			// set widths

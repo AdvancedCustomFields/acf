@@ -290,7 +290,7 @@ class ACF_Form_Post {
 	
 	function save_post( $post_id, $post ) {
 		
-		// bail ealry if no allowed to save this post type
+		// bail early if no allowed to save this post type
 		if( !$this->allow_save_post($post) ) {
 			return $post_id;
 		}

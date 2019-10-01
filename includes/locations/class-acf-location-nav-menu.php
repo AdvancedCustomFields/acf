@@ -62,7 +62,7 @@ class acf_location_nav_menu extends acf_location {
 			$menu_locations = get_nav_menu_locations();
 			
 			
-			// bail ealry if no location
+			// bail early if no location
 			if( !isset($menu_locations[$location]) ) return false;
 			
 			

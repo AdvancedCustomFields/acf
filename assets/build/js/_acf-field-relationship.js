@@ -185,7 +185,7 @@
 		
 		onClickRemove: function( e, $el ){
 			
-			// Prevent default here because generic handler wont be triggered.
+			// Prevent default here because generic handler won't be triggered.
 			e.preventDefault();
 			
 			// vars

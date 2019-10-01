@@ -3503,7 +3503,7 @@
 		
 		startListening: function(){
 			
-			// bail ealry if already changed, not active
+			// bail early if already changed, not active
 			if( this.changed || !this.active ) {
 				return;
 			}
@@ -4217,7 +4217,7 @@
 			// vars
 			var title = $el.attr('title');
 			
-			// bail ealry if no title
+			// bail early if no title
 			if( !title ) {
 				return;
 			}
@@ -5711,12 +5711,12 @@
 			var rtl = acf.get('rtl');
 			var l10n = acf.get('datePickerL10n');
 			
-			// bail ealry if no l10n
+			// bail early if no l10n
 			if( !l10n ) {
 				return false;
 			}
 			
-			// bail ealry if no datepicker library
+			// bail early if no datepicker library
 			if( typeof $.datepicker === 'undefined' ) {
 				return false;
 			}
@@ -5733,7 +5733,7 @@
 	// add
 	acf.newDatePicker = function( $input, args ){
 		
-		// bail ealry if no datepicker library
+		// bail early if no datepicker library
 		if( typeof $.datepicker === 'undefined' ) {
 			return false;
 		}
@@ -5810,12 +5810,12 @@
 			var rtl = acf.get('rtl');
 			var l10n = acf.get('dateTimePickerL10n');
 			
-			// bail ealry if no l10n
+			// bail early if no l10n
 			if( !l10n ) {
 				return false;
 			}
 			
-			// bail ealry if no datepicker library
+			// bail early if no datepicker library
 			if( typeof $.timepicker === 'undefined' ) {
 				return false;
 			}
@@ -5833,7 +5833,7 @@
 	// add
 	acf.newDateTimePicker = function( $input, args ){
 		
-		// bail ealry if no datepicker library
+		// bail early if no datepicker library
 		if( typeof $.timepicker === 'undefined' ) {
 			return false;
 		}
@@ -7381,7 +7381,7 @@
 		
 		onClickRemove: function( e, $el ){
 			
-			// Prevent default here because generic handler wont be triggered.
+			// Prevent default here because generic handler won't be triggered.
 			e.preventDefault();
 			
 			// vars
@@ -8550,7 +8550,7 @@
 	// add
 	acf.newTimePicker = function( $input, args ){
 		
-		// bail ealry if no datepicker library
+		// bail early if no datepicker library
 		if( typeof $.timepicker === 'undefined' ) {
 			return false;
 		}
@@ -8603,7 +8603,7 @@
 			// vars
 			var $switch = this.$switch();
 				
-			// bail ealry if no $switch
+			// bail early if no $switch
 			if( !$switch.length ) return;
 			
 			// vars
@@ -8611,7 +8611,7 @@
 			var $off = $switch.children('.acf-switch-off');
 			var width = Math.max( $on.width(), $off.width() );
 			
-			// bail ealry if no width
+			// bail early if no width
 			if( !width ) return;
 			
 			// set widths
@@ -8917,7 +8917,7 @@
 		// - this field is used to setup the conditional logic events
 		var field = target.getField( rule.field );
 		
-		// bail ealry if no target or no field (possible if field doesn't exist due to HTML error)
+		// bail early if no target or no field (possible if field doesn't exist due to HTML error)
 		if( !target || !field ) {
 			return false;
 		}
@@ -9361,7 +9361,7 @@
 			// instantiate
 			var condition = acf.newCondition( rule, this );
 			
-			// bail ealry if condition failed (field did not exist)
+			// bail early if condition failed (field did not exist)
 			if( !condition ) {
 				return false;
 			}
@@ -11926,7 +11926,7 @@
 			var l10n = acf.get('select2L10n');
 			var version = getVersion();
 			
-			// bail ealry if no l10n
+			// bail early if no l10n
 			if( !l10n ) {
 				return false;
 			}
@@ -12396,7 +12396,7 @@
 			// bail early
 			if( typeof switchEditors === 'undefined' ) return false;
 			
-			// bail ealry if not initialized
+			// bail early if not initialized
 			if( typeof tinyMCEPreInit.mceInit[ id ] === 'undefined' ) return false;
 						
 			// toggle			
@@ -13756,7 +13756,7 @@
 				return false;
 			}
 			
-			// bail ealry if is .-left
+			// bail early if is .-left
 			if( $el.hasClass('-left') ) {
 				$fields.removeAttr('data-width');
 				$fields.css('width', 'auto');

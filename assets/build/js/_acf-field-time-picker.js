@@ -57,7 +57,7 @@
 	// add
 	acf.newTimePicker = function( $input, args ){
 		
-		// bail ealry if no datepicker library
+		// bail early if no datepicker library
 		if( typeof $.timepicker === 'undefined' ) {
 			return false;
 		}

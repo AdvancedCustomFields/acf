@@ -276,7 +276,7 @@
 			// instantiate
 			var condition = acf.newCondition( rule, this );
 			
-			// bail ealry if condition failed (field did not exist)
+			// bail early if condition failed (field did not exist)
 			if( !condition ) {
 				return false;
 			}

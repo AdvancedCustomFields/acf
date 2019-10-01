@@ -54,7 +54,7 @@
 		var mid = modelId( type + ' ' + name );
 		var model = acf.models[ mid ] || null;
 		
-		// bail ealry if no setting
+		// bail early if no setting
 		if( model === null ) return false;
 		
 		// instantiate

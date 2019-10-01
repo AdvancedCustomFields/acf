@@ -218,7 +218,7 @@ function acf_get_grouped_terms( $args ) {
 		if( empty($this_terms) ) continue;
 		
 		// sort into hierachial order
-		// this will fail if a search has taken place because parents wont exist
+		// this will fail if a search has taken place because parents won't exist
 		if( is_taxonomy_hierarchical($taxonomy) && empty($args['s'])) {
 			
 			// get all terms from this taxonomy

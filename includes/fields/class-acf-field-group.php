@@ -187,7 +187,7 @@ class acf_field__group extends acf_field {
 		if( !acf_is_array($value) ) return null;
 		
 		
-		// bail ealry if no sub fields
+		// bail early if no sub fields
 		if( empty($field['sub_fields']) ) return null;
 		
 		
@@ -384,7 +384,7 @@ class acf_field__group extends acf_field {
 			$sub_field = acf_prepare_field($sub_field);
 			
 			
-			// bail ealry if no field
+			// bail early if no field
 			if( !$sub_field ) continue;
 			
 			
@@ -662,7 +662,7 @@ class acf_field__group extends acf_field {
 	
 	function delete_value( $post_id, $meta_key, $field ) {
 		
-		// bail ealry if no sub fields
+		// bail early if no sub fields
 		if( empty($field['sub_fields']) ) return null;
 		
 		// modify names

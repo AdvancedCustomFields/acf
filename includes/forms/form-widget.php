@@ -101,7 +101,7 @@ class acf_form_widget {
 	
 	function acf_validate_save_post() {
 		
-		// bail ealry if not widget
+		// bail early if not widget
 		if( !isset($_POST['_acf_widget_id']) ) return;
 		
 		
@@ -228,7 +228,7 @@ class acf_form_widget {
 	
 	function save_widget( $instance, $new_instance, $old_instance, $widget ) {
 		
-		// bail ealry if not valid (!customize + acf values + nonce)
+		// bail early if not valid (!customize + acf values + nonce)
 		if( isset($_POST['wp_customize']) || !isset($new_instance['acf']) || !acf_verify_nonce('widget') ) return $instance;
 		
 		

@@ -203,7 +203,7 @@ function acf_maybe_get_field( $selector, $post_id = false, $strict = true ) {
 
 function acf_maybe_get_sub_field( $selectors, $post_id = false, $strict = true ) {
 	
-	// bail ealry if not enough selectors
+	// bail early if not enough selectors
 	if( !is_array($selectors) || count($selectors) < 3 ) return false;
 	
 	
