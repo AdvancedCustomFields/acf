@@ -67,6 +67,18 @@ From your WordPress dashboard
 
 == Changelog ==
 
+= 5.8.5 =
+*Release Date - 8 October 2019*
+
+* New - Added new choice "Add" to the User Form location rule.
+* New - Optimized `acf_form()` logic when used in combination with `acf_register_form()`.
+* Fix - Fixed bug causing incorrect field order after sync.
+* Fix - Fixed bug reverting the first field type to Text in Firefox version 69.0.1.
+* Fix - Fixed bug causing tinymce issues when changing between block modes.
+* Fix - Fixed bug preventing block registration when category does not exist.
+* Fix - Fixed bug preventing block registration when no icon is declared.
+* Dev - Added RegExp compatibility for innerBlocks.
+
 = 5.8.4 =
 *Release Date - 3 September 2019*
 

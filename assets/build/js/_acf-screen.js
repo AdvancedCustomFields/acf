@@ -338,6 +338,14 @@
 						$prefs.append( $label );
 					}
 					
+					// Copy default WP events onto metabox.
+					copyEvents( $('.postbox .handlediv').first(), $postbox.children('.handlediv') );
+					copyEvents( $('.postbox .hndle').first(), $postbox.children('.hndle') );
+					
+					// Prevent "acf_after_title" position.
+					if( result.position == "acf_after_title" )
+						result.position = 'normal';
+					
 					// Append metabox to the bottom of "side-sortables".
 					if( result.position === 'side' ) {
 						$('#' + result.position + '-sortables').append( $postbox );
@@ -370,13 +378,6 @@
 								break;
 							}
 						}
-					}
-					
-					// Copy default WP events onto metabox.
-					var $submitdiv = $('#submitdiv');
-					if( $('#submitdiv').length ) {
-						copyEvents( $submitdiv.children('.handlediv'), $postbox.children('.handlediv') );
-						copyEvents( $submitdiv.children('.hndle'), $postbox.children('.hndle') );
 					}
 					
 					// Initalize it (modifies HTML).

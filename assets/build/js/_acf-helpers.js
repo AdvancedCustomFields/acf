@@ -14,19 +14,20 @@
 	
 	var refreshHelper = new acf.Model({
 		priority: 90,
-		timeout: 0,
+		initialize: function(){
+			this.refresh = acf.debounce( this.refresh, 0 );
+		},
 		actions: {
 			'new_field':	'refresh',
 			'show_field':	'refresh',
 			'hide_field':	'refresh',
-			'remove_field':	'refresh'
+			'remove_field':	'refresh',
+			'unmount_field': 'refresh',
+			'remount_field': 'refresh',
 		},
 		refresh: function(){
-			clearTimeout( this.timeout );
-			this.timeout = setTimeout(function(){
-				acf.doAction('refresh');
-				$(window).trigger('acfrefresh');
-			}, 0);
+			acf.doAction('refresh');
+			$(window).trigger('acfrefresh');
 		}
 	});
 	

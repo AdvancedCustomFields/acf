@@ -11171,6 +11171,14 @@
 						$prefs.append( $label );
 					}
 					
+					// Copy default WP events onto metabox.
+					copyEvents( $('.postbox .handlediv').first(), $postbox.children('.handlediv') );
+					copyEvents( $('.postbox .hndle').first(), $postbox.children('.hndle') );
+					
+					// Prevent "acf_after_title" position.
+					if( result.position == "acf_after_title" )
+						result.position = 'normal';
+					
 					// Append metabox to the bottom of "side-sortables".
 					if( result.position === 'side' ) {
 						$('#' + result.position + '-sortables').append( $postbox );
@@ -11203,13 +11211,6 @@
 								break;
 							}
 						}
-					}
-					
-					// Copy default WP events onto metabox.
-					var $submitdiv = $('#submitdiv');
-					if( $('#submitdiv').length ) {
-						copyEvents( $submitdiv.children('.handlediv'), $postbox.children('.handlediv') );
-						copyEvents( $submitdiv.children('.hndle'), $postbox.children('.hndle') );
 					}
 					
 					// Initalize it (modifies HTML).
@@ -13645,19 +13646,20 @@
 	
 	var refreshHelper = new acf.Model({
 		priority: 90,
-		timeout: 0,
+		initialize: function(){
+			this.refresh = acf.debounce( this.refresh, 0 );
+		},
 		actions: {
 			'new_field':	'refresh',
 			'show_field':	'refresh',
 			'hide_field':	'refresh',
-			'remove_field':	'refresh'
+			'remove_field':	'refresh',
+			'unmount_field': 'refresh',
+			'remount_field': 'refresh',
 		},
 		refresh: function(){
-			clearTimeout( this.timeout );
-			this.timeout = setTimeout(function(){
-				acf.doAction('refresh');
-				$(window).trigger('acfrefresh');
-			}, 0);
+			acf.doAction('refresh');
+			$(window).trigger('acfrefresh');
 		}
 	});
 	
