@@ -800,6 +800,10 @@
 		*/
 		addInputEvents: function( $el ){
 			
+			// Bug exists in Safari where custom "invalid" handeling prevents draft from saving.
+			if( acf.get('browser') === 'safari' ) 
+				return;
+			
 			// vars
 			var $inputs = $('.acf-field [name]', $el);
 			

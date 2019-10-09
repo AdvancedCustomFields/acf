@@ -2103,6 +2103,168 @@
 		});
 	};
 	
+	/**
+	 * acf.debounce
+	 *
+	 * Returns a debounced version of the passed function which will postpone its execution until after `wait` milliseconds have elapsed since the last time it was invoked.
+	 *
+	 * @date	28/8/19
+	 * @since	5.8.1
+	 *
+	 * @param	function callback The callback function.
+	 * @return	int wait The number of milliseconds to wait.
+	 */
+	acf.debounce = function( callback, wait ){
+		var timeout;
+		return function(){
+			var context = this;
+			var args = arguments;
+			var later = function(){
+				callback.apply( context, args );
+			};
+			clearTimeout( timeout );
+			timeout = setTimeout( later, wait );
+		};
+	};
+	
+	/**
+	 * acf.throttle
+	 *
+	 * Returns a throttled version of the passed function which will allow only one execution per `limit` time period.
+	 *
+	 * @date	28/8/19
+	 * @since	5.8.1
+	 *
+	 * @param	function callback The callback function.
+	 * @return	int wait The number of milliseconds to wait.
+	 */
+	acf.throttle = function( callback, limit ){
+		var busy = false;
+		return function(){
+			if( busy ) return;
+			busy = true;
+			setTimeout(function(){
+				busy = false;
+			}, limit);
+			callback.apply( this, arguments );
+		};
+	};
+	
+	/**
+	 * acf.isInView
+	 *
+	 * Returns true if the given element is in view.
+	 *
+	 * @date	29/8/19
+	 * @since	5.8.1
+	 *
+	 * @param	elem el The dom element to inspect.
+	 * @return	bool
+	 */
+	acf.isInView = function( el ){
+		var rect = el.getBoundingClientRect();
+		return (
+			rect.top !== rect.bottom &&
+			rect.top >= 0 &&
+			rect.left >= 0 &&
+			rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+			rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+		);
+	};
+	
+	/**
+	 * acf.onceInView
+	 *
+	 * Watches for a dom element to become visible in the browser and then excecutes the passed callback.
+	 *
+	 * @date	28/8/19
+	 * @since	5.8.1
+	 *
+	 * @param	dom el The dom element to inspect.
+	 * @param	function callback The callback function.
+	 */
+	acf.onceInView = (function() {
+		
+		// Define list.
+		var items = [];
+		var id = 0;
+		
+		// Define check function.
+		var check = function() {
+			items.forEach(function( item ){
+				if( acf.isInView(item.el) ) {
+					item.callback.apply( this );
+					pop( item.id );
+				}
+			});
+		};
+		
+		// And create a debounced version.
+		var debounced = acf.debounce( check, 300 );
+		
+		// Define add function.
+		var push = function( el, callback ) {
+			
+			// Add event listener.
+			if( !items.length ) {
+				$(window).on( 'scroll resize', debounced ).on( 'acfrefresh orientationchange', check );
+			}
+			
+			// Append to list.
+			items.push({ id: id++, el: el, callback: callback });
+		}
+		
+		// Define remove function.
+		var pop = function( id ) {
+			
+			// Remove from list.
+			items = items.filter(function(item) {
+				return (item.id !== id);
+			});
+			
+			// Clean up listener.
+			if( !items.length ) {
+				$(window).off( 'scroll resize', debounced ).off( 'acfrefresh orientationchange', check );
+			}
+		}
+		
+		// Define returned function.
+		return function( el, callback ){
+			
+			// Allow jQuery object.
+			if( el instanceof jQuery )
+				el = el[0];
+			
+			// Execute callback if already in view or add to watch list.
+			if( acf.isInView(el) ) {
+				callback.apply( this );
+			} else {
+				push( el, callback );
+			}
+		}
+	})();
+	
+	/**
+	 * acf.once
+	 *
+	 * Creates a function that is restricted to invoking `func` once.
+	 *
+	 * @date	2/9/19
+	 * @since	5.8.1
+	 *
+	 * @param	function func The function to restrict.
+	 * @return	function
+	 */
+	acf.once = function( func ){
+		var i = 0;
+		return function(){
+			if( i++ > 0 ) {
+				return (func = undefined);
+			}
+			return func.apply(this, arguments);
+		}
+	}
+	
 	/*
 	*  exists
 	*

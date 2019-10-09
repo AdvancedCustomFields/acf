@@ -100,7 +100,7 @@
 		getNodeValue: function(){
 			var $node = this.get('node');
 			return {
-				title:	$node.html(),
+				title:	acf.decode( $node.html() ),
 				url:	$node.attr('href'),
 				target:	$node.attr('target')
 			};
@@ -108,7 +108,7 @@
 		
 		setNodeValue: function( val ){
 			var $node = this.get('node');
-			$node.html( val.title );
+			$node.text( val.title );
 			$node.attr('href', val.url);
 			$node.attr('target', val.target);
 			$node.trigger('change');

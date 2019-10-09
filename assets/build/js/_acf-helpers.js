@@ -25,6 +25,7 @@
 			clearTimeout( this.timeout );
 			this.timeout = setTimeout(function(){
 				acf.doAction('refresh');
+				$(window).trigger('acfrefresh');
 			}, 0);
 		}
 	});

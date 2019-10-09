@@ -9,8 +9,7 @@
 			'change [data-filter]': 				'onChangeFilter',
 			'keyup [data-filter]': 					'onChangeFilter',
 			'click .choices-list .acf-rel-item': 	'onClickAdd',
-			'click [data-name="remove_item"]': 	'onClickRemove',
-			'mouseover': 							'onHover'
+			'click [data-name="remove_item"]': 		'onClickRemove',
 		},
 		
 		$control: function(){
@@ -56,60 +55,59 @@
 			].join('');
 		},
 		
-		addSortable: function( self ){
-			
-			// sortable
-			this.$list('values').sortable({
-				items:					'li',
-				forceHelperSize:		true,
-				forcePlaceholderSize:	true,
-				scroll:					true,
-				update:	function(){
-					self.$input().trigger('change');
-				}
-			});
-		},
-		
 		initialize: function(){
 			
-			// scroll
-			var onScroll = this.proxy(function(e){
+			// Delay initialization until "interacted with" or "in view".
+			var delayed = this.proxy(acf.once(function(){
 				
-				// bail early if no more results
-				if( this.get('loading') || !this.get('more') ) {
-					return;	
-				}
+				// Add sortable.
+				this.$list('values').sortable({
+					items:					'li',
+					forceHelperSize:		true,
+					forcePlaceholderSize:	true,
+					scroll:					true,
+					update:	this.proxy(function(){
+						this.$input().trigger('change');
+					})
+				});
 				
-				// Scrolled to bottom
-				var $list = this.$list('choices');
-				var scrollTop = Math.ceil( $list.scrollTop() );
-				var scrollHeight = Math.ceil( $list[0].scrollHeight );
-				var innerHeight = Math.ceil( $list.innerHeight() );
-				var paged = this.get('paged') || 1;
-				if( (scrollTop + innerHeight) >= scrollHeight ) {
-					
-					// update paged
-					this.set('paged', (paged+1));
-					
-					// fetch
-					this.fetch();
-				}
+				// Avoid browser remembering old scroll position and add event.
+				this.$list('choices').scrollTop(0).on('scroll', this.proxy(this.onScrollChoices));
 				
-			});
+				// Fetch choices.
+				this.fetch();
+				
+			}));
 			
-			this.$list('choices').scrollTop(0).on('scroll', onScroll);
+			// Bind "interacted with".
+			this.$el.one( 'mouseover', delayed );
+			this.$el.one( 'focus', 'input', delayed );
 			
-			// fetch
-			this.fetch();
+			// Bind "in view".
+			acf.onceInView( this.$el, delayed );
 		},
 		
-		onHover: function( e ){
+		onScrollChoices: function(e){
+				
+			// bail early if no more results
+			if( this.get('loading') || !this.get('more') ) {
+				return;	
+			}
 			
-			// only once
-			$().off(e);
-			
-			// add sortable
-			this.addSortable( this );
+			// Scrolled to bottom
+			var $list = this.$list('choices');
+			var scrollTop = Math.ceil( $list.scrollTop() );
+			var scrollHeight = Math.ceil( $list[0].scrollHeight );
+			var innerHeight = Math.ceil( $list.innerHeight() );
+			var paged = this.get('paged') || 1;
+			if( (scrollTop + innerHeight) >= scrollHeight ) {
+				
+				// update paged
+				this.set('paged', (paged+1));
+				
+				// fetch
+				this.fetch();
+			}
 		},
 		
 		onKeypressFilter: function( e, $el ){
