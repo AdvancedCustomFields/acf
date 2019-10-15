@@ -90,6 +90,13 @@ class acf_field_true_false extends acf_field {
 				$switch .= '<div class="acf-switch-slider"></div>';
 			$switch .= '</div>';
 			
+    }
+    
+    // disabled
+    if ( ! empty( $field['disabled'] ) ) {
+
+      $input['disabled'] = 'disabled';
+      
 		}
 		
 ?>
