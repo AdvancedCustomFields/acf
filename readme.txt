@@ -2,7 +2,7 @@
 Contributors: elliotcondon
 Tags: acf, advanced, custom, field, fields, form, repeater, content
 Requires at least: 4.7.0
-Tested up to: 5.2
+Tested up to: 5.2.4
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -66,6 +66,16 @@ From your WordPress dashboard
 
 
 == Changelog ==
+
+= 5.8.6 =
+*Release Date - 24 October 2019*
+
+* New - Added more data to Google Maps field value including place_id, street_name, country and more.
+* Fix - Fixed bug in Gallery field incorrectly displaying .pdf attachments as icons.
+* Fix - Fixed bug in Checkbox field missing "selected" class after "Toggle All".
+* Dev - Added compatibility for Attachments in the Post Taxonomy location rule.
+* Dev - Added missing return statement from `acf_get_form()` function.
+* Dev - Added "google_map_result" JS filter.
 
 = 5.8.5 =
 *Release Date - 8 October 2019*

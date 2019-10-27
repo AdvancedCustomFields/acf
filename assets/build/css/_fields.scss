@@ -1295,10 +1295,6 @@ ul.acf-checkbox-list {
 			cursor: text;
 		}
 		
-		.acf-actions {
-			
-		}
-		
 		.acf-loading {
 			position: absolute;
 			top: 10px;
@@ -1306,8 +1302,9 @@ ul.acf-checkbox-list {
 			display: none;
 		}
 		
-		&:hover {
-			.acf-actions { display: block; }
+		// Avoid icons disapearing when click/blur events conflict.
+		.acf-icon:active {
+			display: inline-block !important;
 		}
 	}
 	
@@ -1315,37 +1312,23 @@ ul.acf-checkbox-list {
 		height: 400px;
 	}
 	
+	// Show actions on hover.
+	&:hover .title .acf-actions { 
+		display: block;
+	}
 	
-	/* default is focused */
+	// Default state (show locate, hide search and cancel).
 	.title {
 		.acf-icon.-location {
 			display: inline-block;
 		}
-		.acf-icon.-cancel {
-			display: none;
-		}
+		.acf-icon.-cancel,
 		.acf-icon.-search {
 			display: none;
 		}
 	}
 	
-	
-	/* -search */
-	&.-search .title { 
-		.acf-icon.-location {
-			display: none;
-		}
-		.acf-icon.-cancel {
-			display: inline-block;
-		}
-		.acf-icon.-search {
-			display: inline-block;
-		}
-	}
-	
-	
-	
-	/* -value */
+	// Has value (hide locate, show cancel).
 	&.-value .title { 
 		.search {
 			font-weight: bold;
@@ -1356,13 +1339,30 @@ ul.acf-checkbox-list {
 		.acf-icon.-cancel {
 			display: inline-block;
 		}
-		.acf-icon.-search {
+	}
+	
+	// Is searching (hide locate, show search and cancel).
+	&.-searching .title {
+		.acf-icon.-location {
 			display: none;
+		}
+		.acf-icon.-cancel,
+		.acf-icon.-search {
+			display: inline-block;
+		}
+		
+		// Show actions.
+		.acf-actions { 
+			display: block;
+		}
+		
+		// Change search font-weght.
+		.search {
+			font-weight: normal !important;
 		}
 	}
 	
-	
-	/* -loading */
+	// Loading.
 	&.-loading .title {
 		a {
 			display: none !important;

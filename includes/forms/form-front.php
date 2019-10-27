@@ -633,7 +633,7 @@ function acf_form( $args = array() ) {
 
 function acf_get_form( $id = '' ) {
 	
-	acf()->form_front->get_form( $id );
+	return acf()->form_front->get_form( $id );
 	
 }
 
