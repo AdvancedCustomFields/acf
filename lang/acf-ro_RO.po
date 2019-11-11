@@ -38,7 +38,7 @@ msgstr "Grup de câmp"
 #: acf.php:390 acf.php:422 includes/admin/admin.php:118
 #: pro/fields/class-acf-field-flexible-content.php:551
 msgid "Add New"
-msgstr "Adaungă"
+msgstr "Adaugă"
 
 #: acf.php:391
 msgid "Add New Field Group"
