@@ -1331,6 +1331,17 @@
 		// append
 		args.append( $el, $el2 );
 		
+		/**
+		 * Fires after an element has been duplicated and appended to the DOM.
+		 *
+		 * @date	30/10/19
+		 * @since	5.8.7
+		 *
+		 * @param	jQuery $el The original element.
+		 * @param	jQuery $el2 The duplicated element.
+		 */
+		acf.doAction('duplicate', $el, $el2 );
+		
 		// append
 		// - allow element to be moved into a visible position before fire action
 		//var callback = function(){
@@ -4050,6 +4061,9 @@
 			
 			// Show postbox
 			this.$el.show().removeClass('acf-hidden');
+			
+			// Do action.
+			acf.doAction('show_postbox', this);
 		},
 		
 		enable: function(){
@@ -4057,8 +4071,8 @@
 		},
 		
 		showEnable: function(){
-			this.show();
 			this.enable();
+			this.show();
 		},
 		
 		hide: function(){
@@ -4068,6 +4082,9 @@
 			
 			// Hide postbox
 			this.$el.hide().addClass('acf-hidden');
+			
+			// Do action.
+			acf.doAction('hide_postbox', this);
 		},
 		
 		disable: function(){
@@ -4075,8 +4092,8 @@
 		},
 		
 		hideDisable: function(){
-			this.hide();
 			this.disable();
+			this.hide();
 		},
 		
 		html: function( html ){
@@ -6097,8 +6114,8 @@
 				valAttr = JSON.stringify( val );
 			}
 			
-			// Update input.
-			this.$input().val( valAttr );
+			// Update input (with change).
+			acf.val( this.$input(), valAttr );
 			
 			// Bail early if silent update.
 			if( silent ) {
@@ -6185,19 +6202,23 @@
 		
 		initializeMap: function(){
 			
-			// Vars.
-			var zoom = this.get('zoom');
-			var lat = this.get('lat');
-			var lng = this.get('lng');
-			var val = this.val();
+			// Get value ignoring conditional logic status.
+			var val = this.getValue();
+			
+			// Construct default args.
+			var args = acf.parseArgs(val, {
+				zoom: this.get('zoom'),
+				lat: this.get('lat'),
+				lng: this.get('lng')
+			});
 			
 			// Create Map.
 			var mapArgs = {
 				scrollwheel:	false,
-        		zoom:			parseInt( val.zoom || zoom ),
+        		zoom:			parseInt( args.zoom ),
         		center:			{
-					lat: parseFloat( val.lat || lat ), 
-					lng: parseFloat( val.lng || lng )
+					lat: parseFloat( args.lat ), 
+					lng: parseFloat( args.lng )
 				},
         		mapTypeId:		google.maps.MapTypeId.ROADMAP,
         		marker:			{
@@ -6237,7 +6258,6 @@
         	this.map = map;
         	
         	// Set position.
-		    var val = this.getValue();
 		    if( val ) {
 			    this.setPosition( val.lat, val.lng );
 		    }
@@ -11135,9 +11155,6 @@
 		
 		renderPostScreen: function( data ){
 			
-			// vars
-			var visible = [];
-			
 			// Helper function to copy events
 			var copyEvents = function( $from, $to ){
 				var events = $._data($from[0]).events;
@@ -11177,11 +11194,20 @@
 				return false;
 			};
 			
+			// Keep track of visible and hidden postboxes.
+			data.visible = [];
+			data.hidden = [];
+			
 			// Show these postboxes.
-			data.results.map(function( result, i ){
+			data.results = data.results.map(function( result, i ){
 				
 				// vars
 				var postbox = acf.getPostbox( result.id );
+				
+				// Prevent "acf_after_title" position in Block Editor.
+				if( acf.isGutenberg() && result.position == "acf_after_title" ) {
+					result.position = 'normal';
+				}
 				
 				// Create postbox if doesn't exist.
 				if( !postbox ) {
@@ -11220,12 +11246,10 @@
 					}
 					
 					// Copy default WP events onto metabox.
-					copyEvents( $('.postbox .handlediv').first(), $postbox.children('.handlediv') );
-					copyEvents( $('.postbox .hndle').first(), $postbox.children('.hndle') );
-					
-					// Prevent "acf_after_title" position.
-					if( result.position == "acf_after_title" )
-						result.position = 'normal';
+					if( $('.postbox').length ) {
+						copyEvents( $('.postbox .handlediv').first(), $postbox.children('.handlediv') );
+						copyEvents( $('.postbox .hndle').first(), $postbox.children('.hndle') );
+					}
 					
 					// Append metabox to the bottom of "side-sortables".
 					if( result.position === 'side' ) {
@@ -11272,25 +11296,30 @@
 				// show postbox
 				postbox.showEnable();
 				
-				// Do action.
-				acf.doAction('show_postbox', postbox);
-				
 				// append
-				visible.push( result.id );
+				data.visible.push( result.id );
+				
+				// Return result (may have changed).
+				return result;
 			});
 			
 			// Hide these postboxes.
 			acf.getPostboxes().map(function( postbox ){
-				if( visible.indexOf( postbox.get('id') ) === -1 ) {
+				if( data.visible.indexOf( postbox.get('id') ) === -1 ) {
+					
+					// Hide postbox.
 					postbox.hideDisable();
 					
-					// Do action.
-					acf.doAction('hide_postbox', postbox);
+					// Append to data.
+					data.hidden.push( postbox.get('id') );
 				}
 			});
 			
 			// Update style.
-			$('#acf-style').html( data.style );	
+			$('#acf-style').html( data.style );
+			
+			// Do action.
+			acf.doAction( 'refresh_post_screen', data );
 		},
 		
 		renderUserScreen: function( json ){
@@ -11311,6 +11340,9 @@
 	*/
 	var gutenScreen = new acf.Model({
 		
+		// Keep a reference to the most recent post attributes.
+		postEdits: {},
+				
 		// Wait until load to avoid 'core' issues when loading taxonomies.
 		wait: 'load',
 
@@ -11321,8 +11353,8 @@
 				return;
 			}
 			
-			// Listen for changes.
-			wp.data.subscribe(this.proxy(this.onChange));
+			// Listen for changes (use debounced version as this can fires often).
+			wp.data.subscribe( acf.debounce(this.onChange).bind(this) );
 			
 			// Customize "acf.screen.get" functions.
 			acf.screen.getPageTemplate = this.getPageTemplate;
@@ -11334,48 +11366,39 @@
 			// Disable unload
 			acf.unload.disable();
 			
-			// Add actions.
-			//this.addAction( 'append_postbox', acf.screen.refreshAvailableMetaBoxesPerLocation );
+			// Refresh metaboxes since WP 5.3.
+			var wpMinorVersion = parseFloat( acf.get('wp_version') );
+			if( wpMinorVersion >= 5.3 ) {
+				this.addAction( 'refresh_post_screen', this.onRefreshPostScreen );
+			}
 		},
 		
 		onChange: function(){
 			
-			// Get edits.
-			var edits = wp.data.select( 'core/editor' ).getPostEdits();
+			// Determine attributes that can trigger a refresh.
+			var attributes = [ 'template', 'parent', 'format' ];
 			
-			// Check specific attributes.
-			var attributes = [
-				'template',
-				'parent',
-				'format'
-			];
-			
-			// Append taxonomy attributes.
-			var taxonomies = wp.data.select( 'core' ).getTaxonomies() || [];
-			taxonomies.map(function( taxonomy ){
+			// Append taxonomy attribute names to this list.
+			( wp.data.select( 'core' ).getTaxonomies() || [] ).map(function( taxonomy ){
 				attributes.push( taxonomy.rest_base );
 			});
 			
-			// Filter out attributes that have not changed.
-			attributes = attributes.filter(this.proxy(function( attr ){
-				return ( edits[attr] !== undefined && edits[attr] !== this.get(attr) );
-			}));
+			// Get relevant current post edits.
+			var _postEdits = wp.data.select( 'core/editor' ).getPostEdits();
+			var postEdits = {};
+			attributes.map(function( k ){
+				if( _postEdits[k] !== undefined ) {
+					postEdits[k] = _postEdits[k];
+				}
+			});
 			
-			// Trigger change if has attributes.
-			if( attributes.length ) {
-				this.triggerChange( edits )
+			// Detect change.
+			if( JSON.stringify(postEdits) !== JSON.stringify(this.postEdits) ) {
+				this.postEdits = postEdits;
+				
+				// Check screen.
+				acf.screen.check();
 			}
-		},
-		
-		triggerChange: function( edits ){
-			
-			// Update this.data if edits are provided.
-			if( edits !== undefined ) {
-				this.data = edits;
-			}
-			
-			// Check screen.
-			acf.screen.check();
 		},
 				
 		getPageTemplate: function(){
@@ -11412,65 +11435,66 @@
 			
 			// return
 			return terms;
-		}
-	});
-	
-	/**
-	 * acf.screen.refreshAvailableMetaBoxesPerLocation
-	 *
-	 * Refreshes the WP data state based on metaboxes found in the DOM.
-	 *
-	 * Caution. Not safe to use.
-	 * Causes duplicate dispatch listeners when saving post resulting in duplicate postmeta.
-	 *
-	 * @date	6/3/19
-	 * @since	5.7.13
-	 *
-	 * @param	void
-	 * @return	void
-	 */
-	acf.screen.refreshAvailableMetaBoxesPerLocation = function() {
+		},
 		
-		// Extract vars.
-		var select = wp.data.select( 'core/edit-post' );
-		var dispatch = wp.data.dispatch( 'core/edit-post' );
-		
-		// Load current metabox locations and data.
-		var data = {};
-		select.getActiveMetaBoxLocations().map(function( location ){
-			data[ location ] = select.getMetaBoxesPerLocation( location );
-		});
-		
-		// Generate flat array of existing ids.
-		var ids = [];
-		for( var k in data ) {
-			ids = ids.concat( data[k].map(function(m){ return m.id; }) );
-		}
-		
-		// Append ACF metaboxes.
-		acf.getPostboxes().map(function( postbox ){
+		/**
+		 * onRefreshPostScreen
+		 *
+		 * Fires after the Post edit screen metaboxs are refreshed to update the Block Editor API state.
+		 *
+		 * @date	11/11/19
+		 * @since	5.8.7
+		 *
+		 * @param	object data The "check_screen" JSON response data.
+		 * @return	void
+		 */
+		onRefreshPostScreen: function( data ) {
 			
-			// Ignore if already exists in data.
-			if( ids.indexOf( postbox.get('id') ) !== -1 ) {
-				return;
+			// Extract vars.
+			var select = wp.data.select( 'core/edit-post' );
+			var dispatch = wp.data.dispatch( 'core/edit-post' );
+			
+			// Load current metabox locations and data.
+			var locations = {};
+			select.getActiveMetaBoxLocations().map(function( location ){
+				locations[ location ] = select.getMetaBoxesPerLocation( location );
+			});
+			
+			// Generate flat array of existing ids.
+			var ids = [];
+			for( var k in locations ) {
+				locations[k].map(function( m ){
+					ids.push( m.id );
+				});
 			}
 			
-			// Get metabox location looking at parent form.
-			var location = postbox.$el.closest('form').attr('class').replace('metabox-location-', '');
-			
-			// Ensure location exists.
-			data[ location ] = data[ location ] || [];
-			
-			// Append.
-			data[ location ].push({
-				id: postbox.get('id'),
-				title: postbox.get('title')
+			// Append new ACF metaboxes (ignore those which already exist).
+			data.results.filter(function( r ){
+				return ( ids.indexOf( r.id ) === -1 );
+			}).map(function( result, i ){
+				
+				// Ensure location exists.
+				var location = result.position;
+				locations[ location ] = locations[ location ] || [];
+				
+				// Append.
+				locations[ location ].push({
+					id: result.id,
+					title: result.title
+				});
 			});
-		});
-		
-		// Update state.
-		dispatch.setAvailableMetaBoxesPerLocation(data);	
-	};
+			
+			// Remove hidden ACF metaboxes.
+			for( var k in locations ) {
+				locations[k] = locations[k].filter(function( m ){
+					return ( data.hidden.indexOf( m.id ) === -1 );
+				});
+			}
+			
+			// Update state.
+			dispatch.setAvailableMetaBoxesPerLocation( locations );	
+		}
+	});
 
 })(jQuery);
 
@@ -12127,6 +12151,9 @@
 	var select2Manager = new acf.Model({
 		priority: 5,
 		wait: 'prepare',
+		actions: {
+			'duplicate': 'onDuplicate'
+		},
 		initialize: function(){
 			
 			// vars
@@ -12262,6 +12289,10 @@
 			// append
 			$.fn.select2.locales[ locale ] = select2L10n;
 			$.extend($.fn.select2.defaults, select2L10n);
+		},
+		
+		onDuplicate: function( $el, $el2 ){
+			$el2.find('.select2-container').remove();
 		}
 		
 	});

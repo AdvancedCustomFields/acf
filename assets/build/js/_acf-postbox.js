@@ -170,6 +170,9 @@
 			
 			// Show postbox
 			this.$el.show().removeClass('acf-hidden');
+			
+			// Do action.
+			acf.doAction('show_postbox', this);
 		},
 		
 		enable: function(){
@@ -177,8 +180,8 @@
 		},
 		
 		showEnable: function(){
-			this.show();
 			this.enable();
+			this.show();
 		},
 		
 		hide: function(){
@@ -188,6 +191,9 @@
 			
 			// Hide postbox
 			this.$el.hide().addClass('acf-hidden');
+			
+			// Do action.
+			acf.doAction('hide_postbox', this);
 		},
 		
 		disable: function(){
@@ -195,8 +201,8 @@
 		},
 		
 		hideDisable: function(){
-			this.hide();
 			this.disable();
+			this.hide();
 		},
 		
 		html: function( html ){

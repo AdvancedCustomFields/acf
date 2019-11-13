@@ -2,7 +2,7 @@
 Contributors: elliotcondon
 Tags: acf, advanced, custom, field, fields, form, repeater, content
 Requires at least: 4.7.0
-Tested up to: 5.2.4
+Tested up to: 5.3.0
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -66,6 +66,16 @@ From your WordPress dashboard
 
 
 == Changelog ==
+
+= 5.8.7 =
+*Release Date - 12 November 2019*
+
+* New - Updated admin CSS for new WordPress 5.3 styling.
+* Fix - Fixed various issues affecting dynamic metaboxes in the block editor (requires WordPress 5.3)
+* Fix - Fixed performance issue when checking network sites for upgrades.
+* Fix - Fixed Select2 clones appearing after duplicating a Relationship field.
+* Tweak - Repeater field "Add row" icons will now hide when maximum rows are reached.
+* Tweak - Removed ACF Blocks keyword limit for later versions of Gutenberg.
 
 = 5.8.6 =
 *Release Date - 24 October 2019*

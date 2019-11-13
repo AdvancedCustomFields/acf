@@ -259,7 +259,7 @@
 		
 		// Label
 		.attachment-info .thumbnail,
-		.attachment-details .setting span, 
+		.attachment-details .setting .name, 
 		.compat-attachment-fields > tbody > .acf-field > .acf-label {
 			min-width: 20%;
 			margin-right: 0;
@@ -332,28 +332,9 @@
 	
 	/* hide embed settings */
 	.media-embed {
-		
 		.setting.align,
 		.setting.link-to {
 			display: none;
-		}
-		
-	}
-	
-	// only allow for devices larger than mobile
-	@media screen and (min-width: 1024px) {
-		
-		// - requires long selector to override WP core
-		.media-modal-content .media-frame .media-toolbar-secondary {
-			max-width: none;
-			
-			select.attachment-filters {
-				width: auto;
-				min-width: 150px;
-				max-width: none;
-				margin: 11px 6px 0 0;
-				vertical-align: middle;
-			}
 		}
 	}
 }

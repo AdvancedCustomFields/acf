@@ -64,8 +64,8 @@
 				valAttr = JSON.stringify( val );
 			}
 			
-			// Update input.
-			this.$input().val( valAttr );
+			// Update input (with change).
+			acf.val( this.$input(), valAttr );
 			
 			// Bail early if silent update.
 			if( silent ) {
@@ -152,19 +152,23 @@
 		
 		initializeMap: function(){
 			
-			// Vars.
-			var zoom = this.get('zoom');
-			var lat = this.get('lat');
-			var lng = this.get('lng');
-			var val = this.val();
+			// Get value ignoring conditional logic status.
+			var val = this.getValue();
+			
+			// Construct default args.
+			var args = acf.parseArgs(val, {
+				zoom: this.get('zoom'),
+				lat: this.get('lat'),
+				lng: this.get('lng')
+			});
 			
 			// Create Map.
 			var mapArgs = {
 				scrollwheel:	false,
-        		zoom:			parseInt( val.zoom || zoom ),
+        		zoom:			parseInt( args.zoom ),
         		center:			{
-					lat: parseFloat( val.lat || lat ), 
-					lng: parseFloat( val.lng || lng )
+					lat: parseFloat( args.lat ), 
+					lng: parseFloat( args.lng )
 				},
         		mapTypeId:		google.maps.MapTypeId.ROADMAP,
         		marker:			{
@@ -204,7 +208,6 @@
         	this.map = map;
         	
         	// Set position.
-		    var val = this.getValue();
 		    if( val ) {
 			    this.setPosition( val.lat, val.lng );
 		    }

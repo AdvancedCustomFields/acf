@@ -37,3 +37,9 @@
 		@content;
 	}
 }
+
+@mixin wp-admin( $version: '3-8' ) {
+	.acf-admin-#{$version} & {
+		@content;
+	}
+}

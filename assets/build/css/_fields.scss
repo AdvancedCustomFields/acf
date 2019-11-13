@@ -167,7 +167,7 @@
 	
 	// border
 	&.-border {
-		border: #dfdfdf solid 1px;
+		border: $wp-card-border solid 1px;
 		background: #fff;
 	}
 	
@@ -180,7 +180,8 @@
 		
 		// first
 		&:first-child {
-			border-top-width: 0;
+			border-top: none;
+			margin-top: 0;
 		}
 	}
 	
@@ -290,6 +291,20 @@
 		// input
 		> .acf-input {
 			float: right;
+		}
+	}
+	
+	// In sidebar.
+	#side-sortables & {
+		&:before { 
+			display: none;
+		}
+		> .acf-label {
+			width: 100%;
+			margin-bottom: 10px;
+		}
+		> .acf-input {
+			width: 100%;
 		}
 	}
 	
@@ -471,43 +486,36 @@
 *---------------------------------------------------------------------------------------------*/
 
 .acf-field {
-	
-	// inputs
-	input[type="text"], 
-	input[type="password"], 
-	input[type="number"], 
-	input[type="search"], 
-	input[type="email"], 
-	input[type="url"], 
+	input[type="text"],
+	input[type="password"],
+	input[type="date"],
+	input[type="datetime"],
+	input[type="datetime-local"],
+	input[type="email"],
+	input[type="month"],
+	input[type="number"],
+	input[type="search"],
+	input[type="tel"],
+	input[type="time"],
+	input[type="url"],
+	input[type="week"],
 	textarea,
 	select {
 	    width: 100%;
-		padding: 3px 5px;
-		resize: none;
+		padding: 4px 8px;
 		margin: 0;
-		-webkit-box-sizing: border-box;
-		-moz-box-sizing: border-box;
 		box-sizing: border-box;
-	    
 	    font-size: 14px;
 	    line-height: 1.4;
 	    
-	    // disabled
-	    &:disabled {
-		    background: #f8f8f8;
-	    }
-	    
-	    // readonly
-	    &[readonly] {
-		    background: #f8f8f8;
-	    }
+	    // WP Admin 3.8
+		@include wp-admin('3-8') {
+			padding: 3px 5px;
+		}
 	}
-	
-	// textarea
 	textarea {
 		resize: vertical;
 	}
-	
 }
 
 
@@ -524,11 +532,19 @@
 
 .acf-input-prepend,
 .acf-input-append {
-	font-size: 13px;
-	line-height: 20px;
-	padding: 3px 7px;
-	background: #F4F4F4;
-	border: #DFDFDF solid 1px;
+	font-size: 14px;
+	line-height: 1.4;
+	padding: 4px 8px;
+	background: #f5f5f5;
+	border: $wp-input-border solid 1px;
+	min-height: 30px;
+	
+	// WP Admin 3.8
+	@include wp-admin('3-8') {
+		padding: 3px 5px;
+		border-color: $wp38-input-border;
+		min-height: 28px;
+	}
 }
 
 .acf-input-prepend {
@@ -546,11 +562,6 @@
 .acf-input-wrap {
 	position: relative;
 	overflow: hidden;
-	
-	input {
-		height: 28px;
-		margin: 0;
-	}
 }
 
 input.acf-is-prepended {
@@ -602,12 +613,16 @@ html[dir="rtl"] input.acf-is-prepended.acf-is-appended {
 *---------------------------------------------------------------------------------------------*/
 
 .acf-color-picker {
-	
+	.wp-color-result {
+		border-color: $wp-input-border;
+		@include wp-admin('3-8') {
+			border-color: $wp-card-border;
+		}
+	}
 	.wp-picker-active {
 		position: relative;
 		z-index: 1;
 	}
-	
 }
 
 
@@ -628,7 +643,7 @@ html[dir="rtl"] input.acf-is-prepended.acf-is-appended {
 	}
 	
 	input[type="url"] {
-		padding-left: 25px;
+		padding-left: 25px !important;
 	}
 	
 	&.-valid i {
@@ -814,13 +829,21 @@ html[dir="rtl"] .select2-container.-acf {
 *  Select2 (v4)
 *
 *---------------------------------------------------------------------------------------------*/
-
-// Fix unneeded bottom margin.
 .select2-container.-acf {
 	
 	// Reset WP default style.
 	li{
 		margin-bottom: 0;
+	}
+	
+	// Customize border color to match WP admin.
+	.select2-selection {
+		border-color: $wp-input-border;
+		
+		// WP Admin 3.8
+		@include wp-admin('3-8') {
+			border-color: #aaa;
+		}
 	}
 	
 	// Multiple wrap.
@@ -874,6 +897,7 @@ html[dir="rtl"] .select2-container.-acf {
 		// search
 		.select2-search__field {
 			box-shadow: none !important;
+			min-height: 0;
 		}
 	}
 	
@@ -895,6 +919,12 @@ html[dir="rtl"] .select2-container.-acf {
 .select2-container {
 	.select2-dropdown {
 		z-index: 900000;
+		
+		// Reset input height.
+		.select2-search__field {
+			line-height: 1.4;
+			min-height: 0;
+		}
 	}
 }
 
@@ -904,49 +934,51 @@ html[dir="rtl"] .select2-container.-acf {
 *
 *---------------------------------------------------------------------------------------------*/
 
-.link-wrap {
-	border: #dddddd solid 1px;
-	border-radius: 3px;
-	padding: 5px;
-	line-height: 26px;
-	background: #fff;
-	
-	word-wrap: break-word;
-	word-break: break-all;
-	
-	.link-title {
-		padding: 0 5px;
-	}
-	
-}
-
 .acf-link {
 	
-	.link-wrap,
-	.acf-icon.-link-ext { display: none; }
+	.link-wrap {
+		display: none;
+		border: $wp-card-border solid 1px;
+		border-radius: 3px;
+		padding: 5px;
+		line-height: 26px;
+		background: #fff;
+		
+		word-wrap: break-word;
+		word-break: break-all;
+		
+		.link-title {
+			padding: 0 5px;
+		}
+	}
 	
-	/* value */
+	// Has value.
 	&.-value {
-		
-		.button { display: none; }
-		.link-wrap { display: inline-block; }
-		
+		.button {
+			display: none;
+		}
+		.acf-icon.-link-ext {
+			display: none;
+		}
+		.link-wrap {
+			display: inline-block;
+		}
 	}
 	
-	
-	/* external */
+	// Is external.
 	&.-external {
-		
-		.acf-icon.-link-ext { display: inline-block; }
-		
+		.acf-icon.-link-ext {
+			display: inline-block;
+		}
 	}
-	
 }
 
-#wp-link-backdrop { z-index: 900000 !important; }
-#wp-link-wrap { z-index: 900001 !important; }
-
-
+#wp-link-backdrop { 
+	z-index: 900000 !important;
+}
+#wp-link-wrap { 
+	z-index: 900001 !important;
+}
 
 /*---------------------------------------------------------------------------------------------
 *
@@ -1033,26 +1065,24 @@ ul.acf-checkbox-list {
 	
 	label {
 		display: inline-block;
-		border: #ccc solid 1px;
+		border: $wp-input-border solid 1px;
 		position: relative;
 		z-index: 1;
 		padding: 5px 10px;
 		background: #fff;
 		
 		&:hover {
-			border-color: darken(#ccc, 20%);
+			color: #016087;
+			background: #f3f5f6;
+			border-color: #0071a1;
 			z-index: 2;
 		}
 		
 		&.selected {
-			border-color: darken(#309cf3, 1%);
-			background: #309cf3;
+			border-color: #007cba;
+			background: lighten(#007cba, 5%);
 			color: #fff;
 			z-index: 2;
-			
-			&:hover {
-				background: lighten(#309cf3, 5%);
-			}
 		}
 	}
 	
@@ -1105,7 +1135,18 @@ ul.acf-checkbox-list {
 		}
 	}
 	
-	
+	// WP Admin 3.8
+	@include wp-admin('3-8') {
+		label {
+			border-color: $wp-card-border;
+			&:hover {
+				border-color: #0071a1;
+			}
+			&.selected {
+				border-color: #007cba;
+			}
+		}
+	}
 }
 
 
@@ -1131,17 +1172,15 @@ ul.acf-checkbox-list {
 *  True / False
 *
 *---------------------------------------------------------------------------------------------*/
-
 .acf-switch {
 	display: inline-block;
 	border-radius: 5px;
 	cursor: pointer;
 	position: relative;
-	background: #f8f8f8;
+	background: #f5f5f5;
 	height: 30px;
 	vertical-align: middle;
-	//box-shadow: inset 0 0 1px rgba(0,0,0,0.2);
-	border: #ccc solid 1px;
+	border: $wp-input-border solid 1px;
 	
 	-webkit-transition: background 0.25s ease;
 	-moz-transition: background 0.25s ease;
@@ -1166,7 +1205,7 @@ ul.acf-checkbox-list {
 	
 	.acf-switch-on {
 		color: #fff;
-		text-shadow: darken($acf_blue, 10%) 0 1px 0;
+		text-shadow: #007cba 0 1px 0;
 	}
 	
 	.acf-switch-off {
@@ -1182,7 +1221,7 @@ ul.acf-checkbox-list {
 		z-index: 1;
 		background: #fff;
 		border-radius: 3px;
-		border: #ccc solid 1px;
+		border: $wp-input-border solid 1px;
 		
 		-webkit-transition: all 0.25s ease;
 		-moz-transition: all 0.25s ease;
@@ -1192,58 +1231,64 @@ ul.acf-checkbox-list {
 		transition-property: left, right;
 	}
 	
-	
 	/* hover */
-	&:hover {
+	&:hover,
+	&.-focus {
+		border-color: #0071a1;
+		background: #f3f5f6;
+		color: #016087;
 		.acf-switch-slider{
-			border-color: darken(#ccc, 10%);
+			border-color: #0071a1;
 		}
 	}
 	
-	
 	/* active */
 	&.-on {
-		background: #309cf3;
-		border-color: darken(#309cf3, 1%);
+		background: #0d99d5;
+		border-color: #007cba;
 		
 		.acf-switch-slider {
 			left: 50%;
 			right: 2px;
-			border-color: darken(#309cf3, 10%);
+			border-color: #007cba;
 		}
 		
 		/* hover */
 		&:hover {
-			background: lighten(#309cf3, 5%);
+			border-color: #007cba;
 		}
 	}
-	
-	
-	/* focus */
-	&.-focus {
-		
-		.acf-switch-slider {
-			border-color: #5b9dd9;
-			box-shadow: 0 0 2px rgba(30, 140, 190, 0.5);
-		}
-		
-		
-		&.-on {
-			
-			.acf-switch-slider {
-				border-color: darken($acf_blue, 20%);
-				box-shadow: 0 0 2px darken($acf_blue, 10%);
-			}
-		}
-		
-	}
-	
 	
 	/* message */
 	+ span {
 		margin-left: 6px;
 	}
 	
+	// WP Admin 3.8
+	@include wp-admin('3-8') {
+		border-color: $wp-card-border;
+		.acf-switch-slider {
+			border-color: $wp-card-border;
+		}
+		
+		&:hover,
+		&.-focus {
+			border-color: #0071a1;
+			.acf-switch-slider{
+				border-color: #0071a1;
+			}
+		}
+		
+		&.-on {
+			border-color: #007cba;
+			.acf-switch-slider {
+				border-color: #007cba;
+			}
+			&:hover {
+				border-color: #007cba;
+			}
+		}
+	}
 }
 
 
@@ -1275,12 +1320,12 @@ ul.acf-checkbox-list {
 
 .acf-google-map {
 	position: relative;
-	border: #DFDFDF solid 1px;
+	border: $wp-card-border solid 1px;
 	background: #fff;
 	
 	.title {
 		position: relative;
-		border-bottom: #DFDFDF solid 1px;
+		border-bottom: $wp-card-border solid 1px;
 		
 		.search {
 			margin: 0;
@@ -1408,11 +1453,12 @@ html[dir="rtl"] .pac-container .pac-item {
 
 .acf-relationship {
 	background: #fff;
+	border: $wp-card-border solid 1px;
 	
-	/* filters (top) */
+	// Filters.
 	.filters {
 		@include clearfix();
-		border: #DFDFDF solid 1px;
+		border-bottom: $wp-card-border solid 1px;
 		background: #fff;
 		
 		
@@ -1437,7 +1483,7 @@ html[dir="rtl"] .pac-container .pac-item {
 			// inputs
 			input, select {
 				height: 28px;
-			    line-height: 28px;
+			    line-height: 1;
 				padding: 2px;
 				width: 100%;
 				margin: 0;
@@ -1575,9 +1621,7 @@ html[dir="rtl"] .pac-container .pac-item {
 	/* selection (bottom) */
 	.selection {
 		@include clearfix();
-		border: #DFDFDF solid 1px;
 		position: relative;
-		margin-top: -1px;
 		
 		.values,
 		.choices {
@@ -1682,12 +1726,17 @@ html[dir="rtl"] .pac-container .pac-item {
 	}
 	
 	.wp-editor-container{ 
-		border: 1px solid #E5E5E5;
+		border: 1px solid $wp-card-border;
 		box-shadow: none !important;
 	}
 	
 	.wp-editor-tabs {
 		box-sizing: content-box;
+	}
+	
+	.wp-switch-editor {
+		border-color: $wp-card-border;
+		border-bottom-color: transparent;
 	}
 }
 
@@ -1782,13 +1831,16 @@ html[dir="rtl"] .pac-container .pac-item {
 	// group
 	.acf-tab-group {
 		position: relative;
-		z-index: 1;
+		border-top: $wp-card-border solid 1px;
+		border-bottom: $wp-card-border solid 1px;
+		
+		// Pull next element (field) up and underneith.
+		z-index: 2;
 		margin-bottom: -1px;
-		border-top: #DFDFDF solid 1px;
-		border-bottom: #DFDFDF solid 1px;
 		
 		li a {
 			background: #f1f1f1;
+			border-color: $wp-card-border;
 			
 			&:hover {
 				background: #FFF;
@@ -1797,6 +1849,11 @@ html[dir="rtl"] .pac-container .pac-item {
 			
 		li.active a {
 			background: #FFFFFF;
+		}
+		
+		// WP Admin 3.8
+		@include wp-admin('3-8') {
+			border-color: $wp38-card-border-1;
 		}
 	}
 	
@@ -2032,9 +2089,11 @@ html[dir="rtl"] .pac-container .pac-item {
 		
 		.acf-tab-group {
 			border-top: 0 none;
+			border-color: $wp-card-border;
 			
 			li a {
 				background: #e5e5e5;
+				border-color: $wp-card-border;
 				
 				&:hover {
 					background: #fff;
@@ -2146,12 +2205,12 @@ html[dir="rtl"] .pac-container .pac-item {
 
 .acf-oembed {
 	position: relative;
-	border: #DFDFDF solid 1px;
+	border: $wp-card-border solid 1px;
 	background: #fff;
 	
 	.title {
 		position: relative;
-		border-bottom: #DFDFDF solid 1px;
+		border-bottom: $wp-card-border solid 1px;
 		padding: 5px 10px;
 		
 		.input-search {
@@ -2317,7 +2376,7 @@ html[dir="rtl"] .pac-container .pac-item {
 	}
 	
 	.file-wrap {
-		border: #DFDFDF solid 1px;
+		border: $wp-card-border solid 1px;
 		min-height: 84px;
 		position: relative;
 		background: #fff;
@@ -2330,7 +2389,7 @@ html[dir="rtl"] .pac-container .pac-item {
 		bottom: 0;
 		padding: 10px;
 		background: #F1F1F1;
-		border-right: #E5E5E5 solid 1px;
+		border-right: $wp-card-border-1 solid 1px;
 		
 		img {
 			display: block;
@@ -2456,7 +2515,7 @@ html[dir="rtl"] .pac-container .pac-item {
 	position: relative;
 	
 	.categorychecklist-holder {
-		border: #DFDFDF solid 1px;
+		border: $wp-card-border solid 1px;
 		border-radius: 3px;
 		max-height: 200px;
 		overflow: auto;
@@ -2555,11 +2614,14 @@ html[dir="rtl"] .pac-container .pac-item {
 *---------------------------------------------------------------------------------------------*/
 
 .acf-accordion {
-	margin: 0;
+	margin: -1px 0;
 	padding: 0;
 	background: #fff;
+	border-top: 1px solid $wp-card-border-1;
+	border-bottom: 1px solid $wp-card-border-1;
+	z-index: 1; // Display above following field.
 	
-	/* title */
+	// Title.
 	.acf-accordion-title {
 		margin: 0;
 		padding: 12px;
@@ -2568,6 +2630,10 @@ html[dir="rtl"] .pac-container .pac-item {
 		font-size: inherit;
 		font-size: 13px;
 		line-height: 1.4em;
+		
+		&:hover {
+			background: #f3f4f5;
+		}
 		
 		label {
 			margin: 0;
@@ -2591,37 +2657,34 @@ html[dir="rtl"] .pac-container .pac-item {
 		display: none;
 	}
 	
-	
-	/* open */
+	// Open.
 	&.-open {
-		
 		> .acf-accordion-content {
 			display: block;
 		}
-		
 	}
 }
 
-
-/* field specific */
+// Field specific overrides
 .acf-field.acf-accordion {
-	padding: 0 !important;
-	border-color: #dfdfdf;
+	margin: -1px 0;
+	padding: 0 !important; // !important needed to avoid Gutenberg sidebar issues.
+	border-color: $wp-card-border-1;
 	
-	.acf-accordion-title {
+	.acf-label.acf-accordion-title {
 		padding: 12px;
-		width: auto !important;
-		float: none !important;
-		width: auto !important;
+		width: auto;
+		float: none;
+		width: auto;
 	}
 	
-	.acf-accordion-content {
+	.acf-input.acf-accordion-content {
 		padding: 0;
-		float: none !important;
-		width: auto !important;
+		float: none;
+		width: auto;
 		
 		> .acf-fields {
-			border-top: #EEEEEE solid 1px;
+			border-top: $wp-card-border-2 solid 1px;
 			
 			&.-clear {
 				padding: 0 $fx $fy;
@@ -2633,8 +2696,6 @@ html[dir="rtl"] .pac-container .pac-item {
 
 /* field specific (left) */
 .acf-fields.-left > .acf-field.acf-accordion {
-	padding: 0 !important;
-	
 	&:before {
 		display: none;
 	}
@@ -2643,7 +2704,7 @@ html[dir="rtl"] .pac-container .pac-item {
 		width: auto;
 		margin: 0 !important;
 		padding: 12px;
-		float: none !important;		
+		float: none !important;	
 	}
 	
 	.acf-accordion-content {
@@ -2708,8 +2769,9 @@ tr.acf-accordion {
 
 /* seamless */
 .acf-postbox.seamless > .acf-fields > .acf-accordion {
-	margin-left: $field_padding_x !important;
-	margin-right: $field_padding_x !important;
+	margin-left: $field_padding_x;
+	margin-right: $field_padding_x;
+	border: $wp-card-border solid 1px;
 }
 
 
@@ -2746,16 +2808,6 @@ html[dir="rtl"] .acf-accordion {
 	}
 }
 
-
-// seamless
-.acf-postbox.seamless > .acf-fields > .acf-field.acf-accordion {
-	border: #e5e5e5 solid 1px;
-	
-	// siblings
-	+ .acf-field.acf-accordion {
-		margin-top: -1px;
-	}
-}
 
 
 // media modal
