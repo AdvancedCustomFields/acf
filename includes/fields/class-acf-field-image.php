@@ -209,6 +209,7 @@ class acf_field_image extends acf_field {
 			'choices'		=> array(
 				'array'			=> __("Image Array",'acf'),
 				'url'			=> __("Image URL",'acf'),
+				'srcset'			=> __("Image srcset",'acf'),
 				'id'			=> __("Image ID",'acf')
 			)
 		));
@@ -346,6 +347,10 @@ class acf_field_image extends acf_field {
 			
 			return acf_get_attachment( $value );
 			
+		} elseif( $field['return_format'] == 'srcset' ) {
+
+			return wp_get_attachment_image_srcset( $value );
+
 		}
 		
 		
