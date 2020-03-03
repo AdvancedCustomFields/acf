@@ -303,7 +303,7 @@ function acf_maybe_idval( $value ) {
 }
 
 /**
- * acf_numericval
+ * acf_numval
  *
  * Casts the provided value as eiter an int or float using a simple hack.
  *
@@ -341,10 +341,11 @@ function acf_idify( $str = '' ) {
  * @since	5.6.5
  *
  * @param	string $str The string to convert.
+ * @param	string $glue The glue between each slug piece.
  * @return	string
  */
-function acf_slugify( $str = '' ) {
-	return str_replace(array('_', '/', ' '), '-', strtolower($str));
+function acf_slugify( $str = '', $glue = '-' ) {
+	return str_replace(array('_', '-', '/', ' '), $glue, strtolower($str));
 }
 
 /**

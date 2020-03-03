@@ -6334,7 +6334,10 @@
 				} else {
 					var val = this.parseResult( results[0] );
 					
-					// Update value.
+					// Override lat/lng to match user defined marker location.
+					// Avoids issue where marker "snaps" to nearest result.
+					val.lat = lat;
+					val.lng = lng;
 					this.val( val );
 				}
 					
@@ -6344,21 +6347,22 @@
 		searchPlace: function( place ){
 			//console.log('searchPlace', place );
 			
-			// Ignore empty search.
-			if( !place || !place.name ) {
+			// Bail early if no place.
+			if( !place ) {
 				return;
 			}
 			
-			// No geometry (Custom address search).
-			if( !place.geometry ) {
-				return this.searchAddress( place.name );
+			// Selecting from the autocomplete dropdown will return a rich PlaceResult object.
+			// Be sure to over-write the "formatted_address" value with the one displayed to the user for best UX.
+			if( place.geometry ) {
+				place.formatted_address = this.$search().val();
+				var val = this.parseResult( place );
+				this.val( val );
+			
+			// Searching a custom address will return an empty PlaceResult object.
+			} else if( place.name ) {
+				this.searchAddress( place.name );
 			}
-			
-			// Parse place.
-			var val = this.parseResult( place );
-			
-			// Update value.
-			this.val( val );
 		},
 		
 		searchAddress: function( address ){
@@ -6471,7 +6475,12 @@
 			if( obj.place_id ) {
 				result.place_id = obj.place_id;
 			}
-					
+			
+			// Add place name.
+			if( obj.name ) {
+				result.name = obj.name;
+			}
+				
 			// Create search map for address component data.
 			var map = {
 		        street_number: [ 'street_number' ],

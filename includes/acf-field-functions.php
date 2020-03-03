@@ -1486,10 +1486,7 @@ function acf_prepare_field_for_export( $field ) {
 	 *
 	 * @param	array $field The field array.
 	 */
-	$field = apply_filters( "acf/prepare_field_for_export", $field );
-	
-	// Return field.
-	return $field;
+	return apply_filters( "acf/prepare_field_for_export", $field );
 }
 
 // Register variation.
@@ -1508,20 +1505,22 @@ acf_add_filter_variations( 'acf/prepare_field_for_export', array('type'), 0 );
  */
 function acf_prepare_fields_for_import( $fields = array() ) {
 	
-	// Ensure array indexes are clean.
+	// Ensure array is sequential.
 	$fields = array_values($fields);
 	
-	// Loop through fields allowing for growth.
+	// Prepare each field for import making sure to detect additional sub fields.
 	$i = 0;
 	while( $i < count($fields) ) {
 		
-		// Prepare for import.
+		// Prepare field.
 		$field = acf_prepare_field_for_import( $fields[ $i ] );
 		
-		// Allow multiple fields to be returned (parent + children).
-		if( is_array($field) && !isset($field['key']) ) {
+		// Update single field.
+		if( isset($field['key']) ) {
+			$fields[ $i ] = $field;
 			
-			// Replace this field ($i) with all returned fields.
+		// Insert multiple fields.	
+		} else {
 			array_splice( $fields, $i, 1, $field );
 		}
 		
@@ -1535,12 +1534,9 @@ function acf_prepare_fields_for_import( $fields = array() ) {
 	 * @date	12/02/2014
 	 * @since	5.0.0
 	 *
-	 * @param	array $field The field array.
+	 * @param	array $fields The array of fields.
 	 */
-	$fields = apply_filters( 'acf/prepare_fields_for_import', $fields );
-	
-	// Return.
-	return $fields;
+	return apply_filters( 'acf/prepare_fields_for_import', $fields );
 }
 
 /**
@@ -1565,10 +1561,7 @@ function acf_prepare_field_for_import( $field ) {
 	 *
 	 * @param	array $field The field array.
 	 */
-	$field = apply_filters( "acf/prepare_field_for_import", $field );
-	
-	// Return field.
-	return $field;
+	return apply_filters( "acf/prepare_field_for_import", $field );
 }
 
 // Register variation.

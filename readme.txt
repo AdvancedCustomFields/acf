@@ -67,6 +67,19 @@ From your WordPress dashboard
 
 == Changelog ==
 
+= 5.8.8 =
+*Release Date - 4 March 2020*
+
+* Fix - Fixed bug in `have_rows()` function causing a PHP warning when no value is found.
+* Fix - Fixed bug in Google Maps field causing marker to snap to nearest address.
+* Fix - Avoid Nav Menu items displaying twice in WordPress 5.4.
+* Tweak - Added place name data to Google Maps field value.
+* Tweak - Improved performance of PHP registered fields.
+* Dev - Added new "acf/prepare_field_group_for_import" filter.
+* i18n - Added Traditional Chinese translation thanks to Audi Lu.
+* i18n - Added Catalan translation thanks to Jordi Tarrida.
+* i18n - Updated French translation thanks to Maxime Bernard-Jacquet & Bérenger Zyla.
+
 = 5.8.7 =
 *Release Date - 12 November 2019*
 
