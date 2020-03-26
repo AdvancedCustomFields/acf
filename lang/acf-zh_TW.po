@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Advanced Custom Fields Pro v5.8.7\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "POT-Creation-Date: 2020-02-13 17:09+0800\n"
-"PO-Revision-Date: 2020-02-14 12:13+0800\n"
+"PO-Revision-Date: 2020-03-10 13:40+0800\n"
 "Last-Translator: Audi Lu <mrmu@mrmu.com.tw>\n"
 "Language-Team: Audi Lu <mrmu@mrmu.com.tw>\n"
 "Language: zh_TW\n"
@@ -108,7 +108,7 @@ msgstr "回收桶中沒有找到欄位群組"
 #: acf.php:416 includes/admin/admin-field-group.php:402
 #: includes/admin/admin-field-groups.php:587
 msgid "Inactive"
-msgstr "未禁用"
+msgstr "未啟用"
 
 #: acf.php:421
 #, php-format
@@ -170,7 +170,7 @@ msgstr "欄位群組的標題為必填"
 
 #: includes/admin/admin-field-group.php:174
 msgid "Move to trash. Are you sure?"
-msgstr "確定要刪除嗎？"
+msgstr "選取項目會移至回收桶，確定要繼續進行嗎？"
 
 #: includes/admin/admin-field-group.php:175
 msgid "No toggle fields available"
@@ -319,7 +319,7 @@ msgstr "Pro"
 #: includes/admin/admin-field-groups.php:647
 #, php-format
 msgid "Thank you for creating with <a href=\"%s\">ACF</a>."
-msgstr "感謝您使用 <a href=“%s”>ACF</a>。"
+msgstr "感謝您使用 <a href=\"%s\">ACF</a>。"
 
 #: includes/admin/admin-field-groups.php:686
 msgid "Duplicate this item"
@@ -498,16 +498,16 @@ msgstr[0] "匯入 %s 欄位群組"
 
 #: includes/admin/views/field-group-field-conditional-logic.php:25
 msgid "Conditional Logic"
-msgstr "條件邏輯"
+msgstr "啟用條件邏輯"
 
 #: includes/admin/views/field-group-field-conditional-logic.php:51
 msgid "Show this field if"
-msgstr "顯示此欄位群組的條件"
+msgstr "符合下列規則就顯示欄位"
 
 #: includes/admin/views/field-group-field-conditional-logic.php:138
 #: includes/admin/views/html-location-rule.php:86
 msgid "and"
-msgstr "+"
+msgstr "且"
 
 #: includes/admin/views/field-group-field-conditional-logic.php:153
 #: includes/admin/views/field-group-locations.php:31
@@ -560,7 +560,7 @@ msgstr "欄位標籤"
 
 #: includes/admin/views/field-group-field.php:66
 msgid "This is the name which will appear on the EDIT page"
-msgstr "在編輯介面顯示的名稱"
+msgstr "顯示於內容編輯頁面、供使用者瞭解這個欄位用途的名稱"
 
 #: includes/admin/views/field-group-field.php:75
 msgid "Field Name"
@@ -568,7 +568,8 @@ msgstr "欄位名稱"
 
 #: includes/admin/views/field-group-field.php:76
 msgid "Single word, no spaces. Underscores and dashes allowed"
-msgstr "單字元串不能有空格，可使用橫線或底線"
+msgstr ""
+"請使用英文及數字字元撰寫單一字串；不可使用空格，但可使用底線 _ 及破折號 -"
 
 #: includes/admin/views/field-group-field.php:85
 msgid "Field Type"
@@ -584,7 +585,7 @@ msgstr "顯示給作者的說明文字。會在送出資料時顯示"
 
 #: includes/admin/views/field-group-field.php:106
 msgid "Required?"
-msgstr "必填嗎？"
+msgstr "是否為必填欄位"
 
 #: includes/admin/views/field-group-field.php:129
 msgid "Wrapper Attributes"
@@ -596,7 +597,7 @@ msgstr "寬度"
 
 #: includes/admin/views/field-group-field.php:150
 msgid "class"
-msgstr "類別"
+msgstr "class"
 
 #: includes/admin/views/field-group-field.php:163
 msgid "id"
@@ -627,7 +628,7 @@ msgstr "名稱"
 
 #: includes/admin/views/field-group-fields.php:7
 msgid "Key"
-msgstr "鍵"
+msgstr "索引鍵值"
 
 #: includes/admin/views/field-group-fields.php:8
 msgid "Type"
@@ -637,11 +638,12 @@ msgstr "類型"
 msgid ""
 "No fields. Click the <strong>+ Add Field</strong> button to create your "
 "first field."
-msgstr "沒有欄位，點擊<strong>新增</strong>按鈕建立第一個欄位。"
+msgstr ""
+"尚無欄位。請點擊 <strong>[+ 新增欄位]</strong> 按鈕以建立群組中的第一個欄位。"
 
 #: includes/admin/views/field-group-fields.php:31
 msgid "+ Add Field"
-msgstr "新增欄位"
+msgstr "+ 新增欄位"
 
 #: includes/admin/views/field-group-locations.php:9
 msgid "Rules"
@@ -655,31 +657,31 @@ msgstr "建立一組規則以確定自訂欄位在哪些編輯介面顯示"
 
 #: includes/admin/views/field-group-options.php:23
 msgid "Style"
-msgstr "樣式"
+msgstr "欄位群組樣式"
 
 #: includes/admin/views/field-group-options.php:30
 msgid "Standard (WP metabox)"
-msgstr "標準 (WP metabox)"
+msgstr "標準 (WP 自訂區塊)"
 
 #: includes/admin/views/field-group-options.php:31
 msgid "Seamless (no metabox)"
-msgstr "連續 (no metabox)"
+msgstr "隨選即用 (沒有自訂區塊)"
 
 #: includes/admin/views/field-group-options.php:38
 msgid "Position"
-msgstr "位置"
+msgstr "欄位群組位置"
 
 #: includes/admin/views/field-group-options.php:45
 msgid "High (after title)"
-msgstr "高 (位於標題後面)"
+msgstr "頂端 (標題下方)"
 
 #: includes/admin/views/field-group-options.php:46
 msgid "Normal (after content)"
-msgstr "正常 (位於內容後面)"
+msgstr "一般 (內容下方)"
 
 #: includes/admin/views/field-group-options.php:47
 msgid "Side"
-msgstr "邊欄"
+msgstr "側邊"
 
 #: includes/admin/views/field-group-options.php:55
 msgid "Label placement"
@@ -697,19 +699,19 @@ msgstr "置左"
 
 #: includes/admin/views/field-group-options.php:70
 msgid "Instruction placement"
-msgstr "說明位置"
+msgstr "操作說明位置"
 
 #: includes/admin/views/field-group-options.php:77
 msgid "Below labels"
-msgstr "欄位標籤"
+msgstr "欄位標籤下方"
 
 #: includes/admin/views/field-group-options.php:78
 msgid "Below fields"
-msgstr "下面的欄位"
+msgstr "欄位下方"
 
 #: includes/admin/views/field-group-options.php:85
 msgid "Order No."
-msgstr "排序"
+msgstr "欄位群組順序編號"
 
 #: includes/admin/views/field-group-options.php:86
 msgid "Field groups with a lower order will appear first"
@@ -717,11 +719,11 @@ msgstr "順序編號較小的欄位群組會先顯示"
 
 #: includes/admin/views/field-group-options.php:97
 msgid "Shown in field group list"
-msgstr "在欄位群組列表中顯示"
+msgstr "顯示於欄位群組清單的說明內容"
 
 #: includes/admin/views/field-group-options.php:107
 msgid "Permalink"
-msgstr "固定連結"
+msgstr "永久連結"
 
 #: includes/admin/views/field-group-options.php:108
 msgid "Content Editor"
@@ -741,11 +743,11 @@ msgstr "留言"
 
 #: includes/admin/views/field-group-options.php:113
 msgid "Revisions"
-msgstr "版本"
+msgstr "內容修訂"
 
 #: includes/admin/views/field-group-options.php:114
 msgid "Slug"
-msgstr "別名"
+msgstr "代稱"
 
 #: includes/admin/views/field-group-options.php:115
 msgid "Author"
@@ -774,23 +776,23 @@ msgstr "標籤"
 
 #: includes/admin/views/field-group-options.php:121
 msgid "Send Trackbacks"
-msgstr "發送 Trackbacks"
+msgstr "傳送引用通知"
 
 #: includes/admin/views/field-group-options.php:128
 msgid "Hide on screen"
-msgstr "隱藏元素"
+msgstr "需要在編輯畫面隱藏的項目"
 
 #: includes/admin/views/field-group-options.php:129
 msgid "<b>Select</b> items to <b>hide</b> them from the edit screen."
-msgstr "<b>選擇</b>需要在編輯畫面<b>隱藏</b>的項目。"
+msgstr "<b>選取</b>要在編輯畫面<b>隱藏</b>的項目"
 
 #: includes/admin/views/field-group-options.php:129
 msgid ""
 "If multiple field groups appear on an edit screen, the first field group's "
 "options will be used (the one with the lowest order number)"
 msgstr ""
-"如果多個欄位群組出現在編輯畫面，只有第一個自訂欄位群組的選項會被使用（排序最"
-"小的號碼）"
+"如果編輯畫面出現多個欄位群組，則會使用第一個欄位群組的設定，亦即 [順序編號] "
+"數值最小的那個欄位群組設定"
 
 #: includes/admin/views/html-admin-page-upgrade-network.php:26
 #, php-format
@@ -834,7 +836,7 @@ msgstr "請至少選擇一個要升級的站點。"
 msgid ""
 "It is strongly recommended that you backup your database before proceeding. "
 "Are you sure you wish to run the updater now?"
-msgstr "我們強烈建議您在繼續操作之前備份你的資料庫。您確定要立即執行更新?"
+msgstr "強烈建議在進行這項操作前，先備份網站的資料庫。確定要執行更新程式嗎？"
 
 #: includes/admin/views/html-admin-page-upgrade-network.php:144
 #: includes/admin/views/html-admin-page-upgrade.php:31
@@ -888,7 +890,7 @@ msgstr "彈性內容"
 #: includes/admin/views/html-notice-upgrade.php:10
 #: pro/fields/class-acf-field-gallery.php:25
 msgid "Gallery"
-msgstr "相簿"
+msgstr "圖庫"
 
 #: includes/admin/views/html-notice-upgrade.php:11
 #: pro/locations/class-acf-location-options-page.php:26
@@ -902,7 +904,7 @@ msgstr "資料庫需要升級"
 #: includes/admin/views/html-notice-upgrade.php:22
 #, php-format
 msgid "Thank you for updating to %s v%s!"
-msgstr "感謝您更新至 %s v%s！"
+msgstr "感謝您更新至 %s %s 版！"
 
 #: includes/admin/views/html-notice-upgrade.php:22
 msgid ""
@@ -946,7 +948,7 @@ msgstr ""
 
 #: includes/admin/views/settings-info.php:22
 msgid "Improved Design"
-msgstr "改進的設計"
+msgstr "改進設計"
 
 #: includes/admin/views/settings-info.php:23
 msgid ""
@@ -972,7 +974,7 @@ msgstr ""
 
 #: includes/admin/views/settings-info.php:35
 msgid "Goodbye Add-ons. Hello PRO"
-msgstr "再見 Add-ons。PRO 您好"
+msgstr "告別附加元件，擁抱 Pro 版"
 
 #: includes/admin/views/settings-info.php:38
 msgid "Introducing ACF PRO"
@@ -1009,7 +1011,7 @@ msgstr ""
 #: includes/admin/views/settings-info.php:46
 #, php-format
 msgid "Read more about <a href=\"%s\">ACF PRO features</a>."
-msgstr "了解更多關於<a href=\\\"%s\\\">ACF PRO的功能</a> 。"
+msgstr "進一步了解<a href=\\\"%s\\\">ACF PRO的功能</a>。"
 
 #: includes/admin/views/settings-info.php:50
 msgid "Easy Upgrading"
@@ -1038,13 +1040,13 @@ msgstr "新功能"
 #: includes/admin/views/settings-info.php:66
 #| msgid "Edit Field"
 msgid "Link Field"
-msgstr "鏈結欄位"
+msgstr "連結欄位"
 
 #: includes/admin/views/settings-info.php:67
 msgid ""
 "The Link field provides a simple way to select or define a link (url, title, "
 "target)."
-msgstr "鏈結欄位能簡單的選擇或定義鏈結 (url, title, target) 。"
+msgstr "連結欄位能簡單的選擇或定義連結 (網址、標題、開啟目標)。"
 
 #: includes/admin/views/settings-info.php:71
 #| msgid "Move Field"
@@ -1292,7 +1294,7 @@ msgstr "%d 個欄位需要注意"
 #: includes/assets.php:203
 #| msgid "Move to trash. Are you sure?"
 msgid "Are you sure?"
-msgstr "你確定嗎？"
+msgstr "確定要繼續操作嗎？"
 
 #: includes/assets.php:204 includes/fields/class-acf-field-true_false.php:79
 #: includes/fields/class-acf-field-true_false.php:159
@@ -1403,7 +1405,7 @@ msgstr "jQuery"
 #: pro/fields/class-acf-field-flexible-content.php:602
 #: pro/fields/class-acf-field-repeater.php:448
 msgid "Layout"
-msgstr "樣式"
+msgstr "版面配置"
 
 #: includes/fields/class-acf-field-accordion.php:24
 msgid "Accordion"
@@ -1452,14 +1454,17 @@ msgstr "選項"
 #: includes/fields/class-acf-field-radio.php:236
 #: includes/fields/class-acf-field-select.php:365
 msgid "Enter each choice on a new line."
-msgstr "每行輸入一個選項。"
+msgstr "每行輸入一個選項"
 
 #: includes/fields/class-acf-field-button-group.php:150
 #: includes/fields/class-acf-field-checkbox.php:345
 #: includes/fields/class-acf-field-radio.php:236
 #: includes/fields/class-acf-field-select.php:365
 msgid "For more control, you may specify both a value and label like this:"
-msgstr "為了更好掌控，你要同時指定一個值和標籤就像："
+msgstr ""
+"為了能對資料有的掌控，可以同時指定如下所示的選項值與選項標籤，格式為「選項"
+"值 : 選項標籤」(請使用半形冒號，並在冒號前後加上半形空格區隔選項值及選項標"
+"籤):"
 
 #: includes/fields/class-acf-field-button-group.php:150
 #: includes/fields/class-acf-field-checkbox.php:345
@@ -1476,7 +1481,7 @@ msgstr "red : 紅"
 #: includes/fields/class-acf-field-taxonomy.php:784
 #: includes/fields/class-acf-field-user.php:393
 msgid "Allow Null?"
-msgstr "是否允許空值？"
+msgstr "是否接受空值"
 
 #: includes/fields/class-acf-field-button-group.php:168
 #: includes/fields/class-acf-field-checkbox.php:380
@@ -1533,7 +1538,7 @@ msgstr "返回值"
 #: includes/fields/class-acf-field-link.php:167
 #: includes/fields/class-acf-field-radio.php:305
 msgid "Specify the returned value on front end"
-msgstr "在前端指定回傳值"
+msgstr "指定在網站前端傳回的值"
 
 #: includes/fields/class-acf-field-button-group.php:197
 #: includes/fields/class-acf-field-checkbox.php:419
@@ -1570,7 +1575,7 @@ msgstr "允許自訂"
 
 #: includes/fields/class-acf-field-checkbox.php:358
 msgid "Allow 'custom' values to be added"
-msgstr "允許加入 ‘自訂’ 值"
+msgstr "允許加入[自訂]值"
 
 #: includes/fields/class-acf-field-checkbox.php:364
 #| msgid "Move Custom Field"
@@ -1579,7 +1584,7 @@ msgstr "儲存自訂"
 
 #: includes/fields/class-acf-field-checkbox.php:369
 msgid "Save 'custom' values to the field's choices"
-msgstr "儲存 ‘自訂’ 值到欄位的選項"
+msgstr "儲存\b [自訂] 值到欄位的選項"
 
 #: includes/fields/class-acf-field-checkbox.php:381
 #: includes/fields/class-acf-field-select.php:374
@@ -1693,7 +1698,7 @@ msgstr "回傳格式"
 #: includes/fields/class-acf-field-date_time_picker.php:201
 #: includes/fields/class-acf-field-time_picker.php:125
 msgid "The format returned via template functions"
-msgstr "透過模板函式回傳的格式"
+msgstr "範本函式回傳的格式"
 
 #: includes/fields/class-acf-field-date_picker.php:227
 #: includes/fields/class-acf-field-date_time_picker.php:217
@@ -1795,7 +1800,7 @@ msgstr "電子郵件"
 #: includes/fields/class-acf-field-textarea.php:111
 #: includes/fields/class-acf-field-url.php:109
 msgid "Placeholder Text"
-msgstr "佔位字"
+msgstr "預留位置文字"
 
 #: includes/fields/class-acf-field-email.php:128
 #: includes/fields/class-acf-field-number.php:137
@@ -1812,7 +1817,7 @@ msgstr "出現在輸入欄位中"
 #: includes/fields/class-acf-field-range.php:188
 #: includes/fields/class-acf-field-text.php:113
 msgid "Prepend"
-msgstr "前置"
+msgstr "欄位前置文字"
 
 #: includes/fields/class-acf-field-email.php:137
 #: includes/fields/class-acf-field-number.php:146
@@ -1828,7 +1833,7 @@ msgstr "出現在輸入欄位之前"
 #: includes/fields/class-acf-field-range.php:197
 #: includes/fields/class-acf-field-text.php:122
 msgid "Append"
-msgstr "後綴"
+msgstr "欄位後綴文字"
 
 #: includes/fields/class-acf-field-email.php:146
 #: includes/fields/class-acf-field-number.php:155
@@ -1885,7 +1890,7 @@ msgstr "檔案ID"
 #: includes/fields/class-acf-field-image.php:229
 #: pro/fields/class-acf-field-gallery.php:592
 msgid "Library"
-msgstr "庫"
+msgstr "媒體庫"
 
 #: includes/fields/class-acf-field-file.php:231
 #: includes/fields/class-acf-field-image.php:230
@@ -1970,7 +1975,7 @@ msgstr "中間"
 #: includes/fields/class-acf-field-google-map.php:182
 #: includes/fields/class-acf-field-google-map.php:193
 msgid "Center the initial map"
-msgstr "置中初始地圖"
+msgstr "載入地圖後的初始中心位置，請輸入緯度 (lat) 及經度 (lng)"
 
 #: includes/fields/class-acf-field-google-map.php:204
 msgid "Zoom"
@@ -1978,7 +1983,7 @@ msgstr "縮放"
 
 #: includes/fields/class-acf-field-google-map.php:205
 msgid "Set the initial zoom level"
-msgstr "設定初始縮放層級"
+msgstr "載入地圖後的初始縮放層級"
 
 #: includes/fields/class-acf-field-google-map.php:214
 #: includes/fields/class-acf-field-image.php:255
@@ -2048,7 +2053,7 @@ msgstr "更新圖片"
 
 #: includes/fields/class-acf-field-image.php:156
 msgid "No image selected"
-msgstr "沒有選擇圖片"
+msgstr "尚未選取圖片"
 
 #: includes/fields/class-acf-field-image.php:156
 msgid "Add Image"
@@ -2092,12 +2097,12 @@ msgstr "寬"
 #: includes/fields/class-acf-field-link.php:25
 #| msgid "Page Link"
 msgid "Link"
-msgstr "鏈結"
+msgstr "連結"
 
 #: includes/fields/class-acf-field-link.php:133
 #| msgid "Select File"
 msgid "Select Link"
-msgstr "選擇鏈結"
+msgstr "選取連結"
 
 #: includes/fields/class-acf-field-link.php:138
 msgid "Opens in a new window/tab"
@@ -2105,12 +2110,12 @@ msgstr "於新視窗/分頁開啟"
 
 #: includes/fields/class-acf-field-link.php:172
 msgid "Link Array"
-msgstr "鏈結陣列"
+msgstr "連結陣列"
 
 #: includes/fields/class-acf-field-link.php:173
 #| msgid "File URL"
 msgid "Link URL"
-msgstr "鏈結網址"
+msgstr "連結網址"
 
 #: includes/fields/class-acf-field-message.php:25
 #: includes/fields/class-acf-field-message.php:101
@@ -2245,7 +2250,7 @@ msgstr "允許文章彙整網址"
 #: includes/fields/class-acf-field-select.php:392
 #: includes/fields/class-acf-field-user.php:403
 msgid "Select multiple values?"
-msgstr "是否選擇多個值？"
+msgstr "是否可複選"
 
 #: includes/fields/class-acf-field-password.php:25
 msgid "Password"
@@ -2272,7 +2277,7 @@ msgstr "其他"
 
 #: includes/fields/class-acf-field-radio.php:259
 msgid "Add 'other' choice to allow for custom values"
-msgstr "新增 ‘其他’ 選擇以允許自訂值"
+msgstr "加入 [其他] 這個選項，讓使用者可輸入自訂值"
 
 #: includes/fields/class-acf-field-radio.php:265
 msgid "Save Other"
@@ -2280,7 +2285,7 @@ msgstr "儲存其它"
 
 #: includes/fields/class-acf-field-radio.php:270
 msgid "Save 'other' values to the field's choices"
-msgstr "將 \b’其他’ 值儲存到該欄位的選項中"
+msgstr "儲存填入 [其他] 選項中的值，作為這個欄位的選項"
 
 #: includes/fields/class-acf-field-range.php:25
 msgid "Range"
@@ -2292,7 +2297,7 @@ msgstr "關係"
 
 #: includes/fields/class-acf-field-relationship.php:62
 msgid "Maximum values reached ( {max} values )"
-msgstr "已達最大值 ( {max} 值 )"
+msgstr "最大值為 {max} 篇，目前已達最大值"
 
 #: includes/fields/class-acf-field-relationship.php:63
 msgid "Loading"
@@ -2316,7 +2321,7 @@ msgstr "搜尋..."
 
 #: includes/fields/class-acf-field-relationship.php:588
 msgid "Filters"
-msgstr "篩選器"
+msgstr "外掛內建的篩選條件"
 
 #: includes/fields/class-acf-field-relationship.php:594
 #: includes/locations/class-acf-location-post-type.php:27
@@ -2433,7 +2438,7 @@ msgstr "程式化 UI"
 
 #: includes/fields/class-acf-field-select.php:412
 msgid "Use AJAX to lazy load choices?"
-msgstr "使用 AJAX 去 lazy load 選擇？"
+msgstr "使用 AJAX 去 lazy load 選擇"
 
 #: includes/fields/class-acf-field-select.php:428
 msgid "Specify the value returned"
@@ -2616,7 +2621,7 @@ msgstr "填入值必須是合法的網址"
 
 #: includes/fields/class-acf-field-user.php:25 includes/locations.php:95
 msgid "User"
-msgstr "會員"
+msgstr "使用者"
 
 #: includes/fields/class-acf-field-user.php:378
 msgid "Filter by role"
@@ -2659,7 +2664,7 @@ msgstr "點擊初始化 TinyMCE"
 
 #: includes/fields/class-acf-field-wysiwyg.php:390
 msgid "Tabs"
-msgstr "頁籤"
+msgstr "分頁"
 
 #: includes/fields/class-acf-field-wysiwyg.php:395
 msgid "Visual & Text"
@@ -2679,7 +2684,7 @@ msgstr "工具條"
 
 #: includes/fields/class-acf-field-wysiwyg.php:419
 msgid "Show Media Upload Buttons?"
-msgstr "是否顯示媒體上傳按鈕？"
+msgstr "是否顯示媒體上傳按鈕"
 
 #: includes/fields/class-acf-field-wysiwyg.php:429
 msgid "Delay initialization?"
@@ -2750,7 +2755,7 @@ msgstr "目前使用者角色"
 
 #: includes/locations/class-acf-location-current-user-role.php:110
 msgid "Super Admin"
-msgstr "超級使用者"
+msgstr "多站網路管理員"
 
 #: includes/locations/class-acf-location-current-user.php:27
 msgid "Current User"
@@ -2787,16 +2792,16 @@ msgstr "選單"
 
 #: includes/locations/class-acf-location-page-parent.php:27
 msgid "Page Parent"
-msgstr "父級頁面"
+msgstr "最上層頁面"
 
 #: includes/locations/class-acf-location-page-template.php:27
 msgid "Page Template"
-msgstr "頁面模版"
+msgstr "頁面範本"
 
 #: includes/locations/class-acf-location-page-template.php:87
 #: includes/locations/class-acf-location-post-template.php:134
 msgid "Default Template"
-msgstr "預設模版"
+msgstr "預設範本"
 
 #: includes/locations/class-acf-location-page-type.php:27
 msgid "Page Type"
@@ -2804,23 +2809,23 @@ msgstr "頁面類型"
 
 #: includes/locations/class-acf-location-page-type.php:146
 msgid "Front Page"
-msgstr "首頁"
+msgstr "網站首頁"
 
 #: includes/locations/class-acf-location-page-type.php:147
 msgid "Posts Page"
-msgstr "文章頁"
+msgstr "文章頁面"
 
 #: includes/locations/class-acf-location-page-type.php:148
 msgid "Top Level Page (no parent)"
-msgstr "頂層頁（無父層）"
+msgstr "最上層頁面 (再無上層頁面的頁面)"
 
 #: includes/locations/class-acf-location-page-type.php:149
 msgid "Parent Page (has children)"
-msgstr "父頁（有子分類）"
+msgstr "上層頁面 (含有子頁面)"
 
 #: includes/locations/class-acf-location-page-type.php:150
 msgid "Child Page (has parent)"
-msgstr "子頁（有父分類）"
+msgstr "子頁面 (具有上層頁面)"
 
 #: includes/locations/class-acf-location-post-category.php:27
 msgid "Post Category"
@@ -2841,7 +2846,7 @@ msgstr "文章分類法"
 #: includes/locations/class-acf-location-post-template.php:27
 #| msgid "Page Template"
 msgid "Post Template"
-msgstr "文章模版"
+msgstr "文章範本"
 
 #: includes/locations/class-acf-location-user-form.php:22
 msgid "User Form"
@@ -2919,8 +2924,8 @@ msgid ""
 "licence key, please see <a href=\"%s\" target=\"_blank\">details & pricing</"
 "a>."
 msgstr ""
-"要解鎖更新服務，請於下方輸入您的授權金鑰。若你沒有授權金鑰，請查閱 <a "
-"href=“%s” target=“_blank”>詳情 & 價目</a>."
+"要解鎖更新服務，請於下方輸入您的授權金鑰。若你沒有授權金鑰，請查閱 <a href="
+"\"%s\" target=\"_blank\">詳情與價目</a>。"
 
 #: pro/admin/views/html-settings-updates.php:29
 msgid "License Key"
@@ -2952,7 +2957,7 @@ msgstr "請於上方輸入你的授權金鑰以解鎖更新"
 
 #: pro/admin/views/html-settings-updates.php:100
 msgid "Check Again"
-msgstr "更檢查一次"
+msgstr "再檢查一次"
 
 #: pro/admin/views/html-settings-updates.php:117
 msgid "Upgrade Notice"
@@ -3037,11 +3042,11 @@ msgstr "新增列"
 #: pro/fields/class-acf-field-flexible-content.php:1006
 msgid "layout"
 msgid_plural "layouts"
-msgstr[0] "排版"
+msgstr[0] "版面配置"
 
 #: pro/fields/class-acf-field-flexible-content.php:74
 msgid "layouts"
-msgstr "排版"
+msgstr "版面"
 
 #: pro/fields/class-acf-field-flexible-content.php:77
 #: pro/fields/class-acf-field-flexible-content.php:923
@@ -3063,7 +3068,7 @@ msgstr "{required} {label} {identifier} 需要 (最小 {min})"
 
 #: pro/fields/class-acf-field-flexible-content.php:85
 msgid "Flexible Content requires at least 1 layout"
-msgstr "彈性內容需要至少 1 個排版"
+msgstr "彈性內容需要至少 1 個版面配置"
 
 #: pro/fields/class-acf-field-flexible-content.php:287
 #, php-format
@@ -3072,11 +3077,11 @@ msgstr "點擊下方的 \"%s\" 按鈕以新增設定"
 
 #: pro/fields/class-acf-field-flexible-content.php:413
 msgid "Add layout"
-msgstr "新增排版"
+msgstr "新增版面"
 
 #: pro/fields/class-acf-field-flexible-content.php:414
 msgid "Remove layout"
-msgstr "移除排版"
+msgstr "移除版面"
 
 #: pro/fields/class-acf-field-flexible-content.php:415
 #: pro/fields/class-acf-field-repeater.php:301
@@ -3085,23 +3090,23 @@ msgstr "點擊切換"
 
 #: pro/fields/class-acf-field-flexible-content.php:555
 msgid "Reorder Layout"
-msgstr "重排序排版"
+msgstr "重排版面"
 
 #: pro/fields/class-acf-field-flexible-content.php:555
 msgid "Reorder"
-msgstr "重排序"
+msgstr "重排"
 
 #: pro/fields/class-acf-field-flexible-content.php:556
 msgid "Delete Layout"
-msgstr "刪除排版"
+msgstr "刪除版面"
 
 #: pro/fields/class-acf-field-flexible-content.php:557
 msgid "Duplicate Layout"
-msgstr "複製排版"
+msgstr "複製版面"
 
 #: pro/fields/class-acf-field-flexible-content.php:558
 msgid "Add New Layout"
-msgstr "新增新排版"
+msgstr "新增版面"
 
 #: pro/fields/class-acf-field-flexible-content.php:629
 msgid "Min"
@@ -3118,15 +3123,15 @@ msgstr "按鈕標籤"
 
 #: pro/fields/class-acf-field-flexible-content.php:678
 msgid "Minimum Layouts"
-msgstr "最少排版"
+msgstr "最少可使用版面數量"
 
 #: pro/fields/class-acf-field-flexible-content.php:687
 msgid "Maximum Layouts"
-msgstr "最多排版"
+msgstr "最多可使用版面數量"
 
 #: pro/fields/class-acf-field-gallery.php:73
 msgid "Add Image to Gallery"
-msgstr "新增圖片到相簿"
+msgstr "新增圖片到圖庫"
 
 #: pro/fields/class-acf-field-gallery.php:74
 msgid "Maximum selection reached"
@@ -3147,7 +3152,7 @@ msgstr "替代文字"
 
 #: pro/fields/class-acf-field-gallery.php:487
 msgid "Add to gallery"
-msgstr "加到相簿"
+msgstr "加入圖庫"
 
 #: pro/fields/class-acf-field-gallery.php:491
 msgid "Bulk actions"
@@ -3545,14 +3550,14 @@ msgstr "Elliot Condon"
 #~ msgid ""
 #~ "ACF will create a .xml export file which is compatible with the native WP "
 #~ "import plugin."
-#~ msgstr "ACF將建立一個相容WP導入外掛的.xml檔案。"
+#~ msgstr "ACF將建立一個相容於原生 WP 匯入外掛的.xml檔案。"
 
 #~ msgid ""
 #~ "Imported field groups <b>will</b> appear in the list of editable field "
 #~ "groups. This is useful for migrating fields groups between Wp websites."
 #~ msgstr ""
-#~ "導入欄位群組將出現在可編輯欄位群組後面，在幾個WP站點之間遷移欄位群組時，這"
-#~ "將非常有用。"
+#~ "匯入欄位群組<b>將</b>出現在可編輯欄位群組後面，在幾個 WP 站點之間遷移欄位"
+#~ "群組時，這將非常有用。"
 
 #~ msgid "Select field group(s) from the list and click \"Export XML\""
 #~ msgstr "從列表中選擇欄位群組，然後點擊 \"匯出XML\" "
@@ -3561,16 +3566,16 @@ msgstr "Elliot Condon"
 #~ msgstr "匯出後儲存.xml檔案"
 
 #~ msgid "Navigate to Tools &raquo; Import and select WordPress"
-#~ msgstr "轉到工具 &raquo; 導入，然後選擇WordPress "
+#~ msgstr "進入工具 &raquo; 匯入，然後選擇 WordPress "
 
 #~ msgid "Install WP import plugin if prompted"
-#~ msgstr "安裝WP導入外掛後開始"
+#~ msgstr "安裝 WP 匯入外掛後開始"
 
 #~ msgid "Upload and import your exported .xml file"
-#~ msgstr "上傳並導入.xml檔案"
+#~ msgstr "上傳並匯入.xml檔案"
 
 #~ msgid "Select your user and ignore Import Attachments"
-#~ msgstr "選擇會員，忽略導入附件"
+#~ msgstr "選擇使用者並忽略匯入附件"
 
 #~ msgid "That's it! Happy WordPressing"
 #~ msgstr "成功了，使用愉快！"

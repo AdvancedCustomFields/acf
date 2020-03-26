@@ -841,7 +841,7 @@
 				// add error to validator
 				getValidator( $form ).addError({
 					input: $el.attr('name'),
-					message: e.target.validationMessage
+					message: acf.strEscape( e.target.validationMessage )
 				});
 				
 				// trigger submit on $form

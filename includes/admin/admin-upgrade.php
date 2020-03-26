@@ -21,7 +21,9 @@ class ACF_Admin_Upgrade {
 		
 		// actions
 		add_action( 'admin_menu', 			array($this,'admin_menu'), 20 );
-		add_action( 'network_admin_menu',	array($this,'network_admin_menu'), 20 );
+		if( is_multisite() ) {
+			add_action( 'network_admin_menu',	array($this,'network_admin_menu'), 20 );
+		}
 	}
 	
 	/**

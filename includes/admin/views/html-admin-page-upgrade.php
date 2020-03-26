@@ -59,34 +59,12 @@
 						action: 'acf/ajax/upgrade'
 					}),
 					success: function( json ){
-						
-						// success
-						if( acf.isAjaxSuccess(json) ) {
-							
-							// update
-							success = true;
-							
-							// set response text
-							if( jsonText = acf.getAjaxMessage(json) ) {
-								response = jsonText;
-							}
-						
-						// error
-						} else {
-							
-							// set response text
-							response = '<?php _e('Upgrade failed.', 'acf'); ?>';
-							if( jsonText = acf.getAjaxError(json) ) {
-								response += ' <pre>' + jsonText +  '</pre>';
-							}
-						}			
+						success = true;
 					},
 					error: function( jqXHR, textStatus, errorThrown ){
-						
-						// set response text
 						response = '<?php _e('Upgrade failed.', 'acf'); ?>';
-						if( errorThrown) {
-							response += ' <pre>' + errorThrown +  '</pre>';
+						if( error = acf.getXhrError(jqXHR) ) {
+							response += ' <code>' + error +  '</code>';
 						}
 					},
 					complete: this.proxy(function(){

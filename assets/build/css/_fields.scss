@@ -2649,6 +2649,16 @@ html[dir="rtl"] .pac-container .pac-item {
 		.acf-accordion-icon {
 			float: right;
 		}
+		
+		// Gutenberg uses SVG.
+		svg.acf-accordion-icon {
+			position: absolute;
+			right: 10px;
+			top: 50%;
+			transform: translateY(-50%);
+			color: #191e23;
+			fill: currentColor;
+		}
 	}
 	
 	.acf-accordion-content {

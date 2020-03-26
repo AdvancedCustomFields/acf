@@ -1946,6 +1946,23 @@
 		return acf.isget( json, 'data', 'error' );
 	};
 	
+	/**
+	 * Returns the error message from an XHR object.
+	 *
+	 * @date	17/3/20
+	 * @since	5.8.9
+	 *
+	 * @param	object xhr The XHR object.
+	 * @return	(string)
+	 */
+	acf.getXhrError = function( xhr ){
+		if( xhr.responseJSON && xhr.responseJSON.message ) {
+			return xhr.responseJSON.message;
+		} else if( xhr.statusText ) {
+			return xhr.statusText;
+		}
+		return "";
+	};
 	
 	/**
 	*  acf.renderSelect

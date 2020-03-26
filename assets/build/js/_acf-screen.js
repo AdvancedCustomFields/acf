@@ -220,21 +220,17 @@
 			// success
 			var onSuccess = function( json ){
 				
-				// Check success.
-				if( acf.isAjaxSuccess(json) ) {
-					
-					// Render post screen.
-					if( acf.get('screen') == 'post' ) {
-						this.renderPostScreen( json.data );
-					
-					// Render user screen.
-					} else if( acf.get('screen') == 'user' ) {
-						this.renderUserScreen( json.data );
-					}
+				// Render post screen.
+				if( acf.get('screen') == 'post' ) {
+					this.renderPostScreen( json );
+				
+				// Render user screen.
+				} else if( acf.get('screen') == 'user' ) {
+					this.renderUserScreen( json );
 				}
 				
 				// action
-				acf.doAction('check_screen_complete', json.data, ajaxData);
+				acf.doAction('check_screen_complete', json, ajaxData);
 			};
 			
 			// ajax

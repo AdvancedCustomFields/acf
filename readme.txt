@@ -2,7 +2,7 @@
 Contributors: elliotcondon
 Tags: acf, advanced, custom, field, fields, form, repeater, content
 Requires at least: 4.7.0
-Tested up to: 5.3.0
+Tested up to: 5.4
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -66,6 +66,21 @@ From your WordPress dashboard
 
 
 == Changelog ==
+
+= 5.8.9 =
+*Release Date - 26 March 2020*
+
+* Fix - Fixed bug in ACF Blocks causing default "align" property to be ignored.
+* Fix - Fixed bug allowing Taxonomy field to save terms to a non "post" object.
+* Tweak - Improved User field AJAX query performance.
+* Tweak - Improved logic that determines width of Range field input.
+* Tweak - Improved styling of ACF Blocks components.
+* Dev - Added new "acf/register_block_type_args" filter.
+* Dev - Added new generic ACF_Ajax_Query and ACF_Ajax_Query_Users classes.
+* i18n - Updated French Canadian translation thanks to Bérenger Zyla.
+* i18n - Updated Traditional Chinese translation thanks to Audi Lu.
+* i18n - Updated German translation thanks to Ralf Koller.
+* i18n - Updated Portuguese language thanks to Pedro Mendonça.
 
 = 5.8.8 =
 *Release Date - 4 March 2020*
