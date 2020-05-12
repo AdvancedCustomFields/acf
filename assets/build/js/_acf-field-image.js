@@ -29,16 +29,14 @@
 		
 		validateAttachment: function( attachment ){
 			
-			// defaults
-			attachment = attachment || {};
-			
-			// WP attachment
-			if( attachment.id !== undefined ) {
+			// Use WP attachment attributes when available.
+			if( attachment && attachment.attributes ) {
 				attachment = attachment.attributes;
 			}
 			
-			// args
+			// Apply defaults.
 			attachment = acf.parseArgs(attachment, {
+				id: 0,
 				url: '',
 				alt: '',
 				title: '',
@@ -48,38 +46,31 @@
 				height: 0
 			});
 			
-			// preview size
-			var url = acf.isget(attachment, 'sizes', this.get('preview_size'), 'url');
-			if( url !== null ) {
-				attachment.url = url;
+			// Override with "preview size".
+			var size = acf.isget( attachment, 'sizes', this.get('preview_size') );
+			if( size ) {
+				attachment.url = size.url;
+				attachment.width = size.width;
+				attachment.height = size.height;
 			}
 			
-			// return
+			// Return.
 			return attachment;
 		},
 		
 		render: function( attachment ){
-			
-			// vars
 			attachment = this.validateAttachment( attachment );
 			
-			// update image
+			// Update DOM.
 		 	this.$('img').attr({
-			 	src: attachment.url,
-			 	alt: attachment.alt,
-			 	title: attachment.title
-		 	});
-		 	
-			// vars
-			var val = attachment.id || '';
-						
-			// update val
-			this.val( val );
-		 	
-		 	// update class
-		 	if( val ) {
+				src: attachment.url,
+				alt: attachment.alt
+			});
+		 	if( attachment.id ) {
+				this.val( attachment.id );
 			 	this.$control().addClass('has-value');
 		 	} else {
+				this.val( '' );
 			 	this.$control().removeClass('has-value');
 		 	}
 		},

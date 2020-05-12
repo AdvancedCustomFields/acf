@@ -1289,11 +1289,6 @@ a.acf-icon.-cancel.grey:hover {
 	text-align: right;
 	z-index: 1;
 	
-	a {
-		margin-left: 4px;
-	}
-	
-	
 	/* hover */
 	&.-hover {
 		position: absolute;
@@ -1306,17 +1301,10 @@ a.acf-icon.-cancel.grey:hover {
 	
 	/* rtl */
 	html[dir="rtl"] & {
-		
-		a {
-			margin-left: 0;
-			margin-right: 4px;
-		}
-		
 		&.-hover {
 			right: auto;
 			left: 0;
 		}
-		
 	}
 }
 

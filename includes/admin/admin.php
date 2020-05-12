@@ -92,13 +92,16 @@ class ACF_Admin {
 		// Determine body class version.
 		$wp_minor_version = floatval( $wp_version );
 		if( $wp_minor_version >= 5.3 ) {
-			$body_class = 'acf-admin-5-3';
+			$classes .= ' acf-admin-5-3';
 		} else {
-			$body_class = 'acf-admin-3-8';
+			$classes .= ' acf-admin-3-8';
 		}
 		
+		// Add browser for specific CSS.
+		$classes .= ' acf-browser-' . acf_get_browser();
+		
 		// Append and return.
-		return $classes . ' ' . $body_class;
+		return $classes;
 	}
 	
 	/**

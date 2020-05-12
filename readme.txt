@@ -1,7 +1,7 @@
 === Advanced Custom Fields ===
 Contributors: elliotcondon
 Tags: acf, advanced, custom, field, fields, form, repeater, content
-Requires at least: 4.7.0
+Requires at least: 4.7
 Tested up to: 5.4
 Requires PHP: 5.4
 License: GPLv2 or later
@@ -67,6 +67,20 @@ From your WordPress dashboard
 
 == Changelog ==
 
+= 5.8.10 =
+*Release Date - 12 May 2020*
+
+* Fix - Fixed bug in ACF Blocks where "inserter examples" and "block templates" did not load the defined "data".
+* Fix - Reverted "fix" in 5.8.9 regarding Taxonomy fields saving terms to non "post" objects.
+* Fix - Fixed bug allowing the Image field to save the value of a deleted attachment.
+* Fix - Improved Select field `format_value()` behaviour to correctly cast value types depending on the "multiple" setting.
+* Tweak - Changed language fallback for "zh_HK" to "zh_TW".
+* Tweak - Changed Time Picker field settings to display in a localized format via `date_i18n()`.
+* Tweak - Improved CSS styling of menu item fields.
+* i18n - Updated Finnish translation thanks to Mikko Kekki
+* i18n - Updated French translation thanks to Maxime Bernard-Jacquet.
+* i18n - Updated Turkish translation thanks to Emre Erkan.
+
 = 5.8.9 =
 *Release Date - 26 March 2020*
 
@@ -80,7 +94,7 @@ From your WordPress dashboard
 * i18n - Updated French Canadian translation thanks to Bérenger Zyla.
 * i18n - Updated Traditional Chinese translation thanks to Audi Lu.
 * i18n - Updated German translation thanks to Ralf Koller.
-* i18n - Updated Portuguese language thanks to Pedro Mendonça.
+* i18n - Updated Portuguese translation thanks to Pedro Mendonça.
 
 = 5.8.8 =
 *Release Date - 4 March 2020*

@@ -518,6 +518,11 @@
 	}
 }
 
+// Fix extra padding in Firefox.
+body.acf-browser-firefox .acf-field select {
+	padding: 4px 5px;
+}
+
 
 /*---------------------------------------------------------------------------------------------
 *
@@ -651,39 +656,6 @@ html[dir="rtl"] input.acf-is-prepended.acf-is-appended {
 	}
 
 }
-
-
-/*---------------------------------------------------------------------------------------------
-*
-*  Select
-*
-*---------------------------------------------------------------------------------------------*/
-
-.acf-field select {
-	padding: 2px;
-}
-
-.acf-field select optgroup {
-	padding: 5px;
-	background: #fff;
-}
-
-.acf-field select option {
-	padding: 3px;
-}
-
-.acf-field select optgroup option {
-	padding-left: 5px;
-}
-
-.acf-field select optgroup:nth-child(2n) {
-    background: #F9F9F9;
-}
-
-.acf-field .select2-input {
-	max-width: 200px;
-}
-
 
 /*---------------------------------------------------------------------------------------------
 *
@@ -1461,31 +1433,19 @@ html[dir="rtl"] .pac-container .pac-item {
 		border-bottom: $wp-card-border solid 1px;
 		background: #fff;
 		
-		
 		.filter {
 			margin: 0;
 			padding: 0;
 			float: left;
 			width: 100%;
-			
-			
-			/* inner padding */
-			span {
-				display: block;
-				padding: 7px 7px 7px 0;
-			}
-			
-			&:first-child span {
+			box-sizing: border-box;
+			padding: 7px 7px 7px 0;
+			&:first-child {
 				padding-left: 7px;
 			}
-			
-			
+
 			// inputs
 			input, select {
-				height: 28px;
-			    line-height: 1;
-				padding: 2px;
-				width: 100%;
 				margin: 0;
 				float: none; /* potential fix for media popup? */
 				
@@ -1495,14 +1455,13 @@ html[dir="rtl"] .pac-container .pac-item {
 					box-shadow: none;
 				}
 			}
-			
 			input {
 				border-color: transparent;
 				box-shadow: none;
+				padding-left: 3px;
+				padding-right: 3px;
 			}
-			
 		}
-		
 		
 		/* widths */
 		&.-f2 {
@@ -1512,7 +1471,6 @@ html[dir="rtl"] .pac-container .pac-item {
 			.filter { width: 25%; }
 			.filter.-search { width: 50%; }
 		}
-		
 	}
 	
 	
@@ -1526,7 +1484,7 @@ html[dir="rtl"] .pac-container .pac-item {
 		.acf-rel-label,
 		.acf-rel-item,
 		p {
-			padding: 5px 7px;
+			padding: 5px;
 			margin: 0;
 			display: block;
 			position: relative;

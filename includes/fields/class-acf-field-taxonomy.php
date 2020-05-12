@@ -477,11 +477,11 @@ class acf_field_taxonomy extends acf_field {
 		// Check for saved terms.
 		if( !empty($this->save_post_terms) ) {
 			
-			// Get post_id info and bail if not "post".
+			// Determine object ID allowing for non "post" $post_id (user, taxonomy, etc).
+			// Although not fully supported by WordPress, non "post" objects may use the term relationships table.
+			// Sharing taxonomies across object types is discoraged, but unique taxonomies work well.
+			// Note: Do not attempt to restrict to "post" only. This has been attempted in 5.8.9 and later reverted.
 			$info = acf_get_post_id_info( $post_id );
-			if( $info['type'] !== 'post' ) {
-				return;
-			}
 			
 			// Loop over taxonomies and save terms.
 			foreach( $this->save_post_terms as $taxonomy => $term_ids ){

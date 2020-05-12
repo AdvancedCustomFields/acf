@@ -255,9 +255,22 @@ p.submit .acf-spinner {
 	}
 }
 
-.acf-menu-item-fields {
-	margin-right: 10px;
-	float: left;
+.acf-fields.acf-menu-item-fields {
+	clear: both;
+	padding-top: 1px; // Fixes margin overlap.
+	
+	> .acf-field {
+		margin: 5px 0;
+		padding-right: 10px;
+		
+		.acf-label {
+			margin-bottom: 0;
+			label {
+				font-style: italic;
+				font-weight: normal;
+			}
+		}
+	}
 }
 
 /*---------------------------------------------------------------------------------------------

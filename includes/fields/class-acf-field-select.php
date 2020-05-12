@@ -484,7 +484,11 @@ class acf_field_select extends acf_field {
 		// decode choices (convert to array)
 		$field['choices'] = acf_decode_choices($field['choices']);
 		$field['default_value'] = acf_decode_choices($field['default_value'], true);
-		
+
+		// Convert back to string for single selects.
+		if( !$field['multiple'] ) {
+			$field['default_value'] = acf_unarray( $field['default_value'] );
+		}
 		
 		// return
 		return $field;
@@ -565,28 +569,27 @@ class acf_field_select extends acf_field {
 	*
 	*  @return	$value (mixed) the modified value
 	*/
-	
 	function format_value( $value, $post_id, $field ) {
-		
-		// array
-		if( acf_is_array($value) ) {
-			
-			foreach( $value as $i => $v ) {
-				
-				$value[ $i ] = $this->format_value_single( $v, $post_id, $field );
-				
+
+		// Handle empty values.
+		if( acf_is_empty( $value ) ) {
+			if( !$field['multiple'] ) {
+				return acf_unarray( $value );
 			}
-			
-		} else {
-			
-			$value = $this->format_value_single( $value, $post_id, $field );
-			
+			return array();
 		}
-		
-		
-		// return
-		return $value;
-		
+
+		// Format into array.
+		$formatted = array();
+		foreach( acf_array( $value ) as $val ) {
+			$formatted[] = $this->format_value_single( $val, $post_id, $field );
+		}
+
+		// Convert back to string for single selects.
+		if( !$field['multiple'] ) {
+			return acf_unarray( $formatted );
+		}
+		return $formatted;
 	}
 	
 	
