@@ -70,11 +70,6 @@ From your WordPress dashboard
 = 5.8.11 =
 *Release Date - 12 May 2020*
 
-* Fix - Fixed bug causing PHP errors when loading Checkbox and Radio field values.
-
-= 5.8.10 =
-*Release Date - 12 May 2020*
-
 * Fix - Fixed bug in ACF Blocks where "inserter examples" and "block templates" did not load the defined "data".
 * Fix - Reverted "fix" in 5.8.9 regarding Taxonomy fields saving terms to non "post" objects.
 * Fix - Fixed bug allowing the Image field to save the value of a deleted attachment.
@@ -85,6 +80,11 @@ From your WordPress dashboard
 * i18n - Updated Finnish translation thanks to Mikko Kekki
 * i18n - Updated French translation thanks to Maxime Bernard-Jacquet.
 * i18n - Updated Turkish translation thanks to Emre Erkan.
+
+= 5.8.10 =
+*Release Date - 12 May 2020*
+
+* See hotfix version 5.8.11 for release notes.
 
 = 5.8.9 =
 *Release Date - 26 March 2020*
