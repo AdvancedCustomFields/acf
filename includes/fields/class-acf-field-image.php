@@ -115,7 +115,7 @@ class acf_field_image extends acf_field {
 		$size_style = sprintf(
 			'max-width: %s; max-height: %s;',
 			$size['width'] ? $size['width'] . 'px' : 'none', 
-			$size['height'] ? $size['height'] . 'px' : 'none', 
+			$size['height'] ? $size['height'] . 'px' : 'none'
 		);
 
 		// Render HTML.
