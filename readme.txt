@@ -73,7 +73,7 @@ From your WordPress dashboard
 * Fix - Fixed bug in ACF Blocks where "inserter examples" and "block templates" did not load the defined "data".
 * Fix - Reverted "fix" in 5.8.9 regarding Taxonomy fields saving terms to non "post" objects.
 * Fix - Fixed bug allowing the Image field to save the value of a deleted attachment.
-* Fix - Improved Select field `format_value()` behavior to correctly cast value types depending on the "multiple" setting.
+* Fix - Improved Select field `format_value()` behaviour to correctly cast value types depending on the "multiple" setting.
 * Tweak - Changed language fallback for "zh_HK" to "zh_TW".
 * Tweak - Changed Time Picker field settings to display in a localized format via `date_i18n()`.
 * Tweak - Improved CSS styling of menu item fields.
