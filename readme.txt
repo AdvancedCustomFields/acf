@@ -67,6 +67,11 @@ From your WordPress dashboard
 
 == Changelog ==
 
+= 5.8.11 =
+*Release Date - 12 May 2020*
+
+* Fix - Fixed bug causing PHP errors when loading Checkbox and Radio field values.
+
 = 5.8.10 =
 *Release Date - 12 May 2020*
 
