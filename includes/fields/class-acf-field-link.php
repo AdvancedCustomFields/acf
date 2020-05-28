@@ -204,7 +204,7 @@ class acf_field_link extends acf_field {
 		
 		
 		// format value
-		if( $field['return_format'] == 'url' ) {
+		if( isset($field['return_format']) && $field['return_format'] == 'url' ) {
 			
 			return $link['url'];
 			
