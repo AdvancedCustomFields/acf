@@ -538,7 +538,94 @@
 		// return
 		return val;
 	};
+
+	/**
+	 * Escapes HTML entities from a string.
+	 *
+	 * @date	08/06/2020
+	 * @since	5.9.0
+	 *
+	 * @param	string string The input string.
+	 * @return	string
+	 */
+	acf.strEscape = function( string ){
+		var htmlEscapes = {
+			'&': '&amp;',
+			'<': '&lt;',
+			'>': '&gt;',
+			'"': '&quot;',
+			"'": '&#39;'
+		};
+		return ('' + string).replace(/[&<>"']/g, function( chr ) {
+			return htmlEscapes[ chr ];
+		});
+	};
+
+	// Tests.
+	//console.log( acf.strEscape('Test 1') );
+	//console.log( acf.strEscape('Test & 1') );
+	//console.log( acf.strEscape('Test\'s &amp; 1') );
+	//console.log( acf.strEscape('<script>js</script>') );
+
+	/**
+	 * Unescapes HTML entities from a string.
+	 *
+	 * @date	08/06/2020
+	 * @since	5.9.0
+	 *
+	 * @param	string string The input string.
+	 * @return	string
+	 */
+	acf.strUnescape = function( string ){
+		var htmlUnescapes = {
+			'&amp;': '&',
+			'&lt;': '<',
+			'&gt;': '>',
+			'&quot;': '"',
+			'&#39;': "'"
+		};
+		return ('' + string).replace(/&amp;|&lt;|&gt;|&quot;|&#39;/g, function( entity ) {
+			return htmlUnescapes[ entity ];
+		});
+	};
 	
+	// Tests.
+	//console.log( acf.strUnescape( acf.strEscape('Test 1') ) );
+	//console.log( acf.strUnescape( acf.strEscape('Test & 1') ) );
+	//console.log( acf.strUnescape( acf.strEscape('Test\'s &amp; 1') ) );
+	//console.log( acf.strUnescape( acf.strEscape('<script>js</script>') ) );
+
+	/**
+	 * Escapes HTML entities from a string.
+	 *
+	 * @date	08/06/2020
+	 * @since	5.9.0
+	 *
+	 * @param	string string The input string.
+	 * @return	string
+	 */
+	acf.escAttr = acf.strEscape;
+
+	/**
+	 * Encodes <script> tags for safe HTML output.
+	 *
+	 * @date	08/06/2020
+	 * @since	5.9.0
+	 *
+	 * @param	string string The input string.
+	 * @return	string
+	 */
+	acf.escHtml = function( string ){
+		return ('' + string).replace(/<script|<\/script/g, function( html ) {
+			return acf.strEscape( html );
+		});
+	};
+
+	// Tests.
+	//console.log( acf.escHtml('<script>js</script>') );
+	//console.log( acf.escHtml( acf.strEscape('<script>js</script>') ) );
+	//console.log( acf.escHtml( '<script>js1</script><script>js2</script>' ) );
+
 	/**
 	*  acf.decode
 	*
@@ -554,23 +641,9 @@
 	acf.decode = function( string ){
 		return $('<textarea/>').html( string ).text();
 	};
+
 	
-	/**
-	*  acf.strEscape
-	*
-	*  description
-	*
-	*  @date	3/2/18
-	*  @since	5.6.5
-	*
-	*  @param	type $var Description. Default.
-	*  @return	type Description.
-	*/
-	
-	acf.strEscape = function( string ){
-		return $('<div>').text(string).html();
-	};
-	
+
 	/**
 	*  parseArgs
 	*
@@ -2001,11 +2074,11 @@
 				
 				//  optgroup
 				if( item.children ) {
-					itemsHtml += '<optgroup label="' + acf.strEscape(text) + '">' + crawl( item.children ) + '</optgroup>';
+					itemsHtml += '<optgroup label="' + acf.escAttr(text) + '">' + crawl( item.children ) + '</optgroup>';
 				
 				// option
 				} else {
-					itemsHtml += '<option value="' + id + '"' + (item.disabled ? ' disabled="disabled"' : '') + '>' + acf.strEscape(text) + '</option>';
+					itemsHtml += '<option value="' + acf.escAttr(id) + '"' + (item.disabled ? ' disabled="disabled"' : '') + '>' + acf.strEscape(text) + '</option>';
 				}
 			});
 			
@@ -3863,11 +3936,11 @@
 		},
 		
 		html: function( html ){
-			this.$el.html( html );
+			this.$el.html( acf.escHtml( html ) );
 		},
 		
 		text: function( text ){
-			this.$('p').html( text );
+			this.$('p').html( acf.escHtml( text ) );
 		},
 		
 		onClickClose: function( e, $el ){
@@ -6734,9 +6807,9 @@
 			
 			// Update DOM.
 		 	this.$('img').attr({
-			 	src: attachment.url,
-			 	alt: attachment.alt
-			 });
+				src: attachment.url,
+				alt: attachment.alt
+			});
 		 	if( attachment.id ) {
 				this.val( attachment.id );
 			 	this.$control().addClass('has-value');
@@ -7804,13 +7877,13 @@
 					// group
 					if( data.children !== undefined ) {
 						
-						html += '<li><span class="acf-rel-label">' + data.text + '</span><ul class="acf-bl">';
+						html += '<li><span class="acf-rel-label">' + acf.escHtml( data.text ) + '</span><ul class="acf-bl">';
 						html += walk( data.children );
 						html += '</ul></li>';
 					
 					// single
 					} else {
-						html += '<li><span class="acf-rel-item" data-id="' + data.id + '">' + data.text + '</span></li>';
+						html += '<li><span class="acf-rel-item" data-id="' + acf.escAttr( data.id ) + '">' + acf.escHtml( data.text ) + '</span></li>';
 					}
 				}
 				
@@ -11729,24 +11802,6 @@
 			return crawl( this.$el );
 		},
 		
-		decodeChoices: function( choices ){
-			
-			// callback
-			var crawl = function( items ){
-				items.map(function( item ){
-					item.text = acf.decode( item.text );
-					if( item.children ) {
-						item.children = crawl( item.children );
-					}
-					return item;
-				});
-				return items;
-			};
-			
-			// crawl
-			return crawl( choices );
-		},
-		
 		getAjaxData: function( params ){
 			
 			// vars
@@ -11782,11 +11837,6 @@
 				results: false,
 				more: false,
 			});
-			
-			// decode
-			if( json.results ) {
-				json.results = this.decodeChoices(json.results);
-			}
 			
 			// callback
 			var callback = this.get('ajaxResults');
@@ -11856,7 +11906,9 @@
 				placeholder:		this.get('placeholder'),
 				multiple:			this.get('multiple'),
 				data:				[],
-				escapeMarkup:		function( m ){ return m; }
+				escapeMarkup:		function( string ){ 
+					return acf.escHtml( string ); 
+				},
 			};
 			
 			// multiple
@@ -11991,7 +12043,9 @@
 				separator:			'||',
 				multiple:			this.get('multiple'),
 				data:				this.getChoices(),
-				escapeMarkup:		function( m ){ return m; },
+				escapeMarkup:		function( string ){ 
+					return acf.escHtml( string ); 
+				},
 				dropdownCss:		{
 					'z-index': '999999999'
 				},
@@ -12658,7 +12712,11 @@
 			
 			// bail ealry if not initialized
 			if( typeof tinyMCEPreInit.mceInit[ id ] === 'undefined' ) return false;
-						
+			
+			// Ensure textarea element is visible 
+			// - Fixes bug in block editor when switching between "Block" and "Document" tabs.
+			$('#'+id).show();
+
 			// toggle			
 			switchEditors.go( id, 'tmce');
 			

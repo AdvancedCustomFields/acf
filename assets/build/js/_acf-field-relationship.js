@@ -354,13 +354,13 @@
 					// group
 					if( data.children !== undefined ) {
 						
-						html += '<li><span class="acf-rel-label">' + data.text + '</span><ul class="acf-bl">';
+						html += '<li><span class="acf-rel-label">' + acf.escHtml( data.text ) + '</span><ul class="acf-bl">';
 						html += walk( data.children );
 						html += '</ul></li>';
 					
 					// single
 					} else {
-						html += '<li><span class="acf-rel-item" data-id="' + data.id + '">' + data.text + '</span></li>';
+						html += '<li><span class="acf-rel-item" data-id="' + acf.escAttr( data.id ) + '">' + acf.escHtml( data.text ) + '</span></li>';
 					}
 				}
 				

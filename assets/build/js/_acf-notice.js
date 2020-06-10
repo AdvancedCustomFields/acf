@@ -102,11 +102,11 @@
 		},
 		
 		html: function( html ){
-			this.$el.html( html );
+			this.$el.html( acf.escHtml( html ) );
 		},
 		
 		text: function( text ){
-			this.$('p').html( text );
+			this.$('p').html( acf.escHtml( text ) );
 		},
 		
 		onClickClose: function( e, $el ){

@@ -538,7 +538,94 @@
 		// return
 		return val;
 	};
+
+	/**
+	 * Escapes HTML entities from a string.
+	 *
+	 * @date	08/06/2020
+	 * @since	5.9.0
+	 *
+	 * @param	string string The input string.
+	 * @return	string
+	 */
+	acf.strEscape = function( string ){
+		var htmlEscapes = {
+			'&': '&amp;',
+			'<': '&lt;',
+			'>': '&gt;',
+			'"': '&quot;',
+			"'": '&#39;'
+		};
+		return ('' + string).replace(/[&<>"']/g, function( chr ) {
+			return htmlEscapes[ chr ];
+		});
+	};
+
+	// Tests.
+	//console.log( acf.strEscape('Test 1') );
+	//console.log( acf.strEscape('Test & 1') );
+	//console.log( acf.strEscape('Test\'s &amp; 1') );
+	//console.log( acf.strEscape('<script>js</script>') );
+
+	/**
+	 * Unescapes HTML entities from a string.
+	 *
+	 * @date	08/06/2020
+	 * @since	5.9.0
+	 *
+	 * @param	string string The input string.
+	 * @return	string
+	 */
+	acf.strUnescape = function( string ){
+		var htmlUnescapes = {
+			'&amp;': '&',
+			'&lt;': '<',
+			'&gt;': '>',
+			'&quot;': '"',
+			'&#39;': "'"
+		};
+		return ('' + string).replace(/&amp;|&lt;|&gt;|&quot;|&#39;/g, function( entity ) {
+			return htmlUnescapes[ entity ];
+		});
+	};
 	
+	// Tests.
+	//console.log( acf.strUnescape( acf.strEscape('Test 1') ) );
+	//console.log( acf.strUnescape( acf.strEscape('Test & 1') ) );
+	//console.log( acf.strUnescape( acf.strEscape('Test\'s &amp; 1') ) );
+	//console.log( acf.strUnescape( acf.strEscape('<script>js</script>') ) );
+
+	/**
+	 * Escapes HTML entities from a string.
+	 *
+	 * @date	08/06/2020
+	 * @since	5.9.0
+	 *
+	 * @param	string string The input string.
+	 * @return	string
+	 */
+	acf.escAttr = acf.strEscape;
+
+	/**
+	 * Encodes <script> tags for safe HTML output.
+	 *
+	 * @date	08/06/2020
+	 * @since	5.9.0
+	 *
+	 * @param	string string The input string.
+	 * @return	string
+	 */
+	acf.escHtml = function( string ){
+		return ('' + string).replace(/<script|<\/script/g, function( html ) {
+			return acf.strEscape( html );
+		});
+	};
+
+	// Tests.
+	//console.log( acf.escHtml('<script>js</script>') );
+	//console.log( acf.escHtml( acf.strEscape('<script>js</script>') ) );
+	//console.log( acf.escHtml( '<script>js1</script><script>js2</script>' ) );
+
 	/**
 	*  acf.decode
 	*
@@ -554,23 +641,9 @@
 	acf.decode = function( string ){
 		return $('<textarea/>').html( string ).text();
 	};
+
 	
-	/**
-	*  acf.strEscape
-	*
-	*  description
-	*
-	*  @date	3/2/18
-	*  @since	5.6.5
-	*
-	*  @param	type $var Description. Default.
-	*  @return	type Description.
-	*/
-	
-	acf.strEscape = function( string ){
-		return $('<div>').text(string).html();
-	};
-	
+
 	/**
 	*  parseArgs
 	*
@@ -2001,11 +2074,11 @@
 				
 				//  optgroup
 				if( item.children ) {
-					itemsHtml += '<optgroup label="' + acf.strEscape(text) + '">' + crawl( item.children ) + '</optgroup>';
+					itemsHtml += '<optgroup label="' + acf.escAttr(text) + '">' + crawl( item.children ) + '</optgroup>';
 				
 				// option
 				} else {
-					itemsHtml += '<option value="' + id + '"' + (item.disabled ? ' disabled="disabled"' : '') + '>' + acf.strEscape(text) + '</option>';
+					itemsHtml += '<option value="' + acf.escAttr(id) + '"' + (item.disabled ? ' disabled="disabled"' : '') + '>' + acf.strEscape(text) + '</option>';
 				}
 			});
 			

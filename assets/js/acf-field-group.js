@@ -1434,7 +1434,7 @@
 			conditionTypes.map(function( model ){
 				choices.push({
 					id:		model.prototype.operator,
-					text:	acf.strEscape(model.prototype.label)
+					text:	model.prototype.label
 				});
 			});
 			

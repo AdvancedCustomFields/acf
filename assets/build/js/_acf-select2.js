@@ -209,24 +209,6 @@
 			return crawl( this.$el );
 		},
 		
-		decodeChoices: function( choices ){
-			
-			// callback
-			var crawl = function( items ){
-				items.map(function( item ){
-					item.text = acf.decode( item.text );
-					if( item.children ) {
-						item.children = crawl( item.children );
-					}
-					return item;
-				});
-				return items;
-			};
-			
-			// crawl
-			return crawl( choices );
-		},
-		
 		getAjaxData: function( params ){
 			
 			// vars
@@ -262,11 +244,6 @@
 				results: false,
 				more: false,
 			});
-			
-			// decode
-			if( json.results ) {
-				json.results = this.decodeChoices(json.results);
-			}
 			
 			// callback
 			var callback = this.get('ajaxResults');
@@ -336,7 +313,9 @@
 				placeholder:		this.get('placeholder'),
 				multiple:			this.get('multiple'),
 				data:				[],
-				escapeMarkup:		function( m ){ return m; }
+				escapeMarkup:		function( string ){ 
+					return acf.escHtml( string ); 
+				},
 			};
 			
 			// multiple
@@ -471,7 +450,9 @@
 				separator:			'||',
 				multiple:			this.get('multiple'),
 				data:				this.getChoices(),
-				escapeMarkup:		function( m ){ return m; },
+				escapeMarkup:		function( string ){ 
+					return acf.escHtml( string ); 
+				},
 				dropdownCss:		{
 					'z-index': '999999999'
 				},

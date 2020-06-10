@@ -337,7 +337,11 @@
 			
 			// bail ealry if not initialized
 			if( typeof tinyMCEPreInit.mceInit[ id ] === 'undefined' ) return false;
-						
+			
+			// Ensure textarea element is visible 
+			// - Fixes bug in block editor when switching between "Block" and "Document" tabs.
+			$('#'+id).show();
+
 			// toggle			
 			switchEditors.go( id, 'tmce');
 			
