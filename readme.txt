@@ -68,7 +68,7 @@ From your WordPress dashboard
 == Changelog ==
 
 = 5.8.12 =
-*Release Date - 12 May 2020*
+*Release Date - 10 June 2020*
 
 * Fix - Improved string escaping in Select2 drop-downs to address XSS concerns.
 * Fix - Fixed bug causing PHP error when updating the settings of a Checkbox field.
