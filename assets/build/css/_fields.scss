@@ -395,29 +395,40 @@
 		margin: 0 !important; /* override WP style - do not delete - you have tried this before */
 		padding: 0 !important; /* override WP style - do not delete - you have tried this before */
 	}
-	
-	// hndle
-	> .hndle {
-		
-		/* edit field group */
+
+	// Edit cog.
+	.acf-hndle-cog {
+		color: #72777c;
+		font-size: 16px;
+		line-height: 36px;
+		height: 36px; // Mimic WP 5.5
+		width: 1.62rem; // Mimic WP 5.5
+		position: relative;
+		display: none;
+		&:hover {
+			color: #191e23;
+		}
+	}
+
+	// Show on hover.
+	> .hndle:hover,
+	> .postbox-header:hover {
 		.acf-hndle-cog {
-			color: #AAAAAA;
-			font-size: 16px;
+			display: inline-block;
+		}
+	}
+
+	// WP < 5.5 styling
+	> .hndle {
+		.acf-hndle-cog {
+			height: 20px;
 			line-height: 20px;
-			padding: 0 2px;
 			float: right;
-			position: relative;
-			display: none;
-			
+			width: auto;
 			&:hover {
 				color: #777777;
 			}
 		}
-	}
-	
-	// hover
-	&:hover > .hndle .acf-hndle-cog {
-		display: block;
 	}
 	
 	// replace

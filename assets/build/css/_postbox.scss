@@ -1,50 +1,61 @@
-// Postbox.
-
 // Gutenberg specific styles.
 #editor {
 	
 	// Postbox container.
 	.edit-post-layout__metaboxes {
 		padding: 0;
+		.edit-post-meta-boxes-area {
+			margin: 0;
+		}
+	}
+
+	// Sidebar postbox container.
+	.metabox-location-side {
+		.postbox-container {
+			float: none;
+		}
 	}
 	
 	// Alter postbox to look like panel component.
 	.postbox {
 		color: #444;
 		
-		.handlediv {
-			color: #191e23 !important;
-			height: 46px;
-			width: auto;
-			padding: 0 14px 0 5px;
-			position: relative;
-			z-index: 2;
-		}
-		.hndle {
-			color: #191e23 !important;
-			font-size: 13px;
-			line-height: normal;
-			padding: 15px;
-			
+		> .postbox-header {
+			.hndle {
+				border-bottom: none;
+				&:hover {
+					background: transparent;
+				}
+			}
+			.handle-actions {
+				.handle-order-higher,
+				.handle-order-lower {
+					width: 1.62rem;
+				}
+
+				// Fix "Edit" icon height.
+				.acf-hndle-cog {
+					height: 44px;
+					line-height: 44px;
+				}
+			}
 			&:hover {
-				background: #f2f4f5;
-			}
-			.acf-hndle-cog {
-				line-height: 16px;
+				background: #f0f0f0;
 			}
 		}
-		
-		// change icons to match gutenberg sidebar accordions
-		.handlediv .toggle-indicator {
-			color: inherit;
-			&:before {
-				content: "\f343";
-				font-size: 18px;
-				width: auto;
-			}
+
+		> .inside {
+			border-bottom: none;
 		}
-		&.closed .handlediv .toggle-indicator:before {
-			content: "\f347";
+
+		// Hide bottom border of last postbox.
+		&:last-child.closed > .postbox-header {
+			border-bottom: none;
 		}
+	}
+
+	// Prevent metaboxes being forced offscreen.
+	.block-editor-writing-flow__click-redirect {
+		min-height: 50px;
 	}
 }

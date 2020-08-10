@@ -12,6 +12,13 @@
 	margin: 0;
 }
 
+// Hide metabox order buttons added in WP 5.5.
+.postbox {
+	.handle-order-higher,
+	.handle-order-lower {
+		display: none;
+	}
+}
 
 /*---------------------------------------------------------------------------------------------
 *
@@ -47,7 +54,8 @@
     box-shadow: none;
     
     
-    /* metabox */
+    // Hide metabox header.
+	> .postbox-header,
     > .handlediv,
 	> .hndle {
 		display: none;
