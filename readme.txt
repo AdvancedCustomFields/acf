@@ -1,6 +1,6 @@
 === Advanced Custom Fields ===
 Contributors: elliotcondon
-Tags: acf, advanced, custom, field, fields, form, repeater, content
+Tags: acf, fields, custom fields, meta, repeater
 Requires at least: 4.7
 Tested up to: 5.5
 Requires PHP: 5.4
@@ -66,6 +66,12 @@ From your WordPress dashboard
 
 
 == Changelog ==
+
+= 5.8.14 =
+*Release Date - 13 August 2020*
+
+* Fix - Fixed bug breaking ACF Block `$is_preview` parameter in WordPress 5.5.
+* Fix - Fixed bug breaking seamless postbox style in WordPress 5.5.
 
 = 5.8.13 =
 *Release Date - 10 August 2020*
