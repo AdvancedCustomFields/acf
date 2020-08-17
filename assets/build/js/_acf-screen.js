@@ -306,17 +306,37 @@
 				
 				// Create postbox if doesn't exist.
 				if( !postbox ) {
+					var wpMinorVersion = parseFloat( acf.get('wp_version') );
+					if( wpMinorVersion >= 5.5 ) {
+						var postboxHeader = [
+							'<div class="postbox-header">',
+								'<h2 class="hndle ui-sortable-handle">',
+									'<span>' + acf.escHtml( result.title ) + '</span>',
+								'</h2>',
+								'<div class="handle-actions hide-if-no-js">',
+									'<button type="button" class="handlediv" aria-expanded="true">',
+										'<span class="screen-reader-text">Toggle panel: ' + acf.escHtml( result.title ) + '</span>',
+										'<span class="toggle-indicator" aria-hidden="true"></span>',
+									'</button>',
+								'</div>',
+							'</div>'
+						].join('');
+					} else {
+						var postboxHeader = [
+							'<button type="button" class="handlediv" aria-expanded="true">',
+								'<span class="screen-reader-text">Toggle panel: ' + acf.escHtml( result.title ) + '</span>',
+								'<span class="toggle-indicator" aria-hidden="true"></span>',
+							'</button>',
+							'<h2 class="hndle ui-sortable-handle">',
+								'<span>' + acf.escHtml( result.title ) + '</span>',
+							'</h2>',
+						].join('');
+					}
 					
 					// Create it.
 					var $postbox = $([
 						'<div id="' + result.id + '" class="postbox">',
-							'<button type="button" class="handlediv" aria-expanded="false">',
-								'<span class="screen-reader-text">Toggle panel: ' + result.title + '</span>',
-								'<span class="toggle-indicator" aria-hidden="true"></span>',
-							'</button>',
-							'<h2 class="hndle ui-sortable-handle">',
-								'<span>' + result.title + '</span>',
-							'</h2>',
+							postboxHeader,
 							'<div class="inside">',
 								result.html,
 							'</div>',
@@ -438,8 +458,8 @@
 		// Keep a reference to the most recent post attributes.
 		postEdits: {},
 				
-		// Wait until load to avoid 'core' issues when loading taxonomies.
-		wait: 'load',
+		// Wait until assets have been loaded.
+		wait: 'prepare',
 
 		initialize: function(){
 			
@@ -466,6 +486,9 @@
 			if( wpMinorVersion >= 5.3 ) {
 				this.addAction( 'refresh_post_screen', this.onRefreshPostScreen );
 			}
+
+			// Trigger "refresh" after WP has moved metaboxes into place.
+			wp.domReady( acf.refresh );
 		},
 		
 		onChange: function(){

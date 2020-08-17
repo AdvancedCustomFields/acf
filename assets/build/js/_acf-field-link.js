@@ -146,7 +146,6 @@
 			
 			// open popup
 			wpLink.open( 'acf-link-textarea', val.url, val.title, null );
-			
 		},
 		
 		onOpen: function(){
@@ -157,6 +156,11 @@
 			// set inputs
 			var val = this.getNodeValue();
 			this.setInputValue( val );
+
+			// Update button text.
+			if( val.url && wpLinkL10n ) {
+				$('#wp-link-submit').val( wpLinkL10n.update );
+			}
 		},
 		
 		close: function(){
@@ -165,26 +169,27 @@
 		
 		onClose: function(){
 			
-			// bail early if no node
-			// needed due to WP triggering this event twice
+			// Bail early if no node.
+			// Needed due to WP triggering this event twice.
 			if( !this.has('node') ) {
 				return false;
 			}
+
+			// Determine context.
+			var $submit = $('#wp-link-submit');
+			var isSubmit = ( $submit.is(':hover') || $submit.is(':focus') );
 			
-			// remove events
+			// Set value
+			if( isSubmit ) {
+				var val = this.getInputValue();
+				this.setNodeValue( val );
+			}
+			
+			// Cleanup.
 			this.off('wplink-open');
 			this.off('wplink-close');
-			
-			// set value
-			var val = this.getInputValue();
-			this.setNodeValue( val );
-			
-			// remove textarea
 			$('#acf-link-textarea').remove();
-			
-			// reset
 			this.set('node', null);
-			
 		}
 	});	
 

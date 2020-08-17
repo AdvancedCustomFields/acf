@@ -50,8 +50,9 @@
 			var oldId = $textarea.attr('id');
 			var newId = acf.uniqueId('acf-editor-');
 			
-			// store copy of textarea data
-			var data = $textarea.data();
+			// Backup textarea data.
+			var inputData = $textarea.data();
+			var inputVal = $textarea.val();
 			
 			// rename
 			acf.rename({
@@ -64,12 +65,12 @@
 			// update id
 			this.set('id', newId, true);
 			
-			// initialize
-			acf.tinymce.initialize( newId, args );
-			
 			// apply data to new textarea (acf.rename creates a new textarea element due to destructive mode)
 			// fixes bug where conditional logic "disabled" is lost during "screen_check"
-			this.$input().data(data);
+			this.$input().data( inputData ).val( inputVal );
+
+			// initialize
+			acf.tinymce.initialize( newId, args );
 		},
 		
 		onMousedown: function( e ){

@@ -113,7 +113,6 @@
 .has-value .show-if-value { display: block; }
 .has-value .hide-if-value { display: none; }
 
-
 /* select2 WP animation fix */
 .select2-search-choice-close {
 	-webkit-transition: none;
@@ -266,250 +265,264 @@
 *	acf-icon
 *
 *--------------------------------------------------------------------------------------------*/
-
-@font-face {
-  font-family: 'acf';
-  src: url('../font/acf.eot?57601716');
-  src: url('../font/acf.eot?57601716#iefix') format('embedded-opentype'),
-       url('../font/acf.woff2?57601716') format('woff2'),
-       url('../font/acf.woff?57601716') format('woff'),
-       url('../font/acf.ttf?57601716') format('truetype'),
-       url('../font/acf.svg?57601716#acf') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-.acf-icon:before {
-	font-family: "acf";
-	font-style: normal;
-	font-weight: normal;
-	speak: none;
-	
-	display: inline-block;
-	text-decoration: inherit;
-	width: 1em;
-	//   margin-right: .2em;
-	text-align: center;
-	/* opacity: .8; */
-	
-	/* For safety - reset parent styles, that can break glyph codes*/
-	font-variant: normal;
-	text-transform: none;
-	
-	/* fix buttons height, for twitter bootstrap */
-	line-height: 1em;
-	
-	/* Font smoothing. That was taken from TWBS */
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	
-	/* more consistent vertical align */
-	position: relative;
-}
- 
-.acf-icon.-plus:before { content: '\e800'; } /* '' */
-.acf-icon.-minus:before { content: '\e801'; } /* '' */
-.acf-icon.-cancel:before { content: '\e802'; } /* '' */
-.acf-icon.-pencil:before { content: '\e803'; top: -1px; } /* '' */
-.acf-icon.-location:before { content: '\e804'; } /* '' */
-.acf-icon.-down:before { content: '\e805'; top: 1px; } /* '' */
-.acf-icon.-left:before { content: '\e806'; left: -1px; } /* '' */
-.acf-icon.-right:before { content: '\e807'; left: 1px; } /* '' */
-.acf-icon.-up:before { content: '\e808'; top: -1px; } /* '' */
-.acf-icon.-sync:before { content: '\e809'; } /* '' */
-.acf-icon.-globe:before { content: '\e80a'; } /* '' */
-.acf-icon.-picture:before { content: '\e80b'; } /* '' */
-.acf-icon.-check:before { content: '\e80c'; } /* '' */
-.acf-icon.-dot-3:before { content: '\e80d'; } /* '' */
-.acf-icon.-arrow-combo:before { content: '\e80e'; } /* '' */
-.acf-icon.-arrow-up:before { content: '\e810'; top: -1px; } /* '' */
-.acf-icon.-arrow-down:before { content: '\e80f'; top: 1px; } /* '' */
-.acf-icon.-search:before { content: '\e811'; } /* '' */
-.acf-icon.-link-ext:before { content: '\f08e'; } /* '' */
-
-
-/* collapse */
-.acf-icon.-collapse:before { content: '\e810'; top: -1px; } /* arrow-up */
-.-collapsed .acf-icon.-collapse:before { content: '\e80f'; top: 1px; } /* arrow-down */
-
-
-/* default */
 .acf-icon {
 	display: inline-block;
-	height: 26px;
-	width: 26px;
+	height: 28px;
+	width: 28px;
 	border: transparent solid 1px;
 	border-radius: 100%;
-	
-	font-size: 16px;
-	line-height: 26px;
+	font-size: 20px;
+	line-height: 21px;
 	text-align: center;
 	text-decoration: none;
 	vertical-align: top;
-	box-sizing: content-box;
+	box-sizing: border-box;
+
+	&:before {
+		font-family: dashicons;
+		display: inline-block;
+		line-height: 1;
+		font-weight: 400;
+		font-style: normal;
+		speak: none;
+		text-decoration: inherit;
+		text-transform: none;
+		text-rendering: auto;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		width: 1em;
+		height: 1em;
+		vertical-align: middle;
+		text-align: center;
+	}
+}
+
+// Icon types.
+.acf-icon.-plus:before { 
+	content: "\f543";
+}
+.acf-icon.-minus:before { 
+	content: "\f460";
+}
+.acf-icon.-cancel:before { 
+	content: "\f335";
+}
+.acf-icon.-pencil:before { 
+	content: "\f464";
+}
+.acf-icon.-location:before { 
+	content: "\f230";
+}
+.acf-icon.-up:before { 
+	content: "\f343";
+
+	// Fix position relative to font-size.
+	margin-top: (-2em/20);
+}
+.acf-icon.-down:before { 
+	content: "\f347";
+
+	// Fix position relative to font-size.
+	margin-top: (2em/20);
+}
+.acf-icon.-left:before { 
+	content: "\f341";
+
+	// Fix position relative to font-size.
+	margin-left: (-2em/20);
+}
+.acf-icon.-right:before { 
+	content: "\f345";
+
+	// Fix position relative to font-size.
+	margin-left: (2em/20);
+}
+.acf-icon.-sync:before { 
+	content: "\f463";
+}
+.acf-icon.-globe:before { 
+	content: "\f319";
+
+	// Fix position relative to font-size.
+	margin-top: (2em/20);
+	margin-left: (2em/20);
+}
+.acf-icon.-picture:before { 
+	content: "\f128";
+}
+.acf-icon.-check:before { 
+	content: "\f147";
+
+	// Fix position relative to font-size.
+	margin-left: (-2em/20);
+}
+.acf-icon.-dot-3:before { 
+	content: "\f533";
+
+	// Fix position relative to font-size.
+	margin-top: (-2em/20);
+}
+.acf-icon.-arrow-combo:before { 
+	content: "\f156";
+}
+.acf-icon.-arrow-up:before { 
+	content: "\f142";
+
+	// Fix position relative to font-size.
+	margin-left: (-2em/20);
+}
+.acf-icon.-arrow-down:before { 
+	content: "\f140";
+	
+	// Fix position relative to font-size.
+	margin-left: (-2em/20);
+}
+.acf-icon.-search:before { 
+	content: "\f179";
+}
+.acf-icon.-link-ext:before { 
+	content: "\f504";
+}
+
+// Duplicate is a custom icon made from pseudo elements.
+.acf-icon.-duplicate {
+	position: relative;
+	&:before,
+	&:after {
+		content: "";
+		display: block;
+		box-sizing: border-box;
+		width: 46%;
+		height: 46%;
+		position: absolute;
+		top: 33%;
+		left: 23%;
+	}
+	&:before { 
+		margin: -1px 0 0 1px;
+		box-shadow: 2px -2px 0px 0px currentColor;
+	}
+	&:after {
+		border: solid 2px currentColor;
+	}
 }
 
 
-/* elements */
+// Collapse icon toggles automatically.
+.acf-icon.-collapse:before {
+	content: "\f142";
+
+	// Fix position relative to font-size.
+	margin-left: (-2em/20);
+}
+.-collapsed .acf-icon.-collapse:before {
+	content: "\f140";
+	
+	// Fix position relative to font-size.
+	margin-left: (-2em/20);
+}
+
+// <span> displays with grey border.
 span.acf-icon {
-	color: #999;
-	border-color: #BBB;
+	color: #555d66;
+	border-color: #b5bcc2;
 	background-color: #fff;	
 }
 
-
-/* icon */
+// <a> also displays with grey border.
 a.acf-icon {
 	color: #555d66;
 	border-color: #b5bcc2;
 	background-color: #fff;
-		
 	position: relative;
-	overflow: hidden;
 	transition: none;
+	cursor: pointer;
 	
-	
-	/* clear */
-	&.-clear {
-		color: #444;
-		background: transparent;
-		border: none;
-	}
-	
-	
-	/* light*/
-	&.light {
-		border: none;
-		padding: 1px;
-		background: #F5F5F5;
-		color: #23282d;
-	}
-	
-	
-	/* states */
+	// State "hover".
 	&:hover {
-		border-color: transparent;
-		background: $acf_blue;
-		color: #fff;
+		background: #f3f5f6;
+		border-color: #0071a1;
+		color: #0071a1;
+	}
+	&.-minus:hover,
+	&.-cancel:hover {
+		background: #f7efef;
+		border-color: #a10000;
+		color: #dc3232;
 	}
 	
-	&:active {
-		color: #fff;
-		background-color: darken($acf_blue, 5%);
-	}
-	
-	
-	/* remove WP outline box-shadow */
+	// Fix: Remove WP outline box-shadow.
 	&:active,
 	&:focus {
 		outline: none;
 		box-shadow: none;
 	}
-	
-	
-	/* red */
-	&.-minus,
-	&.-cancel {
-		
-		&:hover {
-			background-color: #F55E4F;
-		}
-		
-		&:active {
-			background-color: darken(#F55E4F, 5%);
-		}
-	
-	}
-	
 }
 
-
-/* minor tweaks */
-.acf-icon.-pencil {
-	font-size: 15px;
-}
-
-.acf-icon.-location {
-	font-size: 18px;
-}
-
-
-/* sizes */
-.acf-icon.small,
-.acf-icon.-small {
-	width: 18px;
-	height: 18px;
-	line-height: 18px;
-	font-size: 14px;
-}
-
-
-/* dark */
-.acf-icon.dark {
+// Style "clear".
+.acf-icon.-clear {
 	border-color: transparent;
+	background: transparent;
+	color: #444;
+}
+
+// Style "light".
+.acf-icon.light {
+	border-color: transparent;
+	background: #F5F5F5;
+	color: #23282d;
+}
+
+// Style "dark".
+.acf-icon.dark {
+	border-color: transparent !important;
 	background: #23282D;
 	color: #eee;
 }
-
-a.acf-icon.dark:hover {
-	border-color: transparent;
-	background: #191E23;
-	color: #00b9eb;
+a.acf-icon.dark {
+	&:hover {
+		background: #191E23;
+		color: #00b9eb;
+	}
+	&.-minus:hover, 
+	&.-cancel:hover {
+		color: #D54E21;
+	}
 }
 
-a.acf-icon.-minus.dark:hover,
-a.acf-icon.-cancel.dark:hover {
-	color: #D54E21;
-}
-
-
-/* grey */
+// Style "grey".
 .acf-icon.grey {
-	border-color: transparent;
+	border-color: transparent !important;
 	background: #b4b9be;
-	color: #fff;
+	color: #fff !important;
+
+	&:hover {
+		background: #00A0D2;
+		color: #fff;
+	}
+	&.-minus:hover, 
+	&.-cancel:hover {
+		background: #32373C;
+	}
 }
 
-a.acf-icon.grey:hover {
-	border-color: transparent;
-	background: #00A0D2;
-	color: #fff;
+// Size "small".
+.acf-icon.small,
+.acf-icon.-small {
+	width: 20px;
+	height: 20px;
+	line-height: 14px;
+	font-size: 14px;
+
+	// Apply minor transforms to reduce clarirty of "duplicate" icon.
+	// Helps to unify rendering with dashicons.
+	&.-duplicate {
+		&:before, &:after {
+			//transform: rotate(0.1deg) scale(0.9) translate(-5%, 5%);
+			opacity: 0.8;
+		}
+	}
 }
-
-a.acf-icon.-minus.grey:hover,
-a.acf-icon.-cancel.grey:hover {
-	background: #32373C;
-}
-
-
-/* red */
-.acf-icon.red {
-	border-color: transparent;
-	background-color: #F55E4F;
-	color: #fff;
-}
-
-
-/* yellow */
-.acf-icon.yellow {
-	border-color: transparent;
-	background-color: #FDBC40;
-	color: #fff;
-}
-
-
-/* logo */
-.acf-icon.logo {
-	width: 150px;
-	height: 150px;
-	background: #5EE8BF;
-	
-	border: 0 none;
-	position: absolute;
-    right: 0;
-    top: 0;
-}
-
 
 /*--------------------------------------------------------------------------------------------
 *
@@ -602,7 +615,7 @@ a.acf-icon.-cancel.grey:hover {
 	margin: 5px 0 15px;
 	padding: 3px 12px;
 	background: $acf_notice;
-	border-left: darken($acf_notice, 8%) solid 4px;
+	border-left: darken($acf_notice, 10%) solid 3px;
 	
 	p {
 		font-size: 13px;
@@ -612,16 +625,16 @@ a.acf-icon.-cancel.grey:hover {
 		color: inherit;
 	}
 	
-	a.acf-notice-dismiss {
+	.acf-notice-dismiss {
 		position: absolute;
-		border-color: transparent;
 		top: 9px;
 		right: 12px;
-		color: #fff;
-		background: rgba(0,0,0,0.1);
-		
+		background: transparent !important;
+		color: inherit !important;
+		border-color: #fff !important;
+		opacity: 0.75;
 		&:hover {
-			background: rgba(0,0,0,0.2);
+			opacity: 1;
 		}
 	}
 	
@@ -633,19 +646,19 @@ a.acf-icon.-cancel.grey:hover {
 	// error
 	&.-error {
 		background: $acf_error;
-		border-color: darken($acf_error, 8%);
+		border-color: darken($acf_error, 10%);
 	}
 	
 	// success
 	&.-success {
 		background: $acf_success;
-		border-color: darken($acf_success, 8%);
+		border-color: darken($acf_success, 10%);
 	}
 	
 	// warning
 	&.-warning {
 		background: $acf_warning;
-		border-color: darken($acf_warning, 8%);
+		border-color: darken($acf_warning, 10%);
 	}
 }
 
@@ -769,147 +782,6 @@ a.acf-icon.-cancel.grey:hover {
 	transform: translate(0, -10px);
 	opacity: 0;
 }
-
-
-/*---------------------------------------------------------------------------------------------
-*
-*  Field Group List
-*
-*---------------------------------------------------------------------------------------------*/
-
-#acf-field-group-wrap {
-	
-	.tablenav,
-	p.search-box {
-		display: none;
-	}
-	
-	.wp-list-table {
-		
-		.column-acf-fg-description,
-		.column-acf-fg-description:before {
-			display: none !important; /* important needed to override mobile */	
-		}
-		
-		.column-acf-fg-count {
-			width: 10%;
-		}
-		
-		.column-acf-fg-status {
-			width: 10%;
-		}
-	
-	}
-	
-	.tablenav.bottom {
-		display: block;
-	}
-	
-	.acf-description {
-		font-weight: normal;
-		font-size: 13px;
-		color: #999;
-		margin-left: 7px;
-		font-style: italic;
-	}
-
-}
-
-
-
-
-/* subsubsub */
-#acf-field-group-wrap .subsubsub {
-	
-	/* WPML */
-	margin-bottom: 3px;
-	
-	ul {
-		margin: 0;
-	}
-	
-	+ .subsubsub {
-		margin-top: 0;
-	}
-	
-	/* search */
-	a:focus {
-		box-shadow: none;
-	}
-	
-}
-
-
-
-/* columns (replicate post edit layout) */
-.acf-columns-2 {
-	margin-right: 300px;
-	clear: both;
-	@include clearfix();
-	
-	/* rtl */
-	html[dir="rtl"] & {
-		margin-right: 0;
-		margin-left: 300px;
-	}
-	
-	.acf-column-1 {
-		float: left;
-		width: 100%;
-		
-		/* rtl */
-		html[dir="rtl"] & {
-			float: right;
-		}
-	}
-	
-	.acf-column-2 {
-		float: right;
-	    margin-right: -300px;
-	    width: 280px;
-	    
-	    /* rtl */
-		html[dir="rtl"] & {
-			float: left;
-			margin-right: 0;
-			margin-left: -300px;
-		}
-	}
-
-}
-
-
-/* search */
-#acf-field-group-wrap .search-box {
-	
-	&:after {
-		display: block;
-		content: "";
-		height: 5px;
-	}
-	
-}
-
-.acf-clear {
-	clear: both;
-}
-
-
-/* mobile compatibilty */
-@media screen and (max-width: 782px) {
-		
-	#acf-field-group-wrap #the-list .acf-icon:after {
-		content: attr(title);
-		position: absolute;
-	    margin-left: 5px;
-	    font-size: 13px;
-	    line-height: 18px;
-	    font-style: normal;
-	    color: #444;
-	}
-
-}
-
 
 /*---------------------------------------------------------------------------------------------
 *
@@ -1317,49 +1189,6 @@ ul.acf-actions {
 
 /*--------------------------------------------------------------------------------------------
 *
-*	Plugins
-*
-*--------------------------------------------------------------------------------------------*/
-
-.acf-plugin-upgrade-notice {
-	font-weight: normal;
-	color: #fff;
-	background: #d54d21;
-	padding: 1em;
-	margin: 9px 0;
-	
-	&:before {
-		content: "\f348";
-		display: inline-block;
-		font: 400 18px/1 dashicons;
-		speak: none;
-		margin: 0 8px 0 -2px;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-		vertical-align: top;
-	}
-	
-	h4 {
-		display: none;
-	}
-	
-	ul,
-	li {
-		display: inline;
-		color: inherit;
-		list-style: none;
-	}
-	
-	li:after {
-		content: '. ';
-		display: inline;
-	}
-	
-}
-
-
-/*--------------------------------------------------------------------------------------------
-*
 *	RTL
 *
 *--------------------------------------------------------------------------------------------*/
@@ -1576,7 +1405,7 @@ html[dir="rtl"] .acf-table > tbody > tr > td.order + td {
 			
 			// Prevent .acf-panel border overlapping.
 			position: relative;
-			z-index: 1; 
+			z-index: 1;
 			cursor: default;
 		}
 		
@@ -1671,6 +1500,352 @@ html[dir="rtl"] .acf-table > tbody > tr > td.order + td {
 		}
 	}
 }
+
+/*---------------------------------------------------------------------------------------------
+*
+*  Admin Navigation
+*
+*---------------------------------------------------------------------------------------------*/
+.acf-admin-toolbar {
+	background: #fff;
+	border-bottom: 1px solid #ccd0d4;
+	
+	h2 {
+		font-size: 14px;
+		line-height: (36/14);
+		display: inline-block;
+		padding: 5px 0;
+		margin: 0 10px 0 0;
+		
+		i {
+			vertical-align: middle;
+			color: #babbbc;
+		}
+	}
+	
+	.acf-tab {
+		display: inline-block;
+		font-size: 14px;
+		line-height: (36/14);
+		padding: 5px;
+		margin: 0 5px;
+		text-decoration: none;
+		color: inherit;
+		
+		&.is-active {
+			border-bottom: #0071a4 solid 3px;
+			padding-bottom: 2px;
+		}
+		&:hover {
+			color: #00a0d2;
+		}
+		&:focus {
+			box-shadow: none;
+		}
+	}
+	
+	// Within wpcontent.
+	#wpcontent & {
+		margin-left: -20px;
+		padding-left: 20px;
+	}
+
+	// Mobile
+	@media screen and (max-width: 600px) {
+		& {
+			display: none;
+		}
+	}
+}
+
+/*---------------------------------------------------------------------------------------------
+*
+*  Field Groups
+*
+*---------------------------------------------------------------------------------------------*/
+.acf-admin-field-groups {
+	
+	// Hide tablenav top.
+	.tablenav.top {
+		display: none;
+	}
+	
+	// Fix margin due to hidden tablenav.
+	.subsubsub {
+		margin-bottom: 3px;
+	}
+	
+	// table.
+	.wp-list-table {
+		
+		// Use border-box for total width control.
+		td, th {
+			box-sizing: border-box;
+		}
+		
+		// Add subtle hover background to define row.
+		tr:hover {
+			background: #f7f7f7;
+		}
+		
+		// Use less specific identifier to inherit mobile styling.
+		@media screen and ( min-width: 782px ) {
+			.column-acf-count { width: 10%; }
+		}
+		
+		.row-actions {
+			span.file {
+				display: block;
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+			}
+		}
+	}
+	
+	.acf-primary-text {
+		
+	}
+	.acf-secondary-text {
+		color: #a0a5aa;
+	}
+}
+.acf-multi-dashicon {
+	position: relative;
+	z-index: 1;
+	
+	&:before,
+	&:after {
+		width: 18px;
+		height: 18px;
+		line-height: 18px;
+		font-size: 14px;
+		background: #fff;
+		border: #7e8993 solid 1px;
+		border-radius: 2px;
+		display: block;
+	}
+	&:after {
+		content: "";
+		position: absolute;
+		top: -3px;
+		left: -3px;
+		z-index: -1;
+		background: #e7e7e7;
+		
+	}
+}
+
+// CSS only Tooltip.
+.acf-css-tooltip {
+	position: relative;
+	&:before {
+		content: attr(aria-label);
+		display: none;
+		position: absolute;
+		z-index: 999;
+		
+		bottom: 100%;
+		left: 50%;
+		transform: translate(-50%, -8px);
+		
+		background: #191e23;
+		border-radius: 2px;
+		padding: 5px 10px;
+		
+		color: #fff;
+	    font-size: 12px;
+	    line-height: 1.4em;
+	    white-space: pre;
+	}
+    &:after {
+	    content: "";
+	    display: none;
+	    position: absolute;
+	    z-index: 998;
+	    
+	    bottom: 100%;
+		left: 50%;
+		transform: translate(-50%, 4px);
+		
+	    border: solid 6px transparent;
+	    border-top-color: #191e23;
+	}
+	
+	&:hover, &:focus {
+		&:before, &:after {
+			display: block;
+		}
+	}
+}
+
+// Diff modal.
+.acf-diff {
+	
+	.acf-diff-title {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 40px;
+		padding: 14px 16px;
+		background: #f3f3f3;
+		border-bottom: #dddddd solid 1px;
+		
+		strong {
+			font-size: 14px;
+			display: block;
+		}
+
+		.acf-diff-title-left,
+		.acf-diff-title-right {
+			width: 50%;
+			float: left;
+		}
+	}
+	
+	.acf-diff-content {
+		position: absolute;
+		top: 70px;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		overflow: auto;
+	}
+	
+	table.diff {
+		border-spacing: 0;
+		
+		col.diffsplit.middle {
+			width: 0;
+		}
+
+		td, th {
+			padding-top: 0.25em;
+			padding-bottom: 0.25em;
+		}
+
+		td:nth-child(3) {
+			border-left: #dddddd solid 1px;
+		}
+	}
+
+	// Mobile
+	@media screen and (max-width: 600px) {
+		.acf-diff-title {
+			height: 70px;
+		}
+		.acf-diff-content {
+			top: 100px;
+		}
+	}
+}
+
+/*---------------------------------------------------------------------------------------------
+*
+*  Modal
+*
+*---------------------------------------------------------------------------------------------*/
+.acf-modal {
+	position: fixed;
+	top: 30px;
+	left: 30px;
+	right: 30px;
+	bottom: 30px;
+	z-index: 160000;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+	background: #fcfcfc;
+	
+	.acf-modal-title,
+	.acf-modal-content,
+	.acf-modal-toolbar {
+		box-sizing: border-box;
+		position: absolute;
+		left: 0;
+		right: 0;
+	}
+	
+	.acf-modal-title {
+		height: 50px;
+		top: 0;
+		border-bottom: 1px solid #ddd;
+		
+		h2 {
+			margin: 0;
+			padding: 0 16px;
+			line-height: 50px;
+		}
+		.acf-modal-close {
+			position: absolute;
+			top: 0;
+			right: 0;
+			height: 50px;
+			width: 50px;
+			border: none;
+			border-left: 1px solid #ddd;
+			background: transparent;
+			cursor: pointer;
+			color: #666;
+			&:hover {
+				color: #00a0d2;	
+			}
+		}
+	}
+	
+	.acf-modal-content {
+		top: 50px;
+		bottom: 60px;
+		background: #fff;
+		overflow: auto;
+		padding: 16px;
+	}
+	
+	.acf-modal-feedback {
+		position: absolute;
+		top: 50%;
+		margin: -10px 0;
+		left: 0;
+		right: 0;
+		text-align: center;
+		opacity: 0.75;
+		
+		&.error {
+			opacity: 1;
+			color: #b52727;
+		}
+	}
+	
+	.acf-modal-toolbar {
+		height: 60px;
+		bottom: 0;
+		padding: 15px 16px;
+		border-top: 1px solid #ddd;
+		
+		.button {
+			float: right;
+		}
+	}
+	
+	// Responsive.
+	@media only screen and (max-width: 640px) {
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+	
+}
+.acf-modal-backdrop {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #000;
+	opacity: 0.7;
+	z-index: 159900;
+}
+
 
 /*---------------------------------------------------------------------------------------------
 *

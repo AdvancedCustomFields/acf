@@ -43,13 +43,12 @@
 				background: #f0f0f0;
 			}
 		}
-
-		> .inside {
-			border-bottom: none;
-		}
-
+		
 		// Hide bottom border of last postbox.
 		&:last-child.closed > .postbox-header {
+			border-bottom: none;
+		}
+		&:last-child > .inside {
 			border-bottom: none;
 		}
 	}

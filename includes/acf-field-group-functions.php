@@ -224,9 +224,10 @@ function acf_validate_field_group( $field_group = array() ) {
 	// Convert types.
 	$field_group['ID'] = (int) $field_group['ID'];
 	$field_group['menu_order'] = (int) $field_group['menu_order'];
+	$field_group['active'] = (bool) $field_group['active'];
 	
 	// Field group is now valid.
-	$field_group['_valid'] = 1;
+	$field_group['_valid'] = true;
 	
 	/**
 	 * Filters the $field_group array to validate settings.

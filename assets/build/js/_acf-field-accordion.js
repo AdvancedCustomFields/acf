@@ -14,6 +14,11 @@
 		
 		initialize: function(){
 			
+			// Bail early if this is a duplicate of an existing initialized accordion.
+			if( this.$el.hasClass('acf-accordion') ) {
+				return;
+			}
+			
 			// bail early if is cell
 			if( this.$el.is('td') ) return;
 			

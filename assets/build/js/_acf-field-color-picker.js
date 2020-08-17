@@ -6,6 +6,10 @@
 		
 		wait: 'load',
 		
+		events: {
+			'duplicateField': 'onDuplicate'
+		},
+
 		$control: function(){
 			return this.$('.acf-color-picker');
 		},
@@ -56,6 +60,15 @@
         	
  			// initialize
 			$inputText.wpColorPicker( args );
+		},
+
+		onDuplicate: function( e, $el, $duplicate ){
+			
+			// The wpColorPicker library does not provide a destroy method.
+			// Manually reset DOM by replacing elements back to their original state.
+			$colorPicker = $duplicate.find('.wp-picker-container');
+			$inputText = $duplicate.find('input[type="text"]');
+			$colorPicker.replaceWith( $inputText );
 		}
 	});
 	

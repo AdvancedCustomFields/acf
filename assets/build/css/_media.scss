@@ -181,41 +181,29 @@
 
 .media-modal .acf-expand-details {
 	float: right;
-	padding: 1px 10px;
+	padding: 8px 10px;
 	margin-right: 6px;
+	font-size: 13px;
 	height: 18px;
 	line-height: 18px;
-	color: #AAAAAA;
-	font-size: 12px;
-	
+	color: #666;
+	text-decoration: none;
+
+	// States.
 	&:focus, &:active {
 		outline: 0 none;
 		box-shadow: none;
-		color: #AAAAAA;
+		color: #666;
 	}
-	
 	&:hover {
-		color: #666666 !important;
+		color: #000;
 	}
 	
-	span {
-		display: block;
-		float: left;
-	}
-	
-	.acf-icon {
-		margin: 0 4px 0 0;
-	}
-	
-	&:hover .acf-icon {
-		border-color: #AAAAAA;
-	}
-	
+	// Open & close.
 	.is-open { display: none; }
 	.is-closed { display: block; }
 	
-	
-	/* mobile sm */
+	// Hide on mobile.
 	@media (max-width: $sm) {
 		display: none;
 	}

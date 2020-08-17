@@ -481,7 +481,10 @@ class acf_field_checkbox extends acf_field {
 			// get raw $field (may have been changed via repeater field)
 			// if field is local, it won't have an ID
 			$selector = $field['ID'] ? $field['ID'] : $field['key'];
-			$field = acf_get_field( $selector, true );
+			$field = acf_get_field( $selector );
+			if( !$field ) {
+				return false;
+			}
 			
 			
 			// bail early if no ID (JSON only)

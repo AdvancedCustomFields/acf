@@ -133,8 +133,8 @@ class ACF_Admin_Upgrade {
 		// remove prompt 
 		remove_action('admin_notices', array($this, 'admin_notices'));
 		
-		// load acf scripts
-		acf_enqueue_scripts();
+		// Enqueue core script.
+		acf_enqueue_script( 'acf' );
 	}
 	
 	/**
@@ -153,8 +153,8 @@ class ACF_Admin_Upgrade {
 		// remove prompt 
 		remove_action('network_admin_notices', array($this, 'network_admin_notices'));
 		
-		// load acf scripts
-		acf_enqueue_scripts();
+		// Enqueue core script.
+		acf_enqueue_script( 'acf' );
 	}
 	
 	/**

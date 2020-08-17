@@ -111,12 +111,11 @@ class acf_field_image extends acf_field {
 		}
 		
 		// Add "preview size" max width and height style.
+		// Apply max-width to wrap, and max-height to img for max compatibility with field widths.
 		$size = acf_get_image_size( $field['preview_size'] );
-		$size_style = sprintf(
-			'max-width: %s; max-height: %s;',
-			$size['width'] ? $size['width'] . 'px' : 'none', 
-			$size['height'] ? $size['height'] . 'px' : 'none'
-		);
+		$size_w = $size['width'] ? $size['width'] . 'px' : '100%';
+		$size_h = $size['height'] ? $size['height'] . 'px' : '100%';
+		$img_attrs['style'] = sprintf( 'max-height: %s;', $size_h );
 
 		// Render HTML.
 		?>
@@ -125,7 +124,7 @@ class acf_field_image extends acf_field {
 		'name' => $field['name'],
 		'value' => $value
 	)); ?>
-	<div class="show-if-value image-wrap" style="<?php echo esc_attr( $size_style ); ?>">
+	<div class="show-if-value image-wrap" style="max-width: <?php echo esc_attr( $size_w ); ?>">
 		<img <?php echo acf_esc_attrs( $img_attrs ); ?> />
 		<div class="acf-actions -hover">
 			<?php if( $uploader !== 'basic' ): ?>

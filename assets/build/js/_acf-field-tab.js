@@ -13,6 +13,10 @@
 		
 		tab: false,
 		
+		events: {
+			'duplicateField': 'onDuplicate'
+		},
+
 		findFields: function(){
 			return this.$el.nextUntil('.acf-field-tab', '.acf-field');
 		},
@@ -135,6 +139,12 @@
 			this.getFields().map(function( field ){
 				field.disable( CONTEXT );		
 			});
+		},
+
+		onDuplicate: function( e, $el, $duplicate ){
+			if( this.isActive() ) {
+				$duplicate.prevAll('.acf-tab-wrap:first').remove();
+			}
 		}
 	});
 	
@@ -301,10 +311,7 @@
 		addTab: function( $a, field ){
 			
 			// create <li>
-			var $li = $('<li></li>');
-			
-			// append <a>
-			$li.append( $a );
+			var $li = $('<li>' + $a.outerHTML() + '</li>');
 			
 			// append
 			this.$('ul').append( $li );

@@ -15,6 +15,7 @@
 		events: {
 			'click a[data-name="add"]': 'onClickAdd',
 			'click input[type="radio"]': 'onClickRadio',
+			'removeField': 'onRemove'
 		},
 		
 		$control: function(){
@@ -57,8 +58,9 @@
 		},
 		
 		onRemove: function(){
-			if( this.select2 ) {
-				this.select2.destroy();
+			var proto = this.getRelatedPrototype();
+			if( proto.onRemove ) {
+				proto.onRemove.apply(this, arguments);
 			}
 		},
 		

@@ -240,7 +240,7 @@
 		
 		onConfirm: function( e, $el ){
 			
-			// prevent default
+			// Prevent event from propagating completely to allow "targetConfirm" to be clicked.
 			e.preventDefault();
 			e.stopImmediatePropagation();
 			

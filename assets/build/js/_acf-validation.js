@@ -681,7 +681,20 @@
 		// default
 		return $form;
 	};
-	
+
+	/**
+	 * A debounced function to trigger a form submission.
+	 *
+	 * @date	15/07/2020
+	 * @since	5.9.0
+	 *
+	 * @param	type Var Description.
+	 * @return	type Description.
+	 */
+	var submitFormDebounced = acf.debounce(function( $form ){
+		$form.submit();
+	});
+
 	/**
 	*  acf.validation
 	*
@@ -831,7 +844,7 @@
 			// - prevents browser error message
 			// - also fixes chrome bug where 'hidden-by-tab' field throws focus error
 			e.preventDefault();
-				
+			
 			// vars
 			var $form = $el.closest('form');
 			
@@ -846,7 +859,7 @@
 				
 				// trigger submit on $form
 				// - allows for "save", "preview" and "publish" to work
-				$form.submit();
+				submitFormDebounced( $form );
 			}
 		},
 		
@@ -1004,6 +1017,95 @@
 			
 			// Return true
 			return true;
+		}
+	});
+	
+	var gutenbergValidation = new acf.Model({
+		wait: 'prepare',
+		initialize: function(){
+			
+			// Bail early if not Gutenberg.
+			if( !acf.isGutenberg() ) {
+				return;
+			}
+			
+			// Custommize the editor.
+			this.customizeEditor();
+		},
+		customizeEditor: function(){
+			
+			// Extract vars.
+			var editor = wp.data.dispatch( 'core/editor' );
+			var editorSelect = wp.data.select( 'core/editor' );
+			var notices = wp.data.dispatch( 'core/notices' );
+			
+			// Backup original method.
+			var savePost = editor.savePost;
+			
+			// Listen for changes to post status and perform actions:
+			// a) Enable validation for "publish" action.
+			// b) Remember last non "publish" status used for restoring after validation fail.
+			var useValidation = false;
+			var lastPostStatus = '';
+			wp.data.subscribe(function() {
+				var postStatus = editorSelect.getEditedPostAttribute( 'status' );
+				useValidation = ( postStatus === 'publish' );
+				lastPostStatus = ( postStatus !== 'publish' ) ? postStatus : lastPostStatus;
+			});
+
+			// Create validation version.
+			editor.savePost = function(){
+
+				// Bail early if validation is not neeed.
+				if( !useValidation ) {
+					savePost();
+					return;
+				}
+				
+				// Validate the editor form.
+				var valid = acf.validateForm({
+					form: $('#editor'),
+					reset: true,
+					complete: function( $form, validator ){
+						
+						// Always unlock the form after AJAX.
+						editor.unlockPostSaving( 'acf' );
+					},
+					failure: function( $form, validator ){
+						
+						// Get validation error and append to Gutenberg notices.
+						var notice = validator.get('notice');
+						notices.createErrorNotice( notice.get('text'), { 
+							id: 'acf-validation', 
+							isDismissible: true
+						});
+						notice.remove();
+
+						// Restore last non "publish" status.
+						if( lastPostStatus ) {
+							editor.editPost({
+								status: lastPostStatus
+							});
+						}
+					},
+					success: function(){
+						notices.removeNotice( 'acf-validation' );
+
+						// Save post on success.
+						savePost();
+						return;
+					}
+				});
+				
+				// Lock the form if waiting for AJAX response.
+				if( !valid ) {
+					editor.lockPostSaving( 'acf' );
+					return;
+				}
+				
+				// Save post as normal.
+				savePost();
+			};
 		}
 	});
 	

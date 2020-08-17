@@ -1,12 +1,3 @@
-// @codekit-prepend "_acf.js";
-// @codekit-prepend "_acf-hooks.js";
-// @codekit-prepend "_acf-model.js";
-// @codekit-prepend "_acf-popup.js";
-// @codekit-prepend "_acf-unload.js";
-// @codekit-prepend "_acf-panel.js";
-// @codekit-prepend "_acf-notice.js";
-// @codekit-prepend "_acf-postbox.js";
-// @codekit-prepend "_acf-tooltip.js";
 // @codekit-prepend "_acf-field.js";
 // @codekit-prepend "_acf-fields.js";
 // @codekit-prepend "_acf-field-accordion.js";
@@ -36,6 +27,8 @@
 // @codekit-prepend "_acf-condition.js";
 // @codekit-prepend "_acf-conditions.js";
 // @codekit-prepend "_acf-condition-types.js";
+// @codekit-prepend "_acf-unload.js";
+// @codekit-prepend "_acf-postbox.js";
 // @codekit-prepend "_acf-media.js";
 // @codekit-prepend "_acf-screen.js";
 // @codekit-prepend "_acf-select2.js";

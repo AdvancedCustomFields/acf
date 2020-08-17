@@ -590,8 +590,8 @@
 					// vars
 					var $a = $([
 						'<a href="#" class="acf-expand-details">',
-							'<span class="is-closed"><span class="acf-icon -left small grey"></span>' + acf.__('Expand Details') +  '</span>',
-							'<span class="is-open"><span class="acf-icon -right small grey"></span>' + acf.__('Collapse Details') +  '</span>',
+							'<span class="is-closed"><i class="acf-icon -left -small"></i>' + acf.__('Expand Details') +  '</span>',
+							'<span class="is-open"><i class="acf-icon -right -small"></i>' + acf.__('Collapse Details') +  '</span>',
 						'</a>'
 					].join('')); 
 					

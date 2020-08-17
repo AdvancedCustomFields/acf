@@ -14,9 +14,6 @@
 	
 	var refreshHelper = new acf.Model({
 		priority: 90,
-		initialize: function(){
-			this.refresh = acf.debounce( this.refresh, 0 );
-		},
 		actions: {
 			'new_field':	'refresh',
 			'show_field':	'refresh',
@@ -26,8 +23,7 @@
 			'remount_field': 'refresh',
 		},
 		refresh: function(){
-			acf.doAction('refresh');
-			$(window).trigger('acfrefresh');
+			acf.refresh();
 		}
 	});
 	
@@ -358,6 +354,33 @@
 				$row.css({'min-height': height+'px'});
 			}
 		}
+	});
+
+	/**
+	 * Adds a body class when holding down the "shift" key.
+	 *
+	 * @date	06/05/2020
+	 * @since	5.9.0
+	 */
+	var bodyClassShiftHelper = new acf.Model({	
+		id: 'bodyClassShiftHelper',
+		events: {
+			'keydown': 	'onKeyDown',
+			'keyup': 	'onKeyUp'
+		},
+		isShiftKey: function( e ){
+			return ( e.keyCode === 16 );
+		},
+		onKeyDown: function( e ){
+			if( this.isShiftKey(e) ) {
+				$('body').addClass('acf-keydown-shift');
+			}
+		},
+		onKeyUp: function( e ){
+			if( this.isShiftKey(e) ) {
+				$('body').removeClass('acf-keydown-shift');
+			}
+		},
 	});
 		
 })(jQuery);

@@ -641,19 +641,24 @@
 		
 		onClickDelete: function( e, $el ){
 			
+			// Bypass confirmation when holding down "shift" key.
+			if( e.shiftKey ) {
+				return this.delete();
+			}
+
 			// add class
 			this.$el.addClass('-hover');
 			
 			// add tooltip
-			var self = this;
 			var tooltip = acf.newTooltip({
 				confirmRemove: true,
 				target: $el,
+				context: this,
 				confirm: function(){
-					self.delete( true );
+					this.delete();
 				},
 				cancel: function(){
-					self.$el.removeClass('-hover');
+					this.$el.removeClass('-hover');
 				}
 			});
 		},

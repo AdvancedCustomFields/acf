@@ -53,14 +53,12 @@
 	border: 0 none;
     box-shadow: none;
     
-    
-    // Hide metabox header.
+	// Hide metabox header.
 	> .postbox-header,
     > .handlediv,
 	> .hndle {
 		display: none;
 	}
-	
 	
 	/* links */
 	a {
@@ -180,7 +178,7 @@
 			float: left;
 			
 			height: 28px;
-		    line-height: 28px;
+		    line-height: 26px;
 		    width: 28px;
 		    font-size: 13px;
 		    color: #444;

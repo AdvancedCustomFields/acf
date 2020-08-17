@@ -7,7 +7,7 @@
 			content: '',
 			width: 0,
 			height: 0,
-			loading: false,
+			loading: false
 		},
 		
 		events: {
@@ -40,33 +40,26 @@
 		
 		render: function(){
 			
-			// vars
+			// Extract Vars.
 			var title = this.get('title');
 			var content = this.get('content');
 			var loading = this.get('loading');
 			var width = this.get('width');
 			var height = this.get('height');
 			
-			// html
+			// Update.
 			this.title( title );
 			this.content( content );
-			
-			// width
 			if( width ) {
 				this.$('.acf-popup-box').css('width', width);
 			}
-			
-			// height
 			if( height ) {
 				this.$('.acf-popup-box').css('min-height', height);
 			}
-			
-			// loading
 			this.loading( loading );
 			
-			// action
+			// Trigger action.
 			acf.doAction('append', this.$el);
-
 		},
 		
 		update: function( props ){

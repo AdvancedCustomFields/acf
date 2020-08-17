@@ -207,20 +207,13 @@
 	*/
 	
 	acf.strCamelCase = function( str ){
-		
-		// replace [_-] characters with space
-		str = str.replace(/[_-]/g, ' ');
-		
-		// camelCase
-		str = str.replace(/(?:^\w|\b\w|\s+)/g, function(match, index) {
-			if (+match === 0) return ""; // or if (/\s+/.test(match)) for white spaces
-			return index == 0 ? match.toLowerCase() : match.toUpperCase();
-		});
-		
-		// return
-		return str;
+		var matches = str.match( /([a-zA-Z0-9]+)/g );
+		return matches ? matches.map(function( s, i ){
+			var c = s.charAt(0);
+			return ( i === 0 ? c.toLowerCase() : c.toUpperCase() ) + s.slice(1);
+		}).join('') : '';
 	};
-	
+
 	/**
 	*  strPascalCase
 	*
@@ -1349,20 +1342,17 @@
 				target: args
 			};
 		}
-		
-		// vars
-		var timeout = 0;
 				
 		// defaults
 		args = acf.parseArgs(args, {
 			target: false,
 			search: '',
 			replace: '',
+			rename: true,
 			before: function( $el ){},
 			after: function( $el, $el2 ){},
 			append: function( $el, $el2 ){ 
 				$el.after( $el2 );
-				timeout = 1;
 			}
 		});
 		
@@ -1386,11 +1376,14 @@
 		var $el2 = $el.clone();
 		
 		// rename
-		acf.rename({
-			target:		$el2,
-			search:		args.search,
-			replace:	args.replace,
-		});
+		if( args.rename ) {
+			acf.rename({
+				target:		$el2,
+				search:		args.search,
+				replace:	args.replace,
+				replacer:	( typeof args.rename === 'function' ? args.rename : null )
+			});
+		}
 		
 		// remove classes
 		$el2.removeClass('acf-clone');
@@ -1416,15 +1409,7 @@
 		acf.doAction('duplicate', $el, $el2 );
 		
 		// append
-		// - allow element to be moved into a visible position before fire action
-		//var callback = function(){
-			acf.doAction('append', $el2);
-		//};
-		//if( timeout ) {
-		//	setTimeout(callback, timeout);
-		//} else {
-		//	callback();
-		//}
+		acf.doAction('append', $el2);
 		
 		// return
 		return $el2;
@@ -1444,41 +1429,56 @@
 	
 	acf.rename = function( args ){
 		
-		// allow jQuery
+		// Allow jQuery param.
 		if( args instanceof jQuery ) {
 			args = {
 				target: args
 			};
 		}
 		
-		// defaults
+		// Apply default args.
 		args = acf.parseArgs(args, {
 			target: false,
 			destructive: false,
 			search: '',
 			replace: '',
+			replacer: null
 		});
 		
-		// vars
+		// Extract args.
 		var $el = args.target;
-		var search = args.search || $el.attr('data-id');
-		var replace = args.replace || acf.uniqid('acf');
-		var replaceAttr = function(i, value){
-			return value.replace( search, replace );
+		
+		// Provide backup for empty args.
+		if( !args.search ) {
+			args.search = $el.attr('data-id');
+		}
+		if( !args.replace ) {
+			args.replace = acf.uniqid('acf');
+		}
+		if( !args.replacer ) {
+			args.replacer = function( name, value, search, replace ){
+				return value.replace( search, replace );
+			};
 		}
 		
-		// replace (destructive)
+		// Callback function for jQuery replacing.
+		var withReplacer = function( name ){
+			return function( i, value ){
+				return args.replacer( name, value, args.search, args.replace );
+			}	
+		};
+		
+		// Destructive Replace.
 		if( args.destructive ) {
-			var html = $el.outerHTML();
-			html = acf.strReplace( search, replace, html );
+			var html = acf.strReplace( args.search, args.replace, $el.outerHTML() );
 			$el.replaceWith( html );
 			
-		// replace
+		// Standard Replace.
 		} else {
-			$el.attr('data-id', replace);
-			$el.find('[id*="' + search + '"]').attr('id', replaceAttr);
-			$el.find('[for*="' + search + '"]').attr('for', replaceAttr);
-			$el.find('[name*="' + search + '"]').attr('name', replaceAttr);
+			$el.attr('data-id', args.replace);
+			$el.find('[id*="' + args.search + '"]').attr('id', withReplacer('id'));
+			$el.find('[for*="' + args.search + '"]').attr('for', withReplacer('for'));
+			$el.find('[name*="' + args.search + '"]').attr('name', withReplacer('name'));
 		}
 		
 		// return
@@ -2184,7 +2184,7 @@
 	*  @return	bool
 	*/
 	acf.isGutenberg = function(){
-		return ( window.wp && wp.data && wp.data.select && wp.data.select( 'core/editor' ) );
+		return !!( window.wp && wp.data && wp.data.select && wp.data.select( 'core/editor' ) );
 	};
 	
 	/**
@@ -2263,6 +2263,9 @@
 	 * @return	bool
 	 */
 	acf.isInView = function( el ){
+		if( el instanceof jQuery ) {
+			el = el[0];
+		}
 		var rect = el.getBoundingClientRect();
 		return (
 			rect.top !== rect.bottom &&
@@ -2365,6 +2368,103 @@
 			return func.apply(this, arguments);
 		}
 	}
+
+	 /**
+     * Focuses attention to a specific element.
+     *
+     * @date	05/05/2020
+     * @since	5.9.0
+     *
+     * @param	jQuery $el The jQuery element to focus.
+     * @return	void
+     */
+    acf.focusAttention = function( $el ){
+		var wait = 1000;
+
+        // Apply class to focus attention.
+		$el.addClass( 'acf-attention -focused' );
+		
+		// Scroll to element if needed.
+		var scrollTime = 500;
+		if( !acf.isInView( $el ) ) {
+			$( 'body, html' ).animate({
+				scrollTop: $el.offset().top - ( $(window).height() / 2 )
+			}, scrollTime);
+			wait += scrollTime;
+		}
+
+		// Remove class after $wait amount of time.
+		var fadeTime = 250;
+        setTimeout(function(){
+            $el.removeClass( '-focused' );
+            setTimeout(function(){
+                $el.removeClass( 'acf-attention' );
+            }, fadeTime);
+        }, wait);
+	};
+	
+	/**
+     * Description
+     *
+     * @date	05/05/2020
+     * @since	5.9.0
+     *
+     * @param	type Var Description.
+     * @return	type Description.
+     */
+    acf.onFocus = function( $el, callback ){
+
+		// Only run once per element.
+		// if( $el.data('acf.onFocus') ) {
+		// 	return false;
+		// }
+
+		// Vars.
+        var ignoreBlur = false;
+		var focus = false;
+		
+		// Functions.
+        var onFocus = function(){
+            ignoreBlur = true;
+            setTimeout(function(){
+                ignoreBlur = false;
+            }, 1);
+            setFocus( true );
+        };
+        var onBlur = function(){
+            if( !ignoreBlur ) {
+                setFocus( false );
+            }
+        };
+        var addEvents = function(){
+			$(document).on('click', onBlur);
+			//$el.on('acfBlur', onBlur);
+            $el.on('blur', 'input, select, textarea', onBlur);
+        };
+        var removeEvents = function(){
+			$(document).off('click', onBlur);
+			//$el.off('acfBlur', onBlur);
+            $el.off('blur', 'input, select, textarea', onBlur);
+        };
+        var setFocus = function( value ){
+            if( focus === value ) {
+                return;
+            }
+            if( value ) {
+                addEvents();
+            } else {
+                removeEvents();
+            }
+            focus = value;
+            callback( value );
+		};
+		
+		// Add events and set data.
+		$el.on('click', onFocus);
+		//$el.on('acfFocus', onFocus);
+		$el.on('focus', 'input, select, textarea', onFocus);
+		//$el.data('acf.onFocus', true);
+    };
 	
 	/*
 	*  exists
@@ -2422,6 +2522,19 @@
 	    
 	}
 	
+	/**
+	 * Triggers a "refresh" action used by various Components to redraw the DOM.
+	 *
+	 * @date	26/05/2020
+	 * @since	5.9.0
+	 *
+	 * @param	void
+	 * @return	void
+	 */
+	acf.refresh = acf.debounce(function(){
+		$( window ).trigger('acfrefresh');
+		acf.doAction('refresh');
+	}, 0);
 	
 	// Set up actions from events
 	$(document).ready(function(){

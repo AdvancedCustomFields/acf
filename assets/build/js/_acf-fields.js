@@ -299,7 +299,7 @@
 		// vars
 		var singleAction = action + '_field';	// ready_field
 		var singleEvent = action + 'Field';		// readyField
-		
+
 		// single action
 		var singleCallback = function( field /*, arg1, arg2, etc*/ ){
 			//console.log( singleAction, arguments );
@@ -332,8 +332,8 @@
 	
 	// vars
 	var globalFieldActions = [ 'prepare', 'ready', 'load', 'append', 'remove', 'unmount', 'remount', 'sortstart', 'sortstop', 'show', 'hide', 'unload' ];
-	var singleFieldActions = [ 'valid', 'invalid', 'enable', 'disable', 'new' ];
-	var singleFieldEvents = [ 'remove', 'unmount', 'remount', 'sortstart', 'sortstop', 'show', 'hide', 'unload', 'valid', 'invalid', 'enable', 'disable' ];
+	var singleFieldActions = [ 'valid', 'invalid', 'enable', 'disable', 'new', 'duplicate' ];
+	var singleFieldEvents = [ 'remove', 'unmount', 'remount', 'sortstart', 'sortstop', 'show', 'hide', 'unload', 'valid', 'invalid', 'enable', 'disable', 'duplicate' ];
 	
 	// add
 	globalFieldActions.map( addGlobalFieldAction );
@@ -366,6 +366,26 @@
 			
 			// preview hack allows post to save with no title or content
 			$('#_acf_changed').val(1);
+		}
+	});
+
+	var duplicateFieldsManager = new acf.Model({
+		id: 'duplicateFieldsManager',
+		actions: {
+			'duplicate': 'onDuplicate',
+			'duplicate_fields': 'onDuplicateFields',
+		},
+		onDuplicate: function( $el, $el2 ){
+			var fields = acf.getFields({ parent: $el });
+			if( fields.length ) {
+				var $fields = acf.findFields({ parent: $el2 });
+				acf.doAction( 'duplicate_fields', fields, $fields );
+			}
+		},
+		onDuplicateFields: function( fields, duplicates ){
+			fields.map(function( field, i ){
+				acf.doAction( 'duplicate_field', field, $(duplicates[i]) );
+			});
 		}
 	});
 	

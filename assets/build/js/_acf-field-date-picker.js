@@ -5,7 +5,8 @@
 		type: 'date_picker',
 		
 		events: {
-			'blur input[type="text"]': 'onBlur'
+			'blur input[type="text"]':	'onBlur',
+			'duplicateField':			'onDuplicate'
 		},
 		
 		$control: function(){
@@ -98,6 +99,10 @@
 			if( !this.$inputText().val() ) {
 				acf.val( this.$input(), '' );
 			}
+		},
+		
+		onDuplicate: function( e, $el, $duplicate ){
+			$duplicate.find('input[type="text"]').removeClass('hasDatepicker').removeAttr('id');
 		}
 	});
 	

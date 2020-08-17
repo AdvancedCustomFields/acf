@@ -405,3 +405,34 @@ function acf_did( $name ) {
 function acf_strlen( $str ) {
 	return mb_strlen( str_replace("\r\n", "\n", wp_specialchars_decode( wp_unslash( $str ) ) ) );
 }
+
+/**
+ * Returns a value with default fallback.
+ *
+ * @date	6/4/20
+ * @since	5.9.0
+ *
+ * @param	mixed $value The value.
+ * @param	mixed $default_value The default value.
+ * @return	mixed
+ */
+function acf_with_default( $value, $default_value ) {
+	return $value ? $value : $default_value;
+}
+
+/**
+ * Returns the current priority of a running action.
+ *
+ * @date	14/07/2020
+ * @since	5.9.0
+ *
+ * @param	string $action The action name.
+ * @return	int|bool
+ */
+function acf_doing_action( $action ) {
+	global $wp_filter;
+	if( isset( $wp_filter[ $action ] ) ) {
+		return $wp_filter[ $action ]->current_priority();
+	}
+	return false;
+}
