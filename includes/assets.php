@@ -442,6 +442,11 @@ class ACF_Assets {
 	public function print_footer_scripts() {
 		global $wp_version;
 		
+		// Bail early if 'acf' script was never enqueued (fixes Elementor enqueue reset conflict).
+		if( !wp_script_is('acf') ) {
+			return;
+		}
+		
 		// Localize data.
 		acf_localize_data(array(
 			'admin_url'		=> admin_url(),

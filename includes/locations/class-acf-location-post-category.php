@@ -47,17 +47,11 @@ class ACF_Location_Post_Category extends ACF_Location {
 	 * @return	array
 	 */
 	public function get_values( $rule ) {
-		
-		// Get grouped terms.
-		$groups = acf_get_grouped_terms(array(
-			'taxonomy' => array( 'category' )
-		));
-		
-		// Convert grouped terms into grouped choices.
-		$grouped_choices = acf_get_choices_from_grouped_terms( $groups, 'slug' );
-		
-		// Return first group.
-		return reset( $grouped_choices );
+		$choices = acf_get_taxonomy_terms(array( 'category' ));
+		if( $choices ) {
+			return reset( $choices );
+		}
+		return array();
 	}
 	
 	/**

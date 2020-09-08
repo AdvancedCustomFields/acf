@@ -9680,57 +9680,74 @@
 			});
 
 			// Create validation version.
-			editor.savePost = function(){
+			editor.savePost = function( options ){
+				options = options || {};
 
-				// Bail early if validation is not neeed.
-				if( !useValidation ) {
-					savePost();
-					return;
-				}
-				
-				// Validate the editor form.
-				var valid = acf.validateForm({
-					form: $('#editor'),
-					reset: true,
-					complete: function( $form, validator ){
-						
-						// Always unlock the form after AJAX.
-						editor.unlockPostSaving( 'acf' );
-					},
-					failure: function( $form, validator ){
-						
-						// Get validation error and append to Gutenberg notices.
-						var notice = validator.get('notice');
-						notices.createErrorNotice( notice.get('text'), { 
-							id: 'acf-validation', 
-							isDismissible: true
-						});
-						notice.remove();
+				// Backup vars.
+				var _this = this;
+				var _args = arguments;
 
-						// Restore last non "publish" status.
-						if( lastPostStatus ) {
-							editor.editPost({
-								status: lastPostStatus
-							});
-						}
-					},
-					success: function(){
-						notices.removeNotice( 'acf-validation' );
-
-						// Save post on success.
-						savePost();
-						return;
+				// Perform validation within a Promise.
+				return new Promise(function( resolve, reject ) {
+					
+					// Bail early if is autosave or preview.
+					if( options.isAutosave || options.isPreview ) {
+						return resolve( 'Validation ignored (autosave).' );
 					}
+
+					// Bail early if validation is not neeed.
+					if( !useValidation ) {
+						return resolve( 'Validation ignored (draft).' );
+					}
+
+					// Validate the editor form.
+					var valid = acf.validateForm({
+						form: $('#editor'),
+						reset: true,
+						complete: function( $form, validator ){
+
+							// Always unlock the form after AJAX.
+							editor.unlockPostSaving( 'acf' );
+						},
+						failure: function( $form, validator ){
+							
+							// Get validation error and append to Gutenberg notices.
+							var notice = validator.get('notice');
+							notices.createErrorNotice( notice.get('text'), { 
+								id: 'acf-validation', 
+								isDismissible: true
+							});
+							notice.remove();
+
+							// Restore last non "publish" status.
+							if( lastPostStatus ) {
+								editor.editPost({
+									status: lastPostStatus
+								});
+							}
+
+							// Rejext promise and prevent savePost().
+							reject( 'Validation failed.' );
+						},
+						success: function(){
+							notices.removeNotice( 'acf-validation' );
+							
+							// Resolve promise and allow savePost().
+							resolve( 'Validation success.' );
+						}
+					});
+
+					// Resolve promise and allow savePost() if no validation is needed.
+					if( valid ) {
+						resolve( 'Validation bypassed.' );
+					
+					// Otherwise, lock the form and wait for AJAX response.
+					} else {
+						editor.lockPostSaving( 'acf' );
+					}
+				}).then(function(){
+					return savePost.apply(_this, _args);
 				});
-				
-				// Lock the form if waiting for AJAX response.
-				if( !valid ) {
-					editor.lockPostSaving( 'acf' );
-					return;
-				}
-				
-				// Save post as normal.
-				savePost();
 			};
 		}
 	});

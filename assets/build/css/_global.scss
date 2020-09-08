@@ -1868,25 +1868,3 @@ only screen and (                min-resolution: 2dppx) {
 	}
 	
 }
-
-
-/*---------------------------------------------------------------------------------------------
-*
-*  Device
-*
-*---------------------------------------------------------------------------------------------*/
-
-@media only screen and (max-width: 850px) {
-	
-	.acf-columns-2 {
-		margin-right: 0;
-	}
-	
-	.acf-columns-2 .acf-column-1,
-	.acf-columns-2 .acf-column-2 {
-		float: none;
-		width: auto;
-		margin: 0;
-	}
-	
-}
