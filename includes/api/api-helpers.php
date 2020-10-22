@@ -2737,8 +2737,26 @@ function acf_get_post_id_info( $post_id = 0 ) {
 			
 			$info['type'] = $type;
 			$info['id'] = (int) $id;
-		
-		// option	
+
+        // block
+        } elseif ($type == 'block') {
+
+        $info['type'] = 'post';
+        $realPostID = 0;
+        if(isset($GLOBALS['post']) && isset($GLOBALS['post']->ID)) {
+            $realPostID = $GLOBALS['post']->ID;
+        } elseif(isset($_REQUEST['post_id']) && is_numeric($_REQUEST['post_id'])) {
+            $realPostID = $_REQUEST['post_id'];
+        } elseif(isset($GLOBALS['HTTP_RAW_POST_DATA'])) {
+            $rawPostData = $GLOBALS['HTTP_RAW_POST_DATA'];
+            $postData = json_decode($rawPostData, true);
+            if(isset($postData['id'])) {
+                $realPostID = $postData['id'];
+            }
+        }
+        $info['id'] = (int) $realPostID;
+        
+		// option
 		} else {
 			
 			$info['type'] = 'option';
