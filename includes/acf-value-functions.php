@@ -61,11 +61,12 @@ function acf_get_value( $post_id = 0, $field ) {
     
     // Get field name.
     $field_name = $field['name'];
-    
+    $field_key = $field['key'];
+
     // Check store.
 	$store = acf_get_store( 'values' );
-	if( $store->has( "$post_id:$field_name" ) ) {
-		return $store->get( "$post_id:$field_name" );
+	if( $store->has( "$post_id:$field_name:$field_key" ) ) {
+		return $store->get( "$post_id:$field_name:$field_key" );
 	}
 	
 	// Load value from database.
@@ -89,7 +90,7 @@ function acf_get_value( $post_id = 0, $field ) {
 	$value = apply_filters( "acf/load_value", $value, $post_id, $field );
 	
 	// Update store.
-	$store->set( "$post_id:$field_name", $value );
+	$store->set( "$post_id:$field_name:$field_key", $value );
 
 	// Return value.
 	return $value;
@@ -121,11 +122,13 @@ function acf_format_value( $value, $post_id, $field ) {
     
     // Get field name.
     $field_name = $field['name'];
-    
+    $field_key = $field['key'];
+
     // Check store.
 	$store = acf_get_store( 'values' );
-	if( $store->has( "$post_id:$field_name:formatted" ) ) {
-		return $store->get( "$post_id:$field_name:formatted" );
+
+	if( $store->has( "$post_id:$field_name:$field_key:formatted" ) ) {
+		return $store->get( "$post_id:$field_name:$field_key:formatted" );
 	}
 	
 	/**
@@ -141,7 +144,7 @@ function acf_format_value( $value, $post_id, $field ) {
 	$value = apply_filters( "acf/format_value", $value, $post_id, $field );
 	
 	// Update store.
-	$store->set( "$post_id:$field_name:formatted", $value );
+	$store->set( "$post_id:$field_name:$field_key:formatted", $value );
 
 	// Return value.
 	return $value;
@@ -196,7 +199,7 @@ function acf_update_value( $value = null, $post_id = 0, $field ) {
 	acf_update_metadata( $post_id, $field['name'], $field['key'], true );
 	
 	// Delete stored data.
-	acf_flush_value_cache( $post_id, $field['name'] );
+	acf_flush_value_cache( $post_id, $field['name'], $field['key'] );
 	
 	// Return update status.
 	return $return;
@@ -244,12 +247,15 @@ function acf_update_values( $values = array(), $post_id = 0 ) {
  * @param	string $field_name The field name.
  * @return	void
  */
-function acf_flush_value_cache( $post_id = 0, $field_name = '' ) {
+function acf_flush_value_cache( $post_id = 0, $field_name = '', $field_key = '' ) {
 	
 	// Delete stored data.
 	acf_get_store( 'values' )
 		->remove( "$post_id:$field_name" )
-		->remove( "$post_id:$field_name:formatted" );
+		->remove( "$post_id:$field_name:formatted" )
+		->remove( "$post_id:$field_name:$field_key" )
+		->remove( "$post_id:$field_name:$field_key:formatted" )
+    ;
 }
 
 /**
@@ -285,7 +291,7 @@ function acf_delete_value( $post_id, $field ) {
 	acf_delete_metadata( $post_id, $field['name'], true );
 	
 	// Delete stored data.
-	acf_flush_value_cache( $post_id, $field['name'] );
+	acf_flush_value_cache( $post_id, $field['name'], $field['key'] );
 	
 	// Return delete status.
 	return $return;
