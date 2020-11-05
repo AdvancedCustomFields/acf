@@ -57,27 +57,27 @@
 	.acf-notice {
 		margin: 0 0 15px;
 		background: #edf2ff;
-		color: #2183b9;
+		color: #0c6ca0;
 		border-color: #2183b9;
 
 		// error
 		&.-error {
 			background: #ffe6e6;
-			color: #d12626;
+			color: #cc2727;
 			border-color: #d12626;
 		}
 		
 		// success
 		&.-success {
 			background: #eefbe8;
-			color: #32a23b;
+			color: #0e7b17;
 			border-color: #32a23b;
 		}
 		
 		// warning
 		&.-warning {
 			background: #fff3e6;
-			color: #d16226;
+			color: #bd4b0e;
 			border-color: #d16226;
 		}
 	}

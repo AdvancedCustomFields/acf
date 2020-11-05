@@ -327,9 +327,12 @@
 				});
 			}
 			
-		    // remove conflicting atts
-		    $select.removeData('ajax');
-			$select.removeAttr('data-ajax');
+			// Temporarily remove conflicting attribute.
+			var attrAjax = $select.attr( 'data-ajax' );
+			if( attrAjax !== undefined ) {
+				$select.removeData('ajax');
+				$select.removeAttr('data-ajax');
+			}
 			
 			// ajax
 			if( this.get('ajax') ) {
@@ -389,6 +392,11 @@
 			
 			// add class
 			$container.addClass('-acf');
+			
+			// Add back temporarily removed attr.
+			if( attrAjax !== undefined ) {
+				$select.attr('data-ajax', attrAjax);
+			}
 			
 			// action for 3rd party customization
 			acf.doAction('select2_init', $select, options, this.data, (field || false), this);

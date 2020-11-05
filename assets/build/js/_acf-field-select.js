@@ -9,7 +9,8 @@
 		wait: 'load',
 		
 		events: {
-			'removeField': 'onRemove'
+			'removeField': 'onRemove',
+			'duplicateField': 'onDuplicate'
 		},
 		
 		$input: function(){
@@ -48,6 +49,13 @@
 		onRemove: function(){
 			if( this.select2 ) {
 				this.select2.destroy();
+			}
+		},
+		
+		onDuplicate: function( e, $el, $duplicate ){
+			if( this.select2 ) {
+				$duplicate.find('.select2-container').remove();
+				$duplicate.find('select').removeClass('select2-hidden-accessible');
 			}
 		}
 	});
