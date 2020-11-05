@@ -67,6 +67,12 @@ From your WordPress dashboard
 
 == Changelog ==
 
+= 5.9.3 =
+*Release Date - 3 November 2020*
+
+* Fix - Fixed bug causing Revision meta to incorrectly update the parent Post meta.
+* Fix - Fixed bug breaking "Filter by Post Type" and "Filter by Taxonomy" Field settings.
+
 = 5.9.2 =
 *Release Date - 29 October 2020*
 

@@ -184,8 +184,9 @@ function acf_decode_post_id( $post_id = 0 ) {
 			$type = 'option';
 			$id = $post_id;
 			break;
+		case 'blog_%d':
 		case 'site_%d':
-			$type = 'site';
+			$type = 'blog';
 			$id = absint( $id );
 			break;
 		default:
