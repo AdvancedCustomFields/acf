@@ -68,7 +68,7 @@
 	
 	var getPostID = function() {
 		var postID = acf.get('post_id');
-		return $.isNumeric(postID) ? postID : 0;
+		return acf.isNumeric(postID) ? postID : 0;
 	}
 	
 	

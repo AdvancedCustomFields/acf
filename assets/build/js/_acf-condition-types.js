@@ -111,7 +111,7 @@
 		label: __('Value is equal to'),
 		fieldTypes: [ 'text', 'textarea', 'number', 'range', 'email', 'url', 'password' ],
 		match: function( rule, field ){
-			if( $.isNumeric(rule.value) ) {
+			if( acf.isNumeric(rule.value) ) {
 				return isEqualToNumber( rule.value, field.val() );
 			} else {
 				return isEqualTo( rule.value, field.val() );
@@ -307,8 +307,8 @@
 				
 				// append					
 				choices.push({
-					id: $.trim( line[0] ),
-					text: $.trim( line[1] )
+					id: line[0].trim(),
+					text: line[1].trim()
 				});
 			});
 			
