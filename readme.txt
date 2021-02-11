@@ -1,7 +1,7 @@
 === Advanced Custom Fields ===
 Contributors: elliotcondon
 Tags: acf, fields, custom fields, meta, repeater
-Stable tag: 5.9.4
+Stable tag: 5.9.5
 Requires at least: 4.7
 Tested up to: 5.6
 Requires PHP: 5.6
@@ -67,6 +67,15 @@ From your WordPress dashboard
 
 
 == Changelog ==
+
+= 5.9.5 =
+*Release Date - 11 February 2021*
+
+* Fix - Fixed regression preventing blocks from loading correctly within the editor in WordPress 5.5.
+* Fix - Fixed bug causing incorrect post_status properties when restoring a Field Group from trash in WordPress 5.6.
+* Fix - Fixed edge case bug where a taxonomy named "options" could interfere with saving and loading option values.
+* Fix - Fixed additional PHP 8.0 warnings.
+* i18n - Updated Finnish translation thanks to Mikko Kekki
 
 = 5.9.4 =
 *Release Date - 14 January 2021*
