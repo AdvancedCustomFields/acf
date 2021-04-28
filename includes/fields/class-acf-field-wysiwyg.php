@@ -173,7 +173,9 @@ class acf_field_wysiwyg extends acf_field {
 			
 			if( $rows ) {
 				foreach( $rows as $i => $row ) { 
-					$data[ $key ][ $i ] = implode(',', $row);
+					if ( is_array( $row ) ) {
+					  $data[ $key ][ $i ] = implode(',', $row);
+					}
 				}
 			}
 		}}
