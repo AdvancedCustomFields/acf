@@ -140,6 +140,13 @@ class acf_field_date_and_time_picker extends acf_field {
 			'value'					=> $display_value,
 		);
 		
+		// special attributes
+		foreach( array( 'readonly', 'disabled' ) as $k ) {
+			if( !empty($field[ $k ]) ) {
+				$text_input[ $k ] = $k;
+			}
+		}
+		
 		
 		// html
 		?>
