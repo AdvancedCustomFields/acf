@@ -43,7 +43,7 @@ $field_type_label = acf_get_field_type_label( $field['type'] );
 			</li>
 			<li class="li-field-label">
 				<strong>
-					<a class="edit-field" title="<?php _e("Edit field",'acf'); ?>" href="#"><?php echo esc_html( $field_label ); ?></a>
+					<a class="edit-field" title="<?php _e("Edit field",'acf'); ?>" href="#"><?php echo acf_esc_html( $field_label ); ?></a>
 				</strong>
 				<div class="row-options">
 					<a class="edit-field" title="<?php _e("Edit field",'acf'); ?>" href="#"><?php _e("Edit",'acf'); ?></a>

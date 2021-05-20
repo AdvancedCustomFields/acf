@@ -430,7 +430,7 @@
 			}
 			
 			// update label
-			$handle.find('.li-field-label strong a').text( label );
+			$handle.find('.li-field-label strong a').html( label );
 						
 			// update name
 			$handle.find('.li-field-name').text( name );
