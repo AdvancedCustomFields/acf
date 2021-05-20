@@ -1724,7 +1724,12 @@ html[dir="rtl"] .acf-table > tbody > tr > td.order + td {
 			padding-top: 0.25em;
 			padding-bottom: 0.25em;
 		}
-
+		
+		// Fix WP 5.7 conflicting CSS.
+		tr td:nth-child(2) {
+			width: auto;
+		}
+		
 		td:nth-child(3) {
 			border-left: #dddddd solid 1px;
 		}
