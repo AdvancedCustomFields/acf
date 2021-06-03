@@ -3,15 +3,15 @@ msgstr ""
 "Project-Id-Version: Advanced Custom Fields Pro v5.2.9\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "POT-Creation-Date: 2017-06-27 15:28+1000\n"
-"PO-Revision-Date: 2019-05-15 09:55+1000\n"
-"Last-Translator: Elliot Condon <e@elliotcondon.com>\n"
+"PO-Revision-Date: 2021-06-03 20:57+0200\n"
+"Last-Translator: Erik Betshammar <info@verkan.se>\n"
 "Language-Team: Swedish\n"
 "Language: sv_SE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 1.8.1\n"
+"X-Generator: Poedit 2.4.3\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
@@ -127,7 +127,7 @@ msgstr "Fältgrupper uppdaterades."
 
 #: includes/admin/admin-field-group.php:70
 msgid "Field group deleted."
-msgstr "Fältgrupper raderades."
+msgstr "Fältgrupper togs bort."
 
 #: includes/admin/admin-field-group.php:73
 msgid "Field group published."
@@ -171,7 +171,7 @@ msgstr "Det finns inga aktiveringsbara fält"
 
 #: includes/admin/admin-field-group.php:272
 msgid "Field group title is required"
-msgstr "Fältgruppen behöver en titel"
+msgstr "Fältgruppen behöver en rubrik"
 
 #: includes/admin/admin-field-group.php:273
 #: includes/api/api-field-group.php:732
@@ -189,7 +189,7 @@ msgstr "eller"
 
 #: includes/admin/admin-field-group.php:276
 msgid "Parent fields"
-msgstr "Föräldrafält"
+msgstr "Överordnade fält"
 
 #: includes/admin/admin-field-group.php:277
 msgid "Sibling fields"
@@ -197,7 +197,7 @@ msgstr "Syskonfält"
 
 #: includes/admin/admin-field-group.php:278
 msgid "Move Custom Field"
-msgstr "Flytta egna fält"
+msgstr "Flytta anpassat fält"
 
 #: includes/admin/admin-field-group.php:279
 msgid "This field cannot be moved until its changes have been saved"
@@ -215,7 +215,7 @@ msgstr ""
 
 #: includes/admin/admin-field-group.php:282
 msgid "The string \"field_\" may not be used at the start of a field name"
-msgstr "Strängen  \"field_\" får inte användas i början av ett fältnamn"
+msgstr "Strängen ”field_” får inte användas i början av ett fältnamn"
 
 #: includes/admin/admin-field-group.php:360
 msgid "Field Keys"
@@ -257,7 +257,7 @@ msgstr[1] "Aktiva <span class=\"count\">(%s)</span>"
 #: includes/admin/admin-field-groups.php:142
 #, php-format
 msgid "Field group duplicated. %s"
-msgstr "Fältgruppen kopierad. %s"
+msgstr "Fältgrupp duplicerad. %s"
 
 #: includes/admin/admin-field-groups.php:146
 #, php-format
@@ -286,7 +286,7 @@ msgstr "Synkronisering tillgänglig"
 #: includes/admin/admin-field-groups.php:507 includes/forms/form-front.php:38
 #: pro/fields/class-acf-field-gallery.php:370
 msgid "Title"
-msgstr "Titel"
+msgstr "Rubrik"
 
 #: includes/admin/admin-field-groups.php:508
 #: includes/admin/views/field-group-options.php:96
@@ -303,14 +303,13 @@ msgstr "Status"
 #. Description of the plugin/theme
 #: includes/admin/admin-field-groups.php:607
 msgid "Customise WordPress with powerful, professional and intuitive fields."
-msgstr ""
-"Skräddarsy Wordpress med kraftfulla, professionella och intuitiva fält."
+msgstr "Anpassa Wordpress med kraftfulla, professionella och intuitiva fält."
 
 #: includes/admin/admin-field-groups.php:609
 #: includes/admin/settings-info.php:76
 #: pro/admin/views/html-settings-updates.php:111
 msgid "Changelog"
-msgstr "Versionshistorik"
+msgstr "Ändringslogg"
 
 #: includes/admin/admin-field-groups.php:614
 #, php-format
@@ -322,9 +321,8 @@ msgid "Resources"
 msgstr "Resurser"
 
 #: includes/admin/admin-field-groups.php:619
-#, fuzzy
 msgid "Website"
-msgstr "Denna webbplats använder premiumtillägg som behöver laddas ner"
+msgstr "Webbplats"
 
 #: includes/admin/admin-field-groups.php:620
 msgid "Documentation"
@@ -335,9 +333,8 @@ msgid "Support"
 msgstr "Support"
 
 #: includes/admin/admin-field-groups.php:623
-#, fuzzy
 msgid "Pro"
-msgstr "Adjö tillägg. Hej PRO"
+msgstr "Pro"
 
 #: includes/admin/admin-field-groups.php:628
 #, php-format
@@ -377,17 +374,16 @@ msgstr "Synkronisera"
 
 #: includes/admin/admin-field-groups.php:780
 msgid "Apply"
-msgstr ""
+msgstr "Utför"
 
 #: includes/admin/admin-field-groups.php:798
-#, fuzzy
 msgid "Bulk Actions"
-msgstr "Välj åtgärd"
+msgstr "Massåtgärder"
 
 #: includes/admin/admin.php:113
 #: includes/admin/views/field-group-options.php:118
 msgid "Custom Fields"
-msgstr "Egna fält"
+msgstr "Anpassade fält"
 
 #: includes/admin/install-network.php:88 includes/admin/install.php:70
 #: includes/admin/install.php:121
@@ -396,7 +392,7 @@ msgstr "Uppgradera databas"
 
 #: includes/admin/install-network.php:140
 msgid "Review sites & upgrade"
-msgstr "Kontrollera webbplatser & uppgradera"
+msgstr "Kontrollera webbplatser och uppgradera"
 
 #: includes/admin/install.php:187
 msgid "Error validating request"
@@ -409,11 +405,11 @@ msgstr "Inga uppdateringar tillgängliga."
 #: includes/admin/settings-addons.php:51
 #: includes/admin/views/settings-addons.php:3
 msgid "Add-ons"
-msgstr "Tillägg"
+msgstr "Utökningar"
 
 #: includes/admin/settings-addons.php:87
 msgid "<b>Error</b>. Could not load add-ons list"
-msgstr "<b>Fel</b>. Kunde inte ladda tilläggslistan"
+msgstr "<b>Fel</b>. Kunde inte ladda listan med utökningar"
 
 #: includes/admin/settings-info.php:50
 msgid "Info"
@@ -440,7 +436,7 @@ msgstr "Ingen fil vald"
 
 #: includes/admin/settings-tools.php:197
 msgid "Error uploading file. Please try again"
-msgstr "Fel vid uppladdning av fil. Vänligen försök igen"
+msgstr "Fel vid uppladdning av fil. Försök igen"
 
 #: includes/admin/settings-tools.php:206
 msgid "Incorrect file type"
@@ -455,7 +451,7 @@ msgstr "Importfilen är tom"
 msgid "Imported 1 field group"
 msgid_plural "Imported %s field groups"
 msgstr[0] "Importerade 1 fältgrupp"
-msgstr[1] "Importerade %s fältgrupp"
+msgstr[1] "Importerade %s fältgrupper"
 
 #: includes/admin/views/field-group-field-conditional-logic.php:28
 msgid "Conditional Logic"
@@ -468,12 +464,12 @@ msgstr "Visa detta fält när"
 #: includes/admin/views/field-group-field-conditional-logic.php:103
 #: includes/locations.php:243
 msgid "is equal to"
-msgstr "är"
+msgstr "är lika med"
 
 #: includes/admin/views/field-group-field-conditional-logic.php:104
 #: includes/locations.php:244
 msgid "is not equal to"
-msgstr "inte är"
+msgstr "inte är lika med"
 
 #: includes/admin/views/field-group-field-conditional-logic.php:141
 #: includes/admin/views/html-location-rule.php:80
@@ -517,20 +513,20 @@ msgstr "Flytta"
 
 #: includes/admin/views/field-group-field.php:51
 msgid "Delete field"
-msgstr "Radera fält"
+msgstr "Ta bort fält"
 
 #: includes/admin/views/field-group-field.php:51
 #: pro/fields/class-acf-field-flexible-content.php:572
 msgid "Delete"
-msgstr "Radera"
+msgstr "Ta bort"
 
 #: includes/admin/views/field-group-field.php:67
 msgid "Field Label"
-msgstr "Fälttitel"
+msgstr "Fältetikett"
 
 #: includes/admin/views/field-group-field.php:68
 msgid "This is the name which will appear on the EDIT page"
-msgstr "Detta namn kommer att visas vid redigering"
+msgstr "Detta namn kommer att visas på REDIGERINGS-sidan"
 
 #: includes/admin/views/field-group-field.php:78
 msgid "Field Name"
@@ -551,7 +547,7 @@ msgstr "Instruktioner"
 
 #: includes/admin/views/field-group-field.php:102
 msgid "Instructions for authors. Shown when submitting data"
-msgstr "Instruktioner för den som redigerar"
+msgstr "Instruktioner för författarna. Visas vid publicering"
 
 #: includes/admin/views/field-group-field.php:111
 msgid "Required?"
@@ -587,7 +583,7 @@ msgstr "Ordning"
 #: includes/fields/class-acf-field-select.php:530
 #: pro/fields/class-acf-field-flexible-content.php:599
 msgid "Label"
-msgstr "Titel"
+msgstr "Etikett"
 
 #: includes/admin/views/field-group-fields.php:6
 #: includes/fields/class-acf-field-taxonomy.php:970
@@ -596,9 +592,8 @@ msgid "Name"
 msgstr "Namn"
 
 #: includes/admin/views/field-group-fields.php:7
-#, fuzzy
 msgid "Key"
-msgstr "Visa fältnyckel:"
+msgstr "Nyckel"
 
 #: includes/admin/views/field-group-fields.php:8
 msgid "Type"
@@ -624,7 +619,9 @@ msgstr "Regler"
 msgid ""
 "Create a set of rules to determine which edit screens will use these "
 "advanced custom fields"
-msgstr "Reglera var denna fältgrupp ska visas"
+msgstr ""
+"Skapa en uppsättning regler för att bestämma vilka redigeringsvyer som ska "
+"använda dessa avancerade anpassade fält"
 
 #: includes/admin/views/field-group-options.php:23
 msgid "Style"
@@ -632,11 +629,11 @@ msgstr "Stil"
 
 #: includes/admin/views/field-group-options.php:30
 msgid "Standard (WP metabox)"
-msgstr "Standard (WP metabox)"
+msgstr "Standard (WP-metaruta)"
 
 #: includes/admin/views/field-group-options.php:31
 msgid "Seamless (no metabox)"
-msgstr "Transparent (ingen metabox)"
+msgstr "Sömlös (ingen metaruta)"
 
 #: includes/admin/views/field-group-options.php:38
 msgid "Position"
@@ -644,7 +641,7 @@ msgstr "Position"
 
 #: includes/admin/views/field-group-options.php:45
 msgid "High (after title)"
-msgstr "Hög (efter titel)"
+msgstr "Hög (efter rubrik)"
 
 #: includes/admin/views/field-group-options.php:46
 msgid "Normal (after content)"
@@ -656,7 +653,7 @@ msgstr "Sidopanel"
 
 #: includes/admin/views/field-group-options.php:55
 msgid "Label placement"
-msgstr "Titel placering"
+msgstr "Etikettsplacering"
 
 #: includes/admin/views/field-group-options.php:62
 #: includes/fields/class-acf-field-tab.php:116
@@ -674,7 +671,7 @@ msgstr "Placering av instruktion"
 
 #: includes/admin/views/field-group-options.php:77
 msgid "Below labels"
-msgstr "Under titlar"
+msgstr "Under ettiketer"
 
 #: includes/admin/views/field-group-options.php:78
 msgid "Below fields"
@@ -698,7 +695,7 @@ msgstr "Dölj på skärmen"
 
 #: includes/admin/views/field-group-options.php:108
 msgid "<b>Select</b> items to <b>hide</b> them from the edit screen."
-msgstr "<b>Välj</b> objekt för att <b>dölja</b> dem från redigeringsvyn"
+msgstr "<b>Välj</b> objekt för att <b>dölja</b> dem från redigeringsvyn."
 
 #: includes/admin/views/field-group-options.php:108
 msgid ""
@@ -734,7 +731,7 @@ msgstr "Versioner"
 
 #: includes/admin/views/field-group-options.php:122
 msgid "Slug"
-msgstr "Permalänk"
+msgstr "Slug"
 
 #: includes/admin/views/field-group-options.php:123
 msgid "Author"
@@ -759,7 +756,7 @@ msgstr "Kategorier"
 
 #: includes/admin/views/field-group-options.php:128
 msgid "Tags"
-msgstr "Taggar"
+msgstr "Etiketter"
 
 #: includes/admin/views/field-group-options.php:129
 msgid "Send Trackbacks"
@@ -767,16 +764,16 @@ msgstr "Skicka trackbacks"
 
 #: includes/admin/views/html-location-group.php:3
 msgid "Show this field group if"
-msgstr "Visa detta fält när"
+msgstr "Visa detta fält om"
 
 #: includes/admin/views/install-network.php:4
 msgid "Upgrade Sites"
-msgstr "Uppgradera sajter"
+msgstr "Uppgradera webbplatser"
 
 #: includes/admin/views/install-network.php:9
 #: includes/admin/views/install.php:3
 msgid "Advanced Custom Fields Database Upgrade"
-msgstr "Advanced Custom Fields databasuppgradering"
+msgstr "Databasuppgradering för Advanced Custom Fields"
 
 #: includes/admin/views/install-network.php:11
 #, php-format
@@ -784,8 +781,8 @@ msgid ""
 "The following sites require a DB upgrade. Check the ones you want to update "
 "and then click %s."
 msgstr ""
-"Följande sajter behöver en databasuppdatering. Kryssa i de du vill uppdatera "
-"och klicka på %s."
+"Följande webbplatser behöver en databasuppdatering. Marker de du vill "
+"uppdatera och klicka sedan på %s."
 
 #: includes/admin/views/install-network.php:20
 #: includes/admin/views/install-network.php:28
@@ -806,8 +803,8 @@ msgstr "Webbplatsen är uppdaterad"
 msgid ""
 "Database Upgrade complete. <a href=\"%s\">Return to network dashboard</a>"
 msgstr ""
-"Uppgradering av databas slutförd. <a href=\"%s\">Återvänd till nätverkets "
-"startpanel</a>"
+"Uppgradering av databas slutförd. <a href=\"%s\">Återgå till nätverkets "
+"adminpanel</a>"
 
 #: includes/admin/views/install-network.php:102
 #: includes/admin/views/install-notice.php:42
@@ -846,7 +843,7 @@ msgstr "Galleri"
 #: includes/admin/views/install-notice.php:11
 #: pro/locations/class-acf-location-options-page.php:13
 msgid "Options Page"
-msgstr "Inställningssida"
+msgstr "Alternativsida"
 
 #: includes/admin/views/install-notice.php:26
 msgid "Database Upgrade Required"
@@ -862,8 +859,8 @@ msgid ""
 "Before you start using the new awesome features, please update your database "
 "to the newest version."
 msgstr ""
-"Innan du börjar använda de nya fantastiska funktionerna, vänligen uppdatera "
-"din databas till den senaste versionen."
+"Innan du börjar använda de nya fantastiska funktionerna, uppdatera din "
+"databas till den senaste versionen."
 
 #: includes/admin/views/install-notice.php:31
 #, php-format
@@ -871,6 +868,8 @@ msgid ""
 "Please also ensure any premium add-ons (%s) have first been updated to the "
 "latest version."
 msgstr ""
+"Se även till att alla premium-utökningar (%s) först har uppdaterats till dem "
+"senaste versionen."
 
 #: includes/admin/views/install.php:7
 msgid "Reading upgrade tasks..."
@@ -879,11 +878,11 @@ msgstr "Läser in uppgifter för uppgradering..."
 #: includes/admin/views/install.php:11
 #, php-format
 msgid "Database Upgrade complete. <a href=\"%s\">See what's new</a>"
-msgstr "Databasuppgraderingen färdig. <a href=\"%s\">Se vad som är nytt</a>"
+msgstr "Databasuppgraderingen slutförd. <a href=\"%s\">Se vad som är nytt</a>"
 
 #: includes/admin/views/settings-addons.php:17
 msgid "Download & Install"
-msgstr "Ladda ner & installera"
+msgstr "Ladda ner och installera"
 
 #: includes/admin/views/settings-addons.php:36
 msgid "Installed"
@@ -931,8 +930,8 @@ msgid ""
 "(new) fields!"
 msgstr ""
 "Många fält har genomgått en visuell förbättring för att låta ACF se bättre "
-"ut än någonsin! Märkbara förändringar syns på galleriet-, relation- och "
-"oEmbed- (nytt) fälten!"
+"ut än någonsin! Märkbara förändringar syns på fälten galleri, relation och "
+"oEmbed (nytt)!"
 
 #: includes/admin/views/settings-info.php:32
 msgid "Improved Data"
@@ -954,12 +953,12 @@ msgstr "Adjö tillägg. Hej PRO"
 
 #: includes/admin/views/settings-info.php:44
 msgid "Introducing ACF PRO"
-msgstr "Introducerande av ACF PRO"
+msgstr "Introduktion av ACF PRO"
 
 #: includes/admin/views/settings-info.php:45
 msgid ""
 "We're changing the way premium functionality is delivered in an exciting way!"
-msgstr "Vi ändrar hur premium funktionalitet levereras, på ett spännande sätt!"
+msgstr "Vi ändrar hur premium-funktionalitet levereras, på ett spännande sätt!"
 
 #: includes/admin/views/settings-info.php:46
 #, php-format
@@ -968,9 +967,9 @@ msgid ""
 "version of ACF</a>. With both personal and developer licenses available, "
 "premium functionality is more affordable and accessible than ever before!"
 msgstr ""
-"Samtliga 4 premiumtillägg har kombineras till en ny <a href=\"%s\">Pro "
-"version av ACF</a>. Med både personlig- och utvecklarlicens tillgänglig, så "
-"är premium funktionalitet billigare och tillgängligare än någonsin!"
+"Samtliga 4 premiumutökningar har kombineras till en ny <a href=\"%s\">Pro "
+"version av ACF</a>. Med både personlig- och utvecklarlicens tillgängliga, så "
+"är premium-funktionalitet billigare och tillgängligare än någonsin!"
 
 #: includes/admin/views/settings-info.php:50
 msgid "Powerful Features"
@@ -1011,9 +1010,9 @@ msgid ""
 "but if you do have one, please contact our support team via the <a href=\"%s"
 "\">help desk</a>"
 msgstr ""
-"Vi skrev även en <a href=\"%s\">uppgraderings guide</a>för svara på "
-"eventuella frågor, men om du har en, vänligen kontakta vårt support team via "
-"<a href=\"%s\">help desk</a>"
+"Vi skrev även en <a href=\"%s\">uppgraderingsguide</a>för svara på "
+"eventuella frågor, men om du har en, kontakta vårt supportteam via <a href="
+"\"%s\">help desk</a>"
 
 #: includes/admin/views/settings-info.php:66
 msgid "Under the Hood"
@@ -1025,7 +1024,7 @@ msgstr "Smartare fältinställningar"
 
 #: includes/admin/views/settings-info.php:72
 msgid "ACF now saves its field settings as individual post objects"
-msgstr "ACF sparar nu sina fältinställningar som individuella postobjekt"
+msgstr "ACF sparar nu sina fältinställningar som individuella inläggsobjekt"
 
 #: includes/admin/views/settings-info.php:76
 msgid "More AJAX"
@@ -1052,7 +1051,7 @@ msgid ""
 "New auto export to JSON feature allows field settings to be version "
 "controlled"
 msgstr ""
-"Ny auto export till JSON funktion möjliggör versionshantering av "
+"Ny automatisk export till JSON-funktion möjliggör versionshantering av "
 "fältinställningar"
 
 #: includes/admin/views/settings-info.php:93
@@ -1061,7 +1060,7 @@ msgstr "Bytte XML till JSON"
 
 #: includes/admin/views/settings-info.php:94
 msgid "Import / Export now uses JSON in favour of XML"
-msgstr "Import / Export använder nu JSON istället för XML"
+msgstr "Importera/exportera använder nu JSON istället för XML"
 
 #: includes/admin/views/settings-info.php:98
 msgid "New Forms"
@@ -1070,7 +1069,7 @@ msgstr "Nya formulär"
 #: includes/admin/views/settings-info.php:99
 msgid "Fields can now be mapped to comments, widgets and all user forms!"
 msgstr ""
-"Fält kan nu kopplas till kommentarer, widgets och alla användarformulär."
+"Fält kan nu kopplas till kommentarer, widgetar och alla användarformulär!"
 
 #: includes/admin/views/settings-info.php:106
 msgid "A new field for embedding content has been added"
@@ -1093,7 +1092,7 @@ msgid ""
 "Field group settings have been added for label placement and instruction "
 "placement"
 msgstr ""
-"Fältgruppsinställningar har lagts till för placering av titel och "
+"Fältgruppsinställningar har lagts till för placering av rubrik och "
 "instruktioner"
 
 #: includes/admin/views/settings-info.php:122
@@ -1102,7 +1101,7 @@ msgstr "Bättre front-end formulär"
 
 #: includes/admin/views/settings-info.php:123
 msgid "acf_form() can now create a new post on submission"
-msgstr "acf_form() kan nu skapa ett nytt inlägg vid submit"
+msgstr "acf_form() kan nu skapa ett nytt inlägg när det skickas"
 
 #: includes/admin/views/settings-info.php:127
 msgid "Better Validation"
@@ -1120,7 +1119,7 @@ msgstr "Relationsfält"
 msgid ""
 "New Relationship field setting for 'Filters' (Search, Post Type, Taxonomy)"
 msgstr ""
-"Ny inställning för relationsfält för 'Filter' (Sök, Inläggstyp, Taxonomi)"
+"Ny inställning för relationsfält för ”Filter” (Sök, Inläggstyp, Taxonomi)"
 
 #: includes/admin/views/settings-info.php:139
 msgid "Moving Fields"
@@ -1132,7 +1131,7 @@ msgid ""
 "parents"
 msgstr ""
 "Ny fältgrupp funktionalitet tillåter dig att flytta ett fält mellan grupper "
-"& föräldrar"
+"och föräldrar"
 
 #: includes/admin/views/settings-info.php:144
 #: includes/fields/class-acf-field-page_link.php:36
@@ -1216,7 +1215,7 @@ msgid ""
 "you click the import button below, ACF will import the field groups."
 msgstr ""
 "Välj den Advanced Custom Fields JSON-fil som du vill importera. När du "
-"klickar på import knappen så kommer ACF importera fältgrupperna."
+"klickar på import-knappen så kommer ACF importera fältgrupperna."
 
 #: includes/admin/views/settings-tools.php:77
 #: includes/fields/class-acf-field-file.php:46
@@ -1246,14 +1245,14 @@ msgstr "Full storlek"
 #: includes/api/api-helpers.php:1248 includes/api/api-helpers.php:1837
 #: pro/fields/class-acf-field-clone.php:1042
 msgid "(no title)"
-msgstr "(ingen titel)"
+msgstr "(ingen rubrik)"
 
 #: includes/api/api-helpers.php:1874
 #: includes/fields/class-acf-field-page_link.php:284
 #: includes/fields/class-acf-field-post_object.php:283
 #: includes/fields/class-acf-field-taxonomy.php:992
 msgid "Parent"
-msgstr "Förälder"
+msgstr "Överordnad"
 
 #: includes/api/api-helpers.php:3891
 #, php-format
@@ -1325,7 +1324,6 @@ msgid "Field type does not exist"
 msgstr "Fälttyp existerar inte"
 
 #: includes/fields.php:305
-#, fuzzy
 msgid "Unknown"
 msgstr "Okänd fältgrupp"
 
@@ -1352,7 +1350,7 @@ msgstr "Alternativ"
 #: includes/fields/class-acf-field-radio.php:251
 #: includes/fields/class-acf-field-select.php:467
 msgid "Enter each choice on a new line."
-msgstr "Ange varje alternativ på en ny rad"
+msgstr "Ange varje alternativ på en ny rad."
 
 #: includes/fields/class-acf-field-checkbox.php:247
 #: includes/fields/class-acf-field-radio.php:251
@@ -1372,7 +1370,7 @@ msgstr "Tillåt annat val"
 
 #: includes/fields/class-acf-field-checkbox.php:260
 msgid "Allow 'custom' values to be added"
-msgstr "Tillåter 'annat val' att väljas"
+msgstr "Tillåter ”annat val” att väljas"
 
 #: includes/fields/class-acf-field-checkbox.php:266
 msgid "Save Custom"
@@ -1380,7 +1378,7 @@ msgstr "Spara annat val"
 
 #: includes/fields/class-acf-field-checkbox.php:271
 msgid "Save 'custom' values to the field's choices"
-msgstr "Spara 'annat val' värdet till fältets val"
+msgstr "Spara ”annat val”-värdet till fältets val"
 
 #: includes/fields/class-acf-field-checkbox.php:277
 #: includes/fields/class-acf-field-color_picker.php:146
@@ -1446,7 +1444,7 @@ msgstr "Värde"
 #: includes/fields/class-acf-field-radio.php:322
 #: includes/fields/class-acf-field-select.php:531
 msgid "Both (Array)"
-msgstr "Båda"
+msgstr "Båda (array)"
 
 #: includes/fields/class-acf-field-color_picker.php:36
 msgid "Color Picker"
@@ -1507,7 +1505,7 @@ msgstr "Visa format"
 #: includes/fields/class-acf-field-date_time_picker.php:198
 #: includes/fields/class-acf-field-time_picker.php:128
 msgid "The format displayed when editing a post"
-msgstr "Formatet som visas när du redigerar ett inlägg"
+msgstr "Visningsformatet vid ändring av inlägg"
 
 #: includes/fields/class-acf-field-date_picker.php:232
 #: includes/fields/class-acf-field-date_picker.php:263
@@ -1515,9 +1513,8 @@ msgstr "Formatet som visas när du redigerar ett inlägg"
 #: includes/fields/class-acf-field-date_time_picker.php:224
 #: includes/fields/class-acf-field-time_picker.php:135
 #: includes/fields/class-acf-field-time_picker.php:150
-#, fuzzy
 msgid "Custom:"
-msgstr "Advanced Custom Fields"
+msgstr "Anpassat:"
 
 #: includes/fields/class-acf-field-date_picker.php:242
 msgid "Save Format"
@@ -1545,7 +1542,7 @@ msgstr "Formatet som returneras av mallfunktioner"
 #: includes/fields/class-acf-field-date_picker.php:272
 #: includes/fields/class-acf-field-date_time_picker.php:231
 msgid "Week Starts On"
-msgstr "Veckor börjar på"
+msgstr "Veckan börjar på"
 
 #: includes/fields/class-acf-field-date_time_picker.php:36
 msgid "Date Time Picker"
@@ -1609,22 +1606,22 @@ msgstr "Välj"
 #: includes/fields/class-acf-field-date_time_picker.php:56
 msgctxt "Date Time Picker JS amText"
 msgid "AM"
-msgstr "AM"
+msgstr "fm"
 
 #: includes/fields/class-acf-field-date_time_picker.php:57
 msgctxt "Date Time Picker JS amTextShort"
 msgid "A"
-msgstr "A"
+msgstr "fm"
 
 #: includes/fields/class-acf-field-date_time_picker.php:60
 msgctxt "Date Time Picker JS pmText"
 msgid "PM"
-msgstr "PM"
+msgstr "em"
 
 #: includes/fields/class-acf-field-date_time_picker.php:61
 msgctxt "Date Time Picker JS pmTextShort"
 msgid "P"
-msgstr "P"
+msgstr "E"
 
 #: includes/fields/class-acf-field-email.php:36
 msgid "Email"
@@ -1724,11 +1721,11 @@ msgstr "Lägg till fil"
 
 #: includes/fields/class-acf-field-file.php:225
 msgid "File Array"
-msgstr "Fil array"
+msgstr "Fil-array"
 
 #: includes/fields/class-acf-field-file.php:226
 msgid "File URL"
-msgstr "Filadress"
+msgstr "Fil-URL"
 
 #: includes/fields/class-acf-field-file.php:227
 msgid "File ID"
@@ -1796,7 +1793,7 @@ msgstr "Kommaseparerad lista. Lämna blankt för alla typer"
 
 #: includes/fields/class-acf-field-google-map.php:36
 msgid "Google Map"
-msgstr "Google Map"
+msgstr "Google-karta"
 
 #: includes/fields/class-acf-field-google-map.php:51
 msgid "Locating"
@@ -1804,7 +1801,7 @@ msgstr "Söker plats"
 
 #: includes/fields/class-acf-field-google-map.php:52
 msgid "Sorry, this browser does not support geolocation"
-msgstr "Tyvärr saknar denna webbläsare stöd för platsinformation"
+msgstr "Denna webbläsare saknar stöd för platsinformation"
 
 #: includes/fields/class-acf-field-google-map.php:133
 msgid "Clear location"
@@ -1834,7 +1831,7 @@ msgstr "Zoom"
 
 #: includes/fields/class-acf-field-google-map.php:191
 msgid "Set the initial zoom level"
-msgstr "Ange kartans initiala zoom nivå"
+msgstr "Ange kartans initiala zoom-nivå"
 
 #: includes/fields/class-acf-field-google-map.php:200
 #: includes/fields/class-acf-field-image.php:257
@@ -1850,9 +1847,8 @@ msgid "Customise the map height"
 msgstr "Ställ in kartans höjd"
 
 #: includes/fields/class-acf-field-group.php:36
-#, fuzzy
 msgid "Group"
-msgstr "Fältgrupp"
+msgstr "Grupp"
 
 #: includes/fields/class-acf-field-group.php:469
 #: pro/fields/class-acf-field-repeater.php:453
@@ -1912,7 +1908,7 @@ msgstr "Alla bilder"
 #: pro/fields/class-acf-field-gallery.php:358
 #: pro/fields/class-acf-field-gallery.php:546
 msgid "Remove"
-msgstr "Radera"
+msgstr "Ta bort"
 
 #: includes/fields/class-acf-field-image.php:158
 msgid "No image selected"
@@ -1924,11 +1920,11 @@ msgstr "Lägg till bild"
 
 #: includes/fields/class-acf-field-image.php:212
 msgid "Image Array"
-msgstr "Bild Array"
+msgstr "Bild-array"
 
 #: includes/fields/class-acf-field-image.php:213
 msgid "Image URL"
-msgstr "Bildadress"
+msgstr "Bild-URL"
 
 #: includes/fields/class-acf-field-image.php:214
 msgid "Image ID"
@@ -1955,31 +1951,27 @@ msgstr "Begränsa vilka bilder som kan laddas upp"
 #: pro/fields/class-acf-field-gallery.php:688
 #: pro/fields/class-acf-field-gallery.php:717
 msgid "Width"
-msgstr "bredd"
+msgstr "Bredd"
 
 #: includes/fields/class-acf-field-link.php:36
-#, fuzzy
 msgid "Link"
-msgstr "Sidlänk"
+msgstr "Länk"
 
 #: includes/fields/class-acf-field-link.php:146
-#, fuzzy
 msgid "Select Link"
-msgstr "Välj fil"
+msgstr "Välj länk"
 
 #: includes/fields/class-acf-field-link.php:151
 msgid "Opens in a new window/tab"
-msgstr ""
+msgstr "Öppnas i ett nytt fönster/flik"
 
 #: includes/fields/class-acf-field-link.php:186
-#, fuzzy
 msgid "Link Array"
-msgstr "Fil array"
+msgstr "Länk-array"
 
 #: includes/fields/class-acf-field-link.php:187
-#, fuzzy
 msgid "Link URL"
-msgstr "Filadress"
+msgstr "Länk-URL"
 
 #: includes/fields/class-acf-field-message.php:36
 #: includes/fields/class-acf-field-message.php:115
@@ -1990,17 +1982,17 @@ msgstr "Meddelande"
 #: includes/fields/class-acf-field-message.php:124
 #: includes/fields/class-acf-field-textarea.php:176
 msgid "New Lines"
-msgstr "Nya linjer"
+msgstr "Nya rader"
 
 #: includes/fields/class-acf-field-message.php:125
 #: includes/fields/class-acf-field-textarea.php:177
 msgid "Controls how new lines are rendered"
-msgstr "Reglerar hur nya linjer renderas"
+msgstr "Reglerar hur nya rader renderas"
 
 #: includes/fields/class-acf-field-message.php:129
 #: includes/fields/class-acf-field-textarea.php:181
 msgid "Automatically add paragraphs"
-msgstr "Lägg till styckesindelning automatiskt."
+msgstr "Lägg till styckesindelning automatiskt"
 
 #: includes/fields/class-acf-field-message.php:130
 #: includes/fields/class-acf-field-textarea.php:182
@@ -2018,7 +2010,7 @@ msgstr "Inaktivera HTML-rendering"
 
 #: includes/fields/class-acf-field-message.php:139
 msgid "Allow HTML markup to display as visible text instead of rendering"
-msgstr "Tillåt HTML kod att visas som synlig text istället för att renderas"
+msgstr "Tillåt HTML-kod att visas som synlig text istället för att renderas"
 
 #: includes/fields/class-acf-field-number.php:36
 msgid "Number"
@@ -2070,7 +2062,7 @@ msgstr "Ingen embed hittades för angiven URL."
 #: includes/fields/class-acf-field-oembed.php:283
 #: includes/fields/class-acf-field-oembed.php:294
 msgid "Embed Size"
-msgstr "Embed storlek"
+msgstr "Embed-storlek"
 
 #: includes/fields/class-acf-field-page_link.php:192
 msgid "Archives"
@@ -2086,7 +2078,7 @@ msgstr "Filtrera efter inläggstyp"
 #: includes/fields/class-acf-field-post_object.php:407
 #: includes/fields/class-acf-field-relationship.php:712
 msgid "All post types"
-msgstr "Samtliga posttyper"
+msgstr "Alla inläggstyper"
 
 #: includes/fields/class-acf-field-page_link.php:514
 #: includes/fields/class-acf-field-post_object.php:413
@@ -2098,7 +2090,7 @@ msgstr "Filtrera efter taxonomi"
 #: includes/fields/class-acf-field-post_object.php:421
 #: includes/fields/class-acf-field-relationship.php:726
 msgid "All taxonomies"
-msgstr "Samtliga taxonomier"
+msgstr "Alla taxonomier"
 
 #: includes/fields/class-acf-field-page_link.php:528
 #: includes/fields/class-acf-field-post_object.php:427
@@ -2111,14 +2103,14 @@ msgstr "Tillått nollvärde?"
 
 #: includes/fields/class-acf-field-page_link.php:538
 msgid "Allow Archives URLs"
-msgstr "Tillåt urler från arkiv"
+msgstr "Tillåt arkiv-URL:er"
 
 #: includes/fields/class-acf-field-page_link.php:548
 #: includes/fields/class-acf-field-post_object.php:437
 #: includes/fields/class-acf-field-select.php:494
 #: includes/fields/class-acf-field-user.php:433
 msgid "Select multiple values?"
-msgstr "Välj multipla värden?"
+msgstr "Välj flera värden?"
 
 #: includes/fields/class-acf-field-password.php:36
 msgid "Password"
@@ -2133,7 +2125,7 @@ msgstr "Inläggsobjekt"
 #: includes/fields/class-acf-field-post_object.php:453
 #: includes/fields/class-acf-field-relationship.php:784
 msgid "Post ID"
-msgstr "Inläggets ID"
+msgstr "Inläggs-ID"
 
 #: includes/fields/class-acf-field-radio.php:36
 msgid "Radio Button"
@@ -2181,7 +2173,7 @@ msgstr "Sök..."
 
 #: includes/fields/class-acf-field-relationship.php:594
 msgid "Select post type"
-msgstr "Välj posttyp"
+msgstr "Välj inläggstyp"
 
 #: includes/fields/class-acf-field-relationship.php:607
 msgid "Select taxonomy"
@@ -2251,24 +2243,24 @@ msgstr "Inget resultat"
 #: includes/fields/class-acf-field-select.php:52
 msgctxt "Select2 JS input_too_short_1"
 msgid "Please enter 1 or more characters"
-msgstr "Vänligen skriv in 1 eller fler bokstäver"
+msgstr "Skriv in 1 eller fler tecken"
 
 #: includes/fields/class-acf-field-select.php:53
 #, php-format
 msgctxt "Select2 JS input_too_short_n"
 msgid "Please enter %d or more characters"
-msgstr "Vänligen skriv in %d eller fler bokstäver"
+msgstr "Skriv in %d eller fler tecken"
 
 #: includes/fields/class-acf-field-select.php:54
 msgctxt "Select2 JS input_too_long_1"
 msgid "Please delete 1 character"
-msgstr "Vänligen radera 1 bokstav"
+msgstr "Ta bort 1 tecken"
 
 #: includes/fields/class-acf-field-select.php:55
 #, php-format
 msgctxt "Select2 JS input_too_long_n"
 msgid "Please delete %d characters"
-msgstr "Vänligen radera %d bokstäver"
+msgstr "Ta bort %d tecken"
 
 #: includes/fields/class-acf-field-select.php:56
 msgctxt "Select2 JS selection_too_long_1"
@@ -2284,12 +2276,12 @@ msgstr "Du kan bara välja %d resultat"
 #: includes/fields/class-acf-field-select.php:58
 msgctxt "Select2 JS load_more"
 msgid "Loading more results&hellip;"
-msgstr "Laddar fler resultat"
+msgstr "Laddar fler resultat &hellip;"
 
 #: includes/fields/class-acf-field-select.php:59
 msgctxt "Select2 JS searching"
 msgid "Searching&hellip;"
-msgstr "Söker…"
+msgstr "Söker &hellip;"
 
 #: includes/fields/class-acf-field-select.php:60
 msgctxt "Select2 JS load_fail"
@@ -2316,7 +2308,7 @@ msgstr "Specificera värdet att returnera"
 
 #: includes/fields/class-acf-field-separator.php:36
 msgid "Separator"
-msgstr ""
+msgstr "Avgränsare"
 
 #: includes/fields/class-acf-field-tab.php:36
 msgid "Tab"
@@ -2327,7 +2319,7 @@ msgid ""
 "The tab field will display incorrectly when added to a Table style repeater "
 "field or flexible content field layout"
 msgstr ""
-"Flik fältet kommer att visas felaktigt om de läggs till ett upprepningsfält "
+"Flikfältet kommer att visas felaktigt om de läggs till i ett upprepningsfält "
 "med tabellutseende eller ett innehållsfält med flexibel layout"
 
 #: includes/fields/class-acf-field-tab.php:97
@@ -2335,7 +2327,7 @@ msgid ""
 "Use \"Tab Fields\" to better organize your edit screen by grouping fields "
 "together."
 msgstr ""
-"Använd \"Flikfält\" för att bättre organisera din redigeringsvy genom att "
+"Använd ”Flikfält” för att bättre organisera din redigeringsvy genom att "
 "gruppera fälten tillsammans."
 
 #: includes/fields/class-acf-field-tab.php:98
@@ -2344,8 +2336,8 @@ msgid ""
 "defined) will be grouped together using this field's label as the tab "
 "heading."
 msgstr ""
-"Alla fält efter detta \"flikfält\" (eller fram till nästa \"flikfält\") "
-"kommer att grupperas tillsammans genom fältets titel som flikrubrik."
+"Alla fält efter detta ”flikfält” (eller fram till nästa ”flikfält”) kommer "
+"att grupperas tillsammans genom fältets rubrik som flikrubrik."
 
 #: includes/fields/class-acf-field-tab.php:112
 msgid "Placement"
@@ -2372,7 +2364,7 @@ msgstr "Ingen"
 
 #: includes/fields/class-acf-field-taxonomy.php:770
 msgid "Select the taxonomy to be displayed"
-msgstr "Välj taxonomi som ska visas"
+msgstr "Välj taxonomin som ska visas"
 
 #: includes/fields/class-acf-field-taxonomy.php:779
 msgid "Appearance"
@@ -2384,7 +2376,7 @@ msgstr "Välj utseende för detta fält"
 
 #: includes/fields/class-acf-field-taxonomy.php:785
 msgid "Multiple Values"
-msgstr "Multipla värden"
+msgstr "Flera värden"
 
 #: includes/fields/class-acf-field-taxonomy.php:787
 msgid "Multi Select"
@@ -2392,7 +2384,7 @@ msgstr "Flerval"
 
 #: includes/fields/class-acf-field-taxonomy.php:789
 msgid "Single Value"
-msgstr "Ett enda värde"
+msgstr "Enstaka värde"
 
 #: includes/fields/class-acf-field-taxonomy.php:790
 msgid "Radio Buttons"
@@ -2400,35 +2392,35 @@ msgstr "Alternativknappar"
 
 #: includes/fields/class-acf-field-taxonomy.php:809
 msgid "Create Terms"
-msgstr "Skapa värden"
+msgstr "Skapa termer"
 
 #: includes/fields/class-acf-field-taxonomy.php:810
 msgid "Allow new terms to be created whilst editing"
-msgstr "Tillåt att nya värden läggs till under redigering"
+msgstr "Tillåt att nya termer läggs till under redigering"
 
 #: includes/fields/class-acf-field-taxonomy.php:819
 msgid "Save Terms"
-msgstr "Spara värden"
+msgstr "Spara termer"
 
 #: includes/fields/class-acf-field-taxonomy.php:820
 msgid "Connect selected terms to the post"
-msgstr "Koppla valda värden till inlägget"
+msgstr "Koppla valda termer till inlägget"
 
 #: includes/fields/class-acf-field-taxonomy.php:829
 msgid "Load Terms"
-msgstr "Ladda värden"
+msgstr "Ladda termer"
 
 #: includes/fields/class-acf-field-taxonomy.php:830
 msgid "Load value from posts terms"
-msgstr "Ladda värde från ett inläggs värden"
+msgstr "Ladda term från ett inläggs termer"
 
 #: includes/fields/class-acf-field-taxonomy.php:844
 msgid "Term Object"
-msgstr "Term objekt"
+msgstr "Termobjekt"
 
 #: includes/fields/class-acf-field-taxonomy.php:845
 msgid "Term ID"
-msgstr "Term ID"
+msgstr "Term-ID"
 
 #: includes/fields/class-acf-field-taxonomy.php:904
 #, php-format
@@ -2481,7 +2473,7 @@ msgstr "Tidväljare"
 
 #: includes/fields/class-acf-field-true_false.php:36
 msgid "True / False"
-msgstr "Sant / Falskt"
+msgstr "Sant/Falskt"
 
 #: includes/fields/class-acf-field-true_false.php:94
 #: includes/fields/class-acf-field-true_false.php:174 includes/input.php:265
@@ -2491,11 +2483,11 @@ msgstr "Ja"
 
 #: includes/fields/class-acf-field-true_false.php:142
 msgid "Displays text alongside the checkbox"
-msgstr "Visa text bredvid kryssrutan"
+msgstr "Visar text bredvid kryssrutan"
 
 #: includes/fields/class-acf-field-true_false.php:170
 msgid "On Text"
-msgstr "På text"
+msgstr "”På”-text"
 
 #: includes/fields/class-acf-field-true_false.php:171
 msgid "Text shown when active"
@@ -2503,7 +2495,7 @@ msgstr "Text som visas när valet är aktivt"
 
 #: includes/fields/class-acf-field-true_false.php:180
 msgid "Off Text"
-msgstr "Av text"
+msgstr "”Av”-text"
 
 #: includes/fields/class-acf-field-true_false.php:181
 msgid "Text shown when inactive"
@@ -2511,7 +2503,7 @@ msgstr "Text som visas när valet är inaktivt"
 
 #: includes/fields/class-acf-field-url.php:36
 msgid "Url"
-msgstr "Url"
+msgstr "URL"
 
 #: includes/fields/class-acf-field-url.php:165
 msgid "Value must be a valid URL"
@@ -2552,7 +2544,7 @@ msgstr "Flikar"
 
 #: includes/fields/class-acf-field-wysiwyg.php:450
 msgid "Visual & Text"
-msgstr "Visuellt & Text"
+msgstr "Visuell och text"
 
 #: includes/fields/class-acf-field-wysiwyg.php:451
 msgid "Visual Only"
@@ -2585,10 +2577,10 @@ msgstr "Redigera fältgrupp"
 
 #: includes/forms/form-front.php:55
 msgid "Validate Email"
-msgstr "Validera E-post"
+msgstr "Validera e-post"
 
-#: includes/forms/form-front.php:103
-#: pro/fields/class-acf-field-gallery.php:588 pro/options-page.php:81
+#: includes/forms/form-front.php:103 pro/fields/class-acf-field-gallery.php:588
+#: pro/options-page.php:81
 msgid "Update"
 msgstr "Uppdatera"
 
@@ -2598,7 +2590,7 @@ msgstr "Inlägg uppdaterat"
 
 #: includes/forms/form-front.php:229
 msgid "Spam Detected"
-msgstr "Skräppost Upptäckt"
+msgstr "Skräppost upptäckt"
 
 #: includes/input.php:258
 msgid "Expand Details"
@@ -2632,7 +2624,7 @@ msgstr "Begränsad"
 
 #: includes/input.php:268
 msgid "Cancel"
-msgstr ""
+msgstr "Avbryt"
 
 #: includes/locations.php:93 includes/locations/class-acf-location-post.php:27
 msgid "Post"
@@ -2653,7 +2645,7 @@ msgstr "Bilaga"
 #: includes/locations/class-acf-location-attachment.php:113
 #, php-format
 msgid "All %s formats"
-msgstr ""
+msgstr "Alla %s-format"
 
 #: includes/locations/class-acf-location-comment.php:27
 msgid "Comment"
@@ -2669,7 +2661,7 @@ msgstr "Superadministratör"
 
 #: includes/locations/class-acf-location-current-user.php:27
 msgid "Current User"
-msgstr "Inloggad användare"
+msgstr "Nuvarande användare"
 
 #: includes/locations/class-acf-location-current-user.php:101
 msgid "Logged in"
@@ -2681,28 +2673,27 @@ msgstr "Visar framsida"
 
 #: includes/locations/class-acf-location-current-user.php:103
 msgid "Viewing back end"
-msgstr "Visar baksida"
+msgstr "Visar back-end"
 
 #: includes/locations/class-acf-location-nav-menu-item.php:27
 msgid "Menu Item"
-msgstr ""
+msgstr "Menyobjekt"
 
 #: includes/locations/class-acf-location-nav-menu.php:27
 msgid "Menu"
-msgstr ""
+msgstr "Meny"
 
 #: includes/locations/class-acf-location-nav-menu.php:113
-#, fuzzy
 msgid "Menu Locations"
-msgstr "Plats"
+msgstr "Menyplatser"
 
 #: includes/locations/class-acf-location-nav-menu.php:123
 msgid "Menus"
-msgstr ""
+msgstr "Menyer"
 
 #: includes/locations/class-acf-location-page-parent.php:27
 msgid "Page Parent"
-msgstr "Sidans förälder"
+msgstr "Överordnad sida"
 
 #: includes/locations/class-acf-location-page-template.php:27
 msgid "Page Template"
@@ -2719,11 +2710,11 @@ msgstr "Sidtyp"
 
 #: includes/locations/class-acf-location-page-type.php:149
 msgid "Front Page"
-msgstr "Förstasida"
+msgstr "Startsida"
 
 #: includes/locations/class-acf-location-page-type.php:150
 msgid "Posts Page"
-msgstr "Inläggslistningssida"
+msgstr "Sida för inlägg"
 
 #: includes/locations/class-acf-location-page-type.php:151
 msgid "Top Level Page (no parent)"
@@ -2731,11 +2722,11 @@ msgstr "Toppsida (Ingen förälder)"
 
 #: includes/locations/class-acf-location-page-type.php:152
 msgid "Parent Page (has children)"
-msgstr "Föräldersida (har undersidor)"
+msgstr "Överordnad sida (har underordnade)"
 
 #: includes/locations/class-acf-location-page-type.php:153
 msgid "Child Page (has parent)"
-msgstr "Undersida (har föräldersida)"
+msgstr "Undersida (har överordnad)"
 
 #: includes/locations/class-acf-location-post-category.php:27
 msgid "Post Category"
@@ -2754,9 +2745,8 @@ msgid "Post Taxonomy"
 msgstr "Inläggstaxonomi"
 
 #: includes/locations/class-acf-location-post-template.php:29
-#, fuzzy
 msgid "Post Template"
-msgstr "Sidmall"
+msgstr "Inläggsmall"
 
 #: includes/locations/class-acf-location-taxonomy.php:27
 msgid "Taxonomy Term"
@@ -2768,7 +2758,7 @@ msgstr "Användarformulär"
 
 #: includes/locations/class-acf-location-user-form.php:92
 msgid "Add / Edit"
-msgstr "Skapa / Redigera"
+msgstr "Skapa/Redigera"
 
 #: includes/locations/class-acf-location-user-form.php:93
 msgid "Register"
@@ -2843,9 +2833,9 @@ msgid ""
 "licence key, please see <a href=\"%s\" target=\"_blank\">details & pricing</"
 "a>."
 msgstr ""
-"För att aktivera uppdateringar, vänligen fyll i din licensnyckel här "
-"nedanför. Om du inte har en licensnyckel, vänligen gå till sidan <a href=\"%s"
-"\">detaljer & priser</a>"
+"För att låsa upp uppdateringar, fyll i din licensnyckel här nedan. Om du "
+"inte har en licensnyckel, gå till sidan <a href=\"%s\">detaljer och priser</"
+"a>."
 
 #: pro/admin/views/html-settings-updates.php:33
 msgid "License Key"
@@ -2873,8 +2863,7 @@ msgstr "Uppdatera tillägg"
 
 #: pro/admin/views/html-settings-updates.php:98
 msgid "Please enter your license key above to unlock updates"
-msgstr ""
-"Vänligen fyll i din licensnyckel här ovan för att låsa upp uppdateringar"
+msgstr "Fyll i din licensnyckel här ovan för att låsa upp uppdateringar"
 
 #: pro/admin/views/html-settings-updates.php:104
 msgid "Check Again"
@@ -2891,15 +2880,15 @@ msgstr "Klon"
 
 #: pro/fields/class-acf-field-clone.php:858
 msgid "Select one or more fields you wish to clone"
-msgstr "Välj ett eller fler fält du vill klona"
+msgstr "Välj ett eller flera fält som du vill klona"
 
 #: pro/fields/class-acf-field-clone.php:875
 msgid "Display"
-msgstr "Visa"
+msgstr "Visning"
 
 #: pro/fields/class-acf-field-clone.php:876
 msgid "Specify the style used to render the clone field"
-msgstr "Specificera stilen som ska användas för att skapa klonfältet"
+msgstr "Specificera stilen som ska användas för att rendera det klonade fältet"
 
 #: pro/fields/class-acf-field-clone.php:881
 msgid "Group (displays selected fields in a group within this field)"
@@ -2912,11 +2901,11 @@ msgstr "Sömlös (ersätter detta fält med valda fält)"
 #: pro/fields/class-acf-field-clone.php:903
 #, php-format
 msgid "Labels will be displayed as %s"
-msgstr "Fälttitlar visas som %s"
+msgstr "Etiketter kommer att visas som %s"
 
 #: pro/fields/class-acf-field-clone.php:906
 msgid "Prefix Field Labels"
-msgstr "Prefix fälttitlar"
+msgstr "Prefix för fältetiketter"
 
 #: pro/fields/class-acf-field-clone.php:917
 #, php-format
@@ -2925,7 +2914,7 @@ msgstr "Värden sparas som %s"
 
 #: pro/fields/class-acf-field-clone.php:920
 msgid "Prefix Field Names"
-msgstr "Prefix fältnamn"
+msgstr "Prefix för fältnamn"
 
 #: pro/fields/class-acf-field-clone.php:1038
 msgid "Unknown field"
@@ -2956,31 +2945,31 @@ msgstr "layouter"
 
 #: pro/fields/class-acf-field-flexible-content.php:47
 msgid "remove {layout}?"
-msgstr "radera {layout}?"
+msgstr "ta bort {layout}?"
 
 #: pro/fields/class-acf-field-flexible-content.php:48
 msgid "This field requires at least {min} {identifier}"
-msgstr "Detta fält kräver minst {min} {identifierare}"
+msgstr "Detta fält kräver minst {min} {identifier}"
 
 #: pro/fields/class-acf-field-flexible-content.php:49
 msgid "This field has a limit of {max} {identifier}"
-msgstr "Detta fält har en gräns på {max} {identifierare}"
+msgstr "Detta fält har en gräns på {max} {identifier}"
 
 #: pro/fields/class-acf-field-flexible-content.php:50
 msgid "This field requires at least {min} {label} {identifier}"
-msgstr "Detta fält kräver minst {min} {etikett} {identifierare}"
+msgstr "Detta fält kräver minst {min} {label} {identifier}"
 
 #: pro/fields/class-acf-field-flexible-content.php:51
 msgid "Maximum {label} limit reached ({max} {identifier})"
-msgstr "Maximal {etikett} gräns nåtts ({max} {identifierare})"
+msgstr "Maximal {label} gräns nåtts ({max} {identifier})"
 
 #: pro/fields/class-acf-field-flexible-content.php:52
 msgid "{available} {label} {identifier} available (max {max})"
-msgstr "{tillgänglig} {etikett} {identifierare} tillgänglig (max {max})"
+msgstr "{available} {label} {identifier} tillgänglig (max {max})"
 
 #: pro/fields/class-acf-field-flexible-content.php:53
 msgid "{required} {label} {identifier} required (min {min})"
-msgstr "{krävs} {etikett} {identifierare} krävs (min {min})"
+msgstr "{required} {label} {identifier} krävs (min {min})"
 
 #: pro/fields/class-acf-field-flexible-content.php:54
 msgid "Flexible Content requires at least 1 layout"
@@ -2989,7 +2978,7 @@ msgstr "Flexibelt innehåll kräver minst 1 layout"
 #: pro/fields/class-acf-field-flexible-content.php:288
 #, php-format
 msgid "Click the \"%s\" button below to start creating your layout"
-msgstr "Klicka på knappen \"%s\" nedan för att börja skapa din layout"
+msgstr "Klicka på knappen ”%s” nedan för att börja skapa din layout"
 
 #: pro/fields/class-acf-field-flexible-content.php:423
 msgid "Add layout"
@@ -2997,7 +2986,7 @@ msgstr "Lägg till layout"
 
 #: pro/fields/class-acf-field-flexible-content.php:424
 msgid "Remove layout"
-msgstr "Radera layout"
+msgstr "Ta bort layout"
 
 #: pro/fields/class-acf-field-flexible-content.php:425
 #: pro/fields/class-acf-field-repeater.php:360
@@ -3014,11 +3003,11 @@ msgstr "Ändra ordning"
 
 #: pro/fields/class-acf-field-flexible-content.php:572
 msgid "Delete Layout"
-msgstr "Radera layout"
+msgstr "Ta bort layout"
 
 #: pro/fields/class-acf-field-flexible-content.php:573
 msgid "Duplicate Layout"
-msgstr "Kopiera layout"
+msgstr "Duplicera layout"
 
 #: pro/fields/class-acf-field-flexible-content.php:574
 msgid "Add New Layout"
@@ -3035,7 +3024,7 @@ msgstr "Max"
 #: pro/fields/class-acf-field-flexible-content.php:685
 #: pro/fields/class-acf-field-repeater.php:530
 msgid "Button Label"
-msgstr "Knapp etikett"
+msgstr "Knappetikett"
 
 #: pro/fields/class-acf-field-flexible-content.php:694
 msgid "Minimum Layouts"
@@ -3047,7 +3036,7 @@ msgstr "Högsta tillåtna antal layouter"
 
 #: pro/fields/class-acf-field-gallery.php:52
 msgid "Add Image to Gallery"
-msgstr "Lägg till en bild till galleri"
+msgstr "Lägg till bild i galleriet"
 
 #: pro/fields/class-acf-field-gallery.php:56
 msgid "Maximum selection reached"
@@ -3063,15 +3052,15 @@ msgstr "Bildtext"
 
 #: pro/fields/class-acf-field-gallery.php:388
 msgid "Alt Text"
-msgstr "Alt Text"
+msgstr "Alternativ text"
 
 #: pro/fields/class-acf-field-gallery.php:559
 msgid "Add to gallery"
-msgstr "Lägg till galleri"
+msgstr "Lägg till i galleri"
 
 #: pro/fields/class-acf-field-gallery.php:563
 msgid "Bulk actions"
-msgstr "Välj åtgärd"
+msgstr "Massåtgärder"
 
 #: pro/fields/class-acf-field-gallery.php:564
 msgid "Sort by date uploaded"
@@ -3083,7 +3072,7 @@ msgstr "Sortera efter redigeringsdatum"
 
 #: pro/fields/class-acf-field-gallery.php:566
 msgid "Sort by title"
-msgstr "Sortera efter titel"
+msgstr "Sortera efter rubrik"
 
 #: pro/fields/class-acf-field-gallery.php:567
 msgid "Reverse current order"
@@ -3131,15 +3120,15 @@ msgstr "Lägg till rad"
 
 #: pro/fields/class-acf-field-repeater.php:406
 msgid "Remove row"
-msgstr "Radera rad"
+msgstr "Ta bort rad"
 
 #: pro/fields/class-acf-field-repeater.php:483
 msgid "Collapsed"
-msgstr "Kollapsa"
+msgstr "Ihopfälld"
 
 #: pro/fields/class-acf-field-repeater.php:484
 msgid "Select a sub field to show when row is collapsed"
-msgstr "Välj ett underfält att visa när raden är kollapsad"
+msgstr "Välj ett underfält att visa när raden är ihopfälld"
 
 #: pro/fields/class-acf-field-repeater.php:494
 msgid "Minimum Rows"
@@ -3151,7 +3140,7 @@ msgstr "Högsta tillåtna antal rader"
 
 #: pro/locations/class-acf-location-options-page.php:70
 msgid "No options pages exist"
-msgstr "Det finns inga inställningssidor"
+msgstr "Det finns inga alternativsidor"
 
 #: pro/options-page.php:51
 msgid "Options"
@@ -3159,7 +3148,7 @@ msgstr "Alternativ"
 
 #: pro/options-page.php:82
 msgid "Options Updated"
-msgstr "Inställningar uppdaterade"
+msgstr "Alternativ uppdaterade"
 
 #: pro/updates.php:97
 #, php-format
@@ -3168,9 +3157,9 @@ msgid ""
 "\">Updates</a> page. If you don't have a licence key, please see <a href=\"%s"
 "\">details & pricing</a>."
 msgstr ""
-"För att aktivera uppdateringar, vänligen fyll i din licensnyckel på sidan <a "
-"href=\"%s\">uppdateringar</a>. Om du inte har en licensnyckel, vänligen gå "
-"till sidan <a href=\"%s\">detaljer & priser</a>"
+"För att aktivera uppdateringar, fyll i din licensnyckel på sidan <a href=\"%s"
+"\">uppdateringar</a>. Om du inte har en licensnyckel, gå till sidan <a href="
+"\"%s\">detaljer och priser</a>."
 
 #. Plugin URI of the plugin/theme
 msgid "https://www.advancedcustomfields.com/"
@@ -3183,46 +3172,3 @@ msgstr "Elliot Condon"
 #. Author URI of the plugin/theme
 msgid "http://www.elliotcondon.com/"
 msgstr "http://www.elliotcondon.com/"
-
-#~ msgid "Features"
-#~ msgstr "Funktioner"
-
-#~ msgid "How to"
-#~ msgstr "Instruktioner"
-
-#~ msgid "Term meta upgrade not possible (termmeta table does not exist)"
-#~ msgstr ""
-#~ "Term meta uppgradering ej möjligt (termmeta tabellen existerar inte)"
-
-#~ msgid ""
-#~ "Error validating ACF PRO license URL (website does not match). Please re-"
-#~ "activate your license"
-#~ msgstr ""
-#~ "Fel vid validering av ACF PRO licens URL (Sajten överensstämmer inte). "
-#~ "Vänligen aktivera din licens på nytt"
-
-#~ msgid "Getting Started"
-#~ msgstr "Kom igång"
-
-#~ msgid "Field Types"
-#~ msgstr "Fälttyper"
-
-#~ msgid "Functions"
-#~ msgstr "Funktioner"
-
-#~ msgid "Actions"
-#~ msgstr "Actions"
-
-#~ msgid "Tutorials"
-#~ msgstr "Handledningar"
-
-#~ msgid "FAQ"
-#~ msgstr "Frågor & Svar"
-
-#~ msgid "Error"
-#~ msgstr "Fel"
-
-#~ msgid "1 field requires attention."
-#~ msgid_plural "%d fields require attention."
-#~ msgstr[0] "1 fält kräver din uppmärksamhet"
-#~ msgstr[1] "%d fält kräver din uppmärksamhet"
