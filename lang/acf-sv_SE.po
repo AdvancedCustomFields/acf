@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Advanced Custom Fields Pro v5.2.9\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
-"POT-Creation-Date: 2021-06-03 21:16+0200\n"
-"PO-Revision-Date: 2021-06-03 21:35+0200\n"
+"POT-Creation-Date: 2021-06-03 21:44+0200\n"
+"PO-Revision-Date: 2021-06-03 21:44+0200\n"
 "Last-Translator: Erik Betshammar <info@verkan.se>\n"
 "Language-Team: Swedish\n"
 "Language: sv_SE\n"
@@ -22,7 +22,6 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#. Plugin Name of the plugin/theme
 #: acf.php:68
 msgid "Advanced Custom Fields"
 msgstr "Advanced Custom Fields"
@@ -36,6 +35,7 @@ msgid "Field Group"
 msgstr "Fältgrupp"
 
 #: acf.php:350 acf.php:382 includes/admin/admin.php:50
+#: pro/fields/class-acf-field-flexible-content.php:554
 msgid "Add New"
 msgstr "Lägg till ny"
 
@@ -69,6 +69,7 @@ msgstr "Inga fältgrupper hittades i papperskorgen"
 
 #: acf.php:380 includes/admin/admin-field-group.php:231
 #: includes/admin/admin-field-groups.php:262
+#: pro/fields/class-acf-field-clone.php:799
 msgid "Fields"
 msgstr "Fält"
 
@@ -161,7 +162,7 @@ msgstr "Menyobjekt"
 msgid "Users"
 msgstr "Användare"
 
-#: includes/acf-wp-functions.php:83
+#: includes/acf-wp-functions.php:83 pro/options-page.php:45
 msgid "Options"
 msgstr "Alternativ"
 
@@ -348,6 +349,7 @@ msgstr "Synkronisera ändringar"
 #: includes/admin/views/field-group-options.php:96
 #: includes/admin/views/html-admin-page-upgrade-network.php:38
 #: includes/admin/views/html-admin-page-upgrade-network.php:49
+#: pro/fields/class-acf-field-gallery.php:377
 msgid "Description"
 msgstr "Beskrivning"
 
@@ -411,6 +413,7 @@ msgstr "Duplicera detta objekt"
 #: includes/admin/admin-field-groups.php:501
 #: includes/admin/admin-field-groups.php:521
 #: includes/admin/views/field-group-field.php:50
+#: pro/fields/class-acf-field-flexible-content.php:553
 msgid "Duplicate"
 msgstr "Duplicera"
 
@@ -675,6 +678,8 @@ msgid "Add rule group"
 msgstr "Lägg till regelgrupp"
 
 #: includes/admin/views/field-group-field.php:42
+#: pro/fields/class-acf-field-flexible-content.php:411
+#: pro/fields/class-acf-field-repeater.php:294
 msgid "Drag to reorder"
 msgstr "Dra och släpp för att ändra ordning"
 
@@ -687,6 +692,7 @@ msgstr "Redigera fält"
 #: includes/fields/class-acf-field-file.php:151
 #: includes/fields/class-acf-field-image.php:131
 #: includes/fields/class-acf-field-link.php:139
+#: pro/fields/class-acf-field-gallery.php:334
 msgid "Edit"
 msgstr "Redigera"
 
@@ -707,6 +713,7 @@ msgid "Delete field"
 msgstr "Ta bort fält"
 
 #: includes/admin/views/field-group-field.php:52
+#: pro/fields/class-acf-field-flexible-content.php:552
 msgid "Delete"
 msgstr "Ta bort"
 
@@ -771,11 +778,13 @@ msgstr "Ordning"
 #: includes/fields/class-acf-field-checkbox.php:420
 #: includes/fields/class-acf-field-radio.php:268
 #: includes/fields/class-acf-field-select.php:433
+#: pro/fields/class-acf-field-flexible-content.php:578
 msgid "Label"
 msgstr "Etikett"
 
 #: includes/admin/views/field-group-fields.php:6
 #: includes/fields/class-acf-field-taxonomy.php:926
+#: pro/fields/class-acf-field-flexible-content.php:592
 msgid "Name"
 msgstr "Namn"
 
@@ -1034,18 +1043,22 @@ msgid "Show this field group if"
 msgstr "Visa detta fält om"
 
 #: includes/admin/views/html-notice-upgrade.php:8
+#: pro/fields/class-acf-field-repeater.php:25
 msgid "Repeater"
 msgstr "Upprepningsfält"
 
 #: includes/admin/views/html-notice-upgrade.php:9
+#: pro/fields/class-acf-field-flexible-content.php:25
 msgid "Flexible Content"
 msgstr "Flexibelt innehåll"
 
 #: includes/admin/views/html-notice-upgrade.php:10
+#: pro/fields/class-acf-field-gallery.php:25
 msgid "Gallery"
 msgstr "Galleri"
 
 #: includes/admin/views/html-notice-upgrade.php:11
+#: pro/locations/class-acf-location-options-page.php:20
 msgid "Options Page"
 msgstr "Alternativsida"
 
@@ -1119,6 +1132,7 @@ msgid "Full Size"
 msgstr "Full storlek"
 
 #: includes/api/api-helpers.php:1632 includes/api/api-term.php:145
+#: pro/fields/class-acf-field-clone.php:984
 msgid "(no title)"
 msgstr "(ingen rubrik)"
 
@@ -1163,17 +1177,21 @@ msgstr "Är du säker?"
 
 #: includes/assets.php:344 includes/fields/class-acf-field-true_false.php:79
 #: includes/fields/class-acf-field-true_false.php:159
+#: pro/admin/views/html-settings-updates.php:86
 msgid "Yes"
 msgstr "Ja"
 
 #: includes/assets.php:345 includes/fields/class-acf-field-true_false.php:80
 #: includes/fields/class-acf-field-true_false.php:174
+#: pro/admin/views/html-settings-updates.php:96
 msgid "No"
 msgstr "Nej"
 
 #: includes/assets.php:346 includes/fields/class-acf-field-file.php:153
 #: includes/fields/class-acf-field-image.php:133
 #: includes/fields/class-acf-field-link.php:140
+#: pro/fields/class-acf-field-gallery.php:335
+#: pro/fields/class-acf-field-gallery.php:475
 msgid "Remove"
 msgstr "Ta bort"
 
@@ -1206,6 +1224,7 @@ msgid "%d fields require attention"
 msgstr "%d fält kräver din uppmärksamhet"
 
 #: includes/assets.php:364 includes/forms/form-comment.php:166
+#: pro/admin/admin-options-page.php:325
 msgid "Edit field group"
 msgstr "Redigera fältgrupp"
 
@@ -1241,6 +1260,10 @@ msgstr "jQuery"
 #: includes/fields/class-acf-field-checkbox.php:389
 #: includes/fields/class-acf-field-group.php:474
 #: includes/fields/class-acf-field-radio.php:247
+#: pro/fields/class-acf-field-clone.php:831
+#: pro/fields/class-acf-field-flexible-content.php:549
+#: pro/fields/class-acf-field-flexible-content.php:598
+#: pro/fields/class-acf-field-repeater.php:444
 msgid "Layout"
 msgstr "Layout"
 
@@ -1526,6 +1549,7 @@ msgstr "Formatet som används när ett värde sparas"
 #: includes/fields/class-acf-field-select.php:427
 #: includes/fields/class-acf-field-time_picker.php:128
 #: includes/fields/class-acf-field-user.php:79
+#: pro/fields/class-acf-field-gallery.php:554
 msgid "Return Format"
 msgstr "Returvärde"
 
@@ -1699,6 +1723,8 @@ msgstr "Filnamn"
 #: includes/fields/class-acf-field-file.php:258
 #: includes/fields/class-acf-field-image.php:254
 #: includes/fields/class-acf-field-image.php:283
+#: pro/fields/class-acf-field-gallery.php:639
+#: pro/fields/class-acf-field-gallery.php:668
 msgid "File size"
 msgstr "Filstorlek"
 
@@ -1720,11 +1746,13 @@ msgstr "Filens ID"
 
 #: includes/fields/class-acf-field-file.php:229
 #: includes/fields/class-acf-field-image.php:219
+#: pro/fields/class-acf-field-gallery.php:589
 msgid "Library"
 msgstr "Bibliotek"
 
 #: includes/fields/class-acf-field-file.php:230
 #: includes/fields/class-acf-field-image.php:220
+#: pro/fields/class-acf-field-gallery.php:590
 msgid "Limit the media library choice"
 msgstr "Begränsa urvalet i mediabiblioteket"
 
@@ -1737,16 +1765,20 @@ msgstr "Begränsa urvalet i mediabiblioteket"
 #: includes/locations/class-acf-location-user-form.php:65
 #: includes/locations/class-acf-location-user-role.php:76
 #: includes/locations/class-acf-location-widget.php:63
+#: pro/fields/class-acf-field-gallery.php:595
+#: pro/locations/class-acf-location-block.php:64
 msgid "All"
 msgstr "Alla"
 
 #: includes/fields/class-acf-field-file.php:236
 #: includes/fields/class-acf-field-image.php:226
+#: pro/fields/class-acf-field-gallery.php:596
 msgid "Uploaded to post"
 msgstr "Uppladdade till detta inlägg"
 
 #: includes/fields/class-acf-field-file.php:243
 #: includes/fields/class-acf-field-image.php:233
+#: pro/fields/class-acf-field-gallery.php:618
 msgid "Minimum"
 msgstr "Minimalt"
 
@@ -1757,16 +1789,19 @@ msgstr "Begränsa vilka filer som kan laddas upp"
 
 #: includes/fields/class-acf-field-file.php:254
 #: includes/fields/class-acf-field-image.php:262
+#: pro/fields/class-acf-field-gallery.php:647
 msgid "Maximum"
 msgstr "Maximalt"
 
 #: includes/fields/class-acf-field-file.php:265
 #: includes/fields/class-acf-field-image.php:291
+#: pro/fields/class-acf-field-gallery.php:675
 msgid "Allowed file types"
 msgstr "Tillåtna filtyper"
 
 #: includes/fields/class-acf-field-file.php:266
 #: includes/fields/class-acf-field-image.php:292
+#: pro/fields/class-acf-field-gallery.php:676
 msgid "Comma separated list. Leave blank for all types"
 msgstr "Kommaseparerad lista. Lämna blankt för alla typer"
 
@@ -1817,6 +1852,8 @@ msgstr "Ange kartans initiala zoom-nivå"
 #: includes/fields/class-acf-field-image.php:245
 #: includes/fields/class-acf-field-image.php:274
 #: includes/fields/class-acf-field-oembed.php:268
+#: pro/fields/class-acf-field-gallery.php:630
+#: pro/fields/class-acf-field-gallery.php:659
 msgid "Height"
 msgstr "Höjd"
 
@@ -1829,22 +1866,34 @@ msgid "Group"
 msgstr "Grupp"
 
 #: includes/fields/class-acf-field-group.php:459
+#: pro/fields/class-acf-field-repeater.php:380
 msgid "Sub Fields"
 msgstr "Underfält"
 
 #: includes/fields/class-acf-field-group.php:475
+#: pro/fields/class-acf-field-clone.php:832
 msgid "Specify the style used to render the selected fields"
 msgstr "Specificera stilen för att rendera valda fält"
 
 #: includes/fields/class-acf-field-group.php:480
+#: pro/fields/class-acf-field-clone.php:837
+#: pro/fields/class-acf-field-flexible-content.php:610
+#: pro/fields/class-acf-field-repeater.php:452
+#: pro/locations/class-acf-location-block.php:20
 msgid "Block"
 msgstr "Block"
 
 #: includes/fields/class-acf-field-group.php:481
+#: pro/fields/class-acf-field-clone.php:838
+#: pro/fields/class-acf-field-flexible-content.php:609
+#: pro/fields/class-acf-field-repeater.php:451
 msgid "Table"
 msgstr "Tabell"
 
 #: includes/fields/class-acf-field-group.php:482
+#: pro/fields/class-acf-field-clone.php:839
+#: pro/fields/class-acf-field-flexible-content.php:611
+#: pro/fields/class-acf-field-repeater.php:453
 msgid "Row"
 msgstr "Rad"
 
@@ -1877,29 +1926,37 @@ msgid "Add Image"
 msgstr "Lägg till bild"
 
 #: includes/fields/class-acf-field-image.php:200
+#: pro/fields/class-acf-field-gallery.php:560
 msgid "Image Array"
 msgstr "Bild-array"
 
 #: includes/fields/class-acf-field-image.php:201
+#: pro/fields/class-acf-field-gallery.php:561
 msgid "Image URL"
 msgstr "Bild-URL"
 
 #: includes/fields/class-acf-field-image.php:202
+#: pro/fields/class-acf-field-gallery.php:562
 msgid "Image ID"
 msgstr "Bildens ID"
 
 #: includes/fields/class-acf-field-image.php:209
+#: pro/fields/class-acf-field-gallery.php:568
 msgid "Preview Size"
 msgstr "Förhandsvisningens storlek"
 
 #: includes/fields/class-acf-field-image.php:234
 #: includes/fields/class-acf-field-image.php:263
+#: pro/fields/class-acf-field-gallery.php:619
+#: pro/fields/class-acf-field-gallery.php:648
 msgid "Restrict which images can be uploaded"
 msgstr "Begränsa vilka bilder som kan laddas upp"
 
 #: includes/fields/class-acf-field-image.php:237
 #: includes/fields/class-acf-field-image.php:266
 #: includes/fields/class-acf-field-oembed.php:257
+#: pro/fields/class-acf-field-gallery.php:622
+#: pro/fields/class-acf-field-gallery.php:651
 msgid "Width"
 msgstr "Bredd"
 
@@ -2157,6 +2214,7 @@ msgid "Maximum posts"
 msgstr "Högsta antal inlägg"
 
 #: includes/fields/class-acf-field-relationship.php:721
+#: pro/fields/class-acf-field-gallery.php:776
 #, php-format
 msgid "%s requires at least %s selection"
 msgid_plural "%s requires at least %s selections"
@@ -2502,7 +2560,7 @@ msgstr "Fördröj initialisering?"
 msgid "TinyMCE will not be initialized until field is clicked"
 msgstr "TinyMCE initialiseras inte förrän fältet klickas på"
 
-#: includes/forms/form-front.php:38
+#: includes/forms/form-front.php:38 pro/fields/class-acf-field-gallery.php:350
 msgid "Title"
 msgstr "Rubrik"
 
@@ -2510,7 +2568,8 @@ msgstr "Rubrik"
 msgid "Validate Email"
 msgstr "Validera e-post"
 
-#: includes/forms/form-front.php:104
+#: includes/forms/form-front.php:104 pro/fields/class-acf-field-gallery.php:507
+#: pro/options-page.php:73
 msgid "Update"
 msgstr "Uppdatera"
 
@@ -2714,6 +2773,420 @@ msgstr "Begränsad"
 msgid "%s value is required"
 msgstr "%s värde är obligatorisk"
 
+#. Plugin Name of the plugin/theme
+#: pro/acf-pro.php:28
+msgid "Advanced Custom Fields PRO"
+msgstr "Advanced Custom Fields PRO"
+
+#: pro/admin/admin-options-page.php:198
+msgid "Publish"
+msgstr "Publicera"
+
+#: pro/admin/admin-options-page.php:204
+#, php-format
+msgid ""
+"No Custom Field Groups found for this options page. <a href=\"%s\">Create a "
+"Custom Field Group</a>"
+msgstr ""
+"Inga fältgrupper hittades för denna inställningssida. <a href=\"%s\">Skapa "
+"en fältgrupp</a>"
+
+#: pro/admin/admin-updates.php:49
+msgid "<b>Error</b>. Could not connect to update server"
+msgstr "<b>Fel</b>. Kunde inte ansluta till uppdateringsservern"
+
+#: pro/admin/admin-updates.php:118 pro/admin/views/html-settings-updates.php:12
+msgid "Updates"
+msgstr "Uppdateringar"
+
+#: pro/admin/admin-updates.php:191
+msgid ""
+"<b>Error</b>. Could not authenticate update package. Please check again or "
+"deactivate and reactivate your ACF PRO license."
+msgstr ""
+"<b>Fel</b>. Det gick inte att autentisera uppdateringspaketet. Kontrollera "
+"igen eller inaktivera och återaktivera din ACF PRO-licens."
+
+#: pro/admin/views/html-settings-updates.php:6
+msgid "Deactivate License"
+msgstr "Inaktivera licens"
+
+#: pro/admin/views/html-settings-updates.php:6
+msgid "Activate License"
+msgstr "Aktivera licens"
+
+#: pro/admin/views/html-settings-updates.php:16
+msgid "License Information"
+msgstr "Licensinformation"
+
+#: pro/admin/views/html-settings-updates.php:19
+#, php-format
+msgid ""
+"To unlock updates, please enter your license key below. If you don't have a "
+"licence key, please see <a href=\"%s\" target=\"_blank\">details & pricing</"
+"a>."
+msgstr ""
+"För att låsa upp uppdateringar, fyll i din licensnyckel här nedan. Om du "
+"inte har en licensnyckel, gå till sidan <a href=\"%s\">detaljer och priser</"
+"a>."
+
+#: pro/admin/views/html-settings-updates.php:26
+msgid "License Key"
+msgstr "Licensnyckel"
+
+#: pro/admin/views/html-settings-updates.php:58
+msgid "Update Information"
+msgstr "Uppdateringsinformation"
+
+#: pro/admin/views/html-settings-updates.php:65
+msgid "Current Version"
+msgstr "Nuvarande version"
+
+#: pro/admin/views/html-settings-updates.php:73
+msgid "Latest Version"
+msgstr "Senaste version"
+
+#: pro/admin/views/html-settings-updates.php:81
+msgid "Update Available"
+msgstr "Uppdatering tillgänglig"
+
+#: pro/admin/views/html-settings-updates.php:89
+msgid "Update Plugin"
+msgstr "Uppdatera tillägg"
+
+#: pro/admin/views/html-settings-updates.php:91
+msgid "Please enter your license key above to unlock updates"
+msgstr "Fyll i din licensnyckel här ovan för att låsa upp uppdateringar"
+
+#: pro/admin/views/html-settings-updates.php:97
+msgid "Check Again"
+msgstr "Kontrollera igen"
+
+#: pro/admin/views/html-settings-updates.php:104
+msgid "Changelog"
+msgstr "Ändringslogg"
+
+#: pro/admin/views/html-settings-updates.php:114
+msgid "Upgrade Notice"
+msgstr "Uppgraderingsnotering"
+
+#: pro/blocks.php:37
+msgid "Block type name is required."
+msgstr "Blocktypsnamn är obligatoriskt."
+
+#: pro/blocks.php:44
+#, php-format
+msgid "Block type \"%s\" is already registered."
+msgstr "Blocktypen \"%s\" är redan registrerad."
+
+#: pro/blocks.php:444
+msgid "Switch to Edit"
+msgstr "Växla till Redigera"
+
+#: pro/blocks.php:445
+msgid "Switch to Preview"
+msgstr "Växla till förhandsgranskning"
+
+#: pro/blocks.php:446
+msgid "Change content alignment"
+msgstr "Ändra innehållsjustering"
+
+#: pro/blocks.php:449
+#, php-format
+msgid "%s settings"
+msgstr "%s-inställningar"
+
+#: pro/fields/class-acf-field-clone.php:25
+msgctxt "noun"
+msgid "Clone"
+msgstr "Klon"
+
+#: pro/fields/class-acf-field-clone.php:800
+msgid "Select one or more fields you wish to clone"
+msgstr "Välj ett eller flera fält som du vill klona"
+
+#: pro/fields/class-acf-field-clone.php:817
+msgid "Display"
+msgstr "Visning"
+
+#: pro/fields/class-acf-field-clone.php:818
+msgid "Specify the style used to render the clone field"
+msgstr "Specificera stilen som ska användas för att rendera det klonade fältet"
+
+#: pro/fields/class-acf-field-clone.php:823
+msgid "Group (displays selected fields in a group within this field)"
+msgstr "Grupp (visar valda fält i en grupp i detta fält)"
+
+#: pro/fields/class-acf-field-clone.php:824
+msgid "Seamless (replaces this field with selected fields)"
+msgstr "Sömlös (ersätter detta fält med valda fält)"
+
+#: pro/fields/class-acf-field-clone.php:845
+#, php-format
+msgid "Labels will be displayed as %s"
+msgstr "Etiketter kommer att visas som %s"
+
+#: pro/fields/class-acf-field-clone.php:848
+msgid "Prefix Field Labels"
+msgstr "Prefix för fältetiketter"
+
+#: pro/fields/class-acf-field-clone.php:859
+#, php-format
+msgid "Values will be saved as %s"
+msgstr "Värden sparas som %s"
+
+#: pro/fields/class-acf-field-clone.php:862
+msgid "Prefix Field Names"
+msgstr "Prefix för fältnamn"
+
+#: pro/fields/class-acf-field-clone.php:980
+msgid "Unknown field"
+msgstr "Okänt fält"
+
+#: pro/fields/class-acf-field-clone.php:1019
+msgid "Unknown field group"
+msgstr "Okänd fältgrupp"
+
+#: pro/fields/class-acf-field-clone.php:1023
+#, php-format
+msgid "All fields from %s field group"
+msgstr "Alla fält från %s fältgrupp"
+
+#: pro/fields/class-acf-field-flexible-content.php:31
+#: pro/fields/class-acf-field-repeater.php:193
+#: pro/fields/class-acf-field-repeater.php:464
+msgid "Add Row"
+msgstr "Lägg till rad"
+
+#: pro/fields/class-acf-field-flexible-content.php:73
+#: pro/fields/class-acf-field-flexible-content.php:921
+#: pro/fields/class-acf-field-flexible-content.php:1003
+msgid "layout"
+msgid_plural "layouts"
+msgstr[0] "layout"
+msgstr[1] "layouter"
+
+#: pro/fields/class-acf-field-flexible-content.php:74
+msgid "layouts"
+msgstr "layouter"
+
+#: pro/fields/class-acf-field-flexible-content.php:77
+#: pro/fields/class-acf-field-flexible-content.php:920
+#: pro/fields/class-acf-field-flexible-content.php:1002
+msgid "This field requires at least {min} {label} {identifier}"
+msgstr "Detta fält kräver minst {min} {label} {identifier}"
+
+#: pro/fields/class-acf-field-flexible-content.php:78
+msgid "This field has a limit of {max} {label} {identifier}"
+msgstr "Detta fält har en gräns på {max} {label} {identifier}"
+
+#: pro/fields/class-acf-field-flexible-content.php:81
+msgid "{available} {label} {identifier} available (max {max})"
+msgstr "{available} {label} {identifier} tillgänglig (max {max})"
+
+#: pro/fields/class-acf-field-flexible-content.php:82
+msgid "{required} {label} {identifier} required (min {min})"
+msgstr "{required} {label} {identifier} krävs (min {min})"
+
+#: pro/fields/class-acf-field-flexible-content.php:85
+msgid "Flexible Content requires at least 1 layout"
+msgstr "Flexibelt innehåll kräver minst 1 layout"
+
+#: pro/fields/class-acf-field-flexible-content.php:287
+#, php-format
+msgid "Click the \"%s\" button below to start creating your layout"
+msgstr "Klicka på knappen ”%s” nedan för att börja skapa din layout"
+
+#: pro/fields/class-acf-field-flexible-content.php:414
+msgid "Add layout"
+msgstr "Lägg till layout"
+
+#: pro/fields/class-acf-field-flexible-content.php:415
+msgid "Duplicate layout"
+msgstr "Duplicera layout"
+
+#: pro/fields/class-acf-field-flexible-content.php:416
+msgid "Remove layout"
+msgstr "Ta bort layout"
+
+#: pro/fields/class-acf-field-flexible-content.php:417
+#: pro/fields/class-acf-field-repeater.php:296
+msgid "Click to toggle"
+msgstr "Klicka för att växla"
+
+#: pro/fields/class-acf-field-flexible-content.php:551
+msgid "Reorder Layout"
+msgstr "Ändra layoutens ordning"
+
+#: pro/fields/class-acf-field-flexible-content.php:551
+msgid "Reorder"
+msgstr "Ändra ordning"
+
+#: pro/fields/class-acf-field-flexible-content.php:552
+msgid "Delete Layout"
+msgstr "Ta bort layout"
+
+#: pro/fields/class-acf-field-flexible-content.php:553
+msgid "Duplicate Layout"
+msgstr "Duplicera layout"
+
+#: pro/fields/class-acf-field-flexible-content.php:554
+msgid "Add New Layout"
+msgstr "Lägg till ny layout"
+
+#: pro/fields/class-acf-field-flexible-content.php:626
+msgid "Min"
+msgstr "Min"
+
+#: pro/fields/class-acf-field-flexible-content.php:639
+msgid "Max"
+msgstr "Max"
+
+#: pro/fields/class-acf-field-flexible-content.php:666
+#: pro/fields/class-acf-field-repeater.php:460
+msgid "Button Label"
+msgstr "Knappetikett"
+
+#: pro/fields/class-acf-field-flexible-content.php:675
+msgid "Minimum Layouts"
+msgstr "Lägsta tillåtna antal layouter"
+
+#: pro/fields/class-acf-field-flexible-content.php:684
+msgid "Maximum Layouts"
+msgstr "Högsta tillåtna antal layouter"
+
+#: pro/fields/class-acf-field-gallery.php:73
+msgid "Add Image to Gallery"
+msgstr "Lägg till bild i galleriet"
+
+#: pro/fields/class-acf-field-gallery.php:74
+msgid "Maximum selection reached"
+msgstr "Högsta tillåtna antal val uppnått"
+
+#: pro/fields/class-acf-field-gallery.php:319
+msgid "Length"
+msgstr "Längd"
+
+#: pro/fields/class-acf-field-gallery.php:359
+msgid "Caption"
+msgstr "Bildtext"
+
+#: pro/fields/class-acf-field-gallery.php:368
+msgid "Alt Text"
+msgstr "Alternativ text"
+
+#: pro/fields/class-acf-field-gallery.php:484
+msgid "Add to gallery"
+msgstr "Lägg till i galleri"
+
+#: pro/fields/class-acf-field-gallery.php:488
+msgid "Bulk actions"
+msgstr "Massåtgärder"
+
+#: pro/fields/class-acf-field-gallery.php:489
+msgid "Sort by date uploaded"
+msgstr "Sortera efter uppladdningsdatum"
+
+#: pro/fields/class-acf-field-gallery.php:490
+msgid "Sort by date modified"
+msgstr "Sortera efter redigeringsdatum"
+
+#: pro/fields/class-acf-field-gallery.php:491
+msgid "Sort by title"
+msgstr "Sortera efter rubrik"
+
+#: pro/fields/class-acf-field-gallery.php:492
+msgid "Reverse current order"
+msgstr "Omvänd nuvarande ordning"
+
+#: pro/fields/class-acf-field-gallery.php:504
+msgid "Close"
+msgstr "Stäng"
+
+#: pro/fields/class-acf-field-gallery.php:577
+msgid "Insert"
+msgstr "Infoga"
+
+#: pro/fields/class-acf-field-gallery.php:578
+msgid "Specify where new attachments are added"
+msgstr "Specifiera var nya bilagor läggs till"
+
+#: pro/fields/class-acf-field-gallery.php:582
+msgid "Append to the end"
+msgstr "Lägg till i slutet"
+
+#: pro/fields/class-acf-field-gallery.php:583
+msgid "Prepend to the beginning"
+msgstr "Lägg till början"
+
+#: pro/fields/class-acf-field-gallery.php:602
+msgid "Minimum Selection"
+msgstr "Minsta tillåtna antal val"
+
+#: pro/fields/class-acf-field-gallery.php:610
+msgid "Maximum Selection"
+msgstr "Högsta tillåtna antal val"
+
+#: pro/fields/class-acf-field-repeater.php:65
+#: pro/fields/class-acf-field-repeater.php:657
+msgid "Minimum rows reached ({min} rows)"
+msgstr "Minsta tillåtna antal rader uppnått ({min} rader)"
+
+#: pro/fields/class-acf-field-repeater.php:66
+msgid "Maximum rows reached ({max} rows)"
+msgstr "Högsta tillåtna antal rader uppnått ({max} rader)"
+
+#: pro/fields/class-acf-field-repeater.php:333
+msgid "Add row"
+msgstr "Lägg till rad"
+
+#: pro/fields/class-acf-field-repeater.php:334
+msgid "Duplicate row"
+msgstr "Duplicera rad"
+
+#: pro/fields/class-acf-field-repeater.php:335
+msgid "Remove row"
+msgstr "Ta bort rad"
+
+#: pro/fields/class-acf-field-repeater.php:413
+msgid "Collapsed"
+msgstr "Ihopfälld"
+
+#: pro/fields/class-acf-field-repeater.php:414
+msgid "Select a sub field to show when row is collapsed"
+msgstr "Välj ett underfält att visa när raden är ihopfälld"
+
+#: pro/fields/class-acf-field-repeater.php:424
+msgid "Minimum Rows"
+msgstr "Minsta tillåtna antal rader"
+
+#: pro/fields/class-acf-field-repeater.php:434
+msgid "Maximum Rows"
+msgstr "Högsta tillåtna antal rader"
+
+#: pro/locations/class-acf-location-block.php:69
+msgid "No block types exist"
+msgstr "Det finns inga blocktyper"
+
+#: pro/locations/class-acf-location-options-page.php:68
+msgid "No options pages exist"
+msgstr "Det finns inga alternativsidor"
+
+#: pro/options-page.php:74
+msgid "Options Updated"
+msgstr "Alternativ uppdaterade"
+
+#: pro/updates.php:97
+#, php-format
+msgid ""
+"To enable updates, please enter your license key on the <a href=\"%s"
+"\">Updates</a> page. If you don't have a licence key, please see <a href=\"%s"
+"\">details & pricing</a>."
+msgstr ""
+"För att aktivera uppdateringar, fyll i din licensnyckel på sidan <a href=\"%s"
+"\">uppdateringar</a>. Om du inte har en licensnyckel, gå till sidan <a href="
+"\"%s\">detaljer och priser</a>."
+
 #. Plugin URI of the plugin/theme
 #. Author URI of the plugin/theme
 msgid "https://www.advancedcustomfields.com"
@@ -2750,9 +3223,6 @@ msgstr "Elliot Condon"
 
 #~ msgid "Status"
 #~ msgstr "Status"
-
-#~ msgid "Changelog"
-#~ msgstr "Ändringslogg"
 
 #, php-format
 #~ msgid "See what's new in <a href=\"%s\">version %s</a>."
@@ -3084,282 +3554,14 @@ msgstr "Elliot Condon"
 #~ msgid "Taxonomy Term"
 #~ msgstr "Taxonomivärde"
 
-#~ msgid "Advanced Custom Fields PRO"
-#~ msgstr "Advanced Custom Fields PRO"
-
-#~ msgid "Publish"
-#~ msgstr "Publicera"
-
-#, php-format
-#~ msgid ""
-#~ "No Custom Field Groups found for this options page. <a href=\"%s\">Create "
-#~ "a Custom Field Group</a>"
-#~ msgstr ""
-#~ "Inga fältgrupper hittades för denna inställningssida. <a href=\"%s"
-#~ "\">Skapa en fältgrupp</a>"
-
-#~ msgid "<b>Error</b>. Could not connect to update server"
-#~ msgstr "<b>Fel</b>. Kunde inte ansluta till uppdateringsservern"
-
-#~ msgid "Updates"
-#~ msgstr "Uppdateringar"
-
-#~ msgid "Deactivate License"
-#~ msgstr "Inaktivera licens"
-
-#~ msgid "Activate License"
-#~ msgstr "Aktivera licens"
-
-#~ msgid "License Information"
-#~ msgstr "Licensinformation"
-
-#, php-format
-#~ msgid ""
-#~ "To unlock updates, please enter your license key below. If you don't have "
-#~ "a licence key, please see <a href=\"%s\" target=\"_blank\">details & "
-#~ "pricing</a>."
-#~ msgstr ""
-#~ "För att låsa upp uppdateringar, fyll i din licensnyckel här nedan. Om du "
-#~ "inte har en licensnyckel, gå till sidan <a href=\"%s\">detaljer och "
-#~ "priser</a>."
-
-#~ msgid "License Key"
-#~ msgstr "Licensnyckel"
-
-#~ msgid "Current Version"
-#~ msgstr "Nuvarande version"
-
-#~ msgid "Latest Version"
-#~ msgstr "Senaste version"
-
-#~ msgid "Update Available"
-#~ msgstr "Uppdatering tillgänglig"
-
-#~ msgid "Update Plugin"
-#~ msgstr "Uppdatera tillägg"
-
-#~ msgid "Please enter your license key above to unlock updates"
-#~ msgstr "Fyll i din licensnyckel här ovan för att låsa upp uppdateringar"
-
-#~ msgid "Check Again"
-#~ msgstr "Kontrollera igen"
-
-#~ msgid "Upgrade Notice"
-#~ msgstr "Uppgraderingsnotering"
-
-#~ msgctxt "noun"
-#~ msgid "Clone"
-#~ msgstr "Klon"
-
-#~ msgid "Select one or more fields you wish to clone"
-#~ msgstr "Välj ett eller flera fält som du vill klona"
-
-#~ msgid "Display"
-#~ msgstr "Visning"
-
-#~ msgid "Specify the style used to render the clone field"
-#~ msgstr ""
-#~ "Specificera stilen som ska användas för att rendera det klonade fältet"
-
-#~ msgid "Group (displays selected fields in a group within this field)"
-#~ msgstr "Grupp (visar valda fält i en grupp i detta fält)"
-
-#~ msgid "Seamless (replaces this field with selected fields)"
-#~ msgstr "Sömlös (ersätter detta fält med valda fält)"
-
-#, php-format
-#~ msgid "Labels will be displayed as %s"
-#~ msgstr "Etiketter kommer att visas som %s"
-
-#~ msgid "Prefix Field Labels"
-#~ msgstr "Prefix för fältetiketter"
-
-#, php-format
-#~ msgid "Values will be saved as %s"
-#~ msgstr "Värden sparas som %s"
-
-#~ msgid "Prefix Field Names"
-#~ msgstr "Prefix för fältnamn"
-
-#~ msgid "Unknown field"
-#~ msgstr "Okänt fält"
-
-#~ msgid "Unknown field group"
-#~ msgstr "Okänd fältgrupp"
-
-#, php-format
-#~ msgid "All fields from %s field group"
-#~ msgstr "Alla fält från %s fältgrupp"
-
-#~ msgid "Add Row"
-#~ msgstr "Lägg till rad"
-
-#~ msgid "layout"
-#~ msgstr "layout"
-
-#~ msgid "layouts"
-#~ msgstr "layouter"
-
 #~ msgid "remove {layout}?"
 #~ msgstr "ta bort {layout}?"
 
 #~ msgid "This field requires at least {min} {identifier}"
 #~ msgstr "Detta fält kräver minst {min} {identifier}"
 
-#~ msgid "This field has a limit of {max} {identifier}"
-#~ msgstr "Detta fält har en gräns på {max} {identifier}"
-
-#~ msgid "This field requires at least {min} {label} {identifier}"
-#~ msgstr "Detta fält kräver minst {min} {label} {identifier}"
-
 #~ msgid "Maximum {label} limit reached ({max} {identifier})"
 #~ msgstr "Maximal {label} gräns nåtts ({max} {identifier})"
-
-#~ msgid "{available} {label} {identifier} available (max {max})"
-#~ msgstr "{available} {label} {identifier} tillgänglig (max {max})"
-
-#~ msgid "{required} {label} {identifier} required (min {min})"
-#~ msgstr "{required} {label} {identifier} krävs (min {min})"
-
-#~ msgid "Flexible Content requires at least 1 layout"
-#~ msgstr "Flexibelt innehåll kräver minst 1 layout"
-
-#, php-format
-#~ msgid "Click the \"%s\" button below to start creating your layout"
-#~ msgstr "Klicka på knappen ”%s” nedan för att börja skapa din layout"
-
-#~ msgid "Add layout"
-#~ msgstr "Lägg till layout"
-
-#~ msgid "Remove layout"
-#~ msgstr "Ta bort layout"
-
-#~ msgid "Click to toggle"
-#~ msgstr "Klicka för att växla"
-
-#~ msgid "Reorder Layout"
-#~ msgstr "Ändra layoutens ordning"
-
-#~ msgid "Reorder"
-#~ msgstr "Ändra ordning"
-
-#~ msgid "Delete Layout"
-#~ msgstr "Ta bort layout"
-
-#~ msgid "Duplicate Layout"
-#~ msgstr "Duplicera layout"
-
-#~ msgid "Add New Layout"
-#~ msgstr "Lägg till ny layout"
-
-#~ msgid "Min"
-#~ msgstr "Min"
-
-#~ msgid "Max"
-#~ msgstr "Max"
-
-#~ msgid "Button Label"
-#~ msgstr "Knappetikett"
-
-#~ msgid "Minimum Layouts"
-#~ msgstr "Lägsta tillåtna antal layouter"
-
-#~ msgid "Maximum Layouts"
-#~ msgstr "Högsta tillåtna antal layouter"
-
-#~ msgid "Add Image to Gallery"
-#~ msgstr "Lägg till bild i galleriet"
-
-#~ msgid "Maximum selection reached"
-#~ msgstr "Högsta tillåtna antal val uppnått"
-
-#~ msgid "Length"
-#~ msgstr "Längd"
-
-#~ msgid "Caption"
-#~ msgstr "Bildtext"
-
-#~ msgid "Alt Text"
-#~ msgstr "Alternativ text"
-
-#~ msgid "Add to gallery"
-#~ msgstr "Lägg till i galleri"
-
-#~ msgid "Bulk actions"
-#~ msgstr "Massåtgärder"
-
-#~ msgid "Sort by date uploaded"
-#~ msgstr "Sortera efter uppladdningsdatum"
-
-#~ msgid "Sort by date modified"
-#~ msgstr "Sortera efter redigeringsdatum"
-
-#~ msgid "Sort by title"
-#~ msgstr "Sortera efter rubrik"
-
-#~ msgid "Reverse current order"
-#~ msgstr "Omvänd nuvarande ordning"
-
-#~ msgid "Close"
-#~ msgstr "Stäng"
-
-#~ msgid "Minimum Selection"
-#~ msgstr "Minsta tillåtna antal val"
-
-#~ msgid "Maximum Selection"
-#~ msgstr "Högsta tillåtna antal val"
-
-#~ msgid "Insert"
-#~ msgstr "Infoga"
-
-#~ msgid "Specify where new attachments are added"
-#~ msgstr "Specifiera var nya bilagor läggs till"
-
-#~ msgid "Append to the end"
-#~ msgstr "Lägg till i slutet"
-
-#~ msgid "Prepend to the beginning"
-#~ msgstr "Lägg till början"
-
-#~ msgid "Minimum rows reached ({min} rows)"
-#~ msgstr "Minsta tillåtna antal rader uppnått ({min} rader)"
-
-#~ msgid "Maximum rows reached ({max} rows)"
-#~ msgstr "Högsta tillåtna antal rader uppnått ({max} rader)"
-
-#~ msgid "Add row"
-#~ msgstr "Lägg till rad"
-
-#~ msgid "Remove row"
-#~ msgstr "Ta bort rad"
-
-#~ msgid "Collapsed"
-#~ msgstr "Ihopfälld"
-
-#~ msgid "Select a sub field to show when row is collapsed"
-#~ msgstr "Välj ett underfält att visa när raden är ihopfälld"
-
-#~ msgid "Minimum Rows"
-#~ msgstr "Minsta tillåtna antal rader"
-
-#~ msgid "Maximum Rows"
-#~ msgstr "Högsta tillåtna antal rader"
-
-#~ msgid "No options pages exist"
-#~ msgstr "Det finns inga alternativsidor"
-
-#~ msgid "Options Updated"
-#~ msgstr "Alternativ uppdaterade"
-
-#, php-format
-#~ msgid ""
-#~ "To enable updates, please enter your license key on the <a href=\"%s"
-#~ "\">Updates</a> page. If you don't have a licence key, please see <a href="
-#~ "\"%s\">details & pricing</a>."
-#~ msgstr ""
-#~ "För att aktivera uppdateringar, fyll i din licensnyckel på sidan <a href="
-#~ "\"%s\">uppdateringar</a>. Om du inte har en licensnyckel, gå till sidan "
-#~ "<a href=\"%s\">detaljer och priser</a>."
 
 #~ msgid "http://www.elliotcondon.com/"
 #~ msgstr "http://www.elliotcondon.com/"
