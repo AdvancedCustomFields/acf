@@ -107,7 +107,7 @@ function the_field( $selector, $post_id = false, $format_value = true ) {
 *  @return	$field (array)
 */
 
-function get_field_object( $selector, $post_id = false, $format_value = true, $load_value = true ) {
+function get_field_object( $selector, $post_id = false, $format_value = true, $load_value = true, $strict = true ) {
 	
 	// compatibilty
 	if( is_array($format_value) ) extract( $format_value );
@@ -118,7 +118,7 @@ function get_field_object( $selector, $post_id = false, $format_value = true, $l
 	
 	
 	// get field key
-	$field = acf_maybe_get_field( $selector, $post_id );
+	$field = acf_maybe_get_field( $selector, $post_id, $strict );
 	
 	
 	// bail early if no field found
