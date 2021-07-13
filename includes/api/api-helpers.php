@@ -3181,6 +3181,11 @@ function acf_get_attachment( $attachment ) {
 				$sizes_id = $featured_id;
 			}	
 			break;
+		case 'application':
+			if ( $subtype === 'pdf' ) {
+				$sizes_id = $attachment->ID;
+			}
+			break;
 	}
 
 	// Load array of image sizes.
