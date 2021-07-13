@@ -349,18 +349,20 @@ function acf_get_fields( $parent ) {
 	// Vars.
 	$fields = array();
 	
-	// Check local fields first.
-	if( acf_have_local_fields($parent['key']) ) {
-		$raw_fields = acf_get_local_fields( $parent['key'] );
-		foreach( $raw_fields as $raw_field ) {
-			$fields[] = acf_get_field( $raw_field['key'] );
-		}
-	
-	// Then check database.
-	} else {
-		$raw_fields = acf_get_raw_fields( $parent['ID'] );
-		foreach( $raw_fields as $raw_field ) {
-			$fields[] = acf_get_field( $raw_field['ID'] );
+	if ( isset($parent['key'], $parent['ID']) ) {
+		// Check local fields first.
+		if( acf_have_local_fields($parent['key']) ) {
+			$raw_fields = acf_get_local_fields( $parent['key'] );
+			foreach( $raw_fields as $raw_field ) {
+				$fields[] = acf_get_field( $raw_field['key'] );
+			}
+		
+		// Then check database.
+		} else {
+			$raw_fields = acf_get_raw_fields( $parent['ID'] );
+			foreach( $raw_fields as $raw_field ) {
+				$fields[] = acf_get_field( $raw_field['ID'] );
+			}
 		}
 	}
 	
