@@ -20,21 +20,20 @@ function acf_get_field( $id = 0 ) {
 	if( is_object($id) ) {
 		$id = $id->ID;
 	}
+    
+    // Check local fields first.
+	if( acf_is_local_field($id) ) {
+		return acf_get_local_field( $id );
+	}
 	
 	// Check store.
 	$store = acf_get_store( 'fields' );
 	if( $store->has( $id ) ) {
 		return $store->get( $id );
 	}
-	
-	// Check local fields first.
-	if( acf_is_local_field($id) ) {
-		$field = acf_get_local_field( $id );
-	
-	// Then check database.
-	} else {
-		$field = acf_get_raw_field( $id );
-	}
+    
+    // Then check database.
+    $field = acf_get_raw_field( $id );
 	
 	// Bail early if no field.
 	if( !$field ) {

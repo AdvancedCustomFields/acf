@@ -279,7 +279,25 @@ function acf_add_local_fields( $fields = array() ) {
 	
 	// Add each field.
 	foreach( $fields as $field ) {
+        
+        // Validate field.
+        $field = acf_validate_field( $field );
+        
+        // Set input prefix.
+        $field['prefix'] = 'acf';
+        
+        /**
+         * Filters the $field array after it has been loaded.
+         *
+         * @date	12/02/2014
+         * @since	5.0.0
+         *
+         * @param	array The field array.
+         */
+        $field = apply_filters( "acf/load_field", $field );
+        
 		acf_add_local_field( $field, true );
+        
 	}
 }
 
