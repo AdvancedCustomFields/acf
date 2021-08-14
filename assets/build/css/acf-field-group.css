@@ -279,7 +279,7 @@
 .rule-groups .rule-group tr:hover td.remove a {
   visibility: visible;
 }
-.rule-groups .rule-group:first-child tr:first-child td.remove a {
+.rule-groups:not(.rule-groups-multiple) .rule-group:first-child tr:first-child td.remove a {
   visibility: hidden !important;
 }
 .rule-groups .rule-group select:empty {
