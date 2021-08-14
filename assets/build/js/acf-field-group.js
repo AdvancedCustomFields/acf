@@ -2166,6 +2166,8 @@
 		
 		initialize: function(){
 			this.$el = $('#acf-field-group-locations');
+			
+			this.updateGroupsClass();
 		},
 		
 		onClickAddRule: function( e, $el ){
@@ -2186,6 +2188,8 @@
 		
 		addRule: function( $tr ){
 			acf.duplicate( $tr );
+			
+			this.updateGroupsClass();
 		},
 		
 		removeRule: function( $tr ){
@@ -2194,6 +2198,8 @@
 			} else {
 				$tr.remove();
 			}
+			
+			this.updateGroupsClass();
 		},
 		
 		changeRule: function( $rule ){
@@ -2238,6 +2244,24 @@
 			
 			// remove all tr's except the first one
 			$group2.find('tr').not(':first').remove();
+			
+			this.updateGroupsClass();
+		},
+
+		updateGroupsClass: function () {
+
+			var $group = this.$('.rule-group:last');
+
+			var $ruleGroups = $group.closest('.rule-groups');
+
+			var rows_count = $ruleGroups.find('.acf-table tr').length;
+
+			if(rows_count > 1){
+				$ruleGroups.addClass('rule-groups-multiple');
+			}
+			else {
+				$ruleGroups.removeClass('rule-groups-multiple');
+			}
 		}
 	});
 	
