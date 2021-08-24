@@ -7,6 +7,8 @@
 *  There is a 3rd parameter to turn on/off formating. This means that an image field will not use 
 *  its 'return option' to format the value but return only what was saved in the database
 *
+*  When getting fields for a specific taxonomy term, make $post_id a WP_Term object.
+*
 *  @type	function
 *  @since	3.6
 *  @date	29/01/13
@@ -254,6 +256,8 @@ function acf_maybe_get_sub_field( $selectors, $post_id = false, $strict = true )
 *  This function will return an array containing all the custom field values for a specific post_id.
 *  The function is not very elegant and wastes a lot of PHP memory / SQL queries if you are not using all the values.
 *
+*  When getting fields for a specific taxonomy term, make $post_id a WP_Term object.
+*
 *  @type	function
 *  @since	3.6
 *  @date	29/01/13
@@ -293,6 +297,8 @@ function get_fields( $post_id = false, $format_value = true ) {
 *
 *  This function will return an array containing all the custom field objects for a specific post_id.
 *  The function is not very elegant and wastes a lot of PHP memory / SQL queries if you are not using all the fields / values.
+*
+*  When getting fields for a specific taxonomy term, make $post_id a WP_Term object.
 *
 *  @type	function
 *  @since	3.6
