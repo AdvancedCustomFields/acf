@@ -4,7 +4,7 @@ Tags: acf, fields, custom fields, meta, repeater
 Requires at least: 4.7
 Tested up to: 5.8
 Requires PHP: 5.6
-Stable tag: 5.10
+Stable tag: 5.10.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -75,6 +75,11 @@ From your WordPress dashboard
 
 
 == Changelog ==
+
+= 5.10.1 =
+*Release Date - 26 August 2021*
+
+* Fix - Fixed conflict with WooCommerce loading SelectWoo which is not directly compatible with Select2.
 
 = 5.10 =
 *Release Date - 25 August 2021*

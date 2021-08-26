@@ -7729,13 +7729,22 @@
 				placeholder:		this.get('placeholder'),
 				multiple:			this.get('multiple'),
 				data:				[],
-				templateSelection:	function( selection ){
+			};
+
+
+			if ( acf.isset(window, 'jQuery', 'fn', 'selectWoo') ) {
+				// SelectWoo is loaded, use legacy escaping as returning a jQuery object is not supported.
+				options.escapeMarkup = function( string ) { 
+					return acf.escHtml( string ); 
+				};
+			} else {
+				options.templateSelection = function( selection ) {
 					var $selection = $('<span class="acf-selection"></span>');
 					$selection.text( acf.escHtml( selection.text ) );
 					$selection.data('element', selection.element);
 					return $selection;
-				}
-			};
+				};
+			}
 			
 			// multiple
 			if( options.multiple ) {
@@ -7792,7 +7801,11 @@
 			            $ul.find('.select2-selection__choice').each(function() {
 				            
 				            // vars
-							var $option = $( $(this).children('span.acf-selection').data('element') );
+							if ( $(this).data('data') ) {
+								var $option = $( $(this).data('data').element );
+							} else {
+								var $option = $( $(this).children('span.acf-selection').data('element') );
+							}
 							
 							// detach and re-append to end
 							$option.detach().appendTo( $select );
