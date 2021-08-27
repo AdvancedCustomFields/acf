@@ -156,7 +156,7 @@ function get_field_object( $selector, $post_id = false, $format_value = true, $l
 *  @param   $strict (boolean) if true, return a field only when a field key is found.
 *  @return  $field (array)
 */
-function acf_maybe_get_field( $selector, $post_id = false, $strict = true ) {
+function acf_maybe_get_field( $selector, $post_id = false, $strict = false ) {
 
 	// init
 	acf_init();
