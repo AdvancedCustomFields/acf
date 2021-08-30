@@ -6716,6 +6716,10 @@
 						if( selected && selected.indexOf(attributes.id) > -1 ) {
 							this.$el.addClass('acf-selected');
 						}
+					} else {
+						
+						// remove errors
+						attributes.acf_errors = false;
 					}
 										
 					// render
