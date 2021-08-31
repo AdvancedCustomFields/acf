@@ -164,7 +164,7 @@ if ( ! class_exists( 'acf_field_color_picker' ) ) :
 			acf_render_field_setting(
 				$field,
 				array(
-					'label'        => __( 'Enable Opacity?', 'acf' ),
+					'label'        => __( 'Enable Transparency', 'acf' ),
 					'instructions' => '',
 					'type'         => 'true_false',
 					'name'         => 'enable_opacity',

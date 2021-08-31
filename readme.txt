@@ -4,7 +4,7 @@ Tags: acf, fields, custom fields, meta, repeater
 Requires at least: 4.7
 Tested up to: 5.8
 Requires PHP: 5.6
-Stable tag: 5.10.1
+Stable tag: 5.10.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -75,6 +75,16 @@ From your WordPress dashboard
 
 
 == Changelog ==
+
+= 5.10.2 =
+*Release Date - 31 August 2021*
+
+* Fix - Fixed block duplication issues which created blocks with duplicate block IDs
+* Fix - Fixed an issue with ACF errors displaying in the media library outside of ACF fields
+* Fix - Changed label of "Enable Opacity?" to "Allow transparency" in the colour picker
+* Fix - Revert "style" attributes of ACF Blocks to 5.9.x behaviour for template compatibility
+* Fix - Allow safe HTML inside select2 field labels
+* Fix - Don't render the "acf-block-preview" div when preloading blocks in edit mode
 
 = 5.10.1 =
 *Release Date - 26 August 2021*

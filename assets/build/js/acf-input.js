@@ -7729,21 +7729,24 @@
 				placeholder:		this.get('placeholder'),
 				multiple:			this.get('multiple'),
 				data:				[],
+				escapeMarkup:		function( markup ) {
+					if (typeof markup !== 'string') {
+						return markup;
+					}
+					return acf.escHtml( markup ); 
+				}
 			};
 
+			// Only use the template if SelectWoo is not loaded to work around https://github.com/woocommerce/woocommerce/pull/30473
+			if ( ! acf.isset(window, 'jQuery', 'fn', 'selectWoo') ) {
 
-			if ( acf.isset(window, 'jQuery', 'fn', 'selectWoo') ) {
-				// SelectWoo is loaded, use legacy escaping as returning a jQuery object is not supported.
-				options.escapeMarkup = function( string ) { 
-					return acf.escHtml( string ); 
-				};
-			} else {
 				options.templateSelection = function( selection ) {
 					var $selection = $('<span class="acf-selection"></span>');
-					$selection.text( acf.escHtml( selection.text ) );
+					$selection.html( acf.escHtml( selection.text ) );
 					$selection.data('element', selection.element);
 					return $selection;
 				};
+
 			}
 			
 			// multiple
@@ -7800,7 +7803,7 @@
 			            // loop
 			            $ul.find('.select2-selection__choice').each(function() {
 				            
-				            // vars
+				            // Attempt to use .data if it exists (select2 version < 4.0.6) or use our template data instead.
 							if ( $(this).data('data') ) {
 								var $option = $( $(this).data('data').element );
 							} else {

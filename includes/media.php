@@ -170,7 +170,25 @@ if ( ! class_exists( 'ACF_Media' ) ) :
 			if ( $this->get_source_field() ) {
 				add_filter( 'wp_prepare_attachment_for_js', array( $this, 'wp_prepare_attachment_for_js' ), 10, 3 );
 				add_filter( 'image_size_names_choose', array( $this, 'image_size_names_choose' ), 10, 1 );
+			} else {
+				add_filter( 'wp_prepare_attachment_for_js', array( $this, 'clear_acf_errors_for_core_requests' ), 5, 3 );
 			}
+		}
+
+		/**
+		 * Append acf_errors false for non-acf media library calls to prevent media library caching.
+		 *
+		 * @date    31/8/21
+		 * @since   5.10.2
+		 *
+		 * @param   array       $response Array of prepared attachment data.
+		 * @param   WP_Post     $attachment Attachment object.
+		 * @param   array|false $meta Array of attachment meta data, or false if there is none.
+		 * @return  array
+		 */
+		function clear_acf_errors_for_core_requests( $response, $attachment, $meta ) {
+			$response['acf_errors'] = false;
+			return $response;
 		}
 
 		/**
