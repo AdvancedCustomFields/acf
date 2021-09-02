@@ -5629,6 +5629,9 @@
 			if( val instanceof Array ) {
 				val = val.length;
 			}
+			if( val === undefined || val === null || val === false ) {
+				return true;
+			}
 			return isLessThan( val, rule.value );
 		},
 		choices: function( fieldObject ){
