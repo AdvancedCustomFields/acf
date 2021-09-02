@@ -5289,7 +5289,11 @@
 		label: __('Has any value'),
 		fieldTypes: [ 'text', 'textarea', 'number', 'range', 'email', 'url', 'password', 'image', 'file', 'wysiwyg', 'oembed', 'select', 'checkbox', 'radio', 'button_group', 'link', 'post_object', 'page_link', 'relationship', 'taxonomy', 'user', 'google_map', 'date_picker', 'date_time_picker', 'time_picker', 'color_picker' ],
 		match: function( rule, field ){
-			return (field.val() ? true : false);
+			var val = field.val();
+			if( val instanceof Array ) {
+				val = val.length;
+			}
+			return (val ? true : false);
 		},
 		choices: function( fieldObject ){
 			return '<input type="text" disabled="" />';
