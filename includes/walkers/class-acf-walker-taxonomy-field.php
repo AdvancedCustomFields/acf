@@ -94,6 +94,7 @@ if ( ! class_exists( 'ACF_Taxonomy_Field_Walker' ) ) :
 		 * @param int     $id       ID of the current term.
 		 */
 		public function start_el( &$output, $term, $depth = 0, $args = array(), $id = 0 ) {
+			$term->term_id = (int) $term->term_id;
 			$is_selected = in_array( $term->term_id, $this->field['value'] );
 
 			// Generate array of checkbox input attributes.
@@ -106,7 +107,7 @@ if ( ! class_exists( 'ACF_Taxonomy_Field_Walker' ) ) :
 				$input_attrs['checked'] = true;
 			}
 
-			$output .= "\n" . '<li data-id="' . esc_attr( $term->term_id ) . '">' .
+			$output .= "\n" . '<li data-id="' . $term->term_id  . '">' .
 			'<label' . ( $is_selected ? ' class="selected"' : '' ) . '>' .
 				'<input ' . acf_esc_attrs( $input_attrs ) . '/> ' .
 				'<span>' . acf_esc_html( $term->name ) . '</span>' .
