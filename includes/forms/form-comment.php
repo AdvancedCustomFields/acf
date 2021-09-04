@@ -209,7 +209,7 @@ if ( ! class_exists( 'acf_form_comment' ) ) :
 			global $post;
 
 			// vars
-			$post_id = false;
+			$post_id = $post->ID;;
 
 			// get field groups
 			$field_groups = acf_get_field_groups(
