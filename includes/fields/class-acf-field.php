@@ -1,8 +1,8 @@
 <?php
 
-if ( ! class_exists( 'acf_field' ) ) :
+if ( ! class_exists( 'ACF_Field' ) ) :
 
-	class acf_field {
+	class ACF_Field {
 
 		// vars
 		var $name = '',
