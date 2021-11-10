@@ -66,11 +66,27 @@ function acf_get_value( $post_id, $field ) {
 		return $store->get( "$post_id:$field_name" );
 	}
 
+	/**
+	 * If we still don't have a field, try a last-ditch effort to get it by name.
+	 * We don't do this by default in `get_field()`, which uses "strict" mode internally
+	 * to protect against multiple fields with same name.
+	 */
+	$strict = true;
+	if ( empty( $field['type'] ) && empty( $field['key'] ) ) {
+		$field  = acf_get_field( $field_name );
+		$strict = false;
+	}
+
+	// At least we tried.
+	if ( ! $field ) {
+		return null;
+	}
+
 	// Load value from database.
 	$value = acf_get_metadata( $post_id, $field_name );
 
 	// Use field's default_value if no meta was found.
-	if ( $value === null && isset( $field['default_value'] ) ) {
+	if ( $value === null && isset( $field['default_value'] ) && $strict ) {
 		$value = $field['default_value'];
 	}
 
