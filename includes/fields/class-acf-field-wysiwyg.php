@@ -428,12 +428,15 @@ if ( ! class_exists( 'acf_field_wysiwyg' ) ) :
 				return $value;
 
 			}
+			
+			if ( is_string( $value ) ) {
 
-			// apply filters
-			$value = apply_filters( 'acf_the_content', $value );
+				// apply filters
+				$value = apply_filters( 'acf_the_content', $value );
 
-			// follow the_content function in /wp-includes/post-template.php
-			$value = str_replace( ']]>', ']]&gt;', $value );
+				// follow the_content function in /wp-includes/post-template.php
+				$value = str_replace( ']]>', ']]&gt;', $value );
+			}
 
 			return $value;
 		}
