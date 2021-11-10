@@ -79,6 +79,7 @@ From your WordPress dashboard
 = 5.11 =
 *Release Date - 10 November 2021*
 
+* [View Release Post](https://www.advancedcustomfields.com/blog/acf-5-11-release-rest-api/)
 * New - Fields can now be viewed and updated with the WordPress REST API (props @mishterk)
 * New - License key can now be defined in code with the "ACF_PRO_LICENSE" constant
 * Enhancement - Improved error handling for expired or deactivated licenses
