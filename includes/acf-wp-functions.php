@@ -237,16 +237,17 @@ function acf_get_object_type_rest_base( $type_object ) {
  * Extract the ID of a given object/array. This supports all expected types handled by our update_fields() and
  * load_fields() callbacks.
  *
- * @param WP_Post|WP_User|WP_Term|array $object
+ * @param WP_Comment|WP_Post|WP_User|WP_Term|array $object
  * @return int|mixed|null
  */
 function acf_get_object_id( $object ) {
 	if ( is_object( $object ) ) {
 		switch ( get_class( $object ) ) {
+			case WP_Comment::class:
+				return (int) $object->comment_ID;
 			case WP_User::class:
 			case WP_Post::class:
 				return (int) $object->ID;
-
 			case WP_Term::class:
 				return (int) $object->term_id;
 		}
