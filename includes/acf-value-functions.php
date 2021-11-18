@@ -72,6 +72,8 @@ function acf_get_value( $post_id, $field ) {
 	 * to protect against multiple fields with same name.
 	 */
 	$strict = true;
+	$_field = $field;
+
 	if ( empty( $field['type'] ) && empty( $field['key'] ) ) {
 		$field  = acf_get_field( $field_name );
 		$strict = false;
@@ -79,7 +81,29 @@ function acf_get_value( $post_id, $field ) {
 
 	// At least we tried.
 	if ( ! $field ) {
-		return null;
+		// If ACF was initialized before init, show a notice and log the error unless told otherwise.
+		if ( ! did_action( 'init' ) && apply_filters( 'acf/admin/show_early_init_notice', true ) ) {
+			$error_text = sprintf(
+				__( '<strong>%1$s</strong> - We\'ve detected one or more calls to retrieve ACF field values before ACF has been initialized, resulting in missing data. <a href="%2$s" target="_blank">Learn how to fix this</a>.', 'acf'),
+				acf_get_setting( 'name' ),
+				'https://www.advancedcustomfields.com/resources/acf-field-functions/'
+			);
+
+			_doing_it_wrong( __FUNCTION__, $error_text, '5.11.1' );
+			set_site_transient( 'acf_early_init_notice', $error_text );
+		}
+
+		/**
+		 * Filters the $value after it has been loaded.
+		 *
+		 * @date    28/09/13
+		 * @since   5.0.0
+		 *
+		 * @param mixed  $value   The value to preview.
+		 * @param string $post_id The post ID for this value.
+		 * @param array  $field   The field array.
+		 */
+		return apply_filters( 'acf/load_value', null, $post_id, $_field );
 	}
 
 	// Load value from database.

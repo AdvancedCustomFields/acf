@@ -4,7 +4,7 @@ Tags: acf, fields, custom fields, meta, repeater
 Requires at least: 4.7
 Tested up to: 5.8.1
 Requires PHP: 5.6
-Stable tag: 5.11
+Stable tag: 5.11.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -75,6 +75,15 @@ From your WordPress dashboard
 
 
 == Changelog ==
+
+= 5.11.1 =
+*Release Date - 18 November 2021*
+
+* Enhancement - Added "acf/admin/license_key_constant_message" filter to allow changing of the "Your license key is defined in wp-config.php" message
+* Fix - Added warning for when get_field() or similar functions are called before ACF has initialized. [Learn more](https://www.advancedcustomfields.com/resources/acf-field-functions/)
+* Fix - Fixed fields not appearing on user REST API endpoints if their field group location was set to a user form other than "all"
+* Fix - Fixed warning in REST API if a custom field type did not have the "show_in_rest" property
+* Fix - Fixed an error that could occur if value of WYSIWYG field was not a string
 
 = 5.11 =
 *Release Date - 10 November 2021*

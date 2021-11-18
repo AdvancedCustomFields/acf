@@ -456,8 +456,8 @@ class ACF_Rest_Api {
 		switch ( $object_type ) {
 			case 'user':
 				$args = array(
-					'user_form' => 'all',
 					'user_id'   => $object_id,
+					'rest'      => true,
 				);
 				break;
 			case 'term':
@@ -498,7 +498,8 @@ class ACF_Rest_Api {
 		$fields = array_filter(
 			acf_get_fields( $field_group ),
 			function ( $field ) {
-				return (bool) acf_get_field_type( $field['type'] )->show_in_rest;
+				$field_type = acf_get_field_type( $field['type'] );
+				return isset( $field_type->show_in_rest ) && $field_type->show_in_rest;
 			}
 		);
 
