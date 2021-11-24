@@ -65,9 +65,7 @@
      */
 
 
-    function
-      /* action, arg1, arg2, ... */
-    doAction() {
+    function doAction() {
       var args = Array.prototype.slice.call(arguments);
       var action = args.shift();
 
@@ -117,9 +115,7 @@
      */
 
 
-    function
-      /* filter, filtered arg, arg2, ... */
-    applyFilters() {
+    function applyFilters() {
       var args = Array.prototype.slice.call(arguments);
       var filter = args.shift();
 

@@ -62,9 +62,13 @@ function acf_get_value( $post_id, $field ) {
 
 	// If we still don't have a proper field array, the field doesn't exist currently.
 	if ( empty( $field['type'] ) && empty( $field['key'] ) ) {
-		if ( apply_filters( 'acf/prevent_access_to_unknown_fields', false ) ) {
+		//  Get field ID & type.
+		$decoded = acf_decode_post_id( $post_id );
+
+		if ( apply_filters( 'acf/prevent_access_to_unknown_fields', false ) || ( 'option' === $decoded['type'] && 'options' !== $decoded['id'] ) ) {
 			return null;
 		}
+
 		do_action( 'acf/get_invalid_field_value', $field, __FUNCTION__ );
 	}
 

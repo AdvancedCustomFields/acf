@@ -4,7 +4,7 @@ Tags: acf, fields, custom fields, meta, repeater
 Requires at least: 4.7
 Tested up to: 5.8.1
 Requires PHP: 5.6
-Stable tag: 5.11.2
+Stable tag: 5.11.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -75,6 +75,10 @@ From your WordPress dashboard
 
 
 == Changelog ==
+
+= 5.11.3 =
+*Release Date - 24th November 2021*
+* Fix - Fixed a bug when accessing field values for options pages registered with a custom post_id
 
 = 5.11.2 =
 *Release Date - 24th November 2021*
