@@ -183,7 +183,7 @@ function acf_decode_post_id( $post_id = 0 ) {
 			break;
 		case 'option_%s':
 			$type = 'option';
-			$id   = $post_id;
+			$id   = 'options';
 			break;
 		case 'blog_%d':
 		case 'site_%d':
@@ -201,7 +201,7 @@ function acf_decode_post_id( $post_id = 0 ) {
 
 			// Treat unknown post_id format as an option.
 			$type = 'option';
-			$id   = $post_id;
+			$id   = 'options';
 			break;
 	}
 

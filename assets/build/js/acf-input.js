@@ -4722,10 +4722,10 @@
       return data;
     }
 
-    const $query_nonce = $(`#acf-${field.get('key')}-query-nonce`);
+    const query_nonce = field.get('queryNonce');
 
-    if ($query_nonce.length) {
-      data.user_query_nonce = $query_nonce.val();
+    if (query_nonce && query_nonce.length) {
+      data.user_query_nonce = query_nonce;
     }
 
     return data;
@@ -7713,6 +7713,9 @@
         allowClear: this.get('allowNull'),
         placeholder: this.get('placeholder'),
         multiple: this.get('multiple'),
+        dropdownCssClass: '-acf',
+        containerCssClass: '-acf',
+        selectionCssClass: '-acf',
         data: [],
         escapeMarkup: function (markup) {
           if (typeof markup !== 'string') {
@@ -7782,7 +7785,7 @@
               if ($(this).data('data')) {
                 var $option = $($(this).data('data').element);
               } else {
-                var $option = $($(this).children('span.acf-selection').data('element'));
+                var $option = $($(this).find('span.acf-selection').data('element'));
               } // detach and re-append to end
 
 
@@ -7999,7 +8002,10 @@
       var params = {
         term: term,
         page: page
-      }; // return
+      }; // filter
+
+      var field = this.get('field');
+      params = acf.applyFilters('select2_ajax_data', params, this.data, this.$el, field || false, this); // return
 
       return Select2.prototype.getAjaxData.apply(this, [params]);
     }

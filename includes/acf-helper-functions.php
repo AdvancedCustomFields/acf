@@ -379,7 +379,7 @@ function acf_idify( $str = '' ) {
  * @return  string
  */
 function acf_slugify( $str = '', $glue = '-' ) {
-	return str_replace( array( '_', '-', '/', ' ' ), $glue, strtolower( $str ) );
+	return str_replace( array( '_', '-', '/', ' ' ), $glue, sanitize_title( strtolower( $str ) ) );
 }
 
 /**

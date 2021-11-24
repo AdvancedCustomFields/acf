@@ -325,12 +325,7 @@ if ( ! class_exists( 'acf_field_select' ) ) :
 			}
 
 			if ( ! empty( $field['query_nonce'] ) ) {
-				acf_hidden_input(
-					array(
-						'id'    => 'acf-' . $field['key'] . '-query-nonce',
-						'value' => $field['query_nonce']
-					)
-				);
+				$select['data-query-nonce'] = $field['query_nonce'];
 			}
 
 			// append
