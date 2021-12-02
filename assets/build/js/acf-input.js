@@ -7713,9 +7713,6 @@
         allowClear: this.get('allowNull'),
         placeholder: this.get('placeholder'),
         multiple: this.get('multiple'),
-        dropdownCssClass: '-acf',
-        containerCssClass: '-acf',
-        selectionCssClass: '-acf',
         data: [],
         escapeMarkup: function (markup) {
           if (typeof markup !== 'string') {
@@ -7799,8 +7796,12 @@
         $select.on('select2:select', this.proxy(function (e) {
           this.getOption(e.params.data.id).detach().appendTo(this.$el);
         }));
-      } // add class
+      } // add handler to auto-focus searchbox (for jQuery 3.6)
 
+
+      $select.on('select2:open', () => {
+        $('.select2-container--open .select2-search__field').get(-1).focus();
+      }); // add class
 
       $container.addClass('-acf'); // Add back temporarily removed attr.
 
