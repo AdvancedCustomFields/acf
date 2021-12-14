@@ -19,17 +19,17 @@ class ACF_Rest_Api {
 	private $embed_links;
 
 	public function __construct() {
-		add_action( 'rest_api_init', array( $this, 'initialize' ) );
+		add_filter( 'rest_request_before_callbacks', array( $this, 'initialize' ), 10, 3 );
 	}
 
-	public function initialize() {
+	public function initialize( $response, $handler, $request ) {
 		if ( ! acf_get_setting( 'rest_api_enabled' ) ) {
 			return;
 		}
 
 		// Parse request and set the object for local access.
 		$this->request = new ACF_Rest_Request();
-		$this->request->parse_request();
+		$this->request->parse_request( $request );
 
 		// Register the 'acf' REST property.
 		$this->register_field();
