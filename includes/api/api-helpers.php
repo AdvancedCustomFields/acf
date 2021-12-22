@@ -3092,7 +3092,7 @@ function acf_get_truncated( $text, $length = 64 ) {
 	$the_length = strlen( $text );
 
 	// cut
-	$return = substr( $text, 0, ( $length - 3 ) );
+	$return = mb_substr( $text, 0, ( $length - 3 ) );
 
 	// ...
 	if ( $the_length > ( $length - 3 ) ) {
