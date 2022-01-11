@@ -1,6 +1,6 @@
 <?php
 
-/*
+/**
 *  get_field()
 *
 *  This function will return a custom field value for a specific field name/key + post_id.
@@ -11,10 +11,10 @@
 *  @since   3.6
 *  @date    29/01/13
 *
-*  @param   $selector (string) the field name or key
-*  @param   $post_id (mixed) the post_id of which the value is saved against
-*  @param   $format_value (boolean) whether or not to format the value as described above
-*  @return  (mixed)
+*  @param   string $selector the field name or key
+*  @param   mixed $post_id the post_id of which the value is saved against
+*  @param   bool $format_value whether or not to format the value as described above
+*  @return  mixed
 */
 
 function get_field( $selector, $post_id = false, $format_value = true ) {
@@ -58,7 +58,7 @@ function get_field( $selector, $post_id = false, $format_value = true ) {
 }
 
 
-/*
+/**
 *  the_field()
 *
 *  This function is the same as echo get_field().
@@ -67,9 +67,9 @@ function get_field( $selector, $post_id = false, $format_value = true ) {
 *  @since   1.0.3
 *  @date    29/01/13
 *
-*  @param   $selector (string) the field name or key
-*  @param   $post_id (mixed) the post_id of which the value is saved against
-*  @return  n/a
+*  @param   string $selector the field name or key
+*  @param   mixed $post_id the post_id of which the value is saved against
+*  @return  void
 */
 
 function the_field( $selector, $post_id = false, $format_value = true ) {
