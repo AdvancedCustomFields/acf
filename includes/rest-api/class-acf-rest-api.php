@@ -19,7 +19,7 @@ class ACF_Rest_Api {
 	private $embed_links;
 
 	public function __construct() {
-		add_filter( 'rest_request_before_callbacks', array( $this, 'initialize' ), 10, 3 );
+		add_filter( 'rest_pre_dispatch', array( $this, 'initialize' ), 10, 3 );
 	}
 
 	public function initialize( $response, $handler, $request ) {
