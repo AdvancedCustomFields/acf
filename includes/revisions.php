@@ -273,7 +273,7 @@ if ( ! class_exists( 'acf_revisions' ) ) :
 			}
 
 			// image
-			if ( $field['type'] == 'image' || $field['type'] == 'file' ) {
+			if ( $field &&($field['type'] == 'image' || $field['type'] == 'file' )) {
 
 				$url   = wp_get_attachment_url( $value );
 				$value = $value . ' (' . $url . ')';
