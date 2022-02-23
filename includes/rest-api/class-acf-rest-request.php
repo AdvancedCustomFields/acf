@@ -51,9 +51,9 @@ class ACF_Rest_Request {
 	/**
 	 * Determine all required information from the current request.
 	 */
-	public function parse_request() {
+	public function parse_request( $request ) {
 		$this->set_http_method();
-		$this->set_current_route();
+		$this->set_current_route( $request );
 		$this->build_supported_routes();
 		$this->set_url_params();
 		$this->set_object_types();
@@ -102,8 +102,8 @@ class ACF_Rest_Request {
 	/**
 	 * Get the current REST route as determined by WordPress.
 	 */
-	private function set_current_route() {
-		$this->current_route = empty( $GLOBALS['wp']->query_vars['rest_route'] ) ? null : $GLOBALS['wp']->query_vars['rest_route'];
+	private function set_current_route( $request ) {
+		$this->current_route = $request->get_route();
 	}
 
 	/**
@@ -147,7 +147,7 @@ class ACF_Rest_Request {
 	 * Loop through supported routes to find matching pattern. Use matching pattern to determine any URL parameters.
 	 */
 	private function set_url_params() {
-		if ( ! $this->supported_routes ) {
+		if ( ! $this->supported_routes || ! is_string( $this->current_route ) ) {
 			return;
 		}
 
