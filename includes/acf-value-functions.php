@@ -60,16 +60,25 @@ function acf_get_value( $post_id, $field ) {
 	// Get field name.
 	$field_name = $field['name'];
 
-	// If we still don't have a proper field array, the field doesn't exist currently.
+	// Get field ID & type.
+	$decoded = acf_decode_post_id( $post_id );
+
+	// If we don't have a proper field array, the field doesn't exist currently.
 	if ( empty( $field['type'] ) && empty( $field['key'] ) ) {
-		//  Get field ID & type.
-		$decoded = acf_decode_post_id( $post_id );
 
 		if ( apply_filters( 'acf/prevent_access_to_unknown_fields', false ) || ( 'option' === $decoded['type'] && 'options' !== $decoded['id'] ) ) {
 			return null;
 		}
 
 		do_action( 'acf/get_invalid_field_value', $field, __FUNCTION__ );
+	}
+
+	// If we're using a non options_ option key, ensure we have a valid reference key.
+	if ( 'option' === $decoded['type'] && 'options' !== $decoded['id'] ) {
+		$meta = acf_get_metadata( $post_id, $field_name, true );
+		if ( ! $meta || $meta !== $field['key'] ) {
+			return null;
+		}
 	}
 
 	// Check store.

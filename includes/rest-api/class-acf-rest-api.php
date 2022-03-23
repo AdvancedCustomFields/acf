@@ -20,6 +20,7 @@ class ACF_Rest_Api {
 
 	public function __construct() {
 		add_filter( 'rest_pre_dispatch', array( $this, 'initialize' ), 10, 3 );
+		add_action( 'rest_api_init', array( $this, 'register_field' ) );
 	}
 
 	public function initialize( $response, $handler, $request ) {
@@ -44,7 +45,12 @@ class ACF_Rest_Api {
 	/**
 	 * Register our custom property as a REST field.
 	 */
-	private function register_field() {
+	public function register_field() {
+		if ( ! $this->request instanceof ACF_Rest_Request ) {
+			$this->request = new ACF_Rest_Request();
+			$this->request->parse_request( null );
+		}
+
 		$base = $this->request->object_sub_type;
 
 		// If the object sub type ($post_type, $taxonomy, 'user') cannot be determined from the current request,
@@ -55,6 +61,15 @@ class ACF_Rest_Api {
 
 		if ( $this->request->child_object_type ) {
 			$base = $this->request->child_object_type;
+		}
+
+		// If we've already registered this route, no need to do it again.
+		if ( acf_did( 'acf/register_rest_field' ) ) {
+			global $wp_rest_additional_fields;
+
+			if ( isset( $wp_rest_additional_fields[ $base ], $wp_rest_additional_fields[ $base ]['acf'] ) ) {
+				return;
+			}
 		}
 
 		register_rest_field(
@@ -326,8 +341,9 @@ class ACF_Rest_Api {
 	 */
 	private function make_identifier( $object_id, $object_type ) {
 		$formats = array(
-			'user' => 'user_%s',
-			'term' => 'term_%s',
+			'user'    => 'user_%s',
+			'term'    => 'term_%s',
+			'comment' => 'comment_%s',
 		);
 
 		return isset( $formats[ $object_type ] )
@@ -394,7 +410,7 @@ class ACF_Rest_Api {
 					$match = true;
 				}
 
-				if ( 'user' === $object_type ) {
+				if ( in_array( $object_type, array( 'user', 'comment' ) ) ) {
 					$match = true;
 				}
 			}
@@ -462,6 +478,11 @@ class ACF_Rest_Api {
 				break;
 			case 'term':
 				$args = array( 'taxonomy' => $object_sub_type );
+				break;
+			case 'comment':
+				$comment   = get_comment( $object_id );
+				$post_type = get_post_type( $comment->comment_post_ID );
+				$args      = array( 'comment'  => $post_type );
 				break;
 			case 'post':
 			default:
