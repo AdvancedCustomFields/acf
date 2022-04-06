@@ -138,7 +138,7 @@ msgstr ""
 msgid "copy"
 msgstr ""
 
-#: includes/acf-value-functions.php:353
+#: includes/acf-value-functions.php:374
 msgid "<strong>%1$s</strong> - We've detected one or more calls to retrieve ACF field values before ACF has been initialized. This is not supported and can result in malformed or missing data. <a href=\"%2$s\" target=\"_blank\">Learn how to fix this</a>."
 msgstr ""
 
@@ -329,20 +329,20 @@ msgstr ""
 msgid "Block type \"%s\" is already registered."
 msgstr ""
 
-#: pro/blocks.php:495
+#: pro/blocks.php:496
 msgid "Switch to Edit"
 msgstr ""
 
-#: pro/blocks.php:496
+#: pro/blocks.php:497
 msgid "Switch to Preview"
 msgstr ""
 
-#: pro/blocks.php:497
+#: pro/blocks.php:498
 msgid "Change content alignment"
 msgstr ""
 
 #. translators: %s: Block type title
-#: pro/blocks.php:500
+#: pro/blocks.php:501
 msgid "%s settings"
 msgstr ""
 

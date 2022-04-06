@@ -2,9 +2,9 @@
 Contributors: deliciousbrains, bradt, elliotcondon
 Tags: acf, fields, custom fields, meta, repeater
 Requires at least: 4.7
-Tested up to: 5.9.2
+Tested up to: 5.9.3
 Requires PHP: 5.6
-Stable tag: 5.12.1
+Stable tag: 5.12.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -75,6 +75,14 @@ From your WordPress dashboard
 
 
 == Changelog ==
+
+= 5.12.2 =
+*Release Date 6th April 2022*
+
+* Fix - Cloned fields in custom named options pages now behave correctly
+* Fix - Default values and the `acf/load_value` filter are now applied if a field value load [fails security validation](https://www.advancedcustomfields.com/resources/acf-field-functions/#non-acf-data)
+* Fix - The ACF field is no longer present in REST responses if the ACF REST API setting is disabled
+* Fix - Duplicating a flexible content layout or repeater row now also replaces the field ID in `for` attributes
 
 = 5.12.1 =
 *Release Date 23rd March 2022*

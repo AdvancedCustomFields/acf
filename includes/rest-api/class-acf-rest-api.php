@@ -46,6 +46,10 @@ class ACF_Rest_Api {
 	 * Register our custom property as a REST field.
 	 */
 	public function register_field() {
+		if ( ! acf_get_setting( 'rest_api_enabled' ) ) {
+			return;
+		}
+
 		if ( ! $this->request instanceof ACF_Rest_Request ) {
 			$this->request = new ACF_Rest_Request();
 			$this->request->parse_request( null );
