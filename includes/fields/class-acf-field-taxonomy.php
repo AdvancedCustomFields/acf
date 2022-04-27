@@ -670,7 +670,7 @@ if ( ! class_exists( 'acf_field_taxonomy' ) ) :
 			// vars
 			$args = array(
 				'taxonomy'         => $field['taxonomy'],
-				'show_option_none' => sprintf( _x( 'No %s', 'No terms', 'acf' ), strtolower( $taxonomy_obj->labels->name ) ),
+				'show_option_none' => sprintf( _x( 'No %s', 'No terms', 'acf' ), mb_strtolower( $taxonomy_obj->labels->name ) ),
 				'hide_empty'       => false,
 				'style'            => 'none',
 				'walker'           => new ACF_Taxonomy_Field_Walker( $field ),
