@@ -71,13 +71,13 @@ function acf_get_value( $post_id, $field ) {
 		// Check if we should trigger warning about accessing fields too early via action.
 		do_action( 'acf/get_invalid_field_value', $field, __FUNCTION__ );
 
-		if ( apply_filters( 'acf/prevent_access_to_unknown_fields', false ) || ( 'option' === $decoded['type'] && 'options' !== $decoded['id'] ) ) {
+		if ( apply_filters( 'acf/prevent_access_to_unknown_fields', false ) || ( 'option' === $decoded['type'] && acf_get_valid_post_id( 'options' ) !== $decoded['id'] ) ) {
 			$allow_load = false;
 		}
 	}
 
 	// If we're using a non options_ option key, ensure we have a valid reference key.
-	if ( 'option' === $decoded['type'] && 'options' !== $decoded['id'] ) {
+	if ( 'option' === $decoded['type'] && acf_get_valid_post_id( 'options' ) !== $decoded['id'] ) {
 		$meta = acf_get_metadata( $post_id, $field_name, true );
 		if ( ! $meta ) {
 			$allow_load = false;
