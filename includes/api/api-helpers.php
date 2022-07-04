@@ -1561,7 +1561,7 @@ function acf_get_post_title( $post = 0, $is_search = false ) {
 	}
 
 	// title
-	$title = get_the_title( $post->ID );
+	$title = $post->post_title;
 
 	// empty
 	if ( $title === '' ) {
