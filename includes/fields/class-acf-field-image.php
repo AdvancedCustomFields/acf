@@ -150,6 +150,7 @@ if ( ! class_exists( 'acf_field_image' ) ) :
 					array(
 						'name' => $field['name'],
 						'id'   => $field['id'],
+						'key'  => $field['key'],
 					)
 				);
 				?>

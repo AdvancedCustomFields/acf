@@ -172,6 +172,7 @@ if ( ! class_exists( 'acf_field_file' ) ) :
 					array(
 						'name' => $field['name'],
 						'id'   => $field['id'],
+						'key'  => $field['key'],
 					)
 				);
 				?>

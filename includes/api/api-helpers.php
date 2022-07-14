@@ -2691,20 +2691,15 @@ function acf_isset_termmeta( $taxonomy = '' ) {
 
 }
 
-
-/*
-*  acf_upload_files
-*
-*  This function will walk througfh the $_FILES data and upload each found
-*
-*  @type    function
-*  @date    25/10/2014
-*  @since   5.0.9
-*
-*  @param   $ancestors (array) an internal parameter, not required
-*  @return  n/a
-*/
-
+/**
+ * This function will walk through the $_FILES data and upload each found.
+ *
+ * @date    25/10/2014
+ * @since   5.0.9
+ *
+ * @param array $ancestors An internal parameter, not required.
+ * @return void
+ */
 function acf_upload_files( $ancestors = array() ) {
 
 	// vars
@@ -2751,15 +2746,21 @@ function acf_upload_files( $ancestors = array() ) {
 
 	}
 
-	// bail ealry if file has error (no file uploaded)
+	// Bail early if file has error (no file uploaded).
 	if ( $file['error'] ) {
-
 		return;
-
 	}
 
-	// assign global _acfuploader for media validation
-	$_POST['_acfuploader'] = end( $ancestors );
+	$field_key  = end( $ancestors );
+	$nonce_name = $field_key . '_file_nonce';
+	$file_nonce = isset( $_REQUEST['acf'][ $nonce_name ] ) ? $_REQUEST['acf'][ $nonce_name ] : false;
+
+	if ( ! $file_nonce || ! wp_verify_nonce( $file_nonce, 'acf/file_uploader_nonce/' . $field_key ) ) {
+		return;
+	}
+
+	// Assign global _acfuploader for media validation.
+	$_POST['_acfuploader'] = $field_key;
 
 	// file found!
 	$attachment_id = acf_upload_file( $file );
@@ -2769,7 +2770,6 @@ function acf_upload_files( $ancestors = array() ) {
 	acf_update_nested_array( $_POST, $ancestors, $attachment_id );
 
 }
-
 
 /*
 *  acf_upload_file
