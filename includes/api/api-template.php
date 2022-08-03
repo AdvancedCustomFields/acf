@@ -97,7 +97,7 @@ function the_field( $selector, $post_id = false, $format_value = true ) {
  * @param bool   $format_value Whether to format the field value.
  * @param bool   $load_value   Whether to load the field value.
  *
- * @return array $field
+ * @return array|false $field
  */
 function get_field_object( $selector, $post_id = false, $format_value = true, $load_value = true ) {
 	// Compatibility with ACF ~4.
