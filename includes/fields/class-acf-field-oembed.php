@@ -88,9 +88,16 @@ if ( ! class_exists( 'acf_field_oembed' ) ) :
 				'width'  => $width,
 				'height' => $height,
 			);
+			
+			// check if a transient exist for this oembed, to reduce API calls
+			$embed = get_transient($url);
 
-			// get emebed
-			$embed = @wp_oembed_get( $url, $res );
+			if(!$embed){
+				
+			    // get emebed
+			    $embed = @wp_oembed_get($url, $res);
+			    set_transient($url, $embed);
+			}
 
 			// try shortcode
 			if ( ! $embed ) {
