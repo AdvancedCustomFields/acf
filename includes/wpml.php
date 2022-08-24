@@ -137,7 +137,7 @@ if ( ! class_exists( 'ACF_WPML_Compatibility' ) ) :
 				ARRAY_A
 			);
 
-			// bail ealry if no rows
+			// bail early if no rows
 			if ( ! $old_row || ! $new_row ) {
 				return;
 			}

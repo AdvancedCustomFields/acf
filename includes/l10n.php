@@ -71,7 +71,6 @@ function acf_get_locale() {
 	$langs = array(
 		'az_TR' => 'az',        // Azerbaijani (Turkey)
 		'zh_HK' => 'zh_TW',     // Chinese (Hong Kong)
-		'nl_BE' => 'nl_NL',     // Dutch (Belgium)
 		'fr_BE' => 'fr_FR',     // French (Belgium)
 		'nn_NO' => 'nb_NO',     // Norwegian (Nynorsk)
 		'fa_AF' => 'fa_IR',     // Persian (Afghanistan)
@@ -116,11 +115,6 @@ function acf_load_textdomain( $domain = 'acf' ) {
 	 */
 	$locale = apply_filters( 'plugin_locale', acf_get_locale(), $domain );
 	$mofile = $domain . '-' . $locale . '.mo';
-
-	// Try to load from the languages directory first.
-	if ( load_textdomain( $domain, WP_LANG_DIR . '/plugins/' . $mofile ) ) {
-		return true;
-	}
 
 	// Load from plugin lang folder.
 	return load_textdomain( $domain, acf_get_path( 'lang/' . $mofile ) );

@@ -182,7 +182,7 @@ if ( ! class_exists( 'acf_form_nav_menu' ) ) :
 
 		function update_nav_menu_items( $menu_id ) {
 
-			// bail ealry if not set
+			// bail early if not set
 			if ( empty( $_POST['menu-item-acf'] ) ) {
 				return;
 			}
@@ -258,7 +258,7 @@ if ( ! class_exists( 'acf_form_nav_menu' ) ) :
 
 		function acf_validate_save_post() {
 
-			// bail ealry if not set
+			// bail early if not set
 			if ( empty( $_POST['menu-item-acf'] ) ) {
 				return;
 			}

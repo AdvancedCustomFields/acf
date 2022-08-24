@@ -12,7 +12,7 @@
 # This file is distributed under the same license as Advanced Custom Fields.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-08-04T09:41:05+00:00\n"
+"PO-Revision-Date: 2022-08-24T07:03:45+00:00\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "Language: fr_CA\n"
 "MIME-Version: 1.0\n"

@@ -185,6 +185,12 @@ if ( ! class_exists( 'ACF_Admin' ) ) :
 		 */
 		function in_admin_header() {
 			acf_get_view( 'html-admin-navigation' );
+
+			$screen = get_current_screen();
+
+			if ( isset( $screen->base ) && 'post' === $screen->base ) {
+				acf_get_view( 'html-admin-form-top' );
+			}
 		}
 
 		/**

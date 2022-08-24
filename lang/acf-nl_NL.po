@@ -12,7 +12,7 @@
 # This file is distributed under the same license as Advanced Custom Fields.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-08-04T09:41:05+00:00\n"
+"PO-Revision-Date: 2022-08-24T07:03:45+00:00\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "Language: nl_NL\n"
 "MIME-Version: 1.0\n"
@@ -162,7 +162,7 @@ msgstr "Selecteer standaardkleur"
 
 #: includes/fields/class-acf-field-color_picker.php:70
 msgid "Clear color"
-msgstr "Heldere kleur"
+msgstr "Kleur wissen"
 
 #: includes/acf-wp-functions.php:87
 msgid "Blocks"
@@ -214,7 +214,7 @@ msgstr "Deze veldgroep is niet beschikbaar voor verschil vergelijking."
 
 #: includes/ajax/class-acf-ajax-local-json-diff.php:43
 msgid "Invalid field group ID."
-msgstr "Ongeldige veld groep ID."
+msgstr "Ongeldige veldgroep-ID."
 
 #: includes/ajax/class-acf-ajax-local-json-diff.php:36
 msgid "Invalid field group parameter(s)."
@@ -230,7 +230,7 @@ msgstr "Opgeslagen"
 
 #: includes/admin/admin-field-groups.php:477
 msgid "Import"
-msgstr "Import"
+msgstr "Importeren"
 
 #: includes/admin/admin-field-groups.php:473
 msgid "Review changes"
@@ -238,15 +238,15 @@ msgstr "Wijzigingen beoordelen"
 
 #: includes/admin/admin-field-groups.php:449
 msgid "Located in: %s"
-msgstr "Gelegen in: %s"
+msgstr "Bevindt zich in: %s"
 
 #: includes/admin/admin-field-groups.php:445
 msgid "Located in plugin: %s"
-msgstr "Gelegen in plugin: %s"
+msgstr "Bevindt zich in plugin: %s"
 
 #: includes/admin/admin-field-groups.php:441
 msgid "Located in theme: %s"
-msgstr "Gelegen in thema: %s"
+msgstr "Bevindt zich in thema: %s"
 
 #: includes/admin/admin-field-groups.php:419
 msgid "Various"
@@ -255,7 +255,7 @@ msgstr "Diverse"
 #: includes/admin/admin-field-groups.php:198
 #: includes/admin/admin-field-groups.php:533
 msgid "Sync changes"
-msgstr "Synchroniseer wijzigingen"
+msgstr "Wijzigingen synchroniseren"
 
 #: includes/admin/admin-field-groups.php:197
 msgid "Loading diff"
@@ -271,7 +271,7 @@ msgstr "Bezoek site"
 
 #: includes/admin/admin.php:171
 msgid "View details"
-msgstr "Bekijk details"
+msgstr "Details bekijken"
 
 #: includes/admin/admin.php:170
 msgid "Version %s"
@@ -322,15 +322,15 @@ msgstr ""
 
 #: includes/admin/admin.php:146 includes/admin/admin.php:148
 msgid "Help & Support"
-msgstr "Help & Ondersteuning"
+msgstr "Hulp & ondersteuning"
 
 #: includes/admin/admin.php:137
 msgid ""
 "Please use the Help & Support tab to get in touch should you find yourself "
 "requiring assistance."
 msgstr ""
-"Gebruik de tab Hulp & ondersteuning om contact op te nemen als je merkt dat "
-"je hulp nodig hebt."
+"Gebruik de tab Hulp & ondersteuning om contact op te nemen als je hulp nodig "
+"hebt."
 
 #: includes/admin/admin.php:134
 msgid ""
@@ -587,7 +587,8 @@ msgid ""
 "options will be used (the one with the lowest order number)"
 msgstr ""
 "Als er meerdere veldgroepen op een bewerkingsscherm verschijnen, worden de "
-"opties van de eerste veldgroep gebruikt (degene met het laagste volgnummer)"
+"opties van de eerste veldgroep gebruikt (degene met het laagste volgorde "
+"nummer)"
 
 #: includes/admin/views/field-group-options.php:162
 msgid "<b>Select</b> items to <b>hide</b> them from the edit screen."
@@ -661,11 +662,11 @@ msgstr "Veldgroepen met een lagere volgorde verschijnen als eerste"
 
 #: includes/admin/views/field-group-options.php:114
 msgid "Order No."
-msgstr "Bestelnr."
+msgstr "Volgorde nr."
 
 #: includes/admin/views/field-group-options.php:105
 msgid "Below fields"
-msgstr "Onderstaande velden"
+msgstr "Onder velden"
 
 #: includes/admin/views/field-group-options.php:104
 msgid "Below labels"
@@ -701,7 +702,7 @@ msgstr "Naadloos (geen metabox)"
 
 #: includes/admin/views/field-group-options.php:51
 msgid "Standard (WP metabox)"
-msgstr "Standaard (WP metabox)"
+msgstr "Standaard (met metabox)"
 
 #: includes/admin/views/field-group-options.php:44
 msgid "Style"
@@ -730,7 +731,7 @@ msgstr "Sleutel"
 
 #: includes/admin/views/field-group-fields.php:4
 msgid "Order"
-msgstr "Bestelling"
+msgstr "Volgorde"
 
 #: includes/admin/views/field-group-field.php:215
 msgid "Close Field"
@@ -794,7 +795,7 @@ msgstr "Veld verwijderen"
 
 #: includes/admin/views/field-group-field.php:58
 msgid "Move"
-msgstr "Verplaats"
+msgstr "Verplaatsen"
 
 #: includes/admin/views/field-group-field.php:58
 msgid "Move field to another group"
@@ -807,7 +808,7 @@ msgstr "Veld dupliceren"
 #: includes/admin/views/field-group-field.php:53
 #: includes/admin/views/field-group-field.php:56
 msgid "Edit field"
-msgstr "Bewerk veld"
+msgstr "Veld bewerken"
 
 #: includes/admin/views/field-group-field.php:49
 msgid "Drag to reorder"
@@ -934,7 +935,7 @@ msgstr ""
 
 #: includes/admin/tools/class-acf-admin-tool-export.php:334
 msgid "Export File"
-msgstr "Exporteer bestand"
+msgstr "Bestand exporteren"
 
 #: includes/admin/tools/class-acf-admin-tool-export.php:329
 msgid ""
@@ -952,7 +953,7 @@ msgstr ""
 #: includes/admin/tools/class-acf-admin-tool-export.php:233
 #: includes/admin/tools/class-acf-admin-tool-export.php:262
 msgid "Select Field Groups"
-msgstr "Selecteer veldgroepen"
+msgstr "Veldgroepen selecteren"
 
 #: includes/admin/tools/class-acf-admin-tool-export.php:167
 msgid "Exported 1 field group."
@@ -969,21 +970,21 @@ msgstr "Geen veldgroepen geselecteerd"
 #: includes/admin/tools/class-acf-admin-tool-export.php:335
 #: includes/admin/tools/class-acf-admin-tool-export.php:364
 msgid "Generate PHP"
-msgstr "Genereer PHP"
+msgstr "PHP genereren"
 
 #: includes/admin/tools/class-acf-admin-tool-export.php:35
 msgid "Export Field Groups"
-msgstr "Exporteer veldgroepen"
+msgstr "Veldgroepen exporteren"
 
 #: includes/admin/tools/class-acf-admin-tool-import.php:142
 msgid "Imported 1 field group"
 msgid_plural "Imported %s field groups"
-msgstr[0] "Geïmporteerd 1 veldgroep"
-msgstr[1] "Geïmporteerde %s veldgroepen"
+msgstr[0] "1 veldgroep geïmporteerd"
+msgstr[1] "%s veldgroepen geïmporteerd"
 
 #: includes/admin/tools/class-acf-admin-tool-import.php:111
 msgid "Import file empty"
-msgstr "Bestand leeg importeren"
+msgstr "Importbestand is leeg"
 
 #: includes/admin/tools/class-acf-admin-tool-import.php:102
 msgid "Incorrect file type"
@@ -1067,7 +1068,7 @@ msgstr "Beoordeel sites & upgrade"
 #: includes/admin/views/html-admin-page-upgrade-network.php:24
 #: includes/admin/views/html-admin-page-upgrade.php:26
 msgid "Upgrade Database"
-msgstr "Upgrade database"
+msgstr "Database upgraden"
 
 #: includes/admin/admin.php:49 includes/admin/views/field-group-options.php:142
 msgid "Custom Fields"
@@ -1174,7 +1175,7 @@ msgstr "De string \"field_\" mag niet voor de veld naam staan"
 
 #: includes/admin/admin-field-group.php:93
 msgid "Field group draft updated."
-msgstr "Concept veldgroep geupdate."
+msgstr "Veldgroep concept geüpdatet."
 
 #: includes/admin/admin-field-group.php:92
 msgid "Field group scheduled for."
@@ -1249,7 +1250,7 @@ msgstr "Onbekend"
 
 #: includes/fields.php:313
 msgid "Field type does not exist"
-msgstr "Bestand bestaat niet"
+msgstr "Veldtype bestaat niet"
 
 #: includes/forms/form-front.php:236
 msgid "Spam Detected"
@@ -1278,7 +1279,7 @@ msgstr "Titel"
 #: includes/assets.php:371 includes/forms/form-comment.php:160
 #: assets/build/js/acf-input.js:6870 assets/build/js/acf-input.js:7822
 msgid "Edit field group"
-msgstr "Bewerk veldgroep"
+msgstr "Veldgroep bewerken"
 
 #: includes/admin/admin-field-group.php:188 assets/build/js/acf-input.js:1102
 #: assets/build/js/acf-input.js:1230
@@ -1330,7 +1331,7 @@ msgstr "Heeft geen waarde"
 #: includes/admin/admin-field-group.php:179 assets/build/js/acf-input.js:744
 #: assets/build/js/acf-input.js:783
 msgid "Has any value"
-msgstr "Heeft enige waarde"
+msgstr "Heeft een waarde"
 
 #: includes/assets.php:352 assets/build/js/acf.js:1489
 #: assets/build/js/acf.js:1550
@@ -1376,7 +1377,7 @@ msgstr "Details dichtklappen"
 #: includes/media.php:52 assets/build/js/acf-input.js:6529
 #: assets/build/js/acf-input.js:7387
 msgid "Expand Details"
-msgstr "Vouw details uit"
+msgstr "Details uitklappen"
 
 #: includes/media.php:51 assets/build/js/acf-input.js:6401
 #: assets/build/js/acf-input.js:7235
@@ -1711,18 +1712,18 @@ msgstr "Bestandsnaam"
 #: includes/fields/class-acf-field-file.php:60
 #: assets/build/js/acf-input.js:2334 assets/build/js/acf-input.js:2603
 msgid "Update File"
-msgstr "Update bestand"
+msgstr "Bestand updaten"
 
 #: includes/fields/class-acf-field-file.php:59
 #: assets/build/js/acf-input.js:2333 assets/build/js/acf-input.js:2602
 msgid "Edit File"
-msgstr "Bewerk bestand"
+msgstr "Bestand bewerken"
 
 #: includes/admin/tools/class-acf-admin-tool-import.php:55
 #: includes/fields/class-acf-field-file.php:58
 #: assets/build/js/acf-input.js:2308 assets/build/js/acf-input.js:2575
 msgid "Select File"
-msgstr "Selecteer bestand"
+msgstr "Bestand selecteren"
 
 #: includes/fields/class-acf-field-file.php:25
 msgid "File"
@@ -1738,7 +1739,7 @@ msgstr "Geef de geretourneerde waarde op"
 
 #: includes/fields/class-acf-field-select.php:422
 msgid "Use AJAX to lazy load choices?"
-msgstr "AJAX gebruiken om keuzes lazy in te laden?"
+msgstr "AJAX gebruiken om keuzes te lazy-loaden?"
 
 #: includes/fields/class-acf-field-checkbox.php:367
 #: includes/fields/class-acf-field-select.php:376
@@ -1749,7 +1750,7 @@ msgstr "Zet elke standaard waarde op een nieuwe regel"
 #: assets/build/js/acf-input.js:6311 assets/build/js/acf-input.js:7120
 msgctxt "verb"
 msgid "Select"
-msgstr "Selecteer"
+msgstr "Selecteren"
 
 #: includes/fields/class-acf-field-select.php:118
 msgctxt "Select2 JS load_fail"
@@ -1821,7 +1822,7 @@ msgstr "Selecteer"
 
 #: includes/fields/class-acf-field-user.php:97
 msgid "User ID"
-msgstr "Gebruikers ID"
+msgstr "Gebruiker ID"
 
 #: includes/fields/class-acf-field-user.php:96
 msgid "User Object"
@@ -1979,7 +1980,7 @@ msgstr "Waarde moet een geldige URL zijn"
 
 #: includes/fields/class-acf-field-url.php:25
 msgid "Url"
-msgstr "Url"
+msgstr "URL"
 
 #: includes/fields/class-acf-field-link.php:177
 msgid "Link URL"
@@ -1995,7 +1996,7 @@ msgstr "Opent in een nieuw venster/tab"
 
 #: includes/fields/class-acf-field-link.php:137
 msgid "Select Link"
-msgstr "Selecteer link"
+msgstr "Link selecteren"
 
 #: includes/fields/class-acf-field-link.php:25
 msgid "Link"
@@ -2029,7 +2030,7 @@ msgstr "Bereik"
 #: includes/fields/class-acf-field-radio.php:280
 #: includes/fields/class-acf-field-select.php:446
 msgid "Both (Array)"
-msgstr "Beide (Array)"
+msgstr "Beide (array)"
 
 #: includes/admin/views/field-group-fields.php:5
 #: includes/fields/class-acf-field-button-group.php:204
@@ -2063,7 +2064,7 @@ msgstr "Horizontaal"
 #: includes/fields/class-acf-field-radio.php:192
 #: includes/fields/class-acf-field-select.php:365
 msgid "red : Red"
-msgstr "rood : rood"
+msgstr "rood : Rood"
 
 #: includes/fields/class-acf-field-button-group.php:148
 #: includes/fields/class-acf-field-checkbox.php:325
@@ -2133,7 +2134,7 @@ msgstr "Toolbar"
 
 #: includes/fields/class-acf-field-wysiwyg.php:352
 msgid "Text Only"
-msgstr "Enkel tekst"
+msgstr "Alleen tekst"
 
 #: includes/fields/class-acf-field-wysiwyg.php:351
 msgid "Visual Only"
@@ -2329,7 +2330,7 @@ msgstr "Zoeken..."
 
 #: includes/fields/class-acf-field-relationship.php:399
 msgid "Select taxonomy"
-msgstr "Selecteer taxonomie"
+msgstr "Taxonomie selecteren"
 
 #: includes/fields/class-acf-field-relationship.php:390
 msgid "Select post type"
@@ -2357,7 +2358,7 @@ msgstr "Verwantschap"
 #: includes/fields/class-acf-field-file.php:288
 #: includes/fields/class-acf-field-image.php:325
 msgid "Comma separated list. Leave blank for all types"
-msgstr "Lijst met door komma's gescheiden. leeg laten voor alle typen"
+msgstr "Komma gescheiden lijst. Laat leeg voor alle typen"
 
 #: includes/fields/class-acf-field-file.php:287
 #: includes/fields/class-acf-field-image.php:324
@@ -2428,7 +2429,7 @@ msgstr "Afbeelding URL"
 
 #: includes/fields/class-acf-field-image.php:211
 msgid "Image Array"
-msgstr "Afbeelding Array"
+msgstr "Afbeelding array"
 
 #: includes/fields/class-acf-field-button-group.php:198
 #: includes/fields/class-acf-field-checkbox.php:406
@@ -2477,12 +2478,12 @@ msgstr "Alle afbeeldingen"
 #: includes/fields/class-acf-field-image.php:66
 #: assets/build/js/acf-input.js:2997 assets/build/js/acf-input.js:3377
 msgid "Update Image"
-msgstr "Update afbeelding"
+msgstr "Afbeelding updaten"
 
 #: includes/fields/class-acf-field-image.php:65
 #: assets/build/js/acf-input.js:2996 assets/build/js/acf-input.js:3376
 msgid "Edit Image"
-msgstr "Bewerk afbeelding"
+msgstr "Afbeelding bewerken"
 
 #: includes/fields/class-acf-field-image.php:64
 #: assets/build/js/acf-input.js:2974 assets/build/js/acf-input.js:3351
@@ -2501,7 +2502,7 @@ msgstr ""
 
 #: includes/fields/class-acf-field-message.php:127
 msgid "Escape HTML"
-msgstr "Escape HTML"
+msgstr "HTML escapen"
 
 #: includes/fields/class-acf-field-message.php:118
 #: includes/fields/class-acf-field-textarea.php:155
@@ -2723,7 +2724,7 @@ msgstr "Huidige locatie opzoeken"
 
 #: includes/fields/class-acf-field-google-map.php:156
 msgid "Clear location"
-msgstr "Duidelijke locatie"
+msgstr "Locatie wissen"
 
 #: includes/fields/class-acf-field-google-map.php:155
 #: includes/fields/class-acf-field-relationship.php:615
@@ -2798,7 +2799,7 @@ msgstr "Geen velden gevonden"
 
 #: acf.php:400
 msgid "Search Fields"
-msgstr "Zoekvelden"
+msgstr "Velden zoeken"
 
 #: acf.php:399
 msgid "View Field"
@@ -2810,7 +2811,7 @@ msgstr "Nieuw veld"
 
 #: acf.php:397
 msgid "Edit Field"
-msgstr "Bewerk veld"
+msgstr "Veld bewerken"
 
 #: acf.php:396
 msgid "Add New Field"
@@ -2835,11 +2836,11 @@ msgstr "Geen veldgroepen gevonden"
 
 #: acf.php:366
 msgid "Search Field Groups"
-msgstr "Zoeken veldgroepen"
+msgstr "Veldgroepen zoeken"
 
 #: acf.php:365
 msgid "View Field Group"
-msgstr "Bekijk veldgroep"
+msgstr "Veldgroep bekijken"
 
 #: acf.php:364
 msgid "New Field Group"
