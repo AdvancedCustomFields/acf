@@ -55,14 +55,15 @@ msgstr "Réglages de %s "
 
 #: pro/blocks.php:949
 msgid "This block contains no editable fields."
-msgstr ""
+msgstr "Ce bloc ne contient aucun champ éditable."
 
 #. translators: %s: an admin URL to the field group edit screen
 #: pro/blocks.php:955
 msgid ""
 "Assign a <a href=\"%s\" target=\"_blank\">field group</a> to add fields to "
 "this block."
-msgstr ""
+msgstr "Assignez un <a href=\"%s\" target=\"_blank\">groupe de champs</a> pour ajouter des champs à "
+"ce bloc."
 
 # @ acf
 #: pro/options-page.php:47
@@ -328,7 +329,7 @@ msgstr ""
 #: pro/fields/class-acf-field-flexible-content.php:410,
 #: pro/fields/class-acf-repeater-table.php:354
 msgid "Drag to reorder"
-msgstr "Faites glisser pour réorganiser"
+msgstr "Glisser pour réorganiser"
 
 # @ acf
 #: pro/fields/class-acf-field-flexible-content.php:413
@@ -526,12 +527,12 @@ msgstr "Données de l’image (tableau)"
 # @ acf
 #: pro/fields/class-acf-field-gallery.php:580
 msgid "Image URL"
-msgstr "URL de l‘image"
+msgstr "URL de l'image"
 
 # @ acf
 #: pro/fields/class-acf-field-gallery.php:581
 msgid "Image ID"
-msgstr "ID de l‘image"
+msgstr "ID de l'image"
 
 # @ acf
 #: pro/fields/class-acf-field-gallery.php:590
@@ -644,7 +645,7 @@ msgstr "Nombre maximal d’éléments atteint ({max} éléments)"
 
 #: pro/fields/class-acf-field-repeater.php:55
 msgid "Error loading page"
-msgstr ""
+msgstr "Erreur de chargement de la page"
 
 # @ acf
 #: pro/fields/class-acf-field-repeater.php:141
@@ -653,7 +654,7 @@ msgstr "Sous-champs"
 
 #: pro/fields/class-acf-field-repeater.php:174
 msgid "Collapsed"
-msgstr "Refermé"
+msgstr "Replié"
 
 #: pro/fields/class-acf-field-repeater.php:175
 msgid "Select a sub field to show when row is collapsed"
@@ -671,19 +672,19 @@ msgstr "Nombre maximum d’éléments"
 
 #: pro/fields/class-acf-field-repeater.php:228
 msgid "Pagination"
-msgstr ""
+msgstr "Pagination"
 
 #: pro/fields/class-acf-field-repeater.php:229
 msgid "Useful for fields with a large number of rows."
-msgstr ""
+msgstr "Utile pour les champs avec un grand nombre de lignes."
 
 #: pro/fields/class-acf-field-repeater.php:240
 msgid "Rows Per Page"
-msgstr ""
+msgstr "Lignes par Page"
 
 #: pro/fields/class-acf-field-repeater.php:241
 msgid "Set the number of rows to be displayed on a page."
-msgstr ""
+msgstr "Définir le nombre de lignes à afficher sur une page."
 
 #: pro/fields/class-acf-field-repeater.php:945
 msgid "Invalid nonce."
@@ -691,11 +692,11 @@ msgstr "Nonce invalide."
 
 #: pro/fields/class-acf-field-repeater.php:959
 msgid "Invalid field key."
-msgstr ""
+msgstr "Clé de champ invalide"
 
 #: pro/fields/class-acf-field-repeater.php:968
 msgid "There was an error retrieving the field."
-msgstr ""
+msgstr "Il y a une erreur lors de la récupération du champ."
 
 # @ acf
 #: pro/fields/class-acf-repeater-table.php:389
@@ -714,29 +715,29 @@ msgstr "Retirer l’élément"
 #: pro/fields/class-acf-repeater-table.php:435,
 #: pro/fields/class-acf-repeater-table.php:452
 msgid "Current Page"
-msgstr ""
+msgstr "Page actuelle"
 
 #: pro/fields/class-acf-repeater-table.php:444
 msgid "First page"
-msgstr ""
+msgstr "Première page"
 
 #: pro/fields/class-acf-repeater-table.php:448
 msgid "Previous page"
-msgstr ""
+msgstr "Page précédente"
 
 #. translators: 1: Current page, 2: Total pages.
 #: pro/fields/class-acf-repeater-table.php:457
 msgctxt "paging"
 msgid "%1$s of %2$s"
-msgstr ""
+msgstr "%1$s sur %2$s"
 
 #: pro/fields/class-acf-repeater-table.php:465
 msgid "Next page"
-msgstr ""
+msgstr "Page suivante"
 
 #: pro/fields/class-acf-repeater-table.php:469
 msgid "Last page"
-msgstr ""
+msgstr "Dernière page"
 
 #: pro/locations/class-acf-location-block.php:71
 msgid "No block types exist"
@@ -745,7 +746,7 @@ msgstr "Aucun type de blocs existant"
 # @ acf
 #: pro/locations/class-acf-location-options-page.php:22
 msgid "Options Page"
-msgstr "Page d‘options"
+msgstr "Page d'options"
 
 #: pro/locations/class-acf-location-options-page.php:70
 msgid "No options pages exist"
