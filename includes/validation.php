@@ -275,7 +275,7 @@ function acf_validate_save_post( $show_errors = false ) {
 	// vars
 	$errors = acf_get_validation_errors();
 
-	// bail ealry if no errors
+	// bail early if no errors
 	if ( ! $errors ) {
 		return true;
 	}

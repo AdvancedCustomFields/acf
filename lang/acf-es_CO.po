@@ -12,7 +12,7 @@
 # This file is distributed under the same license as Advanced Custom Fields.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-08-04T09:41:05+00:00\n"
+"PO-Revision-Date: 2022-09-05T16:19:04+00:00\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "Language: es_CO\n"
 "MIME-Version: 1.0\n"
@@ -393,7 +393,7 @@ msgstr "Widget"
 
 #: includes/locations/class-acf-location-user-role.php:24
 msgid "User Role"
-msgstr "Rol de usuario"
+msgstr "Perfil de usuario"
 
 #: includes/locations/class-acf-location-comment.php:22
 msgid "Comment"
@@ -474,7 +474,7 @@ msgstr "Plantilla de página"
 
 #: includes/locations/class-acf-location-user-form.php:74
 msgid "Register"
-msgstr "Registro"
+msgstr "Regístrate"
 
 #: includes/locations/class-acf-location-user-form.php:73
 msgid "Add / Edit"
@@ -519,7 +519,7 @@ msgstr "Adjunto"
 
 #: includes/validation.php:364
 msgid "%s value is required"
-msgstr "El valor de %s es obligatorio"
+msgstr "Se requiere el valor %s"
 
 #: includes/admin/views/field-group-field-conditional-logic.php:60
 msgid "Show this field if"
@@ -1375,7 +1375,7 @@ msgstr "Restringido"
 #: includes/media.php:53 assets/build/js/acf-input.js:6529
 #: assets/build/js/acf-input.js:7390
 msgid "Collapse Details"
-msgstr "Contraer detalles"
+msgstr "Colapsar detalles"
 
 #: includes/media.php:52 assets/build/js/acf-input.js:6529
 #: assets/build/js/acf-input.js:7387
@@ -1385,7 +1385,7 @@ msgstr "Ampliar detalles"
 #: includes/media.php:51 assets/build/js/acf-input.js:6401
 #: assets/build/js/acf-input.js:7235
 msgid "Uploaded to this post"
-msgstr "Subido a esta publicación"
+msgstr "Subido a esta entrada"
 
 #: includes/media.php:50 assets/build/js/acf-input.js:6437
 #: assets/build/js/acf-input.js:7274
