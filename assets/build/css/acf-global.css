@@ -1834,12 +1834,27 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
   box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.1);
   color: #344054;
 }
+.post-type-acf-field-group .notice.update-nag,
+.post-type-acf-field-group #lost-connection-notice.update-nag {
+  display: block;
+  position: relative;
+  width: calc(100% - 44px);
+  margin-top: 48px !important;
+  margin-right: 44px !important;
+  margin-bottom: -32px !important;
+  margin-left: 12px !important;
+}
 .post-type-acf-field-group .notice .button,
 .post-type-acf-field-group #lost-connection-notice .button {
   height: auto;
   margin-left: 8px;
   padding: 0;
   border: none;
+}
+.post-type-acf-field-group .notice > div,
+.post-type-acf-field-group #lost-connection-notice > div {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 .post-type-acf-field-group .notice p,
 .post-type-acf-field-group #lost-connection-notice p {
@@ -2529,6 +2544,7 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
 }
 .acf-admin-field-groups .wp-list-table strong {
   color: #98A2B3;
+  margin: 0;
 }
 .acf-admin-field-groups .wp-list-table a.row-title {
   font-size: 13.5px !important;
@@ -2586,9 +2602,10 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
 .acf-admin-field-groups .wp-list-table tbody th,
 .acf-admin-field-groups .wp-list-table tbody td {
   box-sizing: border-box;
-  padding-top: 12px;
+  height: 56px;
+  padding-top: 8px;
   padding-right: 24px;
-  padding-bottom: 12px;
+  padding-bottom: 8px;
   padding-left: 24px;
   vertical-align: middle;
   background-color: #fff;
@@ -2602,6 +2619,9 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
     padding-right: 16px;
     padding-left: 8px;
   }
+}
+.acf-admin-field-groups .wp-list-table .column-acf-key {
+  white-space: nowrap;
 }
 .acf-admin-field-groups .wp-list-table .column-acf-key .acf-icon-key-solid {
   display: inline-block;
@@ -2624,8 +2644,13 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
 .acf-admin-field-groups .wp-list-table .post-state {
   color: #667085;
 }
-.acf-admin-field-groups .wp-list-table tr:hover {
+.acf-admin-field-groups .wp-list-table tr:hover,
+.acf-admin-field-groups .wp-list-table tr:focus-within {
   background: #f7f7f7;
+}
+.acf-admin-field-groups .wp-list-table tr:hover .row-actions,
+.acf-admin-field-groups .wp-list-table tr:focus-within .row-actions {
+  margin-bottom: 0;
 }
 @media screen and (min-width: 782px) {
   .acf-admin-field-groups .wp-list-table .column-acf-count {
@@ -2658,6 +2683,9 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
 *	Row actions
 *
 *--------------------------------------------------------------------------------------------*/
+.acf-admin-field-groups .row-actions {
+  margin-bottom: -20px;
+}
 .acf-admin-field-groups .row-actions a:hover {
   color: #044767;
 }
@@ -2666,6 +2694,10 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
 }
 .acf-admin-field-groups .row-actions .trash a:hover {
   color: #f00;
+}
+.acf-admin-field-groups .row-actions.visible {
+  margin-bottom: 0;
+  opacity: 1;
 }
 
 /*--------------------------------------------------------------------------------------------
@@ -3964,8 +3996,10 @@ h3.acf-sub-field-list-title:before {
     grid-row-gap: 8px;
   }
 }
-.custom-fields_page_acf-settings-updates .acf-admin-notice {
+.custom-fields_page_acf-settings-updates .acf-admin-notice,
+.custom-fields_page_acf-settings-updates .notice {
   grid-area: acf-admin-notice;
+  margin-bottom: 0 !important;
 }
 
 /*---------------------------------------------------------------------------------------------

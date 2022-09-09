@@ -205,13 +205,22 @@
 }
 .acf-field-object > .handle strong {
   display: block;
-  padding-bottom: 6px;
+  padding-bottom: 0;
   font-size: 14px;
   line-height: 14px;
   min-height: 14px;
 }
 .acf-field-object > .handle .row-options {
-  visibility: hidden;
+  display: block;
+  opacity: 0;
+  margin-top: 6px;
+  margin-bottom: -20px;
+}
+@media screen and (max-width: 880px) {
+  .acf-field-object > .handle .row-options {
+    opacity: 1;
+    margin-bottom: 0;
+  }
 }
 .acf-field-object > .handle .row-options a {
   margin-right: 4px;
@@ -245,8 +254,9 @@
 .acf-field-object.open > .handle a:hover {
   text-decoration: underline !important;
 }
-.acf-field-object:hover > .handle .row-options, .acf-field-object.-hover > .handle .row-options {
-  visibility: visible;
+.acf-field-object:hover > .handle .row-options, .acf-field-object.-hover > .handle .row-options, .acf-field-object:focus-within > .handle .row-options {
+  opacity: 1;
+  margin-bottom: 0;
 }
 .acf-field-object > .settings {
   display: none;
@@ -1188,6 +1198,9 @@ td.acf-input {
 .post-type-acf-field-group .acf-field-object.open .handle a {
   color: #0783BE !important;
 }
+.post-type-acf-field-group .acf-field-object.open .handle a.delete-field {
+  color: #a00 !important;
+}
 .post-type-acf-field-group .acf-field-object ul.acf-hl {
   display: flex;
   align-items: stretch;
@@ -1196,7 +1209,7 @@ td.acf-input {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  min-height: 64px;
+  min-height: 56px;
   color: #344054;
 }
 .post-type-acf-field-group .acf-field-object .handle li.li-field-label {
@@ -1392,7 +1405,7 @@ td.acf-input {
 .acf-fields .acf-tab-group {
   display: flex;
   align-items: stretch;
-  min-height: 56px;
+  min-height: 48px;
   padding-top: 0;
   padding-right: 0;
   padding-bottom: 0;
@@ -1511,6 +1524,9 @@ td.acf-input {
 #acf-field-group-options .acf-field[data-name=description] {
   max-width: 600px;
 }
+#acf-field-group-options .acf-button-group {
+  display: inline-flex;
+}
 
 /*---------------------------------------------------------------------------------------------
 *
@@ -1586,8 +1602,8 @@ td.acf-input {
   width: 16px;
   height: 16px;
   display: inline-flex;
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   background-color: #667085;
   border: none;
   border-radius: 0;

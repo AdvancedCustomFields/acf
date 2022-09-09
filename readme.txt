@@ -78,6 +78,14 @@ From your WordPress dashboard
 
 == Changelog ==
 
+= 6.0.0-RC3 = 
+*Release Date 9th September 2022*
+
+* Fix - Blocks containing InnerBlocks are now correctly editable when preloaded. This fix required reverting the previous RC1 change which allowed block templates to render other blocks with InnerBlocks - we will re-enable that support in a subsequent release shortly
+* Fix - block.json blocks now default to `apiVersion: 2` which solves issues with duplicated wrapper markup for blocks which didn’t manually define it
+* Fix - Repeaters no longer use pagination in front end forms
+* Fix - Various refinements and fixes of the new UI
+
 = 6.0.0-RC2 =
 *Release Date 5th September 2022*
 
