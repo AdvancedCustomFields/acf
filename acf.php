@@ -1,69 +1,90 @@
 <?php
-/*
-Plugin Name: Advanced Custom Fields
-Plugin URI: https://www.advancedcustomfields.com
-Description: Customize WordPress with powerful, professional and intuitive fields.
-Version: 5.12.3
-Author: Delicious Brains
-Author URI: https://www.advancedcustomfields.com
-Text Domain: acf
-Domain Path: /lang
-*/
+/**
+ * Advanced Custom Fields
+ *
+ * @package       ACF
+ * @author        WP Engine
+ *
+ * @wordpress-plugin
+ * Plugin Name:   Advanced Custom Fields
+ * Plugin URI:    https://www.advancedcustomfields.com
+ * Description:   Customize WordPress with powerful, professional and intuitive fields.
+ * Version:       6.0.0
+ * Author:        WP Engine
+ * Author URI:    https://www.advancedcustomfields.com
+ * Text Domain:   acf
+ * Domain Path:   /lang
+ */
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
+	exit; // Exit if accessed directly.
 }
 
-if ( ! class_exists( 'ACF' ) ) :
+if ( ! class_exists( 'ACF' ) ) {
 
+	/**
+	 * The main ACF class
+	 */
 	class ACF {
 
-		/** @var string The plugin version number. */
-		var $version = '5.12.3';
-
-		/** @var array The plugin settings array. */
-		var $settings = array();
-
-		/** @var array The plugin data array. */
-		var $data = array();
-
-		/** @var array Storage for class instances. */
-		var $instances = array();
+		/**
+		 * The plugin version number.
+		 *
+		 * @var string
+		 */
+		public $version = '6.0.0';
 
 		/**
-		 * __construct
+		 * The plugin settings array.
 		 *
+		 * @var array
+		 */
+		public $settings = array();
+
+		/**
+		 * The plugin data array.
+		 *
+		 * @var array
+		 */
+		public $data = array();
+
+		/**
+		 * Storage for class instances.
+		 *
+		 * @var array
+		 */
+		public $instances = array();
+
+		/**
 		 * A dummy constructor to ensure ACF is only setup once.
 		 *
 		 * @date    23/06/12
 		 * @since   5.0.0
 		 *
-		 * @param   void
 		 * @return  void
 		 */
-		function __construct() {
+		public function __construct() {
 			// Do nothing.
 		}
 
 		/**
-		 * initialize
-		 *
 		 * Sets up the ACF plugin.
 		 *
 		 * @date    28/09/13
 		 * @since   5.0.0
 		 *
-		 * @param   void
 		 * @return  void
 		 */
-		function initialize() {
+		public function initialize() {
 
 			// Define constants.
 			$this->define( 'ACF', true );
 			$this->define( 'ACF_PATH', plugin_dir_path( __FILE__ ) );
 			$this->define( 'ACF_BASENAME', plugin_basename( __FILE__ ) );
 			$this->define( 'ACF_VERSION', $this->version );
-			$this->define( 'ACF_MAJOR_VERSION', 5 );
+			$this->define( 'ACF_MAJOR_VERSION', 6 );
+			$this->define( 'ACF_FIELD_API_VERSION', 5 );
+			$this->define( 'ACF_UPGRADE_VERSION', '5.5.0' ); // Highest version with an upgrade routine. See upgrades.php.
 
 			// Define settings.
 			$this->settings = array(
@@ -185,11 +206,6 @@ if ( ! class_exists( 'ACF' ) ) :
 			// Include PRO.
 			acf_include( 'pro/acf-pro.php' );
 
-			// Include tests.
-			if ( defined( 'ACF_DEV' ) && ACF_DEV ) {
-				acf_include( 'tests/tests.php' );
-			}
-
 			// Add actions.
 			add_action( 'init', array( $this, 'init' ), 5 );
 			add_action( 'init', array( $this, 'register_post_types' ), 5 );
@@ -202,17 +218,14 @@ if ( ! class_exists( 'ACF' ) ) :
 		}
 
 		/**
-		 * init
-		 *
 		 * Completes the setup process on "init" of earlier.
 		 *
 		 * @date    28/09/13
 		 * @since   5.0.0
 		 *
-		 * @param   void
 		 * @return  void
 		 */
-		function init() {
+		public function init() {
 
 			// Bail early if called directly from functions.php or plugin file.
 			if ( ! did_action( 'plugins_loaded' ) ) {
@@ -277,9 +290,9 @@ if ( ! class_exists( 'ACF' ) ) :
 			 * @date    28/09/13
 			 * @since   5.0.0
 			 *
-			 * @param   int $major_version The major version of ACF.
+			 * @param   int ACF_FIELD_API_VERSION The field API version.
 			 */
-			do_action( 'acf/include_field_types', ACF_MAJOR_VERSION );
+			do_action( 'acf/include_field_types', ACF_FIELD_API_VERSION );
 
 			// Include locations.
 			acf_include( 'includes/locations/class-acf-location-post-type.php' );
@@ -310,9 +323,9 @@ if ( ! class_exists( 'ACF' ) ) :
 			 * @date    28/09/13
 			 * @since   5.0.0
 			 *
-			 * @param   int $major_version The major version of ACF.
+			 * @param   int ACF_FIELD_API_VERSION The field API version.
 			 */
-			do_action( 'acf/include_location_rules', ACF_MAJOR_VERSION );
+			do_action( 'acf/include_location_rules', ACF_FIELD_API_VERSION );
 
 			/**
 			 * Fires during initialization. Used to add local fields.
@@ -320,9 +333,9 @@ if ( ! class_exists( 'ACF' ) ) :
 			 * @date    28/09/13
 			 * @since   5.0.0
 			 *
-			 * @param   int $major_version The major version of ACF.
+			 * @param   int ACF_FIELD_API_VERSION The field API version.
 			 */
-			do_action( 'acf/include_fields', ACF_MAJOR_VERSION );
+			do_action( 'acf/include_fields', ACF_FIELD_API_VERSION );
 
 			/**
 			 * Fires after ACF is completely "initialized".
@@ -330,23 +343,20 @@ if ( ! class_exists( 'ACF' ) ) :
 			 * @date    28/09/13
 			 * @since   5.0.0
 			 *
-			 * @param   int $major_version The major version of ACF.
+			 * @param   int ACF_MAJOR_VERSION The major version of ACF.
 			 */
 			do_action( 'acf/init', ACF_MAJOR_VERSION );
 		}
 
 		/**
-		 * register_post_types
-		 *
 		 * Registers the ACF post types.
 		 *
 		 * @date    22/10/2015
 		 * @since   5.3.2
 		 *
-		 * @param   void
 		 * @return  void
 		 */
-		function register_post_types() {
+		public function register_post_types() {
 
 			// Vars.
 			$cap = acf_get_setting( 'capability' );
@@ -379,7 +389,7 @@ if ( ! class_exists( 'ACF' ) ) :
 						'edit_posts'   => $cap,
 						'delete_posts' => $cap,
 					),
-					'supports'        => array( 'title' ),
+					'supports'        => false,
 					'rewrite'         => false,
 					'query_var'       => false,
 				)
@@ -421,28 +431,26 @@ if ( ! class_exists( 'ACF' ) ) :
 		}
 
 		/**
-		 * register_post_status
-		 *
 		 * Registers the ACF post statuses.
 		 *
 		 * @date    22/10/2015
 		 * @since   5.3.2
 		 *
-		 * @param   void
 		 * @return  void
 		 */
-		function register_post_status() {
+		public function register_post_status() {
 
-			// Register the Disabled post status.
+			// Register the Inactive post status.
 			register_post_status(
 				'acf-disabled',
 				array(
-					'label'                     => _x( 'Disabled', 'post status', 'acf' ),
+					'label'                     => _x( 'Inactive', 'post status', 'acf' ),
 					'public'                    => true,
 					'exclude_from_search'       => false,
 					'show_in_admin_all_list'    => true,
 					'show_in_admin_status_list' => true,
-					'label_count'               => _n_noop( 'Disabled <span class="count">(%s)</span>', 'Disabled <span class="count">(%s)</span>', 'acf' ),
+					/* translators: counts for inactive field groups */
+					'label_count'               => _n_noop( 'Inactive <span class="count">(%s)</span>', 'Inactive <span class="count">(%s)</span>', 'acf' ),
 				)
 			);
 		}
@@ -454,7 +462,7 @@ if ( ! class_exists( 'ACF' ) ) :
 		 * @param string $plugin The plugin being activated.
 		 */
 		public function deactivate_other_instances( $plugin ) {
-			if ( ! in_array( $plugin, array( 'advanced-custom-fields/acf.php', 'advanced-custom-fields-pro/acf.php' ) ) ) {
+			if ( ! in_array( $plugin, array( 'advanced-custom-fields/acf.php', 'advanced-custom-fields-pro/acf.php' ), true ) ) {
 				return;
 			}
 
@@ -487,14 +495,14 @@ if ( ! class_exists( 'ACF' ) ) :
 		 * Displays a notice when either ACF or ACF PRO is automatically deactivated.
 		 */
 		public function plugin_deactivated_notice() {
-			$deactivated_notice_id = get_transient( 'acf_deactivated_notice_id' );
-			if ( ! in_array( $deactivated_notice_id, array( '1', '2' ) ) ) {
+			$deactivated_notice_id = (int) get_transient( 'acf_deactivated_notice_id' );
+			if ( ! in_array( $deactivated_notice_id, array( 1, 2 ), true ) ) {
 				return;
 			}
 
-			$message = __( "Advanced Custom Fields and Advanced Custom Fields PRO should not be active at the same time. We've automatically deactivated Advanced Custom Fields.", 'acf' );
-			if ( '2' === $deactivated_notice_id ) {
-				$message = __( "Advanced Custom Fields and Advanced Custom Fields PRO should not be active at the same time. We've automatically deactivated Advanced Custom Fields PRO.", 'acf' );
+			$message = __( "Advanced Custom Fields and Advanced Custom Fields should not be active at the same time. We've automatically deactivated Advanced Custom Fields.", 'acf' );
+			if ( 2 === $deactivated_notice_id ) {
+				$message = __( "Advanced Custom Fields and Advanced Custom Fields should not be active at the same time. We've automatically deactivated Advanced Custom Fields PRO.", 'acf' );
 			}
 
 			?>
@@ -507,31 +515,34 @@ if ( ! class_exists( 'ACF' ) ) :
 		}
 
 		/**
-		 * posts_where
-		 *
 		 * Filters the $where clause allowing for custom WP_Query args.
 		 *
 		 * @date    31/8/19
 		 * @since   5.8.1
 		 *
-		 * @param   string $where The WHERE clause.
+		 * @param   string   $where The WHERE clause.
+		 * @param   WP_Query $wp_query The query object.
 		 * @return  WP_Query $wp_query The query object.
 		 */
-		function posts_where( $where, $wp_query ) {
+		public function posts_where( $where, $wp_query ) {
 			global $wpdb;
 
+			$field_key  = $wp_query->get( 'acf_field_key' );
+			$field_name = $wp_query->get( 'acf_field_name' );
+			$group_key  = $wp_query->get( 'acf_group_key' );
+
 			// Add custom "acf_field_key" arg.
-			if ( $field_key = $wp_query->get( 'acf_field_key' ) ) {
+			if ( $field_key ) {
 				$where .= $wpdb->prepare( " AND {$wpdb->posts}.post_name = %s", $field_key );
 			}
 
 			// Add custom "acf_field_name" arg.
-			if ( $field_name = $wp_query->get( 'acf_field_name' ) ) {
+			if ( $field_name ) {
 				$where .= $wpdb->prepare( " AND {$wpdb->posts}.post_excerpt = %s", $field_name );
 			}
 
 			// Add custom "acf_group_key" arg.
-			if ( $group_key = $wp_query->get( 'acf_group_key' ) ) {
+			if ( $group_key ) {
 				$where .= $wpdb->prepare( " AND {$wpdb->posts}.post_name = %s", $group_key );
 			}
 
@@ -540,8 +551,6 @@ if ( ! class_exists( 'ACF' ) ) :
 		}
 
 		/**
-		 * define
-		 *
 		 * Defines a constant if doesnt already exist.
 		 *
 		 * @date    3/5/17
@@ -551,15 +560,13 @@ if ( ! class_exists( 'ACF' ) ) :
 		 * @param   mixed  $value The constant value.
 		 * @return  void
 		 */
-		function define( $name, $value = true ) {
+		public function define( $name, $value = true ) {
 			if ( ! defined( $name ) ) {
 				define( $name, $value );
 			}
 		}
 
 		/**
-		 * has_setting
-		 *
 		 * Returns true if a setting exists for this name.
 		 *
 		 * @date    2/2/18
@@ -568,13 +575,11 @@ if ( ! class_exists( 'ACF' ) ) :
 		 * @param   string $name The setting name.
 		 * @return  boolean
 		 */
-		function has_setting( $name ) {
+		public function has_setting( $name ) {
 			return isset( $this->settings[ $name ] );
 		}
 
 		/**
-		 * get_setting
-		 *
 		 * Returns a setting or null if doesn't exist.
 		 *
 		 * @date    28/09/13
@@ -583,13 +588,11 @@ if ( ! class_exists( 'ACF' ) ) :
 		 * @param   string $name The setting name.
 		 * @return  mixed
 		 */
-		function get_setting( $name ) {
+		public function get_setting( $name ) {
 			return isset( $this->settings[ $name ] ) ? $this->settings[ $name ] : null;
 		}
 
 		/**
-		 * update_setting
-		 *
 		 * Updates a setting for the given name and value.
 		 *
 		 * @date    28/09/13
@@ -599,14 +602,12 @@ if ( ! class_exists( 'ACF' ) ) :
 		 * @param   mixed  $value The setting value.
 		 * @return  true
 		 */
-		function update_setting( $name, $value ) {
+		public function update_setting( $name, $value ) {
 			$this->settings[ $name ] = $value;
 			return true;
 		}
 
 		/**
-		 * get_data
-		 *
 		 * Returns data or null if doesn't exist.
 		 *
 		 * @date    28/09/13
@@ -615,13 +616,11 @@ if ( ! class_exists( 'ACF' ) ) :
 		 * @param   string $name The data name.
 		 * @return  mixed
 		 */
-		function get_data( $name ) {
+		public function get_data( $name ) {
 			return isset( $this->data[ $name ] ) ? $this->data[ $name ] : null;
 		}
 
 		/**
-		 * set_data
-		 *
 		 * Sets data for the given name and value.
 		 *
 		 * @date    28/09/13
@@ -631,13 +630,11 @@ if ( ! class_exists( 'ACF' ) ) :
 		 * @param   mixed  $value The data value.
 		 * @return  void
 		 */
-		function set_data( $name, $value ) {
+		public function set_data( $name, $value ) {
 			$this->data[ $name ] = $value;
 		}
 
 		/**
-		 * get_instance
-		 *
 		 * Returns an instance or null if doesn't exist.
 		 *
 		 * @date    13/2/18
@@ -646,14 +643,12 @@ if ( ! class_exists( 'ACF' ) ) :
 		 * @param   string $class The instance class name.
 		 * @return  object
 		 */
-		function get_instance( $class ) {
+		public function get_instance( $class ) {
 			$name = strtolower( $class );
 			return isset( $this->instances[ $name ] ) ? $this->instances[ $name ] : null;
 		}
 
 		/**
-		 * new_instance
-		 *
 		 * Creates and stores an instance of the given class.
 		 *
 		 * @date    13/2/18
@@ -662,7 +657,7 @@ if ( ! class_exists( 'ACF' ) ) :
 		 * @param   string $class The instance class name.
 		 * @return  object
 		 */
-		function new_instance( $class ) {
+		public function new_instance( $class ) {
 			$instance                 = new $class();
 			$name                     = strtolower( $class );
 			$this->instances[ $name ] = $instance;
@@ -679,7 +674,7 @@ if ( ! class_exists( 'ACF' ) ) :
 		 * @return  bool
 		 */
 		public function __isset( $key ) {
-			return in_array( $key, array( 'locations', 'json' ) );
+			return in_array( $key, array( 'locations', 'json' ), true );
 		}
 
 		/**
@@ -702,20 +697,17 @@ if ( ! class_exists( 'ACF' ) ) :
 		}
 	}
 
-	/*
-	* acf
-	*
-	* The main function responsible for returning the one true acf Instance to functions everywhere.
-	* Use this function like you would a global variable, except without needing to declare the global.
-	*
-	* Example: <?php $acf = acf(); ?>
-	*
-	* @date    4/09/13
-	* @since   4.3.0
-	*
-	* @param   void
-	* @return  ACF
-	*/
+	/**
+	 * The main function responsible for returning the one true acf Instance to functions everywhere.
+	 * Use this function like you would a global variable, except without needing to declare the global.
+	 *
+	 * Example: <?php $acf = acf(); ?>
+	 *
+	 * @date    4/09/13
+	 * @since   4.3.0
+	 *
+	 * @return  ACF
+	 */
 	function acf() {
 		global $acf;
 
@@ -730,4 +722,4 @@ if ( ! class_exists( 'ACF' ) ) :
 	// Instantiate.
 	acf();
 
-endif; // class_exists check
+} // class_exists check

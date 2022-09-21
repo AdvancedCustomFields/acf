@@ -12,7 +12,7 @@
 # This file is distributed under the same license as Advanced Custom Fields.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-08-04T09:41:05+00:00\n"
+"PO-Revision-Date: 2022-09-20T10:22:41+00:00\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "Language: sv_SE\n"
 "MIME-Version: 1.0\n"
@@ -670,15 +670,15 @@ msgstr "Under etiketter"
 
 #: includes/admin/views/field-group-options.php:97
 msgid "Instruction placement"
-msgstr "Instruktionsplacering"
+msgstr "Placering av instruktion"
 
 #: includes/admin/views/field-group-options.php:80
 msgid "Label placement"
-msgstr "Etikettsplacering"
+msgstr "Placering av etikett"
 
 #: includes/admin/views/field-group-options.php:70
 msgid "Side"
-msgstr "Sida"
+msgstr "Vid sidan"
 
 #: includes/admin/views/field-group-options.php:69
 msgid "Normal (after content)"
@@ -727,7 +727,7 @@ msgstr "Nyckel"
 
 #: includes/admin/views/field-group-fields.php:4
 msgid "Order"
-msgstr "Sortera"
+msgstr "Sortering"
 
 #: includes/admin/views/field-group-field.php:215
 msgid "Close Field"
@@ -795,7 +795,7 @@ msgstr "Flytta"
 
 #: includes/admin/views/field-group-field.php:58
 msgid "Move field to another group"
-msgstr "Flytta fält till annan grupp"
+msgstr "Flytta fältet till en annan grupp"
 
 #: includes/admin/views/field-group-field.php:57
 msgid "Duplicate field"
@@ -1129,7 +1129,7 @@ msgstr "(detta fält)"
 #: assets/build/js/acf-input.js:924 assets/build/js/acf-input.js:1002
 #: assets/build/js/acf-input.js:1030
 msgid "Checked"
-msgstr "Markerat"
+msgstr "Ikryssad"
 
 #: includes/admin/admin-field-group.php:169
 #: assets/build/js/acf-field-group.js:1075
@@ -1228,7 +1228,7 @@ msgstr "jQuery"
 
 #: includes/fields.php:357
 msgid "Relational"
-msgstr "Relation"
+msgstr "Relationellt"
 
 #: includes/fields.php:356
 msgid "Choice"
@@ -1340,12 +1340,12 @@ msgstr "Är du säker?"
 #: includes/assets.php:368 assets/build/js/acf-input.js:8793
 #: assets/build/js/acf-input.js:10110
 msgid "%d fields require attention"
-msgstr "%d fält kräver uppmärksamhet"
+msgstr "%d fält kräver din uppmärksamhet"
 
 #: includes/assets.php:367 assets/build/js/acf-input.js:8791
 #: assets/build/js/acf-input.js:10106
 msgid "1 field requires attention"
-msgstr "1 fält kräver uppmärksamhet"
+msgstr "1 fält kräver din uppmärksamhet"
 
 #: includes/assets.php:366 includes/validation.php:286
 #: includes/validation.php:296 assets/build/js/acf-input.js:8784
@@ -1414,7 +1414,7 @@ msgstr "eller"
 
 #: includes/api/api-helpers.php:3382
 msgid "File size must not exceed %s."
-msgstr "Filstorlek får inte överstiga %s."
+msgstr "Filstorleken får inte överskrida %s."
 
 #: includes/api/api-helpers.php:3377
 msgid "File size must be at least %s."
@@ -1422,19 +1422,19 @@ msgstr "Filstorlek måste vara lägst %s."
 
 #: includes/api/api-helpers.php:3362
 msgid "Image height must not exceed %dpx."
-msgstr "Bildhöjd får inte överstiga %dpx."
+msgstr "Bildens höjd får inte överskrida %d px."
 
 #: includes/api/api-helpers.php:3357
 msgid "Image height must be at least %dpx."
-msgstr "Bildhöjd måste vara minst %dpx."
+msgstr "Bildens höjd måste vara åtminstone %d px."
 
 #: includes/api/api-helpers.php:3343
 msgid "Image width must not exceed %dpx."
-msgstr "Bildbredd får inte överstiga %dpx."
+msgstr "Bildens bredd får inte överskrida %d px."
 
 #: includes/api/api-helpers.php:3338
 msgid "Image width must be at least %dpx."
-msgstr "Bildbredd måste vara minst %dpx."
+msgstr "Bildens bredd måste vara åtminstone %d px."
 
 #: includes/api/api-helpers.php:1569 includes/api/api-term.php:147
 msgid "(no title)"
@@ -1531,7 +1531,7 @@ msgstr "Namn"
 
 #: includes/fields/class-acf-field-taxonomy.php:910
 msgid "%s added"
-msgstr "%s tillagd"
+msgstr "%s har lagts till"
 
 #: includes/fields/class-acf-field-taxonomy.php:874
 msgid "%s already exists"
@@ -1613,11 +1613,11 @@ msgstr "Inga %s"
 
 #: includes/fields/class-acf-field-number.php:251
 msgid "Value must be equal to or lower than %d"
-msgstr "Värde måste vara lika med eller lägre än %d"
+msgstr "Värdet måste vara lika med eller lägre än %d"
 
 #: includes/fields/class-acf-field-number.php:244
 msgid "Value must be equal to or higher than %d"
-msgstr "Värde måste vara lika med eller högre än %d"
+msgstr "Värdet måste vara lika med eller högre än %d"
 
 #: includes/fields/class-acf-field-number.php:229
 msgid "Value must be a number"
@@ -1633,15 +1633,15 @@ msgstr "Spara ”andra” värden i fältets val"
 
 #: includes/fields/class-acf-field-radio.php:227
 msgid "Save Other"
-msgstr "Spara annan"
+msgstr "Spara annat"
 
 #: includes/fields/class-acf-field-radio.php:219
 msgid "Add 'other' choice to allow for custom values"
-msgstr "Lägg till ”annat” val för att tillåta anpassade värden"
+msgstr "Lägg till valet ”annat” för att tillåta anpassade värden"
 
 #: includes/fields/class-acf-field-radio.php:214
 msgid "Other"
-msgstr "Andra"
+msgstr "Annat"
 
 #: includes/fields/class-acf-field-radio.php:25
 msgid "Radio Button"
@@ -1731,11 +1731,11 @@ msgstr "Lösenord"
 
 #: includes/fields/class-acf-field-select.php:440
 msgid "Specify the value returned"
-msgstr "Specifiera det returnerade värdet"
+msgstr "Specificera värdet att returnera"
 
 #: includes/fields/class-acf-field-select.php:422
 msgid "Use AJAX to lazy load choices?"
-msgstr "Använd AJAX för att med uppskjuten inläsning hämta val?"
+msgstr "Använda AJAX för att ladda alternativ efter att sidan laddats?"
 
 #: includes/fields/class-acf-field-checkbox.php:367
 #: includes/fields/class-acf-field-select.php:376
@@ -1802,12 +1802,14 @@ msgstr "Inga matchningar hittades"
 msgctxt "Select2 JS matches_n"
 msgid "%d results are available, use up and down arrow keys to navigate."
 msgstr ""
-"%d resultat är tillgängliga, använd upp- och nedåtpilarna för att navigera."
+"%d resultat är tillgängliga, använd tangenterna med uppåt- och nedåtpil för "
+"att navigera."
 
 #: includes/fields/class-acf-field-select.php:107
 msgctxt "Select2 JS matches_1"
 msgid "One result is available, press enter to select it."
-msgstr "Ett resultat är tillgängligt, tryck enter för att välja det."
+msgstr ""
+"Ett resultat är tillgängligt, tryck på returtangenten för att välja det."
 
 #: includes/fields/class-acf-field-select.php:25
 #: includes/fields/class-acf-field-taxonomy.php:738
@@ -2167,7 +2169,7 @@ msgstr "Värde får inte överstiga %d tecken"
 #: includes/fields/class-acf-field-text.php:142
 #: includes/fields/class-acf-field-textarea.php:126
 msgid "Leave blank for no limit"
-msgstr "Lämna tomt för ingen gräns"
+msgstr "Lämna fältet tomt för att inte sätta någon begränsning"
 
 #: includes/fields/class-acf-field-text.php:141
 #: includes/fields/class-acf-field-textarea.php:125
@@ -2213,7 +2215,7 @@ msgstr "Lägg till före"
 #: includes/fields/class-acf-field-textarea.php:115
 #: includes/fields/class-acf-field-url.php:113
 msgid "Appears within the input"
-msgstr "Visas inom inmatningen"
+msgstr "Visas inuti inmatningen"
 
 #: includes/fields/class-acf-field-email.php:128
 #: includes/fields/class-acf-field-number.php:136
@@ -2726,7 +2728,7 @@ msgstr "Sök"
 #: includes/fields/class-acf-field-google-map.php:60
 #: assets/build/js/acf-input.js:2673 assets/build/js/acf-input.js:3004
 msgid "Sorry, this browser does not support geolocation"
-msgstr "Tyvärr, denna webbläsare stöder inte geolocation"
+msgstr "Denna webbläsare saknar stöd för platsinformation"
 
 #: includes/fields/class-acf-field-google-map.php:25
 msgid "Google Map"
@@ -2903,7 +2905,7 @@ msgstr "%s-inställningar"
 
 #: pro/blocks.php:949
 msgid "This block contains no editable fields."
-msgstr ""
+msgstr "Det här blocket innehåller inga redigerbara fält."
 
 #. translators: %s: an admin URL to the field group edit screen
 #: pro/blocks.php:955
@@ -2911,6 +2913,8 @@ msgid ""
 "Assign a <a href=\"%s\" target=\"_blank\">field group</a> to add fields to "
 "this block."
 msgstr ""
+"Tilldela en <a href=\"%s\" target=\"_blank\">fältgrupp</a> för att lägga "
+"till fält i detta block."
 
 #: pro/options-page.php:78
 msgid "Options Updated"
@@ -2922,28 +2926,37 @@ msgid ""
 "\">Updates</a> page. If you don't have a licence key, please see <a href="
 "\"%2$s\" target=\"_blank\">details & pricing</a>."
 msgstr ""
+"Om du vill aktivera uppdateringar anger du din licensnyckel på sidan <a href="
+"\"%1$s\">Uppdateringar</a>. Om du inte har en licensnyckel, se <a href=\"%2$s"
+"\" target=\"_blank\">uppgifter och priser</a>."
 
 #: pro/updates.php:159
 msgid ""
 "<b>ACF Activation Error</b>. Your defined license key has changed, but an "
 "error occurred when deactivating your old licence"
 msgstr ""
+"<b>ACF-aktiveringsfel</b>. Din definierade licensnyckel har ändrats, men ett "
+"fel uppstod vid inaktivering av din gamla licens"
 
 #: pro/updates.php:154
 msgid ""
 "<b>ACF Activation Error</b>. Your defined license key has changed, but an "
 "error occurred when connecting to activation server"
 msgstr ""
+"<b>ACF-aktiveringsfel</b>. Din definierade licensnyckel har ändrats, men ett "
+"fel uppstod vid anslutning till aktiveringsservern"
 
 #: pro/updates.php:192
 msgid "<b>ACF Activation Error</b>"
-msgstr ""
+msgstr "<b>ACF-aktiveringsfel</b>"
 
 #: pro/updates.php:187
 msgid ""
 "<b>ACF Activation Error</b>. An error occurred when connecting to activation "
 "server"
 msgstr ""
+"<b>ACF-aktiveringsfel</b>. Ett fel uppstod vid anslutning till "
+"aktiveringsservern"
 
 #: pro/updates.php:279, pro/admin/views/html-settings-updates.php:117
 msgid "Check Again"
@@ -2951,7 +2964,7 @@ msgstr "Kontrollera igen"
 
 #: pro/updates.php:561
 msgid "<b>ACF Activation Error</b>. Could not connect to activation server"
-msgstr ""
+msgstr "<b>ACF-aktiveringsfel</b>. Kunde inte ansluta till aktiveringsservern"
 
 #: pro/admin/admin-options-page.php:195
 msgid "Publish"
@@ -2987,6 +3000,8 @@ msgid ""
 "<b>Error</b>. Your license for this site has expired or been deactivated. "
 "Please reactivate your ACF PRO license."
 msgstr ""
+"<b>Fel</b>. Din licens för denna webbplats har gått ut eller inaktiverats. "
+"Återaktivera din ACF PRO-licens."
 
 #: pro/fields/class-acf-field-clone.php:25
 msgctxt "noun"
@@ -3146,19 +3161,19 @@ msgstr "Högsta tillåtna antal layouter"
 #: pro/fields/class-acf-field-flexible-content.php:1704,
 #: pro/fields/class-acf-field-repeater.php:861
 msgid "%s must be of type array or null."
-msgstr ""
+msgstr "%s måste vara av typen array eller null."
 
 #: pro/fields/class-acf-field-flexible-content.php:1715
 msgid "%1$s must contain at least %2$s %3$s layout."
 msgid_plural "%1$s must contain at least %2$s %3$s layouts."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1$s måste innehålla minst %2$s %3$s layout."
+msgstr[1] "%1$s måste innehålla minst %2$s %3$s layouter."
 
 #: pro/fields/class-acf-field-flexible-content.php:1731
 msgid "%1$s must contain at most %2$s %3$s layout."
 msgid_plural "%1$s must contain at most %2$s %3$s layouts."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1$s får innehålla högst %2$s %3$s layout."
+msgstr[1] "%1$s får innehålla högst %2$s %3$s layouter."
 
 #: pro/fields/class-acf-field-gallery.php:73
 msgid "Add Image to Gallery"
@@ -3243,7 +3258,7 @@ msgstr "Högsta tillåtna antal rader uppnått ({max} rader)"
 
 #: pro/fields/class-acf-field-repeater.php:55
 msgid "Error loading page"
-msgstr ""
+msgstr "Kunde inte ladda in sida"
 
 #: pro/fields/class-acf-field-repeater.php:174
 msgid "Collapsed"
@@ -3263,27 +3278,27 @@ msgstr "Högsta tillåtna antal rader"
 
 #: pro/fields/class-acf-field-repeater.php:228
 msgid "Pagination"
-msgstr ""
+msgstr "Sidnumrering"
 
 #: pro/fields/class-acf-field-repeater.php:229
 msgid "Useful for fields with a large number of rows."
-msgstr ""
+msgstr "Användbart för fält med ett stort antal rader."
 
 #: pro/fields/class-acf-field-repeater.php:240
 msgid "Rows Per Page"
-msgstr ""
+msgstr "Rader per sida"
 
 #: pro/fields/class-acf-field-repeater.php:241
 msgid "Set the number of rows to be displayed on a page."
-msgstr ""
+msgstr "Ange antalet rader som ska visas på en sida."
 
 #: pro/fields/class-acf-field-repeater.php:959
 msgid "Invalid field key."
-msgstr ""
+msgstr "Ogiltig fältnyckel."
 
 #: pro/fields/class-acf-field-repeater.php:968
 msgid "There was an error retrieving the field."
-msgstr ""
+msgstr "Ett fel uppstod vid hämtning av fältet."
 
 #: pro/fields/class-acf-repeater-table.php:389
 msgid "Add row"
@@ -3300,29 +3315,29 @@ msgstr "Ta bort rad"
 #: pro/fields/class-acf-repeater-table.php:435,
 #: pro/fields/class-acf-repeater-table.php:452
 msgid "Current Page"
-msgstr ""
+msgstr "Nuvarande sida"
 
 #: pro/fields/class-acf-repeater-table.php:444
 msgid "First page"
-msgstr ""
+msgstr "Första sidan"
 
 #: pro/fields/class-acf-repeater-table.php:448
 msgid "Previous page"
-msgstr ""
+msgstr "Föregående sida"
 
 #. translators: 1: Current page, 2: Total pages.
 #: pro/fields/class-acf-repeater-table.php:457
 msgctxt "paging"
 msgid "%1$s of %2$s"
-msgstr ""
+msgstr "%1$s av %2$s"
 
 #: pro/fields/class-acf-repeater-table.php:465
 msgid "Next page"
-msgstr ""
+msgstr "Nästa sida"
 
 #: pro/fields/class-acf-repeater-table.php:469
 msgid "Last page"
-msgstr ""
+msgstr "Sista sidan"
 
 #: pro/locations/class-acf-location-block.php:71
 msgid "No block types exist"
@@ -3360,11 +3375,11 @@ msgstr "Licensnyckel"
 
 #: pro/admin/views/html-settings-updates.php:22
 msgid "Your license key is defined in wp-config.php."
-msgstr ""
+msgstr "Din licensnyckel är angiven i wp-config.php."
 
 #: pro/admin/views/html-settings-updates.php:29
 msgid "Retry Activation"
-msgstr ""
+msgstr "Försök aktivera igen"
 
 #: pro/admin/views/html-settings-updates.php:76
 msgid "Update Information"
@@ -3392,7 +3407,7 @@ msgstr "Uppdatera tillägg"
 
 #: pro/admin/views/html-settings-updates.php:107
 msgid "Please reactivate your license to unlock updates"
-msgstr ""
+msgstr "Återaktivera din licens för att låsa upp uppdateringar"
 
 #: pro/admin/views/html-settings-updates.php:124
 msgid "Changelog"

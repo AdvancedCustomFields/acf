@@ -97,7 +97,7 @@ if ( ! class_exists( 'acf_form_widget' ) ) :
 
 		function acf_validate_save_post() {
 
-			// bail ealry if not widget
+			// bail early if not widget
 			if ( ! isset( $_POST['_acf_widget_id'] ) ) {
 				return;
 			}

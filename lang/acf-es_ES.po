@@ -12,7 +12,7 @@
 # This file is distributed under the same license as Advanced Custom Fields.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-08-04T09:41:05+00:00\n"
+"PO-Revision-Date: 2022-09-20T10:22:41+00:00\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "Language: es_ES\n"
 "MIME-Version: 1.0\n"
@@ -2915,7 +2915,7 @@ msgstr "%s ajustes"
 
 #: pro/blocks.php:949
 msgid "This block contains no editable fields."
-msgstr ""
+msgstr "Este bloque no contiene campos editables."
 
 #. translators: %s: an admin URL to the field group edit screen
 #: pro/blocks.php:955
@@ -2923,6 +2923,8 @@ msgid ""
 "Assign a <a href=\"%s\" target=\"_blank\">field group</a> to add fields to "
 "this block."
 msgstr ""
+"Asigna un <a href=\"%s\" target=\"_blank\">grupo de campos</a> para añadir "
+"campos a este bloque."
 
 #: pro/options-page.php:78
 msgid "Options Updated"
@@ -3272,7 +3274,7 @@ msgstr "Máximo de filas alcanzado ({max} rows)"
 
 #: pro/fields/class-acf-field-repeater.php:55
 msgid "Error loading page"
-msgstr ""
+msgstr "Error al cargar la página"
 
 #: pro/fields/class-acf-field-repeater.php:174
 msgid "Collapsed"
@@ -3292,27 +3294,27 @@ msgstr "Máximo de Filas"
 
 #: pro/fields/class-acf-field-repeater.php:228
 msgid "Pagination"
-msgstr ""
+msgstr "Paginación"
 
 #: pro/fields/class-acf-field-repeater.php:229
 msgid "Useful for fields with a large number of rows."
-msgstr ""
+msgstr "Útil para campos con un gran número de filas."
 
 #: pro/fields/class-acf-field-repeater.php:240
 msgid "Rows Per Page"
-msgstr ""
+msgstr "Filas por página"
 
 #: pro/fields/class-acf-field-repeater.php:241
 msgid "Set the number of rows to be displayed on a page."
-msgstr ""
+msgstr "Establece el número de filas que se mostrarán en una página."
 
 #: pro/fields/class-acf-field-repeater.php:959
 msgid "Invalid field key."
-msgstr ""
+msgstr "Clave de campo no válida."
 
 #: pro/fields/class-acf-field-repeater.php:968
 msgid "There was an error retrieving the field."
-msgstr ""
+msgstr "Ha habido un error al recuperar el campo."
 
 #: pro/fields/class-acf-repeater-table.php:389
 msgid "Add row"
@@ -3329,29 +3331,29 @@ msgstr "Remover fila"
 #: pro/fields/class-acf-repeater-table.php:435,
 #: pro/fields/class-acf-repeater-table.php:452
 msgid "Current Page"
-msgstr ""
+msgstr "Página actual"
 
 #: pro/fields/class-acf-repeater-table.php:444
 msgid "First page"
-msgstr ""
+msgstr "Primera página"
 
 #: pro/fields/class-acf-repeater-table.php:448
 msgid "Previous page"
-msgstr ""
+msgstr "Página anterior"
 
 #. translators: 1: Current page, 2: Total pages.
 #: pro/fields/class-acf-repeater-table.php:457
 msgctxt "paging"
 msgid "%1$s of %2$s"
-msgstr ""
+msgstr "%1$s de %2$s"
 
 #: pro/fields/class-acf-repeater-table.php:465
 msgid "Next page"
-msgstr ""
+msgstr "Página siguiente"
 
 #: pro/fields/class-acf-repeater-table.php:469
 msgid "Last page"
-msgstr ""
+msgstr "Última página"
 
 #: pro/locations/class-acf-location-block.php:71
 msgid "No block types exist"

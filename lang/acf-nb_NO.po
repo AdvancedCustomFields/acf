@@ -12,7 +12,7 @@
 # This file is distributed under the same license as Advanced Custom Fields.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-08-04T09:41:05+00:00\n"
+"PO-Revision-Date: 2022-09-20T10:22:41+00:00\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "Language: nb_NO\n"
 "MIME-Version: 1.0\n"
@@ -66,8 +66,8 @@ msgstr "%1$s er ikke en av %2$s"
 #: includes/fields/class-acf-field-post_object.php:667
 msgid "%1$s must have term %2$s."
 msgid_plural "%1$s must have one of the following terms: %2$s"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1$s må ha termen %2$s."
+msgstr[1] "%1$s må ha én av følgende termer: %2$s"
 
 #: includes/fields/class-acf-field-post_object.php:651
 msgid "%1$s must be of post type %2$s."
@@ -77,11 +77,11 @@ msgstr[1] ""
 
 #: includes/fields/class-acf-field-post_object.php:642
 msgid "%1$s must have a valid post ID."
-msgstr ""
+msgstr "%1$s må ha en gyldig innlegg-ID."
 
 #: includes/fields/class-acf-field-file.php:470
 msgid "%s requires a valid attachment ID."
-msgstr ""
+msgstr "%s må ha en gyldig vedlegg-ID."
 
 #: includes/admin/views/field-group-options.php:27
 msgid "Show in REST API"

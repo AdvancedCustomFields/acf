@@ -12,7 +12,7 @@
 # This file is distributed under the same license as Advanced Custom Fields.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-08-04T09:41:05+00:00\n"
+"PO-Revision-Date: 2022-09-20T10:22:41+00:00\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "Language: cs_CZ\n"
 "MIME-Version: 1.0\n"
@@ -26,12 +26,16 @@ msgid ""
 "Advanced Custom Fields and Advanced Custom Fields PRO should not be active "
 "at the same time. We've automatically deactivated Advanced Custom Fields PRO."
 msgstr ""
+"Advanced Custom Fields a Advanced Custom Fields PRO by neměly být aktivní "
+"současně. Automaticky jsme deaktivovali Advanced Custom Fields PRO."
 
 #: acf.php:495
 msgid ""
 "Advanced Custom Fields and Advanced Custom Fields PRO should not be active "
 "at the same time. We've automatically deactivated Advanced Custom Fields."
 msgstr ""
+"Advanced Custom Fields a Advanced Custom Fields PRO by neměly být aktivní "
+"současně. Automaticky jsme deaktivovali Advanced Custom Fields."
 
 #: includes/acf-value-functions.php:374
 msgid ""
@@ -40,17 +44,21 @@ msgid ""
 "result in malformed or missing data. <a href=\"%2$s\" target=\"_blank"
 "\">Learn how to fix this</a>."
 msgstr ""
+"<strong>%1$s</strong> – Zjistili jsme jedno nebo více volání k načtení "
+"hodnot polí ACF před inicializací ACF. Toto není podporováno a může mít za "
+"následek chybná nebo chybějící data. <a href=\"%2$s\" target=\"_blank"
+"\">Přečtěte si, jak to opravit</a>."
 
 #: includes/fields/class-acf-field-user.php:526
 msgid "%1$s must have a user with the %2$s role."
 msgid_plural "%1$s must have a user with one of the following roles: %2$s"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%1$s musí mít uživatele s rolí %2$s."
+msgstr[1] "%1$s musí mít uživatele s jednou z následujících rolí: %2$s"
+msgstr[2] "%1$s musí mít uživatele s jednou z následujících rolí: %2$s"
 
 #: includes/fields/class-acf-field-user.php:517
 msgid "%1$s must have a valid user ID."
-msgstr ""
+msgstr "%1$s musí mít platné ID uživatele."
 
 #: includes/fields/class-acf-field-user.php:355
 msgid "Invalid request."
