@@ -558,6 +558,7 @@
     events: {
       'click .handle': 'onClickEdit',
       'click .close-field': 'onClickEdit',
+      'click a[data-key="acf_field_settings_tabs"]': 'onChangeSettingsTab',
       'click .delete-field': 'onClickDelete',
       'click .duplicate-field': 'duplicate',
       'click .move-field': 'move',
@@ -792,6 +793,10 @@
       $target = $(e.target);
       if ($target.parent().hasClass('row-options') && !$target.hasClass('edit-field')) return;
       this.isOpen() ? this.close() : this.open();
+    },
+    onChangeSettingsTab: function () {
+      const $settings = this.$el.children('.settings');
+      acf.doAction('show', $settings);
     },
 
     /**
@@ -1193,7 +1198,7 @@
 
 
       const $oldSettings = [];
-      this.$('.acf-field-settings-main .acf-field-type-settings').each(function () {
+      this.$el.find('.acf-field-settings:first > .acf-field-settings-main > .acf-field-type-settings').each(function () {
         let tab = $(this).data('parent-tab');
         let $tabSettings = $(this).children();
         $oldSettings[tab] = $tabSettings;
@@ -2176,10 +2181,8 @@
       });
     },
     filterFindFieldArgs: function (args) {
-      if (!args.parent) {
-        args.visible = true;
-      }
-
+      // Don't change this!
+      args.visible = true;
       return args;
     },
     filterFindFieldsSelector: function (selector) {

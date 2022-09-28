@@ -22,28 +22,10 @@
 *--------------------------------------------------------------------------------------------*/
 /*---------------------------------------------------------------------------------------------
 *
-*  Fonts
-*
-*---------------------------------------------------------------------------------------------*/
-@font-face {
-  font-family: "Inter";
-  src: url("../../inc/fonts/Inter-Regular.woff2") format("woff2"), url("../../inc/fonts/Inter-Regular.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Inter";
-  src: url("../../inc/fonts/Inter-Medium.woff2") format("woff2"), url("../../inc/fonts/Inter-Medium.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-}
-/*---------------------------------------------------------------------------------------------
-*
 *  Global
 *
 *---------------------------------------------------------------------------------------------*/
 .post-type-acf-field-group #wpcontent {
-  font-family: "Inter", system-ui;
   line-height: 140%;
 }
 
@@ -141,6 +123,21 @@
 *  Small
 *
 *---------------------------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------------------------
+*
+*  Link focus style
+*
+*---------------------------------------------------------------------------------------------*/
+.post-type-acf-field-group a:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.post-type-acf-field-group a:focus-visible {
+  box-shadow: 0 0 0 1px #4f94d4, 0 0 2px 1px rgba(79, 148, 212, 0.8);
+  outline: 1px solid transparent;
+}
+
 /*--------------------------------------------------------------------------------------------
 *
 *	acf-field
@@ -570,7 +567,7 @@ body.acf-browser-firefox .acf-field select {
 
 .acf-input-prepend,
 .acf-input-append {
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.4;
   padding: 4px 8px;
   background: #f5f5f5;
@@ -1258,12 +1255,12 @@ html[dir=rtl] .acf-button-group label:last-child {
   margin: 0;
 }
 
-.acf-true-false {
+.acf-admin-single-field-group .acf-true-false {
   border: 1px solid transparent;
 }
-.acf-true-false:focus-within {
+.acf-admin-single-field-group .acf-true-false:focus-within {
   border: 1px solid #399CCB;
-  border-radius: 12px;
+  border-radius: 120px;
 }
 
 /* in media modal */
@@ -2494,6 +2491,28 @@ tr.acf-accordion + tr.acf-accordion {
   background-color: #F2F4F7;
   border-radius: 4px;
   color: #667085;
+}
+
+/*-----------------------------------------------------------------------------
+*
+*  Editor tab styles
+*
+*-----------------------------------------------------------------------------*/
+.acf-fields > .acf-tab-wrap:first-child .acf-tab-group {
+  border-top: none;
+}
+
+.acf-fields > .acf-tab-wrap .acf-tab-group li.active a {
+  background: #ffffff;
+}
+
+.acf-fields > .acf-tab-wrap .acf-tab-group li a {
+  background: #f1f1f1;
+  border-color: #ccd0d4;
+}
+
+.acf-fields > .acf-tab-wrap .acf-tab-group li a:hover {
+  background: #fff;
 }
 
 /*--------------------------------------------------------------------------------------------

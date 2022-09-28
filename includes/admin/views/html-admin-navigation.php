@@ -38,7 +38,11 @@ if ( isset( $submenu[ $parent_slug ] ) ) {
 
 		// Convert submenu slug "test" to "$parent_slug&page=test".
 		if ( ! strpos( $sub_item[2], '.php' ) ) {
-			$tab['url'] = add_query_arg( array( 'page' => $sub_item[2] ), $parent_slug );
+			$tab['url']   = add_query_arg( array( 'page' => $sub_item[2] ), $parent_slug );
+			$tab['class'] = $sub_item[2];
+		} else {
+			// Build class from URL.
+			$tab['class'] = str_replace( 'edit.php?post_type=', '', $sub_item[2] );
 		}
 
 		// Detect active state.
@@ -76,10 +80,11 @@ if ( $tabs === false ) {
 	<h2><?php echo acf_get_setting( 'name' ); ?></h2>
 	<?php
 	foreach ( $tabs as $tab ) {
+		$classname = ! empty( $tab['class'] ) ? $tab['class'] : $tab['text'];
 		printf(
 			'<a class="acf-tab%s %s" href="%s"><i class="acf-icon"></i>%s</a>',
 			! empty( $tab['is_active'] ) ? ' is-active' : '',
-			'acf-header-tab-' . acf_slugify( $tab['text'] ),
+			'acf-header-tab-' . acf_slugify( $classname ),
 			esc_url( $tab['url'] ),
 			acf_esc_html( $tab['text'] )
 		);
@@ -96,11 +101,13 @@ if ( $tabs === false ) {
 </div>
 
 <?php
+
+global $plugin_page;
 $screen = get_current_screen();
 if ( $screen->id !== 'acf-field-group' ) {
-	if ( $screen->id == 'custom-fields_page_acf-tools' ) {
+	if ( $plugin_page == 'acf-tools' ) {
 		$acf_page_title = __( 'Tools', 'acf' );
-	} elseif ( $screen->id == 'custom-fields_page_acf-settings-updates' ) {
+	} elseif ( $plugin_page == 'acf-settings-updates' ) {
 		$acf_page_title = __( 'Updates', 'acf' );
 	}
 	acf_get_view( 'html-admin-acf-header' );

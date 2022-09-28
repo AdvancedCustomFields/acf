@@ -785,11 +785,8 @@ function acf_verify_nonce( $value ) {
 
 function acf_verify_ajax() {
 
-	// vars
-	$nonce = isset( $_REQUEST['nonce'] ) ? $_REQUEST['nonce'] : '';
-
 	// bail early if not acf nonce
-	if ( ! $nonce || ! wp_verify_nonce( $nonce, 'acf_nonce' ) ) {
+	if ( empty( $_REQUEST['nonce'] ) || ! wp_verify_nonce( $_REQUEST['nonce'], 'acf_nonce' ) ) {
 		return false;
 	}
 
@@ -2753,9 +2750,8 @@ function acf_upload_files( $ancestors = array() ) {
 
 	$field_key  = end( $ancestors );
 	$nonce_name = $field_key . '_file_nonce';
-	$file_nonce = isset( $_REQUEST['acf'][ $nonce_name ] ) ? $_REQUEST['acf'][ $nonce_name ] : false;
 
-	if ( ! $file_nonce || ! wp_verify_nonce( $file_nonce, 'acf/file_uploader_nonce/' . $field_key ) ) {
+	if ( empty( $_REQUEST['acf'][ $nonce_name ] ) || ! wp_verify_nonce( $_REQUEST['acf'][ $nonce_name ], 'acf/file_uploader_nonce/' . $field_key ) ) {
 		return;
 	}
 
@@ -2936,13 +2932,13 @@ function acf_maybe_get( $array = array(), $key = 0, $default = null ) {
 
 function acf_maybe_get_POST( $key = '', $default = null ) {
 
-	return isset( $_POST[ $key ] ) ? $_POST[ $key ] : $default;
+	return isset( $_POST[ $key ] ) ? $_POST[ $key ] : $default; // phpcs:ignore WordPress.Security.NonceVerification.Recommended, WordPress.Security.NonceVerification.Missing -- Checked elsewhere.
 
 }
 
 function acf_maybe_get_GET( $key = '', $default = null ) {
 
-	return isset( $_GET[ $key ] ) ? $_GET[ $key ] : $default;
+	return isset( $_GET[ $key ] ) ? $_GET[ $key ] : $default; // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Checked elsewhere.
 
 }
 
@@ -3808,9 +3804,10 @@ function acf_is_ajax( $action = '' ) {
 
 	}
 
+	// phpcs:disable WordPress.Security.NonceVerification.Missing
 	// check $action
 	if ( $action && acf_maybe_get( $_POST, 'action' ) !== $action ) {
-
+	// phpcs:enable WordPress.Security.NonceVerification.Missing
 		$is_ajax = false;
 
 	}

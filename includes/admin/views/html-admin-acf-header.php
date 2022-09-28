@@ -2,7 +2,10 @@
 //phpcs:disable WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound -- included template file.
 
 global $post_type, $post_type_object, $acf_page_title;
-$post_new_file = "post-new.php?post_type=$post_type";
+$post_new_file = sprintf(
+	'post-new.php?post_type=%s',
+	is_string( $post_type ) ? $post_type : 'acf-field-group'
+);
 
 $page_title = false;
 if ( isset( $acf_page_title ) ) {

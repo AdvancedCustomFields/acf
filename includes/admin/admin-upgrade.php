@@ -130,7 +130,7 @@ if ( ! class_exists( 'ACF_Admin_Upgrade' ) ) :
 				// Reduces memory usage (same pattern used in wp-includes/ms-site.php).
 				remove_action( 'switch_blog', 'wp_switch_roles_and_user', 1 );
 
-				foreach ( $sites as $site_id ) {					
+				foreach ( $sites as $site_id ) {
 					switch_to_blog( $site_id );
 
 					$site_needs_upgrade = acf_has_upgrade();

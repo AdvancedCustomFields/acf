@@ -81,7 +81,7 @@ if ( ! class_exists( 'ACF_Admin_Field_Groups' ) ) :
 		 * @return  void
 		 */
 		public function handle_redirection() {
-			if ( isset( $_GET['post_type'] ) && $_GET['post_type'] === 'acf' ) {
+			if ( isset( $_GET['post_type'] ) && $_GET['post_type'] === 'acf' ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 				wp_redirect( $this->get_admin_url() );
 				exit;
 			}
@@ -104,7 +104,7 @@ if ( ! class_exists( 'ACF_Admin_Field_Groups' ) ) :
 			}
 
 			// Get the current view.
-			$this->view = isset( $_GET['post_status'] ) ? sanitize_text_field( $_GET['post_status'] ) : '';
+			$this->view = isset( $_GET['post_status'] ) ? sanitize_text_field( $_GET['post_status'] ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 
 			// Setup and check for custom actions..
 			$this->setup_sync();
@@ -574,10 +574,12 @@ if ( ! class_exists( 'ACF_Admin_Field_Groups' ) ) :
 		 * @since 6.0
 		 */
 		public function check_activate() {
+
+			// phpcs:disable WordPress.Security.NonceVerification.Recommended -- Used for redirect notice.
 			// Display notice on success redirect.
 			if ( isset( $_GET['acfactivatecomplete'] ) ) {
 				$ids = array_map( 'intval', explode( ',', $_GET['acfactivatecomplete'] ) );
-
+				// phpcs:enable WordPress.Security.NonceVerification.Recommended
 				// Generate text.
 				$text = sprintf(
 					_n( 'Field group activated.', '%s field groups activated.', count( $ids ), 'acf' ),
@@ -626,10 +628,11 @@ if ( ! class_exists( 'ACF_Admin_Field_Groups' ) ) :
 		 * @since 6.0
 		 */
 		public function check_deactivate() {
+			// phpcs:disable WordPress.Security.NonceVerification.Recommended -- Used for redirect notice.
 			// Display notice on success redirect.
 			if ( isset( $_GET['acfdeactivatecomplete'] ) ) {
 				$ids = array_map( 'intval', explode( ',', $_GET['acfdeactivatecomplete'] ) );
-
+				// phpcs:enable WordPress.Security.NonceVerification.Recommended
 				// Generate text.
 				$text = sprintf(
 					_n( 'Field group deactivated.', '%s field groups deactivated.', count( $ids ), 'acf' ),
@@ -683,10 +686,11 @@ if ( ! class_exists( 'ACF_Admin_Field_Groups' ) ) :
 		 */
 		public function check_duplicate() {
 
+			// phpcs:disable WordPress.Security.NonceVerification.Recommended -- Used for redirect notice.
 			// Display notice on success redirect.
 			if ( isset( $_GET['acfduplicatecomplete'] ) ) {
 				$ids = array_map( 'intval', explode( ',', $_GET['acfduplicatecomplete'] ) );
-
+				// phpcs:enable WordPress.Security.NonceVerification.Recommended
 				// Generate text.
 				$text = sprintf(
 					_n( 'Field group duplicated.', '%s field groups duplicated.', count( $ids ), 'acf' ),
@@ -740,10 +744,11 @@ if ( ! class_exists( 'ACF_Admin_Field_Groups' ) ) :
 		 */
 		public function check_sync() {
 
+			// phpcs:disable WordPress.Security.NonceVerification.Recommended
 			// Display notice on success redirect.
 			if ( isset( $_GET['acfsynccomplete'] ) ) {
 				$ids = array_map( 'intval', explode( ',', $_GET['acfsynccomplete'] ) );
-
+				// phpcs:enable WordPress.Security.NonceVerification.Recommended
 				// Generate text.
 				$text = sprintf(
 					_n( 'Field group synchronised.', '%s field groups synchronised.', count( $ids ), 'acf' ),

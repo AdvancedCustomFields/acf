@@ -5378,7 +5378,7 @@
 
 
     if (args.visible) {
-      selector += ':visible';
+      selector += ':visible, .acf-field-acf-field-settings-tabs';
     }
 
     if (!args.suppressFilters) {
@@ -7271,8 +7271,14 @@
           if (data.sorted) {
             // Loop over each position (acf_after_title, side, normal).
             for (var position in data.sorted) {
-              // Explode string into array of ids.
-              var order = data.sorted[position].split(','); // Position metabox relative to order.
+              let order = data.sorted[position];
+
+              if (typeof order !== 'string') {
+                continue;
+              } // Explode string into array of ids.
+
+
+              order = order.split(','); // Position metabox relative to order.
 
               if (sortMetabox(result.id, order)) {
                 break;

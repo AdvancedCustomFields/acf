@@ -119,7 +119,7 @@ function acf_cache_key( $key = '' ) {
  */
 function acf_request_args( $args = array() ) {
 	foreach ( $args as $k => $v ) {
-		$args[ $k ] = isset( $_REQUEST[ $k ] ) ? $_REQUEST[ $k ] : $args[ $k ];
+		$args[ $k ] = isset( $_REQUEST[ $k ] ) ? $_REQUEST[ $k ] : $args[ $k ]; // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Verified elsewhere.
 	}
 	return $args;
 }
@@ -135,7 +135,7 @@ function acf_request_args( $args = array() ) {
  * @return  mixed
  */
 function acf_request_arg( $name = '', $default = null ) {
-	return isset( $_REQUEST[ $name ] ) ? $_REQUEST[ $name ] : $default;
+	return isset( $_REQUEST[ $name ] ) ? $_REQUEST[ $name ] : $default; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 }
 
 // Register store.

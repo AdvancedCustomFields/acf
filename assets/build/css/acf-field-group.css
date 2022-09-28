@@ -530,28 +530,10 @@ td.acf-input {
 
 /*---------------------------------------------------------------------------------------------
 *
-*  Fonts
-*
-*---------------------------------------------------------------------------------------------*/
-@font-face {
-  font-family: "Inter";
-  src: url("../../inc/fonts/Inter-Regular.woff2") format("woff2"), url("../../inc/fonts/Inter-Regular.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Inter";
-  src: url("../../inc/fonts/Inter-Medium.woff2") format("woff2"), url("../../inc/fonts/Inter-Medium.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-}
-/*---------------------------------------------------------------------------------------------
-*
 *  Global
 *
 *---------------------------------------------------------------------------------------------*/
 .post-type-acf-field-group #wpcontent {
-  font-family: "Inter", system-ui;
   line-height: 140%;
 }
 
@@ -617,7 +599,7 @@ td.acf-input {
 
 .p5, .acf-field-setting-display_format .acf-radio-list li label code,
 .acf-field-setting-return_format .acf-radio-list li label code, .acf-field-group-settings-footer .acf-created-on, .acf-fields .acf-field-settings-tab-bar li a,
-.acf-fields .acf-tab-group li a {
+.acf-fields .acf-tab-wrap .acf-tab-group li a {
   font-size: 12.5px;
 }
 
@@ -657,6 +639,21 @@ td.acf-input {
 *  Small
 *
 *---------------------------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------------------------
+*
+*  Link focus style
+*
+*---------------------------------------------------------------------------------------------*/
+.post-type-acf-field-group a:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.post-type-acf-field-group a:focus-visible {
+  box-shadow: 0 0 0 1px #4f94d4, 0 0 2px 1px rgba(79, 148, 212, 0.8);
+  outline: 1px solid transparent;
+}
+
 .post-type-acf-field-group {
   /*---------------------------------------------------------------------------------------------
   *
@@ -1429,14 +1426,14 @@ td.acf-input {
   border-bottom-color: #EAECF0;
 }
 .acf-fields .acf-field-settings-tab-bar,
-.acf-fields .acf-tab-group {
+.acf-fields .acf-tab-wrap .acf-tab-group {
   display: flex;
   align-items: stretch;
   min-height: 48px;
   padding-top: 0;
   padding-right: 0;
   padding-bottom: 0;
-  padding-left: 0;
+  padding-left: 24px;
   margin-top: 0;
   margin-bottom: 0;
   border-bottom-width: 1px;
@@ -1444,7 +1441,7 @@ td.acf-input {
   border-bottom-color: #EAECF0;
 }
 .acf-fields .acf-field-settings-tab-bar li,
-.acf-fields .acf-tab-group li {
+.acf-fields .acf-tab-wrap .acf-tab-group li {
   display: flex;
   align-items: center;
   margin-top: 0;
@@ -1454,7 +1451,7 @@ td.acf-input {
   padding: 0;
 }
 .acf-fields .acf-field-settings-tab-bar li a,
-.acf-fields .acf-tab-group li a {
+.acf-fields .acf-tab-wrap .acf-tab-group li a {
   box-sizing: border-box;
   display: inline-flex;
   align-items: center;
@@ -1474,14 +1471,22 @@ td.acf-input {
   font-weight: normal;
 }
 .acf-fields .acf-field-settings-tab-bar li a:hover,
-.acf-fields .acf-tab-group li a:hover {
+.acf-fields .acf-tab-wrap .acf-tab-group li a:hover {
   color: #1D2939;
 }
+.acf-fields .acf-field-settings-tab-bar li a:hover,
+.acf-fields .acf-tab-wrap .acf-tab-group li a:hover {
+  background-color: transparent;
+}
 .acf-fields .acf-field-settings-tab-bar li.active a,
-.acf-fields .acf-tab-group li.active a {
+.acf-fields .acf-tab-wrap .acf-tab-group li.active a {
   background: none;
   border-bottom-color: #0783BE;
   color: #1D2939;
+}
+
+#acf-field-group-options .acf-fields .acf-tab-wrap .acf-tab-group li.active a {
+  padding-top: 2px;
 }
 
 .acf-field-editor .acf-field-settings-tab-bar {
@@ -1773,17 +1778,42 @@ td.acf-input {
   border-left-color: #BF7DD7;
 }
 .post-type-acf-field-group #acf-field-group-fields .acf-field-list-wrap .acf-input-sub .acf-field-object-text.open .handle {
-  background-color: #F2E8FF;
+  background-color: #F2E8FF !important;
 }
 .post-type-acf-field-group #acf-field-group-fields .acf-field-list-wrap .acf-input-sub .handle {
   background-color: transparent;
 }
 .post-type-acf-field-group #acf-field-group-fields .acf-field-list-wrap .acf-input-sub .handle:hover {
-  background-color: #f8f2ff;
+  background-color: #fbf7ff;
 }
 .post-type-acf-field-group #acf-field-group-fields .acf-field-list-wrap .acf-input-sub .acf-hl.acf-tfoot {
   min-height: 64px;
   align-items: center;
+}
+
+.post-type-acf-field-group .acf-input-sub .acf-field-object .acf-sortable-handle {
+  width: 100%;
+  height: 100%;
+}
+
+.post-type-acf-field-group .acf-field-object:hover .acf-input-sub .acf-sortable-handle:before {
+  display: none;
+}
+
+.post-type-acf-field-group .acf-field-object:hover .acf-input-sub .acf-field-list .acf-field-object:hover .acf-sortable-handle:before {
+  display: block;
+}
+
+.post-type-acf-field-group .acf-field-object .acf-is-subfields .acf-thead .li-field-label:before {
+  display: none;
+}
+
+.post-type-acf-field-group #acf-field-group-fields .acf-field-list-wrap .acf-input-sub .acf-field-object.open .handle {
+  background-color: #F2E8FF;
+}
+
+.post-type-acf-field-group #acf-field-group-fields .acf-field-list-wrap .acf-input-sub .acf-field-object.open {
+  border-top-color: #dbdfe5;
 }
 
 /*---------------------------------------------------------------------------------------------
@@ -2146,6 +2176,29 @@ td.acf-input {
 
 /*---------------------------------------------------------------------------------------------
 *
+*  Image field
+*
+*---------------------------------------------------------------------------------------------*/
+.acf-field-object-image .acf-hl[data-cols="3"] > li {
+  width: auto;
+}
+
+/*---------------------------------------------------------------------------------------------
+*
+*  Flexible widths for image minimum / maximum size fields
+*
+*---------------------------------------------------------------------------------------------*/
+.acf-field-settings .acf-field.acf-field-setting-min_width .acf-input,
+.acf-field-settings .acf-field.acf-field-setting-max_width .acf-input {
+  max-width: none;
+}
+.acf-field-settings .acf-field.acf-field-setting-min_width .acf-input-wrap input[type=text],
+.acf-field-settings .acf-field.acf-field-setting-max_width .acf-input-wrap input[type=text] {
+  max-width: 81px;
+}
+
+/*---------------------------------------------------------------------------------------------
+*
 *  Temporary fix to hide pagination setting for repeaters used as subfields.
 *
 *---------------------------------------------------------------------------------------------*/
@@ -2154,6 +2207,16 @@ td.acf-input {
 }
 .post-type-acf-field-group .acf-field-object-repeater .acf-field-object-repeater .acf-field-setting-pagination {
   display: none;
+}
+
+/*---------------------------------------------------------------------------------------------
+*
+*  Flexible content field width
+*
+*---------------------------------------------------------------------------------------------*/
+.acf-admin-single-field-group .acf-field-object-flexible-content .acf-is-subfields .acf-field-object .acf-label,
+.acf-admin-single-field-group .acf-field-object-flexible-content .acf-is-subfields .acf-field-object .acf-input {
+  max-width: 600px;
 }
 
 /*# sourceMappingURL=acf-field-group.css.map*/

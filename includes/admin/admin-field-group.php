@@ -406,6 +406,10 @@ if ( ! class_exists( 'acf_admin_field_group' ) ) {
 				// loop.
 				foreach ( $_POST['acf_fields'] as $field ) {
 
+					if ( ! isset( $field['type'] ) ) {
+						continue;
+					}
+
 					// vars.
 					$specific = false;
 					$save     = acf_extract_var( $field, 'save' );

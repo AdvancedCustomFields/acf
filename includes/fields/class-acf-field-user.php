@@ -325,6 +325,7 @@ if ( ! class_exists( 'ACF_Field_User' ) ) :
 		 */
 		function ajax_query() {
 
+			// phpcs:disable WordPress.Security.NonceVerification.Recommended
 			// Modify Request args.
 			if ( isset( $_REQUEST['s'] ) ) {
 				$_REQUEST['search'] = $_REQUEST['s'];
@@ -332,6 +333,7 @@ if ( ! class_exists( 'ACF_Field_User' ) ) :
 			if ( isset( $_REQUEST['paged'] ) ) {
 				$_REQUEST['page'] = $_REQUEST['paged'];
 			}
+			// phpcs:enable WordPress.Security.NonceVerification.Recommended
 
 			// Add query hooks.
 			add_action( 'acf/ajax/query_users/init', array( $this, 'ajax_query_init' ), 10, 2 );

@@ -4,7 +4,7 @@ Tags: acf, fields, custom fields, meta, repeater
 Requires at least: 4.7
 Tested up to: 6.0.2
 Requires PHP: 5.6
-Stable tag: 6.0.0
+Stable tag: 6.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -75,6 +75,25 @@ From your WordPress dashboard
 
 
 == Changelog ==
+
+= 6.0.1 =
+*Release Date 28th September 2022*
+
+* Improvement - ACF's header bar inside our admin pages is no longer sticky
+* Improvement - ACF's admin pages no longer use a custom font
+* Fix - Duplicating flexible content layouts now works correctly
+* Fix - ACF CSS classes no longer target translated class names for sub pages, resolving issues when using ACF in a language other than English
+* Fix - ACF no longer reactivates when using WPML with different domains per language
+* Fix - i18n - Labels for some field settings no longer break onto multiple lines in languages other than English
+* Fix - Radio field types no longer generate a warning in logs due to invalid parameter counts
+* Fix - True/False field focus states no longer apply outside ACF admin screens
+* Fix - Focus states for many field types no longer show when interacting with a mouse input
+* Fix - ACF 6’s new Tab background colors no longer apply outside ACF admin screens, increasing readability
+* Fix - User fields named “name” no longer have a different label presentation view
+* Fix - Changing field types with subfields no longer removes those fields when switching field type and back
+* Fix - Resolved a potential fatal error if a third party plugin sets the global `$post_type` something other than a string
+* Fix - Tooltip alignment is no longer incorrect inside subfields
+* Fix - Resolved a potential JS error when third party plugins modify the metabox sort order
 
 = 6.0.0 =
 *Release Date 21st September 2022*
