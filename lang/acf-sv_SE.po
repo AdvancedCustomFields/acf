@@ -12,7 +12,7 @@
 # This file is distributed under the same license as Advanced Custom Fields.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-09-28T15:19:12+00:00\n"
+"PO-Revision-Date: 2022-09-29T12:15:07+00:00\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "Language: sv_SE\n"
 "MIME-Version: 1.0\n"
@@ -58,11 +58,11 @@ msgstr "Tillåt anpassade värden"
 msgid "Checkbox custom values cannot be empty. Uncheck any empty values."
 msgstr ""
 
-#: includes/admin/views/html-admin-navigation.php:104
+#: includes/admin/views/html-admin-navigation.php:111
 msgid "Updates"
 msgstr "Uppdateringar"
 
-#: includes/admin/views/html-admin-navigation.php:75
+#: includes/admin/views/html-admin-navigation.php:79
 msgid "Advanced Custom Fields logo"
 msgstr "Logga för Advanced Custom Fields"
 
@@ -125,7 +125,7 @@ msgid "Repeater Field"
 msgstr "Upprepningsfält"
 
 #: includes/admin/views/field-group-pro-features.php:4
-#: includes/admin/views/html-admin-navigation.php:92
+#: includes/admin/views/html-admin-navigation.php:97
 msgid "Unlock Extra Features with ACF PRO"
 msgstr "Lås upp extra funktioner med ACF PRO"
 
@@ -203,13 +203,13 @@ msgstr "Exportera fältgrupper – generera PHP"
 msgid "Export As JSON"
 msgstr "Exportera som JSON"
 
-#: includes/admin/admin-field-groups.php:635
+#: includes/admin/admin-field-groups.php:638
 msgid "Field group deactivated."
 msgid_plural "%s field groups deactivated."
 msgstr[0] "Fältgrupp inaktiverad."
 msgstr[1] "%s fältgrupper inaktiverade."
 
-#: includes/admin/admin-field-groups.php:583
+#: includes/admin/admin-field-groups.php:585
 msgid "Field group activated."
 msgid_plural "%s field groups activated."
 msgstr[0] "Fältgrupp aktiverad."
@@ -234,8 +234,8 @@ msgid "Activate this item"
 msgstr "Aktivera detta objekt"
 
 #: includes/admin/admin-field-group.php:158
-#: assets/build/js/acf-field-group.js:2169
-#: assets/build/js/acf-field-group.js:2576
+#: assets/build/js/acf-field-group.js:2174
+#: assets/build/js/acf-field-group.js:2582
 msgid "Move field group to trash?"
 msgstr "Flytta fältgrupp till papperskorg?"
 
@@ -273,17 +273,17 @@ msgstr ""
 "i felaktiga eller saknade data. <a href=\"%2$s\" target=\"_blank\">Lär dig "
 "hur man åtgärdar detta</a>."
 
-#: includes/fields/class-acf-field-user.php:535
+#: includes/fields/class-acf-field-user.php:537
 msgid "%1$s must have a user with the %2$s role."
 msgid_plural "%1$s must have a user with one of the following roles: %2$s"
 msgstr[0] "%1$s måste ha en användare med rollen %2$s."
 msgstr[1] "%1$s måste ha en användare med en av följande roller: %2$s"
 
-#: includes/fields/class-acf-field-user.php:526
+#: includes/fields/class-acf-field-user.php:528
 msgid "%1$s must have a valid user ID."
 msgstr "%1$s måste ha ett giltigt användar-ID."
 
-#: includes/fields/class-acf-field-user.php:364
+#: includes/fields/class-acf-field-user.php:366
 msgid "Invalid request."
 msgstr "Ogiltig begäran."
 
@@ -333,26 +333,26 @@ msgid "Hex String"
 msgstr "HEX-sträng"
 
 #: includes/admin/admin-field-group.php:185
-#: assets/build/js/acf-field-group.js:753
-#: assets/build/js/acf-field-group.js:918
+#: assets/build/js/acf-field-group.js:754
+#: assets/build/js/acf-field-group.js:919
 msgid "Gallery (Pro only)"
 msgstr "Galleri (endast Pro)"
 
 #: includes/admin/admin-field-group.php:184
-#: assets/build/js/acf-field-group.js:750
-#: assets/build/js/acf-field-group.js:908
+#: assets/build/js/acf-field-group.js:751
+#: assets/build/js/acf-field-group.js:909
 msgid "Clone (Pro only)"
 msgstr "Klona (endast Pro)"
 
 #: includes/admin/admin-field-group.php:183
-#: assets/build/js/acf-field-group.js:750
-#: assets/build/js/acf-field-group.js:905
+#: assets/build/js/acf-field-group.js:751
+#: assets/build/js/acf-field-group.js:906
 msgid "Flexible Content (Pro only)"
 msgstr "Flexibelt innehåll (endast Pro)"
 
 #: includes/admin/admin-field-group.php:182
-#: assets/build/js/acf-field-group.js:750
-#: assets/build/js/acf-field-group.js:902
+#: assets/build/js/acf-field-group.js:751
+#: assets/build/js/acf-field-group.js:903
 msgid "Repeater (Pro only)"
 msgstr "Repeterare (endast Pro)"
 
@@ -580,7 +580,7 @@ msgstr "Klassen ”%s” finns inte."
 msgid "Invalid nonce."
 msgstr "Ogiltig engångskod."
 
-#: includes/fields/class-acf-field-user.php:359
+#: includes/fields/class-acf-field-user.php:361
 msgid "Error loading field."
 msgstr "Fel vid inläsning av fält."
 
@@ -723,7 +723,7 @@ msgstr "Alla %s-format"
 msgid "Attachment"
 msgstr "Bilaga"
 
-#: includes/validation.php:364
+#: includes/validation.php:365
 msgid "%s value is required"
 msgstr "%s-värde är obligatoriskt"
 
@@ -1015,8 +1015,8 @@ msgstr "Dra för att sortera om"
 
 #: includes/admin/admin-field-group.php:166
 #: includes/admin/views/html-location-group.php:3
-#: assets/build/js/acf-field-group.js:1766
-#: assets/build/js/acf-field-group.js:2124
+#: assets/build/js/acf-field-group.js:1771
+#: assets/build/js/acf-field-group.js:2130
 msgid "Show this field group if"
 msgstr "Visa denna fältgrupp om"
 
@@ -1206,7 +1206,7 @@ msgstr "Importera fältgrupper"
 msgid "Sync"
 msgstr "Synkronisera"
 
-#: includes/admin/admin-field-groups.php:937
+#: includes/admin/admin-field-groups.php:942
 msgid "Select %s"
 msgstr "Välj %s"
 
@@ -1228,17 +1228,17 @@ msgid "Description"
 msgstr "Beskrivning"
 
 #: includes/admin/admin-field-groups.php:491
-#: includes/admin/admin-field-groups.php:824
+#: includes/admin/admin-field-groups.php:829
 msgid "Sync available"
 msgstr "Synkronisering tillgänglig"
 
-#: includes/admin/admin-field-groups.php:749
+#: includes/admin/admin-field-groups.php:754
 msgid "Field group synchronised."
 msgid_plural "%s field groups synchronised."
 msgstr[0] "Fältgrupp synkroniserad."
 msgstr[1] "%s fältgrupper synkroniserade."
 
-#: includes/admin/admin-field-groups.php:692
+#: includes/admin/admin-field-groups.php:696
 msgid "Field group duplicated."
 msgid_plural "%s field groups duplicated."
 msgstr[0] "Fältgrupp duplicerad."
@@ -1265,25 +1265,25 @@ msgstr "Uppgradera databas"
 msgid "Custom Fields"
 msgstr "Anpassade fält"
 
-#: includes/admin/admin-field-group.php:710
+#: includes/admin/admin-field-group.php:714
 msgid "Move Field"
 msgstr "Flytta fält"
 
-#: includes/admin/admin-field-group.php:703
+#: includes/admin/admin-field-group.php:707
 msgid "Please select the destination for this field"
 msgstr "Välj destinationen för detta fält"
 
-#: includes/admin/admin-field-group.php:665
+#: includes/admin/admin-field-group.php:669
 msgid "Close Window"
 msgstr "Stäng fönstret"
 
 #. translators: Confirmation message once a field has been moved to a different
 #. field group.
-#: includes/admin/admin-field-group.php:661
+#: includes/admin/admin-field-group.php:665
 msgid "The %1$s field can now be found in the %2$s field group"
 msgstr "Fältet %1$s kan nu hittas i fältgruppen %2$s"
 
-#: includes/admin/admin-field-group.php:658
+#: includes/admin/admin-field-group.php:662
 msgid "Move Complete."
 msgstr "Flytt slutförd."
 
@@ -1312,8 +1312,8 @@ msgstr "Null"
 
 #: includes/acf-field-group-functions.php:846
 #: includes/admin/admin-field-group.php:164
-#: assets/build/js/acf-field-group.js:1030
-#: assets/build/js/acf-field-group.js:1279
+#: assets/build/js/acf-field-group.js:1035
+#: assets/build/js/acf-field-group.js:1285
 msgid "copy"
 msgstr "kopiera"
 
@@ -1330,8 +1330,8 @@ msgid "Checked"
 msgstr "Ikryssad"
 
 #: includes/admin/admin-field-group.php:160
-#: assets/build/js/acf-field-group.js:1111
-#: assets/build/js/acf-field-group.js:1377
+#: assets/build/js/acf-field-group.js:1116
+#: assets/build/js/acf-field-group.js:1383
 msgid "Move Custom Field"
 msgstr "Flytta anpassat fält"
 
@@ -1342,20 +1342,20 @@ msgid "No toggle fields available"
 msgstr "Inga fält för att slå på/av är tillgängliga"
 
 #: includes/admin/admin-field-group.php:157
-#: assets/build/js/acf-field-group.js:2153
-#: assets/build/js/acf-field-group.js:2556
+#: assets/build/js/acf-field-group.js:2158
+#: assets/build/js/acf-field-group.js:2562
 msgid "Field group title is required"
 msgstr "Rubrik för fältgrupp är obligatoriskt"
 
 #: includes/admin/admin-field-group.php:156
-#: assets/build/js/acf-field-group.js:1099
-#: assets/build/js/acf-field-group.js:1363
+#: assets/build/js/acf-field-group.js:1104
+#: assets/build/js/acf-field-group.js:1369
 msgid "This field cannot be moved until its changes have been saved"
 msgstr "Detta fält kan inte flyttas innan dess ändringar har sparats"
 
 #: includes/admin/admin-field-group.php:155
-#: assets/build/js/acf-field-group.js:929
-#: assets/build/js/acf-field-group.js:1161
+#: assets/build/js/acf-field-group.js:934
+#: assets/build/js/acf-field-group.js:1167
 msgid "The string \"field_\" may not be used at the start of a field name"
 msgstr "Strängen ”field_” får inte användas i början av ett fältnamn"
 
@@ -1390,7 +1390,7 @@ msgid "Field group updated."
 msgstr "Fältgrupp uppdaterad."
 
 #: includes/admin/admin-tools.php:119
-#: includes/admin/views/html-admin-navigation.php:102
+#: includes/admin/views/html-admin-navigation.php:109
 #: includes/admin/views/html-admin-tools.php:21
 msgid "Tools"
 msgstr "Verktyg"
@@ -1530,24 +1530,24 @@ msgstr "Avbryt"
 msgid "Are you sure?"
 msgstr "Är du säker?"
 
-#: includes/assets.php:368 assets/build/js/acf-input.js:8817
-#: assets/build/js/acf-input.js:10139
+#: includes/assets.php:368 assets/build/js/acf-input.js:8823
+#: assets/build/js/acf-input.js:10145
 msgid "%d fields require attention"
 msgstr "%d fält kräver din uppmärksamhet"
 
-#: includes/assets.php:367 assets/build/js/acf-input.js:8815
-#: assets/build/js/acf-input.js:10135
+#: includes/assets.php:367 assets/build/js/acf-input.js:8821
+#: assets/build/js/acf-input.js:10141
 msgid "1 field requires attention"
 msgstr "1 fält kräver din uppmärksamhet"
 
-#: includes/assets.php:366 includes/validation.php:286
-#: includes/validation.php:296 assets/build/js/acf-input.js:8808
-#: assets/build/js/acf-input.js:10130
+#: includes/assets.php:366 includes/validation.php:287
+#: includes/validation.php:297 assets/build/js/acf-input.js:8814
+#: assets/build/js/acf-input.js:10136
 msgid "Validation failed"
 msgstr "Validering misslyckades"
 
-#: includes/assets.php:365 assets/build/js/acf-input.js:8963
-#: assets/build/js/acf-input.js:10313
+#: includes/assets.php:365 assets/build/js/acf-input.js:8969
+#: assets/build/js/acf-input.js:10319
 msgid "Validation successful"
 msgstr "Validering lyckades"
 
@@ -1582,14 +1582,14 @@ msgctxt "verb"
 msgid "Edit"
 msgstr "Redigera"
 
-#: includes/assets.php:362 assets/build/js/acf-input.js:8585
-#: assets/build/js/acf-input.js:9901
+#: includes/assets.php:362 assets/build/js/acf-input.js:8591
+#: assets/build/js/acf-input.js:9907
 msgid "The changes you made will be lost if you navigate away from this page"
 msgstr ""
 "De ändringar du gjort kommer att gå förlorade om du navigerar bort från "
 "denna sida"
 
-#: includes/api/api-helpers.php:3413
+#: includes/api/api-helpers.php:3409
 msgid "File type must be %s."
 msgstr "Filtyp måste vara %s."
 
@@ -1598,61 +1598,61 @@ msgstr "Filtyp måste vara %s."
 #: includes/admin/views/field-group-field-conditional-logic.php:169
 #: includes/admin/views/field-group-locations.php:36
 #: includes/admin/views/html-location-group.php:3
-#: includes/api/api-helpers.php:3409 assets/build/js/acf-field-group.js:452
-#: assets/build/js/acf-field-group.js:1799
+#: includes/api/api-helpers.php:3405 assets/build/js/acf-field-group.js:452
+#: assets/build/js/acf-field-group.js:1804
 #: assets/build/js/acf-field-group.js:544
-#: assets/build/js/acf-field-group.js:2168
+#: assets/build/js/acf-field-group.js:2174
 msgid "or"
 msgstr "eller"
 
-#: includes/api/api-helpers.php:3382
+#: includes/api/api-helpers.php:3378
 msgid "File size must not exceed %s."
 msgstr "Filstorleken får inte överskrida %s."
 
-#: includes/api/api-helpers.php:3377
+#: includes/api/api-helpers.php:3373
 msgid "File size must be at least %s."
 msgstr "Filstorlek måste vara lägst %s."
 
-#: includes/api/api-helpers.php:3362
+#: includes/api/api-helpers.php:3358
 msgid "Image height must not exceed %dpx."
 msgstr "Bildens höjd får inte överskrida %d px."
 
-#: includes/api/api-helpers.php:3357
+#: includes/api/api-helpers.php:3353
 msgid "Image height must be at least %dpx."
 msgstr "Bildens höjd måste vara åtminstone %d px."
 
-#: includes/api/api-helpers.php:3343
+#: includes/api/api-helpers.php:3339
 msgid "Image width must not exceed %dpx."
 msgstr "Bildens bredd får inte överskrida %d px."
 
-#: includes/api/api-helpers.php:3338
+#: includes/api/api-helpers.php:3334
 msgid "Image width must be at least %dpx."
 msgstr "Bildens bredd måste vara åtminstone %d px."
 
-#: includes/api/api-helpers.php:1569 includes/api/api-term.php:147
+#: includes/api/api-helpers.php:1566 includes/api/api-term.php:147
 msgid "(no title)"
 msgstr "(ingen rubrik)"
 
-#: includes/api/api-helpers.php:864
+#: includes/api/api-helpers.php:861
 msgid "Full Size"
 msgstr "Full storlek"
 
-#: includes/api/api-helpers.php:823
+#: includes/api/api-helpers.php:820
 msgid "Large"
 msgstr "Stor"
 
-#: includes/api/api-helpers.php:822
+#: includes/api/api-helpers.php:819
 msgid "Medium"
 msgstr "Medium"
 
-#: includes/api/api-helpers.php:821
+#: includes/api/api-helpers.php:818
 msgid "Thumbnail"
 msgstr "Miniatyr"
 
 #: includes/acf-field-functions.php:849
 #: includes/admin/admin-field-group.php:162
-#: assets/build/js/acf-field-group.js:717
-#: assets/build/js/acf-field-group.js:856
+#: assets/build/js/acf-field-group.js:718
+#: assets/build/js/acf-field-group.js:857
 msgid "(no label)"
 msgstr "(ingen etikett)"
 

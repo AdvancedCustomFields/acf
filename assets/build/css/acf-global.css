@@ -760,7 +760,7 @@ a.acf-icon.dark.-minus:hover, a.acf-icon.dark.-cancel:hover {
 .acf-tbody > li,
 .acf-tfoot > li {
   box-sizing: border-box;
-  padding: 8px 12px;
+  padding-top: 14px;
   font-size: 12px;
   line-height: 14px;
 }
@@ -2032,14 +2032,14 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
   font-size: 14px;
 }
 
-.p3, .acf-admin-field-groups .wp-list-table .post-state, .acf-admin-field-groups .wp-list-table thead th, .acf-admin-field-groups .wp-list-table thead td,
-.acf-admin-field-groups .wp-list-table tfoot th, .acf-admin-field-groups .wp-list-table tfoot td, .post-type-acf-field-group .subtitle {
+.p3, .acf-admin-field-groups .wp-list-table .post-state, .post-type-acf-field-group .subtitle {
   font-size: 13.5px;
 }
 
 .p4, .acf-admin-toolbar a.acf-admin-toolbar-upgrade-btn p, #acf-update-information .form-table th,
 #acf-update-information .form-table td, #acf-admin-tools.tool-export .acf-panel h3, .acf-btn.acf-btn-sm, .acf-admin-toolbar .acf-tab, .acf-admin-field-groups .subsubsub li, .acf-admin-field-groups .wp-list-table tbody th,
-.acf-admin-field-groups .wp-list-table tbody td, .post-type-acf-field-group .acf-input .select2-container.-acf .select2-selection__rendered, .post-type-acf-field-group .button, .post-type-acf-field-group input[type=text],
+.acf-admin-field-groups .wp-list-table tbody td, .acf-admin-field-groups .wp-list-table thead th, .acf-admin-field-groups .wp-list-table thead td,
+.acf-admin-field-groups .wp-list-table tfoot th, .acf-admin-field-groups .wp-list-table tfoot td, .post-type-acf-field-group .acf-input .select2-container.-acf .select2-selection__rendered, .post-type-acf-field-group .button, .post-type-acf-field-group input[type=text],
 .post-type-acf-field-group input[type=search],
 .post-type-acf-field-group input[type=number],
 .post-type-acf-field-group textarea,
@@ -2264,8 +2264,8 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
 .post-type-acf-field-group input[type=radio],
 .post-type-acf-field-group input[type=checkbox] {
   box-sizing: border-box;
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   padding: 0;
   border-width: 1px;
   border-style: solid;
@@ -2291,8 +2291,8 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
   position: relative;
   top: -1px;
   left: -1px;
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   margin: 0;
   padding: 0;
   background-color: transparent;
@@ -2559,7 +2559,7 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
   margin: 0;
 }
 .acf-admin-field-groups .wp-list-table a.row-title {
-  font-size: 13.5px !important;
+  font-size: 13px !important;
   font-weight: 500;
 }
 .acf-admin-field-groups .wp-list-table th,
@@ -2572,6 +2572,7 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
 }
 .acf-admin-field-groups .wp-list-table th.check-column,
 .acf-admin-field-groups .wp-list-table td.check-column {
+  padding-top: 12px;
   padding-right: 16px;
   padding-left: 16px;
 }
@@ -2614,12 +2615,12 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
 .acf-admin-field-groups .wp-list-table tbody th,
 .acf-admin-field-groups .wp-list-table tbody td {
   box-sizing: border-box;
-  height: 56px;
-  padding-top: 8px;
+  height: 60px;
+  padding-top: 10px;
   padding-right: 24px;
-  padding-bottom: 8px;
+  padding-bottom: 10px;
   padding-left: 24px;
-  vertical-align: middle;
+  vertical-align: top;
   background-color: #fff;
   border-bottom-width: 1px;
   border-bottom-color: #EAECF0;
@@ -2676,10 +2677,12 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
   text-overflow: ellipsis;
 }
 .acf-admin-field-groups .row-actions {
+  margin-top: 2px;
   padding-top: 0;
   padding-right: 0;
   padding-bottom: 0;
   padding-left: 0;
+  line-height: 14px;
   color: #D0D5DD;
 }
 .acf-admin-field-groups .row-actions .trash a {
@@ -2695,9 +2698,6 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
 *	Row actions
 *
 *--------------------------------------------------------------------------------------------*/
-.acf-admin-field-groups .row-actions {
-  margin-bottom: -20px;
-}
 .acf-admin-field-groups .row-actions a:hover {
   color: #044767;
 }
@@ -3635,13 +3635,15 @@ h3.acf-sub-field-list-title:before {
 *
 *--------------------------------------------------------------------------------------------*/
 .field-type-icon {
+  box-sizing: border-box;
   display: inline-flex;
   align-content: center;
   align-items: center;
   justify-content: center;
   position: relative;
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
+  top: -4px;
   background-color: #EBF5FA;
   border-width: 1px;
   border-style: solid;
@@ -3650,8 +3652,8 @@ h3.acf-sub-field-list-title:before {
 }
 .field-type-icon:before {
   content: "";
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   position: relative;
   background-color: #0783BE;
   -webkit-mask-size: cover;
@@ -4000,7 +4002,7 @@ h3.acf-sub-field-list-title:before {
 }
 
 .acf-admin-notice,
-.notice {
+.post-type-acf-field-group .notice {
   grid-area: acf-admin-notice;
   margin-bottom: 0 !important;
 }

@@ -12,7 +12,7 @@
 # This file is distributed under the same license as Advanced Custom Fields.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-09-28T15:19:12+00:00\n"
+"PO-Revision-Date: 2022-09-29T12:15:07+00:00\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "Language: cs_CZ\n"
 "MIME-Version: 1.0\n"
@@ -63,7 +63,7 @@ msgstr ""
 msgid "Updates"
 msgstr "Aktualizace"
 
-#: includes/admin/views/html-admin-navigation.php:75
+#: includes/admin/views/html-admin-navigation.php:79
 msgid "Advanced Custom Fields logo"
 msgstr ""
 
@@ -114,7 +114,7 @@ msgid "ACF Blocks"
 msgstr ""
 
 #: includes/admin/views/field-group-pro-features.php:4
-#: includes/admin/views/html-admin-navigation.php:92
+#: includes/admin/views/html-admin-navigation.php:97
 msgid "Unlock Extra Features with ACF PRO"
 msgstr ""
 
@@ -190,14 +190,14 @@ msgstr ""
 msgid "Export As JSON"
 msgstr ""
 
-#: includes/admin/admin-field-groups.php:635
+#: includes/admin/admin-field-groups.php:638
 msgid "Field group deactivated."
 msgid_plural "%s field groups deactivated."
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: includes/admin/admin-field-groups.php:583
+#: includes/admin/admin-field-groups.php:585
 msgid "Field group activated."
 msgid_plural "%s field groups activated."
 msgstr[0] ""
@@ -213,8 +213,8 @@ msgid "Activate this item"
 msgstr ""
 
 #: includes/admin/admin-field-group.php:158
-#: assets/build/js/acf-field-group.js:2169
-#: assets/build/js/acf-field-group.js:2576
+#: assets/build/js/acf-field-group.js:2174
+#: assets/build/js/acf-field-group.js:2582
 msgid "Move field group to trash?"
 msgstr ""
 
@@ -256,18 +256,18 @@ msgstr ""
 "následek chybná nebo chybějící data. <a href=\"%2$s\" target=\"_blank"
 "\">Přečtěte si, jak to opravit</a>."
 
-#: includes/fields/class-acf-field-user.php:535
+#: includes/fields/class-acf-field-user.php:537
 msgid "%1$s must have a user with the %2$s role."
 msgid_plural "%1$s must have a user with one of the following roles: %2$s"
 msgstr[0] "%1$s musí mít uživatele s rolí %2$s."
 msgstr[1] "%1$s musí mít uživatele s jednou z následujících rolí: %2$s"
 msgstr[2] "%1$s musí mít uživatele s jednou z následujících rolí: %2$s"
 
-#: includes/fields/class-acf-field-user.php:526
+#: includes/fields/class-acf-field-user.php:528
 msgid "%1$s must have a valid user ID."
 msgstr "%1$s musí mít platné ID uživatele."
 
-#: includes/fields/class-acf-field-user.php:364
+#: includes/fields/class-acf-field-user.php:366
 msgid "Invalid request."
 msgstr "Neplatný požadavek."
 
@@ -319,26 +319,26 @@ msgid "Hex String"
 msgstr ""
 
 #: includes/admin/admin-field-group.php:185
-#: assets/build/js/acf-field-group.js:753
-#: assets/build/js/acf-field-group.js:918
+#: assets/build/js/acf-field-group.js:754
+#: assets/build/js/acf-field-group.js:919
 msgid "Gallery (Pro only)"
 msgstr "Galerie (pouze Pro)"
 
 #: includes/admin/admin-field-group.php:184
-#: assets/build/js/acf-field-group.js:750
-#: assets/build/js/acf-field-group.js:908
+#: assets/build/js/acf-field-group.js:751
+#: assets/build/js/acf-field-group.js:909
 msgid "Clone (Pro only)"
 msgstr "Klonovat (pouze Pro)"
 
 #: includes/admin/admin-field-group.php:183
-#: assets/build/js/acf-field-group.js:750
-#: assets/build/js/acf-field-group.js:905
+#: assets/build/js/acf-field-group.js:751
+#: assets/build/js/acf-field-group.js:906
 msgid "Flexible Content (Pro only)"
 msgstr "Flexibilní obsah (pouze Pro)"
 
 #: includes/admin/admin-field-group.php:182
-#: assets/build/js/acf-field-group.js:750
-#: assets/build/js/acf-field-group.js:902
+#: assets/build/js/acf-field-group.js:751
+#: assets/build/js/acf-field-group.js:903
 msgid "Repeater (Pro only)"
 msgstr "Opakovač (pouze Pro)"
 
@@ -547,7 +547,7 @@ msgstr ""
 msgid "Invalid nonce."
 msgstr "Neplatná hodnota."
 
-#: includes/fields/class-acf-field-user.php:359
+#: includes/fields/class-acf-field-user.php:361
 msgid "Error loading field."
 msgstr ""
 
@@ -690,7 +690,7 @@ msgstr "Všechny formáty %s"
 msgid "Attachment"
 msgstr "Příloha"
 
-#: includes/validation.php:364
+#: includes/validation.php:365
 msgid "%s value is required"
 msgstr "%s hodnota je vyžadována"
 
@@ -978,8 +978,8 @@ msgstr "Přetažením změníte pořadí"
 
 #: includes/admin/admin-field-group.php:166
 #: includes/admin/views/html-location-group.php:3
-#: assets/build/js/acf-field-group.js:1766
-#: assets/build/js/acf-field-group.js:2124
+#: assets/build/js/acf-field-group.js:1771
+#: assets/build/js/acf-field-group.js:2130
 msgid "Show this field group if"
 msgstr "Zobrazit tuto skupinu polí, pokud"
 
@@ -1171,7 +1171,7 @@ msgstr "Importovat skupiny polí"
 msgid "Sync"
 msgstr "Synchronizace"
 
-#: includes/admin/admin-field-groups.php:937
+#: includes/admin/admin-field-groups.php:942
 msgid "Select %s"
 msgstr "Zvolit %s"
 
@@ -1193,18 +1193,18 @@ msgid "Description"
 msgstr "Popis"
 
 #: includes/admin/admin-field-groups.php:491
-#: includes/admin/admin-field-groups.php:824
+#: includes/admin/admin-field-groups.php:829
 msgid "Sync available"
 msgstr "Synchronizace je k dispozici"
 
-#: includes/admin/admin-field-groups.php:749
+#: includes/admin/admin-field-groups.php:754
 msgid "Field group synchronised."
 msgid_plural "%s field groups synchronised."
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: includes/admin/admin-field-groups.php:692
+#: includes/admin/admin-field-groups.php:696
 msgid "Field group duplicated."
 msgid_plural "%s field groups duplicated."
 msgstr[0] ""
@@ -1233,25 +1233,25 @@ msgstr "Aktualizovat databázi"
 msgid "Custom Fields"
 msgstr "Vlastní pole"
 
-#: includes/admin/admin-field-group.php:710
+#: includes/admin/admin-field-group.php:714
 msgid "Move Field"
 msgstr "Přesunout pole"
 
-#: includes/admin/admin-field-group.php:703
+#: includes/admin/admin-field-group.php:707
 msgid "Please select the destination for this field"
 msgstr "Prosím zvolte umístění pro toto pole"
 
-#: includes/admin/admin-field-group.php:665
+#: includes/admin/admin-field-group.php:669
 msgid "Close Window"
 msgstr "Zavřít okno"
 
 #. translators: Confirmation message once a field has been moved to a different
 #. field group.
-#: includes/admin/admin-field-group.php:661
+#: includes/admin/admin-field-group.php:665
 msgid "The %1$s field can now be found in the %2$s field group"
 msgstr ""
 
-#: includes/admin/admin-field-group.php:658
+#: includes/admin/admin-field-group.php:662
 msgid "Move Complete."
 msgstr "Přesun hotov."
 
@@ -1280,8 +1280,8 @@ msgstr "Nula"
 
 #: includes/acf-field-group-functions.php:846
 #: includes/admin/admin-field-group.php:164
-#: assets/build/js/acf-field-group.js:1030
-#: assets/build/js/acf-field-group.js:1279
+#: assets/build/js/acf-field-group.js:1035
+#: assets/build/js/acf-field-group.js:1285
 msgid "copy"
 msgstr "kopírovat"
 
@@ -1298,8 +1298,8 @@ msgid "Checked"
 msgstr "Zaškrtnuto"
 
 #: includes/admin/admin-field-group.php:160
-#: assets/build/js/acf-field-group.js:1111
-#: assets/build/js/acf-field-group.js:1377
+#: assets/build/js/acf-field-group.js:1116
+#: assets/build/js/acf-field-group.js:1383
 msgid "Move Custom Field"
 msgstr "Přesunout vlastní pole"
 
@@ -1310,20 +1310,20 @@ msgid "No toggle fields available"
 msgstr "Žádné zapínatelné pole není k dispozici"
 
 #: includes/admin/admin-field-group.php:157
-#: assets/build/js/acf-field-group.js:2153
-#: assets/build/js/acf-field-group.js:2556
+#: assets/build/js/acf-field-group.js:2158
+#: assets/build/js/acf-field-group.js:2562
 msgid "Field group title is required"
 msgstr "Vyžadován nadpis pro skupinu polí"
 
 #: includes/admin/admin-field-group.php:156
-#: assets/build/js/acf-field-group.js:1099
-#: assets/build/js/acf-field-group.js:1363
+#: assets/build/js/acf-field-group.js:1104
+#: assets/build/js/acf-field-group.js:1369
 msgid "This field cannot be moved until its changes have been saved"
 msgstr "Toto pole nelze přesunout, dokud nebudou uloženy jeho změny"
 
 #: includes/admin/admin-field-group.php:155
-#: assets/build/js/acf-field-group.js:929
-#: assets/build/js/acf-field-group.js:1161
+#: assets/build/js/acf-field-group.js:934
+#: assets/build/js/acf-field-group.js:1167
 msgid "The string \"field_\" may not be used at the start of a field name"
 msgstr "Řetězec \"pole_\" nesmí být použit na začátku názvu pole"
 
@@ -1358,7 +1358,7 @@ msgid "Field group updated."
 msgstr "Skupina polí aktualizována."
 
 #: includes/admin/admin-tools.php:119
-#: includes/admin/views/html-admin-navigation.php:102
+#: includes/admin/views/html-admin-navigation.php:109
 #: includes/admin/views/html-admin-tools.php:21
 msgid "Tools"
 msgstr "Nástroje"
@@ -1498,24 +1498,24 @@ msgstr "Zrušit"
 msgid "Are you sure?"
 msgstr "Jste si jistí?"
 
-#: includes/assets.php:368 assets/build/js/acf-input.js:8817
-#: assets/build/js/acf-input.js:10139
+#: includes/assets.php:368 assets/build/js/acf-input.js:8823
+#: assets/build/js/acf-input.js:10145
 msgid "%d fields require attention"
 msgstr "Několik polí vyžaduje pozornost (%d)"
 
-#: includes/assets.php:367 assets/build/js/acf-input.js:8815
-#: assets/build/js/acf-input.js:10135
+#: includes/assets.php:367 assets/build/js/acf-input.js:8821
+#: assets/build/js/acf-input.js:10141
 msgid "1 field requires attention"
 msgstr "1 pole vyžaduje pozornost"
 
-#: includes/assets.php:366 includes/validation.php:286
-#: includes/validation.php:296 assets/build/js/acf-input.js:8808
-#: assets/build/js/acf-input.js:10130
+#: includes/assets.php:366 includes/validation.php:287
+#: includes/validation.php:297 assets/build/js/acf-input.js:8814
+#: assets/build/js/acf-input.js:10136
 msgid "Validation failed"
 msgstr "Ověření selhalo"
 
-#: includes/assets.php:365 assets/build/js/acf-input.js:8963
-#: assets/build/js/acf-input.js:10313
+#: includes/assets.php:365 assets/build/js/acf-input.js:8969
+#: assets/build/js/acf-input.js:10319
 msgid "Validation successful"
 msgstr "Ověření úspěšné"
 
@@ -1550,13 +1550,13 @@ msgctxt "verb"
 msgid "Edit"
 msgstr "Upravit"
 
-#: includes/assets.php:362 assets/build/js/acf-input.js:8585
-#: assets/build/js/acf-input.js:9901
+#: includes/assets.php:362 assets/build/js/acf-input.js:8591
+#: assets/build/js/acf-input.js:9907
 msgid "The changes you made will be lost if you navigate away from this page"
 msgstr ""
 "Pokud opustíte tuto stránku, změny, které jste provedli, budou ztraceny"
 
-#: includes/api/api-helpers.php:3413
+#: includes/api/api-helpers.php:3409
 msgid "File type must be %s."
 msgstr "Typ souboru musí být %s."
 
@@ -1565,61 +1565,61 @@ msgstr "Typ souboru musí být %s."
 #: includes/admin/views/field-group-field-conditional-logic.php:169
 #: includes/admin/views/field-group-locations.php:36
 #: includes/admin/views/html-location-group.php:3
-#: includes/api/api-helpers.php:3409 assets/build/js/acf-field-group.js:452
-#: assets/build/js/acf-field-group.js:1799
+#: includes/api/api-helpers.php:3405 assets/build/js/acf-field-group.js:452
+#: assets/build/js/acf-field-group.js:1804
 #: assets/build/js/acf-field-group.js:544
-#: assets/build/js/acf-field-group.js:2168
+#: assets/build/js/acf-field-group.js:2174
 msgid "or"
 msgstr "nebo"
 
-#: includes/api/api-helpers.php:3382
+#: includes/api/api-helpers.php:3378
 msgid "File size must not exceed %s."
 msgstr ""
 
-#: includes/api/api-helpers.php:3377
+#: includes/api/api-helpers.php:3373
 msgid "File size must be at least %s."
 msgstr "Velikost souboru musí být alespoň %s."
 
-#: includes/api/api-helpers.php:3362
+#: includes/api/api-helpers.php:3358
 msgid "Image height must not exceed %dpx."
 msgstr "Výška obrázku nesmí přesáhnout %dpx."
 
-#: includes/api/api-helpers.php:3357
+#: includes/api/api-helpers.php:3353
 msgid "Image height must be at least %dpx."
 msgstr "Výška obrázku musí být alespoň %dpx."
 
-#: includes/api/api-helpers.php:3343
+#: includes/api/api-helpers.php:3339
 msgid "Image width must not exceed %dpx."
 msgstr "Šířka obrázku nesmí přesáhnout %dpx."
 
-#: includes/api/api-helpers.php:3338
+#: includes/api/api-helpers.php:3334
 msgid "Image width must be at least %dpx."
 msgstr "Šířka obrázku musí být alespoň %dpx."
 
-#: includes/api/api-helpers.php:1569 includes/api/api-term.php:147
+#: includes/api/api-helpers.php:1566 includes/api/api-term.php:147
 msgid "(no title)"
 msgstr "(bez názvu)"
 
-#: includes/api/api-helpers.php:864
+#: includes/api/api-helpers.php:861
 msgid "Full Size"
 msgstr "Plná velikost"
 
-#: includes/api/api-helpers.php:823
+#: includes/api/api-helpers.php:820
 msgid "Large"
 msgstr "Velký"
 
-#: includes/api/api-helpers.php:822
+#: includes/api/api-helpers.php:819
 msgid "Medium"
 msgstr "Střední"
 
-#: includes/api/api-helpers.php:821
+#: includes/api/api-helpers.php:818
 msgid "Thumbnail"
 msgstr "Miniatura"
 
 #: includes/acf-field-functions.php:849
 #: includes/admin/admin-field-group.php:162
-#: assets/build/js/acf-field-group.js:717
-#: assets/build/js/acf-field-group.js:856
+#: assets/build/js/acf-field-group.js:718
+#: assets/build/js/acf-field-group.js:857
 msgid "(no label)"
 msgstr "(bez štítku)"
 

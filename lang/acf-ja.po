@@ -12,7 +12,7 @@
 # This file is distributed under the same license as Advanced Custom Fields.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-09-28T15:19:12+00:00\n"
+"PO-Revision-Date: 2022-09-29T12:15:07+00:00\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -63,7 +63,7 @@ msgstr ""
 msgid "Updates"
 msgstr "アップデート"
 
-#: includes/admin/views/html-admin-navigation.php:75
+#: includes/admin/views/html-admin-navigation.php:79
 msgid "Advanced Custom Fields logo"
 msgstr ""
 
@@ -114,7 +114,7 @@ msgid "ACF Blocks"
 msgstr ""
 
 #: includes/admin/views/field-group-pro-features.php:4
-#: includes/admin/views/html-admin-navigation.php:92
+#: includes/admin/views/html-admin-navigation.php:97
 msgid "Unlock Extra Features with ACF PRO"
 msgstr ""
 
@@ -190,12 +190,12 @@ msgstr ""
 msgid "Export As JSON"
 msgstr ""
 
-#: includes/admin/admin-field-groups.php:635
+#: includes/admin/admin-field-groups.php:638
 msgid "Field group deactivated."
 msgid_plural "%s field groups deactivated."
 msgstr[0] ""
 
-#: includes/admin/admin-field-groups.php:583
+#: includes/admin/admin-field-groups.php:585
 msgid "Field group activated."
 msgid_plural "%s field groups activated."
 msgstr[0] ""
@@ -219,8 +219,8 @@ msgid "Activate this item"
 msgstr ""
 
 #: includes/admin/admin-field-group.php:158
-#: assets/build/js/acf-field-group.js:2169
-#: assets/build/js/acf-field-group.js:2576
+#: assets/build/js/acf-field-group.js:2174
+#: assets/build/js/acf-field-group.js:2582
 msgid "Move field group to trash?"
 msgstr ""
 
@@ -254,16 +254,16 @@ msgid ""
 "\">Learn how to fix this</a>."
 msgstr ""
 
-#: includes/fields/class-acf-field-user.php:535
+#: includes/fields/class-acf-field-user.php:537
 msgid "%1$s must have a user with the %2$s role."
 msgid_plural "%1$s must have a user with one of the following roles: %2$s"
 msgstr[0] ""
 
-#: includes/fields/class-acf-field-user.php:526
+#: includes/fields/class-acf-field-user.php:528
 msgid "%1$s must have a valid user ID."
 msgstr ""
 
-#: includes/fields/class-acf-field-user.php:364
+#: includes/fields/class-acf-field-user.php:366
 msgid "Invalid request."
 msgstr ""
 
@@ -311,26 +311,26 @@ msgid "Hex String"
 msgstr ""
 
 #: includes/admin/admin-field-group.php:185
-#: assets/build/js/acf-field-group.js:753
-#: assets/build/js/acf-field-group.js:918
+#: assets/build/js/acf-field-group.js:754
+#: assets/build/js/acf-field-group.js:919
 msgid "Gallery (Pro only)"
 msgstr "ギャラリー (プロ版のみ)"
 
 #: includes/admin/admin-field-group.php:184
-#: assets/build/js/acf-field-group.js:750
-#: assets/build/js/acf-field-group.js:908
+#: assets/build/js/acf-field-group.js:751
+#: assets/build/js/acf-field-group.js:909
 msgid "Clone (Pro only)"
 msgstr "複製 (プロ版のみ)"
 
 #: includes/admin/admin-field-group.php:183
-#: assets/build/js/acf-field-group.js:750
-#: assets/build/js/acf-field-group.js:905
+#: assets/build/js/acf-field-group.js:751
+#: assets/build/js/acf-field-group.js:906
 msgid "Flexible Content (Pro only)"
 msgstr "フレキシブルコンテンツ (プロ版のみ)"
 
 #: includes/admin/admin-field-group.php:182
-#: assets/build/js/acf-field-group.js:750
-#: assets/build/js/acf-field-group.js:902
+#: assets/build/js/acf-field-group.js:751
+#: assets/build/js/acf-field-group.js:903
 msgid "Repeater (Pro only)"
 msgstr "リピーター (プロ版のみ)"
 
@@ -556,7 +556,7 @@ msgstr "クラス \"%s\" は存在しません。"
 msgid "Invalid nonce."
 msgstr "無効な nonce。"
 
-#: includes/fields/class-acf-field-user.php:359
+#: includes/fields/class-acf-field-user.php:361
 msgid "Error loading field."
 msgstr "フィールドの読み込みエラー。"
 
@@ -699,7 +699,7 @@ msgstr "すべての%sフォーマット"
 msgid "Attachment"
 msgstr "添付ファイル"
 
-#: includes/validation.php:364
+#: includes/validation.php:365
 msgid "%s value is required"
 msgstr "%s の値は必須です"
 
@@ -991,8 +991,8 @@ msgstr "ドラッグして順序を変更"
 
 #: includes/admin/admin-field-group.php:166
 #: includes/admin/views/html-location-group.php:3
-#: assets/build/js/acf-field-group.js:1766
-#: assets/build/js/acf-field-group.js:2124
+#: assets/build/js/acf-field-group.js:1771
+#: assets/build/js/acf-field-group.js:2130
 msgid "Show this field group if"
 msgstr "このフィールドグループを表示する条件"
 
@@ -1173,7 +1173,7 @@ msgstr "フィールドグループをインポート"
 msgid "Sync"
 msgstr "同期"
 
-#: includes/admin/admin-field-groups.php:937
+#: includes/admin/admin-field-groups.php:942
 msgid "Select %s"
 msgstr "%sを選択"
 
@@ -1195,16 +1195,16 @@ msgid "Description"
 msgstr "説明"
 
 #: includes/admin/admin-field-groups.php:491
-#: includes/admin/admin-field-groups.php:824
+#: includes/admin/admin-field-groups.php:829
 msgid "Sync available"
 msgstr "同期が利用できます"
 
-#: includes/admin/admin-field-groups.php:749
+#: includes/admin/admin-field-groups.php:754
 msgid "Field group synchronised."
 msgid_plural "%s field groups synchronised."
 msgstr[0] "%s件のフィールドグループを同期しました。"
 
-#: includes/admin/admin-field-groups.php:692
+#: includes/admin/admin-field-groups.php:696
 msgid "Field group duplicated."
 msgid_plural "%s field groups duplicated."
 msgstr[0] "%s件のフィールドグループを複製しました。"
@@ -1229,25 +1229,25 @@ msgstr "データベースをアップグレード"
 msgid "Custom Fields"
 msgstr "カスタムフィールド"
 
-#: includes/admin/admin-field-group.php:710
+#: includes/admin/admin-field-group.php:714
 msgid "Move Field"
 msgstr "フィールドを移動"
 
-#: includes/admin/admin-field-group.php:703
+#: includes/admin/admin-field-group.php:707
 msgid "Please select the destination for this field"
 msgstr "このフィールドの移動先を選択してください"
 
-#: includes/admin/admin-field-group.php:665
+#: includes/admin/admin-field-group.php:669
 msgid "Close Window"
 msgstr "ウィンドウを閉じる"
 
 #. translators: Confirmation message once a field has been moved to a different
 #. field group.
-#: includes/admin/admin-field-group.php:661
+#: includes/admin/admin-field-group.php:665
 msgid "The %1$s field can now be found in the %2$s field group"
 msgstr "%1$s フィールドは現在 %2$s フィールドグループにあります"
 
-#: includes/admin/admin-field-group.php:658
+#: includes/admin/admin-field-group.php:662
 msgid "Move Complete."
 msgstr "移動が完了しました。"
 
@@ -1276,8 +1276,8 @@ msgstr "Null"
 
 #: includes/acf-field-group-functions.php:846
 #: includes/admin/admin-field-group.php:164
-#: assets/build/js/acf-field-group.js:1030
-#: assets/build/js/acf-field-group.js:1279
+#: assets/build/js/acf-field-group.js:1035
+#: assets/build/js/acf-field-group.js:1285
 msgid "copy"
 msgstr "コピー"
 
@@ -1294,8 +1294,8 @@ msgid "Checked"
 msgstr "チェック済み"
 
 #: includes/admin/admin-field-group.php:160
-#: assets/build/js/acf-field-group.js:1111
-#: assets/build/js/acf-field-group.js:1377
+#: assets/build/js/acf-field-group.js:1116
+#: assets/build/js/acf-field-group.js:1383
 msgid "Move Custom Field"
 msgstr "カスタムフィールドを移動"
 
@@ -1306,20 +1306,20 @@ msgid "No toggle fields available"
 msgstr "利用可能な切り替えフィールドがありません"
 
 #: includes/admin/admin-field-group.php:157
-#: assets/build/js/acf-field-group.js:2153
-#: assets/build/js/acf-field-group.js:2556
+#: assets/build/js/acf-field-group.js:2158
+#: assets/build/js/acf-field-group.js:2562
 msgid "Field group title is required"
 msgstr "フィールドグループのタイトルは必須です"
 
 #: includes/admin/admin-field-group.php:156
-#: assets/build/js/acf-field-group.js:1099
-#: assets/build/js/acf-field-group.js:1363
+#: assets/build/js/acf-field-group.js:1104
+#: assets/build/js/acf-field-group.js:1369
 msgid "This field cannot be moved until its changes have been saved"
 msgstr "変更を保存するまでこのフィールドは移動できません"
 
 #: includes/admin/admin-field-group.php:155
-#: assets/build/js/acf-field-group.js:929
-#: assets/build/js/acf-field-group.js:1161
+#: assets/build/js/acf-field-group.js:934
+#: assets/build/js/acf-field-group.js:1167
 msgid "The string \"field_\" may not be used at the start of a field name"
 msgstr "\"field_\" という文字列はフィールド名の先頭に使うことはできません"
 
@@ -1354,7 +1354,7 @@ msgid "Field group updated."
 msgstr "フィールドグループを更新しました。"
 
 #: includes/admin/admin-tools.php:119
-#: includes/admin/views/html-admin-navigation.php:102
+#: includes/admin/views/html-admin-navigation.php:109
 #: includes/admin/views/html-admin-tools.php:21
 msgid "Tools"
 msgstr "ツール"
@@ -1494,24 +1494,24 @@ msgstr "キャンセル"
 msgid "Are you sure?"
 msgstr "本当に実行しますか ?"
 
-#: includes/assets.php:368 assets/build/js/acf-input.js:8817
-#: assets/build/js/acf-input.js:10139
+#: includes/assets.php:368 assets/build/js/acf-input.js:8823
+#: assets/build/js/acf-input.js:10145
 msgid "%d fields require attention"
 msgstr "%d個のフィールドで確認が必要です"
 
-#: includes/assets.php:367 assets/build/js/acf-input.js:8815
-#: assets/build/js/acf-input.js:10135
+#: includes/assets.php:367 assets/build/js/acf-input.js:8821
+#: assets/build/js/acf-input.js:10141
 msgid "1 field requires attention"
 msgstr "1つのフィールドで確認が必要です"
 
-#: includes/assets.php:366 includes/validation.php:286
-#: includes/validation.php:296 assets/build/js/acf-input.js:8808
-#: assets/build/js/acf-input.js:10130
+#: includes/assets.php:366 includes/validation.php:287
+#: includes/validation.php:297 assets/build/js/acf-input.js:8814
+#: assets/build/js/acf-input.js:10136
 msgid "Validation failed"
 msgstr "検証失敗"
 
-#: includes/assets.php:365 assets/build/js/acf-input.js:8963
-#: assets/build/js/acf-input.js:10313
+#: includes/assets.php:365 assets/build/js/acf-input.js:8969
+#: assets/build/js/acf-input.js:10319
 msgid "Validation successful"
 msgstr "検証成功"
 
@@ -1546,12 +1546,12 @@ msgctxt "verb"
 msgid "Edit"
 msgstr "編集"
 
-#: includes/assets.php:362 assets/build/js/acf-input.js:8585
-#: assets/build/js/acf-input.js:9901
+#: includes/assets.php:362 assets/build/js/acf-input.js:8591
+#: assets/build/js/acf-input.js:9907
 msgid "The changes you made will be lost if you navigate away from this page"
 msgstr "このページから移動した場合、変更は失われます"
 
-#: includes/api/api-helpers.php:3413
+#: includes/api/api-helpers.php:3409
 msgid "File type must be %s."
 msgstr "ファイル形式は %s である必要があります。"
 
@@ -1560,61 +1560,61 @@ msgstr "ファイル形式は %s である必要があります。"
 #: includes/admin/views/field-group-field-conditional-logic.php:169
 #: includes/admin/views/field-group-locations.php:36
 #: includes/admin/views/html-location-group.php:3
-#: includes/api/api-helpers.php:3409 assets/build/js/acf-field-group.js:452
-#: assets/build/js/acf-field-group.js:1799
+#: includes/api/api-helpers.php:3405 assets/build/js/acf-field-group.js:452
+#: assets/build/js/acf-field-group.js:1804
 #: assets/build/js/acf-field-group.js:544
-#: assets/build/js/acf-field-group.js:2168
+#: assets/build/js/acf-field-group.js:2174
 msgid "or"
 msgstr "または"
 
-#: includes/api/api-helpers.php:3382
+#: includes/api/api-helpers.php:3378
 msgid "File size must not exceed %s."
 msgstr "ファイルサイズは %s 以下である必要があります。"
 
-#: includes/api/api-helpers.php:3377
+#: includes/api/api-helpers.php:3373
 msgid "File size must be at least %s."
 msgstr "ファイルサイズは %s 以上である必要があります。"
 
-#: includes/api/api-helpers.php:3362
+#: includes/api/api-helpers.php:3358
 msgid "Image height must not exceed %dpx."
 msgstr "画像の高さは %dpx 以下である必要があります。"
 
-#: includes/api/api-helpers.php:3357
+#: includes/api/api-helpers.php:3353
 msgid "Image height must be at least %dpx."
 msgstr "画像の高さは %dpx 以上である必要があります。"
 
-#: includes/api/api-helpers.php:3343
+#: includes/api/api-helpers.php:3339
 msgid "Image width must not exceed %dpx."
 msgstr "画像の幅は %dpx 以下である必要があります。"
 
-#: includes/api/api-helpers.php:3338
+#: includes/api/api-helpers.php:3334
 msgid "Image width must be at least %dpx."
 msgstr "画像の幅は %dpx 以上である必要があります。"
 
-#: includes/api/api-helpers.php:1569 includes/api/api-term.php:147
+#: includes/api/api-helpers.php:1566 includes/api/api-term.php:147
 msgid "(no title)"
 msgstr "(タイトルなし)"
 
-#: includes/api/api-helpers.php:864
+#: includes/api/api-helpers.php:861
 msgid "Full Size"
 msgstr "フルサイズ"
 
-#: includes/api/api-helpers.php:823
+#: includes/api/api-helpers.php:820
 msgid "Large"
 msgstr "大"
 
-#: includes/api/api-helpers.php:822
+#: includes/api/api-helpers.php:819
 msgid "Medium"
 msgstr "中"
 
-#: includes/api/api-helpers.php:821
+#: includes/api/api-helpers.php:818
 msgid "Thumbnail"
 msgstr "サムネイル"
 
 #: includes/acf-field-functions.php:849
 #: includes/admin/admin-field-group.php:162
-#: assets/build/js/acf-field-group.js:717
-#: assets/build/js/acf-field-group.js:856
+#: assets/build/js/acf-field-group.js:718
+#: assets/build/js/acf-field-group.js:857
 msgid "(no label)"
 msgstr "(ラベルなし)"
 

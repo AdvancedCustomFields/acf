@@ -4,7 +4,7 @@ Tags: acf, fields, custom fields, meta, repeater
 Requires at least: 4.7
 Tested up to: 6.0.2
 Requires PHP: 5.6
-Stable tag: 6.0.1
+Stable tag: 6.0.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -75,6 +75,13 @@ From your WordPress dashboard
 
 
 == Changelog ==
+
+= 6.0.2 =
+*Release Date 29th September 2022
+
+Improvement - Field group and field rows no longer animate on hover to reveal the action links
+Fix - Field order is now saved correctly when fields are reordered
+Fix - WordPress notice styles outside of ACF's admin screens are no longer affected by the plugin's CSS
 
 = 6.0.1 =
 *Release Date 28th September 2022*

@@ -406,7 +406,7 @@ if ( ! class_exists( 'acf_admin_field_group' ) ) {
 				// loop.
 				foreach ( $_POST['acf_fields'] as $field ) {
 
-					if ( ! isset( $field['type'] ) ) {
+					if ( ! isset( $field['key'] ) ) {
 						continue;
 					}
 
