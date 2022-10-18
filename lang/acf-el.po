@@ -12,7 +12,7 @@
 # This file is distributed under the same license as Advanced Custom Fields.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-09-29T12:15:07+00:00\n"
+"PO-Revision-Date: 2022-10-17T14:24:48+00:00\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
@@ -23,60 +23,62 @@ msgstr ""
 
 #: includes/fields/class-acf-field-tab.php:122
 msgid "Start a new group of tabs at this tab."
-msgstr ""
+msgstr "Ξεκινήστε μια νέα ομάδα από καρτέλες σε αυτή την καρτέλα."
 
 #: includes/fields/class-acf-field-tab.php:121
 msgid "New Tab Group"
-msgstr ""
+msgstr "Νέα Ομάδα Καρτελών"
 
 #: includes/fields/class-acf-field-select.php:446
 #: includes/fields/class-acf-field-true_false.php:197
 msgid "Use a stylized checkbox using select2"
-msgstr ""
+msgstr "Παρουσιάστε τα checkbox στυλιζαρισμένα χρησιμοποιώντας το select2"
 
 #: includes/fields/class-acf-field-radio.php:257
 msgid "Save Other Choice"
-msgstr ""
+msgstr "Αποθήκευση Άλλης Επιλογής"
 
 #: includes/fields/class-acf-field-radio.php:246
 msgid "Allow Other Choice"
-msgstr ""
+msgstr "Να Επιτρέπονται Άλλες Επιλογές"
 
 #: includes/fields/class-acf-field-checkbox.php:446
 msgid "Add Toggle All"
-msgstr ""
+msgstr "Προσθήκη Εναλλαγής Όλων"
 
 #: includes/fields/class-acf-field-checkbox.php:405
 msgid "Save Custom Values"
-msgstr ""
+msgstr "Αποθήκευση Προσαρμοσμένων Τιμών"
 
 #: includes/fields/class-acf-field-checkbox.php:394
 msgid "Allow Custom Values"
-msgstr ""
+msgstr "Να Επιτρέπονται Προσαρμοσμένες Τιμές"
 
 #: includes/fields/class-acf-field-checkbox.php:144
 msgid "Checkbox custom values cannot be empty. Uncheck any empty values."
 msgstr ""
+"Οι προσαρμοσμένες τιμές των checkbox δεν επιτρέπεται να είναι κενές. "
+"Αποεπιλέξετε τις κενές τιμές."
 
 #: includes/admin/views/html-admin-navigation.php:111
 msgid "Updates"
-msgstr ""
+msgstr "Ανανεώσεις"
 
 #: includes/admin/views/html-admin-navigation.php:79
 msgid "Advanced Custom Fields logo"
-msgstr ""
+msgstr "Λογότυπος Advanced Custom Fields"
 
 #: includes/admin/views/html-admin-form-top.php:22
 msgid "Save Changes"
-msgstr ""
+msgstr "Αποθήκευση Αλλαγών"
 
 #: includes/admin/views/html-admin-form-top.php:16
 msgid "Field Group Title"
-msgstr ""
+msgstr "Τίτλος Ομάδας Πεδίων"
 
 #: includes/admin/views/html-admin-form-top.php:3
 msgid "Add title"
-msgstr ""
+msgstr "Προσθήκη τίτλου"
 
 #. translators: %s url to getting started guide
 #: includes/admin/views/field-groups-empty.php:20
@@ -84,10 +86,12 @@ msgid ""
 "New to ACF? Take a look at our <a href=\"%s\" target=\"_blank\">getting "
 "started guide</a>."
 msgstr ""
+"Είστε καινούριοι στο ACF; Κάνετε μια περιήγηση στον <a href=\"%s\" target="
+"\"_blank\">οδηγό εκκίνησης για νέους</a>."
 
 #: includes/admin/views/field-groups-empty.php:15
 msgid "Add Field Group"
-msgstr ""
+msgstr "Προσθήκη Ομάδας Πεδίων"
 
 #. translators: %s url to creating a field group page
 #: includes/admin/views/field-groups-empty.php:10
@@ -95,56 +99,59 @@ msgid ""
 "ACF uses <a href=\"%s\" target=\"_blank\">field groups</a> to group custom "
 "fields together, and then attach those fields to edit screens."
 msgstr ""
+"To ACF χρησιμοποιεί <a href=\"%s\" target=\"_blank\">ομάδες πεδίων</a> για "
+"να ομαδοποιήσει προσαρμοσμένα πεδία και να τα παρουσιάσει στις οθόνες "
+"επεξεργασίας."
 
 #: includes/admin/views/field-groups-empty.php:5
 msgid "Add Your First Field Group"
-msgstr ""
+msgstr "Προσθέστε την Πρώτη σας Ομάδα Πεδίων"
 
 #: includes/admin/views/field-group-pro-features.php:16
 msgid "Upgrade Now"
-msgstr ""
+msgstr "Αναβάθμιση Τώρα"
 
 #: includes/admin/views/field-group-pro-features.php:11
 msgid "Options Pages"
-msgstr ""
+msgstr "Σελίδες Ρυθμίσεων"
 
 #: includes/admin/views/field-group-pro-features.php:10
 msgid "ACF Blocks"
-msgstr ""
+msgstr "ACF Blocks"
 
 #: includes/admin/views/field-group-pro-features.php:8
 msgid "Gallery Field"
-msgstr ""
+msgstr "Πεδίο Gallery"
 
 #: includes/admin/views/field-group-pro-features.php:7
 msgid "Flexible Content Field"
-msgstr ""
+msgstr "Πεδίο Flexible Content"
 
 #: includes/admin/views/field-group-pro-features.php:6
 msgid "Repeater Field"
-msgstr ""
+msgstr "Πεδίο Repeater"
 
 #: includes/admin/views/field-group-pro-features.php:4
 #: includes/admin/views/html-admin-navigation.php:97
 msgid "Unlock Extra Features with ACF PRO"
-msgstr ""
+msgstr "Ξεκλειδώστε Επιπλέον Δυνατότητες με το ACF PRO"
 
 #: includes/admin/views/field-group-options.php:244
 msgid "Delete Field Group"
-msgstr ""
+msgstr "Διαγραφή Ομάδας Πεδίων"
 
 #. translators: 1: Post creation date 2: Post creation time
 #: includes/admin/views/field-group-options.php:238
 msgid "Created on %1$s at %2$s"
-msgstr ""
+msgstr "Δημιουργήθηκε την %1$s στις %2$s"
 
 #: includes/admin/views/field-group-options.php:180
 msgid "Group Settings"
-msgstr ""
+msgstr "Ρυθμίσεις Ομάδας"
 
 #: includes/admin/views/field-group-options.php:28
 msgid "Location Rules"
-msgstr ""
+msgstr "Κανόνες Τοποθεσίας"
 
 #. translators: %s url to field types list
 #: includes/admin/views/field-group-fields.php:61
@@ -152,112 +159,122 @@ msgid ""
 "Choose from over 30 field types. <a href=\"%s\" target=\"_blank\">Learn "
 "more</a>."
 msgstr ""
+"Επιλέξτε από περισσότερους από 30 τύπους πεδίων. <a href=\"%s\" target="
+"\"_blank\">Μάθετε περισσότερα</a>."
 
 #: includes/admin/views/field-group-fields.php:54
 msgid ""
 "Get started creating new custom fields for your posts, pages, custom post "
 "types and other WordPress content."
 msgstr ""
+"Ξεκινήστε να δημιουργείτε νέα προσαρμοσμένα πεδία για τα άρθρα, τις σελίδες, "
+"τα custom post types και γενικότερα το περιεχόμενο του WordPress."
 
 #: includes/admin/views/field-group-fields.php:53
 msgid "Add Your First Field"
-msgstr ""
+msgstr "Προσθέστε το Πρώτο σας Πεδίο"
 
 #. translators: A symbol (or text, if not available in your locale) meaning
 #. "Order Number", in terms of positional placement.
 #: includes/admin/views/field-group-fields.php:32
 msgid "#"
-msgstr ""
+msgstr "#"
 
 #: includes/admin/views/field-group-fields.php:22
 #: includes/admin/views/field-group-fields.php:56
 #: includes/admin/views/field-group-fields.php:92
 #: includes/admin/views/html-admin-form-top.php:21
 msgid "Add Field"
-msgstr ""
+msgstr "Προσθήκη Πεδίου"
 
 #: includes/admin/views/field-group-field.php:192
 #: includes/admin/views/field-group-options.php:40
 msgid "Presentation"
-msgstr ""
+msgstr "Παρουσίαση"
 
 #: includes/admin/views/field-group-field.php:160
 msgid "Validation"
-msgstr ""
+msgstr "Επικύρωση"
 
 #: includes/admin/views/field-group-field.php:94
 msgid "General"
-msgstr ""
+msgstr "Γενικά"
 
 #: includes/admin/tools/class-acf-admin-tool-import.php:70
 msgid "Import JSON"
-msgstr ""
+msgstr "Εισαγωγή JSON"
 
 #: includes/admin/tools/class-acf-admin-tool-export.php:361
 msgid "Export Field Groups - Generate PHP"
-msgstr ""
+msgstr "Εξαγωγή Ομάδων Πεδίων - Παραγωγή PHP"
 
 #: includes/admin/tools/class-acf-admin-tool-export.php:336
 msgid "Export As JSON"
-msgstr ""
+msgstr "Εξαγωγή ως JSON"
 
 #: includes/admin/admin-field-groups.php:638
 msgid "Field group deactivated."
 msgid_plural "%s field groups deactivated."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Η ομάδα πεδίων έχει απενεργοποιηθεί."
+msgstr[1] "%s ομάδες πεδίων έχουν απενεργοποιηθεί."
 
 #: includes/admin/admin-field-groups.php:585
 msgid "Field group activated."
 msgid_plural "%s field groups activated."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Η ομάδα πεδίων ενεργοποιήθηκε."
+msgstr[1] "%s ομάδες πεδίων ενεργοποιήθηκαν."
 
 #: includes/admin/admin-field-groups.php:537
 #: includes/admin/admin-field-groups.php:558
 msgid "Deactivate"
-msgstr ""
+msgstr "Απενεργοποίηση"
 
 #: includes/admin/admin-field-groups.php:537
 msgid "Deactivate this item"
-msgstr ""
+msgstr "Απενεργοποιήστε αυτό το αντικείμενο"
 
 #: includes/admin/admin-field-groups.php:533
 #: includes/admin/admin-field-groups.php:557
 msgid "Activate"
-msgstr ""
+msgstr "Ενεργοποίηση"
 
 #: includes/admin/admin-field-groups.php:533
 msgid "Activate this item"
-msgstr ""
+msgstr "Ενεργοποιήστε αυτό το αντικείμενο"
 
 #: includes/admin/admin-field-group.php:158
 #: assets/build/js/acf-field-group.js:2174
 #: assets/build/js/acf-field-group.js:2582
 msgid "Move field group to trash?"
-msgstr ""
+msgstr "Να μεταφερθεί αυτή η ομάδα πεδίων στον κάδο;"
 
 #: acf.php:447 includes/admin/admin-field-group.php:351
 #: includes/admin/admin-field-groups.php:232
 msgctxt "post status"
 msgid "Inactive"
-msgstr ""
+msgstr "Ανενεργό"
 
 #. Author of the plugin
 msgid "WP Engine"
-msgstr ""
+msgstr "WP Engine"
 
 #: acf.php:505
 msgid ""
 "Advanced Custom Fields and Advanced Custom Fields should not be active at "
 "the same time. We've automatically deactivated Advanced Custom Fields PRO."
 msgstr ""
+"Το Advanced Custom Fields και το Advanced Custom Fields PRO δεν πρέπει να "
+"είναι ταυτόχρονα ενεργά. Το Advanced Custom Fields PRO έχει απενεργοποιηθεί "
+"αυτόματα."
 
 #: acf.php:503
 msgid ""
 "Advanced Custom Fields and Advanced Custom Fields should not be active at "
 "the same time. We've automatically deactivated Advanced Custom Fields."
 msgstr ""
+"Το Advanced Custom Fields και το Advanced Custom Fields PRO δεν πρέπει να "
+"είναι ταυτόχρονα ενεργά. Το Advanced Custom Fields έχει απενεργοποιηθεί "
+"αυτόματα."
 
 #: includes/acf-value-functions.php:374
 msgid ""
@@ -959,7 +976,7 @@ msgstr "Ιδιότητες Πλαισίου"
 
 #: includes/admin/views/field-group-field.php:172
 msgid "Required"
-msgstr ""
+msgstr "Απαιτείται"
 
 #: includes/admin/views/field-group-field.php:204
 msgid "Instructions for authors. Shown when submitting data"
@@ -1149,6 +1166,11 @@ msgid ""
 "to another ACF installation. Generate PHP to export to PHP code which you "
 "can place in your theme."
 msgstr ""
+"Επιλέξτε τα field group που θα θέλατε να εξαγάγετε και έπειτα επιλέξτε τη "
+"μέθοδο εξαγωγής που προτιμάτε. Χρησιμοποιήστε το κουμπί μεταφόρτωσης για να "
+"εξαγάγετε ένα αρχείο .json το οποίο θα μπορείτε στη συνέχεια να εισαγάγετε "
+"σε μια άλλη εγκατάσταση ACF. Χρησιμοποιήστε το κουμπί παραγωγής για να "
+"εξαγάγετε PHP κώδικα τον οποίο μπορείτε να τοποθετήσετε έπειτα στο θέμα σας."
 
 #: includes/admin/tools/class-acf-admin-tool-export.php:233
 #: includes/admin/tools/class-acf-admin-tool-export.php:262
@@ -1199,6 +1221,9 @@ msgid ""
 "Select the Advanced Custom Fields JSON file you would like to import. When "
 "you click the import button below, ACF will import the field groups"
 msgstr ""
+"Επιλέξτε το Advanced Custom Fields JSON αρχείο που θέλετε να εισαγάγετε. "
+"Όταν πατήσετε το κουμπί εισαγωγής από κάτω το ACF θα εισαγάγει τις ομάδες "
+"πεδίων."
 
 #: includes/admin/tools/class-acf-admin-tool-import.php:28
 #: includes/admin/tools/class-acf-admin-tool-import.php:50
@@ -1794,7 +1819,7 @@ msgstr "Επιλέξτε την ταξινομία οπυ θέλετε να εμ
 #: includes/fields/class-acf-field-taxonomy.php:668
 msgctxt "No Terms"
 msgid "No %s"
-msgstr ""
+msgstr "Κανένα %s"
 
 #: includes/fields/class-acf-field-number.php:263
 msgid "Value must be equal to or lower than %d"
@@ -2118,21 +2143,21 @@ msgstr "Επιλογέας Ημερομηνίας και Ώρας"
 
 #: includes/fields/class-acf-field-accordion.php:104
 msgid "Endpoint"
-msgstr ""
+msgstr "Endpoint"
 
 #: includes/admin/views/field-group-options.php:95
 #: includes/fields/class-acf-field-tab.php:112
 msgid "Left aligned"
-msgstr ""
+msgstr "Αριστερή στοίχιση"
 
 #: includes/admin/views/field-group-options.php:94
 #: includes/fields/class-acf-field-tab.php:111
 msgid "Top aligned"
-msgstr ""
+msgstr "Στοίχιση στην κορυφή"
 
 #: includes/fields/class-acf-field-tab.php:107
 msgid "Placement"
-msgstr ""
+msgstr "Τοποθέτηση"
 
 #: includes/fields/class-acf-field-tab.php:26
 msgid "Tab"
@@ -2152,7 +2177,7 @@ msgstr "Σύνδεσμος URL"
 
 #: includes/fields/class-acf-field-link.php:173
 msgid "Link Array"
-msgstr ""
+msgstr "Link Array"
 
 #: includes/fields/class-acf-field-link.php:142
 msgid "Opens in a new window/tab"
@@ -2160,7 +2185,7 @@ msgstr "Ανοίγει σε νέο παράθυρο/καρτέλα"
 
 #: includes/fields/class-acf-field-link.php:137
 msgid "Select Link"
-msgstr ""
+msgstr "Επιλογή Συνδέσμου"
 
 #: includes/fields/class-acf-field-link.php:25
 msgid "Link"
@@ -2173,28 +2198,28 @@ msgstr "Email"
 #: includes/fields/class-acf-field-number.php:185
 #: includes/fields/class-acf-field-range.php:214
 msgid "Step Size"
-msgstr ""
+msgstr "Μέγεθος Βήματος"
 
 #: includes/fields/class-acf-field-number.php:155
 #: includes/fields/class-acf-field-range.php:192
 msgid "Maximum Value"
-msgstr ""
+msgstr "Μέγιστη Τιμή"
 
 #: includes/fields/class-acf-field-number.php:145
 #: includes/fields/class-acf-field-range.php:181
 msgid "Minimum Value"
-msgstr ""
+msgstr "Ελάχιστη Τιμή"
 
 #: includes/fields/class-acf-field-range.php:25
 msgid "Range"
-msgstr ""
+msgstr "Εύρος"
 
 #: includes/fields/class-acf-field-button-group.php:172
 #: includes/fields/class-acf-field-checkbox.php:375
 #: includes/fields/class-acf-field-radio.php:217
 #: includes/fields/class-acf-field-select.php:394
 msgid "Both (Array)"
-msgstr ""
+msgstr "Και τα δύο (Array)"
 
 #: includes/admin/views/field-group-fields.php:41
 #: includes/fields/class-acf-field-button-group.php:171
@@ -2215,13 +2240,13 @@ msgstr "Τιμή"
 #: includes/fields/class-acf-field-checkbox.php:437
 #: includes/fields/class-acf-field-radio.php:289
 msgid "Vertical"
-msgstr ""
+msgstr "Κατακόρυφα"
 
 #: includes/fields/class-acf-field-button-group.php:218
 #: includes/fields/class-acf-field-checkbox.php:438
 #: includes/fields/class-acf-field-radio.php:290
 msgid "Horizontal"
-msgstr ""
+msgstr "Οριζόντια"
 
 #: includes/fields/class-acf-field-button-group.php:145
 #: includes/fields/class-acf-field-checkbox.php:348
@@ -2236,20 +2261,21 @@ msgstr "κόκκινο : Κόκκινο"
 #: includes/fields/class-acf-field-select.php:365
 msgid "For more control, you may specify both a value and label like this:"
 msgstr ""
+"Για μεγαλύτερο έλεγχο μπορείτε να δηλώσετε μια τιμή και μια ετικέτα ως εξής:"
 
 #: includes/fields/class-acf-field-button-group.php:145
 #: includes/fields/class-acf-field-checkbox.php:348
 #: includes/fields/class-acf-field-radio.php:190
 #: includes/fields/class-acf-field-select.php:365
 msgid "Enter each choice on a new line."
-msgstr ""
+msgstr "Προσθέστε κάθε επιλογή σε μια νέα γραμμή."
 
 #: includes/fields/class-acf-field-button-group.php:144
 #: includes/fields/class-acf-field-checkbox.php:347
 #: includes/fields/class-acf-field-radio.php:189
 #: includes/fields/class-acf-field-select.php:364
 msgid "Choices"
-msgstr ""
+msgstr "Επιλογές"
 
 #: includes/fields/class-acf-field-button-group.php:24
 msgid "Button Group"
@@ -2270,7 +2296,7 @@ msgstr "Επιλογή πολλαπλών τιμών;"
 #: includes/fields/class-acf-field-taxonomy.php:796
 #: includes/fields/class-acf-field-user.php:104
 msgid "Allow Null?"
-msgstr ""
+msgstr "Να επιτρέπονται Null;"
 
 #: includes/fields/class-acf-field-page_link.php:249
 #: includes/fields/class-acf-field-post_object.php:250
@@ -2280,7 +2306,7 @@ msgstr "Γονέας"
 
 #: includes/fields/class-acf-field-wysiwyg.php:326
 msgid "TinyMCE will not be initialized until field is clicked"
-msgstr ""
+msgstr "Ο TinyMCE δε θα αρχικοποιηθεί έως ότου ο χρήστης κλικάρει το πεδίο"
 
 #: includes/fields/class-acf-field-wysiwyg.php:325
 msgid "Delay initialization?"
@@ -2300,11 +2326,11 @@ msgstr "Μόνο Κείμενο"
 
 #: includes/fields/class-acf-field-wysiwyg.php:373
 msgid "Visual Only"
-msgstr ""
+msgstr "Μόνο Οπτικός"
 
 #: includes/fields/class-acf-field-wysiwyg.php:372
 msgid "Visual & Text"
-msgstr ""
+msgstr "Οπτικός & Κείμενο"
 
 #: includes/fields/class-acf-field-wysiwyg.php:367
 msgid "Tabs"
@@ -2312,35 +2338,35 @@ msgstr "Καρτέλες"
 
 #: includes/fields/class-acf-field-wysiwyg.php:289
 msgid "Click to initialize TinyMCE"
-msgstr ""
+msgstr "Κάνετε κλικ για να αρχικοποιηθεί ο TinyMCE"
 
 #: includes/fields/class-acf-field-wysiwyg.php:283
 msgctxt "Name for the Text editor tab (formerly HTML)"
 msgid "Text"
-msgstr ""
+msgstr "Κείμενο"
 
 #: includes/fields/class-acf-field-wysiwyg.php:282
 msgid "Visual"
-msgstr ""
+msgstr "Οπτικός"
 
 #: includes/fields/class-acf-field-wysiwyg.php:25
 msgid "Wysiwyg Editor"
-msgstr ""
+msgstr "Επεξεργαστής Wysiwyg"
 
 #: includes/fields/class-acf-field-text.php:180
 #: includes/fields/class-acf-field-textarea.php:233
 msgid "Value must not exceed %d characters"
-msgstr ""
+msgstr "Η τιμή πρέπει να μην ξεπερνά τους %d χαρακτήρες"
 
 #: includes/fields/class-acf-field-text.php:115
 #: includes/fields/class-acf-field-textarea.php:121
 msgid "Leave blank for no limit"
-msgstr ""
+msgstr "Αφήστε κενό για να μην υπάρχει όριο"
 
 #: includes/fields/class-acf-field-text.php:114
 #: includes/fields/class-acf-field-textarea.php:120
 msgid "Character Limit"
-msgstr ""
+msgstr "Όριο Χαρακτήρων"
 
 #: includes/fields/class-acf-field-email.php:155
 #: includes/fields/class-acf-field-number.php:206
@@ -2348,7 +2374,7 @@ msgstr ""
 #: includes/fields/class-acf-field-range.php:236
 #: includes/fields/class-acf-field-text.php:155
 msgid "Appears after the input"
-msgstr ""
+msgstr "Εμφανίζεται μετά το πεδίο εισαγωγής"
 
 #: includes/fields/class-acf-field-email.php:154
 #: includes/fields/class-acf-field-number.php:205
@@ -2356,7 +2382,7 @@ msgstr ""
 #: includes/fields/class-acf-field-range.php:235
 #: includes/fields/class-acf-field-text.php:154
 msgid "Append"
-msgstr ""
+msgstr "Προσάρτηση στο τέλος"
 
 #: includes/fields/class-acf-field-email.php:145
 #: includes/fields/class-acf-field-number.php:196
@@ -2364,7 +2390,7 @@ msgstr ""
 #: includes/fields/class-acf-field-range.php:226
 #: includes/fields/class-acf-field-text.php:145
 msgid "Appears before the input"
-msgstr ""
+msgstr "Εμφανίζεται πριν το πεδίο εισαγωγής"
 
 #: includes/fields/class-acf-field-email.php:144
 #: includes/fields/class-acf-field-number.php:195
@@ -2372,7 +2398,7 @@ msgstr ""
 #: includes/fields/class-acf-field-range.php:225
 #: includes/fields/class-acf-field-text.php:144
 msgid "Prepend"
-msgstr ""
+msgstr "Προσάρτηση στην αρχή"
 
 #: includes/fields/class-acf-field-email.php:135
 #: includes/fields/class-acf-field-number.php:176
@@ -2381,7 +2407,7 @@ msgstr ""
 #: includes/fields/class-acf-field-textarea.php:153
 #: includes/fields/class-acf-field-url.php:119
 msgid "Appears within the input"
-msgstr ""
+msgstr "Εμφανίζεται εντός του πεδίου εισαγωγής"
 
 #: includes/fields/class-acf-field-email.php:134
 #: includes/fields/class-acf-field-number.php:175
@@ -2390,7 +2416,7 @@ msgstr ""
 #: includes/fields/class-acf-field-textarea.php:152
 #: includes/fields/class-acf-field-url.php:118
 msgid "Placeholder Text"
-msgstr ""
+msgstr "Υποκατάστατο Κείμενο"
 
 #: includes/fields/class-acf-field-button-group.php:155
 #: includes/fields/class-acf-field-email.php:115
@@ -2402,7 +2428,7 @@ msgstr ""
 #: includes/fields/class-acf-field-url.php:99
 #: includes/fields/class-acf-field-wysiwyg.php:316
 msgid "Appears when creating a new post"
-msgstr ""
+msgstr "Εμφανίζεται κατά τη δημιουργία νέου post"
 
 #: includes/fields/class-acf-field-text.php:25
 msgid "Text"
@@ -2411,27 +2437,27 @@ msgstr "Κείμενο"
 #: includes/fields/class-acf-field-relationship.php:760
 msgid "%1$s requires at least %2$s selection"
 msgid_plural "%1$s requires at least %2$s selections"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Το %1$s απαιτεί τουλάχιστον %2$s επιλογή"
+msgstr[1] "Το %1$s απαιτεί τουλάχιστον %2$s επιλογές"
 
 #: includes/fields/class-acf-field-post_object.php:395
 #: includes/fields/class-acf-field-relationship.php:622
 msgid "Post ID"
-msgstr ""
+msgstr "Post ID"
 
 #: includes/fields/class-acf-field-post_object.php:25
 #: includes/fields/class-acf-field-post_object.php:394
 #: includes/fields/class-acf-field-relationship.php:621
 msgid "Post Object"
-msgstr ""
+msgstr "Post Object"
 
 #: includes/fields/class-acf-field-relationship.php:654
 msgid "Maximum posts"
-msgstr ""
+msgstr "Μέγιστο πλήθος post"
 
 #: includes/fields/class-acf-field-relationship.php:644
 msgid "Minimum posts"
-msgstr ""
+msgstr "Ελάχιστο πλήθος post"
 
 #: includes/admin/views/field-group-options.php:149
 #: includes/fields/class-acf-field-relationship.php:679
@@ -2440,11 +2466,11 @@ msgstr "Επιλεγμένη Εικόνα"
 
 #: includes/fields/class-acf-field-relationship.php:675
 msgid "Selected elements will be displayed in each result"
-msgstr ""
+msgstr "Τα επιλεγμένα αντικείμενα θα εμφανίζονται σε κάθε αποτέλεσμα"
 
 #: includes/fields/class-acf-field-relationship.php:674
 msgid "Elements"
-msgstr ""
+msgstr "Αντικείμενα"
 
 #: includes/fields/class-acf-field-relationship.php:608
 #: includes/fields/class-acf-field-taxonomy.php:28
@@ -2511,11 +2537,11 @@ msgstr "Φόρτωση"
 #: includes/fields/class-acf-field-relationship.php:63
 #: assets/build/js/acf-input.js:3593 assets/build/js/acf-input.js:4051
 msgid "Maximum values reached ( {max} values )"
-msgstr ""
+msgstr "Αγγίξατε το μέγιστο πλήθος τιμών ( {max} τιμές )"
 
 #: includes/fields/class-acf-field-relationship.php:25
 msgid "Relationship"
-msgstr ""
+msgstr "Σχέση"
 
 #: includes/fields/class-acf-field-file.php:288
 #: includes/fields/class-acf-field-image.php:314
@@ -2583,7 +2609,7 @@ msgstr "Μέγεθος Προεπισκόπησης"
 
 #: includes/fields/class-acf-field-image.php:192
 msgid "Image ID"
-msgstr ""
+msgstr "Image ID"
 
 #: includes/fields/class-acf-field-image.php:191
 msgid "Image URL"
@@ -2591,7 +2617,7 @@ msgstr "URL Εικόνας"
 
 #: includes/fields/class-acf-field-image.php:190
 msgid "Image Array"
-msgstr ""
+msgstr "Image Array"
 
 #: includes/fields/class-acf-field-button-group.php:165
 #: includes/fields/class-acf-field-checkbox.php:368
@@ -2599,7 +2625,7 @@ msgstr ""
 #: includes/fields/class-acf-field-link.php:168
 #: includes/fields/class-acf-field-radio.php:210
 msgid "Specify the returned value on front end"
-msgstr ""
+msgstr "Προσδιορίστε την επιστρεφόμενη τιμή παρουσίασης"
 
 #: includes/fields/class-acf-field-button-group.php:164
 #: includes/fields/class-acf-field-checkbox.php:367
@@ -2608,7 +2634,7 @@ msgstr ""
 #: includes/fields/class-acf-field-radio.php:209
 #: includes/fields/class-acf-field-taxonomy.php:750
 msgid "Return Value"
-msgstr ""
+msgstr "Επιστρεφόμενη Τιμή"
 
 #: includes/fields/class-acf-field-image.php:159
 msgid "Add Image"
@@ -2659,10 +2685,12 @@ msgstr "Εικόνα"
 #: includes/fields/class-acf-field-message.php:123
 msgid "Allow HTML markup to display as visible text instead of rendering"
 msgstr ""
+"Να επιτρέπεται η HTML markup να παρουσιαστεί ως ορατό κείμενο αντί να "
+"αποδοθεί"
 
 #: includes/fields/class-acf-field-message.php:122
 msgid "Escape HTML"
-msgstr ""
+msgstr "Escape HTML"
 
 #: includes/fields/class-acf-field-message.php:114
 #: includes/fields/class-acf-field-textarea.php:169
@@ -2682,12 +2710,12 @@ msgstr "Αυτόματη προσθήκη παραγράφων"
 #: includes/fields/class-acf-field-message.php:108
 #: includes/fields/class-acf-field-textarea.php:163
 msgid "Controls how new lines are rendered"
-msgstr ""
+msgstr "Ελέγχει πώς αποδίδονται οι αλλαγές γραμμής"
 
 #: includes/fields/class-acf-field-message.php:107
 #: includes/fields/class-acf-field-textarea.php:162
 msgid "New Lines"
-msgstr ""
+msgstr "Αλλαγές Γραμμής"
 
 #: includes/fields/class-acf-field-date_picker.php:229
 #: includes/fields/class-acf-field-date_time_picker.php:217
@@ -2740,7 +2768,7 @@ msgstr "Πλάτος"
 #: includes/fields/class-acf-field-oembed.php:262
 #: includes/fields/class-acf-field-oembed.php:274
 msgid "Embed Size"
-msgstr ""
+msgstr "Διαστάσεις Embed"
 
 #: includes/fields/class-acf-field-oembed.php:219
 msgid "Enter URL"
@@ -2748,7 +2776,7 @@ msgstr "Εισάγετε URL"
 
 #: includes/fields/class-acf-field-oembed.php:25
 msgid "oEmbed"
-msgstr ""
+msgstr "oEmbed"
 
 #: includes/fields/class-acf-field-true_false.php:181
 msgid "Text shown when inactive"
@@ -2769,7 +2797,7 @@ msgstr "Ενεργό Κείμενο"
 #: includes/fields/class-acf-field-select.php:445
 #: includes/fields/class-acf-field-true_false.php:196
 msgid "Stylized UI"
-msgstr ""
+msgstr "Στυλιζαρισμένο"
 
 #: includes/fields/class-acf-field-button-group.php:154
 #: includes/fields/class-acf-field-checkbox.php:357
@@ -2811,7 +2839,7 @@ msgstr "Ναι"
 
 #: includes/fields/class-acf-field-true_false.php:25
 msgid "True / False"
-msgstr ""
+msgstr "True / False"
 
 #: includes/fields/class-acf-field-group.php:471
 msgid "Row"
@@ -2906,7 +2934,7 @@ msgstr "Χάρτης Google"
 #: includes/fields/class-acf-field-date_time_picker.php:198
 #: includes/fields/class-acf-field-time_picker.php:129
 msgid "The format returned via template functions"
-msgstr ""
+msgstr "Ο τύπος που επιστρέφεται μέσω των template functions"
 
 #: includes/fields/class-acf-field-color_picker.php:179
 #: includes/fields/class-acf-field-date_picker.php:208
@@ -2918,7 +2946,7 @@ msgstr ""
 #: includes/fields/class-acf-field-time_picker.php:128
 #: includes/fields/class-acf-field-user.php:67
 msgid "Return Format"
-msgstr ""
+msgstr "Επιστρεφόμενος Τύπος"
 
 #: includes/fields/class-acf-field-date_picker.php:187
 #: includes/fields/class-acf-field-date_picker.php:218
@@ -2933,7 +2961,7 @@ msgstr "Προσαρμοσμένο:"
 #: includes/fields/class-acf-field-date_time_picker.php:180
 #: includes/fields/class-acf-field-time_picker.php:113
 msgid "The format displayed when editing a post"
-msgstr ""
+msgstr "Ο τύπος που εμφανίζεται κατά την επεξεργασία ενός post"
 
 #: includes/fields/class-acf-field-date_picker.php:178
 #: includes/fields/class-acf-field-date_time_picker.php:179
@@ -2949,8 +2977,8 @@ msgstr "Επιλογέας Ώρας"
 #: acf.php:453
 msgid "Inactive <span class=\"count\">(%s)</span>"
 msgid_plural "Inactive <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Ανενεργό <span class=\"count\">(%s)</span>"
+msgstr[1] "Ανενεργά <span class=\"count\">(%s)</span>"
 
 #: acf.php:412
 msgid "No Fields found in Trash"

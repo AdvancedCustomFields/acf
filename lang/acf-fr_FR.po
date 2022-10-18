@@ -12,7 +12,7 @@
 # This file is distributed under the same license as Advanced Custom Fields.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-09-29T12:15:07+00:00\n"
+"PO-Revision-Date: 2022-10-17T14:24:48+00:00\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
@@ -44,7 +44,7 @@ msgstr "Autoriser un autre choix"
 
 #: includes/fields/class-acf-field-checkbox.php:446
 msgid "Add Toggle All"
-msgstr ""
+msgstr "Ajouter « Tout ouvrir/fermer »"
 
 #: includes/fields/class-acf-field-checkbox.php:405
 msgid "Save Custom Values"
@@ -1951,7 +1951,7 @@ msgstr "Saisir chaque valeur par défaut sur une nouvelle ligne"
 #: assets/build/js/acf-input.js:6335 assets/build/js/acf-input.js:7147
 msgctxt "verb"
 msgid "Select"
-msgstr "Liste déroulante"
+msgstr "Sélectionner"
 
 #: includes/fields/class-acf-field-select.php:118
 msgctxt "Select2 JS load_fail"

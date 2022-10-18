@@ -2,9 +2,9 @@
 Contributors: deliciousbrains, wpengine, elliotcondon, mattshaw, lgladdy, antpb, mindctrl, modernnerd, rfmeier, andrewbotz
 Tags: acf, fields, custom fields, meta, repeater
 Requires at least: 4.7
-Tested up to: 6.0.2
+Tested up to: 6.0.3
 Requires PHP: 5.6
-Stable tag: 6.0.2
+Stable tag: 6.0.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -76,6 +76,21 @@ From your WordPress dashboard
 
 == Changelog ==
 
+= 6.0.3 =
+*Release Date 18th October 2022*
+
+* Security Fix - ACF shortcode security fixes detailed [here](https://www.advancedcustomfields.com/blog/acf-6-0-3-release-security-changes-to-the-acf-shortcode-and-ui-improvements/#acf-shortcode)
+* Improvement - Field names and keys now copy to clipboard on click, and do not open a field
+* Fix - The field type input now has default focus when adding a new field
+* Fix - ACF no longer publishes `h1`, `h2` or `h3` CSS classes outside of the ACF admin screens
+* Fix - Conditional field settings now work correctly across different tabs
+* Fix - The field list for sub fields are now full width
+* Fix - ACF admin notices now display with correct margin
+* Fix - Admin CSS improvements when using ACF in an RTL language
+* Fix - Clone fields now have the presentation tab for setting wrapper properties when in group display mode
+* Fix - Appended labels on field settings will now be displayed in the correct place
+* Accessibility - The move field modal is now keyboard and screen reader accessible
+
 = 6.0.2 =
 *Release Date 29th September 2022*
 
@@ -128,6 +143,11 @@ From your WordPress dashboard
 * i18n - All strings inside ACF are now translatable
 * i18n - Accented term names in taxonomy fields are no longer corrupted at output
 * i18n - ACF translations are now synced with contributions from translation.wordpress.org at each release, increasing ACF's supported languages and updating many other translations. PRO strings should still be submitted as pull requests on GitHub (Additional thanks to maximebj, emreerkan and Timothée Moulin for their contributions which are included here)
+
+= 5.12.4 =
+*Release Date 18th October 2022*
+
+* Security Fix - ACF shortcode security fixes from the ACF 6.0.3 release. See the [6.0.3 release post](https://www.advancedcustomfields.com/blog/acf-6-0-3-release-security-changes-to-the-acf-shortcode-and-ui-improvements/#acf-shortcode) for more information
 
 = 5.12.3 =
 *Release Date 14th July 2022*

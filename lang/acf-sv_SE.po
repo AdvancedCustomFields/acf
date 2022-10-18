@@ -12,7 +12,7 @@
 # This file is distributed under the same license as Advanced Custom Fields.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-09-29T12:15:07+00:00\n"
+"PO-Revision-Date: 2022-10-17T14:24:48+00:00\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "Language: sv_SE\n"
 "MIME-Version: 1.0\n"
@@ -160,6 +160,8 @@ msgid ""
 "Get started creating new custom fields for your posts, pages, custom post "
 "types and other WordPress content."
 msgstr ""
+"Kom igång med att skapa nya anpassade fält för dina inlägg, sidor, anpassade "
+"inläggstyper och annat WordPress-innehåll."
 
 #: includes/admin/views/field-group-fields.php:53
 msgid "Add Your First Field"
@@ -1674,11 +1676,11 @@ msgstr "Förbered en extra kryssruta för att slå på/av alla val"
 
 #: includes/fields/class-acf-field-checkbox.php:409
 msgid "Save 'custom' values to the field's choices"
-msgstr "Spara ”anpassade” värden i fältets val"
+msgstr "Spara ”anpassade” värden till fältets val"
 
 #: includes/fields/class-acf-field-checkbox.php:398
 msgid "Allow 'custom' values to be added"
-msgstr "Tillåt ”anpassade” värden att läggas till"
+msgstr "Tillåt att ”anpassade” värden kan läggas till"
 
 #: includes/fields/class-acf-field-checkbox.php:233
 msgid "Add new choice"

@@ -158,6 +158,8 @@ if ( ! class_exists( 'acf_admin_field_group' ) ) {
 					'Move field group to trash?'    => __( 'Move field group to trash?', 'acf' ),
 					'No toggle fields available'    => __( 'No toggle fields available', 'acf' ),
 					'Move Custom Field'             => __( 'Move Custom Field', 'acf' ),
+					'Close modal'                   => __( 'Close modal', 'acf' ),
+					'Field moved to other group'    => __( 'Field moved to other group', 'acf' ),
 					'Checked'                       => __( 'Checked', 'acf' ),
 					'(no label)'                    => __( '(no label)', 'acf' ),
 					'(this field)'                  => __( '(this field)', 'acf' ),
@@ -666,7 +668,7 @@ if ( ! class_exists( 'acf_admin_field_group' ) ) {
 						esc_html( $field['label'] ),
 						$link  //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					) . '</p>' .
-					'<a href="#" class="button button-primary acf-close-popup">' . __( 'Close Window', 'acf' ) . '</a>';
+					'<a href="#" class="button button-primary acf-close-popup">' . __( 'Close Modal', 'acf' ) . '</a>';
 				die();
 			}
 
@@ -698,9 +700,10 @@ if ( ! class_exists( 'acf_admin_field_group' ) ) {
 			// render options.
 			$field = acf_get_valid_field(
 				array(
-					'type'    => 'select',
-					'name'    => 'acf_field_group',
-					'choices' => $choices,
+					'type'       => 'select',
+					'name'       => 'acf_field_group',
+					'choices'    => $choices,
+					'aria-label' => __( 'Please select the destination for this field', 'acf' ),
 				)
 			);
 

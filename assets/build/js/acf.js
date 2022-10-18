@@ -684,7 +684,7 @@
     /**
      *  getEventTarget
      *
-     *  Returns a jQUery element to tigger an event on
+     *  Returns a jQuery element to trigger an event on.
      *
      *  @date	5/6/18
      *  @since	5.6.9
@@ -1384,11 +1384,13 @@
       content: '',
       width: 0,
       height: 0,
-      loading: false
+      loading: false,
+      openedBy: null
     },
     events: {
       'click [data-event="close"]': 'onClickClose',
-      'click .acf-close-popup': 'onClickClose'
+      'click .acf-close-popup': 'onClickClose',
+      'keydown': 'onPressEscapeClose'
     },
     setup: function (props) {
       $.extend(this.data, props);
@@ -1397,9 +1399,11 @@
     initialize: function () {
       this.render();
       this.open();
+      this.focus();
+      this.lockFocusToPopup(true);
     },
     tmpl: function () {
-      return ['<div id="acf-popup">', '<div class="acf-popup-box acf-box">', '<div class="title"><h3></h3><a href="#" class="acf-icon -cancel grey" data-event="close"></a></div>', '<div class="inner"></div>', '<div class="loading"><i class="acf-loading"></i></div>', '</div>', '<div class="bg" data-event="close"></div>', '</div>'].join('');
+      return ['<div id="acf-popup" role="dialog" tabindex="-1">', '<div class="acf-popup-box acf-box">', '<div class="title"><h3></h3><a href="#" class="acf-icon -cancel grey" data-event="close" aria-label="' + acf.__('Close modal') + '"></a></div>', '<div class="inner"></div>', '<div class="loading"><i class="acf-loading"></i></div>', '</div>', '<div class="bg" data-event="close"></div>', '</div>'].join('');
     },
     render: function () {
       // Extract Vars.
@@ -1424,6 +1428,29 @@
 
       acf.doAction('append', this.$el);
     },
+
+    /**
+     * Places focus within the popup.
+     */
+    focus: function () {
+      this.$el.find('.acf-icon').first().trigger('focus');
+    },
+
+    /**
+     * Locks focus within the popup.
+     *
+     * @param {boolean} locked True to lock focus, false to unlock.
+     */
+    lockFocusToPopup: function (locked) {
+      let inertElement = $('#wpwrap');
+
+      if (!inertElement.length) {
+        return;
+      }
+
+      inertElement[0].inert = locked;
+      inertElement.attr('aria-hidden', locked);
+    },
     update: function (props) {
       this.data = acf.parseArgs(props, this.data);
       this.render();
@@ -1442,11 +1469,34 @@
       $('body').append(this.$el);
     },
     close: function () {
+      this.lockFocusToPopup(false);
+      this.returnFocusToOrigin();
       this.remove();
     },
     onClickClose: function (e, $el) {
       e.preventDefault();
       this.close();
+    },
+
+    /**
+     * Closes the popup when the escape key is pressed.
+     *
+     * @param {KeyboardEvent} e
+     */
+    onPressEscapeClose: function (e) {
+      if (e.key === 'Escape') {
+        this.close();
+      }
+    },
+
+    /**
+     * Returns focus to the element that opened the popup
+     * if it still exists in the DOM.
+     */
+    returnFocusToOrigin: function () {
+      if (this.data.openedBy instanceof $ && this.data.openedBy.closest('body').length > 0) {
+        this.data.openedBy.trigger('focus');
+      }
     }
   });
   /**

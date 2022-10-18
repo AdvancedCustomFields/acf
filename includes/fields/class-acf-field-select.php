@@ -290,6 +290,10 @@ if ( ! class_exists( 'acf_field_select' ) ) :
 				'data-allow_null'  => $field['allow_null'],
 			);
 
+			if ( $field['aria-label'] ) {
+				$select['aria-label'] = $field['aria-label'];
+			}
+
 			// multiple
 			if ( $field['multiple'] ) {
 

@@ -556,6 +556,7 @@
     eventScope: '.acf-field-object',
     // events
     events: {
+      'click .copyable': 'onClickCopy',
       'click .handle': 'onClickEdit',
       'click .close-field': 'onClickEdit',
       'click a[data-key="acf_field_settings_tabs"]': 'onChangeSettingsTab',
@@ -737,6 +738,12 @@
     },
     initialize: function () {
       this.addProFields();
+      this.checkCopyable();
+    },
+    checkCopyable: function () {
+      if (!navigator.clipboard) {
+        this.$el.find('.copyable').addClass('copy-unsupported');
+      }
     },
     addProFields: function () {
       // Make sure we're only running this on free version.
@@ -788,6 +795,16 @@
     },
     isOpen: function () {
       return this.$el.hasClass('open');
+    },
+    onClickCopy: function (e) {
+      e.stopPropagation();
+      if (!navigator.clipboard) return;
+      navigator.clipboard.writeText($(e.target).text()).then(() => {
+        $(e.target).addClass('copied');
+        setTimeout(function () {
+          $(e.target).removeClass('copied');
+        }, 2000);
+      });
     },
     onClickEdit: function (e) {
       $target = $(e.target);
@@ -1115,7 +1132,8 @@
         popup = acf.newPopup({
           title: acf.__('Move Custom Field'),
           loading: true,
-          width: '300px'
+          width: '300px',
+          openedBy: field.$el.find('.move-field')
         }); // ajax
 
         var ajaxData = {
@@ -1162,9 +1180,13 @@
       };
 
       var step4 = function (html) {
-        // update popup
-        popup.content(html); // remove element
+        popup.content(html);
 
+        if (wp.a11y && wp.a11y.speak && acf.__) {
+          wp.a11y.speak(acf.__('Field moved to other group'), 'polite');
+        }
+
+        popup.$('.acf-close-popup').focus();
         field.removeAnimate();
       }; // start
 
@@ -1689,14 +1711,14 @@
       $newField.attr('data-key', newKey);
       $newField.attr('data-id', newKey); // update parent prop
 
-      newField.updateParent(); // focus label
+      newField.updateParent(); // focus type
 
-      var $label = newField.$input('label');
+      var $type = newField.$input('type');
       setTimeout(function () {
         if ($list.hasClass('acf-auto-add-field')) {
           $list.removeClass('acf-auto-add-field');
         } else {
-          $label.trigger('focus');
+          $type.trigger('focus');
         }
       }, 251); // open
 

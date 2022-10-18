@@ -1402,6 +1402,15 @@
         parent: field.$el.parent(),
         suppressFilters: true
       });
+    } // Check for fields on other settings tabs (probably less fast).
+
+
+    if (!fields.length && $('.acf-field-settings').length) {
+      fields = acf.getFields({
+        key: key,
+        parent: field.$el.parents('.acf-field-settings:first'),
+        suppressFilters: true
+      });
     } // return
 
 
