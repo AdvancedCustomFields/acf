@@ -310,7 +310,7 @@ function acf_get_field_type_prop( $name = '', $prop = '' ) {
 
 function acf_get_field_type_label( $name = '' ) {
 	$label = acf_get_field_type_prop( $name, 'label' );
-	return $label ? esc_html( $label ) : '<span class="acf-tooltip-js" title="' . __( 'Field type does not exist', 'acf' ) . '">' . __( 'Unknown', 'acf' ) . '</span>';
+	return $label ? esc_html( $label ) : '<span class="acf-tooltip-js" title="' . esc_attr__( 'Field type does not exist', 'acf' ) . '">' . esc_html__( 'Unknown', 'acf' ) . '</span>';
 }
 
 
