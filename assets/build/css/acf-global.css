@@ -2005,7 +2005,7 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
 }
 .post-type-acf-field-group .notice.notice-error:after,
 .post-type-acf-field-group #lost-connection-notice:after {
-  background-color: #DA5A39;
+  background-color: #D13737;
 }
 
 /*---------------------------------------------------------------------------------------------
@@ -2295,6 +2295,11 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
   height: 20px;
   background-color: red;
 }
+.post-type-acf-field-group.rtl select {
+  padding-right: 12px;
+  padding-left: 40px;
+  background-position: left 10px top 50%;
+}
 .post-type-acf-field-group input[type=radio],
 .post-type-acf-field-group input[type=checkbox] {
   box-sizing: border-box;
@@ -2342,6 +2347,11 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
 .post-type-acf-field-group input[type=checkbox]:disabled {
   background-color: #F9FAFB;
   border-color: #D0D5DD;
+}
+.post-type-acf-field-group.rtl input[type=radio]:checked:before, .post-type-acf-field-group.rtl input[type=radio]:focus-visible:before,
+.post-type-acf-field-group.rtl input[type=checkbox]:checked:before,
+.post-type-acf-field-group.rtl input[type=checkbox]:focus-visible:before {
+  left: 1px;
 }
 .post-type-acf-field-group input[type=radio]:checked:before, .post-type-acf-field-group input[type=radio]:focus:before {
   background-image: url("../../images/field-states/radio-active.svg");
@@ -2404,12 +2414,13 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
 }
 .post-type-acf-field-group .acf-field-true-false {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 .post-type-acf-field-group .acf-field-true-false .acf-label {
   order: 2;
-  display: inline-flex;
+  display: block;
   align-items: center;
+  margin-top: 2px;
   margin-bottom: 0;
   margin-left: 12px;
 }
@@ -2418,6 +2429,11 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
 }
 .post-type-acf-field-group .acf-field-true-false .acf-label .acf-tip {
   margin-left: 12px;
+}
+.post-type-acf-field-group .acf-field-true-false .acf-label .description {
+  display: block;
+  margin-top: 2px;
+  margin-left: 0;
 }
 .post-type-acf-field-group.rtl .acf-field-true-false .acf-label {
   margin-right: 12px;
@@ -2563,6 +2579,9 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
 }
 .post-type-acf-field-group .acf-label label {
   margin-bottom: 0;
+}
+.post-type-acf-field-group .acf-label .description {
+  margin-top: 2px;
 }
 .post-type-acf-field-group .acf-field-setting-name .acf-tip {
   position: absolute;
@@ -3284,6 +3303,19 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
     margin-top: 8px;
   }
 }
+.acf-headerbar .acf-input-error {
+  border: 1px rgba(209, 55, 55, 0.5) solid !important;
+  box-shadow: 0px 0px 0px 3px rgba(209, 55, 55, 0.12), 0px 0px 0px rgba(255, 54, 54, 0.25) !important;
+  background-image: url("../../images/icons/icon-warning-alt-red.svg");
+  background-position: right 10px top 50%;
+  background-size: 20px;
+  background-repeat: no-repeat;
+}
+.acf-headerbar .acf-input-error:focus {
+  outline: none !important;
+  border: 1px rgba(209, 55, 55, 0.8) solid !important;
+  box-shadow: 0px 0px 0px 3px rgba(209, 55, 55, 0.16), 0px 0px 0px rgba(255, 54, 54, 0.25) !important;
+}
 .acf-headerbar .acf-headerbar-title-field {
   min-width: 320px;
 }
@@ -3297,6 +3329,12 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
 }
 .acf-headerbar .acf-headerbar-actions .acf-btn {
   margin-left: 8px;
+}
+.acf-headerbar .acf-headerbar-actions .disabled {
+  background-color: #F2F4F7;
+  color: #98A2B3 !important;
+  border: 1px #D0D5DD solid;
+  cursor: default;
 }
 
 /*---------------------------------------------------------------------------------------------
@@ -3464,9 +3502,9 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
 *
 *---------------------------------------------------------------------------------------------*/
 .acf-btn.acf-delete-field-group:hover {
-  background-color: #fdf8f6;
-  border-color: #DA5A39 !important;
-  color: #DA5A39 !important;
+  background-color: #fbeded;
+  border-color: #D13737 !important;
+  color: #D13737 !important;
 }
 
 /*--------------------------------------------------------------------------------------------
@@ -3555,6 +3593,14 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
 .post-type-acf-field-group .acf-icon.-picture {
   -webkit-mask-image: url("../../images/field-type-icons/icon-field-image.svg");
   mask-image: url("../../images/field-type-icons/icon-field-image.svg");
+}
+.post-type-acf-field-group i.acf-icon-warning {
+  -webkit-mask-image: url("../../images/icons/icon-warning-alt.svg");
+  mask-image: url("../../images/icons/icon-warning-alt.svg");
+}
+.post-type-acf-field-group i.acf-icon-warning-red {
+  -webkit-mask-image: url("../../images/icons/icon-warning-alt-red.svg");
+  mask-image: url("../../images/icons/icon-warning-alt-red.svg");
 }
 .post-type-acf-field-group .post-type-acf-field-group .post-state {
   font-weight: normal;

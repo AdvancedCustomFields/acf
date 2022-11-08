@@ -365,10 +365,10 @@ if ( ! class_exists( 'acf_field_select' ) ) :
 			acf_render_field_setting(
 				$field,
 				array(
-					'label' => __( 'Choices', 'acf' ),
-					'hint'  => __( 'Enter each choice on a new line.', 'acf' ) . '<br />' . __( 'For more control, you may specify both a value and label like this:', 'acf' ) . '<br /><span class="acf-field-setting-example">' . __( 'red : Red', 'acf' ) . '</span>',
-					'name'  => 'choices',
-					'type'  => 'textarea',
+					'label'        => __( 'Choices', 'acf' ),
+					'instructions' => __( 'Enter each choice on a new line.', 'acf' ) . '<br />' . __( 'For more control, you may specify both a value and label like this:', 'acf' ) . '<br /><span class="acf-field-setting-example">' . __( 'red : Red', 'acf' ) . '</span>',
+					'name'         => 'choices',
+					'type'         => 'textarea',
 				)
 			);
 
@@ -709,10 +709,10 @@ if ( ! class_exists( 'acf_field_select' ) ) :
 			);
 
 			$schema = array(
-				'type'     => array( 'string', 'array', 'null' ),
+				'type'     => array( 'string', 'array', 'int', 'null' ),
 				'required' => ! empty( $field['required'] ),
 				'items'    => array(
-					'type' => array( 'string' ),
+					'type' => array( 'string', 'int' ),
 					'enum' => empty( $option_keys ) ? $field['choices'] : $option_keys,
 				),
 			);

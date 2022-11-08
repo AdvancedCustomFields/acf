@@ -740,6 +740,10 @@
       this.addProFields();
       this.checkCopyable();
     },
+    makeCopyable: function (text) {
+      if (!navigator.clipboard) return '<span class="copyable copy-unsupported">' + text + '</span>';
+      return '<span class="copyable">' + text + '</span>';
+    },
     checkCopyable: function () {
       if (!navigator.clipboard) {
         this.$el.find('.copyable').addClass('copy-unsupported');
@@ -780,13 +784,13 @@
 
       $handle.find('.li-field-label strong a').html(label); // update name
 
-      $handle.find('.li-field-name').text(name); // update type
+      $handle.find('.li-field-name').html(this.makeCopyable(name)); // update type
 
       const iconName = acf.strSlugify(this.getType());
       $handle.find('.field-type-label').text(' ' + type);
       $handle.find('.field-type-icon').removeClass().addClass('field-type-icon field-type-icon-' + iconName); // update key
 
-      $handle.find('.li-field-key').text(key); // action for 3rd party customization
+      $handle.find('.li-field-key').html(this.makeCopyable(key)); // action for 3rd party customization
 
       acf.doAction('render_field_object', this);
     },
@@ -841,15 +845,15 @@
     },
     open: function () {
       // vars
-      var $settings = this.$el.children('.settings'); // open
-
-      $settings.slideDown();
-      this.$el.addClass('open'); // action (open)
+      var $settings = this.$el.children('.settings'); // action (open)
 
       acf.doAction('open_field_object', this);
       this.trigger('openFieldObject'); // action (show)
 
-      acf.doAction('show', $settings);
+      acf.doAction('show', $settings); // open
+
+      $settings.slideDown();
+      this.$el.addClass('open');
     },
     close: function () {
       // vars
@@ -1600,6 +1604,7 @@
       if ($el.hasClass('ui-sortable')) return; // sortable
 
       $el.sortable({
+        helper: 'clone',
         handle: '.acf-sortable-handle',
         connectWith: '.acf-field-list',
         start: function (e, ui) {
@@ -2149,23 +2154,41 @@
    */
   var fieldGroupManager = new acf.Model({
     id: 'fieldGroupManager',
-    wait: 'prepare',
     events: {
       'submit #post': 'onSubmit',
       'click a[href="#"]': 'onClick',
-      'click .acf-delete-field-group': 'onClickDeleteFieldGroup'
+      'click .acf-delete-field-group': 'onClickDeleteFieldGroup',
+      'blur input#title': 'onBlurValidateTitle'
     },
     filters: {
       find_fields_args: 'filterFindFieldArgs',
       find_fields_selector: 'filterFindFieldsSelector'
     },
     initialize: function () {
+      acf.addAction('prepare', this.maybeInitNewFieldGroup);
+    },
+    maybeInitNewFieldGroup: function () {
       let $field_list_wrapper = $('#acf-field-group-fields > .inside > .acf-field-list-wrap.acf-auto-add-field');
 
       if ($field_list_wrapper.length) {
         $('.acf-headerbar-actions .add-field').trigger('click');
         $('.acf-title-wrap #title').trigger('focus');
-      }
+      } // Watch title input
+      // if title empty disable submit button
+      // if title exists allow submitting form
+
+
+      let $submitButton = $('.acf-publish');
+      $('input#title').on('input', function () {
+        const titleValue = $(this).val();
+
+        if (!titleValue) {
+          $submitButton.addClass('disabled');
+        } else {
+          $submitButton.removeClass('disabled');
+          $(this).removeClass('acf-input-error');
+        }
+      });
     },
     onSubmit: function (e, $el) {
       // vars
@@ -2175,9 +2198,7 @@
         // prevent default
         e.preventDefault(); // unlock form
 
-        acf.unlockForm($el); // alert
-
-        alert(acf.__('Field group title is required')); // focus
+        acf.unlockForm($el); // focus
 
         $title.trigger('focus');
       }
@@ -2202,9 +2223,22 @@
         }
       });
     },
+    onBlurValidateTitle: function (e, $el) {
+      if (!$el.val()) {
+        $el.addClass('acf-input-error');
+        $('.acf-publish').addClass('disabled');
+      } else {
+        $el.removeClass('acf-input-error');
+        $('.acf-publish').removeClass('disabled');
+      }
+    },
     filterFindFieldArgs: function (args) {
-      // Don't change this!
       args.visible = true;
+
+      if (args.parent && (args.parent.hasClass('acf-field-object') || args.parent.parents('.acf-field-object').length)) {
+        args.visible = false;
+      }
+
       return args;
     },
     filterFindFieldsSelector: function (selector) {

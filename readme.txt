@@ -2,9 +2,9 @@
 Contributors: deliciousbrains, wpengine, elliotcondon, mattshaw, lgladdy, antpb, mindctrl, modernnerd, rfmeier, andrewbotz
 Tags: acf, fields, custom fields, meta, repeater
 Requires at least: 4.7
-Tested up to: 6.0.3
+Tested up to: 6.1
 Requires PHP: 5.6
-Stable tag: 6.0.3
+Stable tag: 6.0.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -75,6 +75,30 @@ From your WordPress dashboard
 
 
 == Changelog ==
+
+= 6.0.4 =
+*Release Date 8th November 2022*
+
+* Improvement - JavaScript initialization performance while editing large field groups has been improved, especially in Safari
+* Improvement - Tooltips for field settings are now shown as inline instructions
+* Improvement - Saving a field group is now disabled until a field group title has been entered
+* Improvement - Additional sanitization across various internal parts of the plugin
+* Fix - Dragging and dropping a field in no longer opens the field settings in Firefox
+* Fix - Copying the field name or key to the clipboard now works as expected for new or reordered fields, and subfields
+* Fix - Saving a field group will now temporarily disable the "Save Changes" button while saving
+* Fix - Block templates that include html comments as the first DOM element no longer crash the block editor on edit
+* Fix - Block templates that include InnerBlocks on the DOM’s first level no longer trigger JS warnings
+* Fix - Block templates that render other blocks now correctly render their InnerBlocks
+* Fix - Legacy block attribute values are no longer overwritten by blank defaults of new versions
+* Fix - Paginated Repeater fields now work with non-paginated Repeaters as subfields
+* Fix - Repeater pagination is now properly disabled while inside blocks
+* Fix - REST API no longer causes a PHP warning if `$_SERVER['REQUEST_METHOD']` is not defined
+* Fix - REST API now supports integer keys for the Select field
+* Fix - REST API now supports passing `null` to Image and File fields
+* Fix - Invalid ACF meta keys no longer cause a fatal error when retrieved with `get_fields()`
+* a11y - The Relationship field is now fully accessible for keyboard navigation
+* i18n - Select dropdown arrow is now aligned correctly in RTL languages
+* i18n - Radio buttons are now aligned correctly in RTL languages
 
 = 6.0.3 =
 *Release Date 18th October 2022*

@@ -119,7 +119,7 @@ function acf_cache_key( $key = '' ) {
  */
 function acf_request_args( $args = array() ) {
 	foreach ( $args as $k => $v ) {
-		$args[ $k ] = isset( $_REQUEST[ $k ] ) ? $_REQUEST[ $k ] : $args[ $k ]; // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Verified elsewhere.
+		$args[ $k ] = isset( $_REQUEST[ $k ] ) ? acf_sanitize_request_args( $_REQUEST[ $k ] ) : $args[ $k ]; // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Verified elsewhere.
 	}
 	return $args;
 }
@@ -135,7 +135,7 @@ function acf_request_args( $args = array() ) {
  * @return  mixed
  */
 function acf_request_arg( $name = '', $default = null ) {
-	return isset( $_REQUEST[ $name ] ) ? $_REQUEST[ $name ] : $default; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+	return isset( $_REQUEST[ $name ] ) ? acf_sanitize_request_args( $_REQUEST[ $name ] ) : $default; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 }
 
 // Register store.
@@ -495,7 +495,7 @@ function acf_doing_action( $action ) {
 function acf_get_current_url() {
 	// Ensure props exist to avoid PHP Notice during CLI commands.
 	if ( isset( $_SERVER['HTTP_HOST'], $_SERVER['REQUEST_URI'] ) ) {
-		return ( is_ssl() ? 'https' : 'http' ) . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+		return ( is_ssl() ? 'https' : 'http' ) . '://' . filter_var( $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'], FILTER_SANITIZE_URL );
 	}
 	return '';
 }
@@ -527,4 +527,76 @@ function acf_add_url_utm_tags( $url, $campaign, $content, $anchor = false ) {
 		$query = '?' . $query;
 	}
 	return esc_url( $url . $query . $anchor_url );
+}
+
+/**
+ * Sanitizes request arguments.
+ *
+ * @param mixed $args The data to sanitize.
+ *
+ * @return array|bool|float|int|mixed|string
+ */
+function acf_sanitize_request_args( $args = array() ) {
+	switch ( gettype( $args ) ) {
+		case 'boolean':
+			return (bool) $args;
+		case 'integer':
+			return (int) $args;
+		case 'double':
+			return (float) $args;
+		case 'array':
+			$sanitized = [];
+			foreach ( $args as $key => $value ) {
+				$key               = sanitize_text_field( $key );
+				$sanitized[ $key ] = acf_sanitize_request_args( $value );
+			}
+			return $sanitized;
+		case 'object':
+			return wp_kses_post_deep( $args );
+		case 'string':
+		default:
+			return wp_kses( $args, 'acf' );
+	}
+}
+
+/**
+ * Sanitizes file upload arrays.
+ * 
+ * @param array $args The file array.
+ *
+ * @return array
+ */
+function acf_sanitize_files_array( array $args = array() ) {
+	$defaults = array(
+		'name'     => '',
+		'tmp_name' => '',
+		'type'     => '',
+		'size'     => 0,
+		'error'    => '',
+	);
+
+	$args = wp_parse_args( $args, $defaults );
+
+	if ( empty( $args['name'] ) ) {
+		return $defaults;
+	}
+
+	if ( is_array( $args['name'] ) ) {
+		$files             = array();
+		$files['name']     = array_map( 'sanitize_file_name', $args['name'] );
+		$files['tmp_name'] = array_map( 'sanitize_text_field', $args['tmp_name'] );
+		$files['type']     = array_map( 'sanitize_text_field', $args['type'] );
+		$files['size']     = array_map( 'absint', $args['size'] );
+		$files['error']    = array_map( 'absint', $args['error'] );
+		return $files;
+	}
+
+	$file             = array();
+	$file['name']     = sanitize_file_name( $args['name'] );
+	$file['tmp_name'] = sanitize_text_field( $args['tmp_name'] );
+	$file['type']     = sanitize_text_field( $args['type'] );
+	$file['size']     = absint( $args['size'] );
+	$file['error']    = absint( $args['error'] );
+
+	return $file;
 }
