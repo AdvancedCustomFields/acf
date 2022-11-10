@@ -198,6 +198,13 @@ if ( ! class_exists( 'acf_validation' ) ) :
 
 		function acf_validate_save_post() {
 
+			$validate_block_fields = array();
+			foreach ( $_POST as $key => $value ) {
+				if ( 'acf-' === substr( $key, 0, 4 ) ) {
+					$validate_block_fields[$key] = $value;
+				}
+			}
+
 			// phpcs:disable WordPress.Security.NonceVerification.Missing -- Verified elsewhere.
 			// bail early if no $_POST
 			if ( empty( $_POST['acf'] ) ) {
@@ -205,7 +212,10 @@ if ( ! class_exists( 'acf_validation' ) ) :
 			}
 
 			// validate
-			acf_validate_values( $_POST['acf'], 'acf' ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+			acf_validate_values( $_POST['acf'], 'acf' );
+			foreach ( $validate_block_fields as $key => $value ) {
+				acf_validate_values( $value, $key );
+			}
 			// phpcs:enable WordPress.Security.NonceVerification.Missing
 		}
 
