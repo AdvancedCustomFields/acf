@@ -944,7 +944,7 @@ html[dir=rtl] #acf-popup .acf-popup-box .title .acf-icon {
 }
 @media screen and (max-width: 640px) {
   #acf-upgrade-notice .col-content,
-#acf-upgrade-notice .col-actions {
+  #acf-upgrade-notice .col-actions {
     float: none;
     padding-left: 90px;
     width: auto;
@@ -1203,7 +1203,7 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
     margin: 0;
   }
   .acf-postbox-columns .acf-postbox-main,
-.acf-postbox-columns .acf-postbox-side {
+  .acf-postbox-columns .acf-postbox-side {
     float: none;
     width: auto;
     margin: 0;
@@ -1575,7 +1575,7 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
 *---------------------------------------------------------------------------------------------*/
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .acf-loading,
-.acf-spinner {
+  .acf-spinner {
     background-image: url(../../images/spinner@2x.gif);
     background-size: 20px 20px;
   }
@@ -2644,7 +2644,7 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
 }
 @media screen and (max-width: 880px) {
   .acf-admin-field-groups .wp-list-table th.check-column,
-.acf-admin-field-groups .wp-list-table td.check-column {
+  .acf-admin-field-groups .wp-list-table td.check-column {
     vertical-align: top;
     padding-right: 2px;
     padding-left: 10px;
@@ -2667,14 +2667,14 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
 }
 @media screen and (max-width: 880px) {
   .acf-admin-field-groups .wp-list-table thead th, .acf-admin-field-groups .wp-list-table thead td,
-.acf-admin-field-groups .wp-list-table tfoot th, .acf-admin-field-groups .wp-list-table tfoot td {
+  .acf-admin-field-groups .wp-list-table tfoot th, .acf-admin-field-groups .wp-list-table tfoot td {
     padding-right: 16px;
     padding-left: 8px;
   }
 }
 @media screen and (max-width: 880px) {
   .acf-admin-field-groups .wp-list-table thead th.check-column, .acf-admin-field-groups .wp-list-table thead td.check-column,
-.acf-admin-field-groups .wp-list-table tfoot th.check-column, .acf-admin-field-groups .wp-list-table tfoot td.check-column {
+  .acf-admin-field-groups .wp-list-table tfoot th.check-column, .acf-admin-field-groups .wp-list-table tfoot td.check-column {
     vertical-align: middle;
   }
 }
@@ -2694,7 +2694,7 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
 }
 @media screen and (max-width: 880px) {
   .acf-admin-field-groups .wp-list-table tbody th,
-.acf-admin-field-groups .wp-list-table tbody td {
+  .acf-admin-field-groups .wp-list-table tbody td {
     padding-right: 16px;
     padding-left: 8px;
   }
@@ -3089,8 +3089,8 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
 *---------------------------------------------------------------------------------------------*/
 @media screen and (max-width: 880px) {
   .post-type-acf-field-group .widefat th input[type=checkbox],
-.post-type-acf-field-group .widefat thead td input[type=checkbox],
-.post-type-acf-field-group .widefat tfoot td input[type=checkbox] {
+  .post-type-acf-field-group .widefat thead td input[type=checkbox],
+  .post-type-acf-field-group .widefat tfoot td input[type=checkbox] {
     margin-bottom: 0;
   }
 }
@@ -3296,7 +3296,7 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
     flex-wrap: wrap;
   }
   .acf-headerbar .acf-headerbar-content .acf-headerbar-title,
-.acf-headerbar .acf-headerbar-content .acf-title-wrap {
+  .acf-headerbar .acf-headerbar-content .acf-title-wrap {
     flex: 1 1 100%;
   }
   .acf-headerbar .acf-headerbar-content .acf-title-wrap {
@@ -4352,7 +4352,7 @@ h3.acf-sub-field-list-title:before {
     align-items: flex-start;
   }
   #acf-field-group-pro-features .acf-field-group-pro-features-wrapper .acf-field-group-pro-features-content,
-#acf-field-group-pro-features .acf-field-group-pro-features-wrapper .acf-field-group-pro-features-actions {
+  #acf-field-group-pro-features .acf-field-group-pro-features-wrapper .acf-field-group-pro-features-actions {
     flex: 0 1 100%;
   }
 }

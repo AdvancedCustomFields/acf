@@ -2880,7 +2880,7 @@ p.submit .acf-spinner {
     /* field */
   }
   .media-modal .setting span,
-.media-modal .compat-attachment-fields > tbody > .acf-field > .acf-label {
+  .media-modal .compat-attachment-fields > tbody > .acf-field > .acf-label {
     width: 98%;
     float: none;
     text-align: left;
@@ -2888,8 +2888,8 @@ p.submit .acf-spinner {
     padding: 0;
   }
   .media-modal .setting input,
-.media-modal .setting textarea,
-.media-modal .compat-attachment-fields > tbody > .acf-field > .acf-input {
+  .media-modal .setting textarea,
+  .media-modal .compat-attachment-fields > tbody > .acf-field > .acf-input {
     float: none;
     height: auto;
     max-width: none;
