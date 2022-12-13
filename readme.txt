@@ -4,7 +4,7 @@ Tags: acf, fields, custom fields, meta, repeater
 Requires at least: 4.7
 Tested up to: 6.1.1
 Requires PHP: 5.6
-Stable tag: 6.0.5
+Stable tag: 6.0.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -75,6 +75,20 @@ From your WordPress dashboard
 
 
 == Changelog ==
+
+= 6.0.6 =
+*Release Date 13th December 2022*
+
+* [View Release Post](https://www.advancedcustomfields.com/blog/acf-6-0-6-release-flexible-content-field-layout-improvement/)
+* New - Flexible Content field now has a new admin user experience when editing layouts
+* New - Tabs for field settings in the field group editor can now be disabled via a new “Field Settings Tabs” screen option or with the new [`acf/field_group/disable_field_settings_tabs`](https://www.advancedcustomfields.com/resources/acf-field_group-disable_field_settings_tabs) filter
+* Improvement - General field settings tab now selected by default when a field is opened
+* Fix - Sub fields are no longer initialized by their parent, resolving performance issues when field groups contain many nested sub fields
+* Fix - Frontend forms now disable the submit button after click to prevent multiple submissions
+* Fix - Unknown field types no longer display broken HTML in the field group editor
+* Fix - Returning an empty string via the `acf/blocks/no_fields_assigned_message` filter will no longer result in blocks without fields assigned having an extra wrapping div
+* Fix - Sites with WPML enabled no longer experience failed ACF updates due to license errors
+* Fix - Buttons featuring icons no longer have display issues when using RTL languages
 
 = 6.0.5 =
 *Release Date 18th November 2022*

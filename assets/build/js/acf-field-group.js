@@ -2385,6 +2385,7 @@
       args.visible = true;
       if (args.parent && (args.parent.hasClass('acf-field-object') || args.parent.parents('.acf-field-object').length)) {
         args.visible = false;
+        args.excludeSubFields = true;
       }
       return args;
     },
@@ -2410,6 +2411,7 @@
     wait: 'prepare',
     events: {
       'change #acf-field-key-hide': 'onFieldKeysChange',
+      'change #acf-field-settings-tabs': 'onFieldSettingsTabsChange',
       'change [name="screen_columns"]': 'render'
     },
     initialize: function () {
@@ -2433,6 +2435,15 @@
     isFieldKeysChecked: function () {
       return this.$el.find('#acf-field-key-hide').prop('checked');
     },
+    isFieldSettingsTabsChecked: function () {
+      const $input = this.$el.find('#acf-field-settings-tabs');
+
+      // Screen option is hidden by filter.
+      if (!$input.length) {
+        return false;
+      }
+      return $input.prop('checked');
+    },
     getSelectedColumnCount: function () {
       return this.$el.find('input[name="screen_columns"]:checked').val();
     },
@@ -2441,11 +2452,34 @@
       acf.updateUserSetting('show_field_keys', val);
       this.render();
     },
+    onFieldSettingsTabsChange: function () {
+      const val = this.isFieldSettingsTabsChecked() ? 1 : 0;
+      acf.updateUserSetting('show_field_settings_tabs', val);
+      this.render();
+    },
     render: function () {
       if (this.isFieldKeysChecked()) {
         $('#acf-field-group-fields').addClass('show-field-keys');
       } else {
         $('#acf-field-group-fields').removeClass('show-field-keys');
+      }
+      if (!this.isFieldSettingsTabsChecked()) {
+        $('#acf-field-group-fields').addClass('hide-tabs');
+        $('.acf-field-settings-main').removeClass('acf-hidden').prop('hidden', false);
+      } else {
+        $('#acf-field-group-fields').removeClass('hide-tabs');
+        $('.acf-field-object.open').each(function () {
+          const tabFields = acf.getFields({
+            type: 'tab',
+            parent: $(this),
+            excludeSubFields: true,
+            limit: 1
+          });
+          if (tabFields.length) {
+            tabFields[0].tabs.set('initialized', false);
+          }
+          acf.doAction('show', $(this));
+        });
       }
       if (this.getSelectedColumnCount() == 1) {
         $('body').removeClass('columns-2');

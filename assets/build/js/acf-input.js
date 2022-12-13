@@ -4219,7 +4219,8 @@
     tabs: [],
     active: false,
     actions: {
-      refresh: 'onRefresh'
+      refresh: 'onRefresh',
+      close_field_object: 'onCloseFieldObject'
     },
     data: {
       before: false,
@@ -4264,6 +4265,11 @@
       i++;
     },
     initializeTabs: function () {
+      // Bail if tabs are disabled.
+      if ('acf_field_settings_tabs' === this.get('key') && $('#acf-field-group-fields').hasClass('hide-tabs')) {
+        return;
+      }
+
       // find first visible tab
       var tab = this.getVisible().shift();
 
@@ -4375,10 +4381,8 @@
       if (this.hasActive()) {
         return false;
       }
-
       // find next active tab
       var tab = this.getVisible().shift();
-
       // open tab
       if (tab) {
         this.openTab(tab);
@@ -4403,6 +4407,20 @@
 
       // add css
       $parent.css(attribute, height);
+    },
+    onCloseFieldObject: function (fieldObject) {
+      const tab = this.getVisible().find(item => {
+        const id = item.$el.closest('div[data-id]').data('id');
+        if (fieldObject.data.id === id) {
+          return item;
+        }
+      });
+      if (tab) {
+        // Wait for field group drawer to close
+        setTimeout(() => {
+          this.openTab(tab);
+        }, 300);
+      }
     }
   });
   var Tab = acf.Model.extend({
@@ -4499,6 +4517,10 @@
 
       // loop
       this.getTabs().map(function (group) {
+        // Do not save selected tab on field settings when unloading
+        if (group.$el.children('.acf-field-settings-tab-bar').length) {
+          return true;
+        }
         var active = group.hasActive() ? group.getActive().index() : 0;
         order.push(active);
       });
@@ -5677,7 +5699,8 @@
       sibling: false,
       limit: false,
       visible: false,
-      suppressFilters: false
+      suppressFilters: false,
+      excludeSubFields: false
     });
 
     // filter args
@@ -5716,6 +5739,10 @@
     // query
     if (args.parent) {
       $fields = args.parent.find(selector);
+      // exclude sub fields if required (only if a parent is provided)
+      if (args.excludeSubFields) {
+        $fields = $fields.not(args.parent.find('.acf-is-subfields .acf-field'));
+      }
     } else if (args.sibling) {
       $fields = args.sibling.siblings(selector);
     } else {
@@ -9630,7 +9657,7 @@
    *  @return	jQuery
    */
   acf.enableSubmit = function ($submit) {
-    return $submit.removeClass('disabled');
+    return $submit.removeClass('disabled').removeAttr('disabled');
   };
 
   /**
@@ -9645,7 +9672,7 @@
    *  @return	jQuery
    */
   acf.disableSubmit = function ($submit) {
-    return $submit.addClass('disabled');
+    return $submit.addClass('disabled').attr('disabled', true);
   };
 
   /**

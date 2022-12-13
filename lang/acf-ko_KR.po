@@ -12,7 +12,7 @@
 # This file is distributed under the same license as Advanced Custom Fields.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-11-08T12:02:56+00:00\n"
+"PO-Revision-Date: 2022-12-13T15:07:38+00:00\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "Language: ko_KR\n"
 "MIME-Version: 1.0\n"
@@ -25,17 +25,17 @@ msgstr ""
 msgid "[ACF shortcode value disabled for preview]"
 msgstr ""
 
-#: includes/admin/admin-field-group.php:671
+#: includes/admin/admin-field-group.php:672
 msgid "Close Modal"
 msgstr ""
 
 #: includes/admin/admin-field-group.php:162
-#: assets/build/js/acf-field-group.js:1186
-#: assets/build/js/acf-field-group.js:1463
+#: assets/build/js/acf-field-group.js:1304
+#: assets/build/js/acf-field-group.js:1468
 msgid "Field moved to other group"
 msgstr ""
 
-#: includes/admin/admin-field-group.php:161 assets/build/js/acf.js:1406
+#: includes/admin/admin-field-group.php:161 assets/build/js/acf.js:1397
 #: assets/build/js/acf.js:1463
 msgid "Close modal"
 msgstr ""
@@ -148,16 +148,16 @@ msgstr ""
 msgid "Unlock Extra Features with ACF PRO"
 msgstr ""
 
-#: includes/admin/views/field-group-options.php:244
+#: includes/admin/views/field-group-options.php:242
 msgid "Delete Field Group"
 msgstr ""
 
 #. translators: 1: Post creation date 2: Post creation time
-#: includes/admin/views/field-group-options.php:238
+#: includes/admin/views/field-group-options.php:236
 msgid "Created on %1$s at %2$s"
 msgstr ""
 
-#: includes/admin/views/field-group-options.php:180
+#: includes/admin/views/field-group-options.php:179
 msgid "Group Settings"
 msgstr ""
 
@@ -249,8 +249,8 @@ msgid "Activate this item"
 msgstr ""
 
 #: includes/admin/admin-field-group.php:158
-#: assets/build/js/acf-field-group.js:2196
-#: assets/build/js/acf-field-group.js:2612
+#: assets/build/js/acf-field-group.js:2366
+#: assets/build/js/acf-field-group.js:2635
 msgid "Move field group to trash?"
 msgstr ""
 
@@ -315,11 +315,11 @@ msgstr[0] ""
 msgid "%1$s must have a valid post ID."
 msgstr ""
 
-#: includes/fields/class-acf-field-file.php:468
+#: includes/fields/class-acf-field-file.php:472
 msgid "%s requires a valid attachment ID."
 msgstr ""
 
-#: includes/admin/views/field-group-options.php:206
+#: includes/admin/views/field-group-options.php:205
 msgid "Show in REST API"
 msgstr ""
 
@@ -341,26 +341,26 @@ msgid "Hex String"
 msgstr ""
 
 #: includes/admin/admin-field-group.php:187
-#: assets/build/js/acf-field-group.js:761
-#: assets/build/js/acf-field-group.js:928
+#: assets/build/js/acf-field-group.js:837
+#: assets/build/js/acf-field-group.js:933
 msgid "Gallery (Pro only)"
 msgstr ""
 
 #: includes/admin/admin-field-group.php:186
-#: assets/build/js/acf-field-group.js:758
-#: assets/build/js/acf-field-group.js:918
+#: assets/build/js/acf-field-group.js:833
+#: assets/build/js/acf-field-group.js:923
 msgid "Clone (Pro only)"
 msgstr ""
 
 #: includes/admin/admin-field-group.php:185
-#: assets/build/js/acf-field-group.js:758
-#: assets/build/js/acf-field-group.js:915
+#: assets/build/js/acf-field-group.js:833
+#: assets/build/js/acf-field-group.js:920
 msgid "Flexible Content (Pro only)"
 msgstr ""
 
 #: includes/admin/admin-field-group.php:184
-#: assets/build/js/acf-field-group.js:758
-#: assets/build/js/acf-field-group.js:912
+#: assets/build/js/acf-field-group.js:833
+#: assets/build/js/acf-field-group.js:917
 msgid "Repeater (Pro only)"
 msgstr ""
 
@@ -586,7 +586,7 @@ msgstr "유효하지 않은 논스에요."
 msgid "Error loading field."
 msgstr "필드를 부르는 중에 오류가 있어요."
 
-#: assets/build/js/acf-input.js:2605 assets/build/js/acf-input.js:2666
+#: assets/build/js/acf-input.js:2742 assets/build/js/acf-input.js:2811
 #: assets/build/js/acf-input.js:2913 assets/build/js/acf-input.js:2987
 msgid "Location not found: %s"
 msgstr "위치를 찾을 수 없어요: %s"
@@ -790,7 +790,7 @@ msgstr "리피터"
 msgid "Back to all tools"
 msgstr "모든 도구로 돌아감"
 
-#: includes/admin/views/field-group-options.php:161
+#: includes/admin/views/field-group-options.php:160
 msgid ""
 "If multiple field groups appear on an edit screen, the first field group's "
 "options will be used (the one with the lowest order number)"
@@ -798,68 +798,68 @@ msgstr ""
 "편집 화면에 여러 필드 그룹을 보이면 첫 번째 필드 그룹 옵션을 사용합니다 (가"
 "장 낮은 정렬 번호인 것)"
 
-#: includes/admin/views/field-group-options.php:161
+#: includes/admin/views/field-group-options.php:160
 msgid "<b>Select</b> items to <b>hide</b> them from the edit screen."
 msgstr "편집 화면에서 <b>숨기려면</b> 항목을 <b>선택</b>하세요."
 
-#: includes/admin/views/field-group-options.php:160
+#: includes/admin/views/field-group-options.php:159
 msgid "Hide on screen"
 msgstr "화면 숨기기"
 
-#: includes/admin/views/field-group-options.php:152
+#: includes/admin/views/field-group-options.php:151
 msgid "Send Trackbacks"
 msgstr "트랙백 보내기"
 
-#: includes/admin/views/field-group-options.php:151
+#: includes/admin/views/field-group-options.php:150
 msgid "Tags"
 msgstr "태그"
 
-#: includes/admin/views/field-group-options.php:150
+#: includes/admin/views/field-group-options.php:149
 msgid "Categories"
 msgstr "카테고리"
 
-#: includes/admin/views/field-group-options.php:148
+#: includes/admin/views/field-group-options.php:147
 msgid "Page Attributes"
 msgstr "패이지 속성"
 
-#: includes/admin/views/field-group-options.php:147
+#: includes/admin/views/field-group-options.php:146
 msgid "Format"
 msgstr "형식"
 
-#: includes/admin/views/field-group-options.php:146
+#: includes/admin/views/field-group-options.php:145
 msgid "Author"
 msgstr "글쓴이"
 
-#: includes/admin/views/field-group-options.php:145
+#: includes/admin/views/field-group-options.php:144
 msgid "Slug"
 msgstr "슬러그"
 
-#: includes/admin/views/field-group-options.php:144
+#: includes/admin/views/field-group-options.php:143
 msgid "Revisions"
 msgstr "리비전"
 
 #: includes/acf-wp-functions.php:63
-#: includes/admin/views/field-group-options.php:143
+#: includes/admin/views/field-group-options.php:142
 msgid "Comments"
 msgstr "댓글"
 
-#: includes/admin/views/field-group-options.php:142
+#: includes/admin/views/field-group-options.php:141
 msgid "Discussion"
 msgstr "토론"
 
-#: includes/admin/views/field-group-options.php:140
+#: includes/admin/views/field-group-options.php:139
 msgid "Excerpt"
 msgstr "요약"
 
-#: includes/admin/views/field-group-options.php:139
+#: includes/admin/views/field-group-options.php:138
 msgid "Content Editor"
 msgstr "콘텐츠 편집기"
 
-#: includes/admin/views/field-group-options.php:138
+#: includes/admin/views/field-group-options.php:137
 msgid "Permalink"
 msgstr "퍼머링크"
 
-#: includes/admin/views/field-group-options.php:223
+#: includes/admin/views/field-group-options.php:222
 msgid "Shown in field group list"
 msgstr "필드 그룹 목록에 보이기"
 
@@ -1013,8 +1013,8 @@ msgstr "재정렬하려면 끌기"
 
 #: includes/admin/admin-field-group.php:168
 #: includes/admin/views/html-location-group.php:3
-#: assets/build/js/acf-field-group.js:1793
-#: assets/build/js/acf-field-group.js:2160
+#: assets/build/js/acf-field-group.js:1935
+#: assets/build/js/acf-field-group.js:2166
 msgid "Show this field group if"
 msgstr "이 필드 그룹이면 보이기"
 
@@ -1162,20 +1162,20 @@ msgstr "PHP 만들기"
 msgid "Export Field Groups"
 msgstr "필드 그룹 내보내기"
 
-#: includes/admin/tools/class-acf-admin-tool-import.php:147
+#: includes/admin/tools/class-acf-admin-tool-import.php:146
 msgid "Imported 1 field group"
 msgid_plural "Imported %s field groups"
 msgstr[0] "%s개의 필드 그룹을 가져왔습니다"
 
-#: includes/admin/tools/class-acf-admin-tool-import.php:116
+#: includes/admin/tools/class-acf-admin-tool-import.php:115
 msgid "Import file empty"
 msgstr "빈 파일 가져 오기"
 
-#: includes/admin/tools/class-acf-admin-tool-import.php:107
+#: includes/admin/tools/class-acf-admin-tool-import.php:106
 msgid "Incorrect file type"
 msgstr "잘못된 파일 형식"
 
-#: includes/admin/tools/class-acf-admin-tool-import.php:102
+#: includes/admin/tools/class-acf-admin-tool-import.php:101
 msgid "Error uploading file. Please try again"
 msgstr "파일 업로드 중 오류가 발생하였습니다. 다시 시도하기 바랍니다"
 
@@ -1209,7 +1209,7 @@ msgid "Duplicate this item"
 msgstr "이 항목 복제하기"
 
 #: includes/admin/admin-field-groups.php:284
-#: includes/admin/views/field-group-options.php:222
+#: includes/admin/views/field-group-options.php:221
 #: includes/admin/views/html-admin-page-upgrade-network.php:38
 #: includes/admin/views/html-admin-page-upgrade-network.php:49
 msgid "Description"
@@ -1250,31 +1250,31 @@ msgstr "사이트 검토하기 & 업그래이드하기"
 msgid "Upgrade Database"
 msgstr "대이터배이스 업그래이드하기"
 
-#: includes/admin/admin.php:49 includes/admin/views/field-group-options.php:141
+#: includes/admin/admin.php:49 includes/admin/views/field-group-options.php:140
 msgid "Custom Fields"
 msgstr "필드 꾸미기"
 
-#: includes/admin/admin-field-group.php:717
+#: includes/admin/admin-field-group.php:718
 msgid "Move Field"
 msgstr "필드 이동하기"
 
-#: includes/admin/admin-field-group.php:706
-#: includes/admin/admin-field-group.php:710
+#: includes/admin/admin-field-group.php:707
+#: includes/admin/admin-field-group.php:711
 msgid "Please select the destination for this field"
 msgstr "이 필드의 목적지를 선택하기 바랍니다"
 
 #. translators: Confirmation message once a field has been moved to a different
 #. field group.
-#: includes/admin/admin-field-group.php:667
+#: includes/admin/admin-field-group.php:668
 msgid "The %1$s field can now be found in the %2$s field group"
 msgstr ""
 
-#: includes/admin/admin-field-group.php:664
+#: includes/admin/admin-field-group.php:665
 msgid "Move Complete."
 msgstr "이동을 완료했습니다."
 
 #: includes/admin/views/field-group-field.php:273
-#: includes/admin/views/field-group-options.php:190
+#: includes/admin/views/field-group-options.php:189
 msgid "Active"
 msgstr "활성화하기"
 
@@ -1291,57 +1291,55 @@ msgstr "설정"
 msgid "Location"
 msgstr "위치"
 
-#: includes/admin/admin-field-group.php:169 assets/build/js/acf-input.js:963
+#: includes/admin/admin-field-group.php:169 assets/build/js/acf-input.js:983
 #: assets/build/js/acf-input.js:1075
 msgid "Null"
 msgstr "Null"
 
 #: includes/acf-field-group-functions.php:846
 #: includes/admin/admin-field-group.php:166
-#: assets/build/js/acf-field-group.js:1052
-#: assets/build/js/acf-field-group.js:1305
+#: assets/build/js/acf-field-group.js:1158
+#: assets/build/js/acf-field-group.js:1310
 msgid "copy"
 msgstr "복사하기"
 
 #: includes/admin/admin-field-group.php:165
-#: assets/build/js/acf-field-group.js:323
+#: assets/build/js/acf-field-group.js:344
 #: assets/build/js/acf-field-group.js:389
 msgid "(this field)"
 msgstr "(이 필드)"
 
-#: includes/admin/admin-field-group.php:163 assets/build/js/acf-input.js:900
-#: assets/build/js/acf-input.js:924 assets/build/js/acf-input.js:1002
+#: includes/admin/admin-field-group.php:163 assets/build/js/acf-input.js:918
+#: assets/build/js/acf-input.js:943 assets/build/js/acf-input.js:1002
 #: assets/build/js/acf-input.js:1030
 msgid "Checked"
 msgstr "확인했습니다"
 
 #: includes/admin/admin-field-group.php:160
-#: assets/build/js/acf-field-group.js:1133
-#: assets/build/js/acf-field-group.js:1403
+#: assets/build/js/acf-field-group.js:1249
+#: assets/build/js/acf-field-group.js:1408
 msgid "Move Custom Field"
 msgstr "사용자 필드 이동하기"
 
 #: includes/admin/admin-field-group.php:159
-#: assets/build/js/acf-field-group.js:346
+#: assets/build/js/acf-field-group.js:370
 #: assets/build/js/acf-field-group.js:415
 msgid "No toggle fields available"
 msgstr "토글 필드를 사용할 수 없습니다"
 
 #: includes/admin/admin-field-group.php:157
-#: assets/build/js/acf-field-group.js:2180
-#: assets/build/js/acf-field-group.js:2592
 msgid "Field group title is required"
 msgstr "필드 그룹 제목이 필요합니다"
 
 #: includes/admin/admin-field-group.php:156
-#: assets/build/js/acf-field-group.js:1121
-#: assets/build/js/acf-field-group.js:1389
+#: assets/build/js/acf-field-group.js:1238
+#: assets/build/js/acf-field-group.js:1394
 msgid "This field cannot be moved until its changes have been saved"
 msgstr "변경 사항을 저장할 때까지 이 필드를 이동할 수 없습니다"
 
 #: includes/admin/admin-field-group.php:155
-#: assets/build/js/acf-field-group.js:951
-#: assets/build/js/acf-field-group.js:1187
+#: assets/build/js/acf-field-group.js:1049
+#: assets/build/js/acf-field-group.js:1192
 msgid "The string \"field_\" may not be used at the start of a field name"
 msgstr "“field_”는 필드 이름의 시작에 사용할 수 없습니다"
 
@@ -1450,115 +1448,115 @@ msgid "Title"
 msgstr "제목"
 
 #: includes/assets.php:371 includes/forms/form-comment.php:160
-#: assets/build/js/acf-input.js:6903 assets/build/js/acf-input.js:7858
+#: assets/build/js/acf-input.js:7310 assets/build/js/acf-input.js:7876
 msgid "Edit field group"
 msgstr "필드 그룹 편집하기"
 
-#: includes/admin/admin-field-group.php:181 assets/build/js/acf-input.js:1102
+#: includes/admin/admin-field-group.php:181 assets/build/js/acf-input.js:1125
 #: assets/build/js/acf-input.js:1230
 msgid "Selection is less than"
 msgstr "작게 선택했습니다"
 
-#: includes/admin/admin-field-group.php:180 assets/build/js/acf-input.js:1084
+#: includes/admin/admin-field-group.php:180 assets/build/js/acf-input.js:1106
 #: assets/build/js/acf-input.js:1202
 msgid "Selection is greater than"
 msgstr "크게 선택했습니다"
 
-#: includes/admin/admin-field-group.php:179 assets/build/js/acf-input.js:1051
+#: includes/admin/admin-field-group.php:179 assets/build/js/acf-input.js:1075
 #: assets/build/js/acf-input.js:1170
 msgid "Value is less than"
 msgstr "작은 값을 선택했습니다"
 
-#: includes/admin/admin-field-group.php:178 assets/build/js/acf-input.js:1020
+#: includes/admin/admin-field-group.php:178 assets/build/js/acf-input.js:1045
 #: assets/build/js/acf-input.js:1139
 msgid "Value is greater than"
 msgstr "큰 값을 선택했습니다"
 
-#: includes/admin/admin-field-group.php:177 assets/build/js/acf-input.js:871
+#: includes/admin/admin-field-group.php:177 assets/build/js/acf-input.js:888
 #: assets/build/js/acf-input.js:960
 msgid "Value contains"
 msgstr "값을 포함합니다"
 
-#: includes/admin/admin-field-group.php:176 assets/build/js/acf-input.js:846
+#: includes/admin/admin-field-group.php:176 assets/build/js/acf-input.js:862
 #: assets/build/js/acf-input.js:926
 msgid "Value matches pattern"
 msgstr "값 일치 패턴"
 
-#: includes/admin/admin-field-group.php:175 assets/build/js/acf-input.js:825
-#: assets/build/js/acf-input.js:999 assets/build/js/acf-input.js:903
+#: includes/admin/admin-field-group.php:175 assets/build/js/acf-input.js:840
+#: assets/build/js/acf-input.js:1023 assets/build/js/acf-input.js:903
 #: assets/build/js/acf-input.js:1116
 msgid "Value is not equal to"
 msgstr "값이 같지 않습니다"
 
-#: includes/admin/admin-field-group.php:174 assets/build/js/acf-input.js:796
-#: assets/build/js/acf-input.js:944 assets/build/js/acf-input.js:864
+#: includes/admin/admin-field-group.php:174 assets/build/js/acf-input.js:810
+#: assets/build/js/acf-input.js:964 assets/build/js/acf-input.js:864
 #: assets/build/js/acf-input.js:1053
 msgid "Value is equal to"
 msgstr "값이 동일합니다"
 
-#: includes/admin/admin-field-group.php:173 assets/build/js/acf-input.js:775
+#: includes/admin/admin-field-group.php:173 assets/build/js/acf-input.js:788
 #: assets/build/js/acf-input.js:841
 msgid "Has no value"
 msgstr "값이 없습니다"
 
-#: includes/admin/admin-field-group.php:172 assets/build/js/acf-input.js:744
+#: includes/admin/admin-field-group.php:172 assets/build/js/acf-input.js:758
 #: assets/build/js/acf-input.js:783
 msgid "Has any value"
 msgstr "값이 있습니다"
 
-#: includes/assets.php:352 assets/build/js/acf.js:1539
+#: includes/assets.php:352 assets/build/js/acf.js:1524
 #: assets/build/js/acf.js:1604
 msgid "Cancel"
 msgstr "취소하기"
 
-#: includes/assets.php:348 assets/build/js/acf.js:1691
+#: includes/assets.php:348 assets/build/js/acf.js:1698
 #: assets/build/js/acf.js:1801
 msgid "Are you sure?"
 msgstr "확실한가요?"
 
-#: includes/assets.php:368 assets/build/js/acf-input.js:8832
-#: assets/build/js/acf-input.js:10154
+#: includes/assets.php:368 assets/build/js/acf-input.js:9343
+#: assets/build/js/acf-input.js:10172
 msgid "%d fields require attention"
 msgstr "%d 필드는 주의가 필요합니다"
 
-#: includes/assets.php:367 assets/build/js/acf-input.js:8830
-#: assets/build/js/acf-input.js:10150
+#: includes/assets.php:367 assets/build/js/acf-input.js:9341
+#: assets/build/js/acf-input.js:10168
 msgid "1 field requires attention"
 msgstr "1 필드 주의 필요"
 
 #: includes/assets.php:366 includes/validation.php:287
-#: includes/validation.php:297 assets/build/js/acf-input.js:8823
-#: assets/build/js/acf-input.js:10145
+#: includes/validation.php:297 assets/build/js/acf-input.js:9336
+#: assets/build/js/acf-input.js:10163
 msgid "Validation failed"
 msgstr "검증을 실패했습니다"
 
-#: includes/assets.php:365 assets/build/js/acf-input.js:8978
-#: assets/build/js/acf-input.js:10328
+#: includes/assets.php:365 assets/build/js/acf-input.js:9499
+#: assets/build/js/acf-input.js:10346
 msgid "Validation successful"
 msgstr "검증을 성공했습니다"
 
-#: includes/media.php:54 assets/build/js/acf-input.js:6732
-#: assets/build/js/acf-input.js:7662
+#: includes/media.php:54 assets/build/js/acf-input.js:7138
+#: assets/build/js/acf-input.js:7680
 msgid "Restricted"
 msgstr "제한했습니다"
 
-#: includes/media.php:53 assets/build/js/acf-input.js:6562
-#: assets/build/js/acf-input.js:7426
+#: includes/media.php:53 assets/build/js/acf-input.js:6953
+#: assets/build/js/acf-input.js:7444
 msgid "Collapse Details"
 msgstr "세부정보 접기"
 
-#: includes/media.php:52 assets/build/js/acf-input.js:6562
-#: assets/build/js/acf-input.js:7423
+#: includes/media.php:52 assets/build/js/acf-input.js:6953
+#: assets/build/js/acf-input.js:7441
 msgid "Expand Details"
 msgstr "세부정보 확장하기"
 
-#: includes/media.php:51 assets/build/js/acf-input.js:6434
-#: assets/build/js/acf-input.js:7271
+#: includes/media.php:51 assets/build/js/acf-input.js:6820
+#: assets/build/js/acf-input.js:7289
 msgid "Uploaded to this post"
 msgstr "글에 업로드"
 
-#: includes/media.php:50 assets/build/js/acf-input.js:6470
-#: assets/build/js/acf-input.js:7310
+#: includes/media.php:50 assets/build/js/acf-input.js:6859
+#: assets/build/js/acf-input.js:7328
 msgctxt "verb"
 msgid "Update"
 msgstr "업대이트하기"
@@ -1568,12 +1566,12 @@ msgctxt "verb"
 msgid "Edit"
 msgstr "편집하기"
 
-#: includes/assets.php:362 assets/build/js/acf-input.js:8600
-#: assets/build/js/acf-input.js:9916
+#: includes/assets.php:362 assets/build/js/acf-input.js:9113
+#: assets/build/js/acf-input.js:9934
 msgid "The changes you made will be lost if you navigate away from this page"
 msgstr "패이지를 벗어나면 변경 한 내용이 손실 됩니다"
 
-#: includes/api/api-helpers.php:3409
+#: includes/api/api-helpers.php:3395
 msgid "File type must be %s."
 msgstr "파일 형식은 %s 여야 합니다."
 
@@ -1582,34 +1580,34 @@ msgstr "파일 형식은 %s 여야 합니다."
 #: includes/admin/views/field-group-field-conditional-logic.php:169
 #: includes/admin/views/field-group-locations.php:36
 #: includes/admin/views/html-location-group.php:3
-#: includes/api/api-helpers.php:3405 assets/build/js/acf-field-group.js:452
-#: assets/build/js/acf-field-group.js:1826
+#: includes/api/api-helpers.php:3391 assets/build/js/acf-field-group.js:492
+#: assets/build/js/acf-field-group.js:1973
 #: assets/build/js/acf-field-group.js:544
-#: assets/build/js/acf-field-group.js:2204
+#: assets/build/js/acf-field-group.js:2210
 msgid "or"
 msgstr "또는"
 
-#: includes/api/api-helpers.php:3378
+#: includes/api/api-helpers.php:3364
 msgid "File size must not exceed %s."
 msgstr "파일 크기는 %s을(를) 초과하지 않아야 합니다."
 
-#: includes/api/api-helpers.php:3373
+#: includes/api/api-helpers.php:3359
 msgid "File size must be at least %s."
 msgstr "파일 크기는 %s 이상 이어야 합니다."
 
-#: includes/api/api-helpers.php:3358
+#: includes/api/api-helpers.php:3344
 msgid "Image height must not exceed %dpx."
 msgstr "이미지 높이는 %d픽셀 를 초과하지 않아야 합니다."
 
-#: includes/api/api-helpers.php:3353
+#: includes/api/api-helpers.php:3339
 msgid "Image height must be at least %dpx."
 msgstr "이미지 높이는 %d픽셀 이상 이어야 합니다."
 
-#: includes/api/api-helpers.php:3339
+#: includes/api/api-helpers.php:3325
 msgid "Image width must not exceed %dpx."
 msgstr "이미지 넓이는 %d픽셀을 초과하지 않아야 합니다."
 
-#: includes/api/api-helpers.php:3334
+#: includes/api/api-helpers.php:3320
 msgid "Image width must be at least %dpx."
 msgstr "이미지 넓이는 %d픽셀 이상이어야 합니다."
 
@@ -1633,9 +1631,9 @@ msgstr "중간"
 msgid "Thumbnail"
 msgstr "썸내일"
 
-#: includes/acf-field-functions.php:850
+#: includes/acf-field-functions.php:846
 #: includes/admin/admin-field-group.php:164
-#: assets/build/js/acf-field-group.js:719
+#: assets/build/js/acf-field-group.js:789
 #: assets/build/js/acf-field-group.js:859
 msgid "(no label)"
 msgstr "(라벨이 없습니다)"
@@ -1804,7 +1802,7 @@ msgstr "사용자 정의 값을 허용하는 ‘기타’ 선택 사항 추가�
 msgid "Radio Button"
 msgstr "라디오 버튼"
 
-#: includes/fields/class-acf-field-accordion.php:105
+#: includes/fields/class-acf-field-accordion.php:104
 msgid ""
 "Define an endpoint for the previous accordion to stop. This accordion will "
 "not be visible."
@@ -1812,19 +1810,19 @@ msgstr ""
 "중지한 이전 아코디언의 엔드 포인트를 정의합니다. 이 아코디언은 보이지 않을 것"
 "입니다."
 
-#: includes/fields/class-acf-field-accordion.php:94
+#: includes/fields/class-acf-field-accordion.php:93
 msgid "Allow this accordion to open without closing others."
 msgstr "다른 것을 닫지 않고 열 수 있도록 아코디언을 허용합니다."
 
-#: includes/fields/class-acf-field-accordion.php:93
+#: includes/fields/class-acf-field-accordion.php:92
 msgid "Multi-expand"
 msgstr "다중 확장"
 
-#: includes/fields/class-acf-field-accordion.php:83
+#: includes/fields/class-acf-field-accordion.php:82
 msgid "Display this accordion as open on page load."
 msgstr "이 아코디언은 패이지 로드시 열린 것으로 보입니다."
 
-#: includes/fields/class-acf-field-accordion.php:82
+#: includes/fields/class-acf-field-accordion.php:81
 msgid "Open"
 msgstr "열기"
 
@@ -1863,18 +1861,18 @@ msgid "File name"
 msgstr "파일 이름"
 
 #: includes/fields/class-acf-field-file.php:60
-#: assets/build/js/acf-input.js:2343 assets/build/js/acf-input.js:2612
+#: assets/build/js/acf-input.js:2466 assets/build/js/acf-input.js:2612
 msgid "Update File"
 msgstr "파일 업대이트하기"
 
 #: includes/fields/class-acf-field-file.php:59
-#: assets/build/js/acf-input.js:2342 assets/build/js/acf-input.js:2611
+#: assets/build/js/acf-input.js:2465 assets/build/js/acf-input.js:2611
 msgid "Edit File"
 msgstr "파일 편집하기"
 
 #: includes/admin/tools/class-acf-admin-tool-import.php:59
 #: includes/fields/class-acf-field-file.php:58
-#: assets/build/js/acf-input.js:2317 assets/build/js/acf-input.js:2584
+#: assets/build/js/acf-input.js:2439 assets/build/js/acf-input.js:2584
 msgid "Select File"
 msgstr "파일 선택하기"
 
@@ -1900,7 +1898,7 @@ msgid "Enter each default value on a new line"
 msgstr "새로운 줄에 기본 값 입력하기"
 
 #: includes/fields/class-acf-field-select.php:255 includes/media.php:48
-#: assets/build/js/acf-input.js:6344 assets/build/js/acf-input.js:7156
+#: assets/build/js/acf-input.js:6718 assets/build/js/acf-input.js:7174
 msgctxt "verb"
 msgid "Select"
 msgstr "선택하기"
@@ -2095,7 +2093,7 @@ msgstr "시간 선택하기"
 msgid "Date Time Picker"
 msgstr "일시 선택 도구"
 
-#: includes/fields/class-acf-field-accordion.php:104
+#: includes/fields/class-acf-field-accordion.php:103
 msgid "Endpoint"
 msgstr "엔드포인트"
 
@@ -2411,7 +2409,7 @@ msgstr "최대 글"
 msgid "Minimum posts"
 msgstr "최소 글"
 
-#: includes/admin/views/field-group-options.php:149
+#: includes/admin/views/field-group-options.php:148
 #: includes/fields/class-acf-field-relationship.php:679
 msgid "Featured Image"
 msgstr "특성 이미지"
@@ -2477,17 +2475,17 @@ msgid "Select post type"
 msgstr "글 유형 선택하기"
 
 #: includes/fields/class-acf-field-relationship.php:65
-#: assets/build/js/acf-input.js:3695 assets/build/js/acf-input.js:4177
+#: assets/build/js/acf-input.js:3917 assets/build/js/acf-input.js:4195
 msgid "No matches found"
 msgstr "일치하는 항목을 찾을 수 없습니다"
 
 #: includes/fields/class-acf-field-relationship.php:64
-#: assets/build/js/acf-input.js:3679 assets/build/js/acf-input.js:4156
+#: assets/build/js/acf-input.js:3900 assets/build/js/acf-input.js:4174
 msgid "Loading"
 msgstr "로드중"
 
 #: includes/fields/class-acf-field-relationship.php:63
-#: assets/build/js/acf-input.js:3602 assets/build/js/acf-input.js:4060
+#: assets/build/js/acf-input.js:3809 assets/build/js/acf-input.js:4070
 msgid "Maximum values reached ( {max} values )"
 msgstr "최대 값에 도달했습니다 ({max} 값)"
 
@@ -2598,7 +2596,7 @@ msgstr "선택한 이미지가 없습니다"
 
 #: includes/assets.php:351 includes/fields/class-acf-field-file.php:159
 #: includes/fields/class-acf-field-image.php:139
-#: includes/fields/class-acf-field-link.php:142 assets/build/js/acf.js:1538
+#: includes/fields/class-acf-field-link.php:142 assets/build/js/acf.js:1523
 #: assets/build/js/acf.js:1603
 msgid "Remove"
 msgstr "제거하기"
@@ -2611,22 +2609,22 @@ msgid "Edit"
 msgstr "편집하기"
 
 #: includes/fields/class-acf-field-image.php:67 includes/media.php:55
-#: assets/build/js/acf-input.js:6387 assets/build/js/acf-input.js:7210
+#: assets/build/js/acf-input.js:6765 assets/build/js/acf-input.js:7228
 msgid "All images"
 msgstr "모든 이미지"
 
 #: includes/fields/class-acf-field-image.php:66
-#: assets/build/js/acf-input.js:3006 assets/build/js/acf-input.js:3386
+#: assets/build/js/acf-input.js:3173 assets/build/js/acf-input.js:3386
 msgid "Update Image"
 msgstr "이미지 업대이트하기"
 
 #: includes/fields/class-acf-field-image.php:65
-#: assets/build/js/acf-input.js:3005 assets/build/js/acf-input.js:3385
+#: assets/build/js/acf-input.js:3172 assets/build/js/acf-input.js:3385
 msgid "Edit Image"
 msgstr "이미지 편집하기"
 
 #: includes/fields/class-acf-field-image.php:64
-#: assets/build/js/acf-input.js:2983 assets/build/js/acf-input.js:3360
+#: assets/build/js/acf-input.js:3148 assets/build/js/acf-input.js:3360
 msgid "Select Image"
 msgstr "이미지 선택하기"
 
@@ -2777,13 +2775,13 @@ msgstr "안내문"
 
 #: includes/assets.php:350 includes/fields/class-acf-field-true_false.php:83
 #: includes/fields/class-acf-field-true_false.php:184
-#: assets/build/js/acf.js:1695 assets/build/js/acf.js:1803
+#: assets/build/js/acf.js:1700 assets/build/js/acf.js:1803
 msgid "No"
 msgstr "아니오"
 
 #: includes/assets.php:349 includes/fields/class-acf-field-true_false.php:80
 #: includes/fields/class-acf-field-true_false.php:168
-#: assets/build/js/acf.js:1693 assets/build/js/acf.js:1802
+#: assets/build/js/acf.js:1699 assets/build/js/acf.js:1802
 msgid "Yes"
 msgstr "예"
 
@@ -2869,7 +2867,7 @@ msgid "Search"
 msgstr "검색하기"
 
 #: includes/fields/class-acf-field-google-map.php:60
-#: assets/build/js/acf-input.js:2682 assets/build/js/acf-input.js:3013
+#: assets/build/js/acf-input.js:2832 assets/build/js/acf-input.js:3013
 msgid "Sorry, this browser does not support geolocation"
 msgstr "죄송합니다. 이 브라우저는 위치 정보를 지원하지 않습니다"
 

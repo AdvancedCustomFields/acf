@@ -306,28 +306,29 @@ if ( ! class_exists( 'acf_admin_field_group' ) ) {
 
 		}
 
-
 		/**
-		 *  Screen settings html output
+		 * Screen settings html output
 		 *
-		 *  @since   3.6.0
+		 * @since   3.6.0
 		 *
-		 *  @param   string $html Current screen settings HTML.
-		 *  @return  string $html
+		 * @param string $html Current screen settings HTML.
+		 * @return string $html
 		 */
 		public function screen_settings( $html ) {
+			$show_field_keys          = acf_get_user_setting( 'show_field_keys' ) ? 'checked="checked"' : '';
+			$show_field_settings_tabs = acf_get_user_setting( 'show_field_settings_tabs', true ) ? 'checked="checked"' : '';
+			$hide_field_settings_tabs = apply_filters( 'acf/field_group/disable_field_settings_tabs', false );
 
-			// vars.
-			$checked = acf_get_user_setting( 'show_field_keys' ) ? 'checked="checked"' : '';
-
-			// append.
 			$html .= '<div id="acf-append-show-on-screen" class="acf-hidden">';
-			$html .= '<label for="acf-field-key-hide"><input id="acf-field-key-hide" type="checkbox" value="1" name="show_field_keys" ' . $checked . ' /> ' . __( 'Field Keys', 'acf' ) . '</label>';
+			$html .= '<label for="acf-field-key-hide"><input id="acf-field-key-hide" type="checkbox" value="1" name="show_field_keys" ' . $show_field_keys . ' /> ' . __( 'Field Keys', 'acf' ) . '</label>';
+
+			if ( ! $hide_field_settings_tabs ) {
+				$html .= '<label for="acf-field-settings-tabs"><input id="acf-field-settings-tabs" type="checkbox" value="1" name="show_field_settings_tabs" ' . $show_field_settings_tabs . ' />' . __( 'Field Settings Tabs', 'acf' ) . '</label>';
+			}
+
 			$html .= '</div>';
 
-			// return.
 			return $html;
-
 		}
 
 		/**

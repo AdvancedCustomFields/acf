@@ -12,7 +12,7 @@
 # This file is distributed under the same license as Advanced Custom Fields.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-11-08T12:02:56+00:00\n"
+"PO-Revision-Date: 2022-12-13T15:07:38+00:00\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
@@ -25,17 +25,17 @@ msgstr ""
 msgid "[ACF shortcode value disabled for preview]"
 msgstr ""
 
-#: includes/admin/admin-field-group.php:671
+#: includes/admin/admin-field-group.php:672
 msgid "Close Modal"
 msgstr ""
 
 #: includes/admin/admin-field-group.php:162
-#: assets/build/js/acf-field-group.js:1186
-#: assets/build/js/acf-field-group.js:1463
+#: assets/build/js/acf-field-group.js:1304
+#: assets/build/js/acf-field-group.js:1468
 msgid "Field moved to other group"
 msgstr ""
 
-#: includes/admin/admin-field-group.php:161 assets/build/js/acf.js:1406
+#: includes/admin/admin-field-group.php:161 assets/build/js/acf.js:1397
 #: assets/build/js/acf.js:1463
 msgid "Close modal"
 msgstr ""
@@ -154,16 +154,16 @@ msgstr "Champ répéteur"
 msgid "Unlock Extra Features with ACF PRO"
 msgstr "Débloquer des fonctionnalités supplémentaires avec ACF PRO"
 
-#: includes/admin/views/field-group-options.php:244
+#: includes/admin/views/field-group-options.php:242
 msgid "Delete Field Group"
 msgstr "Supprimer le groupe de champ"
 
 #. translators: 1: Post creation date 2: Post creation time
-#: includes/admin/views/field-group-options.php:238
+#: includes/admin/views/field-group-options.php:236
 msgid "Created on %1$s at %2$s"
 msgstr "Créé le %1$s à %2$s"
 
-#: includes/admin/views/field-group-options.php:180
+#: includes/admin/views/field-group-options.php:179
 msgid "Group Settings"
 msgstr "Réglages du groupe"
 
@@ -261,8 +261,8 @@ msgid "Activate this item"
 msgstr "Activer cet élément"
 
 #: includes/admin/admin-field-group.php:158
-#: assets/build/js/acf-field-group.js:2196
-#: assets/build/js/acf-field-group.js:2612
+#: assets/build/js/acf-field-group.js:2366
+#: assets/build/js/acf-field-group.js:2635
 msgid "Move field group to trash?"
 msgstr "Déplacer le groupe de champs vers la corbeille ?"
 
@@ -342,11 +342,11 @@ msgstr[1] ""
 msgid "%1$s must have a valid post ID."
 msgstr "%1$s doit avoir un ID de publication valide."
 
-#: includes/fields/class-acf-field-file.php:468
+#: includes/fields/class-acf-field-file.php:472
 msgid "%s requires a valid attachment ID."
 msgstr "%s nécessite un ID de fichier jointe valide."
 
-#: includes/admin/views/field-group-options.php:206
+#: includes/admin/views/field-group-options.php:205
 msgid "Show in REST API"
 msgstr "Afficher dans l’API REST"
 
@@ -368,26 +368,26 @@ msgid "Hex String"
 msgstr "Chaine hexadécimale"
 
 #: includes/admin/admin-field-group.php:187
-#: assets/build/js/acf-field-group.js:761
-#: assets/build/js/acf-field-group.js:928
+#: assets/build/js/acf-field-group.js:837
+#: assets/build/js/acf-field-group.js:933
 msgid "Gallery (Pro only)"
 msgstr "Galerie (Pro uniquement)"
 
 #: includes/admin/admin-field-group.php:186
-#: assets/build/js/acf-field-group.js:758
-#: assets/build/js/acf-field-group.js:918
+#: assets/build/js/acf-field-group.js:833
+#: assets/build/js/acf-field-group.js:923
 msgid "Clone (Pro only)"
 msgstr "Cloner (Pro uniquement)"
 
 #: includes/admin/admin-field-group.php:185
-#: assets/build/js/acf-field-group.js:758
-#: assets/build/js/acf-field-group.js:915
+#: assets/build/js/acf-field-group.js:833
+#: assets/build/js/acf-field-group.js:920
 msgid "Flexible Content (Pro only)"
 msgstr "Contenu Flexible (Pro uniquement)"
 
 #: includes/admin/admin-field-group.php:184
-#: assets/build/js/acf-field-group.js:758
-#: assets/build/js/acf-field-group.js:912
+#: assets/build/js/acf-field-group.js:833
+#: assets/build/js/acf-field-group.js:917
 msgid "Repeater (Pro only)"
 msgstr "Répéteur (Pro uniquement)"
 
@@ -623,7 +623,7 @@ msgstr "Nonce invalide."
 msgid "Error loading field."
 msgstr "Erreur lors du chargement du champ."
 
-#: assets/build/js/acf-input.js:2605 assets/build/js/acf-input.js:2666
+#: assets/build/js/acf-input.js:2742 assets/build/js/acf-input.js:2811
 #: assets/build/js/acf-input.js:2913 assets/build/js/acf-input.js:2987
 msgid "Location not found: %s"
 msgstr "Emplacement introuvable : %s"
@@ -831,7 +831,7 @@ msgstr "Répéteur"
 msgid "Back to all tools"
 msgstr "Retour aux outils"
 
-#: includes/admin/views/field-group-options.php:161
+#: includes/admin/views/field-group-options.php:160
 msgid ""
 "If multiple field groups appear on an edit screen, the first field group's "
 "options will be used (the one with the lowest order number)"
@@ -840,70 +840,70 @@ msgstr ""
 "les options du premier groupe de champs seront utilisées (celle avec le "
 "numéro de commande le plus bas)."
 
-#: includes/admin/views/field-group-options.php:161
+#: includes/admin/views/field-group-options.php:160
 msgid "<b>Select</b> items to <b>hide</b> them from the edit screen."
 msgstr ""
 "<b>Sélectionner</b> les éléments à <b>masquer</b> sur l’écran de "
 "modification."
 
-#: includes/admin/views/field-group-options.php:160
+#: includes/admin/views/field-group-options.php:159
 msgid "Hide on screen"
 msgstr "Masquer de l’écran"
 
-#: includes/admin/views/field-group-options.php:152
+#: includes/admin/views/field-group-options.php:151
 msgid "Send Trackbacks"
 msgstr "Envoyer des rétroliens"
 
-#: includes/admin/views/field-group-options.php:151
+#: includes/admin/views/field-group-options.php:150
 msgid "Tags"
 msgstr "Étiquettes"
 
-#: includes/admin/views/field-group-options.php:150
+#: includes/admin/views/field-group-options.php:149
 msgid "Categories"
 msgstr "Catégories"
 
-#: includes/admin/views/field-group-options.php:148
+#: includes/admin/views/field-group-options.php:147
 msgid "Page Attributes"
 msgstr "Attributs de page"
 
-#: includes/admin/views/field-group-options.php:147
+#: includes/admin/views/field-group-options.php:146
 msgid "Format"
 msgstr "Format"
 
-#: includes/admin/views/field-group-options.php:146
+#: includes/admin/views/field-group-options.php:145
 msgid "Author"
 msgstr "Auteur/autrice"
 
-#: includes/admin/views/field-group-options.php:145
+#: includes/admin/views/field-group-options.php:144
 msgid "Slug"
 msgstr "Slug"
 
-#: includes/admin/views/field-group-options.php:144
+#: includes/admin/views/field-group-options.php:143
 msgid "Revisions"
 msgstr "Révisions"
 
 #: includes/acf-wp-functions.php:63
-#: includes/admin/views/field-group-options.php:143
+#: includes/admin/views/field-group-options.php:142
 msgid "Comments"
 msgstr "Commentaires"
 
-#: includes/admin/views/field-group-options.php:142
+#: includes/admin/views/field-group-options.php:141
 msgid "Discussion"
 msgstr "Commentaires"
 
-#: includes/admin/views/field-group-options.php:140
+#: includes/admin/views/field-group-options.php:139
 msgid "Excerpt"
 msgstr "Extrait"
 
-#: includes/admin/views/field-group-options.php:139
+#: includes/admin/views/field-group-options.php:138
 msgid "Content Editor"
 msgstr "Éditeur de contenu"
 
-#: includes/admin/views/field-group-options.php:138
+#: includes/admin/views/field-group-options.php:137
 msgid "Permalink"
 msgstr "Permalien"
 
-#: includes/admin/views/field-group-options.php:223
+#: includes/admin/views/field-group-options.php:222
 msgid "Shown in field group list"
 msgstr "Affiché dans la liste des groupes de champs"
 
@@ -1060,8 +1060,8 @@ msgstr "Faites glisser pour réorganiser"
 
 #: includes/admin/admin-field-group.php:168
 #: includes/admin/views/html-location-group.php:3
-#: assets/build/js/acf-field-group.js:1793
-#: assets/build/js/acf-field-group.js:2160
+#: assets/build/js/acf-field-group.js:1935
+#: assets/build/js/acf-field-group.js:2166
 msgid "Show this field group if"
 msgstr "Afficher ce groupe de champs si"
 
@@ -1217,21 +1217,21 @@ msgstr "Générer le PHP"
 msgid "Export Field Groups"
 msgstr "Exporter les groupes de champs"
 
-#: includes/admin/tools/class-acf-admin-tool-import.php:147
+#: includes/admin/tools/class-acf-admin-tool-import.php:146
 msgid "Imported 1 field group"
 msgid_plural "Imported %s field groups"
 msgstr[0] "1 groupe de champs importé"
 msgstr[1] "%s groupes de champs importés"
 
-#: includes/admin/tools/class-acf-admin-tool-import.php:116
+#: includes/admin/tools/class-acf-admin-tool-import.php:115
 msgid "Import file empty"
 msgstr "Fichier d’importation vide"
 
-#: includes/admin/tools/class-acf-admin-tool-import.php:107
+#: includes/admin/tools/class-acf-admin-tool-import.php:106
 msgid "Incorrect file type"
 msgstr "Type de fichier incorrect"
 
-#: includes/admin/tools/class-acf-admin-tool-import.php:102
+#: includes/admin/tools/class-acf-admin-tool-import.php:101
 msgid "Error uploading file. Please try again"
 msgstr "Erreur de téléversement du fichier. Veuillez réessayer."
 
@@ -1268,7 +1268,7 @@ msgid "Duplicate this item"
 msgstr "Dupliquer cet élément"
 
 #: includes/admin/admin-field-groups.php:284
-#: includes/admin/views/field-group-options.php:222
+#: includes/admin/views/field-group-options.php:221
 #: includes/admin/views/html-admin-page-upgrade-network.php:38
 #: includes/admin/views/html-admin-page-upgrade-network.php:49
 msgid "Description"
@@ -1308,32 +1308,32 @@ msgstr "Examiner les sites et mettre à niveau"
 msgid "Upgrade Database"
 msgstr "Mettre à niveau la base de données"
 
-#: includes/admin/admin.php:49 includes/admin/views/field-group-options.php:141
+#: includes/admin/admin.php:49 includes/admin/views/field-group-options.php:140
 msgid "Custom Fields"
 msgstr "Champs personnalisés"
 
-#: includes/admin/admin-field-group.php:717
+#: includes/admin/admin-field-group.php:718
 msgid "Move Field"
 msgstr "Déplacer le champ"
 
-#: includes/admin/admin-field-group.php:706
-#: includes/admin/admin-field-group.php:710
+#: includes/admin/admin-field-group.php:707
+#: includes/admin/admin-field-group.php:711
 msgid "Please select the destination for this field"
 msgstr "Veuillez sélectionner la destination pour ce champ"
 
 #. translators: Confirmation message once a field has been moved to a different
 #. field group.
-#: includes/admin/admin-field-group.php:667
+#: includes/admin/admin-field-group.php:668
 msgid "The %1$s field can now be found in the %2$s field group"
 msgstr ""
 "Le champ %1$s peut maintenant être trouvé dans le groupe de champs %2$s"
 
-#: includes/admin/admin-field-group.php:664
+#: includes/admin/admin-field-group.php:665
 msgid "Move Complete."
 msgstr "Déplacement effectué."
 
 #: includes/admin/views/field-group-field.php:273
-#: includes/admin/views/field-group-options.php:190
+#: includes/admin/views/field-group-options.php:189
 msgid "Active"
 msgstr "Actif"
 
@@ -1350,59 +1350,57 @@ msgstr "Réglages"
 msgid "Location"
 msgstr "Emplacement"
 
-#: includes/admin/admin-field-group.php:169 assets/build/js/acf-input.js:963
+#: includes/admin/admin-field-group.php:169 assets/build/js/acf-input.js:983
 #: assets/build/js/acf-input.js:1075
 msgid "Null"
 msgstr "Null"
 
 #: includes/acf-field-group-functions.php:846
 #: includes/admin/admin-field-group.php:166
-#: assets/build/js/acf-field-group.js:1052
-#: assets/build/js/acf-field-group.js:1305
+#: assets/build/js/acf-field-group.js:1158
+#: assets/build/js/acf-field-group.js:1310
 msgid "copy"
 msgstr "copier"
 
 #: includes/admin/admin-field-group.php:165
-#: assets/build/js/acf-field-group.js:323
+#: assets/build/js/acf-field-group.js:344
 #: assets/build/js/acf-field-group.js:389
 msgid "(this field)"
 msgstr "(ce champ)"
 
-#: includes/admin/admin-field-group.php:163 assets/build/js/acf-input.js:900
-#: assets/build/js/acf-input.js:924 assets/build/js/acf-input.js:1002
+#: includes/admin/admin-field-group.php:163 assets/build/js/acf-input.js:918
+#: assets/build/js/acf-input.js:943 assets/build/js/acf-input.js:1002
 #: assets/build/js/acf-input.js:1030
 msgid "Checked"
 msgstr "Coché"
 
 #: includes/admin/admin-field-group.php:160
-#: assets/build/js/acf-field-group.js:1133
-#: assets/build/js/acf-field-group.js:1403
+#: assets/build/js/acf-field-group.js:1249
+#: assets/build/js/acf-field-group.js:1408
 msgid "Move Custom Field"
 msgstr "Déplacer le champ personnalisé"
 
 #: includes/admin/admin-field-group.php:159
-#: assets/build/js/acf-field-group.js:346
+#: assets/build/js/acf-field-group.js:370
 #: assets/build/js/acf-field-group.js:415
 msgid "No toggle fields available"
 msgstr "Aucun champ de sélection disponible"
 
 #: includes/admin/admin-field-group.php:157
-#: assets/build/js/acf-field-group.js:2180
-#: assets/build/js/acf-field-group.js:2592
 msgid "Field group title is required"
 msgstr "Le titre du groupe de champ est requis"
 
 #: includes/admin/admin-field-group.php:156
-#: assets/build/js/acf-field-group.js:1121
-#: assets/build/js/acf-field-group.js:1389
+#: assets/build/js/acf-field-group.js:1238
+#: assets/build/js/acf-field-group.js:1394
 msgid "This field cannot be moved until its changes have been saved"
 msgstr ""
 "Ce champ ne peut pas être déplacé tant que ses modifications n’ont pas été "
 "enregistrées"
 
 #: includes/admin/admin-field-group.php:155
-#: assets/build/js/acf-field-group.js:951
-#: assets/build/js/acf-field-group.js:1187
+#: assets/build/js/acf-field-group.js:1049
+#: assets/build/js/acf-field-group.js:1192
 msgid "The string \"field_\" may not be used at the start of a field name"
 msgstr ""
 "La chaine « field_ » ne peut pas être utilisée au début du nom d’un champ"
@@ -1512,115 +1510,115 @@ msgid "Title"
 msgstr "Titre"
 
 #: includes/assets.php:371 includes/forms/form-comment.php:160
-#: assets/build/js/acf-input.js:6903 assets/build/js/acf-input.js:7858
+#: assets/build/js/acf-input.js:7310 assets/build/js/acf-input.js:7876
 msgid "Edit field group"
 msgstr "Modifier le groupe de champs"
 
-#: includes/admin/admin-field-group.php:181 assets/build/js/acf-input.js:1102
+#: includes/admin/admin-field-group.php:181 assets/build/js/acf-input.js:1125
 #: assets/build/js/acf-input.js:1230
 msgid "Selection is less than"
 msgstr "La sélection est inférieure à"
 
-#: includes/admin/admin-field-group.php:180 assets/build/js/acf-input.js:1084
+#: includes/admin/admin-field-group.php:180 assets/build/js/acf-input.js:1106
 #: assets/build/js/acf-input.js:1202
 msgid "Selection is greater than"
 msgstr "La sélection est supérieure à"
 
-#: includes/admin/admin-field-group.php:179 assets/build/js/acf-input.js:1051
+#: includes/admin/admin-field-group.php:179 assets/build/js/acf-input.js:1075
 #: assets/build/js/acf-input.js:1170
 msgid "Value is less than"
 msgstr "La valeur est plus petite que"
 
-#: includes/admin/admin-field-group.php:178 assets/build/js/acf-input.js:1020
+#: includes/admin/admin-field-group.php:178 assets/build/js/acf-input.js:1045
 #: assets/build/js/acf-input.js:1139
 msgid "Value is greater than"
 msgstr "La valeur est plus grande que"
 
-#: includes/admin/admin-field-group.php:177 assets/build/js/acf-input.js:871
+#: includes/admin/admin-field-group.php:177 assets/build/js/acf-input.js:888
 #: assets/build/js/acf-input.js:960
 msgid "Value contains"
 msgstr "La valeur contient"
 
-#: includes/admin/admin-field-group.php:176 assets/build/js/acf-input.js:846
+#: includes/admin/admin-field-group.php:176 assets/build/js/acf-input.js:862
 #: assets/build/js/acf-input.js:926
 msgid "Value matches pattern"
 msgstr "La valeur correspond au modèle"
 
-#: includes/admin/admin-field-group.php:175 assets/build/js/acf-input.js:825
-#: assets/build/js/acf-input.js:999 assets/build/js/acf-input.js:903
+#: includes/admin/admin-field-group.php:175 assets/build/js/acf-input.js:840
+#: assets/build/js/acf-input.js:1023 assets/build/js/acf-input.js:903
 #: assets/build/js/acf-input.js:1116
 msgid "Value is not equal to"
 msgstr "La valeur n’est pas égale à"
 
-#: includes/admin/admin-field-group.php:174 assets/build/js/acf-input.js:796
-#: assets/build/js/acf-input.js:944 assets/build/js/acf-input.js:864
+#: includes/admin/admin-field-group.php:174 assets/build/js/acf-input.js:810
+#: assets/build/js/acf-input.js:964 assets/build/js/acf-input.js:864
 #: assets/build/js/acf-input.js:1053
 msgid "Value is equal to"
 msgstr "La valeur est égale à"
 
-#: includes/admin/admin-field-group.php:173 assets/build/js/acf-input.js:775
+#: includes/admin/admin-field-group.php:173 assets/build/js/acf-input.js:788
 #: assets/build/js/acf-input.js:841
 msgid "Has no value"
 msgstr "A aucune valeur"
 
-#: includes/admin/admin-field-group.php:172 assets/build/js/acf-input.js:744
+#: includes/admin/admin-field-group.php:172 assets/build/js/acf-input.js:758
 #: assets/build/js/acf-input.js:783
 msgid "Has any value"
 msgstr "A n’importe quelle valeur"
 
-#: includes/assets.php:352 assets/build/js/acf.js:1539
+#: includes/assets.php:352 assets/build/js/acf.js:1524
 #: assets/build/js/acf.js:1604
 msgid "Cancel"
 msgstr "Annuler"
 
-#: includes/assets.php:348 assets/build/js/acf.js:1691
+#: includes/assets.php:348 assets/build/js/acf.js:1698
 #: assets/build/js/acf.js:1801
 msgid "Are you sure?"
 msgstr "Confirmez-vous ?"
 
-#: includes/assets.php:368 assets/build/js/acf-input.js:8832
-#: assets/build/js/acf-input.js:10154
+#: includes/assets.php:368 assets/build/js/acf-input.js:9343
+#: assets/build/js/acf-input.js:10172
 msgid "%d fields require attention"
 msgstr "%d champs nécessitent votre attention"
 
-#: includes/assets.php:367 assets/build/js/acf-input.js:8830
-#: assets/build/js/acf-input.js:10150
+#: includes/assets.php:367 assets/build/js/acf-input.js:9341
+#: assets/build/js/acf-input.js:10168
 msgid "1 field requires attention"
 msgstr "Un champ nécessite votre attention"
 
 #: includes/assets.php:366 includes/validation.php:287
-#: includes/validation.php:297 assets/build/js/acf-input.js:8823
-#: assets/build/js/acf-input.js:10145
+#: includes/validation.php:297 assets/build/js/acf-input.js:9336
+#: assets/build/js/acf-input.js:10163
 msgid "Validation failed"
 msgstr "Échec de la validation"
 
-#: includes/assets.php:365 assets/build/js/acf-input.js:8978
-#: assets/build/js/acf-input.js:10328
+#: includes/assets.php:365 assets/build/js/acf-input.js:9499
+#: assets/build/js/acf-input.js:10346
 msgid "Validation successful"
 msgstr "validation réussie"
 
-#: includes/media.php:54 assets/build/js/acf-input.js:6732
-#: assets/build/js/acf-input.js:7662
+#: includes/media.php:54 assets/build/js/acf-input.js:7138
+#: assets/build/js/acf-input.js:7680
 msgid "Restricted"
 msgstr "Limité"
 
-#: includes/media.php:53 assets/build/js/acf-input.js:6562
-#: assets/build/js/acf-input.js:7426
+#: includes/media.php:53 assets/build/js/acf-input.js:6953
+#: assets/build/js/acf-input.js:7444
 msgid "Collapse Details"
 msgstr "Replier les détails"
 
-#: includes/media.php:52 assets/build/js/acf-input.js:6562
-#: assets/build/js/acf-input.js:7423
+#: includes/media.php:52 assets/build/js/acf-input.js:6953
+#: assets/build/js/acf-input.js:7441
 msgid "Expand Details"
 msgstr "Déplier les détails"
 
-#: includes/media.php:51 assets/build/js/acf-input.js:6434
-#: assets/build/js/acf-input.js:7271
+#: includes/media.php:51 assets/build/js/acf-input.js:6820
+#: assets/build/js/acf-input.js:7289
 msgid "Uploaded to this post"
 msgstr "Téléversé sur cette publication"
 
-#: includes/media.php:50 assets/build/js/acf-input.js:6470
-#: assets/build/js/acf-input.js:7310
+#: includes/media.php:50 assets/build/js/acf-input.js:6859
+#: assets/build/js/acf-input.js:7328
 msgctxt "verb"
 msgid "Update"
 msgstr "Mettre à jour"
@@ -1630,14 +1628,14 @@ msgctxt "verb"
 msgid "Edit"
 msgstr "Modifier"
 
-#: includes/assets.php:362 assets/build/js/acf-input.js:8600
-#: assets/build/js/acf-input.js:9916
+#: includes/assets.php:362 assets/build/js/acf-input.js:9113
+#: assets/build/js/acf-input.js:9934
 msgid "The changes you made will be lost if you navigate away from this page"
 msgstr ""
 "Les modifications que vous avez effectuées seront perdues si vous quittez "
 "cette page"
 
-#: includes/api/api-helpers.php:3409
+#: includes/api/api-helpers.php:3395
 msgid "File type must be %s."
 msgstr "Le type de fichier doit être %s."
 
@@ -1646,34 +1644,34 @@ msgstr "Le type de fichier doit être %s."
 #: includes/admin/views/field-group-field-conditional-logic.php:169
 #: includes/admin/views/field-group-locations.php:36
 #: includes/admin/views/html-location-group.php:3
-#: includes/api/api-helpers.php:3405 assets/build/js/acf-field-group.js:452
-#: assets/build/js/acf-field-group.js:1826
+#: includes/api/api-helpers.php:3391 assets/build/js/acf-field-group.js:492
+#: assets/build/js/acf-field-group.js:1973
 #: assets/build/js/acf-field-group.js:544
-#: assets/build/js/acf-field-group.js:2204
+#: assets/build/js/acf-field-group.js:2210
 msgid "or"
 msgstr "ou"
 
-#: includes/api/api-helpers.php:3378
+#: includes/api/api-helpers.php:3364
 msgid "File size must not exceed %s."
 msgstr "La taille du fichier ne doit pas excéder %s."
 
-#: includes/api/api-helpers.php:3373
+#: includes/api/api-helpers.php:3359
 msgid "File size must be at least %s."
 msgstr "La taille du fichier doit être d’au moins %s."
 
-#: includes/api/api-helpers.php:3358
+#: includes/api/api-helpers.php:3344
 msgid "Image height must not exceed %dpx."
 msgstr "La hauteur de l’image ne doit pas excéder %d px."
 
-#: includes/api/api-helpers.php:3353
+#: includes/api/api-helpers.php:3339
 msgid "Image height must be at least %dpx."
 msgstr "La hauteur de l’image doit être au minimum de %d px."
 
-#: includes/api/api-helpers.php:3339
+#: includes/api/api-helpers.php:3325
 msgid "Image width must not exceed %dpx."
 msgstr "La largeur de l’image ne doit pas excéder %d px."
 
-#: includes/api/api-helpers.php:3334
+#: includes/api/api-helpers.php:3320
 msgid "Image width must be at least %dpx."
 msgstr "La largeur de l’image doit être au minimum de %d px."
 
@@ -1697,9 +1695,9 @@ msgstr "Moyen"
 msgid "Thumbnail"
 msgstr "Miniature"
 
-#: includes/acf-field-functions.php:850
+#: includes/acf-field-functions.php:846
 #: includes/admin/admin-field-group.php:164
-#: assets/build/js/acf-field-group.js:719
+#: assets/build/js/acf-field-group.js:789
 #: assets/build/js/acf-field-group.js:859
 msgid "(no label)"
 msgstr "(aucun libellé)"
@@ -1868,7 +1866,7 @@ msgstr "Ajouter le choix « Autre » pour autoriser les valeurs personnalisée
 msgid "Radio Button"
 msgstr "Bouton radio"
 
-#: includes/fields/class-acf-field-accordion.php:105
+#: includes/fields/class-acf-field-accordion.php:104
 msgid ""
 "Define an endpoint for the previous accordion to stop. This accordion will "
 "not be visible."
@@ -1876,19 +1874,19 @@ msgstr ""
 "Définir un point de terminaison pour l’accordéon précédent. Cet accordéon ne "
 "sera pas visible."
 
-#: includes/fields/class-acf-field-accordion.php:94
+#: includes/fields/class-acf-field-accordion.php:93
 msgid "Allow this accordion to open without closing others."
 msgstr "Autoriser l’ouverture de cet accordéon sans fermer les autres."
 
-#: includes/fields/class-acf-field-accordion.php:93
+#: includes/fields/class-acf-field-accordion.php:92
 msgid "Multi-expand"
 msgstr "Ouverture multiple"
 
-#: includes/fields/class-acf-field-accordion.php:83
+#: includes/fields/class-acf-field-accordion.php:82
 msgid "Display this accordion as open on page load."
 msgstr "Ouvrir l’accordéon au chargement de la page."
 
-#: includes/fields/class-acf-field-accordion.php:82
+#: includes/fields/class-acf-field-accordion.php:81
 msgid "Open"
 msgstr "Ouvrir"
 
@@ -1927,18 +1925,18 @@ msgid "File name"
 msgstr "Nom du fichier"
 
 #: includes/fields/class-acf-field-file.php:60
-#: assets/build/js/acf-input.js:2343 assets/build/js/acf-input.js:2612
+#: assets/build/js/acf-input.js:2466 assets/build/js/acf-input.js:2612
 msgid "Update File"
 msgstr "Mettre à jour le fichier"
 
 #: includes/fields/class-acf-field-file.php:59
-#: assets/build/js/acf-input.js:2342 assets/build/js/acf-input.js:2611
+#: assets/build/js/acf-input.js:2465 assets/build/js/acf-input.js:2611
 msgid "Edit File"
 msgstr "Modifier le fichier"
 
 #: includes/admin/tools/class-acf-admin-tool-import.php:59
 #: includes/fields/class-acf-field-file.php:58
-#: assets/build/js/acf-input.js:2317 assets/build/js/acf-input.js:2584
+#: assets/build/js/acf-input.js:2439 assets/build/js/acf-input.js:2584
 msgid "Select File"
 msgstr "Sélectionner un fichier"
 
@@ -1964,7 +1962,7 @@ msgid "Enter each default value on a new line"
 msgstr "Saisir chaque valeur par défaut sur une nouvelle ligne"
 
 #: includes/fields/class-acf-field-select.php:255 includes/media.php:48
-#: assets/build/js/acf-input.js:6344 assets/build/js/acf-input.js:7156
+#: assets/build/js/acf-input.js:6718 assets/build/js/acf-input.js:7174
 msgctxt "verb"
 msgid "Select"
 msgstr "Sélectionner"
@@ -2160,7 +2158,7 @@ msgstr "Choisir l’heure"
 msgid "Date Time Picker"
 msgstr "Sélecteur de date et heure"
 
-#: includes/fields/class-acf-field-accordion.php:104
+#: includes/fields/class-acf-field-accordion.php:103
 msgid "Endpoint"
 msgstr "Point de terminaison"
 
@@ -2479,7 +2477,7 @@ msgstr "Maximum de publications"
 msgid "Minimum posts"
 msgstr "Minimum de publications"
 
-#: includes/admin/views/field-group-options.php:149
+#: includes/admin/views/field-group-options.php:148
 #: includes/fields/class-acf-field-relationship.php:679
 msgid "Featured Image"
 msgstr "Image mise en avant"
@@ -2545,17 +2543,17 @@ msgid "Select post type"
 msgstr "Choisissez le type de publication"
 
 #: includes/fields/class-acf-field-relationship.php:65
-#: assets/build/js/acf-input.js:3695 assets/build/js/acf-input.js:4177
+#: assets/build/js/acf-input.js:3917 assets/build/js/acf-input.js:4195
 msgid "No matches found"
 msgstr "Aucune correspondance trouvée"
 
 #: includes/fields/class-acf-field-relationship.php:64
-#: assets/build/js/acf-input.js:3679 assets/build/js/acf-input.js:4156
+#: assets/build/js/acf-input.js:3900 assets/build/js/acf-input.js:4174
 msgid "Loading"
 msgstr "Chargement"
 
 #: includes/fields/class-acf-field-relationship.php:63
-#: assets/build/js/acf-input.js:3602 assets/build/js/acf-input.js:4060
+#: assets/build/js/acf-input.js:3809 assets/build/js/acf-input.js:4070
 msgid "Maximum values reached ( {max} values )"
 msgstr "Valeurs maximum atteintes ({max} valeurs)"
 
@@ -2667,7 +2665,7 @@ msgstr "Aucune image sélectionnée"
 
 #: includes/assets.php:351 includes/fields/class-acf-field-file.php:159
 #: includes/fields/class-acf-field-image.php:139
-#: includes/fields/class-acf-field-link.php:142 assets/build/js/acf.js:1538
+#: includes/fields/class-acf-field-link.php:142 assets/build/js/acf.js:1523
 #: assets/build/js/acf.js:1603
 msgid "Remove"
 msgstr "Retirer"
@@ -2680,22 +2678,22 @@ msgid "Edit"
 msgstr "Modifier"
 
 #: includes/fields/class-acf-field-image.php:67 includes/media.php:55
-#: assets/build/js/acf-input.js:6387 assets/build/js/acf-input.js:7210
+#: assets/build/js/acf-input.js:6765 assets/build/js/acf-input.js:7228
 msgid "All images"
 msgstr "Toutes les images"
 
 #: includes/fields/class-acf-field-image.php:66
-#: assets/build/js/acf-input.js:3006 assets/build/js/acf-input.js:3386
+#: assets/build/js/acf-input.js:3173 assets/build/js/acf-input.js:3386
 msgid "Update Image"
 msgstr "Mettre à jour l’image"
 
 #: includes/fields/class-acf-field-image.php:65
-#: assets/build/js/acf-input.js:3005 assets/build/js/acf-input.js:3385
+#: assets/build/js/acf-input.js:3172 assets/build/js/acf-input.js:3385
 msgid "Edit Image"
 msgstr "Modifier l’image"
 
 #: includes/fields/class-acf-field-image.php:64
-#: assets/build/js/acf-input.js:2983 assets/build/js/acf-input.js:3360
+#: assets/build/js/acf-input.js:3148 assets/build/js/acf-input.js:3360
 msgid "Select Image"
 msgstr "Sélectionner une image"
 
@@ -2846,13 +2844,13 @@ msgstr "Message"
 
 #: includes/assets.php:350 includes/fields/class-acf-field-true_false.php:83
 #: includes/fields/class-acf-field-true_false.php:184
-#: assets/build/js/acf.js:1695 assets/build/js/acf.js:1803
+#: assets/build/js/acf.js:1700 assets/build/js/acf.js:1803
 msgid "No"
 msgstr "Non"
 
 #: includes/assets.php:349 includes/fields/class-acf-field-true_false.php:80
 #: includes/fields/class-acf-field-true_false.php:168
-#: assets/build/js/acf.js:1693 assets/build/js/acf.js:1802
+#: assets/build/js/acf.js:1699 assets/build/js/acf.js:1802
 msgid "Yes"
 msgstr "Oui"
 
@@ -2938,7 +2936,7 @@ msgid "Search"
 msgstr "Rechercher"
 
 #: includes/fields/class-acf-field-google-map.php:60
-#: assets/build/js/acf-input.js:2682 assets/build/js/acf-input.js:3013
+#: assets/build/js/acf-input.js:2832 assets/build/js/acf-input.js:3013
 msgid "Sorry, this browser does not support geolocation"
 msgstr "Désolé, ce navigateur ne prend pas en charge la géolocalisation"
 

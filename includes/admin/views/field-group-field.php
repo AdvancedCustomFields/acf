@@ -75,7 +75,7 @@ if ( ! isset( $num_field_groups ) ) {
 			<li class="li-field-type">
 				<i class="field-type-icon field-type-icon-<?php echo acf_slugify( $field['type'] ); ?>"></i>
 				<span class="field-type-label">
-					<?php echo esc_html( $field_type_label ); ?>
+					<?php echo acf_esc_html( $field_type_label ); ?>
 				</span>
 			</li>
 		</ul>
