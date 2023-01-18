@@ -79,7 +79,7 @@ From your WordPress dashboard
 = 6.0.7 =
 *Release Date 18th January 2023*
 
-* Improvement - Removed unnecessary “Layout” prefix for Flexible Content field layouts
+* Improvement - Removed unnecessary “Layout” prefix text in the admin UI for Flexible Content field layouts
 * Fix - Dragging and dropping fields containing settings rendered as radio button groups no longer removes the selected value
 * Fix - Using the WordPress `default_page_template_title` filter with two parameters no longer causes a fatal error
 * Fix - Select2 inputs in the content editor are no longer receiving styles from the ACF 6 admin UI
