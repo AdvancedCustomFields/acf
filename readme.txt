@@ -4,7 +4,7 @@ Tags: acf, fields, custom fields, meta, repeater
 Requires at least: 4.7
 Tested up to: 6.1.1
 Requires PHP: 5.6
-Stable tag: 6.0.6
+Stable tag: 6.0.7
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -75,6 +75,19 @@ From your WordPress dashboard
 
 
 == Changelog ==
+
+= 6.0.7 =
+*Release Date 18th January 2023*
+
+* Improvement - Removed unnecessary “Layout” prefix for Flexible Content field layouts
+* Fix - Dragging and dropping fields containing settings rendered as radio button groups no longer removes the selected value
+* Fix - Using the WordPress `default_page_template_title` filter with two parameters no longer causes a fatal error
+* Fix - Select2 inputs in the content editor are no longer receiving styles from the ACF 6 admin UI
+* Fix - `acf_add_local_field_group()` now works with field group titles containing non-ASCII characters
+* Fix - Flexible Content field no longer has a missing icon for the “Duplicate” button
+* Fix - Clicking the “Add Field” button in a Flexible Content layout no longer adds an invalid field if there are other Flexible Content fields in the layout
+* Fix - Edit buttons for ACF blocks now behave correctly inside reusable blocks 
+* Fix - Field settings rendered as a select2 field now correctly reinitialize when changing between field types
 
 = 6.0.6 =
 *Release Date 13th December 2022*

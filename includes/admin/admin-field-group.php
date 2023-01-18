@@ -470,7 +470,7 @@ if ( ! class_exists( 'acf_admin_field_group' ) ) {
 
 
 		/**
-		 *  This function will render the HTML for the medtabox 'acf-field-group-fields'
+		 *  This function will render the HTML for the metabox 'acf-field-group-fields'
 		 *
 		 *  @since   5.0.0
 		 *

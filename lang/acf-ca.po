@@ -12,7 +12,7 @@
 # This file is distributed under the same license as Advanced Custom Fields.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-12-13T15:07:38+00:00\n"
+"PO-Revision-Date: 2023-01-18T14:07:28+00:00\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
@@ -21,11 +21,21 @@ msgstr ""
 "X-Generator: gettext\n"
 "Project-Id-Version: Advanced Custom Fields\n"
 
+#: includes/admin/admin-field-group.php:326
+msgid "Field Settings Tabs"
+msgstr ""
+
+#. Author URI of the plugin
+msgid ""
+"https://wpengine.com/?utm_source=wordpress."
+"org&utm_medium=referral&utm_campaign=plugin_directory&utm_content=advanced_custom_fields"
+msgstr ""
+
 #: includes/api/api-template.php:867
 msgid "[ACF shortcode value disabled for preview]"
 msgstr ""
 
-#: includes/admin/admin-field-group.php:672
+#: includes/admin/admin-field-group.php:673
 msgid "Close Modal"
 msgstr ""
 
@@ -267,7 +277,7 @@ msgstr "Activa aquest element"
 msgid "Move field group to trash?"
 msgstr "Voleu moure el grup de camps a la paperera?"
 
-#: acf.php:448 includes/admin/admin-field-group.php:353
+#: acf.php:448 includes/admin/admin-field-group.php:354
 #: includes/admin/admin-field-groups.php:232
 msgctxt "post status"
 msgid "Inactive"
@@ -384,7 +394,7 @@ msgstr "Contingut flexible (només a la versió pro)"
 msgid "Repeater (Pro only)"
 msgstr "Repetible (només a la versió pro)"
 
-#: includes/admin/admin-field-group.php:353
+#: includes/admin/admin-field-group.php:354
 msgctxt "post status"
 msgid "Active"
 msgstr "Activa"
@@ -1300,22 +1310,22 @@ msgstr "Actualitza la base de dades"
 msgid "Custom Fields"
 msgstr "Camps personalitzats"
 
-#: includes/admin/admin-field-group.php:718
+#: includes/admin/admin-field-group.php:719
 msgid "Move Field"
 msgstr "Mou el camp"
 
-#: includes/admin/admin-field-group.php:707
-#: includes/admin/admin-field-group.php:711
+#: includes/admin/admin-field-group.php:708
+#: includes/admin/admin-field-group.php:712
 msgid "Please select the destination for this field"
 msgstr "Seleccioneu la destinació d'aquest camp"
 
 #. translators: Confirmation message once a field has been moved to a different
 #. field group.
-#: includes/admin/admin-field-group.php:668
+#: includes/admin/admin-field-group.php:669
 msgid "The %1$s field can now be found in the %2$s field group"
 msgstr "El camp %1$s ara es pot trobar al grup de camps %2$s"
 
-#: includes/admin/admin-field-group.php:665
+#: includes/admin/admin-field-group.php:666
 msgid "Move Complete."
 msgstr "S’ha completat el moviment."
 
@@ -1324,7 +1334,7 @@ msgstr "S’ha completat el moviment."
 msgid "Active"
 msgstr "Actiu"
 
-#: includes/admin/admin-field-group.php:325
+#: includes/admin/admin-field-group.php:323
 msgid "Field Keys"
 msgstr "Claus dels camps"
 
@@ -1492,7 +1502,7 @@ msgid "Title"
 msgstr "Títol"
 
 #: includes/assets.php:371 includes/forms/form-comment.php:160
-#: assets/build/js/acf-input.js:7310 assets/build/js/acf-input.js:7876
+#: assets/build/js/acf-input.js:7337 assets/build/js/acf-input.js:7915
 msgid "Edit field group"
 msgstr "Edita el grup de camps"
 
@@ -1558,29 +1568,29 @@ msgstr "Cancel·la"
 msgid "Are you sure?"
 msgstr "N'esteu segur?"
 
-#: includes/assets.php:368 assets/build/js/acf-input.js:9343
-#: assets/build/js/acf-input.js:10172
+#: includes/assets.php:368 assets/build/js/acf-input.js:9370
+#: assets/build/js/acf-input.js:10211
 msgid "%d fields require attention"
 msgstr "Cal revisar %d camps"
 
-#: includes/assets.php:367 assets/build/js/acf-input.js:9341
-#: assets/build/js/acf-input.js:10168
+#: includes/assets.php:367 assets/build/js/acf-input.js:9368
+#: assets/build/js/acf-input.js:10207
 msgid "1 field requires attention"
 msgstr "Cal revisar un camp"
 
 #: includes/assets.php:366 includes/validation.php:287
-#: includes/validation.php:297 assets/build/js/acf-input.js:9336
-#: assets/build/js/acf-input.js:10163
+#: includes/validation.php:297 assets/build/js/acf-input.js:9363
+#: assets/build/js/acf-input.js:10202
 msgid "Validation failed"
 msgstr "La validació ha fallat"
 
-#: includes/assets.php:365 assets/build/js/acf-input.js:9499
-#: assets/build/js/acf-input.js:10346
+#: includes/assets.php:365 assets/build/js/acf-input.js:9526
+#: assets/build/js/acf-input.js:10385
 msgid "Validation successful"
 msgstr "Validació correcta"
 
-#: includes/media.php:54 assets/build/js/acf-input.js:7138
-#: assets/build/js/acf-input.js:7680
+#: includes/media.php:54 assets/build/js/acf-input.js:7165
+#: assets/build/js/acf-input.js:7719
 msgid "Restricted"
 msgstr "Restringit"
 
@@ -1588,18 +1598,18 @@ msgstr "Restringit"
 msgid "Collapse Details"
 msgstr "Amaga els detalls"
 
-#: includes/media.php:52 assets/build/js/acf-input.js:6953
-#: assets/build/js/acf-input.js:7441
+#: includes/media.php:52 assets/build/js/acf-input.js:6980
+#: assets/build/js/acf-input.js:7480
 msgid "Expand Details"
 msgstr "Expandeix els detalls"
 
-#: includes/media.php:51 assets/build/js/acf-input.js:6820
-#: assets/build/js/acf-input.js:7289
+#: includes/media.php:51 assets/build/js/acf-input.js:6847
+#: assets/build/js/acf-input.js:7328
 msgid "Uploaded to this post"
 msgstr "S'ha penjat a aquesta entrada"
 
-#: includes/media.php:50 assets/build/js/acf-input.js:6859
-#: assets/build/js/acf-input.js:7328
+#: includes/media.php:50 assets/build/js/acf-input.js:6886
+#: assets/build/js/acf-input.js:7367
 msgctxt "verb"
 msgid "Update"
 msgstr "Actualitza"
@@ -1609,8 +1619,8 @@ msgctxt "verb"
 msgid "Edit"
 msgstr "Edita"
 
-#: includes/assets.php:362 assets/build/js/acf-input.js:9113
-#: assets/build/js/acf-input.js:9934
+#: includes/assets.php:362 assets/build/js/acf-input.js:9140
+#: assets/build/js/acf-input.js:9973
 msgid "The changes you made will be lost if you navigate away from this page"
 msgstr "Perdreu els canvis que heu fet si abandoneu aquesta pàgina"
 
@@ -1993,7 +2003,7 @@ msgstr "Introduïu un o més caràcters"
 #: includes/fields/class-acf-field-select.php:109
 msgctxt "Select2 JS matches_0"
 msgid "No matches found"
-msgstr "No hi ha coincidències"
+msgstr "No s'ha trobat cap coincidència"
 
 #: includes/fields/class-acf-field-select.php:108
 msgctxt "Select2 JS matches_n"
@@ -2656,7 +2666,7 @@ msgid "Edit"
 msgstr "Edita"
 
 #: includes/fields/class-acf-field-image.php:67 includes/media.php:55
-#: assets/build/js/acf-input.js:6765 assets/build/js/acf-input.js:7228
+#: assets/build/js/acf-input.js:6792 assets/build/js/acf-input.js:7267
 msgid "All images"
 msgstr "Totes les imatges"
 
@@ -3058,7 +3068,6 @@ msgstr ""
 "Personalitzeu el WordPress amb camps potents, professionals i intuïtius."
 
 #. Plugin URI of the plugin
-#. Author URI of the plugin
 msgid "https://www.advancedcustomfields.com"
 msgstr "https://www.advancedcustomfields.com"
 

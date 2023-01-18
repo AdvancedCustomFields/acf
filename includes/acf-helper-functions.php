@@ -518,7 +518,7 @@ function acf_add_url_utm_tags( $url, $campaign, $content, $anchor = false ) {
 			array(
 				'utm_source'   => ( defined( 'ACF_PRO' ) && ACF_PRO ) ? 'ACF PRO' : 'ACF Free',
 				'utm_medium'   => 'insideplugin',
-				'utm_campagin' => $campaign,
+				'utm_campaign' => $campaign,
 				'utm_content'  => $content,
 			)
 		)

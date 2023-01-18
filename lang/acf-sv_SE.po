@@ -12,7 +12,7 @@
 # This file is distributed under the same license as Advanced Custom Fields.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-12-13T15:07:38+00:00\n"
+"PO-Revision-Date: 2023-01-18T14:07:28+00:00\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "Language: sv_SE\n"
 "MIME-Version: 1.0\n"
@@ -21,11 +21,23 @@ msgstr ""
 "X-Generator: gettext\n"
 "Project-Id-Version: Advanced Custom Fields\n"
 
+#: includes/admin/admin-field-group.php:326
+msgid "Field Settings Tabs"
+msgstr "Fältinställningar för flikar"
+
+#. Author URI of the plugin
+msgid ""
+"https://wpengine.com/?utm_source=wordpress."
+"org&utm_medium=referral&utm_campaign=plugin_directory&utm_content=advanced_custom_fields"
+msgstr ""
+"https://wpengine.com/?utm_source=wordpress."
+"org&utm_medium=referral&utm_campaign=plugin_directory&utm_content=advanced_custom_fields"
+
 #: includes/api/api-template.php:867
 msgid "[ACF shortcode value disabled for preview]"
-msgstr ""
+msgstr "[ACF-kortkod inaktiverad för förhandsvisning]"
 
-#: includes/admin/admin-field-group.php:672
+#: includes/admin/admin-field-group.php:673
 msgid "Close Modal"
 msgstr "Stäng modal"
 
@@ -76,6 +88,8 @@ msgstr "Tillåt anpassade värden"
 #: includes/fields/class-acf-field-checkbox.php:144
 msgid "Checkbox custom values cannot be empty. Uncheck any empty values."
 msgstr ""
+"Anpassade värden för kryssrutor kan inte vara tomma. Avmarkera alla tomma "
+"värden."
 
 #: includes/admin/views/html-admin-navigation.php:111
 msgid "Updates"
@@ -103,6 +117,8 @@ msgid ""
 "New to ACF? Take a look at our <a href=\"%s\" target=\"_blank\">getting "
 "started guide</a>."
 msgstr ""
+"Har du just börjat med ACF? Kolla gärna in vår <a href=\"%s\" target=\"_blank"
+"\">välkomstguide</a>."
 
 #: includes/admin/views/field-groups-empty.php:15
 msgid "Add Field Group"
@@ -114,6 +130,8 @@ msgid ""
 "ACF uses <a href=\"%s\" target=\"_blank\">field groups</a> to group custom "
 "fields together, and then attach those fields to edit screens."
 msgstr ""
+"ACF samlar anpassade fält i <a href=\"%s\" target=\"_blank\">fältgrupper</a> "
+"och kopplar sedan dessa fält till redigeringsvyer."
 
 #: includes/admin/views/field-groups-empty.php:5
 msgid "Add Your First Field Group"
@@ -260,7 +278,7 @@ msgstr "Aktivera detta objekt"
 msgid "Move field group to trash?"
 msgstr "Flytta fältgrupp till papperskorg?"
 
-#: acf.php:448 includes/admin/admin-field-group.php:353
+#: acf.php:448 includes/admin/admin-field-group.php:354
 #: includes/admin/admin-field-groups.php:232
 msgctxt "post status"
 msgid "Inactive"
@@ -377,7 +395,7 @@ msgstr "Flexibelt innehåll (endast Pro)"
 msgid "Repeater (Pro only)"
 msgstr "Repeterare (endast Pro)"
 
-#: includes/admin/admin-field-group.php:353
+#: includes/admin/admin-field-group.php:354
 msgctxt "post status"
 msgid "Active"
 msgstr "Aktivt"
@@ -1286,22 +1304,22 @@ msgstr "Uppgradera databas"
 msgid "Custom Fields"
 msgstr "Anpassade fält"
 
-#: includes/admin/admin-field-group.php:718
+#: includes/admin/admin-field-group.php:719
 msgid "Move Field"
 msgstr "Flytta fält"
 
-#: includes/admin/admin-field-group.php:707
-#: includes/admin/admin-field-group.php:711
+#: includes/admin/admin-field-group.php:708
+#: includes/admin/admin-field-group.php:712
 msgid "Please select the destination for this field"
 msgstr "Välj destinationen för detta fält"
 
 #. translators: Confirmation message once a field has been moved to a different
 #. field group.
-#: includes/admin/admin-field-group.php:668
+#: includes/admin/admin-field-group.php:669
 msgid "The %1$s field can now be found in the %2$s field group"
 msgstr "Fältet %1$s kan nu hittas i fältgruppen %2$s"
 
-#: includes/admin/admin-field-group.php:665
+#: includes/admin/admin-field-group.php:666
 msgid "Move Complete."
 msgstr "Flytt färdig."
 
@@ -1310,7 +1328,7 @@ msgstr "Flytt färdig."
 msgid "Active"
 msgstr "Aktiv"
 
-#: includes/admin/admin-field-group.php:325
+#: includes/admin/admin-field-group.php:323
 msgid "Field Keys"
 msgstr "Fältnycklar"
 
@@ -1480,7 +1498,7 @@ msgid "Title"
 msgstr "Rubrik"
 
 #: includes/assets.php:371 includes/forms/form-comment.php:160
-#: assets/build/js/acf-input.js:7310 assets/build/js/acf-input.js:7876
+#: assets/build/js/acf-input.js:7337 assets/build/js/acf-input.js:7915
 msgid "Edit field group"
 msgstr "Redigera fältgrupp"
 
@@ -1546,49 +1564,49 @@ msgstr "Avbryt"
 msgid "Are you sure?"
 msgstr "Är du säker?"
 
-#: includes/assets.php:368 assets/build/js/acf-input.js:9343
-#: assets/build/js/acf-input.js:10172
+#: includes/assets.php:368 assets/build/js/acf-input.js:9370
+#: assets/build/js/acf-input.js:10211
 msgid "%d fields require attention"
 msgstr "%d fält kräver din uppmärksamhet"
 
-#: includes/assets.php:367 assets/build/js/acf-input.js:9341
-#: assets/build/js/acf-input.js:10168
+#: includes/assets.php:367 assets/build/js/acf-input.js:9368
+#: assets/build/js/acf-input.js:10207
 msgid "1 field requires attention"
 msgstr "1 fält kräver din uppmärksamhet"
 
 #: includes/assets.php:366 includes/validation.php:287
-#: includes/validation.php:297 assets/build/js/acf-input.js:9336
-#: assets/build/js/acf-input.js:10163
+#: includes/validation.php:297 assets/build/js/acf-input.js:9363
+#: assets/build/js/acf-input.js:10202
 msgid "Validation failed"
 msgstr "Validering misslyckades"
 
-#: includes/assets.php:365 assets/build/js/acf-input.js:9499
-#: assets/build/js/acf-input.js:10346
+#: includes/assets.php:365 assets/build/js/acf-input.js:9526
+#: assets/build/js/acf-input.js:10385
 msgid "Validation successful"
 msgstr "Validering lyckades"
 
-#: includes/media.php:54 assets/build/js/acf-input.js:7138
-#: assets/build/js/acf-input.js:7680
+#: includes/media.php:54 assets/build/js/acf-input.js:7165
+#: assets/build/js/acf-input.js:7719
 msgid "Restricted"
 msgstr "Begränsad"
 
-#: includes/media.php:53 assets/build/js/acf-input.js:6953
-#: assets/build/js/acf-input.js:7444
+#: includes/media.php:53 assets/build/js/acf-input.js:6980
+#: assets/build/js/acf-input.js:7483
 msgid "Collapse Details"
 msgstr "Minimera detaljer"
 
-#: includes/media.php:52 assets/build/js/acf-input.js:6953
-#: assets/build/js/acf-input.js:7441
+#: includes/media.php:52 assets/build/js/acf-input.js:6980
+#: assets/build/js/acf-input.js:7480
 msgid "Expand Details"
 msgstr "Expandera detaljer"
 
-#: includes/media.php:51 assets/build/js/acf-input.js:6820
-#: assets/build/js/acf-input.js:7289
+#: includes/media.php:51 assets/build/js/acf-input.js:6847
+#: assets/build/js/acf-input.js:7328
 msgid "Uploaded to this post"
 msgstr "Uppladdat till detta inlägg"
 
-#: includes/media.php:50 assets/build/js/acf-input.js:6859
-#: assets/build/js/acf-input.js:7328
+#: includes/media.php:50 assets/build/js/acf-input.js:6886
+#: assets/build/js/acf-input.js:7367
 msgctxt "verb"
 msgid "Update"
 msgstr "Uppdatera"
@@ -1598,8 +1616,8 @@ msgctxt "verb"
 msgid "Edit"
 msgstr "Redigera"
 
-#: includes/assets.php:362 assets/build/js/acf-input.js:9113
-#: assets/build/js/acf-input.js:9934
+#: includes/assets.php:362 assets/build/js/acf-input.js:9140
+#: assets/build/js/acf-input.js:9973
 msgid "The changes you made will be lost if you navigate away from this page"
 msgstr ""
 "De ändringar du gjort kommer att gå förlorade om du navigerar bort från "
@@ -1932,7 +1950,7 @@ msgid "Enter each default value on a new line"
 msgstr "Ange varje standardvärde på en ny rad"
 
 #: includes/fields/class-acf-field-select.php:255 includes/media.php:48
-#: assets/build/js/acf-input.js:6718 assets/build/js/acf-input.js:7174
+#: assets/build/js/acf-input.js:6745 assets/build/js/acf-input.js:7213
 msgctxt "verb"
 msgid "Select"
 msgstr "Välj"
@@ -2647,7 +2665,7 @@ msgid "Edit"
 msgstr "Redigera"
 
 #: includes/fields/class-acf-field-image.php:67 includes/media.php:55
-#: assets/build/js/acf-input.js:6765 assets/build/js/acf-input.js:7228
+#: assets/build/js/acf-input.js:6792 assets/build/js/acf-input.js:7267
 msgid "All images"
 msgstr "Alla bilder"
 
@@ -3047,7 +3065,6 @@ msgid "Customize WordPress with powerful, professional and intuitive fields."
 msgstr "Anpassa WordPress med kraftfulla, professionella och intuitiva fält."
 
 #. Plugin URI of the plugin
-#. Author URI of the plugin
 msgid "https://www.advancedcustomfields.com"
 msgstr "https://www.advancedcustomfields.com"
 

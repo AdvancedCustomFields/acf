@@ -163,7 +163,11 @@ function acf_add_local_field_group( $field_group ) {
 
 	// Generate key if only name is provided.
 	if ( ! $field_group['key'] ) {
-		$field_group['key'] = 'group_' . acf_slugify( $field_group['title'], '_' );
+		$field_group_key = 'group_' . acf_slugify( $field_group['title'], '_' );
+		if ( $field_group_key === 'group_' ) {
+			$field_group_key = 'group_' . md5( $field_group['title'] );
+		}
+		$field_group['key'] = $field_group_key;
 	}
 
 	// Bail early if field group already exists.
