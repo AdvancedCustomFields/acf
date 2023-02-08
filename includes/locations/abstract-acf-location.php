@@ -175,7 +175,7 @@ if ( ! class_exists( 'ACF_Location' ) ) :
 			$result = ( $value == $rule['value'] );
 
 			// Allow "all" to match any value.
-			if ( $rule['value'] === 'all' ) {
+			if ( $value === 'all' ) { 
 				$result = true;
 			}
 
