@@ -21,10 +21,13 @@ if ( ! class_exists( 'acf_field_color_picker' ) ) :
 		function initialize() {
 
 			// vars
-			$this->name     = 'color_picker';
-			$this->label    = __( 'Color Picker', 'acf' );
-			$this->category = 'jquery';
-			$this->defaults = array(
+			$this->name          = 'color_picker';
+			$this->label         = __( 'Color Picker', 'acf' );
+			$this->category      = 'advanced';
+			$this->description   = __( 'An interactive UI for selecting a colour, or specifying a Hex value.', 'acf' );
+			$this->preview_image = acf_get_url() . '/assets/images/field-type-previews/field-preview-color-picker.png';
+			$this->doc_url       = acf_add_url_utm_tags( 'https://www.advancedcustomfields.com/resources/color-picker/', 'docs', 'field-type-selection' );
+			$this->defaults      = array(
 				'default_value'  => '',
 				'enable_opacity' => false,
 				'return_format'  => 'string', // 'string'|'array'

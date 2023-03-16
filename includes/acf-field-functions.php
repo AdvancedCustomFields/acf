@@ -93,7 +93,7 @@ function acf_get_raw_field( $id = 0 ) {
 	}
 
 	// Unserialize post_content.
-	$field = (array) maybe_unserialize( $post->post_content );
+	$field = (array) acf_maybe_unserialize( $post->post_content );
 
 	// update attributes
 	$field['ID']         = $post->ID;
@@ -695,6 +695,14 @@ function acf_render_field_wrap( $field, $element = 'div', $instruction = 'label'
 		$wrapper['data-required'] = 1;
 	}
 
+	// Support custom attributes.
+	if ( ! empty( $field['data'] ) && is_array( $field['data'] ) ) {
+		foreach ( $field['data'] as $name => $attr ) {
+			$wrapper[ 'data-' . $name ] = $attr;
+		}
+		unset( $field['data'] );
+	}
+
 	// Clean up class attribute.
 	$wrapper['class'] = str_replace( '_', '-', $wrapper['class'] );
 	$wrapper['class'] = str_replace( 'field-field-', 'field-', $wrapper['class'] );
@@ -739,7 +747,7 @@ function acf_render_field_wrap( $field, $element = 'div', $instruction = 'label'
 	}
 
 	// Vars for render.
-	$attributes_html = acf_esc_attr( $wrapper );
+	$attributes_html = acf_esc_attrs( $wrapper );
 
 	// Render HTML
 	echo "<$element $attributes_html>" . "\n";
@@ -834,7 +842,7 @@ function acf_render_field_label( $field ) {
  *
  * @param   array  $field The field array.
  * @param   string $context The output context (admin).
- * @return  void
+ * @return  string The field label in HTML format.
  */
 function acf_get_field_label( $field, $context = '' ) {
 

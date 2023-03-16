@@ -6,6 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( ! class_exists( 'acf_validation' ) ) :
 
+	#[AllowDynamicProperties]
 	class acf_validation {
 
 
@@ -183,29 +184,30 @@ if ( ! class_exists( 'acf_validation' ) ) :
 		}
 
 
-		/*
-		*  acf_validate_save_post
-		*
-		*  This function will loop over $_POST data and validate
-		*
-		*  @type    function
-		*  @date    7/09/2016
-		*  @since   5.4.0
-		*
-		*  @param   n/a
-		*  @return  n/a
-		*/
-
-		function acf_validate_save_post() {
-
+		/**
+		 *  This function will loop over $_POST data and validate
+		 *
+		 *  @since   5.4.0
+		 *
+		 *  @return  void
+		 */
+		public function acf_validate_save_post() {
 			// phpcs:disable WordPress.Security.NonceVerification.Missing -- Verified elsewhere.
-			// bail early if no $_POST
-			if ( empty( $_POST['acf'] ) ) {
-				return;
-			}
+			if ( ! empty( $_POST['_acf_screen'] ) && in_array( $_POST['_acf_screen'], array( 'post_type', 'taxonomy' ), true ) ) {
+				// Validation is running on a admin view post type. Pass validation over the class method.
+				$post_type = acf_get_post_type_from_screen_value( $_POST['_acf_screen'] ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+				if ( $post_type ) {
+					acf_validate_internal_post_type_values( $post_type );
+				}
+			} else {
+				// bail early if no matching $_POST.
+				if ( empty( $_POST['acf'] ) ) {
+					return;
+				}
 
-			// validate
-			acf_validate_values( $_POST['acf'], 'acf' ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+				// validate
+				acf_validate_values( $_POST['acf'], 'acf' ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+			}
 			// phpcs:enable WordPress.Security.NonceVerification.Missing
 		}
 

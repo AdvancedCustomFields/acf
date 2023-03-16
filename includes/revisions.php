@@ -251,7 +251,7 @@ if ( ! class_exists( 'acf_revisions' ) ) :
 				return $value;
 			}
 
-			$value   = maybe_unserialize( $value );
+			$value   = acf_maybe_unserialize( $value );
 			$post_id = $post->ID;
 
 			// load field.

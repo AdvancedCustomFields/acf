@@ -21,9 +21,11 @@ if ( ! class_exists( 'acf_field_password' ) ) :
 		function initialize() {
 
 			// vars
-			$this->name     = 'password';
-			$this->label    = __( 'Password', 'acf' );
-			$this->defaults = array(
+			$this->name          = 'password';
+			$this->label         = __( 'Password', 'acf' );
+			$this->description   = __( 'An input for providing a password using a masked field.', 'acf' );
+			$this->preview_image = acf_get_url() . '/assets/images/field-type-previews/field-preview-password.png';
+			$this->defaults      = array(
 				'placeholder' => '',
 				'prepend'     => '',
 				'append'      => '',

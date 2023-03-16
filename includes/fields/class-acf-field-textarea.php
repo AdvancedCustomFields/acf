@@ -21,9 +21,12 @@ if ( ! class_exists( 'acf_field_textarea' ) ) :
 		function initialize() {
 
 			// vars
-			$this->name     = 'textarea';
-			$this->label    = __( 'Text Area', 'acf' );
-			$this->defaults = array(
+			$this->name          = 'textarea';
+			$this->label         = __( 'Text Area', 'acf' );
+			$this->description   = __( 'A basic textarea input for storing paragraphs of text.', 'acf' );
+			$this->preview_image = acf_get_url() . '/assets/images/field-type-previews/field-preview-textarea.png';
+			$this->doc_url       = acf_add_url_utm_tags( 'https://www.advancedcustomfields.com/resources/textarea/', 'docs', 'field-type-selection' );
+			$this->defaults      = array(
 				'default_value' => '',
 				'new_lines'     => '',
 				'maxlength'     => '',

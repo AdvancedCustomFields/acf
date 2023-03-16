@@ -1,5 +1,5 @@
-=== Advanced Custom Fields ===
-Contributors: deliciousbrains, wpengine, elliotcondon, mattshaw, lgladdy, antpb, mindctrl, modernnerd, rfmeier, andrewbotz
+=== Advanced Custom Fields (ACF) ===
+Contributors: deliciousbrains, wpengine, elliotcondon, mattshaw, lgladdy, antpb, mindctrl, rfmeier, andrewbotz, dalewilliams
 Tags: acf, fields, custom fields, meta, repeater
 Requires at least: 4.7
 Tested up to: 6.1.1
@@ -45,7 +45,7 @@ The Advanced Custom Fields plugin is also available in a professional version wh
 * Build fully customisable image galleries with the [Gallery Field](https://www.advancedcustomfields.com/resources/gallery/?utm_source=wordpress.org&utm_medium=free%20plugin%20listing&utm_campaign=ACF%20Pro%20Upgrade)
 * Unlock a more efficient workflow for managing field settings by reusing existing fields and field groups on demand with the [Clone Field](https://www.advancedcustomfields.com/resources/clone/?utm_source=wordpress.org&utm_medium=free%20plugin%20listing&utm_campaign=ACF%20Pro%20Upgrade)
 
-[Upgrade to Pro](https://advancedcustomfields.com/pro/?utm_source=wordpress.org&utm_medium=free%20plugin%20listing&utm_campaign=ACF%20Pro%20Upgrade)
+[Upgrade to PRO](https://advancedcustomfields.com/pro/?utm_source=wordpress.org&utm_medium=free%20plugin%20listing&utm_campaign=ACF%20Pro%20Upgrade)
 
 == Installation ==
 
@@ -76,10 +76,21 @@ From your WordPress dashboard
 
 == Changelog ==
 
+= 6.1.0-beta1 =
+*Release Date 16th March 2023*
+
+* [View Release Post](https://www.advancedcustomfields.com/blog/acf-6-1-beta-1)
+* New - Custom Post Type and Taxonomy registration support via the ACF Admin UI. View the release post for full information
+* New - A new field type selection browser providing details on each type of field. View the release post for full information
+* New - PHP 8.1 and 8.2 support
+* Enhancement - Post Object, Page Link and Relationship fields now support filtering by post status
+* Enhancement - Checkbox fields which allow custom entries can now be filtered to set custom text for the “Add New Choice” button via the `custom_choice_button_text` property
+* Fix - ACF Block field edit view buttons now work correctly inside reusable blocks
+
 = 6.0.7 =
 *Release Date 18th January 2023*
 
-* Improvement - Removed unnecessary “Layout” prefix text in the admin UI for Flexible Content field layouts
+* Improvement - Removed unnecessary “Layout” prefix for Flexible Content field layouts
 * Fix - Dragging and dropping fields containing settings rendered as radio button groups no longer removes the selected value
 * Fix - Using the WordPress `default_page_template_title` filter with two parameters no longer causes a fatal error
 * Fix - Select2 inputs in the content editor are no longer receiving styles from the ACF 6 admin UI

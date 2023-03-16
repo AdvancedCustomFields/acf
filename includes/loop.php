@@ -5,7 +5,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! class_exists( 'acf_loop' ) ) :
-
+	
+	#[AllowDynamicProperties]
 	class acf_loop {
 
 

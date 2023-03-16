@@ -21,10 +21,13 @@ if ( ! class_exists( 'acf_field_radio' ) ) :
 		function initialize() {
 
 			// vars
-			$this->name     = 'radio';
-			$this->label    = __( 'Radio Button', 'acf' );
-			$this->category = 'choice';
-			$this->defaults = array(
+			$this->name          = 'radio';
+			$this->label         = __( 'Radio Button', 'acf' );
+			$this->category      = 'choice';
+			$this->description   = __( 'A group of radio button inputs that allows the user to make a single selection from values that you specify.', 'acf' );
+			$this->preview_image = acf_get_url() . '/assets/images/field-type-previews/field-preview-radio-button.png';
+			$this->doc_url       = acf_add_url_utm_tags( 'https://www.advancedcustomfields.com/resources/radio-button/', 'docs', 'field-type-selection' );
+			$this->defaults      = array(
 				'layout'            => 'vertical',
 				'choices'           => array(),
 				'default_value'     => '',

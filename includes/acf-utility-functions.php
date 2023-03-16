@@ -32,7 +32,7 @@ function acf_new_instance( $class = '' ) {
  * @since   5.7.10
  *
  * @param   string $class The class name.
- * @return  object The instance.
+ * @return  ACF_Internal_Post_Type The instance.
  */
 function acf_get_instance( $class = '' ) {
 	global $acf_instances;

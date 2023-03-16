@@ -21,10 +21,13 @@ if ( ! class_exists( 'acf_field_file' ) ) :
 		function initialize() {
 
 			// vars
-			$this->name     = 'file';
-			$this->label    = __( 'File', 'acf' );
-			$this->category = 'content';
-			$this->defaults = array(
+			$this->name          = 'file';
+			$this->label         = __( 'File', 'acf' );
+			$this->category      = 'content';
+			$this->description   = __( 'Uses the native WordPress media picker to upload, or choose files.', 'acf' );
+			$this->preview_image = acf_get_url() . '/assets/images/field-type-previews/field-preview-file.png';
+			$this->doc_url       = acf_add_url_utm_tags( 'https://www.advancedcustomfields.com/resources/file/', 'docs', 'field-type-selection' );
+			$this->defaults      = array(
 				'return_format' => 'array',
 				'library'       => 'all',
 				'min_size'      => 0,
