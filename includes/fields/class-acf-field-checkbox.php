@@ -21,17 +21,21 @@ if ( ! class_exists( 'acf_field_checkbox' ) ) :
 		function initialize() {
 
 			// vars
-			$this->name     = 'checkbox';
-			$this->label    = __( 'Checkbox', 'acf' );
-			$this->category = 'choice';
-			$this->defaults = array(
-				'layout'        => 'vertical',
-				'choices'       => array(),
-				'default_value' => '',
-				'allow_custom'  => 0,
-				'save_custom'   => 0,
-				'toggle'        => 0,
-				'return_format' => 'value',
+			$this->name          = 'checkbox';
+			$this->label         = __( 'Checkbox', 'acf' );
+			$this->category      = 'choice';
+			$this->description   = __( 'A group of checkbox inputs that allow the user to select one, or multiple values that you specify.', 'acf' );
+			$this->preview_image = acf_get_url() . '/assets/images/field-type-previews/field-preview-checkbox.png';
+			$this->doc_url       = acf_add_url_utm_tags( 'https://www.advancedcustomfields.com/resources/checkbox/', 'docs', 'field-type-selection' );
+			$this->defaults      = array(
+				'layout'                    => 'vertical',
+				'choices'                   => array(),
+				'default_value'             => '',
+				'allow_custom'              => 0,
+				'save_custom'               => 0,
+				'toggle'                    => 0,
+				'return_format'             => 'value',
+				'custom_choice_button_text' => __( 'Add new choice', 'acf' ),
 			);
 
 		}
@@ -140,7 +144,7 @@ if ( ! class_exists( 'acf_field_checkbox' ) ) :
 			}
 
 			foreach ( $value as $value ) {
-				if ( empty( $value ) ) {
+				if ( empty( $value ) && $value !== '0' ) {
 					return __( 'Checkbox custom values cannot be empty. Uncheck any empty values.', 'acf' );
 				}
 			}
@@ -230,7 +234,7 @@ if ( ! class_exists( 'acf_field_checkbox' ) ) :
 			}
 
 			// append button
-			$html .= '<li><a href="#" class="button acf-add-checkbox">' . esc_attr__( 'Add new choice', 'acf' ) . '</a></li>' . "\n";
+			$html .= '<li><a href="#" class="button acf-add-checkbox">' . esc_attr( $field['custom_choice_button_text'] ) . '</a></li>' . "\n";
 
 			// return
 			return $html;

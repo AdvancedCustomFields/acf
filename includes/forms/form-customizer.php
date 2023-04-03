@@ -6,6 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( ! class_exists( 'acf_form_customizer' ) ) :
 
+	#[AllowDynamicProperties]
 	class acf_form_customizer {
 
 

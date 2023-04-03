@@ -1,7 +1,7 @@
 <?php
 
 if ( ! class_exists( 'acf_field_oembed' ) ) :
-
+	#[AllowDynamicProperties]
 	class acf_field_oembed extends acf_field {
 
 
@@ -21,15 +21,18 @@ if ( ! class_exists( 'acf_field_oembed' ) ) :
 		function initialize() {
 
 			// vars
-			$this->name     = 'oembed';
-			$this->label    = __( 'oEmbed', 'acf' );
-			$this->category = 'content';
-			$this->defaults = array(
+			$this->name          = 'oembed';
+			$this->label         = __( 'oEmbed', 'acf' );
+			$this->category      = 'content';
+			$this->description   = __( 'An interactive component for embedding videos, images, tweets, audio and other content by making use of the native WordPress oEmbed functionality.', 'acf' );
+			$this->preview_image = acf_get_url() . '/assets/images/field-type-previews/field-preview-oembed.png';
+			$this->doc_url       = acf_add_url_utm_tags( 'https://www.advancedcustomfields.com/resources/oembed/', 'docs', 'field-type-selection' );
+			$this->defaults      = array(
 				'width'  => '',
 				'height' => '',
 			);
-			$this->width    = 640;
-			$this->height   = 390;
+			$this->width         = 640;
+			$this->height        = 390;
 
 			// extra
 			add_action( 'wp_ajax_acf/fields/oembed/search', array( $this, 'ajax_query' ) );
@@ -292,7 +295,7 @@ if ( ! class_exists( 'acf_field_oembed' ) ) :
 		 *  @date    23/01/13
 		 *
 		 *  @param   $value (mixed) the value which was loaded from the database
-		 *  @param   $post_id (mixed) the $post_id from which the value was loaded
+		 *  @param   $post_id (mixed) the post_id from which the value was loaded
 		 *  @param   $field (array) the field array holding all the field options
 		 *
 		 *  @return  $value (mixed) the modified value

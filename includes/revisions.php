@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! class_exists( 'acf_revisions' ) ) :
-
+	#[AllowDynamicProperties]
 	class acf_revisions {
 
 		// vars
@@ -248,10 +248,10 @@ if ( ! class_exists( 'acf_revisions' ) ) :
 
 			// bail early if is empty.
 			if ( empty( $value ) ) {
-				return $value;
+				return '';
 			}
 
-			$value   = maybe_unserialize( $value );
+			$value   = acf_maybe_unserialize( $value );
 			$post_id = $post->ID;
 
 			// load field.

@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! class_exists( 'acf_fields' ) ) :
-
+	#[AllowDynamicProperties]
 	class acf_fields {
 
 		/** @var array Contains an array of field type instances */
@@ -245,11 +245,18 @@ function acf_get_field_types_info( $args = array() ) {
 
 	// loop
 	foreach ( $field_types as $type ) {
-		$data[ $type->name ] = array(
-			'label'    => $type->label,
-			'name'     => $type->name,
-			'category' => $type->category,
-			'public'   => $type->public,
+		$data[ $type->name ] = array_filter(
+			array(
+				'label'         => $type->label,
+				'name'          => $type->name,
+				'description'   => $type->description,
+				'category'      => $type->category,
+				'public'        => $type->public,
+				'doc_url'       => $type->doc_url,
+				'tutorial_url'  => $type->tutorial_url,
+				'preview_image' => $type->preview_image,
+				'pro'           => $type->pro,
+			)
 		);
 	}
 
@@ -331,33 +338,42 @@ function acf_field_type_exists( $type = '' ) {
 	return acf_is_field_type( $type );
 }
 
+/**
+ * Returns an array of localised field categories.
+ *
+ * @since 6.1
+ *
+ * @return array
+ */
+function acf_get_field_categories_i18n() {
 
-/*
-*  acf_get_grouped_field_types
-*
-*  Returns an multi-dimentional array of field types "name => label" grouped by category
-*
-*  @type    function
-*  @date    1/10/13
-*  @since   5.0.0
-*
-*  @param   n/a
-*  @return  (array)
-*/
+	$categories_i18n = array(
+		'basic'      => __( 'Basic', 'acf' ),
+		'content'    => __( 'Content', 'acf' ),
+		'choice'     => __( 'Choice', 'acf' ),
+		'relational' => __( 'Relational', 'acf' ),
+		'advanced'   => __( 'Advanced', 'acf' ),
+		'layout'     => __( 'Layout', 'acf' ),
+		'pro'        => __( 'PRO', 'acf' ),
+	);
 
+	return apply_filters( 'acf/localized_field_categories', $categories_i18n );
+}
+
+
+/**
+ *  Returns an multi-dimentional array of field types "name => label" grouped by category
+ *
+ *  @since   5.0.0
+ *
+ *  @return  array
+ */
 function acf_get_grouped_field_types() {
 
 	// vars
 	$types  = acf_get_field_types();
 	$groups = array();
-	$l10n   = array(
-		'basic'      => __( 'Basic', 'acf' ),
-		'content'    => __( 'Content', 'acf' ),
-		'choice'     => __( 'Choice', 'acf' ),
-		'relational' => __( 'Relational', 'acf' ),
-		'jquery'     => __( 'jQuery', 'acf' ),
-		'layout'     => __( 'Layout', 'acf' ),
-	);
+	$l10n   = acf_get_field_categories_i18n();
 
 	// loop
 	foreach ( $types as $type ) {
@@ -377,4 +393,86 @@ function acf_get_grouped_field_types() {
 	return $groups;
 }
 
+/**
+ *  Returns an array of tabs for a field type.
+ *  We combine a list of default tabs with filtered tabs.
+ *  I.E. Default tabs should be static and should not be changed by the
+ *  filtered tabs.
+ *
+ *  @since   6.1
+ *
+ *  @return array Key/value array of the default settings tabs for field type settings.
+ */
+function acf_get_combined_field_type_settings_tabs() {
+	$default_field_type_settings_tabs = array(
+		'general'           => __( 'General', 'acf' ),
+		'validation'        => __( 'Validation', 'acf' ),
+		'presentation'      => __( 'Presentation', 'acf' ),
+		'conditional_logic' => __( 'Conditional Logic', 'acf' ),
+	);
 
+	$field_type_settings_tabs = (array) apply_filters( 'acf/field_group/additional_field_settings_tabs', array() );
+
+	// remove any default tab values from filter tabs.
+	foreach ( $field_type_settings_tabs as $key => $tab ) {
+		if ( isset( $default_field_type_settings_tabs[ $key ] ) ) {
+			unset( $field_type_settings_tabs[ $key ] );
+		}
+	}
+
+	$combined_field_type_settings_tabs = array_merge( $default_field_type_settings_tabs, $field_type_settings_tabs );
+
+	return $combined_field_type_settings_tabs;
+}
+
+
+
+/**
+ * Get the PRO only fields and their core metadata.
+ *
+ * @since 6.1
+ *
+ * @return array An array of all the pro field types and their field type selection required meta data.
+ */
+function acf_get_pro_field_types() {
+	return array(
+		'clone'            => array(
+			'name'          => 'clone',
+			'label'         => _x( 'Clone', 'noun', 'acf' ),
+			'doc_url'       => acf_add_url_utm_tags( 'https://www.advancedcustomfields.com/resources/clone/', 'docs', 'field-type-selection' ),
+			'preview_image' => acf_get_url() . '/assets/images/field-type-previews/field-preview-clone.png',
+			'description'   => __( 'This allows you to select and display existing fields. It does not duplicate any fields in the database, but loads and displays the selected fields at run-time. The Clone field can either replace itself with the selected fields or display the selected fields as a group of subfields.', 'acf' ),
+			'category'      => 'layout',
+			'pro'           => true,
+		),
+		'flexible_content' => array(
+			'name'          => 'flexible_content',
+			'label'         => __( 'Flexible Content', 'acf' ),
+			'doc_url'       => acf_add_url_utm_tags( 'https://www.advancedcustomfields.com/resources/flexible-content/', 'docs', 'field-type-selection' ),
+			'preview_image' => acf_get_url() . '/assets/images/field-type-previews/field-preview-flexible-content.png',
+			'description'   => __( 'This provides a simple, structured, layout-based editor. The Flexible Content field allows you to define, create and manage content with total control by using layouts and subfields to design the available blocks.', 'acf' ),
+			'tutorial_url'  => acf_add_url_utm_tags( 'https://www.advancedcustomfields.com/resources/building-layouts-with-the-flexible-content-field-in-a-theme/', 'docs', 'field-type-selection' ),
+			'category'      => 'layout',
+			'pro'           => true,
+		),
+		'gallery'          => array(
+			'name'          => 'gallery',
+			'label'         => __( 'Gallery', 'acf' ),
+			'doc_url'       => acf_add_url_utm_tags( 'https://www.advancedcustomfields.com/resources/gallery/', 'docs', 'field-type-selection' ),
+			'preview_image' => acf_get_url() . '/assets/images/field-type-previews/field-preview-gallery.png',
+			'description'   => __( 'This provides an interactive interface for managing a collection of attachments. Most settings are similar to the Image field type. Additional settings allow you to specify where new attachments are added in the gallery and the minimum/maximum number of attachments allowed.', 'acf' ),
+			'category'      => 'content',
+			'pro'           => true,
+		),
+		'repeater'         => array(
+			'name'          => 'repeater',
+			'label'         => __( 'Repeater', 'acf' ),
+			'doc_url'       => acf_add_url_utm_tags( 'https://www.advancedcustomfields.com/resources/repeater/', 'docs', 'field-type-selection' ),
+			'preview_image' => acf_get_url() . '/assets/images/field-type-previews/field-preview-repeater.png',
+			'description'   => __( 'This provides a solution for repeating content such as slides, team members, and call-to-action tiles, by acting as a parent to a set of subfields which can be repeated again and again.', 'acf' ),
+			'tutorial_url'  => acf_add_url_utm_tags( 'https://www.advancedcustomfields.com/resources/repeater/how-to-use-the-repeater-field/', 'docs', 'field-type-selection' ),
+			'category'      => 'layout',
+			'pro'           => true,
+		),
+	);
+}

@@ -164,7 +164,7 @@ if ( ! class_exists( 'ACF_Admin_Tool_Export' ) ) :
 				// add notice
 				if ( $selected ) {
 					$count = count( $selected );
-					$text  = sprintf( _n( 'Exported 1 field group.', 'Exported %s field groups.', $count, 'acf' ), $count );
+					$text  = sprintf( _n( 'Exported 1 item.', 'Exported %s items.', $count, 'acf' ), $count );
 					acf_add_admin_notice( $text, 'success' );
 				}
 			}
@@ -202,32 +202,32 @@ if ( ! class_exists( 'ACF_Admin_Tool_Export' ) ) :
 
 
 		/**
-		 *  html_field_selection
+		 * Renders the checkboxes to select items to export.
 		 *
-		 *  description
+		 * @date 24/10/17
+		 * @since 5.6.3
 		 *
-		 *  @date    24/10/17
-		 *  @since   5.6.3
-		 *
-		 *  @param   n/a
-		 *  @return  n/a
+		 * @return void
 		 */
+		public function html_field_selection() {
+			// Ensure `l10n_var_export` is always false at the point we're outputting the options.
+			acf_update_setting( 'l10n_var_export', false );
+			// Reset the field-groups store which may have been corrupted by export.
+			$store = acf_get_store( 'field-groups' );
+			if ( $store ) {
+				$store->reset();
+			}
 
-		function html_field_selection() {
-
-			// vars
 			$choices      = array();
 			$selected     = $this->get_selected_keys();
-			$field_groups = acf_get_field_groups();
+			$field_groups = acf_get_internal_post_type_posts( 'acf-field-group' );
 
-			// loop
 			if ( $field_groups ) {
 				foreach ( $field_groups as $field_group ) {
 					$choices[ $field_group['key'] ] = esc_html( $field_group['title'] );
 				}
 			}
 
-			// render
 			acf_render_field_wrap(
 				array(
 					'label'   => __( 'Select Field Groups', 'acf' ),
@@ -240,32 +240,66 @@ if ( ! class_exists( 'ACF_Admin_Tool_Export' ) ) :
 				)
 			);
 
-		}
+			$choices    = array();
+			$selected   = $this->get_selected_keys();
+			$post_types = acf_get_internal_post_type_posts( 'acf-post-type' );
 
+			if ( $post_types ) {
+				foreach ( $post_types as $post_type ) {
+					$choices[ $post_type['key'] ] = esc_html( $post_type['title'] );
+				}
+
+				acf_render_field_wrap(
+					array(
+						'label'   => __( 'Select Post Types', 'acf' ),
+						'type'    => 'checkbox',
+						'name'    => 'post_type_keys',
+						'prefix'  => false,
+						'value'   => $selected,
+						'toggle'  => true,
+						'choices' => $choices,
+					)
+				);
+			}
+
+			$choices    = array();
+			$selected   = $this->get_selected_keys();
+			$taxonomies = acf_get_internal_post_type_posts( 'acf-taxonomy' );
+
+			if ( $taxonomies ) {
+				foreach ( $taxonomies as $taxonomy ) {
+					$choices[ $taxonomy['key'] ] = esc_html( $taxonomy['title'] );
+				}
+
+				acf_render_field_wrap(
+					array(
+						'label'   => __( 'Select Taxonomies', 'acf' ),
+						'type'    => 'checkbox',
+						'name'    => 'taxonomy_keys',
+						'prefix'  => false,
+						'value'   => $selected,
+						'toggle'  => true,
+						'choices' => $choices,
+					)
+				);
+			}
+		}
 
 		/**
-		 *  html_panel_selection
+		 * Renders the side panel for selecting ACF items to export via PHP.
 		 *
-		 *  description
+		 * @date 21/10/17
+		 * @since 5.6.3
 		 *
-		 *  @date    21/10/17
-		 *  @since   5.6.3
-		 *
-		 *  @param   n/a
-		 *  @return  n/a
+		 * @return void
 		 */
-
-		function html_panel_selection() {
-
+		public function html_panel_selection() {
 			?>
-		<div class="acf-panel acf-panel-selection">
-			<h3 class="acf-panel-title"><?php _e( 'Select Field Groups', 'acf' ); ?></h3>
-			<?php $this->html_field_selection(); ?>
-		</div>
+			<div class="acf-panel acf-panel-selection">
+				<?php $this->html_field_selection(); ?>
+			</div>
 			<?php
-
 		}
-
 
 		/**
 		 *  html_panel_settings
@@ -325,8 +359,8 @@ if ( ! class_exists( 'ACF_Admin_Tool_Export' ) ) :
 
 			?>
 		<div class="acf-postbox-header">
-			<h2 class="acf-postbox-title">Export Field Groups</h2>
-			<div class="acf-tip"><i tabindex="0" class="acf-icon acf-icon-help acf-js-tooltip" title="<?php esc_attr_e( 'Select the field groups you would like to export and then select your export method. Export As JSON to export to a .json file which you can then import to another ACF installation. Generate PHP to export to PHP code which you can place in your theme.', 'acf' ); ?>">?</i></div>
+			<h2 class="acf-postbox-title"><?php esc_html_e( 'Export', 'acf' ); ?></h2>
+			<div class="acf-tip"><i tabindex="0" class="acf-icon acf-icon-help acf-js-tooltip" title="<?php esc_attr_e( 'Select the items you would like to export and then select your export method. Export As JSON to export to a .json file which you can then import to another ACF installation. Generate PHP to export to PHP code which you can place in your theme.', 'acf' ); ?>">?</i></div>
 		</div>
 		<div class="acf-postbox-inner">
 			<div class="acf-fields">
@@ -341,241 +375,159 @@ if ( ! class_exists( 'ACF_Admin_Tool_Export' ) ) :
 
 		}
 
-
 		/**
-		 *  html_single
+		 * Renders the PHP export screen.
 		 *
-		 *  description
+		 * @date 20/10/17
+		 * @since 5.6.3
 		 *
-		 *  @date    20/10/17
-		 *  @since   5.6.3
-		 *
-		 *  @param   n/a
-		 *  @return  n/a
+		 * @return void
 		 */
-
-		function html_single() {
-
+		public function html_single() {
 			?>
-		<div class="acf-postbox-header">
-			<h2 class="acf-postbox-title"><?php _e( 'Export Field Groups - Generate PHP', 'acf' ); ?></h2>
-			<i tabindex="0" class="acf-icon acf-icon-help acf-js-tooltip" title="<?php esc_attr_e( "The following code can be used to register a local version of the selected field group(s). A local field group can provide many benefits such as faster load times, version control & dynamic fields/settings. Simply copy and paste the following code to your theme's functions.php file or include it within an external file.", 'acf' ); ?>">?</i>
-		</div>
-		<div class="acf-postbox-columns">
-			<div class="acf-postbox-main">
-				<?php $this->html_generate(); ?>
+			<div class="acf-postbox-header">
+				<h2 class="acf-postbox-title"><?php esc_html_e( 'Export - Generate PHP', 'acf' ); ?></h2>
+				<i tabindex="0" class="acf-icon acf-icon-help acf-js-tooltip" title="<?php esc_attr_e( "The following code can be used to register a local version of the selected items. Storing field groups, post types, or taxonomies locally can provide many benefits such as faster load times, version control & dynamic fields/settings. Simply copy and paste the following code to your theme's functions.php file or include it within an external file, then deactivate or delete the items from the ACF admin.", 'acf' ); ?>">?</i>
 			</div>
-			<div class="acf-postbox-side">
-				<?php $this->html_panel_selection(); ?>
-				<p class="acf-submit">
-					<button type="submit" name="action" class="acf-btn" value="generate"><?php _e( 'Generate PHP', 'acf' ); ?></button>
-				</p>
+			<div class="acf-postbox-columns">
+				<div class="acf-postbox-main">
+					<?php $this->html_generate(); ?>
+				</div>
+				<div class="acf-postbox-side">
+					<?php $this->html_panel_selection(); ?>
+					<p class="acf-submit">
+						<button type="submit" name="action" class="acf-btn" value="generate"><?php esc_html_e( 'Generate PHP', 'acf' ); ?></button>
+					</p>
+				</div>
 			</div>
-		</div>
 			<?php
-
 		}
 
-
 		/**
-		 *  html_generate
+		 * Generates the HTML for the PHP export functionality.
 		 *
-		 *  description
+		 * @date    17/10/17
+		 * @since   5.6.3
 		 *
-		 *  @date    17/10/17
-		 *  @since   5.6.3
-		 *
-		 *  @param   n/a
-		 *  @return  n/a
+		 * @return void
 		 */
-
-		function html_generate() {
-
-			// prevent default translation and fake __() within string
+		public function html_generate() {
+			// Prevent default translation and fake __() within string.
 			acf_update_setting( 'l10n_var_export', true );
 
-			// vars
-			$json         = $this->get_selected();
-			$str_replace  = array(
-				'  '         => "\t",
-				"'!!__(!!\'" => "__('",
-				"!!\', !!\'" => "', '",
-				"!!\')!!'"   => "')",
-				'array ('    => 'array(',
-			);
-			$preg_replace = array(
-				'/([\t\r\n]+?)array/' => 'array',
-				'/[0-9]+ => array/'   => 'array',
-			);
+			$json = $this->get_selected();
 
-			?>
-			<textarea id="acf-export-textarea" readonly="true">
-			<?php
+			echo '<textarea id="acf-export-textarea" readonly="true">';
 
-			echo "if( function_exists('acf_add_local_field_group') ):" . "\r\n" . "\r\n";
-
-			foreach ( $json as $field_group ) {
-
-				// code
-				$code = var_export( $field_group, true );
-
-				// change double spaces to tabs
-				$code = str_replace( array_keys( $str_replace ), array_values( $str_replace ), $code );
-
-				// correctly formats "=> array("
-				$code = preg_replace( array_keys( $preg_replace ), array_values( $preg_replace ), $code );
-
-				// esc_textarea
-				$code = esc_textarea( $code );
-
-				// echo
-				echo "acf_add_local_field_group({$code});" . "\r\n" . "\r\n";
-
+			foreach ( $json as $post ) {
+				$post_type = acf_determine_internal_post_type( $post['key'] );
+				echo acf_export_internal_post_type_as_php( $post, $post_type );
 			}
 
-			echo 'endif;';
-
+			echo '</textarea>';
 			?>
-		</textarea>
-		<p class="acf-submit">
-			<a class="button" id="acf-export-copy"><?php _e( 'Copy to clipboard', 'acf' ); ?></a>
-		</p>
-		<script type="text/javascript">
-		(function($){
+			<p class="acf-submit">
+				<a class="button" id="acf-export-copy"><?php _e( 'Copy to clipboard', 'acf' ); ?></a>
+			</p>
+			<script type="text/javascript">
+			(function($){
+				const $a = $('#acf-export-copy');
+				const $textarea = $('#acf-export-textarea');
 
-			// vars
-			var $a = $('#acf-export-copy');
-			var $textarea = $('#acf-export-textarea');
-
-
-			// remove $a if 'copy' is not supported
-			if( !document.queryCommandSupported('copy') ) {
-				return $a.remove();
-			}
-
-
-			// event
-			$a.on('click', function( e ){
-
-				// prevent default
-				e.preventDefault();
-
-
-				// select
-				$textarea.get(0).select();
-
-
-				// try
-				try {
-
-					// copy
-					var copy = document.execCommand('copy');
-					if( !copy ) return;
-
-
-					// tooltip
-					acf.newTooltip({
-						text: 		"<?php _e( 'Copied', 'acf' ); ?>",
-						timeout:	250,
-						target: 	$(this),
-					});
-
-				} catch (err) {
-
-					// do nothing
-
+				// Remove $a if 'copy' is not supported.
+				if( !document.queryCommandSupported('copy') ) {
+					return $a.remove();
 				}
 
-			});
+				$a.on('click', function( e ){
+					e.preventDefault();
 
-		})(jQuery);
-		</script>
+					$textarea.get(0).select();
+
+					try {
+						var copy = document.execCommand('copy');
+						if ( ! copy ) {
+							return;
+						}
+
+						acf.newTooltip({
+							text: 		"<?php esc_html_e( 'Copied', 'acf' ); ?>",
+							timeout:	250,
+							target: 	$(this),
+						});
+					} catch (err) {
+						// Do nothing.
+					}
+				});
+			})(jQuery);
+			</script>
 			<?php
-
 		}
 
-
-
 		/**
-		 *  get_selected_keys
+		 * Return an array of keys that have been selected in the export tool.
 		 *
-		 *  This function will return an array of field group keys that have been selected
+		 * @date 20/10/17
+		 * @since 5.6.3
 		 *
-		 *  @date    20/10/17
-		 *  @since   5.6.3
-		 *
-		 *  @param   n/a
-		 *  @return  n/a
+		 * @return array|bool
 		 */
+		public function get_selected_keys() {
+			$key_names = array( 'keys', 'post_type_keys', 'taxonomy_keys' );
+			$all_keys  = array();
 
-		function get_selected_keys() {
-
-			// check $_POST
-			if ( $keys = acf_maybe_get_POST( 'keys' ) ) {
-				return (array) $keys;
+			foreach ( $key_names as $key_name ) {
+				if ( $keys = acf_maybe_get_POST( $key_name ) ) {
+					$all_keys = array_merge( $all_keys, (array) $keys );
+				} elseif ( $keys = acf_maybe_get_GET( $key_name ) ) {
+					$keys     = str_replace( ' ', '+', $keys );
+					$keys     = explode( '+', $keys );
+					$all_keys = array_merge( $all_keys, (array) $keys );
+				}
 			}
 
-			// check $_GET
-			if ( $keys = acf_maybe_get_GET( 'keys' ) ) {
-				$keys = str_replace( ' ', '+', $keys );
-				return explode( '+', $keys );
+			if ( ! empty( $all_keys ) ) {
+				return $all_keys;
 			}
 
-			// return
 			return false;
-
 		}
 
-
 		/**
-		 *  get_selected
+		 * Returns the JSON data for given $_POST args.
 		 *
-		 *  This function will return the JSON data for given $_POST args
+		 * @date  17/10/17
+		 * @since 5.6.3
 		 *
-		 *  @date    17/10/17
-		 *  @since   5.6.3
-		 *
-		 *  @param   n/a
-		 *  @return  array
+		 * @return array|bool
 		 */
-
-		function get_selected() {
-
-			// vars
+		public function get_selected() {
 			$selected = $this->get_selected_keys();
 			$json     = array();
 
-			// bail early if no keys
 			if ( ! $selected ) {
 				return false;
 			}
 
-			// construct JSON
 			foreach ( $selected as $key ) {
+				$post_type = acf_determine_internal_post_type( $key );
+				$post      = acf_get_internal_post_type( $key, $post_type );
 
-				// load field group
-				$field_group = acf_get_field_group( $key );
-
-				// validate field group
-				if ( empty( $field_group ) ) {
+				if ( empty( $post ) ) {
 					continue;
 				}
 
-				// load fields
-				$field_group['fields'] = acf_get_fields( $field_group );
+				if ( 'acf-field-group' === $post_type ) {
+					$post['fields'] = acf_get_fields( $post );
+				}
 
-				// prepare for export
-				$field_group = acf_prepare_field_group_for_export( $field_group );
-
-				// add to json array
-				$json[] = $field_group;
-
+				$post   = acf_prepare_internal_post_type_for_export( $post, $post_type );
+				$json[] = $post;
 			}
 
-			// return
 			return $json;
-
 		}
+
 	}
 
 	// initialize

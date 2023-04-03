@@ -12,7 +12,7 @@
 # This file is distributed under the same license as Advanced Custom Fields.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-01-18T14:07:28+00:00\n"
+"PO-Revision-Date: 2023-04-03T13:26:10+00:00\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "Language: fa_IR\n"
 "MIME-Version: 1.0\n"
@@ -56,7 +56,7 @@ msgstr ""
 
 #: includes/fields/class-acf-field-tab.php:121
 msgid "New Tab Group"
-msgstr ""
+msgstr "گروه زبانه جدید"
 
 #: includes/fields/class-acf-field-select.php:450
 #: includes/fields/class-acf-field-true_false.php:197
@@ -77,7 +77,7 @@ msgstr ""
 
 #: includes/fields/class-acf-field-checkbox.php:405
 msgid "Save Custom Values"
-msgstr ""
+msgstr "ذخیره مقادیر سفارشی"
 
 #: includes/fields/class-acf-field-checkbox.php:394
 msgid "Allow Custom Values"
@@ -87,10 +87,9 @@ msgstr ""
 msgid "Checkbox custom values cannot be empty. Uncheck any empty values."
 msgstr ""
 
-#: pro/admin/admin-updates.php:122,
-#: pro/admin/views/html-settings-updates.php:12
+#: includes/admin/views/html-admin-navigation.php:111
 msgid "Updates"
-msgstr "بروزرسانی ها"
+msgstr "به‌روزرسانی‌ها"
 
 #: includes/admin/views/html-admin-navigation.php:79
 msgid "Advanced Custom Fields logo"
@@ -98,15 +97,15 @@ msgstr ""
 
 #: includes/admin/views/html-admin-form-top.php:22
 msgid "Save Changes"
-msgstr ""
+msgstr "ذخیره تغییرات"
 
 #: includes/admin/views/html-admin-form-top.php:16
 msgid "Field Group Title"
-msgstr ""
+msgstr "عنوان گروه زمینه"
 
 #: includes/admin/views/html-admin-form-top.php:3
 msgid "Add title"
-msgstr ""
+msgstr "افزودن عنوان"
 
 #. translators: %s url to getting started guide
 #: includes/admin/views/field-groups-empty.php:20
@@ -117,7 +116,7 @@ msgstr ""
 
 #: includes/admin/views/field-groups-empty.php:15
 msgid "Add Field Group"
-msgstr ""
+msgstr "افزودن گروه زمینه"
 
 #. translators: %s url to creating a field group page
 #: includes/admin/views/field-groups-empty.php:10
@@ -140,11 +139,11 @@ msgstr ""
 
 #: includes/admin/views/field-group-pro-features.php:10
 msgid "ACF Blocks"
-msgstr ""
+msgstr "بلوک‌های ACF"
 
 #: includes/admin/views/field-group-pro-features.php:8
 msgid "Gallery Field"
-msgstr ""
+msgstr "زمینه گالری"
 
 #: includes/admin/views/field-group-pro-features.php:7
 msgid "Flexible Content Field"
@@ -152,7 +151,7 @@ msgstr ""
 
 #: includes/admin/views/field-group-pro-features.php:6
 msgid "Repeater Field"
-msgstr ""
+msgstr "زمینه تکرارشونده"
 
 #: includes/admin/views/field-group-pro-features.php:4
 #: includes/admin/views/html-admin-navigation.php:97
@@ -161,7 +160,7 @@ msgstr ""
 
 #: includes/admin/views/field-group-options.php:242
 msgid "Delete Field Group"
-msgstr ""
+msgstr "حذف گروه زمینه"
 
 #. translators: 1: Post creation date 2: Post creation time
 #: includes/admin/views/field-group-options.php:236
@@ -170,7 +169,7 @@ msgstr ""
 
 #: includes/admin/views/field-group-options.php:179
 msgid "Group Settings"
-msgstr ""
+msgstr "تنظیمات گروه"
 
 #: includes/admin/views/field-group-options.php:28
 msgid "Location Rules"
@@ -197,27 +196,27 @@ msgstr ""
 #. "Order Number", in terms of positional placement.
 #: includes/admin/views/field-group-fields.php:32
 msgid "#"
-msgstr ""
+msgstr "#"
 
 #: includes/admin/views/field-group-fields.php:22
 #: includes/admin/views/field-group-fields.php:56
 #: includes/admin/views/field-group-fields.php:92
 #: includes/admin/views/html-admin-form-top.php:21
 msgid "Add Field"
-msgstr ""
+msgstr "افزودن زمینه"
 
 #: includes/admin/views/field-group-field.php:191
 #: includes/admin/views/field-group-options.php:40
 msgid "Presentation"
-msgstr ""
+msgstr "نمایش"
 
 #: includes/admin/views/field-group-field.php:159
 msgid "Validation"
-msgstr ""
+msgstr "اعتبارسنجی"
 
 #: includes/admin/views/field-group-field.php:93
 msgid "General"
-msgstr ""
+msgstr "عمومی"
 
 #: includes/admin/tools/class-acf-admin-tool-import.php:70
 msgid "Import JSON"
@@ -225,7 +224,7 @@ msgstr ""
 
 #: includes/admin/tools/class-acf-admin-tool-export.php:361
 msgid "Export Field Groups - Generate PHP"
-msgstr ""
+msgstr "برون‌بری گروه‌های زمینه - تولید PHP"
 
 #: includes/admin/tools/class-acf-admin-tool-export.php:336
 msgid "Export As JSON"
@@ -253,23 +252,23 @@ msgstr ""
 #: includes/admin/admin-field-groups.php:533
 #: includes/admin/admin-field-groups.php:557
 msgid "Activate"
-msgstr ""
+msgstr "فعال کردن"
 
 #: includes/admin/admin-field-groups.php:533
 msgid "Activate this item"
 msgstr ""
 
 #: includes/admin/admin-field-group.php:158
-#: assets/build/js/acf-field-group.js:2366
-#: assets/build/js/acf-field-group.js:2635
+#: assets/build/js/acf-field-group.js:2371
+#: assets/build/js/acf-field-group.js:2643
 msgid "Move field group to trash?"
-msgstr ""
+msgstr "انتقال گروه زمینه به زباله‌دان؟"
 
 #: acf.php:448 includes/admin/admin-field-group.php:354
 #: includes/admin/admin-field-groups.php:232
 msgctxt "post status"
 msgid "Inactive"
-msgstr ""
+msgstr "غیرفعال"
 
 #. Author of the plugin
 msgid "WP Engine"
@@ -306,7 +305,7 @@ msgstr ""
 
 #: includes/fields/class-acf-field-user.php:366
 msgid "Invalid request."
-msgstr ""
+msgstr "درخواست نامعتبر."
 
 #: includes/fields/class-acf-field-select.php:683
 msgid "%1$s is not one of %2$s"
@@ -332,7 +331,7 @@ msgstr ""
 
 #: includes/admin/views/field-group-options.php:205
 msgid "Show in REST API"
-msgstr ""
+msgstr "نمایش در REST API"
 
 #: includes/fields/class-acf-field-color_picker.php:167
 msgid "Enable Transparency"
@@ -1013,8 +1012,8 @@ msgstr "گرفتن و کشیدن برای مرتب سازی"
 
 #: includes/admin/admin-field-group.php:168
 #: includes/admin/views/html-location-group.php:3
-#: assets/build/js/acf-field-group.js:1935
-#: assets/build/js/acf-field-group.js:2166
+#: assets/build/js/acf-field-group.js:1940
+#: assets/build/js/acf-field-group.js:2174
 msgid "Show this field group if"
 msgstr "نمایش این گروه زمینه اگر"
 
@@ -1274,7 +1273,7 @@ msgstr "فعال"
 
 #: includes/admin/admin-field-group.php:323
 msgid "Field Keys"
-msgstr "کایدهای زمینه"
+msgstr "کلیدهای زمینه"
 
 #: includes/admin/admin-field-group.php:224
 #: includes/admin/tools/class-acf-admin-tool-export.php:286
@@ -1575,9 +1574,9 @@ msgstr "نوع فایل باید %s باشد."
 #: includes/admin/views/field-group-locations.php:36
 #: includes/admin/views/html-location-group.php:3
 #: includes/api/api-helpers.php:3391 assets/build/js/acf-field-group.js:492
-#: assets/build/js/acf-field-group.js:1973
+#: assets/build/js/acf-field-group.js:1978
 #: assets/build/js/acf-field-group.js:544
-#: assets/build/js/acf-field-group.js:2210
+#: assets/build/js/acf-field-group.js:2218
 msgid "or"
 msgstr "یا"
 

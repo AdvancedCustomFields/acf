@@ -194,7 +194,7 @@ function acf_upgrade_500_field_group( $ofg ) {
 	if ( is_array( $rules ) ) {
 
 		// if field group was duplicated, rules may be a serialized string!
-		$rules = array_map( 'maybe_unserialize', $rules );
+		$rules = array_map( 'acf_maybe_unserialize', $rules );
 
 		// convert rules to groups
 		$nfg['location'] = acf_convert_rules_to_groups( $rules, $anyorall );
@@ -210,7 +210,7 @@ function acf_upgrade_500_field_group( $ofg ) {
 	}
 
 	if ( $hide_on_screen = get_post_meta( $ofg->ID, 'hide_on_screen', true ) ) {
-		$nfg['hide_on_screen'] = maybe_unserialize( $hide_on_screen );
+		$nfg['hide_on_screen'] = acf_maybe_unserialize( $hide_on_screen );
 	}
 
 	// save field group
@@ -269,8 +269,8 @@ function acf_upgrade_500_fields( $ofg, $nfg ) {
 
 			// vars
 			$field = $row['meta_value'];
-			$field = maybe_unserialize( $field );
-			$field = maybe_unserialize( $field ); // run again for WPML
+			$field = acf_maybe_unserialize( $field );
+			$field = acf_maybe_unserialize( $field ); // run again for WPML
 
 			// bail early if key already migrated (potential duplicates in DB)
 			if ( isset( $checked[ $field['key'] ] ) ) {
@@ -511,7 +511,7 @@ function acf_upgrade_550_taxonomy( $taxonomy ) {
 			[3] => color
 			)
 			*/
-			if ( ! preg_match( "/^(_?){$taxonomy}_(\d+)_(.+)/", $row['option_name'], $matches ) ) {
+			if ( ! preg_match( "/^(_?){$taxonomy}_(\d+)_(.+)/", is_null( $row['option_name'] ) ? '' : $row['option_name'], $matches ) ) {
 				continue;
 			}
 

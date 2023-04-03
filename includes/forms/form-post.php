@@ -50,10 +50,14 @@ if ( ! class_exists( 'ACF_Form_Post' ) ) :
 			// globals
 			global $typenow;
 
-			remove_meta_box( 'submitdiv', 'acf-field-group', 'side' );
+			$acf_post_types = acf_get_internal_post_types();
+
+			foreach ( $acf_post_types as $post_type ) {
+				remove_meta_box( 'submitdiv', $post_type, 'side' );
+			}
 
 			// restrict specific post types
-			$restricted = array( 'acf-field-group', 'attachment' );
+			$restricted = array_merge( $acf_post_types, array( 'acf-taxonomy', 'attachment' ) );
 			if ( in_array( $typenow, $restricted ) ) {
 				return;
 			}

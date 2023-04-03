@@ -545,7 +545,7 @@ function acf_sanitize_request_args( $args = array() ) {
 		case 'double':
 			return (float) $args;
 		case 'array':
-			$sanitized = [];
+			$sanitized = array();
 			foreach ( $args as $key => $value ) {
 				$key               = sanitize_text_field( $key );
 				$sanitized[ $key ] = acf_sanitize_request_args( $value );
@@ -632,4 +632,24 @@ function acf_sanitize_files_value_array( $array, $sanitize_function ) {
 	}
 
 	return $array;
+}
+
+/**
+ * Maybe unserialize, but don't allow any classes.
+ *
+ * @since 6.1
+ *
+ * @param string $data String to be unserialized, if serialized.
+ * @return mixed The unserialized, or original data.
+ */
+function acf_maybe_unserialize( $data ) {
+	if ( is_serialized( $data ) ) { // Don't attempt to unserialize data that wasn't serialized going in.
+		if ( PHP_VERSION_ID >= 70000 ) {
+			return @unserialize( trim( $data ), array( 'allowed_classes' => false ) ); //phpcs:ignore -- code only runs on PHP7+
+		} else {
+			return @\ACF\Brumann\Polyfill\unserialize::unserialize( trim( $data ), array( 'allowed_classes' => false ) );
+		}
+	}
+
+	return $data;
 }

@@ -24,10 +24,13 @@ if ( ! class_exists( 'acf_field_taxonomy' ) ) :
 		function initialize() {
 
 			// vars
-			$this->name     = 'taxonomy';
-			$this->label    = __( 'Taxonomy', 'acf' );
-			$this->category = 'relational';
-			$this->defaults = array(
+			$this->name          = 'taxonomy';
+			$this->label         = __( 'Taxonomy', 'acf' );
+			$this->category      = 'relational';
+			$this->description   = __( 'Allows the selection of one or more taxonomy terms based on the criteria and options specified in the fields settings.', 'acf' );
+			$this->preview_image = acf_get_url() . '/assets/images/field-type-previews/field-preview-taxonomy.png';
+			$this->doc_url       = acf_add_url_utm_tags( 'https://www.advancedcustomfields.com/resources/taxonomy/', 'docs', 'field-type-selection' );
+			$this->defaults      = array(
 				'taxonomy'      => 'category',
 				'field_type'    => 'checkbox',
 				'multiple'      => 0,

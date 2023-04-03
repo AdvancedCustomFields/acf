@@ -6,6 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( ! class_exists( 'acf_validation' ) ) :
 
+	#[AllowDynamicProperties]
 	class acf_validation {
 
 
@@ -182,30 +183,28 @@ if ( ! class_exists( 'acf_validation' ) ) :
 
 		}
 
-
-		/*
-		*  acf_validate_save_post
-		*
-		*  This function will loop over $_POST data and validate
-		*
-		*  @type    function
-		*  @date    7/09/2016
-		*  @since   5.4.0
-		*
-		*  @param   n/a
-		*  @return  n/a
-		*/
-
-		function acf_validate_save_post() {
-
+		/**
+		 * Loops over $_POST data and validates ACF values.
+		 *
+		 * @since   5.4.0
+		 *
+		 * @return  void
+		 */
+		public function acf_validate_save_post() {
 			// phpcs:disable WordPress.Security.NonceVerification.Missing -- Verified elsewhere.
-			// bail early if no $_POST
-			if ( empty( $_POST['acf'] ) ) {
-				return;
-			}
+			$post_type = acf_request_arg( 'post_type', false );
+			$screen    = acf_request_arg( '_acf_screen', false );
 
-			// validate
-			acf_validate_values( $_POST['acf'], 'acf' ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+			if ( in_array( $screen, array( 'post_type', 'taxonomy' ), true ) && in_array( $post_type, array( 'acf-post-type', 'acf-taxonomy' ), true ) ) {
+				acf_validate_internal_post_type_values( $post_type );
+			} else {
+				// Bail early if no matching $_POST.
+				if ( empty( $_POST['acf'] ) ) {
+					return;
+				}
+
+				acf_validate_values( $_POST['acf'], 'acf' ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+			}
 			// phpcs:enable WordPress.Security.NonceVerification.Missing
 		}
 

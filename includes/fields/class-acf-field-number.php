@@ -21,9 +21,12 @@ if ( ! class_exists( 'acf_field_number' ) ) :
 		function initialize() {
 
 			// vars
-			$this->name     = 'number';
-			$this->label    = __( 'Number', 'acf' );
-			$this->defaults = array(
+			$this->name          = 'number';
+			$this->label         = __( 'Number', 'acf' );
+			$this->description   = __( 'An input limited to numerical values.', 'acf' );
+			$this->preview_image = acf_get_url() . '/assets/images/field-type-previews/field-preview-number.png';
+			$this->doc_url       = acf_add_url_utm_tags( 'https://www.advancedcustomfields.com/resources/number/', 'docs', 'field-type-selection' );
+			$this->defaults      = array(
 				'default_value' => '',
 				'min'           => '',
 				'max'           => '',

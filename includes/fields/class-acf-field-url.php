@@ -21,9 +21,12 @@ if ( ! class_exists( 'acf_field_url' ) ) :
 		function initialize() {
 
 			// vars
-			$this->name     = 'url';
-			$this->label    = __( 'Url', 'acf' );
-			$this->defaults = array(
+			$this->name          = 'url';
+			$this->label         = __( 'URL', 'acf' );
+			$this->description   = __( 'A text input specifically designed for storing web addresses.', 'acf' );
+			$this->preview_image = acf_get_url() . '/assets/images/field-type-previews/field-preview-url.png';
+			$this->doc_url       = acf_add_url_utm_tags( 'https://www.advancedcustomfields.com/resources/url/', 'docs', 'field-type-selection' );
+			$this->defaults      = array(
 				'default_value' => '',
 				'placeholder'   => '',
 			);

@@ -12,7 +12,7 @@
 # This file is distributed under the same license as Advanced Custom Fields.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-01-18T14:07:28+00:00\n"
+"PO-Revision-Date: 2023-04-03T13:26:10+00:00\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
@@ -33,7 +33,7 @@ msgstr ""
 
 #: includes/api/api-template.php:867
 msgid "[ACF shortcode value disabled for preview]"
-msgstr ""
+msgstr "[Valeur du code court ACF désactivée pour l’aperçu]"
 
 #: includes/admin/admin-field-group.php:673
 msgid "Close Modal"
@@ -271,8 +271,8 @@ msgid "Activate this item"
 msgstr "Activer cet élément"
 
 #: includes/admin/admin-field-group.php:158
-#: assets/build/js/acf-field-group.js:2366
-#: assets/build/js/acf-field-group.js:2635
+#: assets/build/js/acf-field-group.js:2371
+#: assets/build/js/acf-field-group.js:2643
 msgid "Move field group to trash?"
 msgstr "Déplacer le groupe de champs vers la corbeille ?"
 
@@ -963,7 +963,7 @@ msgstr "Sans contour (pas de boîte meta)"
 
 #: includes/admin/views/field-group-options.php:58
 msgid "Standard (WP metabox)"
-msgstr "Standard (boîte meta WP)"
+msgstr "Standard (boîte méta WP)"
 
 #: includes/admin/views/field-group-options.php:51
 msgid "Style"
@@ -1070,8 +1070,8 @@ msgstr "Faites glisser pour réorganiser"
 
 #: includes/admin/admin-field-group.php:168
 #: includes/admin/views/html-location-group.php:3
-#: assets/build/js/acf-field-group.js:1935
-#: assets/build/js/acf-field-group.js:2166
+#: assets/build/js/acf-field-group.js:1940
+#: assets/build/js/acf-field-group.js:2174
 msgid "Show this field group if"
 msgstr "Afficher ce groupe de champs si"
 
@@ -1655,9 +1655,9 @@ msgstr "Le type de fichier doit être %s."
 #: includes/admin/views/field-group-locations.php:36
 #: includes/admin/views/html-location-group.php:3
 #: includes/api/api-helpers.php:3391 assets/build/js/acf-field-group.js:492
-#: assets/build/js/acf-field-group.js:1973
+#: assets/build/js/acf-field-group.js:1978
 #: assets/build/js/acf-field-group.js:544
-#: assets/build/js/acf-field-group.js:2210
+#: assets/build/js/acf-field-group.js:2218
 msgid "or"
 msgstr "ou"
 

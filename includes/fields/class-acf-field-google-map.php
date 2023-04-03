@@ -1,7 +1,7 @@
 <?php
 
 if ( ! class_exists( 'acf_field_google_map' ) ) :
-
+	#[AllowDynamicProperties]
 	class acf_field_google_map extends acf_field {
 
 
@@ -23,7 +23,10 @@ if ( ! class_exists( 'acf_field_google_map' ) ) :
 			// vars
 			$this->name           = 'google_map';
 			$this->label          = __( 'Google Map', 'acf' );
-			$this->category       = 'jquery';
+			$this->category       = 'advanced';
+			$this->description    = __( 'An interactive UI for selecting a location using Google Maps. Requires a Google Maps API key and additional configuration to display correctly.', 'acf' );
+			$this->preview_image  = acf_get_url() . '/assets/images/field-type-previews/field-preview-google-map.png';
+			$this->doc_url        = acf_add_url_utm_tags( 'https://www.advancedcustomfields.com/resources/google-map/', 'docs', 'field-type-selection' );
 			$this->defaults       = array(
 				'height'     => '',
 				'center_lat' => '',
@@ -72,7 +75,7 @@ if ( ! class_exists( 'acf_field_google_map' ) ) :
 				'client'    => acf_get_setting( 'google_api_client' ),
 				'libraries' => 'places',
 				'ver'       => 3,
-				'callback'  => '',
+				'callback'  => 'Function.prototype',
 				'language'  => acf_get_locale(),
 			);
 
@@ -189,12 +192,12 @@ if ( ! class_exists( 'acf_field_google_map' ) ) :
 			acf_render_field_setting(
 				$field,
 				array(
-					'label'        => __( 'Center', 'acf' ),
-					'hint' => __( 'Center the initial map', 'acf' ),
-					'type'         => 'text',
-					'name'         => 'center_lat',
-					'prepend'      => 'lat',
-					'placeholder'  => $this->default_values['center_lat'],
+					'label'       => __( 'Center', 'acf' ),
+					'hint'        => __( 'Center the initial map', 'acf' ),
+					'type'        => 'text',
+					'name'        => 'center_lat',
+					'prepend'     => 'lat',
+					'placeholder' => $this->default_values['center_lat'],
 				)
 			);
 
@@ -202,13 +205,13 @@ if ( ! class_exists( 'acf_field_google_map' ) ) :
 			acf_render_field_setting(
 				$field,
 				array(
-					'label'        => __( 'Center', 'acf' ),
-					'hint' => __( 'Center the initial map', 'acf' ),
-					'type'         => 'text',
-					'name'         => 'center_lng',
-					'prepend'      => 'lng',
-					'placeholder'  => $this->default_values['center_lng'],
-					'_append'      => 'center_lat',
+					'label'       => __( 'Center', 'acf' ),
+					'hint'        => __( 'Center the initial map', 'acf' ),
+					'type'        => 'text',
+					'name'        => 'center_lng',
+					'prepend'     => 'lng',
+					'placeholder' => $this->default_values['center_lng'],
+					'_append'     => 'center_lat',
 				)
 			);
 

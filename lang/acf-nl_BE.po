@@ -12,7 +12,7 @@
 # This file is distributed under the same license as Advanced Custom Fields.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-01-18T14:07:28+00:00\n"
+"PO-Revision-Date: 2023-04-03T13:26:10+00:00\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "Language: nl_BE\n"
 "MIME-Version: 1.0\n"
@@ -30,6 +30,8 @@ msgid ""
 "https://wpengine.com/?utm_source=wordpress."
 "org&utm_medium=referral&utm_campaign=plugin_directory&utm_content=advanced_custom_fields"
 msgstr ""
+"https://wpengine.com/?utm_source=wordpress."
+"org&utm_medium=referral&utm_campaign=plugin_directory&utm_content=advanced_custom_fields"
 
 #: includes/api/api-template.php:867
 msgid "[ACF shortcode value disabled for preview]"
@@ -37,7 +39,7 @@ msgstr ""
 
 #: includes/admin/admin-field-group.php:673
 msgid "Close Modal"
-msgstr ""
+msgstr "Modaal sluiten"
 
 #: includes/admin/admin-field-group.php:162
 #: assets/build/js/acf-field-group.js:1304
@@ -73,7 +75,7 @@ msgstr ""
 
 #: includes/fields/class-acf-field-checkbox.php:446
 msgid "Add Toggle All"
-msgstr ""
+msgstr "Toevoegen toggle alle"
 
 #: includes/fields/class-acf-field-checkbox.php:405
 msgid "Save Custom Values"
@@ -87,8 +89,7 @@ msgstr ""
 msgid "Checkbox custom values cannot be empty. Uncheck any empty values."
 msgstr ""
 
-#: pro/admin/admin-updates.php:122,
-#: pro/admin/views/html-settings-updates.php:12
+#: includes/admin/views/html-admin-navigation.php:111
 msgid "Updates"
 msgstr "Updates"
 
@@ -98,7 +99,7 @@ msgstr ""
 
 #: includes/admin/views/html-admin-form-top.php:22
 msgid "Save Changes"
-msgstr ""
+msgstr "Wijzigingen opslaan"
 
 #: includes/admin/views/html-admin-form-top.php:16
 msgid "Field Group Title"
@@ -185,7 +186,7 @@ msgstr ""
 #. "Order Number", in terms of positional placement.
 #: includes/admin/views/field-group-fields.php:32
 msgid "#"
-msgstr ""
+msgstr "#"
 
 #: includes/admin/views/field-group-fields.php:22
 #: includes/admin/views/field-group-fields.php:56
@@ -205,7 +206,7 @@ msgstr ""
 
 #: includes/admin/views/field-group-field.php:93
 msgid "General"
-msgstr ""
+msgstr "Algemeen"
 
 #: includes/admin/tools/class-acf-admin-tool-import.php:70
 msgid "Import JSON"
@@ -222,48 +223,48 @@ msgstr ""
 #: includes/admin/admin-field-groups.php:638
 msgid "Field group deactivated."
 msgid_plural "%s field groups deactivated."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Veldgroep gedeactiveerd."
+msgstr[1] "%s veldgroep gedeactiveerd."
 
 #: includes/admin/admin-field-groups.php:585
 msgid "Field group activated."
 msgid_plural "%s field groups activated."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Veldgroep geactiveerd."
+msgstr[1] "%s veldgroep geactiveerd."
 
 #: includes/admin/admin-field-groups.php:537
 #: includes/admin/admin-field-groups.php:558
 msgid "Deactivate"
-msgstr ""
+msgstr "Deactiveren"
 
 #: includes/admin/admin-field-groups.php:537
 msgid "Deactivate this item"
-msgstr ""
+msgstr "Deactiveer dit item"
 
 #: includes/admin/admin-field-groups.php:533
 #: includes/admin/admin-field-groups.php:557
 msgid "Activate"
-msgstr ""
+msgstr "Activeren"
 
 #: includes/admin/admin-field-groups.php:533
 msgid "Activate this item"
-msgstr ""
+msgstr "Activeer dit item"
 
 #: includes/admin/admin-field-group.php:158
-#: assets/build/js/acf-field-group.js:2366
-#: assets/build/js/acf-field-group.js:2635
+#: assets/build/js/acf-field-group.js:2371
+#: assets/build/js/acf-field-group.js:2643
 msgid "Move field group to trash?"
-msgstr ""
+msgstr "Veldgroep naar prullenmand verplaatsen?"
 
 #: acf.php:448 includes/admin/admin-field-group.php:354
 #: includes/admin/admin-field-groups.php:232
 msgctxt "post status"
 msgid "Inactive"
-msgstr ""
+msgstr "Inactief"
 
 #. Author of the plugin
 msgid "WP Engine"
-msgstr ""
+msgstr "WP Engine"
 
 #: acf.php:506
 msgid ""
@@ -771,7 +772,7 @@ msgstr "Lokale JSON"
 
 #: includes/admin/views/field-group-pro-features.php:9
 msgid "Clone Field"
-msgstr ""
+msgstr "Dupliceer veld"
 
 #: includes/admin/views/html-notice-upgrade.php:30
 msgid ""
@@ -1038,8 +1039,8 @@ msgstr "Sleep om te herschikken"
 
 #: includes/admin/admin-field-group.php:168
 #: includes/admin/views/html-location-group.php:3
-#: assets/build/js/acf-field-group.js:1935
-#: assets/build/js/acf-field-group.js:2166
+#: assets/build/js/acf-field-group.js:1940
+#: assets/build/js/acf-field-group.js:2174
 msgid "Show this field group if"
 msgstr "Deze veldgroep tonen als"
 
@@ -1616,9 +1617,9 @@ msgstr "Het bestandstype moet %s zijn."
 #: includes/admin/views/field-group-locations.php:36
 #: includes/admin/views/html-location-group.php:3
 #: includes/api/api-helpers.php:3391 assets/build/js/acf-field-group.js:492
-#: assets/build/js/acf-field-group.js:1973
+#: assets/build/js/acf-field-group.js:1978
 #: assets/build/js/acf-field-group.js:544
-#: assets/build/js/acf-field-group.js:2210
+#: assets/build/js/acf-field-group.js:2218
 msgid "or"
 msgstr "of"
 

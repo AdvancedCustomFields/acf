@@ -1,6 +1,285 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/advanced-custom-fields-pro/assets/src/js/_browse-fields-modal.js":
+/*!******************************************************************************!*\
+  !*** ./src/advanced-custom-fields-pro/assets/src/js/_browse-fields-modal.js ***!
+  \******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+/**
+ * Extends acf.models.Modal to create the field browser.
+ *
+ * @package Advanced Custom Fields
+ */
+
+(function ($, undefined, acf) {
+  const browseFieldsModal = {
+    data: {
+      openedBy: null,
+      currentFieldType: null,
+      popularFieldTypes: ['text', 'textarea', 'email', 'url', 'file', 'gallery', 'select', 'true_false', 'link', 'post_object', 'relationship', 'repeater', 'flexible_content', 'clone']
+    },
+    events: {
+      'click .acf-modal-close': 'onClickClose',
+      'keydown .acf-browse-fields-modal': 'onPressEscapeClose',
+      'click .acf-select-field': 'onClickSelectField',
+      'click .acf-field-type': 'onClickFieldType',
+      'changed:currentFieldType': 'onChangeFieldType',
+      'input .acf-search-field-types': 'onSearchFieldTypes',
+      'click .acf-browse-popular-fields': 'onClickBrowsePopular'
+    },
+    setup: function (props) {
+      $.extend(this.data, props);
+      this.$el = $(this.tmpl());
+      this.render();
+    },
+    initialize: function () {
+      this.open();
+      this.lockFocusToModal(true);
+      this.$el.find('.acf-modal-title').focus();
+      acf.doAction('show', this.$el);
+    },
+    tmpl: function () {
+      return $('#tmpl-acf-browse-fields-modal').html();
+    },
+    getFieldTypes: function (category, search) {
+      let fieldTypes;
+      if (!acf.get('is_pro')) {
+        // Add in the pro fields.
+        fieldTypes = Object.values(_objectSpread(_objectSpread({}, acf.get('fieldTypes')), acf.get('PROFieldTypes')));
+      } else {
+        fieldTypes = Object.values(acf.get('fieldTypes'));
+      }
+      if (category) {
+        if ('popular' === category) {
+          return fieldTypes.filter(fieldType => this.get('popularFieldTypes').includes(fieldType.name));
+        }
+        if ('pro' === category) {
+          return fieldTypes.filter(fieldType => fieldType.pro);
+        }
+        fieldTypes = fieldTypes.filter(fieldType => fieldType.category === category);
+      }
+      if (search) {
+        fieldTypes = fieldTypes.filter(fieldType => {
+          const label = fieldType.label.toLowerCase();
+          const labelParts = label.split(' ');
+          let match = false;
+          if (label.startsWith(search.toLowerCase())) {
+            match = true;
+          } else if (labelParts.length > 1) {
+            labelParts.forEach(part => {
+              if (part.startsWith(search.toLowerCase())) {
+                match = true;
+              }
+            });
+          }
+          return match;
+        });
+      }
+      return fieldTypes;
+    },
+    render: function () {
+      acf.doAction('append', this.$el);
+      const $tabs = this.$el.find('.acf-field-types-tab');
+      const self = this;
+      $tabs.each(function () {
+        const category = $(this).data('category');
+        const fieldTypes = self.getFieldTypes(category);
+        fieldTypes.forEach(fieldType => {
+          $(this).append(self.getFieldTypeHTML(fieldType));
+        });
+      });
+      this.initializeFieldLabel();
+      this.initializeFieldType();
+      this.onChangeFieldType();
+    },
+    getFieldTypeHTML: function (fieldType) {
+      const iconName = fieldType.name.replaceAll('_', '-');
+      return `
+			<a href="#" class="acf-field-type" data-field-type="${fieldType.name}">
+				${fieldType.pro && !acf.get('is_pro') ? '<span class="field-type-requires-pro"><i class="acf-icon acf-icon-lock"></i>PRO</span>' : fieldType.pro ? '<span class="field-type-requires-pro">PRO</span>' : ''}
+				<i class="field-type-icon field-type-icon-${iconName}"></i>
+				<span class="field-type-label">${fieldType.label}</span>
+			</a>
+			`;
+    },
+    decodeFieldTypeURL: function (url) {
+      if (typeof url != 'string') return url;
+      return url.replaceAll('&#038;', '&');
+    },
+    renderFieldTypeDesc: function (fieldType) {
+      const fieldTypeInfo = this.getFieldTypes().filter(fieldTypeFilter => fieldTypeFilter.name === fieldType)[0] || {};
+      const args = acf.parseArgs(fieldTypeInfo, {
+        label: '',
+        description: '',
+        doc_url: false,
+        tutorial_url: false,
+        preview_image: false,
+        pro: false
+      });
+      this.$el.find('.field-type-name').text(args.label);
+      this.$el.find('.field-type-desc').text(args.description);
+      if (args.doc_url) {
+        this.$el.find('.field-type-doc').attr('href', this.decodeFieldTypeURL(args.doc_url)).show();
+      } else {
+        this.$el.find('.field-type-doc').hide();
+      }
+      if (args.tutorial_url) {
+        this.$el.find('.field-type-tutorial').attr('href', this.decodeFieldTypeURL(args.tutorial_url)).parent().show();
+      } else {
+        this.$el.find('.field-type-tutorial').parent().hide();
+      }
+      if (args.preview_image) {
+        this.$el.find('.field-type-image').attr('src', args.preview_image).show();
+      } else {
+        this.$el.find('.field-type-image').hide();
+      }
+      const isPro = acf.get('is_pro');
+      const $upgateToProButton = this.$el.find('.acf-btn-pro');
+      const $upgradeToUnlockButton = this.$el.find('.field-type-upgrade-to-unlock');
+      if (args.pro && !isPro) {
+        $upgateToProButton.show();
+        $upgateToProButton.attr('href', $upgateToProButton.data('urlBase') + fieldType);
+        $upgradeToUnlockButton.show();
+        $upgradeToUnlockButton.attr('href', $upgradeToUnlockButton.data('urlBase') + fieldType);
+        this.$el.find('.acf-insert-field-label').attr('disabled', true);
+        this.$el.find('.acf-select-field').hide();
+      } else {
+        $upgateToProButton.hide();
+        $upgradeToUnlockButton.hide();
+        this.$el.find('.acf-insert-field-label').attr('disabled', false);
+        this.$el.find('.acf-select-field').show();
+      }
+    },
+    initializeFieldType: function () {
+      var _fieldObject$data;
+      const fieldObject = this.get('openedBy');
+      const fieldType = fieldObject === null || fieldObject === void 0 ? void 0 : (_fieldObject$data = fieldObject.data) === null || _fieldObject$data === void 0 ? void 0 : _fieldObject$data.type;
+
+      // Select default field type
+      if (fieldType) {
+        this.set('currentFieldType', fieldType);
+      } else {
+        this.set('currentFieldType', 'text');
+      }
+
+      // Select first tab with selected field type
+      // If type selected is wthin Popular, select Popular Tab
+      // Else select first tab the type belongs
+      const fieldTypes = this.getFieldTypes();
+      const isFieldTypePopular = this.get('popularFieldTypes').includes(fieldType);
+      let category = '';
+      if (isFieldTypePopular) {
+        category = 'popular';
+      } else {
+        const selectedFieldType = fieldTypes.find(x => {
+          return x.name === fieldType;
+        });
+        category = selectedFieldType.category;
+      }
+      const uppercaseCategory = category[0].toUpperCase() + category.slice(1);
+      const searchTabElement = `.acf-modal-content .acf-tab-wrap a:contains('${uppercaseCategory}')`;
+      setTimeout(() => {
+        $(searchTabElement).click();
+      }, 0);
+    },
+    initializeFieldLabel: function () {
+      const fieldObject = this.get('openedBy');
+      const labelText = fieldObject.$fieldLabel().val();
+      const $fieldLabel = this.$el.find('.acf-insert-field-label');
+      if (labelText) {
+        $fieldLabel.val(labelText);
+      } else {
+        $fieldLabel.val('');
+      }
+    },
+    updateFieldObjectFieldLabel: function () {
+      const label = this.$el.find('.acf-insert-field-label').val();
+      const fieldObject = this.get('openedBy');
+      fieldObject.$fieldLabel().val(label);
+      fieldObject.$fieldLabel().trigger('blur');
+    },
+    onChangeFieldType: function () {
+      const fieldType = this.get('currentFieldType');
+      this.$el.find('.selected').removeClass('selected');
+      this.$el.find('.acf-field-type[data-field-type="' + fieldType + '"]').addClass('selected');
+      this.renderFieldTypeDesc(fieldType);
+    },
+    onSearchFieldTypes: function (e) {
+      const $modal = this.$el.find('.acf-browse-fields-modal');
+      const inputVal = this.$el.find('.acf-search-field-types').val();
+      const self = this;
+      let searchString,
+        resultsHtml = '';
+      let matches = [];
+      if ('string' === typeof inputVal) {
+        searchString = inputVal.trim();
+        matches = this.getFieldTypes(false, searchString);
+      }
+      if (searchString.length && matches.length) {
+        $modal.addClass('is-searching');
+      } else {
+        $modal.removeClass('is-searching');
+      }
+      if (!matches.length) {
+        $modal.addClass('no-results-found');
+        this.$el.find('.acf-invalid-search-term').text(searchString);
+        return;
+      } else {
+        $modal.removeClass('no-results-found');
+      }
+      matches.forEach(fieldType => {
+        resultsHtml = resultsHtml + self.getFieldTypeHTML(fieldType);
+      });
+      $('.acf-field-type-search-results').html(resultsHtml);
+      this.set('currentFieldType', matches[0].name);
+      this.onChangeFieldType();
+    },
+    onClickBrowsePopular: function () {
+      this.$el.find('.acf-search-field-types').val('').trigger('input');
+      this.$el.find('.acf-tab-wrap a').first().trigger('click');
+    },
+    onClickSelectField: function (e) {
+      const fieldObject = this.get('openedBy');
+      fieldObject.$fieldTypeSelect().val(this.get('currentFieldType'));
+      fieldObject.$fieldTypeSelect().trigger('change');
+      this.updateFieldObjectFieldLabel();
+      this.close();
+    },
+    onClickFieldType: function (e) {
+      const $fieldType = $(e.currentTarget);
+      this.set('currentFieldType', $fieldType.data('field-type'));
+    },
+    onClickClose: function () {
+      this.close();
+    },
+    onPressEscapeClose: function (e) {
+      if (e.key === 'Escape') {
+        this.close();
+      }
+    },
+    close: function () {
+      this.lockFocusToModal(false);
+      this.returnFocusToOrigin();
+      this.remove();
+    },
+    focus: function () {
+      this.$el.find('button').first().trigger('focus');
+    }
+  };
+  acf.models.browseFieldsModal = acf.models.Modal.extend(browseFieldsModal);
+  acf.newBrowseFieldsModal = props => new acf.models.browseFieldsModal(props);
+})(window.jQuery, undefined, window.acf);
+
+/***/ }),
+
 /***/ "./src/advanced-custom-fields-pro/assets/src/js/_field-group-compatibility.js":
 /*!************************************************************************************!*\
   !*** ./src/advanced-custom-fields-pro/assets/src/js/_field-group-compatibility.js ***!
@@ -609,6 +888,8 @@
   acf.FieldObject = acf.Model.extend({
     // class used to avoid nested event triggers
     eventScope: '.acf-field-object',
+    // variable for field type select2
+    fieldTypeSelect2: false,
     // events
     events: {
       'click .copyable': 'onClickCopy',
@@ -618,6 +899,7 @@
       'click .delete-field': 'onClickDelete',
       'click .duplicate-field': 'duplicate',
       'click .move-field': 'move',
+      'click .browse-fields': 'browseFields',
       'focus .edit-field': 'onFocusEdit',
       'blur .edit-field, .row-options a': 'onBlurEdit',
       'change .field-type': 'onChangeType',
@@ -674,6 +956,12 @@
     },
     $setting: function (name) {
       return this.$('.acf-field-settings:first .acf-field-setting-' + name);
+    },
+    $fieldTypeSelect: function () {
+      return this.$('.field-type');
+    },
+    $fieldLabel: function () {
+      return this.$('.field-label');
     },
     getParent: function () {
       return acf.getFieldObjects({
@@ -807,7 +1095,6 @@
       return this.prop('key');
     },
     initialize: function () {
-      this.addProFields();
       this.checkCopyable();
     },
     makeCopyable: function (text) {
@@ -819,22 +1106,60 @@
         this.$el.find('.copyable').addClass('copy-unsupported');
       }
     },
+    initializeFieldTypeSelect2: function () {
+      if (this.fieldTypeSelect2) return;
+      this.fieldTypeSelect2 = acf.newSelect2(this.$fieldTypeSelect(), {
+        field: false,
+        ajax: false,
+        multiple: false,
+        allowNull: false,
+        suppressFilters: true,
+        dropdownCssClass: 'field-type-select-results',
+        templateResult: function (selection) {
+          if (selection.loading || selection.element && selection.element.nodeName == 'OPTGROUP') {
+            var $selection = $('<span class="acf-selection"></span>');
+            $selection.html(acf.escHtml(selection.text));
+          } else {
+            var $selection = $('<i class="field-type-icon field-type-icon-' + selection.id.replaceAll('_', '-') + '"></i><span class="acf-selection has-icon">' + acf.escHtml(selection.text) + '</span>');
+          }
+          $selection.data('element', selection.element);
+          return $selection;
+        },
+        templateSelection: function (selection) {
+          var $selection = $('<i class="field-type-icon field-type-icon-' + selection.id.replaceAll('_', '-') + '"></i><span class="acf-selection has-icon">' + acf.escHtml(selection.text) + '</span>');
+          $selection.data('element', selection.element);
+          return $selection;
+        }
+      });
+      this.fieldTypeSelect2.on('select2:open', function () {
+        $('.field-type-select-results input.select2-search__field').attr('placeholder', acf.__('Type to search...'));
+      });
+      this.fieldTypeSelect2.on('change', function (e) {
+        $(e.target).parents('ul:first').find('button.browse-fields').prop('disabled', true);
+      });
+
+      // When typing happens on the li element above the select2.
+      this.fieldTypeSelect2.$el.parent().on('keydown', '.select2-selection.select2-selection--single', this.onKeyDownSelect);
+    },
     addProFields: function () {
       // Make sure we're only running this on free version.
-      if (acf.data.fieldTypes.hasOwnProperty('clone')) {
+      if (acf.get('is_pro')) {
         return;
       }
 
       // Make sure we haven't appended these fields before.
-      var $fieldTypeSelect = $('.field-type').not('.acf-free-field-type');
+      var $fieldTypeSelect = this.$fieldTypeSelect();
+      if ($fieldTypeSelect.hasClass('acf-free-field-type')) return;
 
-      // Append pro fields to "Layout" group.
-      var $layoutGroup = $fieldTypeSelect.find('optgroup option[value="group"]').parent();
-      $layoutGroup.append('<option value="null" disabled="disabled">' + acf.__('Repeater (Pro only)') + '</option>' + '<option value="null" disabled="disabled">' + acf.__('Flexible Content (Pro only)') + '</option>' + '<option value="null" disabled="disabled">' + acf.__('Clone (Pro only)') + '</option>');
-
-      // Add pro fields to "Content" group.
-      var $contentGroup = $fieldTypeSelect.find('optgroup option[value="image"]').parent();
-      $contentGroup.append('<option value="null" disabled="disabled">' + acf.__('Gallery (Pro only)') + '</option>');
+      // Loop over each pro field type and append it to the select.
+      const PROFieldTypes = acf.get('PROFieldTypes');
+      if (typeof PROFieldTypes !== 'object') return;
+      const $layoutGroup = $fieldTypeSelect.find('optgroup option[value="group"]').parent();
+      const $contentGroup = $fieldTypeSelect.find('optgroup option[value="image"]').parent();
+      for (const [name, field] of Object.entries(PROFieldTypes)) {
+        const $useGroup = field.category === 'content' ? $contentGroup : $layoutGroup;
+        $useGroup.append('<option value="null" disabled="diabled">' + field.label + ' (' + acf.__('PRO Only') + ')</option>');
+      }
       $fieldTypeSelect.addClass('acf-free-field-type');
     },
     render: function () {
@@ -923,6 +1248,10 @@
       // vars
       var $settings = this.$el.children('.settings');
 
+      // initialise field type select
+      this.addProFields();
+      this.initializeFieldTypeSelect2();
+
       // action (open)
       acf.doAction('open_field_object', this);
       this.trigger('openFieldObject');
@@ -933,6 +1262,18 @@
       // open
       $settings.slideDown();
       this.$el.addClass('open');
+    },
+    onKeyDownSelect: function (e) {
+      // Omit events from special keys.
+      if (!(e.which >= 186 && e.which <= 222 ||
+      // punctuation and special characters
+      [8, 9, 13, 16, 17, 18, 19, 20, 27, 32, 33, 34, 35, 36, 37, 38, 39, 40, 45, 46, 91, 92, 93, 144, 145].includes(e.which) ||
+      // Special keys
+      e.which >= 112 && e.which <= 123)) {
+        // Function keys
+        $(this).closest('.select2-container').siblings('select:enabled').select2('open');
+        return;
+      }
     },
     close: function () {
       // vars
@@ -1006,6 +1347,10 @@
       acf.doAction('change_field_object', this);
     },
     onChanged: function (e, $el, name, value) {
+      if (this.getType() === $el.attr('data-type')) {
+        $('button.acf-btn.browse-fields').prop('disabled', false);
+      }
+
       // ignore 'save'
       if (name == 'save') {
         return;
@@ -1310,6 +1655,12 @@
       // start
       step1();
     },
+    browseFields: function (e, $el) {
+      e.preventDefault();
+      const modal = acf.newBrowseFieldsModal({
+        openedBy: this
+      });
+    },
     onChangeType: function (e, $el) {
       // clea previous timout
       if (this.changeTimeout) {
@@ -1395,7 +1746,7 @@
       const self = this;
       const tabs = Object.keys(settings);
       tabs.forEach(tab => {
-        const $tab = self.$el.find('.acf-field-settings-main-' + tab + ' .acf-field-type-settings');
+        const $tab = self.$el.find('.acf-field-settings-main-' + tab.replace('_', '-') + ' .acf-field-type-settings');
         let tabContent = '';
         if (['object', 'string'].includes(typeof settings[tab])) {
           tabContent = settings[tab];
@@ -1764,8 +2115,8 @@
       });
     },
     onChangeFieldType: function (field) {
-      // this caused sub fields to disapear if changing type back...
-      //this.onDeleteField( field );
+      // enable browse field modal button
+      field.$el.find('button.browse-fields').prop('disabled', false);
     },
     onDuplicateField: function (field, newField) {
       // check for children
@@ -2310,7 +2661,8 @@
       'submit #post': 'onSubmit',
       'click a[href="#"]': 'onClick',
       'click .acf-delete-field-group': 'onClickDeleteFieldGroup',
-      'blur input#title': 'onBlurValidateTitle'
+      'blur input#title': 'validateTitle',
+      'input input#title': 'validateTitle'
     },
     filters: {
       find_fields_args: 'filterFindFieldArgs',
@@ -2325,20 +2677,6 @@
         $('.acf-headerbar-actions .add-field').trigger('click');
         $('.acf-title-wrap #title').trigger('focus');
       }
-
-      // Watch title input
-      // if title empty disable submit button
-      // if title exists allow submitting form
-      let $submitButton = $('.acf-publish');
-      $('input#title').on('input', function () {
-        const titleValue = $(this).val();
-        if (!titleValue) {
-          $submitButton.addClass('disabled');
-        } else {
-          $submitButton.removeClass('disabled');
-          $(this).removeClass('acf-input-error');
-        }
-      });
     },
     onSubmit: function (e, $el) {
       // vars
@@ -2377,18 +2715,21 @@
         }
       });
     },
-    onBlurValidateTitle: function (e, $el) {
+    validateTitle: function (e, $el) {
+      let $submitButton = $('.acf-publish');
       if (!$el.val()) {
         $el.addClass('acf-input-error');
+        $submitButton.addClass('disabled');
         $('.acf-publish').addClass('disabled');
       } else {
         $el.removeClass('acf-input-error');
+        $submitButton.removeClass('disabled');
         $('.acf-publish').removeClass('disabled');
       }
     },
     filterFindFieldArgs: function (args) {
       args.visible = true;
-      if (args.parent && (args.parent.hasClass('acf-field-object') || args.parent.parents('.acf-field-object').length)) {
+      if (args.parent && (args.parent.hasClass('acf-field-object') || args.parent.hasClass('acf-browse-fields-modal-wrap') || args.parent.parents('.acf-field-object').length)) {
         args.visible = false;
         args.excludeSubFields = true;
       }
@@ -2545,6 +2886,107 @@
   });
 })(jQuery);
 
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/defineProperty.js ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ _defineProperty)
+/* harmony export */ });
+/* harmony import */ var _toPropertyKey_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./toPropertyKey.js */ "./node_modules/@babel/runtime/helpers/esm/toPropertyKey.js");
+
+function _defineProperty(obj, key, value) {
+  key = (0,_toPropertyKey_js__WEBPACK_IMPORTED_MODULE_0__["default"])(key);
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+  return obj;
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/toPrimitive.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/toPrimitive.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ _toPrimitive)
+/* harmony export */ });
+/* harmony import */ var _typeof_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./typeof.js */ "./node_modules/@babel/runtime/helpers/esm/typeof.js");
+
+function _toPrimitive(input, hint) {
+  if ((0,_typeof_js__WEBPACK_IMPORTED_MODULE_0__["default"])(input) !== "object" || input === null) return input;
+  var prim = input[Symbol.toPrimitive];
+  if (prim !== undefined) {
+    var res = prim.call(input, hint || "default");
+    if ((0,_typeof_js__WEBPACK_IMPORTED_MODULE_0__["default"])(res) !== "object") return res;
+    throw new TypeError("@@toPrimitive must return a primitive value.");
+  }
+  return (hint === "string" ? String : Number)(input);
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/toPropertyKey.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/toPropertyKey.js ***!
+  \******************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ _toPropertyKey)
+/* harmony export */ });
+/* harmony import */ var _typeof_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./typeof.js */ "./node_modules/@babel/runtime/helpers/esm/typeof.js");
+/* harmony import */ var _toPrimitive_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./toPrimitive.js */ "./node_modules/@babel/runtime/helpers/esm/toPrimitive.js");
+
+
+function _toPropertyKey(arg) {
+  var key = (0,_toPrimitive_js__WEBPACK_IMPORTED_MODULE_1__["default"])(arg, "string");
+  return (0,_typeof_js__WEBPACK_IMPORTED_MODULE_0__["default"])(key) === "symbol" ? key : String(key);
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/typeof.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/typeof.js ***!
+  \***********************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ _typeof)
+/* harmony export */ });
+function _typeof(obj) {
+  "@babel/helpers - typeof";
+
+  return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) {
+    return typeof obj;
+  } : function (obj) {
+    return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+  }, _typeof(obj);
+}
+
 /***/ })
 
 /******/ 	});
@@ -2637,6 +3079,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _field_group_locations_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_field_group_locations_js__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _field_group_compatibility_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./_field-group-compatibility.js */ "./src/advanced-custom-fields-pro/assets/src/js/_field-group-compatibility.js");
 /* harmony import */ var _field_group_compatibility_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_field_group_compatibility_js__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _browse_fields_modal_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./_browse-fields-modal.js */ "./src/advanced-custom-fields-pro/assets/src/js/_browse-fields-modal.js");
+
 
 
 

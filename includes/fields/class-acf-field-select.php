@@ -21,10 +21,13 @@ if ( ! class_exists( 'acf_field_select' ) ) :
 		function initialize() {
 
 			// vars
-			$this->name     = 'select';
-			$this->label    = _x( 'Select', 'noun', 'acf' );
-			$this->category = 'choice';
-			$this->defaults = array(
+			$this->name          = 'select';
+			$this->label         = _x( 'Select', 'noun', 'acf' );
+			$this->category      = 'choice';
+			$this->description   = __( 'A dropdown list with a selection of choices that you specify.', 'acf' );
+			$this->preview_image = acf_get_url() . '/assets/images/field-type-previews/field-preview-select.png';
+			$this->doc_url       = acf_add_url_utm_tags( 'https://www.advancedcustomfields.com/resources/select/', 'docs', 'field-type-selection' );
+			$this->defaults      = array(
 				'multiple'      => 0,
 				'allow_null'    => 0,
 				'choices'       => array(),
@@ -316,6 +319,10 @@ if ( ! class_exists( 'acf_field_select' ) ) :
 			}
 			if ( ! empty( $field['ajax_action'] ) ) {
 				$select['data-ajax_action'] = $field['ajax_action'];
+			}
+
+			if ( ! empty( $field['hide_search'] ) ) {
+				$select['data-minimum-results-for-search'] = '-1';
 			}
 
 			// hidden input is needed to allow validation to see <select> element with no selected value

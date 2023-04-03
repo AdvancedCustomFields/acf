@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! class_exists( 'acf_form_front' ) ) :
-
+	#[AllowDynamicProperties]
 	class acf_form_front {
 
 		/** @var array An array of registered form settings */

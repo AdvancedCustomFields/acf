@@ -309,6 +309,34 @@
     onClickClose: function (e, $el) {
       e.preventDefault();
       this.close();
+    },
+    /**
+     * Places focus within the popup.
+     */
+    focus: function () {
+      this.$el.find('.acf-icon').first().trigger('focus');
+    },
+    /**
+     * Locks focus within the modal.
+     *
+     * @param {boolean} locked True to lock focus, false to unlock.
+     */
+    lockFocusToModal: function (locked) {
+      let inertElement = $('#wpwrap');
+      if (!inertElement.length) {
+        return;
+      }
+      inertElement[0].inert = locked;
+      inertElement.attr('aria-hidden', locked);
+    },
+    /**
+     * Returns focus to the element that opened the popup
+     * if it still exists in the DOM.
+     */
+    returnFocusToOrigin: function () {
+      if (this.data.openedBy instanceof $ && this.data.openedBy.closest('body').length > 0) {
+        this.data.openedBy.trigger('focus');
+      }
     }
   });
 
@@ -1315,13 +1343,28 @@
     wait: 'prepare',
     priority: 1,
     initialize: function () {
-      // vars
-      var $notice = $('.acf-admin-notice');
-
-      // move to avoid WP flicker
-      if ($notice.length) {
-        $('h1:first').after($notice);
-      }
+      const $notices = $('.acf-admin-notice');
+      $notices.each(function () {
+        // Move to avoid WP flicker.
+        if ($(this).length) {
+          $('h1:first').after($(this));
+        }
+        if ($(this).data('persisted')) {
+          let dismissed = acf.getPreference('dismissed-notices');
+          if (dismissed && typeof dismissed == 'object' && dismissed.includes($(this).data('persist-id'))) {
+            $(this).remove();
+          } else {
+            $(this).on('click', '.notice-dismiss', function (e) {
+              dismissed = acf.getPreference('dismissed-notices');
+              if (!dismissed || typeof dismissed != 'object') {
+                dismissed = [];
+              }
+              dismissed.push($(this).closest('.acf-admin-notice').data('persist-id'));
+              acf.setPreference('dismissed-notices', dismissed);
+            });
+          }
+        }
+      });
     }
   });
 })(jQuery);

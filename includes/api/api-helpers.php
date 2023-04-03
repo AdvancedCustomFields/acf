@@ -124,6 +124,15 @@ function acf_get_setting( $name, $value = null ) {
 	return $value;
 }
 
+/**
+ * Return an array of ACF's internal post type names
+ *
+ * @since 6.1
+ * @return array An array of ACF's internal post type names
+ */
+function acf_get_internal_post_types() {
+	return array( 'acf-field-group', 'acf-post-type', 'acf-taxonomy' );
+}
 
 /*
 *  acf_append_setting
@@ -603,53 +612,43 @@ function acf_get_sub_array( $array, $keys ) {
 
 
 /**
- *  acf_get_post_types
- *
  *  Returns an array of post type names.
  *
  *  @date    7/10/13
  *  @since   5.0.0
  *
- *  @param   array $args Optional. An array of key => value arguments to match against the post type objects. Default empty array.
- *  @return  array A list of post type names.
+ *  @param array $args Optional. An array of key => value arguments to match against the post type objects. Default empty array.
+ *  @return array A list of post type names.
  */
-
 function acf_get_post_types( $args = array() ) {
-
-	// vars
 	$post_types = array();
 
 	// extract special arg
 	$exclude   = acf_extract_var( $args, 'exclude', array() );
 	$exclude[] = 'acf-field';
 	$exclude[] = 'acf-field-group';
+	$exclude[] = 'acf-post-type';
+	$exclude[] = 'acf-taxonomy';
 
-	// get post type objects
+	// Get post type objects.
 	$objects = get_post_types( $args, 'objects' );
 
-	// loop
 	foreach ( $objects as $i => $object ) {
-
-		// bail early if is exclude
+		// Bail early if is exclude.
 		if ( in_array( $i, $exclude ) ) {
 			continue;
 		}
 
-		// bail early if is builtin (WP) private post type
-		// - nav_menu_item, revision, customize_changeset, etc
+		// Bail early if is builtin (WP) private post type
+		// i.e. nav_menu_item, revision, customize_changeset, etc.
 		if ( $object->_builtin && ! $object->public ) {
 			continue;
 		}
 
-		// append
 		$post_types[] = $i;
 	}
 
-	// filter
-	$post_types = apply_filters( 'acf/get_post_types', $post_types, $args );
-
-	// return
-	return $post_types;
+	return apply_filters( 'acf/get_post_types', $post_types, $args );
 }
 
 function acf_get_pretty_post_types( $post_types = array() ) {
@@ -702,7 +701,70 @@ function acf_get_pretty_post_types( $post_types = array() ) {
 
 }
 
+/**
+ *  Function acf_get_post_stati()
+ *
+ *  Returns an array of post status names.
+ *
+ *  @date    01/24/23
+ *  @since   6.1.0
+ *
+ *  @param   array $args Optional. An array of key => value arguments to match against the post status objects. Default empty array.
+ *  @return  array A list of post status names.
+ */
+function acf_get_post_stati( $args = array() ) {
 
+	$args['internal'] = false;
+
+	$post_statuses = get_post_stati( $args );
+
+	unset( $post_statuses['acf-disabled'] );
+
+	$post_statuses = (array) apply_filters( 'acf/get_post_stati', $post_statuses, $args );
+
+	return $post_statuses;
+}
+/**
+ *  Function acf_get_pretty_post_statuses()
+ *
+ *  Returns a clean array of post status names.
+ *
+ *  @date    02/16/23
+ *  @since   6.1.0
+ *
+ *  @param   array $post_statuses Optional. An array of post status objects. Default empty array.
+ *  @return  array An array of post status names.
+ */
+function acf_get_pretty_post_statuses( $post_statuses = array() ) {
+
+	// Get all post statuses.
+	$post_statuses = array_merge( $post_statuses, acf_get_post_stati() );
+
+	$ref    = array();
+	$result = array();
+
+	foreach ( $post_statuses as $post_status ) {
+		$label = acf_get_post_status_label( $post_status );
+
+		$result[ $post_status ] = $label;
+
+		if ( ! isset( $ref[ $label ] ) ) {
+			$ref[ $label ] = 0;
+		}
+
+		$ref[ $label ]++;
+	}
+
+	foreach ( array_keys( $result ) as $i ) {
+		$post_status = $result[ $i ];
+
+		if ( $ref[ $post_status ] > 1 ) {
+			$result[ $i ] .= ' (' . $i . ')';
+		}
+	}
+
+	return $result;
+}
 
 /*
 *  acf_get_post_type_label
@@ -734,6 +796,27 @@ function acf_get_post_type_label( $post_type ) {
 	// return
 	return $label;
 
+}
+
+
+/**
+ *  Function acf_get_post_status_label()
+ *
+ *  This function will return a pretty label for a specific post_status
+ *
+ *  @type    function
+ *  @date    01/24/2023
+ *  @since   6.1.0
+ *
+ *  @param   string $post_status The post status.
+ *  @return  string The post status label.
+ */
+function acf_get_post_status_label( $post_status ) {
+	$label = $post_status;
+	$obj   = get_post_status_object( $post_status );
+	$label = is_object( $obj ) ? $obj->label : '';
+
+	return $label;
 }
 
 
@@ -1310,6 +1393,10 @@ function acf_get_posts( $args = array() ) {
 	// Avoid default 'post' post_type by providing all public types.
 	if ( ! $args['post_type'] ) {
 		$args['post_type'] = acf_get_post_types();
+	}
+
+	if ( ! $args['post_status'] ) {
+		$args['post_status'] = acf_get_post_stati();
 	}
 
 	// Check if specifc post ID's have been provided.
@@ -4559,4 +4646,15 @@ function acf_is_block_editor() {
 		}
 	}
 	return false;
+}
+
+/**
+ * Return an array of the WordPress reserved terms
+ *
+ * @since 6.1
+ *
+ * @return array The WordPress reserved terms list.
+ */
+function acf_get_wp_reserved_terms() {
+	return array( 'action', 'attachment', 'attachment_id', 'author', 'author_name', 'calendar', 'cat', 'category', 'category__and', 'category__in', 'category__not_in', 'category_name', 'comments_per_page', 'comments_popup', 'custom', 'customize_messenger_channel', 'customized', 'cpage', 'day', 'debug', 'embed', 'error', 'exact', 'feed', 'fields', 'hour', 'link_category', 'm', 'minute', 'monthnum', 'more', 'name', 'nav_menu', 'nonce', 'nopaging', 'offset', 'order', 'orderby', 'p', 'page', 'page_id', 'paged', 'pagename', 'pb', 'perm', 'post', 'post__in', 'post__not_in', 'post_format', 'post_mime_type', 'post_status', 'post_tag', 'post_type', 'posts', 'posts_per_archive_page', 'posts_per_page', 'preview', 'robots', 's', 'search', 'second', 'sentence', 'showposts', 'static', 'status', 'subpost', 'subpost_id', 'tag', 'tag__and', 'tag__in', 'tag__not_in', 'tag_id', 'tag_slug__and', 'tag_slug__in', 'taxonomy', 'tb', 'term', 'terms', 'theme', 'title', 'type', 'types', 'w', 'withcomments', 'withoutcomments', 'year' );
 }
