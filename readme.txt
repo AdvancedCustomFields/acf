@@ -4,7 +4,7 @@ Tags: acf, fields, custom fields, meta, repeater
 Requires at least: 4.7
 Tested up to: 6.2
 Requires PHP: 5.6
-Stable tag: 6.1.0
+Stable tag: 6.1.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -92,6 +92,12 @@ From your WordPress dashboard
 
 == Changelog ==
 
+= 6.1.1 =
+*Release Date 3rd April 2023*
+
+* Fix - Calls to `acf_add_local_field_group` before `acf/init` now behave correctly
+* i18n - All new ACF 6.1 strings are now correctly English (United States) by default
+
 = 6.1.0 =
 *Release Date 3rd April 2023*
 
@@ -106,7 +112,7 @@ From your WordPress dashboard
 * Fix - An empty callback function in now passed to scripts to prevent JS warnings when using Google Map fields
 * Fix - Checkbox field values now support keys indexed as 0
 * Fix - Automatic deactivation of the free or PRO plugin when activating the other now displays the correct message in the admin notice
-* Fix - Empty Flexible Content fields will no longer cause an error when used in the block editor on save.
+* Fix - Empty Flexible Content fields will no longer cause an error when used in the block editor on save
 * Fix - Admin notices now behave correctly and are closable in RTL languages
 
 = 6.0.7 =

@@ -383,7 +383,7 @@ if ( ! class_exists( 'ACF_Internal_Post_Type' ) ) {
 			$posts = apply_filters( "acf/load_{$this->hook_name_plural}", $posts, $this->post_type );
 
 			// Filter results.
-			if ( $filter ) {
+			if ( $filter && $posts ) {
 				return $this->filter_posts( $posts, $filter );
 			}
 
@@ -432,7 +432,10 @@ if ( ! class_exists( 'ACF_Internal_Post_Type' ) ) {
 			// Loop over ids and populate array of ACF posts.
 			$return = array();
 			foreach ( $post_ids as $post_id ) {
-				$return[] = $this->get_raw_post( $post_id );
+				$raw_post = $this->get_raw_post( $post_id );
+				if ( $raw_post ) {
+					$return[] = $raw_post;
+				}
 			}
 
 			return $return;

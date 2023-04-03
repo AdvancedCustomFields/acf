@@ -179,6 +179,9 @@ function acf_count_local_field_groups() {
  */
 function acf_add_local_field_group( $field_group ) {
 
+	// init
+	acf_init();
+
 	// Apply default properties needed for import.
 	$field_group = wp_parse_args(
 		$field_group,

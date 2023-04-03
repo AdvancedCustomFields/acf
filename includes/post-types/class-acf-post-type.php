@@ -62,6 +62,8 @@ if ( ! class_exists( 'ACF_Post_Type' ) ) {
 		public function __construct() {
 			// Include admin classes in admin.
 			if ( is_admin() ) {
+				acf_include( 'includes/admin/admin-internal-post-type-list.php' );
+				acf_include( 'includes/admin/admin-internal-post-type.php' );
 				acf_include( 'includes/admin/post-types/admin-post-type.php' );
 				acf_include( 'includes/admin/post-types/admin-post-types.php' );
 			}
