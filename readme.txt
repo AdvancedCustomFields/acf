@@ -96,7 +96,6 @@ From your WordPress dashboard
 *Release Date 3rd April 2023*
 
 * Fix - Calls to `acf_add_local_field_group` before `acf/init` now behave correctly
-* i18n - All new ACF 6.1 strings are now correctly English (United States) by default
 
 = 6.1.0 =
 *Release Date 3rd April 2023*
