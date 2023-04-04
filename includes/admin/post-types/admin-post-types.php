@@ -36,7 +36,7 @@ if ( ! class_exists( 'ACF_Admin_Post_Types' ) ) :
 		public $store = 'post-types';
 
 		/**
-		 * Constructor for the post types list admin page.
+		 * Current screen actions for the post types list admin page.
 		 *
 		 * @since   6.1
 		 *
@@ -293,8 +293,8 @@ if ( ! class_exists( 'ACF_Admin_Post_Types' ) ) :
 					break;
 				case 'acfsynccomplete':
 					$text = sprintf(
-						/* translators: %s number of post types synchronised */
-						_n( 'Post type synchronised.', '%s post types synchronised.', $count, 'acf' ),
+						/* translators: %s number of post types synchronized */
+						_n( 'Post type synchronized.', '%s post types synchronized.', $count, 'acf' ),
 						$count
 					);
 					break;

@@ -36,7 +36,7 @@ if ( ! class_exists( 'ACF_Admin_Taxonomies' ) ) :
 		public $store = 'taxonomies';
 
 		/**
-		 * Constructor for the taxonomies list admin page.
+		 * Current screen actions for the taxonomies list admin page.
 		 *
 		 * @since   6.1
 		 *
@@ -300,8 +300,8 @@ if ( ! class_exists( 'ACF_Admin_Taxonomies' ) ) :
 					break;
 				case 'acfsynccomplete':
 					$text = sprintf(
-						/* translators: %s number of taxonomies synchronised */
-						_n( 'Taxonomy synchronised.', '%s taxonomies synchronised.', $count, 'acf' ),
+						/* translators: %s number of taxonomies synchronized */
+						_n( 'Taxonomy synchronized.', '%s taxonomies synchronized.', $count, 'acf' ),
 						$count
 					);
 					break;

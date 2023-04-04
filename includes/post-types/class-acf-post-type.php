@@ -60,6 +60,8 @@ if ( ! class_exists( 'ACF_Post_Type' ) ) {
 		 * Constructs the class.
 		 */
 		public function __construct() {
+			$this->register_post_type();
+
 			// Include admin classes in admin.
 			if ( is_admin() ) {
 				acf_include( 'includes/admin/admin-internal-post-type-list.php' );
@@ -71,6 +73,48 @@ if ( ! class_exists( 'ACF_Post_Type' ) ) {
 			parent::__construct();
 
 			add_action( 'acf/init', array( $this, 'register_post_types' ), 6 );
+		}
+
+		/**
+		 * Registers the acf-post-type custom post type with WordPress.
+		 *
+		 * @since 6.1
+		 */
+		public function register_post_type() {
+			$cap = acf_get_setting( 'capability' );
+
+			register_post_type(
+				'acf-post-type',
+				array(
+					'labels'          => array(
+						'name'               => __( 'Post Types', 'acf' ),
+						'singular_name'      => __( 'Post Type', 'acf' ),
+						'add_new'            => __( 'Add New', 'acf' ),
+						'add_new_item'       => __( 'Add New Post Type', 'acf' ),
+						'edit_item'          => __( 'Edit Post Type', 'acf' ),
+						'new_item'           => __( 'New Post Type', 'acf' ),
+						'view_item'          => __( 'View Post Type', 'acf' ),
+						'search_items'       => __( 'Search Post Types', 'acf' ),
+						'not_found'          => __( 'No Post Types found', 'acf' ),
+						'not_found_in_trash' => __( 'No Post Types found in Trash', 'acf' ),
+					),
+					'public'          => false,
+					'hierarchical'    => true,
+					'show_ui'         => true,
+					'show_in_menu'    => false,
+					'_builtin'        => false,
+					'capability_type' => 'post',
+					'capabilities'    => array(
+						'edit_post'    => $cap,
+						'delete_post'  => $cap,
+						'edit_posts'   => $cap,
+						'delete_posts' => $cap,
+					),
+					'supports'        => false,
+					'rewrite'         => false,
+					'query_var'       => false,
+				)
+			);
 		}
 
 		/**
@@ -259,7 +303,7 @@ if ( ! class_exists( 'ACF_Post_Type' ) ) {
 
 			if ( preg_match( '/^[a-z0-9_-]*$/', $post_type_key ) !== 1 ) {
 				$valid = false;
-				acf_add_internal_post_type_validation_error( 'post_type', __( 'The post type key must only contain lowercase alphanumeric characters, underscores or dashes.', 'acf' ) );
+				acf_add_internal_post_type_validation_error( 'post_type', __( 'The post type key must only contain lower case alphanumeric characters, underscores or dashes.', 'acf' ) );
 			}
 
 			if ( in_array( $post_type_key, acf_get_wp_reserved_terms(), true ) ) {
@@ -533,45 +577,6 @@ if ( ! class_exists( 'ACF_Post_Type' ) ) {
 			$args['delete_with_user'] = (bool) $post['delete_with_user'];
 
 			return apply_filters( 'acf/post_type/registration_args', $args, $post );
-		}
-
-		/**
-		 * Register the CPT required for ACF post types.
-		 */
-		public function register_post_type() {
-			$cap = acf_get_setting( 'capability' );
-			register_post_type(
-				$this->post_type,
-				array(
-					'labels'          => array(
-						'name'               => __( 'Post Types', 'acf' ),
-						'singular_name'      => __( 'Post Type', 'acf' ),
-						'add_new'            => __( 'Add New', 'acf' ),
-						'add_new_item'       => __( 'Add New Post Type', 'acf' ),
-						'edit_item'          => __( 'Edit Post Type', 'acf' ),
-						'new_item'           => __( 'New Post Type', 'acf' ),
-						'view_item'          => __( 'View Post Type', 'acf' ),
-						'search_items'       => __( 'Search Post Types', 'acf' ),
-						'not_found'          => __( 'No Post Types found', 'acf' ),
-						'not_found_in_trash' => __( 'No Post Types found in Trash', 'acf' ),
-					),
-					'public'          => false,
-					'hierarchical'    => true,
-					'show_ui'         => true,
-					'show_in_menu'    => false,
-					'_builtin'        => false,
-					'capability_type' => 'post',
-					'capabilities'    => array(
-						'edit_post'    => $cap,
-						'delete_post'  => $cap,
-						'edit_posts'   => $cap,
-						'delete_posts' => $cap,
-					),
-					'supports'        => false,
-					'rewrite'         => false,
-					'query_var'       => false,
-				)
-			);
 		}
 
 		/**

@@ -321,8 +321,8 @@ if ( ! class_exists( 'ACF_Admin_Field_Groups' ) ) :
 					break;
 				case 'acfsynccomplete':
 					$text = sprintf(
-						/* translators: %s number of field groups synchronised */
-						_n( 'Field group synchronised.', '%s field groups synchronised.', $count, 'acf' ),
+						/* translators: %s number of field groups synchronized */
+						_n( 'Field group synchronized.', '%s field groups synchronized.', $count, 'acf' ),
 						$count
 					);
 					break;

@@ -92,6 +92,13 @@ From your WordPress dashboard
 
 == Changelog ==
 
+= 6.1.2 =
+*Release Date 4th April 2023*
+
+* [View Release Post](https://www.advancedcustomfields.com/blog/acf-6-1-0-released/)
+* Fix - Calls to `acf_add_options_page` after `acf_add_local_field_group` before `acf/init` will now behave correctly
+* i18n - All new ACF 6.1 strings are now correctly English (United States) by default
+
 = 6.1.1 =
 *Release Date 3rd April 2023*
 

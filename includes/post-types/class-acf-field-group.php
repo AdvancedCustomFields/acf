@@ -97,49 +97,6 @@ if ( ! class_exists( 'ACF_Field_Group' ) ) {
 		}
 
 		/**
-		 * Register the field-group custom post type with WordPress
-		 *
-		 * @since 6.1
-		 */
-		public function register_post_type() {
-			$cap = acf_get_setting( 'capability' );
-
-			// Register the Field Group post type.
-			register_post_type(
-				'acf-field-group',
-				array(
-					'labels'          => array(
-						'name'               => __( 'Field Groups', 'acf' ),
-						'singular_name'      => __( 'Field Group', 'acf' ),
-						'add_new'            => __( 'Add New', 'acf' ),
-						'add_new_item'       => __( 'Add New Field Group', 'acf' ),
-						'edit_item'          => __( 'Edit Field Group', 'acf' ),
-						'new_item'           => __( 'New Field Group', 'acf' ),
-						'view_item'          => __( 'View Field Group', 'acf' ),
-						'search_items'       => __( 'Search Field Groups', 'acf' ),
-						'not_found'          => __( 'No Field Groups found', 'acf' ),
-						'not_found_in_trash' => __( 'No Field Groups found in Trash', 'acf' ),
-					),
-					'public'          => false,
-					'hierarchical'    => true,
-					'show_ui'         => true,
-					'show_in_menu'    => false,
-					'_builtin'        => false,
-					'capability_type' => 'post',
-					'capabilities'    => array(
-						'edit_post'    => $cap,
-						'delete_post'  => $cap,
-						'edit_posts'   => $cap,
-						'delete_posts' => $cap,
-					),
-					'supports'        => false,
-					'rewrite'         => false,
-					'query_var'       => false,
-				)
-			);
-		}
-
-		/**
 		 * Get an ACF CPT object as an array.
 		 *
 		 * @since 6.1

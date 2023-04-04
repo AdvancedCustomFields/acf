@@ -70,20 +70,11 @@ if ( ! class_exists( 'ACF_Internal_Post_Type' ) ) {
 
 			$internal_post_types_store->set( $this->post_type, get_class( $this ) );
 
-			$this->register_post_type();
-
 			add_action( "acf/validate_{$this->hook_name}", array( $this, 'translate_post' ) );
 
 			add_filter( 'wp_unique_post_slug', array( $this, 'apply_unique_post_slug' ), 999, 6 );
 			add_action( 'wp_untrash_post_status', array( $this, 'untrash_post_status' ), 10, 3 );
 		}
-
-		/**
-		 * Register post type to WordPress if required for this post type
-		 *
-		 * @since 6.1
-		 */
-		public function register_post_type() {}
 
 		/**
 		 * Get an ACF CPT object as an array.

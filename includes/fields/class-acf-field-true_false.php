@@ -24,7 +24,7 @@ if ( ! class_exists( 'acf_field_true_false' ) ) :
 			$this->name          = 'true_false';
 			$this->label         = __( 'True / False', 'acf' );
 			$this->category      = 'choice';
-			$this->description   = __( 'A toggle that allows you to pick a value of 1 or 0 (on or off, true or false, etc). Can be presented as a styilized switch or checkbox.', 'acf' );
+			$this->description   = __( 'A toggle that allows you to pick a value of 1 or 0 (on or off, true or false, etc). Can be presented as a stylized switch or checkbox.', 'acf' );
 			$this->preview_image = acf_get_url() . '/assets/images/field-type-previews/field-preview-true-false.png';
 			$this->doc_url       = acf_add_url_utm_tags( 'https://www.advancedcustomfields.com/resources/true-false/', 'docs', 'field-type-selection' );
 			$this->defaults      = array(

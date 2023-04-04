@@ -24,7 +24,7 @@ if ( ! class_exists( 'acf_field_date_picker' ) ) :
 			$this->name          = 'date_picker';
 			$this->label         = __( 'Date Picker', 'acf' );
 			$this->category      = 'advanced';
-			$this->description   = __( 'An interactive UI for picking a date. The date return format can be customized using the fields settings.', 'acf' );
+			$this->description   = __( 'An interactive UI for picking a date. The date return format can be customized using the field settings.', 'acf' );
 			$this->preview_image = acf_get_url() . '/assets/images/field-type-previews/field-preview-date-picker.png';
 			$this->doc_url       = acf_add_url_utm_tags( 'https://www.advancedcustomfields.com/resources/date-picker/', 'docs', 'field-type-selection' );
 			$this->defaults      = array(

@@ -24,7 +24,7 @@ if ( ! class_exists( 'acf_field_date_and_time_picker' ) ) :
 			$this->name          = 'date_time_picker';
 			$this->label         = __( 'Date Time Picker', 'acf' );
 			$this->category      = 'advanced';
-			$this->description   = __( 'An interactive UI for picking a date and time. The date return format can be customized using this fields settings.', 'acf' );
+			$this->description   = __( 'An interactive UI for picking a date and time. The date return format can be customized using the field settings.', 'acf' );
 			$this->preview_image = acf_get_url() . '/assets/images/field-type-previews/field-preview-date-time.png';
 			$this->doc_url       = acf_add_url_utm_tags( 'https://www.advancedcustomfields.com/resources/date-time-picker/', 'docs', 'field-type-selection' );
 			$this->defaults      = array(

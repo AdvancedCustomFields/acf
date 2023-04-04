@@ -9,7 +9,7 @@
  * Plugin Name:   Advanced Custom Fields
  * Plugin URI:    https://www.advancedcustomfields.com
  * Description:   Customize WordPress with powerful, professional and intuitive fields.
- * Version:       6.1.1
+ * Version:       6.1.2
  * Author:        WP Engine
  * Author URI:    https://wpengine.com/?utm_source=wordpress.org&utm_medium=referral&utm_campaign=plugin_directory&utm_content=advanced_custom_fields
  * Text Domain:   acf
@@ -33,7 +33,7 @@ if ( ! class_exists( 'ACF' ) ) {
 		 *
 		 * @var string
 		 */
-		public $version = '6.1.1';
+		public $version = '6.1.2';
 
 		/**
 		 * The plugin settings array.
@@ -176,6 +176,9 @@ if ( ! class_exists( 'ACF' ) ) {
 			acf_include( 'includes/validation.php' );
 			acf_include( 'includes/rest-api.php' );
 
+			// Include field group class.
+			acf_include( 'includes/post-types/class-acf-field-group.php' );
+
 			// Include ajax.
 			acf_include( 'includes/ajax/class-acf-ajax.php' );
 			acf_include( 'includes/ajax/class-acf-ajax-check-screen.php' );
@@ -264,8 +267,11 @@ if ( ! class_exists( 'ACF' ) ) {
 				acf_include( 'includes/wpml.php' );
 			}
 
-			// Initialise post types.
-			$this->init_post_types();
+			// Add post types and taxonomies.
+			if ( acf_get_setting( 'enable_post_types' ) ) {
+				acf_include( 'includes/post-types/class-acf-post-type.php' );
+				acf_include( 'includes/post-types/class-acf-taxonomy.php' );
+			}
 
 			// Include fields.
 			acf_include( 'includes/fields/class-acf-field-text.php' );
@@ -391,9 +397,41 @@ if ( ! class_exists( 'ACF' ) ) {
 		 * @return  void
 		 */
 		public function register_post_types() {
-
-			// Vars.
 			$cap = acf_get_setting( 'capability' );
+
+			// Register the Field Group post type.
+			register_post_type(
+				'acf-field-group',
+				array(
+					'labels'          => array(
+						'name'               => __( 'Field Groups', 'acf' ),
+						'singular_name'      => __( 'Field Group', 'acf' ),
+						'add_new'            => __( 'Add New', 'acf' ),
+						'add_new_item'       => __( 'Add New Field Group', 'acf' ),
+						'edit_item'          => __( 'Edit Field Group', 'acf' ),
+						'new_item'           => __( 'New Field Group', 'acf' ),
+						'view_item'          => __( 'View Field Group', 'acf' ),
+						'search_items'       => __( 'Search Field Groups', 'acf' ),
+						'not_found'          => __( 'No Field Groups found', 'acf' ),
+						'not_found_in_trash' => __( 'No Field Groups found in Trash', 'acf' ),
+					),
+					'public'          => false,
+					'hierarchical'    => true,
+					'show_ui'         => true,
+					'show_in_menu'    => false,
+					'_builtin'        => false,
+					'capability_type' => 'post',
+					'capabilities'    => array(
+						'edit_post'    => $cap,
+						'delete_post'  => $cap,
+						'edit_posts'   => $cap,
+						'delete_posts' => $cap,
+					),
+					'supports'        => false,
+					'rewrite'         => false,
+					'query_var'       => false,
+				)
+			);
 
 			// Register the Field post type.
 			register_post_type(
@@ -428,24 +466,6 @@ if ( ! class_exists( 'ACF' ) ) {
 					'query_var'       => false,
 				)
 			);
-		}
-
-		/**
-		 * Loads and instantiates the enabled additional custom post types.
-		 *
-		 * @since 6.1
-		 *
-		 * @return void
-		 */
-		public function init_post_types() {
-			// Include field group class universally.
-			acf_include( 'includes/post-types/class-acf-field-group.php' );
-
-			// Include post types and taxonomies if enabled.
-			if ( acf_get_setting( 'enable_post_types' ) ) {
-				acf_include( 'includes/post-types/class-acf-post-type.php' );
-				acf_include( 'includes/post-types/class-acf-taxonomy.php' );
-			}
 		}
 
 		/**
