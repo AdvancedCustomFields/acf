@@ -27,9 +27,13 @@ if ( ! class_exists( 'ACF_Local_JSON' ) ) :
 		 */
 		public function __construct() {
 
-			// Update settings.
-			acf_update_setting( 'save_json', get_stylesheet_directory() . '/acf-json' );
-			acf_append_setting( 'load_json', get_stylesheet_directory() . '/acf-json' );
+			// Update settings with default local JSON path(s).
+			$default_json_paths = array_unique( array(
+				get_stylesheet_directory() . '/acf-json', // (Child) theme, primary save point by default
+				get_template_directory() . '/acf-json'    // Parent theme, if present, in 2nd order
+			) );
+			acf_update_setting( 'load_json', $default_json_paths );
+			acf_update_setting( 'save_json', $default_json_paths );
 
 			// Add listeners.
 			add_action( 'acf/update_field_group', array( $this, 'update_field_group' ) );
@@ -314,9 +318,37 @@ if ( ! class_exists( 'ACF_Local_JSON' ) ) :
 		 * @return bool
 		 */
 		public function save_file( $key, $post ) {
-			$path = acf_get_setting( 'save_json' );
-			$file = untrailingslashit( $path ) . '/' . $key . '.json';
-			if ( ! is_writable( $path ) ) {
+
+			// Update save_json setting with potentially modified load_json values.
+			acf_update_setting( 'save_json', acf_get_setting('load_json') );
+
+			// Present save_json setting to plugins and functions.
+			// Cast to array to retain legacy compability with single-string "save_json" return value.
+			$paths = (array)acf_get_setting('save_json');
+
+			// By default assume we have nowhere to save.
+			$file = false;
+
+			// Check if one of the paths already has the matching JSON file.
+			foreach ( $paths as $check_path ) {
+				if ( is_file( $check_file = trailingslashit( $check_path ) . $key . '.json' ) ) {
+					$file = $check_file;
+					break;
+				}
+			}
+
+			// If no matching file location was found look for the first writable path.
+			if ( ! $file ) {
+				foreach ( $paths as $check_path ) {
+					if ( is_writable( $check_path ) ) {
+						$file = trailingslashit( $check_path ) . $key . '.json';
+						break;
+					}
+				}
+			}
+
+			// No matching file and no writable path found: nowhere to save, bail.
+			if ( ! $file ) {
 				return false;
 			}
 
@@ -327,18 +359,20 @@ if ( ! class_exists( 'ACF_Local_JSON' ) ) :
 				$post['modified'] = strtotime( 'now' );
 			}
 
+			// Get ACF post type.
 			$post_type = acf_determine_internal_post_type( $key );
 
-			if ( $post_type ) {
-				// Prepare for export and save the file.
-				$post   = acf_prepare_internal_post_type_for_export( $post, $post_type );
-				$result = file_put_contents( $file, acf_json_encode( $post ) );
-
-				// Return true if bytes were written.
-				return is_int( $result );
+			// Bail if not an ACF post type.
+			if ( ! $post_type ) {
+				return false;
 			}
 
-			return false;
+			// Prepare for export and save the file.
+			$post   = acf_prepare_internal_post_type_for_export( $post, $post_type );
+			$result = file_put_contents( $file, acf_json_encode( $post ) );
+
+			// Return true if bytes were written.
+			return is_int( $result );
 		}
 
 		/**
@@ -351,12 +385,24 @@ if ( ! class_exists( 'ACF_Local_JSON' ) ) :
 		 * @return bool True on success.
 		 */
 		public function delete_file( $key ) {
-			$path = acf_get_setting( 'save_json' );
-			$file = untrailingslashit( $path ) . '/' . $key . '.json';
-			if ( is_readable( $file ) ) {
-				unlink( $file );
-				return true;
+
+			// Update save_json setting with potentially modified load_json values.
+			acf_update_setting( 'save_json', acf_get_setting('load_json') );
+
+			// Present save_json setting to plugins and functions.
+			// Cast to array to retain legacy compability with single-string "save_json" return value.
+			$paths = (array)acf_get_setting('save_json');
+
+			// Check paths in order, delete file if found.
+			foreach ( $paths as $check_path ) {
+				$file = untrailingslashit( $check_path ) . '/' . $key . '.json';
+				if ( is_writable( $file ) ) {
+					unlink( $file );
+					return true;
+				}
 			}
+
+			// No matching file found.
 			return false;
 		}
 
