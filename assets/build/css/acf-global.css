@@ -1124,6 +1124,7 @@ html[dir=rtl] #acf-popup .acf-popup-box .title .acf-icon {
   top: 0;
   right: 0;
   padding: 5px;
+  z-index: 1050;
 }
 html[dir=rtl] .acf-actions.-hover {
   right: auto;

@@ -295,8 +295,20 @@ if ( ! class_exists( 'ACF_Local_JSON' ) ) :
 			$files = array();
 
 			foreach ( $this->files as $key => $path ) {
-				if ( acf_determine_internal_post_type( $key ) === $post_type ) {
+				$internal_post_type = acf_determine_internal_post_type( $key );
+
+				if ( $internal_post_type === $post_type ) {
 					$files[ $key ] = $path;
+				} elseif ( 'acf-field-group' === $post_type ) {
+					// If we can't figure out the ACF post type, make an educated guess that it's a field group.
+					$json = json_decode( file_get_contents( $path ), true );
+					if ( ! is_array( $json ) ) {
+						continue;
+					}
+
+					if ( isset( $json['fields'] ) ) {
+						$files[ $key ] = $path;
+					}
 				}
 			}
 

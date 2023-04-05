@@ -471,12 +471,11 @@ if ( ! class_exists( 'ACF_Post_Type' ) ) {
 
 				if ( $capability_type !== 'post' && $capability_type !== array( 'post', 'posts' ) ) {
 					$args['capability_type'] = $capability_type;
+					$args['map_meta_cap']    = true;
 				}
 			}
 
 			// TODO: We don't handle the `capabilities` arg at the moment, but may in the future.
-
-			// TODO: We don't handle the `map_meta_cap` arg at the moment, but may in the future.
 
 			// WordPress defaults to the "title" and "editor" supports, but none can be provided by passing false (WP 3.5+).
 			$supports = is_array( $post['supports'] ) ? $post['supports'] : array();

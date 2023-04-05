@@ -12,7 +12,7 @@
 # This file is distributed under the same license as Advanced Custom Fields.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-04-04T09:27:37+00:00\n"
+"PO-Revision-Date: 2023-04-05T15:21:32+00:00\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "Language: en_GB\n"
 "MIME-Version: 1.0\n"
@@ -21,91 +21,91 @@ msgstr ""
 "X-Generator: gettext\n"
 "Project-Id-Version: Advanced Custom Fields\n"
 
+#: includes/post-types/class-acf-taxonomy.php:278
+msgid ""
+"This taxonomy key is already in use by another taxonomy registered outside "
+"of ACF and cannot be used."
+msgstr ""
+"This taxonomy key is already in use by another taxonomy registered outside "
+"of ACF and cannot be used."
+
 #: includes/post-types/class-acf-taxonomy.php:273
 msgid ""
-"This taxonomy key is already in use by another taxonomy registered outside "
-"of ACF and cannot be used."
+"This taxonomy key is already in use by another taxonomy in ACF and cannot be "
+"used."
 msgstr ""
-"This taxonomy key is already in use by another taxonomy registered outside "
-"of ACF and cannot be used."
+"This taxonomy key is already in use by another taxonomy in ACF and cannot be "
+"used."
 
-#: includes/post-types/class-acf-taxonomy.php:268
+#: includes/post-types/class-acf-taxonomy.php:246
 msgid ""
-"This taxonomy key is already in use by another taxonomy in ACF and cannot be "
-"used."
+"The taxonomy key must only contain lower case alphanumeric characters, "
+"underscores or dashes."
 msgstr ""
-"This taxonomy key is already in use by another taxonomy in ACF and cannot be "
-"used."
+"The taxonomy key must only contain lower case alphanumeric characters, "
+"underscores or dashes."
 
 #: includes/post-types/class-acf-taxonomy.php:241
-msgid ""
-"The taxonomy key must only contain lowercase alphanumeric characters, "
-"underscores or dashes."
-msgstr ""
-"The taxonomy key must only contain lowercase alphanumeric characters, "
-"underscores or dashes."
-
-#: includes/post-types/class-acf-taxonomy.php:236
 msgid "The taxonomy key must be under 20 characters."
 msgstr "The taxonomy key must be under 20 characters."
 
-#: includes/post-types/class-acf-taxonomy.php:200
+#: includes/post-types/class-acf-taxonomy.php:99
 msgid "No Taxonomies found in Trash"
 msgstr "No Taxonomies found in the bin"
 
-#: includes/post-types/class-acf-taxonomy.php:199
+#: includes/post-types/class-acf-taxonomy.php:98
 msgid "No Taxonomies found"
 msgstr "No Taxonomies found"
 
-#: includes/post-types/class-acf-taxonomy.php:198
+#: includes/post-types/class-acf-taxonomy.php:97
 msgid "Search Taxonomies"
 msgstr "Search Taxonomies"
 
-#: includes/post-types/class-acf-taxonomy.php:197
+#: includes/post-types/class-acf-taxonomy.php:96
 msgid "View Taxonomy"
 msgstr "View Taxonomy"
 
-#: includes/post-types/class-acf-taxonomy.php:196
+#: includes/post-types/class-acf-taxonomy.php:95
 msgid "New Taxonomy"
 msgstr "New Taxonomy"
 
-#: includes/post-types/class-acf-taxonomy.php:195
+#: includes/post-types/class-acf-taxonomy.php:94
 msgid "Edit Taxonomy"
 msgstr "Edit Taxonomy"
 
-#: includes/post-types/class-acf-taxonomy.php:194
+#: includes/post-types/class-acf-taxonomy.php:93
 msgid "Add New Taxonomy"
 msgstr "Add New Taxonomy"
 
-#: includes/post-types/class-acf-post-type.php:556
+#: includes/post-types/class-acf-post-type.php:99
 msgid "No Post Types found in Trash"
 msgstr "No Post Types found in the bin"
 
-#: includes/post-types/class-acf-post-type.php:555
+#: includes/post-types/class-acf-post-type.php:98
 msgid "No Post Types found"
 msgstr "No Post Types found"
 
-#: includes/post-types/class-acf-post-type.php:554
+#: includes/post-types/class-acf-post-type.php:97
 msgid "Search Post Types"
 msgstr "Search Post Types"
 
-#: includes/post-types/class-acf-post-type.php:553
+#: includes/post-types/class-acf-post-type.php:96
 msgid "View Post Type"
 msgstr "View Post Type"
 
-#: includes/post-types/class-acf-post-type.php:552
+#: includes/post-types/class-acf-post-type.php:95
 msgid "New Post Type"
 msgstr "New Post Type"
 
-#: includes/post-types/class-acf-post-type.php:551
+#: includes/post-types/class-acf-post-type.php:94
 msgid "Edit Post Type"
 msgstr "Edit Post Type"
 
-#: includes/post-types/class-acf-post-type.php:550
+#: includes/post-types/class-acf-post-type.php:93
 msgid "Add New Post Type"
 msgstr "Add New Post Type"
 
-#: includes/post-types/class-acf-post-type.php:294
+#: includes/post-types/class-acf-post-type.php:338
 msgid ""
 "This post type key is already in use by another post type registered outside "
 "of ACF and cannot be used."
@@ -113,7 +113,7 @@ msgstr ""
 "This post type key is already in use by another post type registered outside "
 "of ACF and cannot be used."
 
-#: includes/post-types/class-acf-post-type.php:289
+#: includes/post-types/class-acf-post-type.php:333
 msgid ""
 "This post type key is already in use by another post type in ACF and cannot "
 "be used."
@@ -122,8 +122,8 @@ msgstr ""
 "be used."
 
 #. translators: %s a link to WordPress.org's Reserved Terms page
-#: includes/post-types/class-acf-post-type.php:268
-#: includes/post-types/class-acf-taxonomy.php:247
+#: includes/post-types/class-acf-post-type.php:312
+#: includes/post-types/class-acf-taxonomy.php:252
 msgid ""
 "This field must not be a WordPress <a href=\"%s\" target=\"_blank\">reserved "
 "term</a>."
@@ -131,15 +131,15 @@ msgstr ""
 "This field must not be a WordPress <a href=\"%s\" target=\"_blank\">reserved "
 "term</a>."
 
-#: includes/post-types/class-acf-post-type.php:262
+#: includes/post-types/class-acf-post-type.php:306
 msgid ""
-"The post type key must only contain lowercase alphanumeric characters, "
+"The post type key must only contain lower case alphanumeric characters, "
 "underscores or dashes."
 msgstr ""
-"The post type key must only contain lowercase alphanumeric characters, "
+"The post type key must only contain lower case alphanumeric characters, "
 "underscores or dashes."
 
-#: includes/post-types/class-acf-post-type.php:257
+#: includes/post-types/class-acf-post-type.php:301
 msgid "The post type key must be under 20 characters."
 msgstr "The post type key must be under 20 characters."
 
@@ -178,18 +178,18 @@ msgstr "URL"
 #: includes/fields/class-acf-field-true_false.php:27
 msgid ""
 "A toggle that allows you to pick a value of 1 or 0 (on or off, true or "
-"false, etc). Can be presented as a styilized switch or checkbox."
+"false, etc). Can be presented as a stylized switch or checkbox."
 msgstr ""
 "A toggle that allows you to pick a value of 1 or 0 (on or off, true or "
 "false, etc). Can be presented as a stylised switch or checkbox."
 
 #: includes/fields/class-acf-field-time_picker.php:27
 msgid ""
-"An interactive UI for picking a time. The date return format can be "
-"customized using this fields settings."
+"An interactive UI for picking a time. The time format can be customized "
+"using the field settings."
 msgstr ""
-"An interactive UI for picking a time. The date return format can be "
-"customised using this fields settings."
+"An interactive UI for picking a time. The time format can be customised "
+"using the field settings."
 
 #: includes/fields/class-acf-field-textarea.php:26
 msgid "A basic textarea input for storing paragraphs of text."
@@ -336,21 +336,21 @@ msgstr "A text input specifically designed for storing email addresses."
 #: includes/fields/class-acf-field-date_time_picker.php:27
 msgid ""
 "An interactive UI for picking a date and time. The date return format can be "
-"customized using this fields settings."
+"customized using the field settings."
 msgstr ""
 "An interactive UI for picking a date and time. The date return format can be "
-"customised using this field settings."
+"customised using the field settings."
 
 #: includes/fields/class-acf-field-date_picker.php:27
 msgid ""
 "An interactive UI for picking a date. The date return format can be "
-"customized using the fields settings."
+"customized using the field settings."
 msgstr ""
 "An interactive UI for picking a date. The date return format can be "
 "customised using the field settings."
 
 #: includes/fields/class-acf-field-color_picker.php:27
-msgid "An interactive UI for selecting a colour, or specifying a Hex value."
+msgid "An interactive UI for selecting a color, or specifying a Hex value."
 msgstr "An interactive UI for selecting a colour, or specifying a Hex value."
 
 #: includes/fields/class-acf-field-checkbox.php:27
@@ -669,7 +669,7 @@ msgid "A link to a tag"
 msgstr "A link to a tag"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:699
-msgid "Describes a navigation link block variation used in the block editor.."
+msgid "Describes a navigation link block variation used in the block editor."
 msgstr "Describes a navigation link block variation used in the block editor."
 
 #. translators: %s Singular form of taxonomy name
@@ -777,10 +777,10 @@ msgstr "Parent Field Description"
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:535
 msgid ""
 "The \"slug\" is the URL-friendly version of the name. It is usually all "
-"lowercase and contains only letters, numbers, and hyphens."
+"lower case and contains only letters, numbers, and hyphens."
 msgstr ""
 "The \"slug\" is the URL-friendly version of the name. It is usually all "
-"lowercase and contains only letters, numbers, and hyphens."
+"lower case and contains only letters, numbers, and hyphens."
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:533
 msgid "Describes the Slug field on the Edit Tags screen."
@@ -2237,10 +2237,10 @@ msgstr ""
 "This taxonomy could not be registered because its key is in use by another "
 "taxonomy registered by another plugin or theme."
 
-#. translators: %s number of taxonomies synchronised
+#. translators: %s number of taxonomies synchronized
 #: includes/admin/post-types/admin-taxonomies.php:304
-msgid "Taxonomy synchronised."
-msgid_plural "%s taxonomies synchronised."
+msgid "Taxonomy synchronized."
+msgid_plural "%s taxonomies synchronized."
 msgstr[0] "Taxonomy synchronised."
 msgstr[1] "%s taxonomies synchronised."
 
@@ -2269,10 +2269,10 @@ msgstr[1] "%s taxonomies activated."
 msgid "Terms"
 msgstr "Terms"
 
-#. translators: %s number of post types synchronised
+#. translators: %s number of post types synchronized
 #: includes/admin/post-types/admin-post-types.php:297
-msgid "Post type synchronised."
-msgid_plural "%s post types synchronised."
+msgid "Post type synchronized."
+msgid_plural "%s post types synchronized."
 msgstr[0] "Post type synchronised."
 msgstr[1] "%s post types synchronised."
 
@@ -2301,7 +2301,7 @@ msgstr[1] "%s post types activated."
 #: includes/admin/post-types/admin-taxonomies.php:102
 #: includes/admin/tools/class-acf-admin-tool-import.php:82
 #: includes/admin/views/acf-taxonomy/basic-settings.php:70
-#: includes/post-types/class-acf-post-type.php:547
+#: includes/post-types/class-acf-post-type.php:90
 msgid "Post Types"
 msgstr "Post Types"
 
@@ -2742,7 +2742,7 @@ msgstr "Activate this item"
 msgid "Move field group to trash?"
 msgstr "Move field group to trash?"
 
-#: acf.php:465 includes/admin/admin-internal-post-type-list.php:242
+#: acf.php:485 includes/admin/admin-internal-post-type-list.php:242
 #: includes/admin/post-types/admin-field-group.php:267
 #: includes/admin/post-types/admin-post-type.php:288
 #: includes/admin/post-types/admin-taxonomy.php:288
@@ -2754,7 +2754,7 @@ msgstr "Inactive"
 msgid "WP Engine"
 msgstr "WP Engine"
 
-#: acf.php:523
+#: acf.php:543
 msgid ""
 "Advanced Custom Fields and Advanced Custom Fields PRO should not be active "
 "at the same time. We've automatically deactivated Advanced Custom Fields PRO."
@@ -2762,7 +2762,7 @@ msgstr ""
 "Advanced Custom Fields and Advanced Custom Fields PRO should not be active "
 "at the same time. We've automatically deactivated Advanced Custom Fields PRO."
 
-#: acf.php:521
+#: acf.php:541
 msgid ""
 "Advanced Custom Fields and Advanced Custom Fields PRO should not be active "
 "at the same time. We've automatically deactivated Advanced Custom Fields."
@@ -2896,8 +2896,8 @@ msgstr "Attachments"
 #: includes/admin/post-types/admin-post-types.php:102
 #: includes/admin/post-types/admin-taxonomies.php:79
 #: includes/admin/tools/class-acf-admin-tool-import.php:93
-#: includes/post-types/class-acf-taxonomy.php:191
-#: includes/post-types/class-acf-taxonomy.php:192
+#: includes/post-types/class-acf-taxonomy.php:90
+#: includes/post-types/class-acf-taxonomy.php:91
 msgid "Taxonomies"
 msgstr "Taxonomies"
 
@@ -3720,10 +3720,10 @@ msgstr "Description"
 msgid "Sync available"
 msgstr "Sync available"
 
-#. translators: %s number of field groups synchronised
+#. translators: %s number of field groups synchronized
 #: includes/admin/post-types/admin-field-groups.php:325
-msgid "Field group synchronised."
-msgid_plural "%s field groups synchronised."
+msgid "Field group synchronized."
+msgid_plural "%s field groups synchronized."
 msgstr[0] "Field group synchronised."
 msgstr[1] "%s field groups synchronised."
 
@@ -3801,8 +3801,8 @@ msgid "Null"
 msgstr "Null"
 
 #: includes/admin/post-types/admin-field-group.php:101
-#: includes/class-acf-internal-post-type.php:738
-#: includes/post-types/class-acf-field-group.php:388
+#: includes/class-acf-internal-post-type.php:729
+#: includes/post-types/class-acf-field-group.php:345
 #: assets/build/js/acf-field-group.js:1503
 #: assets/build/js/acf-field-group.js:1808
 msgid "copy"
@@ -4940,7 +4940,7 @@ msgstr "Taxonomy"
 
 #: includes/fields/class-acf-field-relationship.php:640
 #: includes/locations/class-acf-location-post-type.php:22
-#: includes/post-types/class-acf-post-type.php:548
+#: includes/post-types/class-acf-post-type.php:91
 msgid "Post Type"
 msgstr "Post Type"
 
@@ -5429,94 +5429,93 @@ msgid "Time Picker"
 msgstr "Time Picker"
 
 #. translators: counts for inactive field groups
-#: acf.php:471
+#: acf.php:491
 msgid "Inactive <span class=\"count\">(%s)</span>"
 msgid_plural "Inactive <span class=\"count\">(%s)</span>"
 msgstr[0] "Inactive <span class=\"count\">(%s)</span>"
 msgstr[1] "Inactive <span class=\"count\">(%s)</span>"
 
-#: acf.php:412
+#: acf.php:450
 msgid "No Fields found in Trash"
 msgstr "No Fields found in bin"
 
-#: acf.php:411
+#: acf.php:449
 msgid "No Fields found"
 msgstr "No Fields found"
 
-#: acf.php:410
+#: acf.php:448
 msgid "Search Fields"
 msgstr "Search Fields"
 
-#: acf.php:409
+#: acf.php:447
 msgid "View Field"
 msgstr "View Field"
 
-#: acf.php:408 includes/admin/views/acf-field-group/fields.php:104
+#: acf.php:446 includes/admin/views/acf-field-group/fields.php:104
 msgid "New Field"
 msgstr "New Field"
 
-#: acf.php:407
+#: acf.php:445
 msgid "Edit Field"
 msgstr "Edit Field"
 
-#: acf.php:406
+#: acf.php:444
 msgid "Add New Field"
 msgstr "Add New Field"
 
-#: acf.php:404
+#: acf.php:442
 msgid "Field"
 msgstr "Field"
 
-#: acf.php:403 includes/admin/post-types/admin-field-group.php:150
+#: acf.php:441 includes/admin/post-types/admin-field-group.php:150
 #: includes/admin/post-types/admin-field-groups.php:96
 #: includes/admin/views/acf-field-group/fields.php:21
 msgid "Fields"
 msgstr "Fields"
 
-#: includes/post-types/class-acf-field-group.php:121
+#: acf.php:416
 msgid "No Field Groups found in Trash"
 msgstr "No Field Groups found in bin"
 
-#: includes/post-types/class-acf-field-group.php:120
+#: acf.php:415
 msgid "No Field Groups found"
 msgstr "No Field Groups found"
 
-#: includes/post-types/class-acf-field-group.php:119
+#: acf.php:414
 msgid "Search Field Groups"
 msgstr "Search Field Groups"
 
-#: includes/post-types/class-acf-field-group.php:118
+#: acf.php:413
 msgid "View Field Group"
 msgstr "View Field Group"
 
-#: includes/post-types/class-acf-field-group.php:117
+#: acf.php:412
 msgid "New Field Group"
 msgstr "New Field Group"
 
-#: includes/post-types/class-acf-field-group.php:116
+#: acf.php:411
 msgid "Edit Field Group"
 msgstr "Edit Field Group"
 
-#: includes/post-types/class-acf-field-group.php:115
+#: acf.php:410
 msgid "Add New Field Group"
 msgstr "Add New Field Group"
 
-#: acf.php:405 includes/admin/views/acf-post-type/advanced-settings.php:245
+#: acf.php:409 acf.php:443
+#: includes/admin/views/acf-post-type/advanced-settings.php:245
 #: includes/admin/views/acf-post-type/advanced-settings.php:247
-#: includes/post-types/class-acf-field-group.php:114
-#: includes/post-types/class-acf-post-type.php:549
-#: includes/post-types/class-acf-taxonomy.php:193
+#: includes/post-types/class-acf-post-type.php:92
+#: includes/post-types/class-acf-taxonomy.php:92
 msgid "Add New"
 msgstr "Add New"
 
-#: includes/post-types/class-acf-field-group.php:113
+#: acf.php:408
 msgid "Field Group"
 msgstr "Field Group"
 
-#: includes/admin/post-types/admin-field-groups.php:56
+#: acf.php:407 includes/admin/post-types/admin-field-groups.php:56
 #: includes/admin/post-types/admin-post-types.php:103
 #: includes/admin/post-types/admin-taxonomies.php:103
-#: includes/post-types/class-acf-field-group.php:112
 msgid "Field Groups"
 msgstr "Field Groups"
 
