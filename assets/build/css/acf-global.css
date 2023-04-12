@@ -2872,6 +2872,12 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
   width: 18px;
   height: 18px;
 }
+.acf-admin-page .acf-field-setting-type .select2-container.-acf,
+.acf-admin-page .acf-field-permalink-rewrite .select2-container.-acf,
+.acf-admin-page .acf-field-query-var .select2-container.-acf,
+.acf-admin-page .acf-field-meta-box .select2-container.-acf {
+  min-height: 40px;
+}
 .acf-admin-page .acf-field-setting-type .select2-container--default .select2-selection--single .select2-selection__rendered,
 .acf-admin-page .acf-field-permalink-rewrite .select2-container--default .select2-selection--single .select2-selection__rendered,
 .acf-admin-page .acf-field-query-var .select2-container--default .select2-selection--single .select2-selection__rendered,
@@ -2988,7 +2994,7 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
 .acf-admin-page .field-type-select-results {
   position: relative;
   top: 4px;
-  z-index: 600;
+  z-index: 1002;
   border-radius: 0 0 6px 6px;
   box-shadow: 0px 8px 24px 4px rgba(16, 24, 40, 0.12);
 }
@@ -3454,6 +3460,9 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
   display: flex;
   align-items: center;
 }
+.acf-internal-post-type .tablenav-pages.no-pages {
+  display: none;
+}
 .acf-internal-post-type .tablenav-pages .displaying-num {
   margin-top: 0;
   margin-right: 16px;
@@ -3716,10 +3725,9 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
 .acf-no-taxonomies .wp-list-table tfoot {
   display: none;
 }
-.acf-no-field-groups .no-pages,
-.acf-no-post-types .no-pages,
-.acf-no-taxonomies .no-pages {
-  display: none;
+
+.acf-internal-post-type #the-list .no-items td {
+  vertical-align: middle;
 }
 
 /*---------------------------------------------------------------------------------------------

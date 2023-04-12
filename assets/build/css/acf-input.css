@@ -668,7 +668,6 @@ html[dir=rtl] input.acf-is-prepended.acf-is-appended {
 *
 *-----------------------------------------------------------------------------*/
 .select2-container.-acf {
-  min-height: 40px;
   z-index: 1001;
   /* open */
   /* single open */

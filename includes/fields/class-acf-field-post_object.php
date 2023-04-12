@@ -146,10 +146,6 @@ if ( ! class_exists( 'acf_field_post_object' ) ) :
 
 				$args['post_status'] = acf_get_array( $field['post_status'] );
 
-			} else {
-
-				$args['post_status'] = 'publish';
-
 			}
 
 			// taxonomy
@@ -397,7 +393,7 @@ if ( ! class_exists( 'acf_field_post_object' ) ) :
 					'multiple'     => 1,
 					'ui'           => 1,
 					'allow_null'   => 1,
-					'placeholder'  => __( 'Published', 'acf' ),
+					'placeholder'  => __( 'Any post status', 'acf' ),
 				)
 			);
 

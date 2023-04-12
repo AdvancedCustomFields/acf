@@ -12,7 +12,7 @@
 # This file is distributed under the same license as Advanced Custom Fields.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-04-05T15:21:32+00:00\n"
+"PO-Revision-Date: 2023-04-12T08:53:57+00:00\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "Language: nl_NL\n"
 "MIME-Version: 1.0\n"
@@ -199,7 +199,7 @@ msgstr "Een basis tekstgebied voor het opslaan van alinea's tekst."
 #: includes/fields/class-acf-field-text.php:26
 msgid "A basic text input, useful for storing single string values."
 msgstr ""
-"Een basis tekstveld, handig voor het opslaan van een enkele string waarden."
+"Een basis tekstveld, handig voor het opslaan van een enkele string waarde."
 
 #: includes/fields/class-acf-field-taxonomy.php:30
 msgid ""
@@ -2696,7 +2696,7 @@ msgstr "Herhaler veld"
 #: includes/admin/views/acf-field-group/pro-features.php:4
 #: includes/admin/views/global/navigation.php:125
 msgid "Unlock Extra Features with ACF PRO"
-msgstr "Extra functies ontsluiten met ACF PRO"
+msgstr "Ontgrendel extra functies met ACF PRO"
 
 #: includes/admin/views/acf-field-group/options.php:271
 msgid "Delete Field Group"
@@ -3006,7 +3006,7 @@ msgstr "Importeren"
 
 #: includes/admin/admin-internal-post-type-list.php:385
 msgid "Review changes"
-msgstr "Wijzigingen beoordelen"
+msgstr "Beoordeel wijzigingen"
 
 #: includes/admin/admin-internal-post-type-list.php:361
 msgid "Located in: %s"
@@ -3027,7 +3027,7 @@ msgstr "Diverse"
 #: includes/admin/admin-internal-post-type-list.php:210
 #: includes/admin/admin-internal-post-type-list.php:468
 msgid "Sync changes"
-msgstr "Wijzigingen synchroniseren"
+msgstr "Synchroniseer wijzigingen"
 
 #: includes/admin/admin-internal-post-type-list.php:209
 msgid "Loading diff"

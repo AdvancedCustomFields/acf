@@ -32,9 +32,10 @@
       const name = $el.val();
       const $keyInput = $('.acf_slugified_key');
 
-      // render name
+      // generate field key.
       if ($keyInput.val().trim() == '') {
-        var slug = acf.applyFilters('generate_internal_post_type_name', acf.strSanitize(name), this);
+        let slug = acf.strSanitize(name.trim()).replaceAll('_', '-');
+        slug = acf.applyFilters('generate_internal_post_type_name', slug, this);
         $keyInput.val(slug.substring(0, 20));
       }
     },

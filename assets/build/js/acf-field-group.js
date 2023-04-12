@@ -1108,6 +1108,17 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
     },
     initializeFieldTypeSelect2: function () {
       if (this.fieldTypeSelect2) return;
+
+      // Support disabling via filter.
+      if (this.$fieldTypeSelect().hasClass('disable-select2')) return;
+
+      // Check for a full modern version of select2, bail loading if not found with a console warning.
+      try {
+        $.fn.select2.amd.require('select2/compat/dropdownCss');
+      } catch (err) {
+        console.warn('ACF was not able to load the full version of select2 due to a conflicting version provided by another plugin or theme taking precedence. Select2 fields may not work as expected.');
+        return;
+      }
       this.fieldTypeSelect2 = acf.newSelect2(this.$fieldTypeSelect(), {
         field: false,
         ajax: false,

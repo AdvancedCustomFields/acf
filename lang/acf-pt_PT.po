@@ -12,7 +12,7 @@
 # This file is distributed under the same license as Advanced Custom Fields.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-04-05T15:21:32+00:00\n"
+"PO-Revision-Date: 2023-04-12T08:53:57+00:00\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "Language: pt_PT\n"
 "MIME-Version: 1.0\n"
@@ -45,7 +45,7 @@ msgstr ""
 
 #: includes/post-types/class-acf-taxonomy.php:99
 msgid "No Taxonomies found in Trash"
-msgstr ""
+msgstr "Nenhuma taxonomia encontrada no lixo."
 
 #: includes/post-types/class-acf-taxonomy.php:98
 msgid "No Taxonomies found"
@@ -2144,7 +2144,7 @@ msgstr[1] ""
 #: includes/admin/views/acf-taxonomy/basic-settings.php:70
 #: includes/post-types/class-acf-post-type.php:90
 msgid "Post Types"
-msgstr ""
+msgstr "Tipos de conteúdo"
 
 #: includes/admin/post-types/admin-post-type.php:155
 #: includes/admin/post-types/admin-taxonomy.php:155
@@ -3549,8 +3549,8 @@ msgstr "Sincronização disponível"
 #: includes/admin/post-types/admin-field-groups.php:325
 msgid "Field group synchronized."
 msgid_plural "%s field groups synchronized."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Grupo de campos sincronizado."
+msgstr[1] "%s grupos de campos sincronizados."
 
 #. translators: %s number of field groups duplicated
 #: includes/admin/post-types/admin-field-groups.php:318

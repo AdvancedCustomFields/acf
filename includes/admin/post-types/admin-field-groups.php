@@ -81,11 +81,12 @@ if ( ! class_exists( 'ACF_Admin_Field_Groups' ) ) :
 		 * @return array
 		 */
 		public function admin_table_columns( $_columns ) {
-
 			// Set the "no found" label to be our custom HTML for no results.
-			global $wp_post_types;
-			$this->not_found_label                               = $wp_post_types['acf-field-group']->labels->not_found;
-			$wp_post_types['acf-field-group']->labels->not_found = $this->get_not_found_html();
+			if ( empty( acf_request_arg( 's' ) ) ) {
+				global $wp_post_types;
+				$this->not_found_label                               = $wp_post_types['acf-field-group']->labels->not_found;
+				$wp_post_types['acf-field-group']->labels->not_found = $this->get_not_found_html();
+			}
 
 			$columns = array(
 				'cb'              => $_columns['cb'],

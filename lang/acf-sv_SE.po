@@ -12,7 +12,7 @@
 # This file is distributed under the same license as Advanced Custom Fields.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-04-05T15:21:32+00:00\n"
+"PO-Revision-Date: 2023-04-12T08:53:57+00:00\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "Language: sv_SE\n"
 "MIME-Version: 1.0\n"
@@ -377,7 +377,7 @@ msgstr "Ogiltigt inläggs-ID."
 
 #: includes/ajax/class-acf-ajax-local-json-diff.php:47
 msgid "Invalid post type selected for review."
-msgstr ""
+msgstr "Ogiltig inläggstyp har valts för granskning."
 
 #: includes/admin/views/global/navigation.php:104
 msgid "More"
@@ -579,7 +579,7 @@ msgstr "Metaruta för kategorier"
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:741
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:762
 msgid "Tags Meta Box"
-msgstr ""
+msgstr "Metaruta för etiketter"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:700
 msgid "A link to a tag"
@@ -631,7 +631,7 @@ msgstr ""
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:618
 msgid "Tags list navigation"
-msgstr ""
+msgstr "Navigation för etikettlista"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:617
 msgid "Assigns text to the table pagination hidden heading."
@@ -710,7 +710,7 @@ msgstr ""
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:516
 msgid "Name Field Description"
-msgstr ""
+msgstr "Beskrivning av namnfält"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:503
 msgid "No tags"
@@ -951,7 +951,7 @@ msgstr ""
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:91
 msgid "A descriptive summary of the term."
-msgstr ""
+msgstr "En beskrivande sammanfattning av termen."
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:90
 msgid "Term Description"
@@ -959,7 +959,7 @@ msgstr "Termbeskrivning"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:72
 msgid "Single word, no spaces. Underscores and dashes allowed."
-msgstr ""
+msgstr "Enstaka ord, inga mellanslag. Understreck och bindestreck tillåtna."
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:71
 msgid "Term Slug"
@@ -967,7 +967,7 @@ msgstr "Termens slug"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:52
 msgid "The name of the default term."
-msgstr ""
+msgstr "Standardtermens namn."
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:51
 msgid "Term Name"
@@ -1094,7 +1094,7 @@ msgstr ""
 #: includes/admin/views/acf-post-type/advanced-settings.php:1241
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:1089
 msgid "Base URL"
-msgstr ""
+msgstr "Bas-URL"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:1227
 msgid ""
@@ -1108,12 +1108,12 @@ msgstr "Visa i REST API"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:1205
 msgid "Customize the query variable name."
-msgstr ""
+msgstr "Anpassa namnet på ”query”-variabeln."
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:1204
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:1050
 msgid "Query Variable"
-msgstr ""
+msgstr "”Query”-variabel"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:1182
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:1028
@@ -1148,7 +1148,7 @@ msgstr "Publikt sökbar"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:1130
 msgid "Custom slug for the Archive URL."
-msgstr ""
+msgstr "Anpassad slug för arkiv-URL:en."
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:1129
 msgid "Archive Slug"
@@ -1203,7 +1203,7 @@ msgstr "URL-slug"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:1021
 msgid "Permalinks for this post type are disabled."
-msgstr ""
+msgstr "Permalänkar för denna inläggstyp är inaktiverade."
 
 #. translators: this string will be appended with the new permalink structure.
 #: includes/admin/views/acf-post-type/advanced-settings.php:1020
@@ -1216,7 +1216,7 @@ msgstr ""
 #: includes/admin/views/acf-post-type/advanced-settings.php:1012
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:911
 msgid "No Permalink (prevent URL rewriting)"
-msgstr ""
+msgstr "Ingen permalänk (förhindra URL-omskrivning)"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:1011
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:910
@@ -1311,7 +1311,7 @@ msgstr ""
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:862
 msgid "Show In Admin Bar"
-msgstr ""
+msgstr "Visa i adminmeny"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:831
 msgid ""
@@ -1394,7 +1394,7 @@ msgstr ""
 #. translators: %s Singular form of post type name
 #: includes/admin/views/acf-post-type/advanced-settings.php:709
 msgid "A link to a %s."
-msgstr ""
+msgstr "En länk till en/ett %s."
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:694
 msgid "Post Link"
@@ -1431,11 +1431,11 @@ msgstr "Objekt uppdaterat"
 #. translators: %s Singular form of post type name
 #: includes/admin/views/acf-post-type/advanced-settings.php:669
 msgid "%s updated."
-msgstr ""
+msgstr "%s har uppdaterats."
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:654
 msgid "Post scheduled."
-msgstr ""
+msgstr "Inlägget har schemalagts."
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:653
 msgid "In the editor notice after scheduling an item."
@@ -1460,7 +1460,7 @@ msgstr ""
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:632
 msgid "Item Reverted To Draft"
-msgstr ""
+msgstr "Objekt återställt till utkast"
 
 #. translators: %s Singular form of post type name
 #: includes/admin/views/acf-post-type/advanced-settings.php:629
@@ -1534,7 +1534,7 @@ msgstr ""
 #: includes/admin/views/acf-post-type/advanced-settings.php:552
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:616
 msgid "Items List Navigation"
-msgstr ""
+msgstr "Navigation för objektlista"
 
 #. translators: %s Plural form of post type name
 #. translators: %s Plural form of taxonomy name
@@ -1555,7 +1555,7 @@ msgstr ""
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:531
 msgid "Filter Items By Date"
-msgstr ""
+msgstr "Filtrera objekt efter datum"
 
 #. translators: %s Plural form of post type name
 #: includes/admin/views/acf-post-type/advanced-settings.php:527
@@ -1574,7 +1574,7 @@ msgstr ""
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:510
 msgid "Filter Items List"
-msgstr ""
+msgstr "Filtrera lista med objekt"
 
 #. translators: %s Plural form of post type name
 #: includes/admin/views/acf-post-type/advanced-settings.php:506
@@ -1587,7 +1587,7 @@ msgstr ""
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:489
 msgid "Uploaded To This Item"
-msgstr ""
+msgstr "Uppladdat till detta objekt"
 
 #. translators: %s Singular form of post type name
 #: includes/admin/views/acf-post-type/advanced-settings.php:485
@@ -1596,7 +1596,7 @@ msgstr ""
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:470
 msgid "Insert into post"
-msgstr ""
+msgstr "Infoga i inlägg"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:469
 msgid "As the button label when adding media to content."
@@ -1609,11 +1609,11 @@ msgstr ""
 #. translators: %s Singular form of post type name
 #: includes/admin/views/acf-post-type/advanced-settings.php:464
 msgid "Insert into %s"
-msgstr ""
+msgstr "Infoga i %s"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:449
 msgid "Use as featured image"
-msgstr ""
+msgstr "Använd som utvald bild"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:448
 msgid ""
@@ -1622,11 +1622,11 @@ msgstr ""
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:447
 msgid "Use Featured Image"
-msgstr ""
+msgstr "Använd utvald bild"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:434
 msgid "Remove featured image"
-msgstr ""
+msgstr "Ta bort utvald bild"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:433
 msgid "As the button label when removing the featured image."
@@ -1634,7 +1634,7 @@ msgstr ""
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:432
 msgid "Remove Featured Image"
-msgstr ""
+msgstr "Ta bort utvald bild"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:419
 msgid "Set featured image"
@@ -1658,7 +1658,7 @@ msgstr ""
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:402
 msgid "Featured Image Meta Box"
-msgstr ""
+msgstr "Metaruta för utvald bild"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:389
 msgid "Post Attributes"
@@ -1670,12 +1670,12 @@ msgstr ""
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:387
 msgid "Attributes Meta Box"
-msgstr ""
+msgstr "Metaruta för attribut"
 
 #. translators: %s Singular form of post type name
 #: includes/admin/views/acf-post-type/advanced-settings.php:384
 msgid "%s Attributes"
-msgstr ""
+msgstr "Attribut för %s"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:369
 msgid "Post Archives"
@@ -1696,11 +1696,11 @@ msgstr ""
 #. translators: %s Singular form of post type name
 #: includes/admin/views/acf-post-type/advanced-settings.php:364
 msgid "%s Archives"
-msgstr ""
+msgstr "Arkiv för %s"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:349
 msgid "No posts found in Trash"
-msgstr ""
+msgstr "Inga inlägg hittades i papperskorgen"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:348
 msgid ""
@@ -1754,7 +1754,7 @@ msgstr "Sök objekt"
 #: includes/admin/views/acf-post-type/advanced-settings.php:302
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:338
 msgid "Search %s"
-msgstr ""
+msgstr "Sök efter %s"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:287
 msgid "Parent Page:"
@@ -1906,7 +1906,7 @@ msgstr "Återskapa"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:105
 msgid "Active post types are enabled and registered with WordPress."
-msgstr ""
+msgstr "Aktiva inläggstyper är aktiverade och registrerade med WordPress."
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:89
 msgid "A descriptive summary of the post type."
@@ -1926,7 +1926,7 @@ msgstr "Inläggsformat"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:51
 msgid "Editor"
-msgstr ""
+msgstr "Redigerare"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:50
 msgid "Trackbacks"
@@ -1987,7 +1987,7 @@ msgstr ""
 #: includes/admin/tools/class-acf-admin-tool-import.php:111
 #: includes/admin/tools/class-acf-admin-tool-import.php:127
 msgid "Import from Custom Post Type UI"
-msgstr ""
+msgstr "Importera från Custom Post Type UI"
 
 #: includes/admin/tools/class-acf-admin-tool-export.php:390
 msgid ""
@@ -2040,16 +2040,16 @@ msgstr "Skapa ny inläggstyp"
 #. translators: %s taxonomy name
 #: includes/admin/post-types/admin-taxonomy.php:82
 msgid "%s taxonomy created"
-msgstr ""
+msgstr "Taxonomin %s skapades"
 
 #. translators: %s taxonomy name
 #: includes/admin/post-types/admin-taxonomy.php:76
 msgid "%s taxonomy updated"
-msgstr ""
+msgstr "Taxonomin %s uppdaterad"
 
 #: includes/admin/post-types/admin-taxonomy.php:56
 msgid "Taxonomy draft updated."
-msgstr ""
+msgstr "Taxonomiutkast uppdaterat."
 
 #: includes/admin/post-types/admin-taxonomy.php:55
 msgid "Taxonomy scheduled for."
@@ -2057,19 +2057,19 @@ msgstr ""
 
 #: includes/admin/post-types/admin-taxonomy.php:54
 msgid "Taxonomy submitted."
-msgstr ""
+msgstr "Taxonomi inskickad."
 
 #: includes/admin/post-types/admin-taxonomy.php:53
 msgid "Taxonomy saved."
-msgstr ""
+msgstr "Taxonomi sparad."
 
 #: includes/admin/post-types/admin-taxonomy.php:49
 msgid "Taxonomy deleted."
-msgstr ""
+msgstr "Taxonomi borttagen."
 
 #: includes/admin/post-types/admin-taxonomy.php:48
 msgid "Taxonomy updated."
-msgstr ""
+msgstr "Taxonomi uppdaterad."
 
 #: includes/admin/post-types/admin-taxonomies.php:322
 #: includes/admin/post-types/admin-taxonomy.php:148
@@ -2082,8 +2082,8 @@ msgstr ""
 #: includes/admin/post-types/admin-taxonomies.php:304
 msgid "Taxonomy synchronized."
 msgid_plural "%s taxonomies synchronized."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Taxonomi synkroniserad."
+msgstr[1] "%s taxonomier synkroniserade."
 
 #. translators: %s number of taxonomies duplicated
 #: includes/admin/post-types/admin-taxonomies.php:297
@@ -2181,7 +2181,7 @@ msgstr "Länka befintliga fältgrupper"
 #. translators: %s post type name
 #: includes/admin/post-types/admin-post-type.php:82
 msgid "%s post type created"
-msgstr ""
+msgstr "Inläggstypen %s skapad"
 
 #. translators: %s post type name
 #. translators: %s taxonomy name
@@ -2193,11 +2193,11 @@ msgstr "Lägg till fält till %s"
 #. translators: %s post type name
 #: includes/admin/post-types/admin-post-type.php:76
 msgid "%s post type updated"
-msgstr ""
+msgstr "Inläggstypen %s uppdaterad"
 
 #: includes/admin/post-types/admin-post-type.php:56
 msgid "Post type draft updated."
-msgstr ""
+msgstr "Utkast för inläggstyp uppdaterat."
 
 #: includes/admin/post-types/admin-post-type.php:55
 msgid "Post type scheduled for."
@@ -2260,7 +2260,7 @@ msgstr "inläggstyp"
 #. "taxonomy".
 #: includes/admin/admin-internal-post-type.php:336
 msgid "Link %1$s %2$s to field groups"
-msgstr ""
+msgstr "Länka %1$s (%2$s) till fältgrupper"
 
 #: includes/admin/admin-internal-post-type.php:329
 msgid "Done"
@@ -2281,8 +2281,8 @@ msgstr "Välj de fältgrupper som ska länkas."
 #: includes/admin/admin-internal-post-type.php:278
 msgid "Field group linked successfully."
 msgid_plural "Field groups linked successfully."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Fältgrupp har länkats."
+msgstr[1] "Fältgrupper har länkats."
 
 #: includes/admin/admin-internal-post-type-list.php:255
 #: includes/admin/post-types/admin-post-types.php:316
@@ -2596,12 +2596,16 @@ msgid ""
 "Advanced Custom Fields and Advanced Custom Fields PRO should not be active "
 "at the same time. We've automatically deactivated Advanced Custom Fields PRO."
 msgstr ""
+"Advanced Custom Fields och Advanced Custom Fields PRO ska inte vara aktiva "
+"samtidigt. Vi har inaktiverat Advanced Custom Fields PRO automatiskt."
 
 #: acf.php:541
 msgid ""
 "Advanced Custom Fields and Advanced Custom Fields PRO should not be active "
 "at the same time. We've automatically deactivated Advanced Custom Fields."
 msgstr ""
+"Advanced Custom Fields och Advanced Custom Fields PRO ska inte vara aktiva "
+"samtidigt. Vi har inaktiverat Advanced Custom Fields automatiskt."
 
 #: includes/acf-value-functions.php:374
 msgid ""
@@ -2749,7 +2753,7 @@ msgstr "Senast uppdaterad: %s"
 
 #: includes/ajax/class-acf-ajax-local-json-diff.php:70
 msgid "Sorry, this post is unavailable for diff comparison."
-msgstr ""
+msgstr "Detta inlägg är inte tillgängligt för diff-jämförelse."
 
 #: includes/ajax/class-acf-ajax-local-json-diff.php:42
 msgid "Invalid field group parameter(s)."
@@ -3463,6 +3467,10 @@ msgid ""
 "to another ACF installation. Generate PHP to export to PHP code which you "
 "can place in your theme."
 msgstr ""
+"Välj vilka objekt du vill exportera och sedan exportmetod. ”Exportera som "
+"JSON” för att exportera till en .json-fil som du sedan kan importera till "
+"någon annan ACF-installation. ”Generera PHP” för att exportera PHP kod som "
+"du kan lägga till i ditt tema."
 
 #: includes/admin/tools/class-acf-admin-tool-export.php:233
 msgid "Select Field Groups"
