@@ -570,7 +570,7 @@ msgstr "Herhalen"
 #: pro/fields/class-acf-field-repeater.php:53,
 #: pro/fields/class-acf-field-repeater.php:423
 msgid "Minimum rows reached ({min} rows)"
-msgstr "Minimum aantal rijen bereikt ({max} rijen)"
+msgstr "Minimum aantal rijen bereikt ({min} rijen)"
 
 #: pro/fields/class-acf-field-repeater.php:54
 msgid "Maximum rows reached ({max} rows)"
