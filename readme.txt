@@ -4,7 +4,7 @@ Tags: acf, fields, custom fields, meta, repeater
 Requires at least: 4.7
 Tested up to: 6.2
 Requires PHP: 5.6
-Stable tag: 6.1.4
+Stable tag: 6.1.5
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -91,6 +91,27 @@ From your WordPress dashboard
 
 
 == Changelog ==
+
+= 6.1.5 =
+*Release Date 2nd May 2023*
+
+* Enhancement - Creating a new field group from the post-save actions for a post type or taxonomy will automatically populate the field group title
+* Enhancement - Empty values in list tables now display as a dash, rather than blank
+* Enhancement - The `Generate PHP` export tool for field groups now displays the code wrapped in the `acf/include_fields` action hook to match the recommended way of using `acf_add_local_field_group`, and the code is formatted correctly
+* Enhancement - Post count and Term count values in list tables now link through to the matching posts or terms
+* Enhancement - Added post-save actions to post type and taxonomies to create another
+* Enhancement - Selecting existing taxonomies when registering a Custom Post Type is now available in the Basic settings section rather than Advanced
+* Fix - `Exclude From Search` setting for custom post types now behaves correctly
+* Fix - Duplicating fields with sub fields no longer results in JS errors
+* Fix - Select2 field settings now render correctly when duplicating fields
+* Fix - Checkbox fields allowing custom values which use integer keys can now be updated over the REST API
+* Fix - Using the `No Permalink` rewrite setting for post type will no longer generate PHP warnings
+* Fix - The `minimum rows not met` validation message for the Repeater field type now correctly states the minimum rows are not met
+* Fix - The Range field type no longer cuts off three digit values
+* Fix - `Created on` and `Delete Field Group` now correctly only appear on the Group Settings tab of a field group
+* Fix - Padding for field settings tabs is now correct
+* i18n - Updated all PRO translation files, removing legacy free strings which are now handled through [translate.wordpress.org](https://translate.wordpress.org/projects/wp-plugins/advanced-custom-fields/stable/)
+* i18n - Updated PRO translations with the latest contributions from [GitHub](https://github.com/AdvancedCustomFields/acf/tree/master/lang/pro) (Thanks to @MilenDalchev, @Xilonz and @wiliamjk)
 
 = 6.1.4 =
 *Release Date 12th April 2023*

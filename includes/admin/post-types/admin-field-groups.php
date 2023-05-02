@@ -125,8 +125,11 @@ if ( ! class_exists( 'ACF_Admin_Field_Groups' ) ) :
 
 				// Description.
 				case 'acf-description':
-					if ( $post['description'] ) {
+					if ( is_string( $post['description'] ) && ! empty( $post['description'] ) ) {
 						echo '<span class="acf-description">' . acf_esc_html( $post['description'] ) . '</span>';
+					} else {
+						echo '<span class="acf-emdash" aria-hidden="true">—</span>';
+						echo '<span class="screen-reader-text">' . esc_html__( 'No description', 'acf' ) . '</span>';
 					}
 					break;
 
@@ -137,7 +140,7 @@ if ( ! class_exists( 'ACF_Admin_Field_Groups' ) ) :
 
 				// Count.
 				case 'acf-count':
-					echo esc_html( acf_get_field_count( $post ) );
+					$this->render_admin_table_column_num_fields( $post );
 					break;
 
 				// Local JSON.
@@ -238,6 +241,36 @@ if ( ! class_exists( 'ACF_Admin_Field_Groups' ) ) :
 
 			// Filter.
 			echo acf_esc_html( $html );
+		}
+
+		/**
+		 * Renders the number of fields created for the field group in the list table.
+		 *
+		 * @since 6.1.5
+		 *
+		 * @param array $field_group The main field group array.
+		 * @return void
+		 */
+		public function render_admin_table_column_num_fields( $field_group ) {
+			$field_count = acf_get_field_count( $field_group );
+
+			if ( ! $field_count || ! is_numeric( $field_count ) ) {
+				echo '<span class="acf-emdash" aria-hidden="true">—</span>';
+				echo '<span class="screen-reader-text">' . esc_html__( 'No fields', 'acf' ) . '</span>';
+				return;
+			}
+
+			// If in JSON but not synced or in trash, the link won't work.
+			if ( empty( $field_group['ID'] ) || 'trash' === get_post_status( $field_group['ID'] ) ) {
+				echo esc_html( number_format_i18n( $field_count ) );
+				return;
+			}
+
+			printf(
+				'<a href="%s">%s</a>',
+				esc_url( admin_url( 'post.php?action=edit&post=' . $field_group['ID'] ) ),
+				esc_html( number_format_i18n( $field_count ) )
+			);
 		}
 
 		/**

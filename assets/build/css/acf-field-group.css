@@ -1932,11 +1932,11 @@ html[dir=rtl] .acf-field-object.open > .handle {
   border-bottom-width: 3px;
 }
 
-.acf-field-editor .acf-field-settings-tab-bar {
+.acf-admin-page.acf-internal-post-type .acf-field-editor .acf-field-settings-tab-bar {
   padding-left: 72px;
 }
 @media screen and (max-width: 600px) {
-  .acf-field-editor .acf-field-settings-tab-bar {
+  .acf-admin-page.acf-internal-post-type .acf-field-editor .acf-field-settings-tab-bar {
     padding-left: 12px;
   }
 }
@@ -2435,8 +2435,9 @@ html[dir=rtl] .acf-field-object.open > .handle {
   min-height: 88px;
   margin-right: -24px;
   margin-left: -24px;
-  padding-right: 48px;
-  padding-left: 48px;
+  margin-bottom: -24px;
+  padding-right: 24px;
+  padding-left: 24px;
   border-top-width: 1px;
   border-top-style: solid;
   border-top-color: #EAECF0;

@@ -12,7 +12,7 @@
 # This file is distributed under the same license as Advanced Custom Fields.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-04-12T08:53:57+00:00\n"
+"PO-Revision-Date: 2023-05-02T13:21:43+00:00\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
@@ -20,6 +20,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: gettext\n"
 "Project-Id-Version: Advanced Custom Fields\n"
+
+#: includes/fields/class-acf-field-page_link.php:484
+#: includes/fields/class-acf-field-post_object.php:396
+#: includes/fields/class-acf-field-relationship.php:608
+msgid "Any post status"
+msgstr ""
 
 #: includes/post-types/class-acf-taxonomy.php:278
 msgid ""
@@ -222,15 +228,9 @@ msgstr ""
 msgid "An input for providing a password using a masked field."
 msgstr ""
 
-#: includes/fields/class-acf-field-page_link.php:488
-#: includes/fields/class-acf-field-post_object.php:400
-#: includes/fields/class-acf-field-relationship.php:612
-msgid "Published"
-msgstr ""
-
-#: includes/fields/class-acf-field-page_link.php:480
-#: includes/fields/class-acf-field-post_object.php:392
-#: includes/fields/class-acf-field-relationship.php:604
+#: includes/fields/class-acf-field-page_link.php:476
+#: includes/fields/class-acf-field-post_object.php:388
+#: includes/fields/class-acf-field-relationship.php:600
 msgid "Filter by Post Status"
 msgstr ""
 
@@ -1940,7 +1940,7 @@ msgstr ""
 msgid "Linked Taxonomies"
 msgstr ""
 
-#: includes/admin/views/acf-field-group/field.php:137
+#: includes/admin/views/acf-field-group/field.php:141
 msgid "Browse Fields"
 msgstr ""
 
@@ -2025,14 +2025,14 @@ msgstr[1] ""
 msgstr[2] ""
 
 #: includes/admin/post-types/admin-taxonomy.php:120
-#: assets/build/js/acf-internal-post-type.js:140
-#: assets/build/js/acf-internal-post-type.js:190
+#: assets/build/js/acf-internal-post-type.js:141
+#: assets/build/js/acf-internal-post-type.js:198
 msgid "Category"
 msgstr ""
 
 #: includes/admin/post-types/admin-taxonomy.php:118
-#: assets/build/js/acf-internal-post-type.js:137
-#: assets/build/js/acf-internal-post-type.js:187
+#: assets/build/js/acf-internal-post-type.js:138
+#: assets/build/js/acf-internal-post-type.js:195
 msgid "Tag"
 msgstr ""
 
@@ -2074,7 +2074,7 @@ msgstr ""
 msgid "Taxonomy updated."
 msgstr ""
 
-#: includes/admin/post-types/admin-taxonomies.php:322
+#: includes/admin/post-types/admin-taxonomies.php:324
 #: includes/admin/post-types/admin-taxonomy.php:148
 msgid ""
 "This taxonomy could not be registered because its key is in use by another "
@@ -2082,7 +2082,7 @@ msgid ""
 msgstr ""
 
 #. translators: %s number of taxonomies synchronized
-#: includes/admin/post-types/admin-taxonomies.php:304
+#: includes/admin/post-types/admin-taxonomies.php:306
 msgid "Taxonomy synchronized."
 msgid_plural "%s taxonomies synchronized."
 msgstr[0] ""
@@ -2090,7 +2090,7 @@ msgstr[1] ""
 msgstr[2] ""
 
 #. translators: %s number of taxonomies duplicated
-#: includes/admin/post-types/admin-taxonomies.php:297
+#: includes/admin/post-types/admin-taxonomies.php:299
 msgid "Taxonomy duplicated."
 msgid_plural "%s taxonomies duplicated."
 msgstr[0] ""
@@ -2098,7 +2098,7 @@ msgstr[1] ""
 msgstr[2] ""
 
 #. translators: %s number of taxonomies deactivated
-#: includes/admin/post-types/admin-taxonomies.php:290
+#: includes/admin/post-types/admin-taxonomies.php:292
 msgid "Taxonomy deactivated."
 msgid_plural "%s taxonomies deactivated."
 msgstr[0] ""
@@ -2106,19 +2106,19 @@ msgstr[1] ""
 msgstr[2] ""
 
 #. translators: %s number of taxonomies activated
-#: includes/admin/post-types/admin-taxonomies.php:283
+#: includes/admin/post-types/admin-taxonomies.php:285
 msgid "Taxonomy activated."
 msgid_plural "%s taxonomies activated."
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: includes/admin/post-types/admin-taxonomies.php:104
+#: includes/admin/post-types/admin-taxonomies.php:106
 msgid "Terms"
 msgstr ""
 
 #. translators: %s number of post types synchronized
-#: includes/admin/post-types/admin-post-types.php:297
+#: includes/admin/post-types/admin-post-types.php:299
 msgid "Post type synchronized."
 msgid_plural "%s post types synchronized."
 msgstr[0] ""
@@ -2126,7 +2126,7 @@ msgstr[1] ""
 msgstr[2] ""
 
 #. translators: %s number of post types duplicated
-#: includes/admin/post-types/admin-post-types.php:290
+#: includes/admin/post-types/admin-post-types.php:292
 msgid "Post type duplicated."
 msgid_plural "%s post types duplicated."
 msgstr[0] ""
@@ -2134,7 +2134,7 @@ msgstr[1] ""
 msgstr[2] ""
 
 #. translators: %s number of post types deactivated
-#: includes/admin/post-types/admin-post-types.php:283
+#: includes/admin/post-types/admin-post-types.php:285
 msgid "Post type deactivated."
 msgid_plural "%s post types deactivated."
 msgstr[0] ""
@@ -2142,7 +2142,7 @@ msgstr[1] ""
 msgstr[2] ""
 
 #. translators: %s number of post types activated
-#: includes/admin/post-types/admin-post-types.php:276
+#: includes/admin/post-types/admin-post-types.php:278
 msgid "Post type activated."
 msgid_plural "%s post types activated."
 msgstr[0] ""
@@ -2150,7 +2150,7 @@ msgstr[1] ""
 msgstr[2] ""
 
 #: includes/admin/post-types/admin-post-types.php:79
-#: includes/admin/post-types/admin-taxonomies.php:102
+#: includes/admin/post-types/admin-taxonomies.php:104
 #: includes/admin/tools/class-acf-admin-tool-import.php:82
 #: includes/admin/views/acf-taxonomy/basic-settings.php:70
 #: includes/post-types/class-acf-post-type.php:90
@@ -2168,15 +2168,15 @@ msgid "Basic Settings"
 msgstr ""
 
 #: includes/admin/post-types/admin-post-type.php:148
-#: includes/admin/post-types/admin-post-types.php:315
+#: includes/admin/post-types/admin-post-types.php:317
 msgid ""
 "This post type could not be registered because its key is in use by another "
 "post type registered by another plugin or theme."
 msgstr ""
 
 #: includes/admin/post-types/admin-post-type.php:121
-#: assets/build/js/acf-internal-post-type.js:134
-#: assets/build/js/acf-internal-post-type.js:184
+#: assets/build/js/acf-internal-post-type.js:135
+#: assets/build/js/acf-internal-post-type.js:192
 msgid "Pages"
 msgstr ""
 
@@ -2231,20 +2231,20 @@ msgid "Post type deleted."
 msgstr ""
 
 #: includes/admin/post-types/admin-field-group.php:120
-#: assets/build/js/acf-field-group.js:1135
-#: assets/build/js/acf-field-group.js:1353
+#: assets/build/js/acf-field-group.js:1146
+#: assets/build/js/acf-field-group.js:1366
 msgid "Type to search..."
 msgstr ""
 
 #: includes/admin/post-types/admin-field-group.php:105
-#: assets/build/js/acf-field-group.js:1161
-#: assets/build/js/acf-field-group.js:1401
+#: assets/build/js/acf-field-group.js:1172
+#: assets/build/js/acf-field-group.js:1414
 msgid "PRO Only"
 msgstr ""
 
 #: includes/admin/post-types/admin-field-group.php:97
-#: assets/build/js/acf-internal-post-type.js:266
-#: assets/build/js/acf-internal-post-type.js:351
+#: assets/build/js/acf-internal-post-type.js:267
+#: assets/build/js/acf-internal-post-type.js:359
 msgid "Field groups linked successfully."
 msgstr ""
 
@@ -2297,8 +2297,8 @@ msgstr[1] ""
 msgstr[2] ""
 
 #: includes/admin/admin-internal-post-type-list.php:255
-#: includes/admin/post-types/admin-post-types.php:316
-#: includes/admin/post-types/admin-taxonomies.php:323
+#: includes/admin/post-types/admin-post-types.php:318
+#: includes/admin/post-types/admin-taxonomies.php:325
 msgctxt "post status"
 msgid "Registration Failed"
 msgstr ""
@@ -2353,8 +2353,8 @@ msgid "Close Modal"
 msgstr ""
 
 #: includes/admin/post-types/admin-field-group.php:96
-#: assets/build/js/acf-field-group.js:1649
-#: assets/build/js/acf-field-group.js:1966
+#: assets/build/js/acf-field-group.js:1660
+#: assets/build/js/acf-field-group.js:1979
 msgid "Field moved to other group"
 msgstr ""
 
@@ -2543,7 +2543,7 @@ msgid "Export As JSON"
 msgstr ""
 
 #. translators: %s number of field groups deactivated
-#: includes/admin/post-types/admin-field-groups.php:311
+#: includes/admin/post-types/admin-field-groups.php:312
 msgid "Field group deactivated."
 msgid_plural "%s field groups deactivated."
 msgstr[0] ""
@@ -2551,7 +2551,7 @@ msgstr[1] ""
 msgstr[2] ""
 
 #. translators: %s number of field groups activated
-#: includes/admin/post-types/admin-field-groups.php:304
+#: includes/admin/post-types/admin-field-groups.php:305
 msgid "Field group activated."
 msgid_plural "%s field groups activated."
 msgstr[0] ""
@@ -2577,8 +2577,8 @@ msgid "Activate this item"
 msgstr ""
 
 #: includes/admin/post-types/admin-field-group.php:92
-#: assets/build/js/acf-field-group.js:2709
-#: assets/build/js/acf-field-group.js:3135
+#: assets/build/js/acf-field-group.js:2720
+#: assets/build/js/acf-field-group.js:3148
 msgid "Move field group to trash?"
 msgstr ""
 
@@ -2633,21 +2633,21 @@ msgstr ""
 msgid "%1$s is not one of %2$s"
 msgstr ""
 
-#: includes/fields/class-acf-field-post_object.php:702
+#: includes/fields/class-acf-field-post_object.php:698
 msgid "%1$s must have term %2$s."
 msgid_plural "%1$s must have one of the following terms: %2$s"
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: includes/fields/class-acf-field-post_object.php:686
+#: includes/fields/class-acf-field-post_object.php:682
 msgid "%1$s must be of post type %2$s."
 msgid_plural "%1$s must be of one of the following post types: %2$s"
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: includes/fields/class-acf-field-post_object.php:677
+#: includes/fields/class-acf-field-post_object.php:673
 msgid "%1$s must have a valid post ID."
 msgstr ""
 
@@ -2728,7 +2728,7 @@ msgid "Attachments"
 msgstr ""
 
 #: includes/acf-wp-functions.php:54
-#: includes/admin/post-types/admin-post-types.php:102
+#: includes/admin/post-types/admin-post-types.php:104
 #: includes/admin/post-types/admin-taxonomies.php:79
 #: includes/admin/tools/class-acf-admin-tool-import.php:93
 #: includes/post-types/class-acf-taxonomy.php:90
@@ -2738,10 +2738,10 @@ msgstr ""
 
 #: includes/acf-wp-functions.php:41
 #: includes/admin/post-types/admin-post-type.php:119
-#: includes/admin/post-types/admin-post-types.php:104
+#: includes/admin/post-types/admin-post-types.php:106
 #: includes/admin/views/acf-post-type/advanced-settings.php:132
-#: assets/build/js/acf-internal-post-type.js:131
-#: assets/build/js/acf-internal-post-type.js:181
+#: assets/build/js/acf-internal-post-type.js:132
+#: assets/build/js/acf-internal-post-type.js:189
 msgid "Posts"
 msgstr ""
 
@@ -2786,7 +2786,7 @@ msgstr ""
 msgid "Located in theme: %s"
 msgstr ""
 
-#: includes/admin/post-types/admin-field-groups.php:235
+#: includes/admin/post-types/admin-field-groups.php:236
 msgid "Various"
 msgstr ""
 
@@ -3048,9 +3048,9 @@ msgstr "Uvjet za prikaz"
 msgid "and"
 msgstr "i"
 
-#: includes/admin/post-types/admin-field-groups.php:100
-#: includes/admin/post-types/admin-post-types.php:108
-#: includes/admin/post-types/admin-taxonomies.php:108
+#: includes/admin/post-types/admin-field-groups.php:101
+#: includes/admin/post-types/admin-post-types.php:110
+#: includes/admin/post-types/admin-taxonomies.php:110
 msgid "Local JSON"
 msgstr "Učitavanje polja iz JSON datoteke"
 
@@ -3119,15 +3119,15 @@ msgstr "Pošalji povratnu vezu"
 #: includes/admin/post-types/admin-taxonomy.php:119
 #: includes/admin/views/acf-field-group/options.php:177
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:155
-#: assets/build/js/acf-internal-post-type.js:138
-#: assets/build/js/acf-internal-post-type.js:188
+#: assets/build/js/acf-internal-post-type.js:139
+#: assets/build/js/acf-internal-post-type.js:196
 msgid "Tags"
 msgstr "Oznake"
 
 #: includes/admin/post-types/admin-taxonomy.php:121
 #: includes/admin/views/acf-field-group/options.php:176
-#: assets/build/js/acf-internal-post-type.js:141
-#: assets/build/js/acf-internal-post-type.js:191
+#: assets/build/js/acf-internal-post-type.js:142
+#: assets/build/js/acf-internal-post-type.js:199
 msgid "Categories"
 msgstr "Kategorije"
 
@@ -3221,9 +3221,9 @@ msgstr "Visoko (nakon naslova)"
 msgid "Position"
 msgstr "Pozicija"
 
-#: includes/admin/views/field-group-options.php:52
+#: includes/admin/views/acf-field-group/options.php:86
 msgid "Seamless (no metabox)"
-msgstr "Bez"
+msgstr ""
 
 #: includes/admin/views/acf-field-group/options.php:85
 msgid "Standard (WP metabox)"
@@ -3237,9 +3237,9 @@ msgstr "Stil"
 msgid "Type"
 msgstr "Tip"
 
-#: includes/admin/post-types/admin-field-groups.php:94
-#: includes/admin/post-types/admin-post-types.php:101
-#: includes/admin/post-types/admin-taxonomies.php:101
+#: includes/admin/post-types/admin-field-groups.php:95
+#: includes/admin/post-types/admin-post-types.php:103
+#: includes/admin/post-types/admin-taxonomies.php:103
 #: includes/admin/views/acf-field-group/fields.php:43
 msgid "Key"
 msgstr "Ključ"
@@ -3250,55 +3250,55 @@ msgstr "Ključ"
 msgid "Order"
 msgstr "Redni broj"
 
-#: includes/admin/views/acf-field-group/field.php:314
+#: includes/admin/views/acf-field-group/field.php:318
 msgid "Close Field"
 msgstr "Zatvori polje"
 
-#: includes/admin/views/acf-field-group/field.php:245
+#: includes/admin/views/acf-field-group/field.php:249
 msgid "id"
 msgstr "id"
 
-#: includes/admin/views/acf-field-group/field.php:229
+#: includes/admin/views/acf-field-group/field.php:233
 msgid "class"
 msgstr "klasa"
 
-#: includes/admin/views/acf-field-group/field.php:271
+#: includes/admin/views/acf-field-group/field.php:275
 msgid "width"
 msgstr "širina"
 
-#: includes/admin/views/acf-field-group/field.php:265
+#: includes/admin/views/acf-field-group/field.php:269
 msgid "Wrapper Attributes"
 msgstr "Značajke prethodnog elementa"
 
-#: includes/admin/views/acf-field-group/field.php:188
+#: includes/admin/views/acf-field-group/field.php:192
 msgid "Required"
 msgstr "Obavezno?"
 
-#: includes/admin/views/acf-field-group/field.php:213
+#: includes/admin/views/acf-field-group/field.php:217
 msgid "Instructions for authors. Shown when submitting data"
 msgstr "Upute priliko uređivanja. Vidljivo prilikom spremanja podataka"
 
-#: includes/admin/views/acf-field-group/field.php:212
+#: includes/admin/views/acf-field-group/field.php:216
 msgid "Instructions"
 msgstr "Upute"
 
-#: includes/admin/views/acf-field-group/field.php:121
+#: includes/admin/views/acf-field-group/field.php:125
 msgid "Field Type"
 msgstr "Tip polja"
 
-#: includes/admin/views/acf-field-group/field.php:162
+#: includes/admin/views/acf-field-group/field.php:166
 msgid "Single word, no spaces. Underscores and dashes allowed"
 msgstr "Jedna riječ, bez razmaka. Povlaka i donja crta su dozvoljeni"
 
-#: includes/admin/views/acf-field-group/field.php:161
+#: includes/admin/views/acf-field-group/field.php:165
 msgid "Field Name"
 msgstr "Naziv polja"
 
-#: includes/admin/views/acf-field-group/field.php:149
+#: includes/admin/views/acf-field-group/field.php:153
 msgid "This is the name which will appear on the EDIT page"
 msgstr "Naziv koji se prikazuje prilikom uređivanja stranice"
 
-#: includes/admin/views/acf-field-group/field.php:148
+#: includes/admin/views/acf-field-group/field.php:152
 #: includes/admin/views/browse-fields-modal.php:59
 msgid "Field Label"
 msgstr "Naziv polja"
@@ -3334,8 +3334,8 @@ msgstr "Presloži polja povlačenjem"
 
 #: includes/admin/post-types/admin-field-group.php:103
 #: includes/admin/views/acf-field-group/location-group.php:3
-#: assets/build/js/acf-field-group.js:2291
-#: assets/build/js/acf-field-group.js:2680
+#: assets/build/js/acf-field-group.js:2302
+#: assets/build/js/acf-field-group.js:2693
 msgid "Show this field group if"
 msgstr "Prikaži ovaj skup polja ako"
 
@@ -3507,9 +3507,13 @@ msgstr "Dupliciraj"
 msgid "Supports"
 msgstr ""
 
-#: includes/admin/post-types/admin-field-groups.php:93
-#: includes/admin/post-types/admin-post-types.php:100
-#: includes/admin/post-types/admin-taxonomies.php:100
+#: includes/admin/views/browse-fields-modal.php:92
+msgid "Documentation"
+msgstr ""
+
+#: includes/admin/post-types/admin-field-groups.php:94
+#: includes/admin/post-types/admin-post-types.php:102
+#: includes/admin/post-types/admin-taxonomies.php:102
 #: includes/admin/views/acf-field-group/options.php:241
 #: includes/admin/views/acf-post-type/advanced-settings.php:88
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:110
@@ -3524,7 +3528,7 @@ msgid "Sync available"
 msgstr "Sinkronizacija dostupna"
 
 #. translators: %s number of field groups synchronized
-#: includes/admin/post-types/admin-field-groups.php:325
+#: includes/admin/post-types/admin-field-groups.php:326
 msgid "Field group synchronized."
 msgid_plural "%s field groups synchronized."
 msgstr[0] ""
@@ -3532,7 +3536,7 @@ msgstr[1] ""
 msgstr[2] ""
 
 #. translators: %s number of field groups duplicated
-#: includes/admin/post-types/admin-field-groups.php:318
+#: includes/admin/post-types/admin-field-groups.php:319
 msgid "Field group duplicated."
 msgid_plural "%s field groups duplicated."
 msgstr[0] ""
@@ -3597,7 +3601,7 @@ msgstr "Oznaka polja"
 msgid "Settings"
 msgstr "Postavke"
 
-#: includes/admin/post-types/admin-field-groups.php:95
+#: includes/admin/post-types/admin-field-groups.php:96
 msgid "Location"
 msgstr "Lokacija"
 
@@ -3609,8 +3613,8 @@ msgstr "Null"
 #: includes/admin/post-types/admin-field-group.php:101
 #: includes/class-acf-internal-post-type.php:729
 #: includes/post-types/class-acf-field-group.php:345
-#: assets/build/js/acf-field-group.js:1503
-#: assets/build/js/acf-field-group.js:1808
+#: assets/build/js/acf-field-group.js:1514
+#: assets/build/js/acf-field-group.js:1821
 msgid "copy"
 msgstr "kopiraj"
 
@@ -3627,8 +3631,8 @@ msgid "Checked"
 msgstr ""
 
 #: includes/admin/post-types/admin-field-group.php:94
-#: assets/build/js/acf-field-group.js:1594
-#: assets/build/js/acf-field-group.js:1906
+#: assets/build/js/acf-field-group.js:1605
+#: assets/build/js/acf-field-group.js:1919
 msgid "Move Custom Field"
 msgstr "Premjesti polje"
 
@@ -3643,14 +3647,14 @@ msgid "Field group title is required"
 msgstr "Naziv polja je obavezna"
 
 #: includes/admin/post-types/admin-field-group.php:90
-#: assets/build/js/acf-field-group.js:1583
-#: assets/build/js/acf-field-group.js:1892
+#: assets/build/js/acf-field-group.js:1594
+#: assets/build/js/acf-field-group.js:1905
 msgid "This field cannot be moved until its changes have been saved"
 msgstr "Potrebno je spremiti izmjene prije nego možete premjestiti polje"
 
 #: includes/admin/post-types/admin-field-group.php:89
-#: assets/build/js/acf-field-group.js:1394
-#: assets/build/js/acf-field-group.js:1690
+#: assets/build/js/acf-field-group.js:1405
+#: assets/build/js/acf-field-group.js:1703
 msgid "The string \"field_\" may not be used at the start of a field name"
 msgstr "Polje ne može započinjati sa “field_”, odabrite drugi naziv"
 
@@ -3704,15 +3708,15 @@ msgstr "Forme"
 
 #: includes/admin/post-types/admin-post-type.php:120 includes/locations.php:100
 #: includes/locations/class-acf-location-page.php:22
-#: assets/build/js/acf-internal-post-type.js:133
-#: assets/build/js/acf-internal-post-type.js:183
+#: assets/build/js/acf-internal-post-type.js:134
+#: assets/build/js/acf-internal-post-type.js:191
 msgid "Page"
 msgstr "Stranice"
 
 #: includes/admin/post-types/admin-post-type.php:118 includes/locations.php:99
 #: includes/locations/class-acf-location-post.php:22
-#: assets/build/js/acf-internal-post-type.js:130
-#: assets/build/js/acf-internal-post-type.js:180
+#: assets/build/js/acf-internal-post-type.js:131
+#: assets/build/js/acf-internal-post-type.js:188
 msgid "Post"
 msgstr "Objava"
 
@@ -3829,24 +3833,24 @@ msgstr "Otkaži"
 msgid "Are you sure?"
 msgstr "Jeste li sigurni?"
 
-#: includes/assets.php:369 assets/build/js/acf-input.js:9406
-#: assets/build/js/acf-input.js:10257
+#: includes/assets.php:369 assets/build/js/acf-input.js:9409
+#: assets/build/js/acf-input.js:10260
 msgid "%d fields require attention"
 msgstr "Nekoliko polja treba vašu pažnje: %d"
 
-#: includes/assets.php:368 assets/build/js/acf-input.js:9404
-#: assets/build/js/acf-input.js:10253
+#: includes/assets.php:368 assets/build/js/acf-input.js:9407
+#: assets/build/js/acf-input.js:10256
 msgid "1 field requires attention"
 msgstr "1 polje treba vašu pažnju"
 
 #: includes/assets.php:367 includes/validation.php:286
-#: includes/validation.php:296 assets/build/js/acf-input.js:9399
-#: assets/build/js/acf-input.js:10248
+#: includes/validation.php:296 assets/build/js/acf-input.js:9402
+#: assets/build/js/acf-input.js:10251
 msgid "Validation failed"
 msgstr "Verifikacija nije uspjela"
 
-#: includes/assets.php:366 assets/build/js/acf-input.js:9562
-#: assets/build/js/acf-input.js:10431
+#: includes/assets.php:366 assets/build/js/acf-input.js:9565
+#: assets/build/js/acf-input.js:10434
 msgid "Validation successful"
 msgstr "Uspješna verifikacija"
 
@@ -3882,8 +3886,8 @@ msgctxt "verb"
 msgid "Edit"
 msgstr "Uredi"
 
-#: includes/assets.php:363 assets/build/js/acf-input.js:9176
-#: assets/build/js/acf-input.js:10019
+#: includes/assets.php:363 assets/build/js/acf-input.js:9179
+#: assets/build/js/acf-input.js:10022
 msgid "The changes you made will be lost if you navigate away from this page"
 msgstr ""
 "Izmjene koje ste napravili bit će izgubljene ukoliko napustite ovu stranicu"
@@ -3898,9 +3902,9 @@ msgstr "Tip datoteke mora biti %s."
 #: includes/admin/views/acf-field-group/location-group.php:3
 #: includes/admin/views/acf-field-group/locations.php:36
 #: includes/api/api-helpers.php:3478 assets/build/js/acf-field-group.js:771
-#: assets/build/js/acf-field-group.js:2329
+#: assets/build/js/acf-field-group.js:2340
 #: assets/build/js/acf-field-group.js:933
-#: assets/build/js/acf-field-group.js:2724
+#: assets/build/js/acf-field-group.js:2737
 msgid "or"
 msgstr "ili"
 
@@ -3987,11 +3991,11 @@ msgstr "Dodaj odabir"
 msgid "Toggle All"
 msgstr "Sakrij sve"
 
-#: includes/fields/class-acf-field-page_link.php:510
+#: includes/fields/class-acf-field-page_link.php:506
 msgid "Allow Archives URLs"
 msgstr "Omogući odabir arhive tipova"
 
-#: includes/fields/class-acf-field-page_link.php:183
+#: includes/fields/class-acf-field-page_link.php:179
 msgid "Archives"
 msgstr "Arhiva"
 
@@ -4321,8 +4325,8 @@ msgstr "Odaberite boju"
 #: includes/admin/post-types/admin-post-type.php:122
 #: includes/admin/post-types/admin-taxonomy.php:122
 #: includes/fields/class-acf-field-color_picker.php:74
-#: assets/build/js/acf-internal-post-type.js:50
-#: assets/build/js/acf-internal-post-type.js:52
+#: assets/build/js/acf-internal-post-type.js:51
+#: assets/build/js/acf-internal-post-type.js:53
 msgid "Default"
 msgstr "Zadano"
 
@@ -4336,25 +4340,25 @@ msgstr "Ukloni"
 msgid "Color Picker"
 msgstr "Odabir boje"
 
-#: includes/fields/class-acf-field-date_time_picker.php:85
+#: includes/fields/class-acf-field-date_time_picker.php:88
 msgctxt "Date Time Picker JS pmTextShort"
 msgid "P"
-msgstr "Poslije podne"
+msgstr ""
 
-#: includes/fields/class-acf-field-date_time_picker.php:84
+#: includes/fields/class-acf-field-date_time_picker.php:87
 msgctxt "Date Time Picker JS pmText"
 msgid "PM"
-msgstr "Poslije podne"
+msgstr ""
 
-#: includes/fields/class-acf-field-date_time_picker.php:81
+#: includes/fields/class-acf-field-date_time_picker.php:84
 msgctxt "Date Time Picker JS amTextShort"
 msgid "A"
-msgstr "Prije podne"
+msgstr ""
 
-#: includes/fields/class-acf-field-date_time_picker.php:80
+#: includes/fields/class-acf-field-date_time_picker.php:83
 msgctxt "Date Time Picker JS amText"
 msgid "AM"
-msgstr "Prije podne"
+msgstr ""
 
 #: includes/fields/class-acf-field-date_time_picker.php:81
 msgctxt "Date Time Picker JS selectText"
@@ -4366,10 +4370,10 @@ msgctxt "Date Time Picker JS closeText"
 msgid "Done"
 msgstr "Završeno"
 
-#: includes/fields/class-acf-field-date_time_picker.php:76
+#: includes/fields/class-acf-field-date_time_picker.php:79
 msgctxt "Date Time Picker JS currentText"
 msgid "Now"
-msgstr "Trenutno vrijeme"
+msgstr ""
 
 #: includes/fields/class-acf-field-date_time_picker.php:78
 msgctxt "Date Time Picker JS timezoneText"
@@ -4550,16 +4554,16 @@ msgstr "Mogući odabiri"
 msgid "Button Group"
 msgstr "Skup dugmadi"
 
-#: includes/fields/class-acf-field-page_link.php:521
-#: includes/fields/class-acf-field-post_object.php:437
+#: includes/fields/class-acf-field-page_link.php:517
+#: includes/fields/class-acf-field-post_object.php:433
 #: includes/fields/class-acf-field-select.php:413
 #: includes/fields/class-acf-field-user.php:86
 msgid "Select multiple values?"
 msgstr "Dozvoli odabir više vrijednosti?"
 
 #: includes/fields/class-acf-field-button-group.php:194
-#: includes/fields/class-acf-field-page_link.php:542
-#: includes/fields/class-acf-field-post_object.php:459
+#: includes/fields/class-acf-field-page_link.php:538
+#: includes/fields/class-acf-field-post_object.php:455
 #: includes/fields/class-acf-field-radio.php:238
 #: includes/fields/class-acf-field-select.php:435
 #: includes/fields/class-acf-field-taxonomy.php:789
@@ -4567,8 +4571,8 @@ msgstr "Dozvoli odabir više vrijednosti?"
 msgid "Allow Null?"
 msgstr "Dozvoli null vrijednost?"
 
-#: includes/fields/class-acf-field-page_link.php:267
-#: includes/fields/class-acf-field-post_object.php:268
+#: includes/fields/class-acf-field-page_link.php:263
+#: includes/fields/class-acf-field-post_object.php:264
 #: includes/fields/class-acf-field-taxonomy.php:935
 msgid "Parent"
 msgstr "Matični"
@@ -4699,96 +4703,96 @@ msgstr "Prikazuje se prilikom kreiranje nove objave"
 msgid "Text"
 msgstr "Tekst"
 
-#: includes/fields/class-acf-field-relationship.php:793
+#: includes/fields/class-acf-field-relationship.php:789
 msgid "%1$s requires at least %2$s selection"
 msgid_plural "%1$s requires at least %2$s selections"
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: includes/fields/class-acf-field-post_object.php:428
-#: includes/fields/class-acf-field-relationship.php:655
+#: includes/fields/class-acf-field-post_object.php:424
+#: includes/fields/class-acf-field-relationship.php:651
 msgid "Post ID"
 msgstr "ID objave"
 
 #: includes/fields/class-acf-field-post_object.php:25
-#: includes/fields/class-acf-field-post_object.php:427
-#: includes/fields/class-acf-field-relationship.php:654
+#: includes/fields/class-acf-field-post_object.php:423
+#: includes/fields/class-acf-field-relationship.php:650
 msgid "Post Object"
 msgstr "Objekt"
 
-#: includes/fields/class-acf-field-relationship.php:687
+#: includes/fields/class-acf-field-relationship.php:683
 msgid "Maximum posts"
 msgstr "Maksimalno"
 
-#: includes/fields/class-acf-field-relationship.php:677
+#: includes/fields/class-acf-field-relationship.php:673
 msgid "Minimum posts"
 msgstr "Minimalno"
 
 #: includes/admin/views/acf-field-group/options.php:175
 #: includes/admin/views/acf-post-type/advanced-settings.php:55
-#: includes/fields/class-acf-field-relationship.php:712
+#: includes/fields/class-acf-field-relationship.php:708
 msgid "Featured Image"
 msgstr "Istaknuta slika"
 
-#: includes/fields/class-acf-field-relationship.php:708
+#: includes/fields/class-acf-field-relationship.php:704
 msgid "Selected elements will be displayed in each result"
 msgstr "Odabrani elementi bit će prikazani u svakom rezultatu"
 
-#: includes/fields/class-acf-field-relationship.php:707
+#: includes/fields/class-acf-field-relationship.php:703
 msgid "Elements"
 msgstr "Elementi"
 
-#: includes/fields/class-acf-field-relationship.php:641
+#: includes/fields/class-acf-field-relationship.php:637
 #: includes/fields/class-acf-field-taxonomy.php:28
 #: includes/fields/class-acf-field-taxonomy.php:709
 #: includes/locations/class-acf-location-taxonomy.php:22
 msgid "Taxonomy"
 msgstr "Taksonomija"
 
-#: includes/fields/class-acf-field-relationship.php:640
+#: includes/fields/class-acf-field-relationship.php:636
 #: includes/locations/class-acf-location-post-type.php:22
 #: includes/post-types/class-acf-post-type.php:91
 msgid "Post Type"
 msgstr "Tip objave"
 
-#: includes/fields/class-acf-field-relationship.php:634
+#: includes/fields/class-acf-field-relationship.php:630
 msgid "Filters"
 msgstr "Filteri"
 
-#: includes/fields/class-acf-field-page_link.php:503
-#: includes/fields/class-acf-field-post_object.php:415
-#: includes/fields/class-acf-field-relationship.php:627
+#: includes/fields/class-acf-field-page_link.php:499
+#: includes/fields/class-acf-field-post_object.php:411
+#: includes/fields/class-acf-field-relationship.php:623
 msgid "All taxonomies"
 msgstr "Sve taksonomije"
 
-#: includes/fields/class-acf-field-page_link.php:495
-#: includes/fields/class-acf-field-post_object.php:407
-#: includes/fields/class-acf-field-relationship.php:619
+#: includes/fields/class-acf-field-page_link.php:491
+#: includes/fields/class-acf-field-post_object.php:403
+#: includes/fields/class-acf-field-relationship.php:615
 msgid "Filter by Taxonomy"
 msgstr "Filtriraj prema taksonomiji"
 
-#: includes/fields/class-acf-field-page_link.php:473
-#: includes/fields/class-acf-field-post_object.php:385
-#: includes/fields/class-acf-field-relationship.php:597
+#: includes/fields/class-acf-field-page_link.php:469
+#: includes/fields/class-acf-field-post_object.php:381
+#: includes/fields/class-acf-field-relationship.php:593
 msgid "All post types"
 msgstr "Svi tipovi"
 
-#: includes/fields/class-acf-field-page_link.php:465
-#: includes/fields/class-acf-field-post_object.php:377
-#: includes/fields/class-acf-field-relationship.php:589
+#: includes/fields/class-acf-field-page_link.php:461
+#: includes/fields/class-acf-field-post_object.php:373
+#: includes/fields/class-acf-field-relationship.php:585
 msgid "Filter by Post Type"
 msgstr "Filtriraj po tipu posta"
 
-#: includes/fields/class-acf-field-relationship.php:487
+#: includes/fields/class-acf-field-relationship.php:483
 msgid "Search..."
 msgstr "Pretraga…"
 
-#: includes/fields/class-acf-field-relationship.php:417
+#: includes/fields/class-acf-field-relationship.php:413
 msgid "Select taxonomy"
 msgstr "Odebarite taksonomiju"
 
-#: includes/fields/class-acf-field-relationship.php:408
+#: includes/fields/class-acf-field-relationship.php:404
 msgid "Select post type"
 msgstr "Odaberi tip posta"
 
@@ -5182,7 +5186,7 @@ msgid "Clear location"
 msgstr "Ukloni lokaciju"
 
 #: includes/fields/class-acf-field-google-map.php:158
-#: includes/fields/class-acf-field-relationship.php:639
+#: includes/fields/class-acf-field-relationship.php:635
 msgid "Search"
 msgstr "Pretraži"
 
@@ -5205,8 +5209,8 @@ msgstr "Format koji vraća funkcija"
 #: includes/fields/class-acf-field-date_picker.php:211
 #: includes/fields/class-acf-field-date_time_picker.php:200
 #: includes/fields/class-acf-field-image.php:187
-#: includes/fields/class-acf-field-post_object.php:422
-#: includes/fields/class-acf-field-relationship.php:649
+#: includes/fields/class-acf-field-post_object.php:418
+#: includes/fields/class-acf-field-relationship.php:645
 #: includes/fields/class-acf-field-select.php:397
 #: includes/fields/class-acf-field-time_picker.php:131
 #: includes/fields/class-acf-field-user.php:70
@@ -5237,6 +5241,14 @@ msgstr "Format prikaza"
 #: includes/fields/class-acf-field-time_picker.php:25
 msgid "Time Picker"
 msgstr "Odabri vremena (sat i minute)"
+
+#. translators: counts for inactive field groups
+#: acf.php:491
+msgid "Inactive <span class=\"count\">(%s)</span>"
+msgid_plural "Inactive <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: acf.php:450
 msgid "No Fields found in Trash"
@@ -5271,7 +5283,7 @@ msgid "Field"
 msgstr "Polje"
 
 #: acf.php:441 includes/admin/post-types/admin-field-group.php:150
-#: includes/admin/post-types/admin-field-groups.php:96
+#: includes/admin/post-types/admin-field-groups.php:97
 #: includes/admin/views/acf-field-group/fields.php:21
 msgid "Fields"
 msgstr "Polja"
@@ -5317,8 +5329,8 @@ msgid "Field Group"
 msgstr "Grupa polja"
 
 #: acf.php:407 includes/admin/post-types/admin-field-groups.php:56
-#: includes/admin/post-types/admin-post-types.php:103
-#: includes/admin/post-types/admin-taxonomies.php:103
+#: includes/admin/post-types/admin-post-types.php:105
+#: includes/admin/post-types/admin-taxonomies.php:105
 msgid "Field Groups"
 msgstr "Grupe polja"
 
@@ -5335,64 +5347,50 @@ msgstr ""
 msgid "Advanced Custom Fields"
 msgstr "Advanced Custom Fields"
 
-#: acf.php:3, pro/acf-pro.php:27
+#: pro/acf-pro.php:27
 msgid "Advanced Custom Fields PRO"
 msgstr "Advanced Custom Fields PRO"
 
-#: acf.php:7
-msgid "Delicious Brains"
-msgstr ""
-
-#: acf.php:440, includes/admin/admin-field-group.php:385,
-#: includes/admin/admin-field-groups.php:230
-#, fuzzy
-#| msgid "Table"
-msgctxt "post status"
-msgid "Disabled"
-msgstr "Tablica"
-
-#: acf.php:445
-#, fuzzy
-#| msgid "Active <span class=\"count\">(%s)</span>"
-#| msgid_plural "Active <span class=\"count\">(%s)</span>"
-msgid "Disabled <span class=\"count\">(%s)</span>"
-msgid_plural "Disabled <span class=\"count\">(%s)</span>"
-msgstr[0] "Aktivno <span class=“count”>(%s)</span>"
-msgstr[1] "Aktivno <span class=“count”>(%s)</span>"
-msgstr[2] "Aktivno <span class=“count”>(%s)</span>"
-
-#: includes/fields.php:358
-msgid "jQuery"
-msgstr "jQuery"
-
-#: pro/blocks.php:37
+#: pro/blocks.php:170
 #, fuzzy
 #| msgid "%s value is required"
 msgid "Block type name is required."
 msgstr "%s je obavezno"
 
-#: pro/blocks.php:44
+#. translators: The name of the block type
+#: pro/blocks.php:178
 msgid "Block type \"%s\" is already registered."
 msgstr ""
 
-#: pro/blocks.php:495
+#: pro/blocks.php:726
 msgid "Switch to Edit"
 msgstr ""
 
-#: pro/blocks.php:496
+#: pro/blocks.php:727
 msgid "Switch to Preview"
 msgstr ""
 
-#: pro/blocks.php:497
+#: pro/blocks.php:728
 msgid "Change content alignment"
 msgstr ""
 
 #. translators: %s: Block type title
-#: pro/blocks.php:500
+#: pro/blocks.php:731
 #, fuzzy
 #| msgid "Settings"
 msgid "%s settings"
 msgstr "Postavke"
+
+#: pro/blocks.php:936
+msgid "This block contains no editable fields."
+msgstr ""
+
+#. translators: %s: an admin URL to the field group edit screen
+#: pro/blocks.php:942
+msgid ""
+"Assign a <a href=\"%s\" target=\"_blank\">field group</a> to add fields to "
+"this block."
+msgstr ""
 
 #: pro/options-page.php:78
 msgid "Options Updated"
@@ -5437,125 +5435,15 @@ msgid ""
 "server"
 msgstr "<b>Greška</b>. Greška prilikom spajanja na server"
 
-#: pro/updates.php:279, pro/admin/views/html-settings-updates.php:117
+#: pro/updates.php:279
 msgid "Check Again"
 msgstr "Provjeri ponovno"
 
-#: pro/updates.php:561
+#: pro/updates.php:593
 #, fuzzy
 #| msgid "<b>Error</b>. Could not connect to update server"
 msgid "<b>ACF Activation Error</b>. Could not connect to activation server"
 msgstr "<b>Greška</b>. Greška prilikom spajanja na server"
-
-#: includes/admin/admin-field-group.php:167
-msgid "Move to trash. Are you sure?"
-msgstr "Premjesti u smeće?"
-
-#: includes/admin/admin-field-group.php:191
-msgid "Repeater (Pro only)"
-msgstr ""
-
-#: includes/admin/admin-field-group.php:192
-#, fuzzy
-#| msgid "Flexible Content"
-msgid "Flexible Content (Pro only)"
-msgstr "Fleksibilno polje"
-
-#: includes/admin/admin-field-group.php:193
-msgid "Clone (Pro only)"
-msgstr ""
-
-#: includes/admin/admin-field-group.php:194
-msgid "Gallery (Pro only)"
-msgstr ""
-
-#: includes/admin/admin-field-group.php:758
-msgid "Close Window"
-msgstr "Zatvori prozor"
-
-#: includes/admin/admin-field-groups.php:612
-#, fuzzy
-#| msgid "Field group synchronised. %s"
-msgid "Field group synchronised."
-msgid_plural "%s field groups synchronised."
-msgstr[0] "Skup polja sinkroniziran. %s"
-msgstr[1] "Skup polja sinkroniziran. %s"
-msgstr[2] "Skup polja sinkroniziran. %s"
-
-#: includes/admin/admin.php:156
-msgid ""
-"<a href=\"%s\" target=\"_blank\">Discussions</a>. We have an active and "
-"friendly community on our Community Forums who may be able to help you "
-"figure out the ‘how-tos’ of the ACF world."
-msgstr ""
-
-#: includes/ajax/class-acf-ajax-local-json-diff.php:43
-#, fuzzy
-#| msgid "Edit field group"
-msgid "Invalid field group ID."
-msgstr "Uredi skup polja"
-
-#: includes/ajax/class-acf-ajax-local-json-diff.php:53
-msgid "Sorry, this field group is unavailable for diff comparison."
-msgstr ""
-
-#: includes/ajax/class-acf-ajax-local-json-diff.php:64
-#, fuzzy
-#| msgid "Edit field group"
-msgid "Original field group"
-msgstr "Uredi skup polja"
-
-#: includes/ajax/class-acf-ajax-local-json-diff.php:68
-#, fuzzy
-#| msgid "No field groups selected"
-msgid "JSON field group (newer)"
-msgstr "Niste odabrali polje"
-
-#: includes/fields/class-acf-field-checkbox.php:335
-msgid "Allow Custom"
-msgstr "Obogući dodatne"
-
-#: includes/fields/class-acf-field-checkbox.php:348
-msgid "Save Custom"
-msgstr "Spremi"
-
-#: includes/fields/class-acf-field-checkbox.php:393
-msgid "Toggle"
-msgstr "Prikaži/Sakrij"
-
-#: includes/fields/class-acf-field-radio.php:214
-msgid "Other"
-msgstr "Drugo"
-
-#: includes/fields/class-acf-field-radio.php:227
-msgid "Save Other"
-msgstr "Spremi ostale"
-
-#: includes/fields/class-acf-field-select.php:410,
-#: includes/fields/class-acf-field-true_false.php:159
-msgid "Stylised UI"
-msgstr "Stilizirano sučelje"
-
-#: includes/fields/class-acf-field-tab.php:118
-msgid ""
-"Define an endpoint for the previous tabs to stop. This will start a new "
-"group of tabs."
-msgstr ""
-"Preciziraj prijelomnu točku za prethodne kartice. Ovo će omogućiti novi skup "
-"kartica nakon prijelomne točke."
-
-#: includes/fields/class-acf-field-taxonomy.php:673
-msgctxt "No terms"
-msgid "No %s"
-msgstr "Nema %s"
-
-#: includes/fields/class-acf-field-url.php:25
-msgid "Url"
-msgstr "Poveznica"
-
-#: includes/fields/class-acf-field-wysiwyg.php:25
-msgid "Wysiwyg Editor"
-msgstr "Vizualno uređivanje"
 
 #: pro/admin/admin-options-page.php:195
 msgid "Publish"
@@ -5573,76 +5461,91 @@ msgstr ""
 msgid "<b>Error</b>. Could not connect to update server"
 msgstr "<b>Greška</b>. Greška prilikom spajanja na server"
 
-#: pro/admin/admin-updates.php:209
+#: pro/admin/admin-updates.php:212
 msgid ""
 "<b>Error</b>. Could not authenticate update package. Please check again or "
 "deactivate and reactivate your ACF PRO license."
 msgstr ""
 
-#: pro/admin/admin-updates.php:196
+#: pro/admin/admin-updates.php:199
 msgid ""
 "<b>Error</b>. Your license for this site has expired or been deactivated. "
 "Please reactivate your ACF PRO license."
 msgstr ""
 
-#: pro/fields/class-acf-field-clone.php:815
+#: pro/fields/class-acf-field-clone.php:27,
+#: pro/fields/class-acf-field-repeater.php:31
+msgid ""
+"Allows you to select and display existing fields. It does not duplicate any "
+"fields in the database, but loads and displays the selected fields at run-"
+"time. The Clone field can either replace itself with the selected fields or "
+"display the selected fields as a group of subfields."
+msgstr ""
+
+#: pro/fields/class-acf-field-clone.php:819
 msgid "Select one or more fields you wish to clone"
 msgstr "Odaberite jedno ili više polja koja želite klonirati"
 
-#: pro/fields/class-acf-field-clone.php:834
+#: pro/fields/class-acf-field-clone.php:838
 msgid "Display"
 msgstr "Prikaz"
 
-#: pro/fields/class-acf-field-clone.php:835
+#: pro/fields/class-acf-field-clone.php:839
 msgid "Specify the style used to render the clone field"
 msgstr "Odaberite način prikaza kloniranog polja"
 
-#: pro/fields/class-acf-field-clone.php:840
+#: pro/fields/class-acf-field-clone.php:844
 msgid "Group (displays selected fields in a group within this field)"
 msgstr ""
 "Skupno (Prikazuje odabrana polja kao dodatni skup unutar trenutnog polja)"
 
-#: pro/fields/class-acf-field-clone.php:841
+#: pro/fields/class-acf-field-clone.php:845
 msgid "Seamless (replaces this field with selected fields)"
 msgstr "Zamjena (Prikazuje odabrana polja umjesto trenutnog polja)"
 
-#: pro/fields/class-acf-field-clone.php:864
+#: pro/fields/class-acf-field-clone.php:868
 msgid "Labels will be displayed as %s"
 msgstr "Oznake će biti prikazane kao %s"
 
-#: pro/fields/class-acf-field-clone.php:869
+#: pro/fields/class-acf-field-clone.php:873
 msgid "Prefix Field Labels"
 msgstr "Dodaj prefiks ispred oznake"
 
-#: pro/fields/class-acf-field-clone.php:880
+#: pro/fields/class-acf-field-clone.php:883
 msgid "Values will be saved as %s"
 msgstr "Vrijednosti će biti spremljene kao %s"
 
-#: pro/fields/class-acf-field-clone.php:885
+#: pro/fields/class-acf-field-clone.php:888
 msgid "Prefix Field Names"
 msgstr "Dodaj prefiks ispred naziva polja"
 
-#: pro/fields/class-acf-field-clone.php:1001
+#: pro/fields/class-acf-field-clone.php:1005
 msgid "Unknown field"
 msgstr "Nepoznato polje"
 
-#: pro/fields/class-acf-field-clone.php:1038
+#: pro/fields/class-acf-field-clone.php:1042
 msgid "Unknown field group"
 msgstr "Nepoznat skup polja"
 
-#: pro/fields/class-acf-field-clone.php:1042
+#: pro/fields/class-acf-field-clone.php:1046
 msgid "All fields from %s field group"
 msgstr "Sva polje iz %s skupa polja"
 
-#: pro/fields/class-acf-field-flexible-content.php:31,
-#: pro/fields/class-acf-field-repeater.php:182,
-#: pro/fields/class-acf-field-repeater.php:473
+#: pro/fields/class-acf-field-flexible-content.php:27
+msgid ""
+"Allows you to define, create and manage content with total control by "
+"creating layouts that contain subfields that content editors can choose from."
+msgstr ""
+
+#: pro/fields/class-acf-field-flexible-content.php:36,
+#: pro/fields/class-acf-field-repeater.php:103,
+#: pro/fields/class-acf-field-repeater.php:297
 msgid "Add Row"
 msgstr "Dodaj red"
 
-#: pro/fields/class-acf-field-flexible-content.php:71,
-#: pro/fields/class-acf-field-flexible-content.php:917,
-#: pro/fields/class-acf-field-flexible-content.php:996
+#: pro/fields/class-acf-field-flexible-content.php:76,
+#: pro/fields/class-acf-field-flexible-content.php:943,
+#: pro/fields/class-acf-field-flexible-content.php:1022
 #, fuzzy
 #| msgid "layout"
 msgid "layout"
@@ -5651,227 +5554,318 @@ msgstr[0] "raspored"
 msgstr[1] "raspored"
 msgstr[2] "raspored"
 
-#: pro/fields/class-acf-field-flexible-content.php:72
+#: pro/fields/class-acf-field-flexible-content.php:77
 msgid "layouts"
 msgstr "rasporedi"
 
-#: pro/fields/class-acf-field-flexible-content.php:75,
-#: pro/fields/class-acf-field-flexible-content.php:916,
-#: pro/fields/class-acf-field-flexible-content.php:995
+#: pro/fields/class-acf-field-flexible-content.php:81,
+#: pro/fields/class-acf-field-flexible-content.php:942,
+#: pro/fields/class-acf-field-flexible-content.php:1021
 msgid "This field requires at least {min} {label} {identifier}"
 msgstr "Polje mora sadržavati najmanje {min} {label} {identifier}"
 
-#: pro/fields/class-acf-field-flexible-content.php:76
+#: pro/fields/class-acf-field-flexible-content.php:82
 #, fuzzy
 #| msgid "This field has a limit of {max} {identifier}"
 msgid "This field has a limit of {max} {label} {identifier}"
 msgstr "Polje je ograničeno na najviše {max} {identifier}"
 
-#: pro/fields/class-acf-field-flexible-content.php:79
+#: pro/fields/class-acf-field-flexible-content.php:85
 msgid "{available} {label} {identifier} available (max {max})"
 msgstr "{available} {label} {identifier} preostalo (najviše {max})"
 
-#: pro/fields/class-acf-field-flexible-content.php:80
+#: pro/fields/class-acf-field-flexible-content.php:86
 msgid "{required} {label} {identifier} required (min {min})"
 msgstr "{required} {label} {identifier} obavezno (najmanje {min})"
 
-#: pro/fields/class-acf-field-flexible-content.php:83
+#: pro/fields/class-acf-field-flexible-content.php:89
 msgid "Flexible Content requires at least 1 layout"
 msgstr "Potrebno je unijeti najmanje jedno fleksibilni polje"
 
-#: pro/fields/class-acf-field-flexible-content.php:276
+#: pro/fields/class-acf-field-flexible-content.php:282
 msgid "Click the \"%s\" button below to start creating your layout"
 msgstr "Kliknite “%s” gumb kako bi započeki kreiranje raspored"
 
-#: pro/fields/class-acf-field-flexible-content.php:413
+#: pro/fields/class-acf-field-flexible-content.php:423
 msgid "Add layout"
 msgstr "Dodaj razmještaj"
 
-#: pro/fields/class-acf-field-flexible-content.php:414
+#: pro/fields/class-acf-field-flexible-content.php:424
 #, fuzzy
 #| msgid "Duplicate Layout"
 msgid "Duplicate layout"
 msgstr "Dupliciraj razmještaj"
 
-#: pro/fields/class-acf-field-flexible-content.php:415
+#: pro/fields/class-acf-field-flexible-content.php:425
 msgid "Remove layout"
 msgstr "Ukloni razmještaj"
 
-#: pro/fields/class-acf-field-flexible-content.php:416,
-#: pro/fields/class-acf-field-repeater.php:297
+#: pro/fields/class-acf-field-flexible-content.php:426,
+#: pro/fields/class-acf-repeater-table.php:382
 msgid "Click to toggle"
 msgstr "Klikni za uključivanje/isključivanje"
 
-#: pro/fields/class-acf-field-flexible-content.php:551
-msgid "Reorder Layout"
-msgstr "Presloži polja povlačenjem"
-
-#: pro/fields/class-acf-field-flexible-content.php:551
-msgid "Reorder"
-msgstr "Presloži"
-
-#: pro/fields/class-acf-field-flexible-content.php:552
+#: pro/fields/class-acf-field-flexible-content.php:562
 msgid "Delete Layout"
 msgstr "Obriši"
 
-#: pro/fields/class-acf-field-flexible-content.php:553
+#: pro/fields/class-acf-field-flexible-content.php:563
 msgid "Duplicate Layout"
 msgstr "Dupliciraj razmještaj"
 
-#: pro/fields/class-acf-field-flexible-content.php:554
+#: pro/fields/class-acf-field-flexible-content.php:564
 msgid "Add New Layout"
 msgstr "Dodaj novi razmještaj"
 
-#: pro/fields/class-acf-field-flexible-content.php:635
+#: pro/fields/class-acf-field-flexible-content.php:564
+#, fuzzy
+#| msgid "Add layout"
+msgid "Add Layout"
+msgstr "Dodaj razmještaj"
+
+#: pro/fields/class-acf-field-flexible-content.php:647
 msgid "Min"
 msgstr "Minimum"
 
-#: pro/fields/class-acf-field-flexible-content.php:650
+#: pro/fields/class-acf-field-flexible-content.php:662
 msgid "Max"
 msgstr "Maksimum"
 
-#: pro/fields/class-acf-field-flexible-content.php:679,
-#: pro/fields/class-acf-field-repeater.php:469
-msgid "Button Label"
-msgstr "Tekst gumba"
-
-#: pro/fields/class-acf-field-flexible-content.php:690
+#: pro/fields/class-acf-field-flexible-content.php:705
 msgid "Minimum Layouts"
 msgstr "Najmanje"
 
-#: pro/fields/class-acf-field-flexible-content.php:701
+#: pro/fields/class-acf-field-flexible-content.php:716
 msgid "Maximum Layouts"
 msgstr "Najviše"
 
-#: pro/fields/class-acf-field-flexible-content.php:1704,
-#: pro/fields/class-acf-field-repeater.php:1108
+#: pro/fields/class-acf-field-flexible-content.php:727,
+#: pro/fields/class-acf-field-repeater.php:293
+msgid "Button Label"
+msgstr "Tekst gumba"
+
+#: pro/fields/class-acf-field-flexible-content.php:1710,
+#: pro/fields/class-acf-field-repeater.php:918
 msgid "%s must be of type array or null."
 msgstr ""
 
-#: pro/fields/class-acf-field-flexible-content.php:1715
+#: pro/fields/class-acf-field-flexible-content.php:1721
 msgid "%1$s must contain at least %2$s %3$s layout."
 msgid_plural "%1$s must contain at least %2$s %3$s layouts."
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: pro/fields/class-acf-field-flexible-content.php:1731
+#: pro/fields/class-acf-field-flexible-content.php:1737
 msgid "%1$s must contain at most %2$s %3$s layout."
 msgid_plural "%1$s must contain at most %2$s %3$s layouts."
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: pro/fields/class-acf-field-gallery.php:73
+#: pro/fields/class-acf-field-gallery.php:27
+msgid ""
+"An interactive interface for managing a collection of attachments, such as "
+"images."
+msgstr ""
+
+#: pro/fields/class-acf-field-gallery.php:77
 msgid "Add Image to Gallery"
 msgstr "Dodaj sliku u galeriju"
 
-#: pro/fields/class-acf-field-gallery.php:74
+#: pro/fields/class-acf-field-gallery.php:78
 msgid "Maximum selection reached"
 msgstr "Već ste dodali najviše dozovoljenih polja"
 
-#: pro/fields/class-acf-field-gallery.php:320
+#: pro/fields/class-acf-field-gallery.php:324
 msgid "Length"
 msgstr "Dužina"
 
-#: pro/fields/class-acf-field-gallery.php:364
+#: pro/fields/class-acf-field-gallery.php:368
 msgid "Caption"
 msgstr "Potpis"
 
-#: pro/fields/class-acf-field-gallery.php:376
+#: pro/fields/class-acf-field-gallery.php:380
 msgid "Alt Text"
 msgstr "Alternativni tekst"
 
-#: pro/fields/class-acf-field-gallery.php:500
+#: pro/fields/class-acf-field-gallery.php:504
 msgid "Add to gallery"
 msgstr "Dodaj u galeriju"
 
-#: pro/fields/class-acf-field-gallery.php:504
+#: pro/fields/class-acf-field-gallery.php:508
 msgid "Bulk actions"
 msgstr "Grupne akcije"
 
-#: pro/fields/class-acf-field-gallery.php:505
+#: pro/fields/class-acf-field-gallery.php:509
 msgid "Sort by date uploaded"
 msgstr "Razvrstaj po datumu dodavanja"
 
-#: pro/fields/class-acf-field-gallery.php:506
+#: pro/fields/class-acf-field-gallery.php:510
 msgid "Sort by date modified"
 msgstr "Razvrstaj po datumu zadnje promjene"
 
-#: pro/fields/class-acf-field-gallery.php:507
+#: pro/fields/class-acf-field-gallery.php:511
 msgid "Sort by title"
 msgstr "Razvrstaj po naslovu"
 
-#: pro/fields/class-acf-field-gallery.php:508
+#: pro/fields/class-acf-field-gallery.php:512
 msgid "Reverse current order"
 msgstr "Obrnuti redosljed"
 
-#: pro/fields/class-acf-field-gallery.php:520
+#: pro/fields/class-acf-field-gallery.php:524
 msgid "Close"
 msgstr "Zatvori"
 
-#: pro/fields/class-acf-field-gallery.php:602
-msgid "Insert"
-msgstr "Umetni"
-
-#: pro/fields/class-acf-field-gallery.php:603
-msgid "Specify where new attachments are added"
-msgstr "Precizirajte gdje se dodaju novi prilozi"
-
-#: pro/fields/class-acf-field-gallery.php:607
-msgid "Append to the end"
-msgstr "Umetni na kraj"
-
-#: pro/fields/class-acf-field-gallery.php:608
-msgid "Prepend to the beginning"
-msgstr "Umetni na početak"
-
-#: pro/fields/class-acf-field-gallery.php:633
+#: pro/fields/class-acf-field-gallery.php:615
 msgid "Minimum Selection"
 msgstr "Minimalni odabri"
 
-#: pro/fields/class-acf-field-gallery.php:644
+#: pro/fields/class-acf-field-gallery.php:625
 msgid "Maximum Selection"
 msgstr "Maksimalni odabir"
 
-#: pro/fields/class-acf-field-repeater.php:64,
-#: pro/fields/class-acf-field-repeater.php:659
-msgid "Minimum rows reached ({min} rows)"
+#: pro/fields/class-acf-field-gallery.php:727
+msgid "Insert"
+msgstr "Umetni"
+
+#: pro/fields/class-acf-field-gallery.php:728
+msgid "Specify where new attachments are added"
+msgstr "Precizirajte gdje se dodaju novi prilozi"
+
+#: pro/fields/class-acf-field-gallery.php:732
+msgid "Append to the end"
+msgstr "Umetni na kraj"
+
+#: pro/fields/class-acf-field-gallery.php:733
+msgid "Prepend to the beginning"
+msgstr "Umetni na početak"
+
+#: pro/fields/class-acf-field-repeater.php:66,
+#: pro/fields/class-acf-field-repeater.php:463
+#, fuzzy
+#| msgid "Minimum rows reached ({min} rows)"
+msgid "Minimum rows not reached ({min} rows)"
 msgstr "Minimalni broj redova je već odabran ({min})"
 
-#: pro/fields/class-acf-field-repeater.php:65
+#: pro/fields/class-acf-field-repeater.php:67
 msgid "Maximum rows reached ({max} rows)"
 msgstr "Maksimalni broj redova je već odabran ({max})"
 
-#: pro/fields/class-acf-field-repeater.php:334
+#: pro/fields/class-acf-field-repeater.php:68
+#, fuzzy
+#| msgctxt "Select2 JS load_fail"
+#| msgid "Loading failed"
+msgid "Error loading page"
+msgstr "Neuspješno učitavanje"
+
+#: pro/fields/class-acf-field-repeater.php:69
+msgid "Order will be assigned upon save"
+msgstr ""
+
+#: pro/fields/class-acf-field-repeater.php:196
+msgid "Useful for fields with a large number of rows."
+msgstr ""
+
+#: pro/fields/class-acf-field-repeater.php:207
+#, fuzzy
+#| msgid "Posts Page"
+msgid "Rows Per Page"
+msgstr "Stranica za objave"
+
+#: pro/fields/class-acf-field-repeater.php:208
+#, fuzzy
+#| msgid "Select the taxonomy to be displayed"
+msgid "Set the number of rows to be displayed on a page."
+msgstr "Odaberite taksonomiju za prikaz"
+
+#: pro/fields/class-acf-field-repeater.php:240
+msgid "Minimum Rows"
+msgstr "Minimalno redova"
+
+#: pro/fields/class-acf-field-repeater.php:251
+msgid "Maximum Rows"
+msgstr "Maksimalno redova"
+
+#: pro/fields/class-acf-field-repeater.php:281
+msgid "Collapsed"
+msgstr "Sklopljeno"
+
+#: pro/fields/class-acf-field-repeater.php:282
+msgid "Select a sub field to show when row is collapsed"
+msgstr "Odaberite pod polje koje će biti prikazano dok je red sklopljen"
+
+#: pro/fields/class-acf-field-repeater.php:1060
+#, fuzzy
+#| msgid "Edit field group"
+msgid "Invalid field key or name."
+msgstr "Uredi skup polja"
+
+#: pro/fields/class-acf-field-repeater.php:1069
+msgid "There was an error retrieving the field."
+msgstr ""
+
+#: pro/fields/class-acf-repeater-table.php:369
+#, fuzzy
+#| msgid "Drag to reorder"
+msgid "Click to reorder"
+msgstr "Presloži polja povlačenjem"
+
+#: pro/fields/class-acf-repeater-table.php:402
 msgid "Add row"
 msgstr "Dodaj red"
 
-#: pro/fields/class-acf-field-repeater.php:335
+#: pro/fields/class-acf-repeater-table.php:403
 #, fuzzy
 #| msgid "Duplicate"
 msgid "Duplicate row"
 msgstr "Dupliciraj"
 
-#: pro/fields/class-acf-field-repeater.php:336
+#: pro/fields/class-acf-repeater-table.php:404
 msgid "Remove row"
 msgstr "Ukloni red"
 
-#: pro/fields/class-acf-field-repeater.php:414
-msgid "Collapsed"
-msgstr "Sklopljeno"
+#: pro/fields/class-acf-repeater-table.php:448,
+#: pro/fields/class-acf-repeater-table.php:465,
+#: pro/fields/class-acf-repeater-table.php:466
+#, fuzzy
+#| msgid "Current User"
+msgid "Current Page"
+msgstr "Trenutni korisnik"
 
-#: pro/fields/class-acf-field-repeater.php:415
-msgid "Select a sub field to show when row is collapsed"
-msgstr "Odaberite pod polje koje će biti prikazano dok je red sklopljen"
+#: pro/fields/class-acf-repeater-table.php:456,
+#: pro/fields/class-acf-repeater-table.php:457
+#, fuzzy
+#| msgid "Front Page"
+msgid "First Page"
+msgstr "Početna stranica"
 
-#: pro/fields/class-acf-field-repeater.php:427
-msgid "Minimum Rows"
-msgstr "Minimalno redova"
+#: pro/fields/class-acf-repeater-table.php:460,
+#: pro/fields/class-acf-repeater-table.php:461
+#, fuzzy
+#| msgid "Posts Page"
+msgid "Previous Page"
+msgstr "Stranica za objave"
 
-#: pro/fields/class-acf-field-repeater.php:439
-msgid "Maximum Rows"
-msgstr "Maksimalno redova"
+#. translators: 1: Current page, 2: Total pages.
+#: pro/fields/class-acf-repeater-table.php:470
+msgctxt "paging"
+msgid "%1$s of %2$s"
+msgstr ""
+
+#: pro/fields/class-acf-repeater-table.php:477,
+#: pro/fields/class-acf-repeater-table.php:478
+#, fuzzy
+#| msgid "Front Page"
+msgid "Next Page"
+msgstr "Početna stranica"
+
+#: pro/fields/class-acf-repeater-table.php:481,
+#: pro/fields/class-acf-repeater-table.php:482
+#, fuzzy
+#| msgid "Posts Page"
+msgid "Last Page"
+msgstr "Stranica za objave"
 
 #: pro/locations/class-acf-location-block.php:71
 #, fuzzy
@@ -5882,101 +5876,6 @@ msgstr "Ne postoji stranica sa postavkama"
 #: pro/locations/class-acf-location-options-page.php:70
 msgid "No options pages exist"
 msgstr "Ne postoji stranica sa postavkama"
-
-#: tests/basic/test-blocks.php:456
-msgid "Hero"
-msgstr ""
-
-#: tests/basic/test-blocks.php:457
-msgid "Display a random hero image."
-msgstr ""
-
-#: tests/basic/test-blocks.php:630
-msgid "Test JS"
-msgstr ""
-
-#: tests/basic/test-blocks.php:631
-msgid "A block for testing JS."
-msgstr ""
-
-#: includes/admin/tools/class-acf-admin-tool-export.php:167
-msgid "Exported 1 field group."
-msgid_plural "Exported %s field groups."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-
-#: includes/admin/tools/class-acf-admin-tool-export.php:329
-msgid ""
-"Select the field groups you would like to export and then select your export "
-"method. Use the download button to export to a .json file which you can then "
-"import to another ACF installation. Use the generate button to export to PHP "
-"code which you can place in your theme."
-msgstr ""
-"Odaberite polja koja želite izvesti i zatim odaberite željeni format. Klikom "
-"na gumb “preuzimanje”, preuzmite .json datoteku sa poljima koju zatim možete "
-"uvesti u drugu ACF instalaciju.\n"
-"Klikom na “generiraj” gumb, izvezite PHP kod koji možete uključiti u "
-"WordPress temu."
-
-#: includes/admin/tools/class-acf-admin-tool-export.php:334
-msgid "Export File"
-msgstr "Datoteka za izvoz"
-
-#: includes/admin/tools/class-acf-admin-tool-export.php:405
-msgid ""
-"The following code can be used to register a local version of the selected "
-"field group(s). A local field group can provide many benefits such as faster "
-"load times, version control & dynamic fields/settings. Simply copy and paste "
-"the following code to your theme's functions.php file or include it within "
-"an external file."
-msgstr ""
-"Navedeni kod možete koristiti kako bi registrirali lokalnu verziju odabranih "
-"polja ili skupine polja. Lokalna polje pružaju dodatne mogućnosti kao što je "
-"brže očitavanje, verzioniranje i dinamičke postavke polja. Jednostavno "
-"kopirajte navedeni kod u functions.php datoteku u vašoj temi ili uključite "
-"ih kao vanjsku datoteku."
-
-#: includes/admin/tools/class-acf-admin-tool-import.php:49
-msgid ""
-"Select the Advanced Custom Fields JSON file you would like to import. When "
-"you click the import button below, ACF will import the field groups."
-msgstr ""
-"Odaberite ACF JSON datoteku koju želite uvesti. Nakon što kliknete ‘Uvezi’ "
-"gumb, ACF će uvesti sva polja iz odabrane datoteke."
-
-#: includes/admin/tools/class-acf-admin-tool-import.php:66
-msgid "Import File"
-msgstr "Datoteka za uvoz"
-
-#: includes/admin/tools/class-acf-admin-tool-import.php:142
-msgid "Imported 1 field group"
-msgid_plural "Imported %s field groups"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-
-#: includes/admin/views/field-group-field.php:135
-msgid "Required?"
-msgstr "Obavezno?"
-
-#: includes/admin/views/field-group-fields.php:19
-msgid ""
-"No fields. Click the <strong>+ Add Field</strong> button to create your "
-"first field."
-msgstr ""
-"Nema polja. Kliknite gumb <strong>+ Dodaj polje</strong> da bi kreirali "
-"polje."
-
-#: includes/admin/views/field-group-fields.php:44
-msgid "+ Add Field"
-msgstr "Dodaj polje"
-
-#: includes/admin/views/html-admin-navigation.php:89
-#, fuzzy
-#| msgid "Upgrade Sites"
-msgid "Upgrade to Pro"
-msgstr "Ažuriraj stranice"
 
 #: pro/admin/views/html-settings-updates.php:6
 msgid "Deactivate License"
@@ -6000,7 +5899,7 @@ msgstr ""
 "Ukoliko ne posjedujete licencu, molimo posjetite <a href=“%s” "
 "target=“_blank”>detalji i cijene</a>."
 
-#: pro/admin/views/html-settings-updates.php:41
+#: pro/admin/views/html-settings-updates.php:37
 msgid "License Key"
 msgstr "Licenca"
 
@@ -6014,415 +5913,42 @@ msgstr ""
 msgid "Retry Activation"
 msgstr "Bolja verifikacija polja"
 
-#: pro/admin/views/html-settings-updates.php:76
+#: pro/admin/views/html-settings-updates.php:61
 msgid "Update Information"
 msgstr "Ažuriraj informacije"
 
-#: pro/admin/views/html-settings-updates.php:83
+#: pro/admin/views/html-settings-updates.php:68
 msgid "Current Version"
 msgstr "Trenutna vezija"
 
-#: pro/admin/views/html-settings-updates.php:91
+#: pro/admin/views/html-settings-updates.php:76
 msgid "Latest Version"
 msgstr "Posljednja dostupna verzija"
 
-#: pro/admin/views/html-settings-updates.php:99
+#: pro/admin/views/html-settings-updates.php:84
 msgid "Update Available"
 msgstr "Dostupna nadogradnja"
 
-#: pro/admin/views/html-settings-updates.php:111
-msgid "Please enter your license key above to unlock updates"
+#: pro/admin/views/html-settings-updates.php:98
+msgid "Upgrade Notice"
+msgstr "Obavijest od nadogradnjama"
+
+#: pro/admin/views/html-settings-updates.php:126
+msgid "Check For Updates"
+msgstr ""
+
+#: pro/admin/views/html-settings-updates.php:121
+#, fuzzy
+#| msgid "Please enter your license key above to unlock updates"
+msgid "Enter your license key to unlock updates"
 msgstr "Unesite licencu kako bi mogli izvršiti nadogradnju"
 
-#: pro/admin/views/html-settings-updates.php:109
+#: pro/admin/views/html-settings-updates.php:119
 msgid "Update Plugin"
 msgstr "Nadogradi dodatak"
 
-#: pro/admin/views/html-settings-updates.php:107
+#: pro/admin/views/html-settings-updates.php:117
 #, fuzzy
 #| msgid "Please enter your license key above to unlock updates"
 msgid "Please reactivate your license to unlock updates"
 msgstr "Unesite licencu kako bi mogli izvršiti nadogradnju"
-
-#: pro/admin/views/html-settings-updates.php:124
-msgid "Changelog"
-msgstr "Popis izmjena"
-
-#: pro/admin/views/html-settings-updates.php:134
-msgid "Upgrade Notice"
-msgstr "Obavijest od nadogradnjama"
-
-#~ msgid "Documentation"
-#~ msgstr "Dokumentacija"
-
-#, php-format
-#~ msgid "Inactive <span class=\"count\">(%s)</span>"
-#~ msgid_plural "Inactive <span class=\"count\">(%s)</span>"
-#~ msgstr[0] "Neaktivno <span class=“count”>(%s)</span>"
-#~ msgstr[1] "Neaktivnih: <span class=“count”>(%s)</span>"
-#~ msgstr[2] "Neaktivnih: <span class=“count”>(%s)</span>"
-
-#~ msgid "Inactive"
-#~ msgstr "Neaktivno"
-
-#~ msgid "Parent fields"
-#~ msgstr "Matično polje"
-
-#~ msgid "Sibling fields"
-#~ msgstr "Slična polja"
-
-#, php-format
-#~ msgid "%s field group synchronised."
-#~ msgid_plural "%s field groups synchronised."
-#~ msgstr[0] "Polja sinkronizirana (%s)."
-#~ msgstr[1] "Polja sinkronizirana (%s)."
-#~ msgstr[2] "Polja sinkronizirana (%s)."
-
-#~ msgid "Status"
-#~ msgstr "Status"
-
-#, php-format
-#~ msgid "See what's new in <a href=\"%s\">version %s</a>."
-#~ msgstr "Pogledaj što je novo u <a href=\"%s\">%s verziji</a>."
-
-#~ msgid "Resources"
-#~ msgstr "Materijali"
-
-#~ msgid "Pro"
-#~ msgstr "Pro"
-
-#, php-format
-#~ msgid "Thank you for creating with <a href=\"%s\">ACF</a>."
-#~ msgstr "Hvala što koristite <a href=\"%s\">ACF</a>."
-
-#~ msgid "Synchronise field group"
-#~ msgstr "Sinkroniziraj skup polja"
-
-#~ msgid "Apply"
-#~ msgstr "Prijavi"
-
-#~ msgid "Bulk Actions"
-#~ msgstr "Skupne akcije"
-
-#~ msgid "Add-ons"
-#~ msgstr "Dodaci"
-
-#~ msgid "<b>Error</b>. Could not load add-ons list"
-#~ msgstr "<b>Greška</b>. Greška prilikom učitavanja dodataka"
-
-#~ msgid "Info"
-#~ msgstr "Info"
-
-#~ msgid "What's New"
-#~ msgstr "Što je novo"
-
-#~ msgid "Advanced Custom Fields Database Upgrade"
-#~ msgstr "Nadogradnja baze ACF"
-
-#~ msgid ""
-#~ "Before you start using the new awesome features, please update your "
-#~ "database to the newest version."
-#~ msgstr ""
-#~ "Prije nego što počnete koristiti nove mogućnosti, molimo ažurirajte bazu "
-#~ "podataka na posljednju verziju."
-
-#~ msgid "Download & Install"
-#~ msgstr "Preuzimam datoteke"
-
-#~ msgid "Installed"
-#~ msgstr "Instalirano"
-
-#~ msgid "Welcome to Advanced Custom Fields"
-#~ msgstr "Advanced Custom Fields vam želi dobrodošlicu"
-
-#, php-format
-#~ msgid ""
-#~ "Thank you for updating! ACF %s is bigger and better than ever before. We "
-#~ "hope you like it."
-#~ msgstr ""
-#~ "Ažuriranje dovršeno, hvala! ACF %s je veći i bolji nego ikad prije. "
-#~ "Nadamo se da će vam se svidjet."
-
-#~ msgid "A smoother custom field experience"
-#~ msgstr "Bolje korisničko iskustvo korištenja prilagođenih polja"
-
-#~ msgid "Improved Usability"
-#~ msgstr "Poboljšana uporabljivost"
-
-#~ msgid ""
-#~ "Including the popular Select2 library has improved both usability and "
-#~ "speed across a number of field types including post object, page link, "
-#~ "taxonomy and select."
-#~ msgstr ""
-#~ "Uključivanje popularne biblioteke Select2 poboljšano je korisničko "
-#~ "iskustvo i brzina na velikom broju polja."
-
-#~ msgid "Improved Design"
-#~ msgstr "Unaprijeđen dizajn"
-
-#~ msgid ""
-#~ "Many fields have undergone a visual refresh to make ACF look better than "
-#~ "ever! Noticeable changes are seen on the gallery, relationship and oEmbed "
-#~ "(new) fields!"
-#~ msgstr ""
-#~ "Mnoga polja su vizualno osvježena te time ACF sada izgleda bolje nego "
-#~ "ikad prije!"
-
-#~ msgid "Improved Data"
-#~ msgstr "Unaprijeđeno upravljanje podacima"
-
-#~ msgid ""
-#~ "Redesigning the data architecture has allowed sub fields to live "
-#~ "independently from their parents. This allows you to drag and drop fields "
-#~ "in and out of parent fields!"
-#~ msgstr ""
-#~ "Nova arhitektura polja omogućuje pod poljima da budu korištena zasebno "
-#~ "bez obzira kojem skupu polja pripadaju. Ovo vam omogućuje premještanje "
-#~ "polja iz jednog skupa u drugi!"
-
-#~ msgid "Goodbye Add-ons. Hello PRO"
-#~ msgstr "Doviđenja dodaci, upoznajte PRO verziju"
-
-#~ msgid "Introducing ACF PRO"
-#~ msgstr "Predstavljamo ACF PRO"
-
-#~ msgid ""
-#~ "We're changing the way premium functionality is delivered in an exciting "
-#~ "way!"
-#~ msgstr ""
-#~ "Mijanjamo način funkcioniranja premium dodataka, od sada mnogo "
-#~ "jednostavnije!"
-
-#, php-format
-#~ msgid ""
-#~ "All 4 premium add-ons have been combined into a new <a href=\"%s\">Pro "
-#~ "version of ACF</a>. With both personal and developer licenses available, "
-#~ "premium functionality is more affordable and accessible than ever before!"
-#~ msgstr ""
-#~ "Sva 4 premium dodakta od sada su ukomponiranu u novu <a href=“%s”>Pro "
-#~ "verziju ACF</a>. Sa novim osobnom i razvojnom opcijom licenciranja, "
-#~ "premium funkcionalnost je dosupnija i povoljnija nego prije!"
-
-#~ msgid "Powerful Features"
-#~ msgstr "Super mogućnosti"
-
-#~ msgid ""
-#~ "ACF PRO contains powerful features such as repeatable data, flexible "
-#~ "content layouts, a beautiful gallery field and the ability to create "
-#~ "extra admin options pages!"
-#~ msgstr ""
-#~ "ACF PRO uključuje napredne funkcionalnosti kao ponavljajuća polja, "
-#~ "modularni raspored, galerija slika i mogućnost dodavanja novih stranica u "
-#~ "postavkama administracije!"
-
-#, php-format
-#~ msgid "Read more about <a href=\"%s\">ACF PRO features</a>."
-#~ msgstr "Pročitajte više o <a href=“%s”>mogućnostima ACF PRO</a>."
-
-#~ msgid "Easy Upgrading"
-#~ msgstr "Jednostavno ažuriranje"
-
-#, php-format
-#~ msgid ""
-#~ "To help make upgrading easy, <a href=\"%s\">login to your store account</"
-#~ "a> and claim a free copy of ACF PRO!"
-#~ msgstr ""
-#~ "Kako bi pojednostavili ažuriranje, <a href=“%s”>prijavite se s vašim "
-#~ "računom</a> i osigurajte besplatnu verziju ACF PRO!"
-
-#, php-format
-#~ msgid ""
-#~ "We also wrote an <a href=\"%s\">upgrade guide</a> to answer any "
-#~ "questions, but if you do have one, please contact our support team via "
-#~ "the <a href=\"%s\">help desk</a>"
-#~ msgstr ""
-#~ "Provjeriti <a href=“%s”>upute za ažuriranje</a> ako imate dodatnih "
-#~ "pitanja, ili kontaktirajte našu <a href=“%s”>tim za podršku</a>"
-
-#~ msgid "Under the Hood"
-#~ msgstr "Ispod haube"
-
-#~ msgid "Smarter field settings"
-#~ msgstr "Pametnije postavke"
-
-#~ msgid "ACF now saves its field settings as individual post objects"
-#~ msgstr "ACF od sada sprema postavke polja kao objekt"
-
-#~ msgid "More AJAX"
-#~ msgstr "Više AJAX-a"
-
-#~ msgid "More fields use AJAX powered search to speed up page loading"
-#~ msgstr ""
-#~ "Više polja koristi asinkrono pretraživanje kako bi učitavanje stranice "
-#~ "bilo brže"
-
-#~ msgid "New auto export to JSON feature improves speed"
-#~ msgstr "Nova mogućnost automatskog izvoza u JSON obliku"
-
-#~ msgid "Better version control"
-#~ msgstr "Bolje upravljanje verzijama"
-
-#~ msgid ""
-#~ "New auto export to JSON feature allows field settings to be version "
-#~ "controlled"
-#~ msgstr "Nova opcija izvoza u JSON omogućuje verziranje"
-
-#~ msgid "Swapped XML for JSON"
-#~ msgstr "JSON umjesto XML"
-
-#~ msgid "Import / Export now uses JSON in favour of XML"
-#~ msgstr "Uvoz / Izvoz sada koristi JSON umjesto XML"
-
-#~ msgid "New Forms"
-#~ msgstr "Nove forme"
-
-#~ msgid "Fields can now be mapped to comments, widgets and all user forms!"
-#~ msgstr ""
-#~ "Od sada je moguće dodati polja na sve stranice, uključujući komentare, "
-#~ "stranice za uređivanje korisnika i widgete!"
-
-#~ msgid "A new field for embedding content has been added"
-#~ msgstr "Novo polje za ugnježdeni sadržaj"
-
-#~ msgid "New Gallery"
-#~ msgstr "Nova galerija"
-
-#~ msgid "The gallery field has undergone a much needed facelift"
-#~ msgstr "Polje Galerija je dobilo novi izgled"
-
-#~ msgid "New Settings"
-#~ msgstr "Nove postavke"
-
-#~ msgid ""
-#~ "Field group settings have been added for label placement and instruction "
-#~ "placement"
-#~ msgstr ""
-#~ "Postavke svakog polja uključuju dodatna polja, polje za opis i polje za "
-#~ "upute namjenjene korisniku"
-
-#~ msgid "Better Front End Forms"
-#~ msgstr "Bolji prikaz formi na web stranici"
-
-#~ msgid "acf_form() can now create a new post on submission"
-#~ msgstr ""
-#~ "acf_form() funkcija od sada omogućuje dodavanje nove objave prilikom "
-#~ "spremanja"
-
-#~ msgid "Form validation is now done via PHP + AJAX in favour of only JS"
-#~ msgstr ""
-#~ "Verifikacija polja se sada obavlja asinkrono (PHP + AJAX) umjesto "
-#~ "dosadašnjeg načina (Javascript)"
-
-#~ msgid "Relationship Field"
-#~ msgstr "Polje za povezivanje objekta"
-
-#~ msgid ""
-#~ "New Relationship field setting for 'Filters' (Search, Post Type, Taxonomy)"
-#~ msgstr ""
-#~ "Novo postavke polja Veza za filter (pretraga, tip objekta, taksonomija)"
-
-#~ msgid "Moving Fields"
-#~ msgstr "Premještanje polja"
-
-#~ msgid ""
-#~ "New field group functionality allows you to move a field between groups & "
-#~ "parents"
-#~ msgstr ""
-#~ "Nova funkcionalnost polja omogućuje premještanje polja i skupa polja"
-
-#~ msgid "New archives group in page_link field selection"
-#~ msgstr "Nova skupina ‘arhiva’ prilikom odabira polja page_link"
-
-#~ msgid "Better Options Pages"
-#~ msgstr "Bolja upravljanje stranica sa postavkama"
-
-#~ msgid ""
-#~ "New functions for options page allow creation of both parent and child "
-#~ "menu pages"
-#~ msgstr ""
-#~ "Nova funkcionalnost kod dodavanja stranica za postavke omogućuju "
-#~ "dodavanje izvornih i pod stranica izbornika"
-
-#, php-format
-#~ msgid "We think you'll love the changes in %s."
-#~ msgstr "Mislimo da će vam se svidjeti promjene u %s."
-
-#~ msgid "Current Color"
-#~ msgstr "Trenutna boja"
-
-#~ msgid "Locating"
-#~ msgstr "Lociranje u tijeku"
-
-#~ msgid "Shown when entering data"
-#~ msgstr "Prikazuje se prilikom unosa podataka"
-
-#~ msgid "Error."
-#~ msgstr "Greška."
-
-#~ msgid "No embed found for the given URL."
-#~ msgstr "Nije pronađen nijedan umetak za unesenu adresu."
-
-#~ msgid "Minimum values reached ( {min} values )"
-#~ msgstr "Minimalna vrijednost je {min}"
-
-#~ msgid "None"
-#~ msgstr "Bez odabira"
-
-#~ msgid "Taxonomy Term"
-#~ msgstr "Pojam takosnomije"
-
-#~ msgid "remove {layout}?"
-#~ msgstr "ukloni {layout}?"
-
-#~ msgid "This field requires at least {min} {identifier}"
-#~ msgstr "Polje mora sadržavati najmanje {min} {identifier}"
-
-#~ msgid "Maximum {label} limit reached ({max} {identifier})"
-#~ msgstr "Polje {label} smije sadržavati najviše {max} {identifier}"
-
-#~ msgid "Elliot Condon"
-#~ msgstr "Elliot Condon"
-
-#~ msgid "http://www.elliotcondon.com/"
-#~ msgstr "http://www.elliotcondon.com/"
-
-#~ msgid "Getting Started"
-#~ msgstr "Kako početi"
-
-#~ msgid "Field Types"
-#~ msgstr "Tipovi polja"
-
-#~ msgid "Functions"
-#~ msgstr "Funkcije"
-
-#~ msgid "Actions"
-#~ msgstr "Akcije"
-
-#~ msgid "Features"
-#~ msgstr "Mogućnosti"
-
-#~ msgid "How to"
-#~ msgstr "Pomoć"
-
-#~ msgid "Tutorials"
-#~ msgstr "Tutorijali"
-
-#~ msgid "FAQ"
-#~ msgstr "Česta pitanja"
-
-#~ msgid "Error"
-#~ msgstr "Greška"
-
-#~ msgid "Export Field Groups to PHP"
-#~ msgstr "Izvoz polja u PHP obliku"
-
-#~ msgid "Download export file"
-#~ msgstr "Preuzmi datoteku"
-
-#~ msgid "Generate export code"
-#~ msgstr "Stvori kod za izvoz"
-
-#~ msgid "Term meta upgrade not possible (termmeta table does not exist)"
-#~ msgstr ""
-#~ "Nije moguće dovrišti nadogradnju tablice 'termmeta', tablica ne postoji u "
-#~ "bazi"

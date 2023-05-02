@@ -2223,7 +2223,8 @@ html[dir=rtl] .acf-file-uploader .file-info {
 }
 .acf-range-wrap input[type=number] {
   display: inline-block;
-  min-width: 3em;
+  min-width: 5em;
+  padding-right: 4px;
   margin-left: 10px;
   vertical-align: middle;
 }

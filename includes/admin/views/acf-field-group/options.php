@@ -17,38 +17,31 @@ if ( empty( $field_group['location'] ) ) {
 		),
 	);
 
-	$acf_use_post_type = acf_request_arg( 'use_post_type', false );
-	if ( $acf_use_post_type && wp_verify_nonce( acf_request_arg( '_wpnonce' ), 'add-fields-' . $acf_use_post_type ) ) {
-		$acf_post_type = acf_get_internal_post_type( (int) $acf_use_post_type, 'acf-post-type' );
+	$acf_use_post_type = acf_get_post_type_from_request_args( 'add-fields' );
+	$acf_use_taxonomy  = acf_get_taxonomy_from_request_args( 'add-fields' );
 
-		if ( $acf_post_type && isset( $acf_post_type['post_type'] ) ) {
-			$field_group['location'] = array(
+	if ( $acf_use_post_type && ! empty( $acf_use_post_type['post_type'] ) ) {
+		$field_group['location'] = array(
+			array(
 				array(
-					array(
-						'param'    => 'post_type',
-						'operator' => '==',
-						'value'    => $acf_post_type['post_type'],
-					),
+					'param'    => 'post_type',
+					'operator' => '==',
+					'value'    => $acf_use_post_type['post_type'],
 				),
-			);
-		}
+			),
+		);
 	}
 
-	$acf_use_taxonomy = acf_request_arg( 'use_taxonomy', false );
-	if ( $acf_use_taxonomy && wp_verify_nonce( acf_request_arg( '_wpnonce' ), 'add-fields-' . $acf_use_taxonomy ) ) {
-		$acf_taxonomy = acf_get_internal_post_type( (int) $acf_use_taxonomy, 'acf-taxonomy' );
-
-		if ( $acf_taxonomy && isset( $acf_taxonomy['taxonomy'] ) ) {
-			$field_group['location'] = array(
+	if ( $acf_use_taxonomy && ! empty( $acf_use_taxonomy['taxonomy'] ) ) {
+		$field_group['location'] = array(
+			array(
 				array(
-					array(
-						'param'    => 'taxonomy',
-						'operator' => '==',
-						'value'    => $acf_taxonomy['taxonomy'],
-					),
+					'param'    => 'taxonomy',
+					'operator' => '==',
+					'value'    => $acf_use_taxonomy['taxonomy'],
 				),
-			);
-		}
+			),
+		);
 	}
 }
 
@@ -248,6 +241,18 @@ foreach ( acf_get_combined_field_group_settings_tabs() as $tab_key => $tab_label
 				'div',
 				'field'
 			);
+
+			/* translators: 1: Post creation date 2: Post creation time */
+			$acf_created_on = sprintf( __( 'Created on %1$s at %2$s', 'acf' ), get_the_date(), get_the_time() );
+			?>
+			<div class="acf-field-group-settings-footer">
+				<span class="acf-created-on"><?php echo esc_html( $acf_created_on ); ?></span>
+				<a href="<?php echo get_delete_post_link(); ?>" class="acf-btn acf-btn-tertiary  acf-delete-field-group">
+					<i class="acf-icon acf-icon-trash"></i>
+					<?php esc_html_e( 'Delete Field Group', 'acf' ); ?>
+				</a>
+			</div>
+			<?php
 			echo '</div>';
 			break;
 		default:
@@ -260,17 +265,7 @@ foreach ( acf_get_combined_field_group_settings_tabs() as $tab_key => $tab_label
 
 // 3rd party settings
 do_action( 'acf/render_field_group_settings', $field_group );
-
-/* translators: 1: Post creation date 2: Post creation time */
-$acf_created_on = sprintf( __( 'Created on %1$s at %2$s', 'acf' ), get_the_date(), get_the_time() );
 ?>
-<div class="acf-field-group-settings-footer">
-	<span class="acf-created-on"><?php echo esc_html( $acf_created_on ); ?></span>
-	<a href="<?php echo get_delete_post_link(); ?>" class="acf-btn acf-btn-tertiary  acf-delete-field-group">
-		<i class="acf-icon acf-icon-trash"></i>
-		<?php esc_html_e( 'Delete Field Group', 'acf' ); ?>
-	</a>
-</div>
 
 <div class="acf-hidden">
 	<input type="hidden" name="acf_field_group[key]" value="<?php echo $field_group['key']; ?>" />

@@ -11,7 +11,6 @@ $prefix = 'acf_field_group[location][' . $rule['group'] . '][' . $rule['id'] . '
 		// vars
 		$choices = acf_get_location_rule_types();
 
-
 		// array
 		if ( is_array( $choices ) ) {
 

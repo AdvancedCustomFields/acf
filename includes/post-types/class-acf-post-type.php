@@ -383,7 +383,7 @@ if ( ! class_exists( 'ACF_Post_Type' ) ) {
 
 			// WordPress defaults to the opposite of $args['public'].
 			$exclude_from_search = (bool) $post['exclude_from_search'];
-			if ( $exclude_from_search !== $args['public'] ) {
+			if ( $exclude_from_search === $args['public'] ) {
 				$args['exclude_from_search'] = $exclude_from_search;
 			}
 
@@ -597,7 +597,7 @@ if ( ! class_exists( 'ACF_Post_Type' ) ) {
 			// Validate and prepare the post for export.
 			$post = $this->validate_post( $post );
 			$args = $this->get_post_type_args( $post );
-			$code = var_export( $args, true );
+			$code = var_export( $args, true ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions -- Used for PHP export.
 
 			if ( ! $code ) {
 				return $return;
@@ -605,7 +605,7 @@ if ( ! class_exists( 'ACF_Post_Type' ) ) {
 
 			$code = $this->format_code_for_export( $code );
 
-			$return .= "register_post_type( '{$post_type_key}', {$code} );\r\n\r\n";
+			$return .= "register_post_type( '{$post_type_key}', {$code} );\r\n";
 
 			return esc_textarea( $return );
 		}

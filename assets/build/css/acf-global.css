@@ -3230,6 +3230,10 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
   font-size: 10px;
   color: #475467;
 }
+.acf-internal-post-type .wp-list-table th .acf-emdash,
+.acf-internal-post-type .wp-list-table td .acf-emdash {
+  color: #D0D5DD;
+}
 .acf-internal-post-type .wp-list-table thead th, .acf-internal-post-type .wp-list-table thead td,
 .acf-internal-post-type .wp-list-table tfoot th, .acf-internal-post-type .wp-list-table tfoot td {
   height: 48px;

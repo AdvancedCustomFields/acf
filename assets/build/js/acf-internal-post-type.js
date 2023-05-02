@@ -1,11 +1,11 @@
-/******/ (() => { // webpackBootstrap
+/******/ (function() { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./src/advanced-custom-fields-pro/assets/src/js/_acf-internal-post-type.js":
 /*!*********************************************************************************!*\
   !*** ./src/advanced-custom-fields-pro/assets/src/js/_acf-internal-post-type.js ***!
   \*********************************************************************************/
-/***/ (() => {
+/***/ (function() {
 
 (function ($, undefined) {
   /**
@@ -17,6 +17,7 @@
    */
   const internalPostTypeSettingsManager = new acf.Model({
     id: 'internalPostTypeSettingsManager',
+    wait: 'ready',
     events: {
       'blur .acf_slugify_to_key': 'onChangeSlugify',
       'blur .acf_singular_label': 'onChangeSingularLabel',
@@ -25,8 +26,7 @@
       'click .acf-regenerate-labels': 'onClickRegenerateLabels',
       'click .acf-clear-labels': 'onClickClearLabels',
       'change .rewrite_slug_field': 'onChangeURLSlug',
-      'keyup .rewrite_slug_field': 'onChangeURLSlug',
-      ready: 'ready'
+      'keyup .rewrite_slug_field': 'onChangeURLSlug'
     },
     onChangeSlugify: function (e, $el) {
       const name = $el.val();
@@ -39,7 +39,10 @@
         $keyInput.val(slug.substring(0, 20));
       }
     },
-    ready: function () {
+    initialize: function () {
+      // check we should init.
+      if (!['taxonomy', 'post_type'].includes(acf.get('screen'))) return;
+
       // select2
       const template = function (selection) {
         if ('undefined' === typeof selection.element) {
@@ -303,49 +306,49 @@
 /******/ 	
 /************************************************************************/
 /******/ 	/* webpack/runtime/compat get default export */
-/******/ 	(() => {
+/******/ 	!function() {
 /******/ 		// getDefaultExport function for compatibility with non-harmony modules
-/******/ 		__webpack_require__.n = (module) => {
+/******/ 		__webpack_require__.n = function(module) {
 /******/ 			var getter = module && module.__esModule ?
-/******/ 				() => (module['default']) :
-/******/ 				() => (module);
+/******/ 				function() { return module['default']; } :
+/******/ 				function() { return module; };
 /******/ 			__webpack_require__.d(getter, { a: getter });
 /******/ 			return getter;
 /******/ 		};
-/******/ 	})();
+/******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/define property getters */
-/******/ 	(() => {
+/******/ 	!function() {
 /******/ 		// define getter functions for harmony exports
-/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 		__webpack_require__.d = function(exports, definition) {
 /******/ 			for(var key in definition) {
 /******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
 /******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
 /******/ 				}
 /******/ 			}
 /******/ 		};
-/******/ 	})();
+/******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
-/******/ 	(() => {
-/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
-/******/ 	})();
+/******/ 	!function() {
+/******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
+/******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
-/******/ 	(() => {
+/******/ 	!function() {
 /******/ 		// define __esModule on exports
-/******/ 		__webpack_require__.r = (exports) => {
+/******/ 		__webpack_require__.r = function(exports) {
 /******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
 /******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
-/******/ 	})();
+/******/ 	}();
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
-(() => {
+!function() {
 "use strict";
 /*!********************************************************************************!*\
   !*** ./src/advanced-custom-fields-pro/assets/src/js/acf-internal-post-type.js ***!
@@ -354,8 +357,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _acf_internal_post_type_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_acf-internal-post-type.js */ "./src/advanced-custom-fields-pro/assets/src/js/_acf-internal-post-type.js");
 /* harmony import */ var _acf_internal_post_type_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_acf_internal_post_type_js__WEBPACK_IMPORTED_MODULE_0__);
 
-})();
-
+}();
 /******/ })()
 ;
 //# sourceMappingURL=acf-internal-post-type.js.map

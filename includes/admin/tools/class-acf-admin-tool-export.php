@@ -415,13 +415,41 @@ if ( ! class_exists( 'ACF_Admin_Tool_Export' ) ) :
 			// Prevent default translation and fake __() within string.
 			acf_update_setting( 'l10n_var_export', true );
 
-			$json = $this->get_selected();
+			$json      = $this->get_selected();
+			$to_export = array();
 
-			echo '<textarea id="acf-export-textarea" readonly="true">';
-
+			// Sort by ACF post type first so we can wrap them in related functions.
 			foreach ( $json as $post ) {
 				$post_type = acf_determine_internal_post_type( $post['key'] );
-				echo acf_export_internal_post_type_as_php( $post, $post_type );
+
+				if ( $post_type ) {
+					$to_export[ $post_type ][] = $post;
+				}
+			}
+
+			echo '<textarea id="acf-export-textarea" readonly="readonly">';
+
+			foreach ( $to_export as $post_type => $posts ) {
+				if ( 'acf-field-group' === $post_type ) {
+					echo "add_action( 'acf/include_fields', function() {\r\n";
+					echo "\tif ( ! function_exists( 'acf_add_local_field_group' ) ) {\r\n\t\treturn;\r\n\t}\r\n\r\n";
+				} elseif ( 'acf-post-type' === $post_type || 'acf-taxonomy' === $post_type ) {
+					echo "add_action( 'init', function() {\r\n";
+				}
+
+				$count = 0;
+				foreach ( $posts as $post ) {
+					if ( $count !== 0 ) {
+						echo "\r\n";
+					}
+
+					echo "\t" . acf_export_internal_post_type_as_php( $post, $post_type ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- esc_textarea() used earlier.
+					$count++;
+				}
+
+				if ( in_array( $post_type, array( 'acf-post-type', 'acf-taxonomy', 'acf-field-group' ), true ) ) {
+					echo "} );\r\n\r\n";
+				}
 			}
 
 			echo '</textarea>';

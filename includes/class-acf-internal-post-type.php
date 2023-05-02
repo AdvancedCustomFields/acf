@@ -852,6 +852,7 @@ if ( ! class_exists( 'ACF_Internal_Post_Type' ) ) {
 			}
 
 			$str_replace  = array(
+				"\n"         => "\n\t",
 				'  '         => "\t",
 				"'!!__(!!\'" => "__('",
 				"!!\', !!\'" => "', '",
