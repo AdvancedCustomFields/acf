@@ -269,8 +269,8 @@ if ( ! class_exists( 'ACF' ) ) {
 
 			// Add post types and taxonomies.
 			if ( acf_get_setting( 'enable_post_types' ) ) {
-				acf_include( 'includes/post-types/class-acf-post-type.php' );
 				acf_include( 'includes/post-types/class-acf-taxonomy.php' );
+				acf_include( 'includes/post-types/class-acf-post-type.php' );
 			}
 
 			// Include fields.
