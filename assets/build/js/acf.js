@@ -3202,6 +3202,9 @@
       $(this).prop('id', $(this).prop('id').replace('acf_fields', acf.uniqid('duplicated_') + '_acf_fields'));
     });
 
+    // remove tab wrapper to ensure proper init
+    $el2.find('.acf-field-settings > .acf-tab-wrap').remove();
+
     // after
     // - allow acf to modify DOM
     args.after($el, $el2);

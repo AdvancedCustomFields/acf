@@ -4116,21 +4116,12 @@
     findTab: function () {
       return this.$('.acf-tab-button');
     },
-    tabsDisabled: function () {
-      if ('acf_field_settings_tabs' === this.get('key') && $('#acf-field-group-fields').hasClass('hide-tabs')) {
-        return true;
-      }
-      return false;
-    },
     initialize: function () {
       // bail early if is td
       if (this.$el.is('td')) {
         this.events = {};
         return false;
       }
-
-      // Bail early if we're a field setting and tabs are disabled
-      if (this.tabsDisabled()) return;
 
       // vars
       var $tabs = this.findTabs();
@@ -4215,7 +4206,6 @@
       });
     },
     onDuplicate: function (e, $el, $duplicate) {
-      if (this.tabsDisabled()) return;
       if (this.isActive()) {
         $duplicate.prevAll('.acf-tab-wrap:first').remove();
       }

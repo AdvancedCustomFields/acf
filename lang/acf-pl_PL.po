@@ -12,7 +12,7 @@
 # This file is distributed under the same license as Advanced Custom Fields.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-05-02T13:21:43+00:00\n"
+"PO-Revision-Date: 2023-05-04T13:57:24+00:00\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "Language: pl_PL\n"
 "MIME-Version: 1.0\n"
@@ -76,9 +76,9 @@ msgstr "Ustawienia zostały zaktualizowane"
 
 #: pro/updates.php:99
 msgid ""
-"To enable updates, please enter your license key on the <a href=\"%1$s"
-"\">Updates</a> page. If you don't have a licence key, please see <a href="
-"\"%2$s\" target=\"_blank\">details & pricing</a>."
+"To enable updates, please enter your license key on the <a "
+"href=\"%1$s\">Updates</a> page. If you don't have a licence key, please see "
+"<a href=\"%2$s\" target=\"_blank\">details & pricing</a>."
 msgstr ""
 "Aby włączyć aktualizacje, należy wprowadzić klucz licencyjny na stronie <a "
 "href=\"%1$s\">Aktualizacje</a>. Jeśli nie posiadasz klucza licencyjnego, "
@@ -131,8 +131,8 @@ msgid ""
 "No Custom Field Groups found for this options page. <a href=\"%s\">Create a "
 "Custom Field Group</a>"
 msgstr ""
-"Żadna grupa pól nie została dodana do tej strony opcji. <a href=\"%s"
-"\">Utwórz grupę własnych pól</a>"
+"Żadna grupa pól nie została dodana do tej strony opcji. <a "
+"href=\"%s\">Utwórz grupę własnych pól</a>"
 
 #: pro/admin/admin-options-page.php:309
 msgid "Edit field group"
@@ -765,8 +765,8 @@ msgid ""
 "a>."
 msgstr ""
 "Żeby odblokować aktualizacje proszę podać swój klucz licencyjny poniżej. "
-"Jeśli nie posiadasz klucza prosimy zapoznać się ze <a href=\"%s\" target="
-"\"_blank\">szczegółami i cennikiem</a>."
+"Jeśli nie posiadasz klucza prosimy zapoznać się ze <a href=\"%s\" "
+"target=\"_blank\">szczegółami i cennikiem</a>."
 
 #: pro/admin/views/html-settings-updates.php:37
 msgid "License Key"

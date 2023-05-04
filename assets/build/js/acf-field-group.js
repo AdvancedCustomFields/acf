@@ -2851,7 +2851,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
         $('.acf-field-settings-main').removeClass('acf-hidden').prop('hidden', false);
       } else {
         $('#acf-field-group-fields').removeClass('hide-tabs');
-        $('.acf-field-object.open').each(function () {
+        $('.acf-field-object').each(function () {
           const tabFields = acf.getFields({
             type: 'tab',
             parent: $(this),
