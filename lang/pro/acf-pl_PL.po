@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Advanced Custom Fields PRO\n"
 "Report-Msgid-Bugs-To: https://support.advancedcustomfields.com\n"
 "POT-Creation-Date: 2023-04-18 07:25+0000\n"
-"PO-Revision-Date: 2023-04-24 13:30+0100\n"
+"PO-Revision-Date: 2023-05-10 12:04+0200\n"
 "Last-Translator: WP Engine <support@advancedcustomfields.com>\n"
 "Language-Team: WP Engine <support@advancedcustomfields.com>\n"
 "Language: pl_PL\n"
@@ -55,7 +55,7 @@ msgstr "Ustawienia  %s"
 
 #: pro/blocks.php:936
 msgid "This block contains no editable fields."
-msgstr ""
+msgstr "Ten blok nie zawiera żadnych edytowalnych pól."
 
 #. translators: %s: an admin URL to the field group edit screen
 #: pro/blocks.php:942
@@ -63,6 +63,8 @@ msgid ""
 "Assign a <a href=\"%s\" target=\"_blank\">field group</a> to add fields to "
 "this block."
 msgstr ""
+"Przypisz <a href=\"%s\" target=\"_blank\">grupę pól</a>, aby dodać pola do "
+"tego bloku."
 
 #: pro/options-page.php:47
 msgid "Options"
@@ -178,6 +180,10 @@ msgid ""
 "time. The Clone field can either replace itself with the selected fields or "
 "display the selected fields as a group of subfields."
 msgstr ""
+"Umożliwia wybranie i wyświetlenie istniejących pól. Nie duplikuje żadnych "
+"pól w bazie danych, ale ładuje i wyświetla wybrane pola w czasie "
+"wykonywania. Pole Klonuj może zastąpić się wybranymi polami lub wyświetlić "
+"wybrane pola jako grupę podpól."
 
 #: pro/fields/class-acf-field-clone.php:818,
 #: pro/fields/class-acf-field-flexible-content.php:78
@@ -275,10 +281,13 @@ msgid ""
 "Allows you to define, create and manage content with total control by "
 "creating layouts that contain subfields that content editors can choose from."
 msgstr ""
+"Umożliwia definiowanie, tworzenie i zarządzanie treścią z pełną kontrolą "
+"poprzez tworzenie układów zawierających podpola, które edytorzy treści mogą "
+"wybierać."
 
 #: pro/fields/class-acf-field-flexible-content.php:27
 msgid "We do not recommend using this field in ACF Blocks."
-msgstr ""
+msgstr "Nie zalecamy używania tego pola w blokach ACF."
 
 #: pro/fields/class-acf-field-flexible-content.php:36,
 #: pro/fields/class-acf-field-repeater.php:103,
@@ -360,8 +369,6 @@ msgid "Add New Layout"
 msgstr "Dodaj nowy układ"
 
 #: pro/fields/class-acf-field-flexible-content.php:564
-#, fuzzy
-#| msgid "Add layout"
 msgid "Add Layout"
 msgstr "Dodaj układ"
 
@@ -422,6 +429,8 @@ msgid ""
 "An interactive interface for managing a collection of attachments, such as "
 "images."
 msgstr ""
+"Interaktywny interfejs do zarządzania kolekcją załączników, takich jak "
+"obrazy."
 
 #: pro/fields/class-acf-field-gallery.php:77
 msgid "Add Image to Gallery"
@@ -598,50 +607,40 @@ msgstr "Pole powtarzalne"
 
 #: pro/fields/class-acf-field-repeater.php:66,
 #: pro/fields/class-acf-field-repeater.php:463
-#, fuzzy
-#| msgid "Minimum rows reached ({min} rows)"
 msgid "Minimum rows not reached ({min} rows)"
-msgstr "Osiągnięto minimum liczby wierszy ( {min} wierszy )"
+msgstr "Nie osiągnięto minimalnej liczby wierszy ({min} wierszy)"
 
 #: pro/fields/class-acf-field-repeater.php:67
 msgid "Maximum rows reached ({max} rows)"
 msgstr "Osiągnięto maksimum liczby wierszy ( {max} wierszy )"
 
 #: pro/fields/class-acf-field-repeater.php:68
-#, fuzzy
-#| msgid "Error loading field."
 msgid "Error loading page"
-msgstr "Błąd ładowania pola."
+msgstr "Błąd ładowania strony"
 
 #: pro/fields/class-acf-field-repeater.php:69
 msgid "Order will be assigned upon save"
-msgstr ""
+msgstr "Kolejność zostanie przydzielona po zapisaniu"
 
 #: pro/fields/class-acf-field-repeater.php:162
 msgid "Sub Fields"
 msgstr "Pola podrzędne"
 
 #: pro/fields/class-acf-field-repeater.php:195
-#, fuzzy
-#| msgid "Position"
 msgid "Pagination"
-msgstr "Pozycja"
+msgstr "Paginacja"
 
 #: pro/fields/class-acf-field-repeater.php:196
 msgid "Useful for fields with a large number of rows."
-msgstr ""
+msgstr "Przydatne dla pól z dużą liczbą wierszy."
 
 #: pro/fields/class-acf-field-repeater.php:207
-#, fuzzy
-#| msgid "Posts Page"
 msgid "Rows Per Page"
-msgstr "Strona wpisów"
+msgstr "Wiersze na stronę"
 
 #: pro/fields/class-acf-field-repeater.php:208
-#, fuzzy
-#| msgid "Select the taxonomy to be displayed"
 msgid "Set the number of rows to be displayed on a page."
-msgstr "Wybierz taksonomię do wyświetlenia"
+msgstr "Ustawienie liczby wierszy, które mają być wyświetlane na stronie."
 
 #: pro/fields/class-acf-field-repeater.php:240
 msgid "Minimum Rows"
@@ -665,20 +664,16 @@ msgid "Invalid nonce."
 msgstr "Nieprawidłowy identyfikator jednorazowy."
 
 #: pro/fields/class-acf-field-repeater.php:1060
-#, fuzzy
-#| msgid "Invalid field group ID."
 msgid "Invalid field key or name."
-msgstr "Nieprawidłowy identyfikator grupy pól."
+msgstr "Nieprawidłowy klucz lub nazwa pola."
 
 #: pro/fields/class-acf-field-repeater.php:1069
 msgid "There was an error retrieving the field."
-msgstr ""
+msgstr "Wystąpił błąd przy pobieraniu pola."
 
 #: pro/fields/class-acf-repeater-table.php:369
-#, fuzzy
-#| msgid "Drag to reorder"
 msgid "Click to reorder"
-msgstr "Przeciągnij aby zmienić kolejność"
+msgstr "Kliknij, aby zmienić kolejność"
 
 #: pro/fields/class-acf-repeater-table.php:402
 msgid "Add row"
@@ -695,46 +690,34 @@ msgstr "Usuń wiersz"
 #: pro/fields/class-acf-repeater-table.php:448,
 #: pro/fields/class-acf-repeater-table.php:465,
 #: pro/fields/class-acf-repeater-table.php:466
-#, fuzzy
-#| msgid "Current User"
 msgid "Current Page"
-msgstr "Bieżący użytkownik"
+msgstr "Bieżąca strona"
 
 #: pro/fields/class-acf-repeater-table.php:456,
 #: pro/fields/class-acf-repeater-table.php:457
-#, fuzzy
-#| msgid "Front Page"
 msgid "First Page"
-msgstr "Strona główna"
+msgstr "Pierwsza strona"
 
 #: pro/fields/class-acf-repeater-table.php:460,
 #: pro/fields/class-acf-repeater-table.php:461
-#, fuzzy
-#| msgid "Posts Page"
 msgid "Previous Page"
-msgstr "Strona wpisów"
+msgstr "Poprzednia strona"
 
 #. translators: 1: Current page, 2: Total pages.
 #: pro/fields/class-acf-repeater-table.php:470
-#, fuzzy
-#| msgid "%1$s is not one of %2$s"
 msgctxt "paging"
 msgid "%1$s of %2$s"
-msgstr "%1$s nie jest jednym z %2$s"
+msgstr "%1$s z %2$s"
 
 #: pro/fields/class-acf-repeater-table.php:477,
 #: pro/fields/class-acf-repeater-table.php:478
-#, fuzzy
-#| msgid "Front Page"
 msgid "Next Page"
-msgstr "Strona główna"
+msgstr "Następna strona"
 
 #: pro/fields/class-acf-repeater-table.php:481,
 #: pro/fields/class-acf-repeater-table.php:482
-#, fuzzy
-#| msgid "Posts Page"
 msgid "Last Page"
-msgstr "Strona wpisów"
+msgstr "Ostatnia strona"
 
 #: pro/locations/class-acf-location-block.php:71
 msgid "No block types exist"
@@ -812,14 +795,11 @@ msgstr "Informacje o aktualizacji"
 
 #: pro/admin/views/html-settings-updates.php:126
 msgid "Check For Updates"
-msgstr ""
+msgstr "Sprawdź dostępność aktualizacji"
 
 #: pro/admin/views/html-settings-updates.php:121
-#, fuzzy
-#| msgid "Please enter your license key above to unlock updates"
 msgid "Enter your license key to unlock updates"
-msgstr ""
-"Proszę wpisać swój klucz licencyjny powyżej aby odblokować aktualizacje"
+msgstr "Wprowadź klucz licencyjny, aby odblokować aktualizacje"
 
 #: pro/admin/views/html-settings-updates.php:119
 msgid "Update Plugin"
