@@ -121,10 +121,6 @@ if ( ! class_exists( 'acf_field_page_link' ) ) :
 
 				$args['post_status'] = acf_get_array( $field['post_status'] );
 
-			} else {
-
-				$args['post_status'] = 'publish';
-
 			}
 
 			// create tax queries
@@ -485,7 +481,7 @@ if ( ! class_exists( 'acf_field_page_link' ) ) :
 					'multiple'     => 1,
 					'ui'           => 1,
 					'allow_null'   => 1,
-					'placeholder'  => __( 'Published', 'acf' ),
+					'placeholder'  => __( 'Any post status', 'acf' ),
 				)
 			);
 

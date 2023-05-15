@@ -383,7 +383,7 @@ if ( ! class_exists( 'ACF_Post_Type' ) ) {
 
 			// WordPress defaults to the opposite of $args['public'].
 			$exclude_from_search = (bool) $post['exclude_from_search'];
-			if ( $exclude_from_search !== $args['public'] ) {
+			if ( $exclude_from_search === $args['public'] ) {
 				$args['exclude_from_search'] = $exclude_from_search;
 			}
 
@@ -471,12 +471,11 @@ if ( ! class_exists( 'ACF_Post_Type' ) ) {
 
 				if ( $capability_type !== 'post' && $capability_type !== array( 'post', 'posts' ) ) {
 					$args['capability_type'] = $capability_type;
+					$args['map_meta_cap']    = true;
 				}
 			}
 
 			// TODO: We don't handle the `capabilities` arg at the moment, but may in the future.
-
-			// TODO: We don't handle the `map_meta_cap` arg at the moment, but may in the future.
 
 			// WordPress defaults to the "title" and "editor" supports, but none can be provided by passing false (WP 3.5+).
 			$supports = is_array( $post['supports'] ) ? $post['supports'] : array();
@@ -598,7 +597,7 @@ if ( ! class_exists( 'ACF_Post_Type' ) ) {
 			// Validate and prepare the post for export.
 			$post = $this->validate_post( $post );
 			$args = $this->get_post_type_args( $post );
-			$code = var_export( $args, true );
+			$code = var_export( $args, true ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions -- Used for PHP export.
 
 			if ( ! $code ) {
 				return $return;
@@ -606,7 +605,7 @@ if ( ! class_exists( 'ACF_Post_Type' ) ) {
 
 			$code = $this->format_code_for_export( $code );
 
-			$return .= "register_post_type( '{$post_type_key}', {$code} );\r\n\r\n";
+			$return .= "register_post_type( '{$post_type_key}', {$code} );\r\n";
 
 			return esc_textarea( $return );
 		}

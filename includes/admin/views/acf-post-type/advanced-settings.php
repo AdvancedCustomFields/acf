@@ -2,16 +2,6 @@
 
 global $acf_post_type;
 
-// Allow preselecting the linked taxonomies based on previously created taxonomy.
-$acf_use_taxonomy = acf_request_arg( 'use_taxonomy', false );
-if ( $acf_use_taxonomy && wp_verify_nonce( acf_request_arg( '_wpnonce' ), 'create-post-type-' . $acf_use_taxonomy ) ) {
-	$acf_linked_taxonomy = acf_get_internal_post_type( (int) $acf_use_taxonomy, 'acf-taxonomy' );
-
-	if ( $acf_linked_taxonomy && isset( $acf_linked_taxonomy['taxonomy'] ) ) {
-		$acf_post_type['taxonomies'] = array( $acf_linked_taxonomy['taxonomy'] );
-	}
-}
-
 foreach ( acf_get_combined_post_type_settings_tabs() as $tab_key => $tab_label ) {
 	acf_render_field_wrap(
 		array(
@@ -23,26 +13,6 @@ foreach ( acf_get_combined_post_type_settings_tabs() as $tab_key => $tab_label )
 
 	switch ( $tab_key ) {
 		case 'general':
-			acf_render_field_wrap(
-				array(
-					'type'         => 'select',
-					'name'         => 'taxonomies',
-					'key'          => 'taxonomies',
-					'prefix'       => 'acf_post_type',
-					'value'        => $acf_post_type['taxonomies'],
-					'label'        => __( 'Linked Taxonomies', 'acf' ),
-					'instructions' => __( 'Select existing taxonomies to classify items of the post type.', 'acf' ),
-					'choices'      => acf_get_taxonomy_labels(),
-					'ui'           => true,
-					'allow_null'   => true,
-					'multiple'     => true,
-				),
-				'div',
-				'field'
-			);
-
-			acf_render_field_wrap( array( 'type' => 'seperator' ) );
-
 			$acf_available_supports = array(
 				'title'           => __( 'Title', 'acf' ),
 				'author'          => __( 'Author', 'acf' ),
@@ -1053,7 +1023,7 @@ foreach ( acf_get_combined_post_type_settings_tabs() as $tab_key => $tab_label )
 					'name'         => 'with_front',
 					'key'          => 'with_front',
 					'prefix'       => 'acf_post_type[rewrite]',
-					'value'        => $acf_post_type['rewrite']['with_front'],
+					'value'        => isset( $acf_post_type['rewrite']['with_front'] ) ? $acf_post_type['rewrite']['with_front'] : true,
 					'label'        => __( 'Front URL Prefix', 'acf' ),
 					'instructions' => __( 'Alters the permalink structure to add the `WP_Rewrite::$front` prefix to URLs.', 'acf' ),
 					'ui'           => true,
@@ -1072,7 +1042,7 @@ foreach ( acf_get_combined_post_type_settings_tabs() as $tab_key => $tab_label )
 					'name'         => 'feeds',
 					'key'          => 'feeds',
 					'prefix'       => 'acf_post_type[rewrite]',
-					'value'        => $acf_post_type['rewrite']['feeds'],
+					'value'        => isset( $acf_post_type['rewrite']['feeds'] ) ? $acf_post_type['rewrite']['feeds'] : $acf_post_type['has_archive'],
 					'label'        => __( 'Feed URL', 'acf' ),
 					'instructions' => __( 'RSS feed URL for the post type items.', 'acf' ),
 					'ui'           => true,
@@ -1090,7 +1060,7 @@ foreach ( acf_get_combined_post_type_settings_tabs() as $tab_key => $tab_label )
 					'name'         => 'pages',
 					'key'          => 'pages',
 					'prefix'       => 'acf_post_type[rewrite]',
-					'value'        => $acf_post_type['rewrite']['pages'],
+					'value'        => isset( $acf_post_type['rewrite']['pages'] ) ? $acf_post_type['rewrite']['pages'] : true,
 					'label'        => __( 'Pagination', 'acf' ),
 					'instructions' => __( 'Pagination support for the items URLs such as the archives.', 'acf' ),
 					'ui'           => true,

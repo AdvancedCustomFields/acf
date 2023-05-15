@@ -487,9 +487,9 @@ if ( ! class_exists( 'ACF_Taxonomy' ) ) {
 			$post         = $this->validate_post( $post );
 			$taxonomy_key = $post['taxonomy'];
 			$objects      = (array) $post['object_type'];
-			$objects      = var_export( $objects, true );
+			$objects      = var_export( $objects, true ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions -- Used for PHP export.
 			$args         = $this->get_taxonomy_args( $post );
-			$args         = var_export( $args, true );
+			$args         = var_export( $args, true ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions -- Used for PHP export.
 
 			if ( ! $args ) {
 				return $return;
@@ -498,7 +498,7 @@ if ( ! class_exists( 'ACF_Taxonomy' ) ) {
 			$args    = $this->format_code_for_export( $args );
 			$objects = $this->format_code_for_export( $objects );
 
-			$return .= "register_taxonomy('{$taxonomy_key}', $objects, {$args} );\r\n\r\n";
+			$return .= "register_taxonomy( '{$taxonomy_key}', {$objects}, {$args} );\r\n";
 
 			return esc_textarea( $return );
 		}

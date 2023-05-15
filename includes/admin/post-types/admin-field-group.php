@@ -127,6 +127,10 @@ if ( ! class_exists( 'acf_admin_field_group' ) ) :
 					'fieldCategoriesL10n' => acf_get_field_categories_i18n(),
 					'PROUpgradeURL'       => acf_add_url_utm_tags( 'https://www.advancedcustomfields.com/pro/', 'ACF upgrade', 'field-type-selection' ),
 					'PROFieldTypes'       => acf_get_pro_field_types(),
+					'PROLocationTypes'    => array(
+						'block'        => __( 'Block', 'acf' ),
+						'options_page' => __( 'Options Page', 'acf' ),
+					),
 				)
 			);
 

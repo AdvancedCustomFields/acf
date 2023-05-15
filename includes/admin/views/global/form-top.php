@@ -1,11 +1,32 @@
 <?php
 global $title, $post_new_file, $post_type_object, $post;
 $acf_title_placeholder = apply_filters( 'enter_title_here', __( 'Add title' ), $post );
+$acf_title             = $post->post_title;
 $acf_post_type         = is_object( $post_type_object ) ? $post_type_object->name : '';
 $acf_publish_btn_name  = 'save';
 
 if ( 'publish' !== $post->post_status ) {
 	$acf_publish_btn_name = 'publish';
+}
+
+if ( 'acf-field-group' === $acf_post_type ) {
+	$acf_use_post_type = acf_get_post_type_from_request_args( 'add-fields' );
+	$acf_use_taxonomy  = acf_get_taxonomy_from_request_args( 'add-fields' );
+
+	/* translators: %s - singular label of post type/taxonomy, i.e. "Movie"/"Genre" */
+	$acf_prefilled_title = (string) apply_filters( 'acf/field_group/prefill_title', __( '%s fields', 'acf' ) );
+
+	if ( $acf_use_post_type && ! empty( $acf_use_post_type['labels']['singular_name'] ) ) {
+		$acf_prefilled_title = sprintf( $acf_prefilled_title, $acf_use_post_type['labels']['singular_name'] );
+	} elseif ( $acf_use_taxonomy && ! empty( $acf_use_taxonomy['labels']['singular_name'] ) ) {
+		$acf_prefilled_title = sprintf( $acf_prefilled_title, $acf_use_taxonomy['labels']['singular_name'] );
+	} else {
+		$acf_prefilled_title = false;
+	}
+
+	if ( empty( $acf_title ) && $acf_prefilled_title ) {
+		$acf_title = $acf_prefilled_title;
+	}
 }
 ?>
 <div class="acf-headerbar acf-headerbar-field-editor">
@@ -19,8 +40,8 @@ if ( 'publish' !== $post->post_status ) {
 			</h1>
 			<?php if ( 'acf-field-group' === $acf_post_type ) : ?>
 			<div class="acf-title-wrap">
-				<label class="screen-reader-text" id="title-prompt-text" for="title"><?php echo $acf_title_placeholder; ?></label>
-				<input form="post" type="text" name="post_title" size="30" value="<?php echo esc_attr( $post->post_title ); ?>" id="title" class="acf-headerbar-title-field" spellcheck="true" autocomplete="off" placeholder="<?php esc_attr_e( 'Field Group Title', 'acf' ); ?>" />
+				<label class="screen-reader-text" id="title-prompt-text" for="title"><?php echo esc_html( $acf_title_placeholder ); ?></label>
+				<input form="post" type="text" name="post_title" size="30" value="<?php echo esc_attr( $acf_title ); ?>" id="title" class="acf-headerbar-title-field" spellcheck="true" autocomplete="off" placeholder="<?php esc_attr_e( 'Field Group Title', 'acf' ); ?>" />
 			</div>
 			<?php endif; ?>
 		</div>
