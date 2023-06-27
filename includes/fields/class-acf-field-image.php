@@ -313,7 +313,7 @@ if ( ! class_exists( 'acf_field_image' ) ) :
 			acf_render_field_setting(
 				$field,
 				array(
-					'label'        => __( 'Allowed file types', 'acf' ),
+					'label'        => __( 'Allowed File Types', 'acf' ),
 					'instructions' => __( 'Comma separated list. Leave blank for all types', 'acf' ),
 					'type'         => 'text',
 					'name'         => 'mime_types',

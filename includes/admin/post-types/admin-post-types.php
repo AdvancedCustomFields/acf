@@ -36,6 +36,39 @@ if ( ! class_exists( 'ACF_Admin_Post_Types' ) ) :
 		public $store = 'post-types';
 
 		/**
+		 * Constructor.
+		 *
+		 * @date    5/03/2014
+		 * @since   6.2
+		 *
+		 * @return  void
+		 */
+		public function __construct() {
+			add_action( 'admin_menu', array( $this, 'admin_menu' ), 8 );
+			add_action( 'admin_footer', array( $this, 'include_pro_features' ) );
+			parent::__construct();
+		}
+
+		/**
+		 * Renders HTML for the ACF PRO features upgrade notice.
+		 *
+		 * @return void
+		 */
+		public function include_pro_features() {
+			// Bail if on PRO.
+			if ( defined( 'ACF_PRO' ) && ACF_PRO ) {
+				return;
+			}
+
+			// Bail if not the edit post types screen.
+			if ( ! acf_is_screen( 'edit-acf-post-type' ) ) {
+				return;
+			}
+
+			acf_get_view( 'acf-field-group/pro-features' );
+		}
+
+		/**
 		 * Current screen actions for the post types list admin page.
 		 *
 		 * @since   6.1

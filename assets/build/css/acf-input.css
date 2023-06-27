@@ -107,8 +107,10 @@
 *  Hide old / native WP titles from pages
 *
 *---------------------------------------------------------------------------------------------*/
-.acf-admin-page .acf-settings-wrap h1,
-.acf-admin-page #acf-admin-tools h1 {
+.acf-admin-page .acf-settings-wrap h1 {
+  display: none !important;
+}
+.acf-admin-page #acf-admin-tools h1:not(.acf-field-group-pro-features-title, .acf-field-group-pro-features-title-sm) {
   display: none !important;
 }
 

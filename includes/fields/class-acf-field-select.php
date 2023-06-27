@@ -410,8 +410,8 @@ if ( ! class_exists( 'acf_field_select' ) ) :
 			acf_render_field_setting(
 				$field,
 				array(
-					'label'        => __( 'Select multiple values?', 'acf' ),
-					'instructions' => '',
+					'label'        => __( 'Select Multiple', 'acf' ),
+					'instructions' => 'Allow content editors to select multiple values',
 					'name'         => 'multiple',
 					'type'         => 'true_false',
 					'ui'           => 1,
@@ -432,7 +432,7 @@ if ( ! class_exists( 'acf_field_select' ) ) :
 			acf_render_field_setting(
 				$field,
 				array(
-					'label'        => __( 'Allow Null?', 'acf' ),
+					'label'        => __( 'Allow Null', 'acf' ),
 					'instructions' => '',
 					'name'         => 'allow_null',
 					'type'         => 'true_false',

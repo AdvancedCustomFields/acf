@@ -13,7 +13,18 @@ if ( $is_subfield ) {
 		$wrapper_class .= ' -empty';
 	}
 } elseif ( ! $fields && ! $parent ) {
-	$wrapper_class = ' acf-auto-add-field';
+	/**
+	 * Filter for determining if a new field group should render with a text field automatically
+	 *
+	 * @since   6.2
+	 *
+	 * @param bool $bool If an empty field group should render with a new field auto appended.
+	 */
+	if ( apply_filters( 'acf/field_group/auto_add_first_field', true ) ) {
+		$wrapper_class = ' acf-auto-add-field';
+	} else {
+		$wrapper_class = ' -empty';
+	}
 }
 ?>
 <?php if ( $parent || $is_subfield ) { ?>

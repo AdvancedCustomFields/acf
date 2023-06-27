@@ -817,7 +817,7 @@ foreach ( acf_get_combined_taxonomy_settings_tabs() as $tab_key => $tab_label ) 
 					'prefix'       => 'acf_taxonomy',
 					'value'        => $acf_taxonomy['meta_box_sanitize_cb'],
 					'label'        => __( 'Meta Box Sanitization Callback', 'acf' ),
-					'instructions' => __( 'A PHP function name to be called tor sanitizing taxonomy data saved from a meta box.', 'acf' ),
+					'instructions' => __( 'A PHP function name to be called for sanitizing taxonomy data saved from a meta box.', 'acf' ),
 					'conditions'   => array(
 						'field'    => 'meta_box',
 						'operator' => '==',
@@ -1055,6 +1055,84 @@ foreach ( acf_get_combined_taxonomy_settings_tabs() as $tab_key => $tab_label ) 
 						'operator' => '==',
 						'value'    => 'custom_query_var',
 					),
+				),
+				'div',
+				'field'
+			);
+
+			break;
+		case 'permissions':
+			$acf_all_caps = array();
+
+			foreach ( wp_roles()->roles as $acf_role ) {
+				$acf_all_caps = array_merge( $acf_all_caps, $acf_role['capabilities'] );
+			}
+			$acf_all_caps = array_unique( array_keys( $acf_all_caps ) );
+			$acf_all_caps = array_combine( $acf_all_caps, $acf_all_caps );
+
+			acf_render_field_wrap(
+				array(
+					'type'         => 'select',
+					'name'         => 'manage_terms',
+					'key'          => 'manage_terms',
+					'prefix'       => 'acf_taxonomy[capabilities]',
+					'value'        => $acf_taxonomy['capabilities']['manage_terms'],
+					'label'        => __( 'Manage Terms Capability', 'acf' ),
+					'instructions' => __( 'The capability name for managing terms of this taxonomy.', 'acf' ),
+					'choices'      => $acf_all_caps,
+					'default'      => 'manage_categories',
+					'class'        => 'acf-taxonomy-manage_terms',
+				),
+				'div',
+				'field'
+			);
+
+			acf_render_field_wrap(
+				array(
+					'type'         => 'select',
+					'name'         => 'edit_terms',
+					'key'          => 'edit_terms',
+					'prefix'       => 'acf_taxonomy[capabilities]',
+					'value'        => $acf_taxonomy['capabilities']['edit_terms'],
+					'label'        => __( 'Edit Terms Capability', 'acf' ),
+					'instructions' => __( 'The capability name for editing terms of this taxonomy.', 'acf' ),
+					'choices'      => $acf_all_caps,
+					'default'      => 'manage_categories',
+					'class'        => 'acf-taxonomy-edit_terms',
+				),
+				'div',
+				'field'
+			);
+
+			acf_render_field_wrap(
+				array(
+					'type'         => 'select',
+					'name'         => 'delete_terms',
+					'key'          => 'delete_terms',
+					'prefix'       => 'acf_taxonomy[capabilities]',
+					'value'        => $acf_taxonomy['capabilities']['delete_terms'],
+					'label'        => __( 'Delete Terms Capability', 'acf' ),
+					'instructions' => __( 'The capability name for deleting terms of this taxonomy.', 'acf' ),
+					'choices'      => $acf_all_caps,
+					'default'      => 'manage_categories',
+					'class'        => 'acf-taxonomy-delete_terms',
+				),
+				'div',
+				'field'
+			);
+
+			acf_render_field_wrap(
+				array(
+					'type'         => 'select',
+					'name'         => 'assign_terms',
+					'key'          => 'assign_terms',
+					'prefix'       => 'acf_taxonomy[capabilities]',
+					'value'        => $acf_taxonomy['capabilities']['assign_terms'],
+					'label'        => __( 'Assign Terms Capability', 'acf' ),
+					'instructions' => __( 'The capability name for assigning terms of this taxonomy.', 'acf' ),
+					'choices'      => $acf_all_caps,
+					'default'      => 'edit_posts',
+					'class'        => 'acf-taxonomy-assign_terms',
 				),
 				'div',
 				'field'

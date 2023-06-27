@@ -344,7 +344,7 @@ if ( ! class_exists( 'ACF_Local_JSON' ) ) :
 			if ( $post_type ) {
 				// Prepare for export and save the file.
 				$post   = acf_prepare_internal_post_type_for_export( $post, $post_type );
-				$result = file_put_contents( $file, acf_json_encode( $post ) );
+				$result = file_put_contents( $file, acf_json_encode( $post ) . "\r\n" );
 
 				// Return true if bytes were written.
 				return is_int( $result );

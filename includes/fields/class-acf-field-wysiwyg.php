@@ -382,7 +382,7 @@ if ( ! class_exists( 'acf_field_wysiwyg' ) ) :
 			acf_render_field_setting(
 				$field,
 				array(
-					'label'        => __( 'Show Media Upload Buttons?', 'acf' ),
+					'label'        => __( 'Show Media Upload Buttons', 'acf' ),
 					'instructions' => '',
 					'name'         => 'media_upload',
 					'type'         => 'true_false',
@@ -393,7 +393,7 @@ if ( ! class_exists( 'acf_field_wysiwyg' ) ) :
 			acf_render_field_setting(
 				$field,
 				array(
-					'label'        => __( 'Delay initialization?', 'acf' ),
+					'label'        => __( 'Delay Initialization', 'acf' ),
 					'instructions' => __( 'TinyMCE will not be initialized until field is clicked', 'acf' ),
 					'name'         => 'delay',
 					'type'         => 'true_false',

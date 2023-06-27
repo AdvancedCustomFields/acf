@@ -12,7 +12,7 @@
 # This file is distributed under the same license as Advanced Custom Fields.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-05-04T13:57:24+00:00\n"
+"PO-Revision-Date: 2023-06-27T14:09:59+00:00\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "Language: es_MX\n"
 "MIME-Version: 1.0\n"
@@ -24,134 +24,144 @@ msgstr ""
 #. translators: %s - singular label of post type/taxonomy, i.e. "Movie"/"Genre"
 #: includes/admin/views/global/form-top.php:17
 msgid "%s fields"
-msgstr ""
+msgstr "%s campos"
 
 #: includes/admin/post-types/admin-taxonomies.php:260
 msgid "No terms"
-msgstr ""
+msgstr "No se encontraron términos"
 
 #: includes/admin/post-types/admin-taxonomies.php:233
 msgid "No post types"
-msgstr ""
+msgstr "No se encontraron tipos de contenidos"
 
 #: includes/admin/post-types/admin-post-types.php:256
 msgid "No posts"
-msgstr ""
+msgstr "No se encontraron entradas"
 
 #: includes/admin/post-types/admin-post-types.php:230
 msgid "No taxonomies"
-msgstr ""
+msgstr "No se encontraron taxonomías"
 
 #: includes/admin/post-types/admin-post-types.php:175
 #: includes/admin/post-types/admin-taxonomies.php:175
 msgid "No field groups"
-msgstr ""
+msgstr "No se encontraron grupos de campos"
 
 #: includes/admin/post-types/admin-field-groups.php:259
 msgid "No fields"
-msgstr ""
+msgstr "No se encontraron campos"
 
 #: includes/admin/post-types/admin-field-groups.php:132
 #: includes/admin/post-types/admin-post-types.php:139
 #: includes/admin/post-types/admin-taxonomies.php:139
 msgid "No description"
-msgstr ""
+msgstr "Sin descripción"
 
 #: includes/fields/class-acf-field-page_link.php:484
 #: includes/fields/class-acf-field-post_object.php:396
 #: includes/fields/class-acf-field-relationship.php:608
 msgid "Any post status"
-msgstr ""
+msgstr "Cualquier estado de entrada"
 
 #: includes/post-types/class-acf-taxonomy.php:278
 msgid ""
 "This taxonomy key is already in use by another taxonomy registered outside "
 "of ACF and cannot be used."
 msgstr ""
+"La clave de esta taxonomía ya está en uso por otra taxonomía registrada "
+"fuera de ACF y no puede ser usada."
 
 #: includes/post-types/class-acf-taxonomy.php:273
 msgid ""
 "This taxonomy key is already in use by another taxonomy in ACF and cannot be "
 "used."
 msgstr ""
+"La clave de esta taxonomía ya está en uso por otra taxonomía fuera de ACF y "
+"no puede ser usada."
 
 #: includes/post-types/class-acf-taxonomy.php:246
 msgid ""
 "The taxonomy key must only contain lower case alphanumeric characters, "
 "underscores or dashes."
 msgstr ""
+"La clave de la taxonomía debe contener solamente caracteres alfanuméricos en "
+"minúsculas, guiones y guiones bajos."
 
 #: includes/post-types/class-acf-taxonomy.php:241
 msgid "The taxonomy key must be under 20 characters."
-msgstr ""
+msgstr "La clave de la taxonomía debe contener menos de 20 caracteres."
 
 #: includes/post-types/class-acf-taxonomy.php:99
 msgid "No Taxonomies found in Trash"
-msgstr ""
+msgstr "No se han encontrado taxonomías en la papelera."
 
 #: includes/post-types/class-acf-taxonomy.php:98
 msgid "No Taxonomies found"
-msgstr ""
+msgstr "No se han encontrado taxonomías"
 
 #: includes/post-types/class-acf-taxonomy.php:97
 msgid "Search Taxonomies"
-msgstr ""
+msgstr "Buscar taxonomías"
 
 #: includes/post-types/class-acf-taxonomy.php:96
 msgid "View Taxonomy"
-msgstr ""
+msgstr "Ver taxonomía"
 
 #: includes/post-types/class-acf-taxonomy.php:95
 msgid "New Taxonomy"
-msgstr ""
+msgstr "Nueva taxonomía"
 
 #: includes/post-types/class-acf-taxonomy.php:94
 msgid "Edit Taxonomy"
-msgstr ""
+msgstr "Editar taxonomía"
 
 #: includes/post-types/class-acf-taxonomy.php:93
 msgid "Add New Taxonomy"
-msgstr ""
+msgstr "Agregar nueva taxonomía"
 
 #: includes/post-types/class-acf-post-type.php:99
 msgid "No Post Types found in Trash"
-msgstr ""
+msgstr "No se han encontrado tipos de contenido en la papelera"
 
 #: includes/post-types/class-acf-post-type.php:98
 msgid "No Post Types found"
-msgstr ""
+msgstr "No se han encontrado tipos de contenido"
 
 #: includes/post-types/class-acf-post-type.php:97
 msgid "Search Post Types"
-msgstr ""
+msgstr "Buscar Tipos de Contenido"
 
 #: includes/post-types/class-acf-post-type.php:96
 msgid "View Post Type"
-msgstr ""
+msgstr "Ver tipos de contenido"
 
 #: includes/post-types/class-acf-post-type.php:95
 msgid "New Post Type"
-msgstr ""
+msgstr "Añadir nuevo tipo de contenido"
 
 #: includes/post-types/class-acf-post-type.php:94
 msgid "Edit Post Type"
-msgstr ""
+msgstr "Editar tipo de contenido"
 
 #: includes/post-types/class-acf-post-type.php:93
 msgid "Add New Post Type"
-msgstr ""
+msgstr "Añadir nuevo tipo de contenido"
 
 #: includes/post-types/class-acf-post-type.php:338
 msgid ""
 "This post type key is already in use by another post type registered outside "
 "of ACF and cannot be used."
 msgstr ""
+"La clave de este tipo de contenido ya es usada por otro tipo de contenido "
+"registrado fuera de ACF y no puede ser usada."
 
 #: includes/post-types/class-acf-post-type.php:333
 msgid ""
 "This post type key is already in use by another post type in ACF and cannot "
 "be used."
 msgstr ""
+"La clave de este tipo de contenido ya es usada por otro tipo de contenido en "
+"ACF y no puede ser usada."
 
 #. translators: %s a link to WordPress.org's Reserved Terms page
 #: includes/post-types/class-acf-post-type.php:312
@@ -166,30 +176,37 @@ msgid ""
 "The post type key must only contain lower case alphanumeric characters, "
 "underscores or dashes."
 msgstr ""
+"La clave del tipo de contenido debe contener solamente caracteres "
+"alfanuméricos en minúsculas, guiones o guiones bajos."
 
 #: includes/post-types/class-acf-post-type.php:301
 msgid "The post type key must be under 20 characters."
-msgstr ""
+msgstr "La clave del tipo de contenido debe contener menos de 20 caracteres."
 
 #: includes/fields/class-acf-field-wysiwyg.php:27
 msgid "We do not recommend using this field in ACF Blocks."
-msgstr ""
+msgstr "No recomendamos utilizar este campo en ACF Blocks."
 
 #: includes/fields/class-acf-field-wysiwyg.php:27
 msgid ""
 "Displays the WordPress WYSIWYG editor as seen in Posts and Pages allowing "
 "for a rich text-editing experience that also allows for multimedia content."
 msgstr ""
+"Despliega el editor WYSIWYG de WordPress tal aparece en entradas y páginas, "
+"permitiendo una experiencia de edición de texto enriquecedora que permite el "
+"uso de contenido multimedia."
 
 #: includes/fields/class-acf-field-wysiwyg.php:25
 msgid "WYSIWYG Editor"
-msgstr ""
+msgstr "Editor WYSIWYG"
 
 #: includes/fields/class-acf-field-user.php:22
 msgid ""
 "Allows the selection of one or more users which can be used to create "
 "relationships between data objects."
 msgstr ""
+"Permite la selección de uno o más usuarios, los cuales pueden ser utilizados "
+"para crear relaciones entre objetos de datos."
 
 #: includes/fields/class-acf-field-url.php:26
 msgid "A text input specifically designed for storing web addresses."
@@ -234,6 +251,7 @@ msgstr ""
 #: includes/fields/class-acf-field-select.php:27
 msgid "A dropdown list with a selection of choices that you specify."
 msgstr ""
+"Una lista despegable con una selección de opciones que tú especificas. "
 
 #: includes/fields/class-acf-field-relationship.php:27
 msgid ""
@@ -268,19 +286,24 @@ msgstr ""
 #: includes/fields/class-acf-field-post_object.php:388
 #: includes/fields/class-acf-field-relationship.php:600
 msgid "Filter by Post Status"
-msgstr ""
+msgstr "Filtrar por estado de entrada"
 
 #: includes/fields/class-acf-field-page_link.php:27
 msgid ""
 "An interactive dropdown to select one or more posts, pages, custom post type "
 "items or archive URLs, with the option to search."
 msgstr ""
+"Un desplegable interactivo para seleccionar una o más entradas, páginas, "
+"tipos de contenido, o URLs de archivos, con la opción de buscar."
 
 #: includes/fields/class-acf-field-oembed.php:27
 msgid ""
 "An interactive component for embedding videos, images, tweets, audio and "
 "other content by making use of the native WordPress oEmbed functionality."
 msgstr ""
+"Un componente interactivo para incrustar videos, imágenes, tweets, audio y "
+"otro contenido haciendo uso de la funcionalidad nativa de oEmbed de "
+"WordPress."
 
 #: includes/fields/class-acf-field-number.php:26
 msgid "An input limited to numerical values."
@@ -301,12 +324,15 @@ msgstr ""
 #: includes/fields/class-acf-field-image.php:27
 msgid "Uses the native WordPress media picker to upload, or choose images."
 msgstr ""
+"Usa el selector de medios nativo de WordPress para cargar o elegir imágenes."
 
 #: includes/fields/class-acf-field-group.php:27
 msgid ""
 "Provides a way to structure fields into groups to better organize the data "
 "and the edit screen."
 msgstr ""
+"Proporciona una manera de estructurar campos en grupos para una mejor "
+"organización de los datos y de la pantalla de edición."
 
 #: includes/fields/class-acf-field-google-map.php:27
 msgid ""
@@ -317,6 +343,7 @@ msgstr ""
 #: includes/fields/class-acf-field-file.php:27
 msgid "Uses the native WordPress media picker to upload, or choose files."
 msgstr ""
+"Usa el selector de medios nativo de WordPress para cargar o elegir archivos."
 
 #: includes/fields/class-acf-field-email.php:26
 msgid "A text input specifically designed for storing email addresses."
@@ -389,7 +416,7 @@ msgstr ""
 #: includes/fields.php:441
 msgctxt "noun"
 msgid "Clone"
-msgstr ""
+msgstr "Clon"
 
 #: includes/fields.php:357
 msgid "PRO"
@@ -405,31 +432,31 @@ msgstr ""
 
 #: includes/ajax/class-acf-ajax-local-json-diff.php:81
 msgid "Original"
-msgstr ""
+msgstr "Original"
 
 #: includes/ajax/class-acf-ajax-local-json-diff.php:55
 msgid "Invalid post ID."
-msgstr ""
+msgstr "El ID de la entrada no es válido."
 
 #: includes/ajax/class-acf-ajax-local-json-diff.php:47
 msgid "Invalid post type selected for review."
-msgstr ""
+msgstr "Tipo de entrada inválida seleccionada para valoración."
 
 #: includes/admin/views/global/navigation.php:104
 msgid "More"
-msgstr ""
+msgstr "Más"
 
 #: includes/admin/views/browse-fields-modal.php:86
 msgid "Tutorial"
-msgstr ""
+msgstr "Tutorial"
 
 #: includes/admin/views/browse-fields-modal.php:75
 msgid "Available with ACF PRO"
-msgstr ""
+msgstr "Disponible con ACF PRO"
 
 #: includes/admin/views/browse-fields-modal.php:63
 msgid "Select Field"
-msgstr ""
+msgstr "Selecciona Campo"
 
 #. translators: %s: A link to the popular fields used in ACF
 #: includes/admin/views/browse-fields-modal.php:50
@@ -438,28 +465,28 @@ msgstr ""
 
 #: includes/admin/views/browse-fields-modal.php:47
 msgid "Popular fields"
-msgstr ""
+msgstr "Campos populares"
 
 #. translators: %s: The invalid search term
 #: includes/admin/views/browse-fields-modal.php:40
 msgid "No search results for '%s'"
-msgstr ""
+msgstr "No hay resultados de búsqueda para '%s'"
 
 #: includes/admin/views/browse-fields-modal.php:13
 msgid "Search fields..."
-msgstr ""
+msgstr "Buscar campos..."
 
 #: includes/admin/views/browse-fields-modal.php:11
 msgid "Select Field Type"
-msgstr ""
+msgstr "Selecciona tipo de campo"
 
 #: includes/admin/views/browse-fields-modal.php:4
 msgid "Popular"
-msgstr ""
+msgstr "Popular"
 
 #: includes/admin/views/acf-taxonomy/list-empty.php:7
 msgid "Add Taxonomy"
-msgstr ""
+msgstr "Agregar taxonomía"
 
 #: includes/admin/views/acf-taxonomy/list-empty.php:6
 msgid "Create custom taxonomies to classify post type content"
@@ -467,7 +494,7 @@ msgstr ""
 
 #: includes/admin/views/acf-taxonomy/list-empty.php:5
 msgid "Add Your First Taxonomy"
-msgstr ""
+msgstr "Agrega tu primera taxonomía"
 
 #: includes/admin/views/acf-taxonomy/basic-settings.php:106
 msgid "Hierarchical taxonomies can have descendants (like categories)."
@@ -484,17 +511,17 @@ msgstr ""
 #. translators: example taxonomy
 #: includes/admin/views/acf-taxonomy/basic-settings.php:44
 msgid "genre"
-msgstr ""
+msgstr "género"
 
 #. translators: example taxonomy
 #: includes/admin/views/acf-taxonomy/basic-settings.php:26
 msgid "Genre"
-msgstr ""
+msgstr "Género"
 
 #. translators: example taxonomy
 #: includes/admin/views/acf-taxonomy/basic-settings.php:9
 msgid "Genres"
-msgstr ""
+msgstr "Géneros"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:1129
 msgid ""
@@ -507,7 +534,7 @@ msgstr ""
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:1051
 msgid "Customize the query variable name"
-msgstr ""
+msgstr "Personaliza los argumentos de la consulta."
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:1024
 msgid ""
@@ -2284,37 +2311,37 @@ msgstr ""
 msgid "ACF"
 msgstr ""
 
-#: includes/admin/admin-internal-post-type.php:338
+#: includes/admin/admin-internal-post-type.php:337
 msgid "taxonomy"
 msgstr ""
 
-#: includes/admin/admin-internal-post-type.php:338
+#: includes/admin/admin-internal-post-type.php:337
 msgid "post type"
 msgstr ""
 
 #. translators: %1$s - name of newly created post. %2$s - either "post type" or
 #. "taxonomy".
-#: includes/admin/admin-internal-post-type.php:336
+#: includes/admin/admin-internal-post-type.php:335
 msgid "Link %1$s %2$s to field groups"
 msgstr ""
 
-#: includes/admin/admin-internal-post-type.php:329
+#: includes/admin/admin-internal-post-type.php:328
 msgid "Done"
 msgstr ""
 
-#: includes/admin/admin-internal-post-type.php:316
+#: includes/admin/admin-internal-post-type.php:315
 msgid "Field group(s)"
 msgstr ""
 
-#: includes/admin/admin-internal-post-type.php:315
+#: includes/admin/admin-internal-post-type.php:314
 msgid "Select one or many field groups..."
 msgstr ""
 
-#: includes/admin/admin-internal-post-type.php:314
+#: includes/admin/admin-internal-post-type.php:313
 msgid "Please select the field groups to link."
 msgstr ""
 
-#: includes/admin/admin-internal-post-type.php:278
+#: includes/admin/admin-internal-post-type.php:277
 msgid "Field group linked successfully."
 msgid_plural "Field groups linked successfully."
 msgstr[0] ""
@@ -2371,7 +2398,7 @@ msgstr ""
 msgid "[ACF shortcode value disabled for preview]"
 msgstr ""
 
-#: includes/admin/admin-internal-post-type.php:288
+#: includes/admin/admin-internal-post-type.php:287
 #: includes/admin/post-types/admin-field-group.php:545
 msgid "Close Modal"
 msgstr ""
@@ -2631,13 +2658,13 @@ msgstr ""
 msgid ""
 "<strong>%1$s</strong> - We've detected one or more calls to retrieve ACF "
 "field values before ACF has been initialized. This is not supported and can "
-"result in malformed or missing data. <a href=\"%2$s\" "
-"target=\"_blank\">Learn how to fix this</a>."
+"result in malformed or missing data. <a href=\"%2$s\" target=\"_blank"
+"\">Learn how to fix this</a>."
 msgstr ""
 "<strong>%1$s</strong> - Hemos detectado una o más llamadas para obtener "
 "valores de campo de ACF antes de que ACF se haya iniciado. Esto no es "
-"compatible y puede ocasionar datos mal formados o faltantes. <a "
-"href=\"%2$s\" target=\"_blank\">Aprende cómo corregirlo</a>."
+"compatible y puede ocasionar datos mal formados o faltantes. <a href=\"%2$s"
+"\" target=\"_blank\">Aprende cómo corregirlo</a>."
 
 #: includes/fields/class-acf-field-user.php:540
 msgid "%1$s must have a user with the %2$s role."
@@ -3816,7 +3843,7 @@ msgid "Title"
 msgstr "Título"
 
 #: includes/assets.php:372 includes/forms/form-comment.php:160
-#: assets/build/js/acf-input.js:7358 assets/build/js/acf-input.js:7948
+#: assets/build/js/acf-input.js:7348 assets/build/js/acf-input.js:7934
 msgid "Edit field group"
 msgstr "Editar grupo de campos"
 
@@ -3872,7 +3899,7 @@ msgstr "No tiene ningún valor"
 msgid "Has any value"
 msgstr "No tiene algún valor"
 
-#: includes/admin/admin-internal-post-type.php:328
+#: includes/admin/admin-internal-post-type.php:327
 #: includes/admin/views/browse-fields-modal.php:62 includes/assets.php:353
 #: assets/build/js/acf.js:1567 assets/build/js/acf.js:1662
 msgid "Cancel"
@@ -3883,50 +3910,50 @@ msgstr "Cancelar"
 msgid "Are you sure?"
 msgstr "¿Estás seguro?"
 
-#: includes/assets.php:369 assets/build/js/acf-input.js:9419
-#: assets/build/js/acf-input.js:10274
+#: includes/assets.php:369 assets/build/js/acf-input.js:9409
+#: assets/build/js/acf-input.js:10260
 msgid "%d fields require attention"
 msgstr "%d campos requieren atención"
 
-#: includes/assets.php:368 assets/build/js/acf-input.js:9417
-#: assets/build/js/acf-input.js:10270
+#: includes/assets.php:368 assets/build/js/acf-input.js:9407
+#: assets/build/js/acf-input.js:10256
 msgid "1 field requires attention"
 msgstr "1 campo requiere atención"
 
 #: includes/assets.php:367 includes/validation.php:286
-#: includes/validation.php:296 assets/build/js/acf-input.js:9412
-#: assets/build/js/acf-input.js:10265
+#: includes/validation.php:296 assets/build/js/acf-input.js:9402
+#: assets/build/js/acf-input.js:10251
 msgid "Validation failed"
 msgstr "Validación fallida"
 
-#: includes/assets.php:366 assets/build/js/acf-input.js:9575
-#: assets/build/js/acf-input.js:10448
+#: includes/assets.php:366 assets/build/js/acf-input.js:9565
+#: assets/build/js/acf-input.js:10434
 msgid "Validation successful"
 msgstr "Validación correcta"
 
-#: includes/media.php:54 assets/build/js/acf-input.js:7186
-#: assets/build/js/acf-input.js:7752
+#: includes/media.php:54 assets/build/js/acf-input.js:7176
+#: assets/build/js/acf-input.js:7738
 msgid "Restricted"
 msgstr "Restringido"
 
-#: includes/media.php:53 assets/build/js/acf-input.js:7001
-#: assets/build/js/acf-input.js:7516
+#: includes/media.php:53 assets/build/js/acf-input.js:6991
+#: assets/build/js/acf-input.js:7502
 msgid "Collapse Details"
 msgstr "Contraer detalles"
 
-#: includes/media.php:52 assets/build/js/acf-input.js:7001
-#: assets/build/js/acf-input.js:7513
+#: includes/media.php:52 assets/build/js/acf-input.js:6991
+#: assets/build/js/acf-input.js:7499
 msgid "Expand Details"
 msgstr "Ampliar detalles"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:461
-#: includes/media.php:51 assets/build/js/acf-input.js:6868
-#: assets/build/js/acf-input.js:7361
+#: includes/media.php:51 assets/build/js/acf-input.js:6858
+#: assets/build/js/acf-input.js:7347
 msgid "Uploaded to this post"
 msgstr "Subido a esta publicación"
 
-#: includes/media.php:50 assets/build/js/acf-input.js:6907
-#: assets/build/js/acf-input.js:7400
+#: includes/media.php:50 assets/build/js/acf-input.js:6897
+#: assets/build/js/acf-input.js:7386
 msgctxt "verb"
 msgid "Update"
 msgstr "Actualizar"
@@ -3936,8 +3963,8 @@ msgctxt "verb"
 msgid "Edit"
 msgstr "Editar"
 
-#: includes/assets.php:363 assets/build/js/acf-input.js:9189
-#: assets/build/js/acf-input.js:10036
+#: includes/assets.php:363 assets/build/js/acf-input.js:9179
+#: assets/build/js/acf-input.js:10022
 msgid "The changes you made will be lost if you navigate away from this page"
 msgstr "Los cambios que has realizado se perderán si navegas hacia otra página"
 
@@ -4269,7 +4296,7 @@ msgid "Enter each default value on a new line"
 msgstr "Añade cada valor en una nueva línea"
 
 #: includes/fields/class-acf-field-select.php:258 includes/media.php:48
-#: assets/build/js/acf-input.js:6766 assets/build/js/acf-input.js:7246
+#: assets/build/js/acf-input.js:6756 assets/build/js/acf-input.js:7232
 msgctxt "verb"
 msgid "Select"
 msgstr "Selecciona"
@@ -4983,7 +5010,7 @@ msgid "Edit"
 msgstr "Editar"
 
 #: includes/fields/class-acf-field-image.php:70 includes/media.php:55
-#: assets/build/js/acf-input.js:6813 assets/build/js/acf-input.js:7300
+#: assets/build/js/acf-input.js:6803 assets/build/js/acf-input.js:7286
 msgid "All images"
 msgstr "Todas las imágenes"
 

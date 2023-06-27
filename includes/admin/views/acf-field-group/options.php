@@ -104,7 +104,7 @@ foreach ( acf_get_combined_field_group_settings_tabs() as $tab_key => $tab_label
 			// label_placement
 			acf_render_field_wrap(
 				array(
-					'label'        => __( 'Label placement', 'acf' ),
+					'label'        => __( 'Label Placement', 'acf' ),
 					'instructions' => '',
 					'type'         => 'button_group',
 					'name'         => 'label_placement',
@@ -121,7 +121,7 @@ foreach ( acf_get_combined_field_group_settings_tabs() as $tab_key => $tab_label
 			// instruction_placement
 			acf_render_field_wrap(
 				array(
-					'label'        => __( 'Instruction placement', 'acf' ),
+					'label'        => __( 'Instruction Placement', 'acf' ),
 					'instructions' => '',
 					'type'         => 'button_group',
 					'name'         => 'instruction_placement',

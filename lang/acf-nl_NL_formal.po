@@ -12,7 +12,7 @@
 # This file is distributed under the same license as Advanced Custom Fields.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-05-04T13:57:24+00:00\n"
+"PO-Revision-Date: 2023-06-27T14:09:59+00:00\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "Language: nl_NL_formal\n"
 "MIME-Version: 1.0\n"
@@ -170,8 +170,8 @@ msgid ""
 "This field must not be a WordPress <a href=\"%s\" target=\"_blank\">reserved "
 "term</a>."
 msgstr ""
-"Dit veld mag geen door WordPress <a href=\"%s\" "
-"target=\"_blank\">gereserveerde term</a> zijn."
+"Dit veld mag geen door WordPress <a href=\"%s\" target=\"_blank"
+"\">gereserveerde term</a> zijn."
 
 #: includes/post-types/class-acf-post-type.php:306
 msgid ""
@@ -2510,37 +2510,37 @@ msgstr ""
 msgid "ACF"
 msgstr "ACF"
 
-#: includes/admin/admin-internal-post-type.php:338
+#: includes/admin/admin-internal-post-type.php:337
 msgid "taxonomy"
 msgstr "taxonomie"
 
-#: includes/admin/admin-internal-post-type.php:338
+#: includes/admin/admin-internal-post-type.php:337
 msgid "post type"
 msgstr "berichttype"
 
 #. translators: %1$s - name of newly created post. %2$s - either "post type" or
 #. "taxonomy".
-#: includes/admin/admin-internal-post-type.php:336
+#: includes/admin/admin-internal-post-type.php:335
 msgid "Link %1$s %2$s to field groups"
 msgstr "Koppeling %1$s %2$s aan veld groepen"
 
-#: includes/admin/admin-internal-post-type.php:329
+#: includes/admin/admin-internal-post-type.php:328
 msgid "Done"
 msgstr "Klaar"
 
-#: includes/admin/admin-internal-post-type.php:316
+#: includes/admin/admin-internal-post-type.php:315
 msgid "Field group(s)"
 msgstr "Veldgroep(en)"
 
-#: includes/admin/admin-internal-post-type.php:315
+#: includes/admin/admin-internal-post-type.php:314
 msgid "Select one or many field groups..."
 msgstr "Selecteer één of meerdere veldgroepen..."
 
-#: includes/admin/admin-internal-post-type.php:314
+#: includes/admin/admin-internal-post-type.php:313
 msgid "Please select the field groups to link."
 msgstr "Selecteer de veldgroepen om te linken."
 
-#: includes/admin/admin-internal-post-type.php:278
+#: includes/admin/admin-internal-post-type.php:277
 msgid "Field group linked successfully."
 msgid_plural "Field groups linked successfully."
 msgstr[0] "Veldgroep succesvol gelinkt."
@@ -2601,7 +2601,7 @@ msgstr ""
 msgid "[ACF shortcode value disabled for preview]"
 msgstr "[ACF shortcode waarde uitgeschakeld voor voorbeeld]"
 
-#: includes/admin/admin-internal-post-type.php:288
+#: includes/admin/admin-internal-post-type.php:287
 #: includes/admin/post-types/admin-field-group.php:545
 msgid "Close Modal"
 msgstr "Modal sluiten"
@@ -2684,8 +2684,8 @@ msgid ""
 "New to ACF? Take a look at our <a href=\"%s\" target=\"_blank\">getting "
 "started guide</a>."
 msgstr ""
-"Ben je nieuw bij ACF? Bekijk onze <a href=\"%s\" "
-"target=\"_blank\">startersgids</a>."
+"Ben je nieuw bij ACF? Bekijk onze <a href=\"%s\" target=\"_blank"
+"\">startersgids</a>."
 
 #: includes/admin/views/acf-field-group/list-empty.php:15
 msgid "Add Field Group"
@@ -2878,8 +2878,8 @@ msgstr ""
 msgid ""
 "<strong>%1$s</strong> - We've detected one or more calls to retrieve ACF "
 "field values before ACF has been initialized. This is not supported and can "
-"result in malformed or missing data. <a href=\"%2$s\" "
-"target=\"_blank\">Learn how to fix this</a>."
+"result in malformed or missing data. <a href=\"%2$s\" target=\"_blank"
+"\">Learn how to fix this</a>."
 msgstr ""
 "<strong>%1$s</strong> - We hebben een of meer aanroepen gedetecteerd om ACF "
 "veldwaarden op te halen voordat ACF is geïnitialiseerd. Dit wordt niet "
@@ -3147,9 +3147,9 @@ msgid ""
 "href=\"%s\" target=\"_blank\">Getting started</a> guide to familiarize "
 "yourself with the plugin's philosophy and best practises."
 msgstr ""
-"Voordat je je eerste veldgroep maakt, raden we je aan om eerst onze <a "
-"href=\"%s\" target=\"_blank\">Aan de slag</a> gids te lezen om je vertrouwd "
-"te maken met de filosofie en best practices van de plugin."
+"Voordat je je eerste veldgroep maakt, raden we je aan om eerst onze <a href="
+"\"%s\" target=\"_blank\">Aan de slag</a> gids te lezen om je vertrouwd te "
+"maken met de filosofie en best practices van de plugin."
 
 #: includes/admin/admin.php:129
 msgid ""
@@ -4071,7 +4071,7 @@ msgid "Title"
 msgstr "Titel"
 
 #: includes/assets.php:372 includes/forms/form-comment.php:160
-#: assets/build/js/acf-input.js:7358 assets/build/js/acf-input.js:7948
+#: assets/build/js/acf-input.js:7348 assets/build/js/acf-input.js:7934
 msgid "Edit field group"
 msgstr "Veldgroep bewerken"
 
@@ -4127,7 +4127,7 @@ msgstr "Heeft geen waarde"
 msgid "Has any value"
 msgstr "Heeft een waarde"
 
-#: includes/admin/admin-internal-post-type.php:328
+#: includes/admin/admin-internal-post-type.php:327
 #: includes/admin/views/browse-fields-modal.php:62 includes/assets.php:353
 #: assets/build/js/acf.js:1567 assets/build/js/acf.js:1662
 msgid "Cancel"
@@ -4138,50 +4138,50 @@ msgstr "Annuleren"
 msgid "Are you sure?"
 msgstr "Weet je het zeker?"
 
-#: includes/assets.php:369 assets/build/js/acf-input.js:9419
-#: assets/build/js/acf-input.js:10274
+#: includes/assets.php:369 assets/build/js/acf-input.js:9409
+#: assets/build/js/acf-input.js:10260
 msgid "%d fields require attention"
 msgstr "%d velden vereisen aandacht"
 
-#: includes/assets.php:368 assets/build/js/acf-input.js:9417
-#: assets/build/js/acf-input.js:10270
+#: includes/assets.php:368 assets/build/js/acf-input.js:9407
+#: assets/build/js/acf-input.js:10256
 msgid "1 field requires attention"
 msgstr "1 veld vereist aandacht"
 
 #: includes/assets.php:367 includes/validation.php:286
-#: includes/validation.php:296 assets/build/js/acf-input.js:9412
-#: assets/build/js/acf-input.js:10265
+#: includes/validation.php:296 assets/build/js/acf-input.js:9402
+#: assets/build/js/acf-input.js:10251
 msgid "Validation failed"
 msgstr "Validatie mislukt"
 
-#: includes/assets.php:366 assets/build/js/acf-input.js:9575
-#: assets/build/js/acf-input.js:10448
+#: includes/assets.php:366 assets/build/js/acf-input.js:9565
+#: assets/build/js/acf-input.js:10434
 msgid "Validation successful"
 msgstr "Validatie geslaagd"
 
-#: includes/media.php:54 assets/build/js/acf-input.js:7186
-#: assets/build/js/acf-input.js:7752
+#: includes/media.php:54 assets/build/js/acf-input.js:7176
+#: assets/build/js/acf-input.js:7738
 msgid "Restricted"
 msgstr "Beperkt"
 
-#: includes/media.php:53 assets/build/js/acf-input.js:7001
-#: assets/build/js/acf-input.js:7516
+#: includes/media.php:53 assets/build/js/acf-input.js:6991
+#: assets/build/js/acf-input.js:7502
 msgid "Collapse Details"
 msgstr "Details dichtklappen"
 
-#: includes/media.php:52 assets/build/js/acf-input.js:7001
-#: assets/build/js/acf-input.js:7513
+#: includes/media.php:52 assets/build/js/acf-input.js:6991
+#: assets/build/js/acf-input.js:7499
 msgid "Expand Details"
 msgstr "Details uitklappen"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:461
-#: includes/media.php:51 assets/build/js/acf-input.js:6868
-#: assets/build/js/acf-input.js:7361
+#: includes/media.php:51 assets/build/js/acf-input.js:6858
+#: assets/build/js/acf-input.js:7347
 msgid "Uploaded to this post"
 msgstr "Geüpload naar dit bericht"
 
-#: includes/media.php:50 assets/build/js/acf-input.js:6907
-#: assets/build/js/acf-input.js:7400
+#: includes/media.php:50 assets/build/js/acf-input.js:6897
+#: assets/build/js/acf-input.js:7386
 msgctxt "verb"
 msgid "Update"
 msgstr "Updaten"
@@ -4191,8 +4191,8 @@ msgctxt "verb"
 msgid "Edit"
 msgstr "Bewerken"
 
-#: includes/assets.php:363 assets/build/js/acf-input.js:9189
-#: assets/build/js/acf-input.js:10036
+#: includes/assets.php:363 assets/build/js/acf-input.js:9179
+#: assets/build/js/acf-input.js:10022
 msgid "The changes you made will be lost if you navigate away from this page"
 msgstr "De aangebrachte wijzigingen gaan verloren als je deze pagina verlaat"
 
@@ -4523,7 +4523,7 @@ msgid "Enter each default value on a new line"
 msgstr "Zet elke standaardwaarde op een nieuwe regel"
 
 #: includes/fields/class-acf-field-select.php:258 includes/media.php:48
-#: assets/build/js/acf-input.js:6766 assets/build/js/acf-input.js:7246
+#: assets/build/js/acf-input.js:6756 assets/build/js/acf-input.js:7232
 msgctxt "verb"
 msgid "Select"
 msgstr "Selecteren"
@@ -5238,7 +5238,7 @@ msgid "Edit"
 msgstr "Bewerken"
 
 #: includes/fields/class-acf-field-image.php:70 includes/media.php:55
-#: assets/build/js/acf-input.js:6813 assets/build/js/acf-input.js:7300
+#: assets/build/js/acf-input.js:6803 assets/build/js/acf-input.js:7286
 msgid "All images"
 msgstr "Alle afbeeldingen"
 

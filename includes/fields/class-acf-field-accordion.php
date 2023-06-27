@@ -92,7 +92,7 @@ if ( ! class_exists( 'acf_field__accordion' ) ) :
 			acf_render_field_setting(
 				$field,
 				array(
-					'label'        => __( 'Multi-expand', 'acf' ),
+					'label'        => __( 'Multi-Expand', 'acf' ),
 					'instructions' => __( 'Allow this accordion to open without closing others.', 'acf' ),
 					'name'         => 'multi_expand',
 					'type'         => 'true_false',

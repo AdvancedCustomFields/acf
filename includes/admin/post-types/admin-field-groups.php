@@ -41,8 +41,30 @@ if ( ! class_exists( 'ACF_Admin_Field_Groups' ) ) :
 		 * @return  void
 		 */
 		public function __construct() {
+			add_action( 'admin_menu', array( $this, 'admin_menu' ), 7 );
 			add_action( 'load-edit.php', array( $this, 'handle_redirection' ) );
+			add_action( 'admin_footer', array( $this, 'include_pro_features' ) );
+
 			parent::__construct();
+		}
+
+		/**
+		 * Renders HTML for the ACF PRO features upgrade notice.
+		 *
+		 * @return void
+		 */
+		public function include_pro_features() {
+			// Bail if on PRO.
+			if ( defined( 'ACF_PRO' ) && ACF_PRO ) {
+				return;
+			}
+
+			// Bail if not the edit field groups screen.
+			if ( ! acf_is_screen( 'edit-acf-field-group' ) ) {
+				return;
+			}
+
+			acf_get_view( $this->post_type . '/pro-features' );
 		}
 
 		/**

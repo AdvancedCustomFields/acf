@@ -620,7 +620,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
         // bail early if is self
         if (fieldObject.cid === cid) {
-          choice.text += acf.__('(this field)');
+          choice.text += ' ' + acf.__('(this field)');
           choice.disabled = true;
         }
 

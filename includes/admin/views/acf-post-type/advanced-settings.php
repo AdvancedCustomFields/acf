@@ -863,7 +863,7 @@ foreach ( acf_get_combined_post_type_settings_tabs() as $tab_key => $tab_label )
 					'prefix'       => 'acf_post_type',
 					'value'        => $acf_post_type['exclude_from_search'],
 					'label'        => __( 'Exclude From Search', 'acf' ),
-					'instructions' => __( 'Sets whether posts should be excluded from search results.', 'acf' ),
+					'instructions' => __( 'Sets whether posts should be excluded from search results and taxonomy archive pages.', 'acf' ),
 					'ui'           => true,
 				)
 			);

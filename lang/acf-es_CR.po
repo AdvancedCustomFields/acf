@@ -12,7 +12,7 @@
 # This file is distributed under the same license as Advanced Custom Fields.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-05-04T13:57:24+00:00\n"
+"PO-Revision-Date: 2023-06-27T14:09:59+00:00\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "Language: es_CR\n"
 "MIME-Version: 1.0\n"
@@ -2284,37 +2284,37 @@ msgstr ""
 msgid "ACF"
 msgstr ""
 
-#: includes/admin/admin-internal-post-type.php:338
+#: includes/admin/admin-internal-post-type.php:337
 msgid "taxonomy"
 msgstr ""
 
-#: includes/admin/admin-internal-post-type.php:338
+#: includes/admin/admin-internal-post-type.php:337
 msgid "post type"
 msgstr ""
 
 #. translators: %1$s - name of newly created post. %2$s - either "post type" or
 #. "taxonomy".
-#: includes/admin/admin-internal-post-type.php:336
+#: includes/admin/admin-internal-post-type.php:335
 msgid "Link %1$s %2$s to field groups"
 msgstr ""
 
-#: includes/admin/admin-internal-post-type.php:329
+#: includes/admin/admin-internal-post-type.php:328
 msgid "Done"
 msgstr ""
 
-#: includes/admin/admin-internal-post-type.php:316
+#: includes/admin/admin-internal-post-type.php:315
 msgid "Field group(s)"
 msgstr ""
 
-#: includes/admin/admin-internal-post-type.php:315
+#: includes/admin/admin-internal-post-type.php:314
 msgid "Select one or many field groups..."
 msgstr ""
 
-#: includes/admin/admin-internal-post-type.php:314
+#: includes/admin/admin-internal-post-type.php:313
 msgid "Please select the field groups to link."
 msgstr ""
 
-#: includes/admin/admin-internal-post-type.php:278
+#: includes/admin/admin-internal-post-type.php:277
 msgid "Field group linked successfully."
 msgid_plural "Field groups linked successfully."
 msgstr[0] ""
@@ -2371,7 +2371,7 @@ msgstr ""
 msgid "[ACF shortcode value disabled for preview]"
 msgstr ""
 
-#: includes/admin/admin-internal-post-type.php:288
+#: includes/admin/admin-internal-post-type.php:287
 #: includes/admin/post-types/admin-field-group.php:545
 msgid "Close Modal"
 msgstr ""
@@ -2631,8 +2631,8 @@ msgstr ""
 msgid ""
 "<strong>%1$s</strong> - We've detected one or more calls to retrieve ACF "
 "field values before ACF has been initialized. This is not supported and can "
-"result in malformed or missing data. <a href=\"%2$s\" "
-"target=\"_blank\">Learn how to fix this</a>."
+"result in malformed or missing data. <a href=\"%2$s\" target=\"_blank"
+"\">Learn how to fix this</a>."
 msgstr ""
 
 #: includes/fields/class-acf-field-user.php:540
@@ -3812,7 +3812,7 @@ msgid "Title"
 msgstr "Título"
 
 #: includes/assets.php:372 includes/forms/form-comment.php:160
-#: assets/build/js/acf-input.js:7358 assets/build/js/acf-input.js:7948
+#: assets/build/js/acf-input.js:7348 assets/build/js/acf-input.js:7934
 msgid "Edit field group"
 msgstr "Editar grupo de campos"
 
@@ -3868,7 +3868,7 @@ msgstr "No tiene ningún valor"
 msgid "Has any value"
 msgstr "No tiene algún valor"
 
-#: includes/admin/admin-internal-post-type.php:328
+#: includes/admin/admin-internal-post-type.php:327
 #: includes/admin/views/browse-fields-modal.php:62 includes/assets.php:353
 #: assets/build/js/acf.js:1567 assets/build/js/acf.js:1662
 msgid "Cancel"
@@ -3879,50 +3879,50 @@ msgstr "Cancelar"
 msgid "Are you sure?"
 msgstr "¿Estás seguro?"
 
-#: includes/assets.php:369 assets/build/js/acf-input.js:9419
-#: assets/build/js/acf-input.js:10274
+#: includes/assets.php:369 assets/build/js/acf-input.js:9409
+#: assets/build/js/acf-input.js:10260
 msgid "%d fields require attention"
 msgstr "%d campos requieren atención"
 
-#: includes/assets.php:368 assets/build/js/acf-input.js:9417
-#: assets/build/js/acf-input.js:10270
+#: includes/assets.php:368 assets/build/js/acf-input.js:9407
+#: assets/build/js/acf-input.js:10256
 msgid "1 field requires attention"
 msgstr "1 campo requiere atención"
 
 #: includes/assets.php:367 includes/validation.php:286
-#: includes/validation.php:296 assets/build/js/acf-input.js:9412
-#: assets/build/js/acf-input.js:10265
+#: includes/validation.php:296 assets/build/js/acf-input.js:9402
+#: assets/build/js/acf-input.js:10251
 msgid "Validation failed"
 msgstr "Validación fallida"
 
-#: includes/assets.php:366 assets/build/js/acf-input.js:9575
-#: assets/build/js/acf-input.js:10448
+#: includes/assets.php:366 assets/build/js/acf-input.js:9565
+#: assets/build/js/acf-input.js:10434
 msgid "Validation successful"
 msgstr "Validación correcta"
 
-#: includes/media.php:54 assets/build/js/acf-input.js:7186
-#: assets/build/js/acf-input.js:7752
+#: includes/media.php:54 assets/build/js/acf-input.js:7176
+#: assets/build/js/acf-input.js:7738
 msgid "Restricted"
 msgstr "Restringido"
 
-#: includes/media.php:53 assets/build/js/acf-input.js:7001
-#: assets/build/js/acf-input.js:7516
+#: includes/media.php:53 assets/build/js/acf-input.js:6991
+#: assets/build/js/acf-input.js:7502
 msgid "Collapse Details"
 msgstr "Contraer detalles"
 
-#: includes/media.php:52 assets/build/js/acf-input.js:7001
-#: assets/build/js/acf-input.js:7513
+#: includes/media.php:52 assets/build/js/acf-input.js:6991
+#: assets/build/js/acf-input.js:7499
 msgid "Expand Details"
 msgstr "Ampliar detalles"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:461
-#: includes/media.php:51 assets/build/js/acf-input.js:6868
-#: assets/build/js/acf-input.js:7361
+#: includes/media.php:51 assets/build/js/acf-input.js:6858
+#: assets/build/js/acf-input.js:7347
 msgid "Uploaded to this post"
 msgstr "Subido a esta publicación"
 
-#: includes/media.php:50 assets/build/js/acf-input.js:6907
-#: assets/build/js/acf-input.js:7400
+#: includes/media.php:50 assets/build/js/acf-input.js:6897
+#: assets/build/js/acf-input.js:7386
 msgctxt "verb"
 msgid "Update"
 msgstr "Actualizar"
@@ -3932,8 +3932,8 @@ msgctxt "verb"
 msgid "Edit"
 msgstr "Editar"
 
-#: includes/assets.php:363 assets/build/js/acf-input.js:9189
-#: assets/build/js/acf-input.js:10036
+#: includes/assets.php:363 assets/build/js/acf-input.js:9179
+#: assets/build/js/acf-input.js:10022
 msgid "The changes you made will be lost if you navigate away from this page"
 msgstr "Los cambios que has realizado se perderán si navegas hacia otra página"
 
@@ -4265,7 +4265,7 @@ msgid "Enter each default value on a new line"
 msgstr "Añade cada valor en una nueva línea"
 
 #: includes/fields/class-acf-field-select.php:258 includes/media.php:48
-#: assets/build/js/acf-input.js:6766 assets/build/js/acf-input.js:7246
+#: assets/build/js/acf-input.js:6756 assets/build/js/acf-input.js:7232
 msgctxt "verb"
 msgid "Select"
 msgstr "Selecciona"
@@ -4979,7 +4979,7 @@ msgid "Edit"
 msgstr "Editar"
 
 #: includes/fields/class-acf-field-image.php:70 includes/media.php:55
-#: assets/build/js/acf-input.js:6813 assets/build/js/acf-input.js:7300
+#: assets/build/js/acf-input.js:6803 assets/build/js/acf-input.js:7286
 msgid "All images"
 msgstr "Todas las imágenes"
 

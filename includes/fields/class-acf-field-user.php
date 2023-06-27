@@ -52,7 +52,7 @@ if ( ! class_exists( 'ACF_Field_User' ) ) :
 			acf_render_field_setting(
 				$field,
 				array(
-					'label'        => __( 'Filter by role', 'acf' ),
+					'label'        => __( 'Filter by Role', 'acf' ),
 					'instructions' => '',
 					'type'         => 'select',
 					'name'         => 'role',
@@ -83,8 +83,8 @@ if ( ! class_exists( 'ACF_Field_User' ) ) :
 			acf_render_field_setting(
 				$field,
 				array(
-					'label'        => __( 'Select multiple values?', 'acf' ),
-					'instructions' => '',
+					'label'        => __( 'Select Multiple', 'acf' ),
+					'instructions' => 'Allow content editors to select multiple values',
 					'name'         => 'multiple',
 					'type'         => 'true_false',
 					'ui'           => 1,
@@ -104,7 +104,7 @@ if ( ! class_exists( 'ACF_Field_User' ) ) :
 			acf_render_field_setting(
 				$field,
 				array(
-					'label'        => __( 'Allow Null?', 'acf' ),
+					'label'        => __( 'Allow Null', 'acf' ),
 					'instructions' => '',
 					'name'         => 'allow_null',
 					'type'         => 'true_false',

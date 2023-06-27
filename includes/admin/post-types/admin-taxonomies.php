@@ -36,6 +36,39 @@ if ( ! class_exists( 'ACF_Admin_Taxonomies' ) ) :
 		public $store = 'taxonomies';
 
 		/**
+		 * Constructor.
+		 *
+		 * @date    5/03/2014
+		 * @since   6.2
+		 *
+		 * @return  void
+		 */
+		public function __construct() {
+			add_action( 'admin_menu', array( $this, 'admin_menu' ), 9 );
+			add_action( 'admin_footer', array( $this, 'include_pro_features' ) );
+			parent::__construct();
+		}
+
+		/**
+		 * Renders HTML for the ACF PRO features upgrade notice.
+		 *
+		 * @return void
+		 */
+		public function include_pro_features() {
+			// Bail if on PRO.
+			if ( defined( 'ACF_PRO' ) && ACF_PRO ) {
+				return;
+			}
+
+			// Bail if not the edit taxonomies screen.
+			if ( ! acf_is_screen( 'edit-acf-taxonomy' ) ) {
+				return;
+			}
+
+			acf_get_view( 'acf-field-group/pro-features' );
+		}
+
+		/**
 		 * Current screen actions for the taxonomies list admin page.
 		 *
 		 * @since   6.1

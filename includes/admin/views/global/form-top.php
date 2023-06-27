@@ -14,7 +14,16 @@ if ( 'acf-field-group' === $acf_post_type ) {
 	$acf_use_taxonomy  = acf_get_taxonomy_from_request_args( 'add-fields' );
 
 	/* translators: %s - singular label of post type/taxonomy, i.e. "Movie"/"Genre" */
-	$acf_prefilled_title = (string) apply_filters( 'acf/field_group/prefill_title', __( '%s fields', 'acf' ) );
+	$acf_prefilled_title = __( '%s fields', 'acf' );
+
+	/**
+	 * Sets a default title to be prefilled (e.g. "Movies Fields") for a post type or taxonomy.
+	 *
+	 * @since 6.1.5
+	 *
+	 * @param string $acf_prefilled_title A string to define the prefilled title for a post type or taxonomy.
+	 */
+	$acf_prefilled_title = (string) apply_filters( 'acf/field_group/prefill_title', $acf_prefilled_title );
 
 	if ( $acf_use_post_type && ! empty( $acf_use_post_type['labels']['singular_name'] ) ) {
 		$acf_prefilled_title = sprintf( $acf_prefilled_title, $acf_use_post_type['labels']['singular_name'] );

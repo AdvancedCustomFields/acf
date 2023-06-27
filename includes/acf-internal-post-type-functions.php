@@ -503,11 +503,12 @@ function acf_get_combined_post_type_settings_tabs() {
  */
 function acf_get_combined_taxonomy_settings_tabs() {
 	$default_taxonomy_tabs = array(
-		'general'    => __( 'General', 'acf' ),
-		'labels'     => __( 'Labels', 'acf' ),
-		'visibility' => __( 'Visibility', 'acf' ),
-		'urls'       => __( 'URLs', 'acf' ),
-		'rest_api'   => __( 'REST API', 'acf' ),
+		'general'     => __( 'General', 'acf' ),
+		'labels'      => __( 'Labels', 'acf' ),
+		'visibility'  => __( 'Visibility', 'acf' ),
+		'urls'        => __( 'URLs', 'acf' ),
+		'permissions' => __( 'Permissions', 'acf' ),
+		'rest_api'    => __( 'REST API', 'acf' ),
 	);
 
 	$additional_taxonomy_tabs = (array) apply_filters( 'acf/taxonomy/additional_settings_tabs', array() );

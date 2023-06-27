@@ -7,7 +7,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language-Team: WP Engine <support@advancedcustomfields.com>\n"
-"POT-Creation-Date: 2023-05-04 13:57+0000\n"
+"POT-Creation-Date: 2023-06-27 14:12+0000\n"
 "Report-Msgid-Bugs-To: https://support.advancedcustomfields.com\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
@@ -46,12 +46,12 @@ msgstr ""
 msgid "%s settings"
 msgstr ""
 
-#: pro/blocks.php:936
+#: pro/blocks.php:943
 msgid "This block contains no editable fields."
 msgstr ""
 
 #. translators: %s: an admin URL to the field group edit screen
-#: pro/blocks.php:942
+#: pro/blocks.php:949
 msgid "Assign a <a href=\"%s\" target=\"_blank\">field group</a> to add fields to this block."
 msgstr ""
 
@@ -95,15 +95,15 @@ msgstr ""
 msgid "<b>ACF Activation Error</b>. Could not connect to activation server"
 msgstr ""
 
-#: pro/admin/admin-options-page.php:195
+#: pro/admin/admin-options-page.php:205
 msgid "Publish"
 msgstr ""
 
-#: pro/admin/admin-options-page.php:199
+#: pro/admin/admin-options-page.php:209
 msgid "No Custom Field Groups found for this options page. <a href=\"%s\">Create a Custom Field Group</a>"
 msgstr ""
 
-#: pro/admin/admin-options-page.php:309
+#: pro/admin/admin-options-page.php:319
 msgid "Edit field group"
 msgstr ""
 
@@ -132,79 +132,79 @@ msgstr ""
 msgid "Allows you to select and display existing fields. It does not duplicate any fields in the database, but loads and displays the selected fields at run-time. The Clone field can either replace itself with the selected fields or display the selected fields as a group of subfields."
 msgstr ""
 
-#: pro/fields/class-acf-field-clone.php:818, pro/fields/class-acf-field-flexible-content.php:78
+#: pro/fields/class-acf-field-clone.php:819, pro/fields/class-acf-field-flexible-content.php:78
 msgid "Fields"
 msgstr ""
 
-#: pro/fields/class-acf-field-clone.php:819
+#: pro/fields/class-acf-field-clone.php:820
 msgid "Select one or more fields you wish to clone"
 msgstr ""
 
-#: pro/fields/class-acf-field-clone.php:838
+#: pro/fields/class-acf-field-clone.php:839
 msgid "Display"
 msgstr ""
 
-#: pro/fields/class-acf-field-clone.php:839
+#: pro/fields/class-acf-field-clone.php:840
 msgid "Specify the style used to render the clone field"
 msgstr ""
 
-#: pro/fields/class-acf-field-clone.php:844
+#: pro/fields/class-acf-field-clone.php:845
 msgid "Group (displays selected fields in a group within this field)"
 msgstr ""
 
-#: pro/fields/class-acf-field-clone.php:845
+#: pro/fields/class-acf-field-clone.php:846
 msgid "Seamless (replaces this field with selected fields)"
 msgstr ""
 
-#: pro/fields/class-acf-field-clone.php:854, pro/fields/class-acf-field-flexible-content.php:558, pro/fields/class-acf-field-flexible-content.php:616, pro/fields/class-acf-field-repeater.php:177
+#: pro/fields/class-acf-field-clone.php:855, pro/fields/class-acf-field-flexible-content.php:558, pro/fields/class-acf-field-flexible-content.php:616, pro/fields/class-acf-field-repeater.php:177
 msgid "Layout"
 msgstr ""
 
-#: pro/fields/class-acf-field-clone.php:855
+#: pro/fields/class-acf-field-clone.php:856
 msgid "Specify the style used to render the selected fields"
 msgstr ""
 
-#: pro/fields/class-acf-field-clone.php:860, pro/fields/class-acf-field-flexible-content.php:629, pro/fields/class-acf-field-repeater.php:185, pro/locations/class-acf-location-block.php:22
+#: pro/fields/class-acf-field-clone.php:861, pro/fields/class-acf-field-flexible-content.php:629, pro/fields/class-acf-field-repeater.php:185, pro/locations/class-acf-location-block.php:22
 msgid "Block"
 msgstr ""
 
-#: pro/fields/class-acf-field-clone.php:861, pro/fields/class-acf-field-flexible-content.php:628, pro/fields/class-acf-field-repeater.php:184
+#: pro/fields/class-acf-field-clone.php:862, pro/fields/class-acf-field-flexible-content.php:628, pro/fields/class-acf-field-repeater.php:184
 msgid "Table"
 msgstr ""
 
-#: pro/fields/class-acf-field-clone.php:862, pro/fields/class-acf-field-flexible-content.php:630, pro/fields/class-acf-field-repeater.php:186
+#: pro/fields/class-acf-field-clone.php:863, pro/fields/class-acf-field-flexible-content.php:630, pro/fields/class-acf-field-repeater.php:186
 msgid "Row"
 msgstr ""
 
-#: pro/fields/class-acf-field-clone.php:868
+#: pro/fields/class-acf-field-clone.php:869
 msgid "Labels will be displayed as %s"
 msgstr ""
 
-#: pro/fields/class-acf-field-clone.php:873
+#: pro/fields/class-acf-field-clone.php:874
 msgid "Prefix Field Labels"
 msgstr ""
 
-#: pro/fields/class-acf-field-clone.php:883
+#: pro/fields/class-acf-field-clone.php:884
 msgid "Values will be saved as %s"
 msgstr ""
 
-#: pro/fields/class-acf-field-clone.php:888
+#: pro/fields/class-acf-field-clone.php:889
 msgid "Prefix Field Names"
 msgstr ""
 
-#: pro/fields/class-acf-field-clone.php:1005
+#: pro/fields/class-acf-field-clone.php:1006
 msgid "Unknown field"
 msgstr ""
 
-#: pro/fields/class-acf-field-clone.php:1009
+#: pro/fields/class-acf-field-clone.php:1010
 msgid "(no title)"
 msgstr ""
 
-#: pro/fields/class-acf-field-clone.php:1042
+#: pro/fields/class-acf-field-clone.php:1043
 msgid "Unknown field group"
 msgstr ""
 
-#: pro/fields/class-acf-field-clone.php:1046
+#: pro/fields/class-acf-field-clone.php:1047
 msgid "All fields from %s field group"
 msgstr ""
 
@@ -475,7 +475,7 @@ msgid "Maximum"
 msgstr ""
 
 #: pro/fields/class-acf-field-gallery.php:708
-msgid "Allowed file types"
+msgid "Allowed File Types"
 msgstr ""
 
 #: pro/fields/class-acf-field-gallery.php:709

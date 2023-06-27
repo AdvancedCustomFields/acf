@@ -76,56 +76,72 @@ if ( $core_tabs === false ) {
 	return;
 }
 
+$acf_is_free            = ! defined( 'ACF_PRO' ) || ! ACF_PRO;
+$acf_wpengine_logo_link = acf_add_url_utm_tags(
+	'https://wpengine.com/',
+	'bx_prod_referral',
+	$acf_is_free ? 'acf_free_plugin_topbar_logo' : 'acf_pro_plugin_topbar_logo',
+	false,
+	'acf_plugin',
+	'referral'
+);
+
 ?>
 <div class="acf-admin-toolbar">
+	<div class="acf-admin-toolbar-inner">
+		<div class="acf-nav-wrap">
+			<a href="<?php echo admin_url( 'edit.php?post_type=acf-field-group' ); ?>" class="acf-logo">
+				<img src="<?php echo acf_get_url( 'assets/images/acf-logo.svg' ); ?>" alt="<?php esc_attr_e( 'Advanced Custom Fields logo', 'acf' ); ?>">
+				<?php if ( defined( 'ACF_PRO' ) && ACF_PRO ) { ?>
+					<div class="acf-pro-label">PRO</div>
+				<?php } ?>
+			</a>
 
-	<a href="<?php echo admin_url( 'edit.php?post_type=acf-field-group' ); ?>" class="acf-logo">
-		<img src="<?php echo acf_get_url( 'assets/images/acf-logo.svg' ); ?>" alt="<?php esc_attr_e( 'Advanced Custom Fields logo', 'acf' ); ?>">
-		<?php if ( defined( 'ACF_PRO' ) && ACF_PRO ) { ?>
-			<div class="acf-pro-label">PRO</div>
-		<?php } ?>
-	</a>
-	
-	<h2><?php echo acf_get_setting( 'name' ); ?></h2>
-	<?php
-	foreach ( $core_tabs as $menu_item ) {
-		$classname = ! empty( $menu_item['class'] ) ? $menu_item['class'] : $menu_item['text'];
-		printf(
-			'<a class="acf-tab%s %s" href="%s"><i class="acf-icon"></i>%s</a>',
-			! empty( $menu_item['is_active'] ) ? ' is-active' : '',
-			'acf-header-tab-' . acf_slugify( $classname ),
-			esc_url( $menu_item['url'] ),
-			acf_esc_html( $menu_item['text'] )
-		);
-	}
-	?>
-	<?php if ( $more_items ) { ?>
-		<div class="acf-more acf-header-tab-acf-more" tabindex="0">
-			<span class="acf-tab acf-more-tab"><i class="acf-icon acf-icon-more"></i><?php esc_html_e( 'More', 'acf' ); ?> <i class="acf-icon acf-icon-dropdown"></i></span>
-			<ul>
-				<?php
-				foreach ( $more_items as $more_item ) {
-					$classname = ! empty( $more_item['class'] ) ? $more_item['class'] : $more_item['text'];
-					printf(
-						'<li><a class="acf-tab%s %s" href="%s"><i class="acf-icon"></i>%s</a></li>',
-						! empty( $more_item['is_active'] ) ? ' is-active' : '',
-						'acf-header-tab-' . acf_slugify( $classname ),
-						esc_url( $more_item['url'] ),
-						acf_esc_html( $more_item['text'] )
-					);
-				}
-				?>
-			</ul>
+			<h2><?php echo acf_get_setting( 'name' ); ?></h2>
+			<?php
+			foreach ( $core_tabs as $menu_item ) {
+				$classname = ! empty( $menu_item['class'] ) ? $menu_item['class'] : $menu_item['text'];
+				printf(
+					'<a class="acf-tab%s %s" href="%s"><i class="acf-icon"></i>%s</a>',
+					! empty( $menu_item['is_active'] ) ? ' is-active' : '',
+					'acf-header-tab-' . acf_slugify( $classname ),
+					esc_url( $menu_item['url'] ),
+					acf_esc_html( $menu_item['text'] )
+				);
+			}
+			?>
+			<?php if ( $more_items ) { ?>
+				<div class="acf-more acf-header-tab-acf-more" tabindex="0">
+					<span class="acf-tab acf-more-tab"><i class="acf-icon acf-icon-more"></i><?php esc_html_e( 'More', 'acf' ); ?> <i class="acf-icon acf-icon-dropdown"></i></span>
+					<ul>
+						<?php
+						foreach ( $more_items as $more_item ) {
+							$classname = ! empty( $more_item['class'] ) ? $more_item['class'] : $more_item['text'];
+							printf(
+								'<li><a class="acf-tab%s %s" href="%s"><i class="acf-icon"></i>%s</a></li>',
+								! empty( $more_item['is_active'] ) ? ' is-active' : '',
+								'acf-header-tab-' . acf_slugify( $classname ),
+								esc_url( $more_item['url'] ),
+								acf_esc_html( $more_item['text'] )
+							);
+						}
+						?>
+					</ul>
+				</div>
+			<?php } ?>
 		</div>
-	<?php } ?>
-
-	<?php if ( ! defined( 'ACF_PRO' ) || ! ACF_PRO ) : ?>
-	<a target="_blank" href="<?php echo acf_add_url_utm_tags( 'https://www.advancedcustomfields.com/pro/', 'ACF upgrade', 'header' ); ?>" class="btn-upgrade acf-admin-toolbar-upgrade-btn">
-		<i class="acf-icon acf-icon-stars"></i>
-		<p><?php _e( 'Unlock Extra Features with ACF PRO', 'acf' ); ?></p>
-	</a>
-	<?php endif; ?>
-
+		<div class="acf-nav-upgrade-wrap">
+			<?php if ( $acf_is_free ) : ?>
+				<a target="_blank" href="<?php echo acf_add_url_utm_tags( 'https://www.advancedcustomfields.com/pro/', 'ACF upgrade', 'header' ); ?>" class="btn-upgrade acf-admin-toolbar-upgrade-btn">
+					<i class="acf-icon acf-icon-stars"></i>
+					<p><?php esc_html_e( 'Unlock Extra Features with ACF PRO', 'acf' ); ?></p>
+				</a>
+			<?php endif; ?>
+			<a href="<?php echo $acf_wpengine_logo_link; ?>" target="_blank" class="acf-nav-wpengine-logo">
+				<img src="<?php echo esc_url( acf_get_url( 'assets/images/wp-engine-horizontal-white.svg' ) ); ?>" alt="<?php esc_html_e( 'WP Engine logo', 'acf' ); ?>" />
+			</a>
+		</div>
+	</div>
 </div>
 
 <?php

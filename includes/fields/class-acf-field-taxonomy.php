@@ -786,7 +786,7 @@ if ( ! class_exists( 'acf_field_taxonomy' ) ) :
 			acf_render_field_setting(
 				$field,
 				array(
-					'label'        => __( 'Allow Null?', 'acf' ),
+					'label'        => __( 'Allow Null', 'acf' ),
 					'instructions' => '',
 					'name'         => 'allow_null',
 					'type'         => 'true_false',

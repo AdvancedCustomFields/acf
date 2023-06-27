@@ -103,7 +103,7 @@ if ( ! class_exists( 'ACF_Admin_Tool_Export' ) ) :
 			header( 'Content-Type: application/json; charset=utf-8' );
 
 			// return
-			echo acf_json_encode( $json );
+			echo acf_json_encode( $json ) . "\r\n";
 			die;
 
 		}

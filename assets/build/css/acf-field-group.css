@@ -681,8 +681,10 @@ html[dir=rtl] .acf-field-object.open > .handle {
 *  Hide old / native WP titles from pages
 *
 *---------------------------------------------------------------------------------------------*/
-.acf-admin-page .acf-settings-wrap h1,
-.acf-admin-page #acf-admin-tools h1 {
+.acf-admin-page .acf-settings-wrap h1 {
+  display: none !important;
+}
+.acf-admin-page #acf-admin-tools h1:not(.acf-field-group-pro-features-title, .acf-field-group-pro-features-title-sm) {
   display: none !important;
 }
 
@@ -1174,12 +1176,20 @@ html[dir=rtl] .acf-field-object.open > .handle {
 .acf-admin-page .acf-field-setting-type .select2-container.-acf,
 .acf-admin-page .acf-field-permalink-rewrite .select2-container.-acf,
 .acf-admin-page .acf-field-query-var .select2-container.-acf,
+.acf-admin-page .acf-field-manage-terms .select2-container.-acf,
+.acf-admin-page .acf-field-edit-terms .select2-container.-acf,
+.acf-admin-page .acf-field-delete-terms .select2-container.-acf,
+.acf-admin-page .acf-field-assign-terms .select2-container.-acf,
 .acf-admin-page .acf-field-meta-box .select2-container.-acf {
   min-height: 40px;
 }
 .acf-admin-page .acf-field-setting-type .select2-container--default .select2-selection--single .select2-selection__rendered,
 .acf-admin-page .acf-field-permalink-rewrite .select2-container--default .select2-selection--single .select2-selection__rendered,
 .acf-admin-page .acf-field-query-var .select2-container--default .select2-selection--single .select2-selection__rendered,
+.acf-admin-page .acf-field-manage-terms .select2-container--default .select2-selection--single .select2-selection__rendered,
+.acf-admin-page .acf-field-edit-terms .select2-container--default .select2-selection--single .select2-selection__rendered,
+.acf-admin-page .acf-field-delete-terms .select2-container--default .select2-selection--single .select2-selection__rendered,
+.acf-admin-page .acf-field-assign-terms .select2-container--default .select2-selection--single .select2-selection__rendered,
 .acf-admin-page .acf-field-meta-box .select2-container--default .select2-selection--single .select2-selection__rendered {
   display: flex;
   align-items: center;
@@ -1194,6 +1204,10 @@ html[dir=rtl] .acf-field-object.open > .handle {
 .acf-admin-page .acf-field-setting-type .select2-container--default .select2-selection--single .field-type-icon,
 .acf-admin-page .acf-field-permalink-rewrite .select2-container--default .select2-selection--single .field-type-icon,
 .acf-admin-page .acf-field-query-var .select2-container--default .select2-selection--single .field-type-icon,
+.acf-admin-page .acf-field-manage-terms .select2-container--default .select2-selection--single .field-type-icon,
+.acf-admin-page .acf-field-edit-terms .select2-container--default .select2-selection--single .field-type-icon,
+.acf-admin-page .acf-field-delete-terms .select2-container--default .select2-selection--single .field-type-icon,
+.acf-admin-page .acf-field-assign-terms .select2-container--default .select2-selection--single .field-type-icon,
 .acf-admin-page .acf-field-meta-box .select2-container--default .select2-selection--single .field-type-icon {
   top: auto;
   width: 18px;
@@ -1203,6 +1217,10 @@ html[dir=rtl] .acf-field-object.open > .handle {
 .acf-admin-page .acf-field-setting-type .select2-container--default .select2-selection--single .field-type-icon:before,
 .acf-admin-page .acf-field-permalink-rewrite .select2-container--default .select2-selection--single .field-type-icon:before,
 .acf-admin-page .acf-field-query-var .select2-container--default .select2-selection--single .field-type-icon:before,
+.acf-admin-page .acf-field-manage-terms .select2-container--default .select2-selection--single .field-type-icon:before,
+.acf-admin-page .acf-field-edit-terms .select2-container--default .select2-selection--single .field-type-icon:before,
+.acf-admin-page .acf-field-delete-terms .select2-container--default .select2-selection--single .field-type-icon:before,
+.acf-admin-page .acf-field-assign-terms .select2-container--default .select2-selection--single .field-type-icon:before,
 .acf-admin-page .acf-field-meta-box .select2-container--default .select2-selection--single .field-type-icon:before {
   width: 9px;
   height: 9px;
@@ -1210,6 +1228,10 @@ html[dir=rtl] .acf-field-object.open > .handle {
 .acf-admin-page .acf-field-setting-type .select2-container--open .select2-selection__rendered,
 .acf-admin-page .acf-field-permalink-rewrite .select2-container--open .select2-selection__rendered,
 .acf-admin-page .acf-field-query-var .select2-container--open .select2-selection__rendered,
+.acf-admin-page .acf-field-manage-terms .select2-container--open .select2-selection__rendered,
+.acf-admin-page .acf-field-edit-terms .select2-container--open .select2-selection__rendered,
+.acf-admin-page .acf-field-delete-terms .select2-container--open .select2-selection__rendered,
+.acf-admin-page .acf-field-assign-terms .select2-container--open .select2-selection__rendered,
 .acf-admin-page .acf-field-meta-box .select2-container--open .select2-selection__rendered {
   border-color: #6BB5D8 !important;
   border-bottom-color: #D0D5DD !important;
@@ -1217,6 +1239,10 @@ html[dir=rtl] .acf-field-object.open > .handle {
 .acf-admin-page .acf-field-setting-type .select2-container--open.select2-container--below .select2-selection__rendered,
 .acf-admin-page .acf-field-permalink-rewrite .select2-container--open.select2-container--below .select2-selection__rendered,
 .acf-admin-page .acf-field-query-var .select2-container--open.select2-container--below .select2-selection__rendered,
+.acf-admin-page .acf-field-manage-terms .select2-container--open.select2-container--below .select2-selection__rendered,
+.acf-admin-page .acf-field-edit-terms .select2-container--open.select2-container--below .select2-selection__rendered,
+.acf-admin-page .acf-field-delete-terms .select2-container--open.select2-container--below .select2-selection__rendered,
+.acf-admin-page .acf-field-assign-terms .select2-container--open.select2-container--below .select2-selection__rendered,
 .acf-admin-page .acf-field-meta-box .select2-container--open.select2-container--below .select2-selection__rendered {
   border-bottom-right-radius: 0 !important;
   border-bottom-left-radius: 0 !important;
@@ -1224,6 +1250,10 @@ html[dir=rtl] .acf-field-object.open > .handle {
 .acf-admin-page .acf-field-setting-type .select2-container--open.select2-container--above .select2-selection__rendered,
 .acf-admin-page .acf-field-permalink-rewrite .select2-container--open.select2-container--above .select2-selection__rendered,
 .acf-admin-page .acf-field-query-var .select2-container--open.select2-container--above .select2-selection__rendered,
+.acf-admin-page .acf-field-manage-terms .select2-container--open.select2-container--above .select2-selection__rendered,
+.acf-admin-page .acf-field-edit-terms .select2-container--open.select2-container--above .select2-selection__rendered,
+.acf-admin-page .acf-field-delete-terms .select2-container--open.select2-container--above .select2-selection__rendered,
+.acf-admin-page .acf-field-assign-terms .select2-container--open.select2-container--above .select2-selection__rendered,
 .acf-admin-page .acf-field-meta-box .select2-container--open.select2-container--above .select2-selection__rendered {
   border-top-right-radius: 0 !important;
   border-top-left-radius: 0 !important;
@@ -1233,16 +1263,24 @@ html[dir=rtl] .acf-field-object.open > .handle {
 .acf-admin-page .acf-field-setting-type .acf-selection.has-icon,
 .acf-admin-page .acf-field-permalink-rewrite .acf-selection.has-icon,
 .acf-admin-page .acf-field-query-var .acf-selection.has-icon,
+.acf-admin-page .acf-field-manage-terms .acf-selection.has-icon,
+.acf-admin-page .acf-field-edit-terms .acf-selection.has-icon,
+.acf-admin-page .acf-field-delete-terms .acf-selection.has-icon,
+.acf-admin-page .acf-field-assign-terms .acf-selection.has-icon,
 .acf-admin-page .acf-field-meta-box .acf-selection.has-icon {
   margin-left: 6px;
 }
-.rtl.acf-admin-page .acf-field-setting-type .acf-selection.has-icon, .acf-admin-page .acf-field-permalink-rewrite .acf-selection.has-icon, .acf-admin-page .acf-field-query-var .acf-selection.has-icon, .acf-admin-page .acf-field-meta-box .acf-selection.has-icon {
+.rtl.acf-admin-page .acf-field-setting-type .acf-selection.has-icon, .acf-admin-page .acf-field-permalink-rewrite .acf-selection.has-icon, .acf-admin-page .acf-field-query-var .acf-selection.has-icon, .acf-admin-page .acf-field-manage-terms .acf-selection.has-icon, .acf-admin-page .acf-field-edit-terms .acf-selection.has-icon, .acf-admin-page .acf-field-delete-terms .acf-selection.has-icon, .acf-admin-page .acf-field-assign-terms .acf-selection.has-icon, .acf-admin-page .acf-field-meta-box .acf-selection.has-icon {
   margin-right: 6px;
 }
 
 .acf-admin-page .acf-field-setting-type .select2-selection__arrow,
 .acf-admin-page .acf-field-permalink-rewrite .select2-selection__arrow,
 .acf-admin-page .acf-field-query-var .select2-selection__arrow,
+.acf-admin-page .acf-field-manage-terms .select2-selection__arrow,
+.acf-admin-page .acf-field-edit-terms .select2-selection__arrow,
+.acf-admin-page .acf-field-delete-terms .select2-selection__arrow,
+.acf-admin-page .acf-field-assign-terms .select2-selection__arrow,
 .acf-admin-page .acf-field-meta-box .select2-selection__arrow {
   width: 20px;
   height: 20px;
@@ -1253,6 +1291,10 @@ html[dir=rtl] .acf-field-object.open > .handle {
 .acf-admin-page .acf-field-setting-type .select2-selection__arrow:after,
 .acf-admin-page .acf-field-permalink-rewrite .select2-selection__arrow:after,
 .acf-admin-page .acf-field-query-var .select2-selection__arrow:after,
+.acf-admin-page .acf-field-manage-terms .select2-selection__arrow:after,
+.acf-admin-page .acf-field-edit-terms .select2-selection__arrow:after,
+.acf-admin-page .acf-field-delete-terms .select2-selection__arrow:after,
+.acf-admin-page .acf-field-assign-terms .select2-selection__arrow:after,
 .acf-admin-page .acf-field-meta-box .select2-selection__arrow:after {
   content: "";
   display: block;
@@ -1280,12 +1322,20 @@ html[dir=rtl] .acf-field-object.open > .handle {
 .acf-admin-page .acf-field-setting-type .select2-selection__arrow b[role=presentation],
 .acf-admin-page .acf-field-permalink-rewrite .select2-selection__arrow b[role=presentation],
 .acf-admin-page .acf-field-query-var .select2-selection__arrow b[role=presentation],
+.acf-admin-page .acf-field-manage-terms .select2-selection__arrow b[role=presentation],
+.acf-admin-page .acf-field-edit-terms .select2-selection__arrow b[role=presentation],
+.acf-admin-page .acf-field-delete-terms .select2-selection__arrow b[role=presentation],
+.acf-admin-page .acf-field-assign-terms .select2-selection__arrow b[role=presentation],
 .acf-admin-page .acf-field-meta-box .select2-selection__arrow b[role=presentation] {
   display: none;
 }
 .acf-admin-page .acf-field-setting-type .select2-container--open .select2-selection__arrow:after,
 .acf-admin-page .acf-field-permalink-rewrite .select2-container--open .select2-selection__arrow:after,
 .acf-admin-page .acf-field-query-var .select2-container--open .select2-selection__arrow:after,
+.acf-admin-page .acf-field-manage-terms .select2-container--open .select2-selection__arrow:after,
+.acf-admin-page .acf-field-edit-terms .select2-container--open .select2-selection__arrow:after,
+.acf-admin-page .acf-field-delete-terms .select2-container--open .select2-selection__arrow:after,
+.acf-admin-page .acf-field-assign-terms .select2-container--open .select2-selection__arrow:after,
 .acf-admin-page .acf-field-meta-box .select2-container--open .select2-selection__arrow:after {
   -webkit-mask-image: url("../../images/icons/icon-chevron-up.svg");
   mask-image: url("../../images/icons/icon-chevron-up.svg");

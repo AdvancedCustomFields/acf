@@ -230,8 +230,12 @@ if ( ! class_exists( 'ACF_Admin' ) ) :
 			if ( null === $text ) {
 				$text = '';
 			}
+
+			$is_free        = ! defined( 'ACF_PRO' ) || ! ACF_PRO;
+			$wp_engine_link = acf_add_url_utm_tags( 'https://wpengine.com/', 'bx_prod_referral', $is_free ? 'acf_free_plugin_footer_text' : 'acf_pro_plugin_footer_text', false, 'acf_plugin', 'referral' );
+
 			// Use RegExp to append "ACF" after the <a> element allowing translations to read correctly.
-			return preg_replace( '/(<a[\S\s]+?\/a>)/', '$1 ' . __( 'and', 'acf' ) . ' <a href="' . acf_add_url_utm_tags( 'https://www.advancedcustomfields.com', 'footer', 'footer' ) . '" target="_blank">ACF</a>', $text, 1 );
+			return preg_replace( '/(<a[\S\s]+?\/a>)/', '$1 ' . __( 'and', 'acf' ) . ' <a href="' . acf_add_url_utm_tags( 'https://www.advancedcustomfields.com', 'footer', 'footer' ) . '" target="_blank">ACF</a> ' . __( 'from', 'acf' ) . ' <a href="' . $wp_engine_link . '" target="_blank">WP Engine</a>', $text, 1 );
 		}
 
 		/**

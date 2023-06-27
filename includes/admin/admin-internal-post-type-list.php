@@ -61,7 +61,6 @@ if ( ! class_exists( 'ACF_Admin_Internal_Post_Type_List' ) ) :
 		 */
 		public function __construct() {
 			add_action( 'current_screen', array( $this, 'current_screen' ) );
-			add_action( 'admin_menu', array( $this, 'admin_menu' ) );
 
 			// Handle post status change events.
 			add_action( 'trashed_post', array( $this, 'trashed_post' ) );
