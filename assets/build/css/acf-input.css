@@ -668,7 +668,6 @@ html[dir=rtl] input.acf-is-prepended.acf-is-appended {
 *
 *-----------------------------------------------------------------------------*/
 .select2-container.-acf {
-  min-height: 40px;
   z-index: 1001;
   /* open */
   /* single open */
@@ -2224,7 +2223,8 @@ html[dir=rtl] .acf-file-uploader .file-info {
 }
 .acf-range-wrap input[type=number] {
   display: inline-block;
-  min-width: 3em;
+  min-width: 5em;
+  padding-right: 4px;
   margin-left: 10px;
   vertical-align: middle;
 }

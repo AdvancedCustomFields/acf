@@ -54,6 +54,30 @@ acf_render_field_wrap(
 	'field'
 );
 
+// Allow preselecting the linked taxonomies based on previously created taxonomy.
+$acf_use_taxonomy = acf_get_taxonomy_from_request_args( 'create-post-type' );
+if ( $acf_use_taxonomy && ! empty( $acf_use_taxonomy['taxonomy'] ) ) {
+	$acf_post_type['taxonomies'] = array( $acf_use_taxonomy['taxonomy'] );
+}
+
+acf_render_field_wrap(
+	array(
+		'type'         => 'select',
+		'name'         => 'taxonomies',
+		'key'          => 'taxonomies',
+		'prefix'       => 'acf_post_type',
+		'value'        => $acf_post_type['taxonomies'],
+		'label'        => __( 'Taxonomies', 'acf' ),
+		'instructions' => __( 'Select existing taxonomies to classify items of the post type.', 'acf' ),
+		'choices'      => acf_get_taxonomy_labels(),
+		'ui'           => true,
+		'allow_null'   => true,
+		'multiple'     => true,
+	),
+	'div',
+	'field'
+);
+
 acf_render_field_wrap( array( 'type' => 'seperator' ) );
 
 acf_render_field_wrap(

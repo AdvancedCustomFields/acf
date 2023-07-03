@@ -7,7 +7,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language-Team: WP Engine <support@advancedcustomfields.com>\n"
-"POT-Creation-Date: 2023-04-03 13:34+0000\n"
+"POT-Creation-Date: 2023-05-04 13:57+0000\n"
 "Report-Msgid-Bugs-To: https://support.advancedcustomfields.com\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
@@ -59,7 +59,7 @@ msgstr ""
 msgid "Options"
 msgstr ""
 
-#: pro/options-page.php:77, pro/fields/class-acf-field-gallery.php:527
+#: pro/options-page.php:77, pro/fields/class-acf-field-gallery.php:528
 msgid "Update"
 msgstr ""
 
@@ -346,163 +346,163 @@ msgstr ""
 msgid "An interactive interface for managing a collection of attachments, such as images."
 msgstr ""
 
-#: pro/fields/class-acf-field-gallery.php:77
+#: pro/fields/class-acf-field-gallery.php:78
 msgid "Add Image to Gallery"
 msgstr ""
 
-#: pro/fields/class-acf-field-gallery.php:78
+#: pro/fields/class-acf-field-gallery.php:79
 msgid "Maximum selection reached"
 msgstr ""
 
-#: pro/fields/class-acf-field-gallery.php:324
+#: pro/fields/class-acf-field-gallery.php:325
 msgid "Length"
 msgstr ""
 
-#: pro/fields/class-acf-field-gallery.php:339
+#: pro/fields/class-acf-field-gallery.php:340
 msgid "Edit"
 msgstr ""
 
-#: pro/fields/class-acf-field-gallery.php:340, pro/fields/class-acf-field-gallery.php:495
+#: pro/fields/class-acf-field-gallery.php:341, pro/fields/class-acf-field-gallery.php:496
 msgid "Remove"
 msgstr ""
 
-#: pro/fields/class-acf-field-gallery.php:356
+#: pro/fields/class-acf-field-gallery.php:357
 msgid "Title"
 msgstr ""
 
-#: pro/fields/class-acf-field-gallery.php:368
+#: pro/fields/class-acf-field-gallery.php:369
 msgid "Caption"
 msgstr ""
 
-#: pro/fields/class-acf-field-gallery.php:380
+#: pro/fields/class-acf-field-gallery.php:381
 msgid "Alt Text"
 msgstr ""
 
-#: pro/fields/class-acf-field-gallery.php:392
+#: pro/fields/class-acf-field-gallery.php:393
 msgid "Description"
 msgstr ""
 
-#: pro/fields/class-acf-field-gallery.php:504
+#: pro/fields/class-acf-field-gallery.php:505
 msgid "Add to gallery"
 msgstr ""
 
-#: pro/fields/class-acf-field-gallery.php:508
+#: pro/fields/class-acf-field-gallery.php:509
 msgid "Bulk actions"
 msgstr ""
 
-#: pro/fields/class-acf-field-gallery.php:509
+#: pro/fields/class-acf-field-gallery.php:510
 msgid "Sort by date uploaded"
 msgstr ""
 
-#: pro/fields/class-acf-field-gallery.php:510
+#: pro/fields/class-acf-field-gallery.php:511
 msgid "Sort by date modified"
 msgstr ""
 
-#: pro/fields/class-acf-field-gallery.php:511
+#: pro/fields/class-acf-field-gallery.php:512
 msgid "Sort by title"
 msgstr ""
 
-#: pro/fields/class-acf-field-gallery.php:512
+#: pro/fields/class-acf-field-gallery.php:513
 msgid "Reverse current order"
 msgstr ""
 
-#: pro/fields/class-acf-field-gallery.php:524
+#: pro/fields/class-acf-field-gallery.php:525
 msgid "Close"
 msgstr ""
 
-#: pro/fields/class-acf-field-gallery.php:556
+#: pro/fields/class-acf-field-gallery.php:557
 msgid "Return Format"
 msgstr ""
 
-#: pro/fields/class-acf-field-gallery.php:562
+#: pro/fields/class-acf-field-gallery.php:563
 msgid "Image Array"
 msgstr ""
 
-#: pro/fields/class-acf-field-gallery.php:563
+#: pro/fields/class-acf-field-gallery.php:564
 msgid "Image URL"
 msgstr ""
 
-#: pro/fields/class-acf-field-gallery.php:564
+#: pro/fields/class-acf-field-gallery.php:565
 msgid "Image ID"
 msgstr ""
 
-#: pro/fields/class-acf-field-gallery.php:572
+#: pro/fields/class-acf-field-gallery.php:573
 msgid "Library"
 msgstr ""
 
-#: pro/fields/class-acf-field-gallery.php:573
+#: pro/fields/class-acf-field-gallery.php:574
 msgid "Limit the media library choice"
 msgstr ""
 
-#: pro/fields/class-acf-field-gallery.php:578, pro/locations/class-acf-location-block.php:66
+#: pro/fields/class-acf-field-gallery.php:579, pro/locations/class-acf-location-block.php:66
 msgid "All"
 msgstr ""
 
-#: pro/fields/class-acf-field-gallery.php:579
+#: pro/fields/class-acf-field-gallery.php:580
 msgid "Uploaded to post"
 msgstr ""
 
-#: pro/fields/class-acf-field-gallery.php:615
+#: pro/fields/class-acf-field-gallery.php:616
 msgid "Minimum Selection"
 msgstr ""
 
-#: pro/fields/class-acf-field-gallery.php:625
+#: pro/fields/class-acf-field-gallery.php:626
 msgid "Maximum Selection"
 msgstr ""
 
-#: pro/fields/class-acf-field-gallery.php:635
+#: pro/fields/class-acf-field-gallery.php:636
 msgid "Minimum"
 msgstr ""
 
-#: pro/fields/class-acf-field-gallery.php:636, pro/fields/class-acf-field-gallery.php:672
+#: pro/fields/class-acf-field-gallery.php:637, pro/fields/class-acf-field-gallery.php:673
 msgid "Restrict which images can be uploaded"
 msgstr ""
 
-#: pro/fields/class-acf-field-gallery.php:639, pro/fields/class-acf-field-gallery.php:675
+#: pro/fields/class-acf-field-gallery.php:640, pro/fields/class-acf-field-gallery.php:676
 msgid "Width"
 msgstr ""
 
-#: pro/fields/class-acf-field-gallery.php:650, pro/fields/class-acf-field-gallery.php:686
+#: pro/fields/class-acf-field-gallery.php:651, pro/fields/class-acf-field-gallery.php:687
 msgid "Height"
 msgstr ""
 
-#: pro/fields/class-acf-field-gallery.php:662, pro/fields/class-acf-field-gallery.php:698
+#: pro/fields/class-acf-field-gallery.php:663, pro/fields/class-acf-field-gallery.php:699
 msgid "File size"
 msgstr ""
 
-#: pro/fields/class-acf-field-gallery.php:671
+#: pro/fields/class-acf-field-gallery.php:672
 msgid "Maximum"
 msgstr ""
 
-#: pro/fields/class-acf-field-gallery.php:707
+#: pro/fields/class-acf-field-gallery.php:708
 msgid "Allowed file types"
 msgstr ""
 
-#: pro/fields/class-acf-field-gallery.php:708
+#: pro/fields/class-acf-field-gallery.php:709
 msgid "Comma separated list. Leave blank for all types"
 msgstr ""
 
-#: pro/fields/class-acf-field-gallery.php:727
+#: pro/fields/class-acf-field-gallery.php:728
 msgid "Insert"
 msgstr ""
 
-#: pro/fields/class-acf-field-gallery.php:728
+#: pro/fields/class-acf-field-gallery.php:729
 msgid "Specify where new attachments are added"
 msgstr ""
 
-#: pro/fields/class-acf-field-gallery.php:732
+#: pro/fields/class-acf-field-gallery.php:733
 msgid "Append to the end"
 msgstr ""
 
-#: pro/fields/class-acf-field-gallery.php:733
+#: pro/fields/class-acf-field-gallery.php:734
 msgid "Prepend to the beginning"
 msgstr ""
 
-#: pro/fields/class-acf-field-gallery.php:741
+#: pro/fields/class-acf-field-gallery.php:742
 msgid "Preview Size"
 msgstr ""
 
-#: pro/fields/class-acf-field-gallery.php:844
+#: pro/fields/class-acf-field-gallery.php:845
 msgid "%1$s requires at least %2$s selection"
 msgid_plural "%1$s requires at least %2$s selections"
 msgstr[0] ""
@@ -513,7 +513,7 @@ msgid "Repeater"
 msgstr ""
 
 #: pro/fields/class-acf-field-repeater.php:66, pro/fields/class-acf-field-repeater.php:463
-msgid "Minimum rows reached ({min} rows)"
+msgid "Minimum rows not reached ({min} rows)"
 msgstr ""
 
 #: pro/fields/class-acf-field-repeater.php:67

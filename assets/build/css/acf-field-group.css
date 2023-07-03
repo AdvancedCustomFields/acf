@@ -1171,6 +1171,12 @@ html[dir=rtl] .acf-field-object.open > .handle {
   width: 18px;
   height: 18px;
 }
+.acf-admin-page .acf-field-setting-type .select2-container.-acf,
+.acf-admin-page .acf-field-permalink-rewrite .select2-container.-acf,
+.acf-admin-page .acf-field-query-var .select2-container.-acf,
+.acf-admin-page .acf-field-meta-box .select2-container.-acf {
+  min-height: 40px;
+}
 .acf-admin-page .acf-field-setting-type .select2-container--default .select2-selection--single .select2-selection__rendered,
 .acf-admin-page .acf-field-permalink-rewrite .select2-container--default .select2-selection--single .select2-selection__rendered,
 .acf-admin-page .acf-field-query-var .select2-container--default .select2-selection--single .select2-selection__rendered,
@@ -1287,7 +1293,7 @@ html[dir=rtl] .acf-field-object.open > .handle {
 .acf-admin-page .field-type-select-results {
   position: relative;
   top: 4px;
-  z-index: 600;
+  z-index: 1002;
   border-radius: 0 0 6px 6px;
   box-shadow: 0px 8px 24px 4px rgba(16, 24, 40, 0.12);
 }
@@ -1926,11 +1932,11 @@ html[dir=rtl] .acf-field-object.open > .handle {
   border-bottom-width: 3px;
 }
 
-.acf-field-editor .acf-field-settings-tab-bar {
+.acf-admin-page.acf-internal-post-type .acf-field-editor .acf-field-settings-tab-bar {
   padding-left: 72px;
 }
 @media screen and (max-width: 600px) {
-  .acf-field-editor .acf-field-settings-tab-bar {
+  .acf-admin-page.acf-internal-post-type .acf-field-editor .acf-field-settings-tab-bar {
     padding-left: 12px;
   }
 }
@@ -2429,8 +2435,9 @@ html[dir=rtl] .acf-field-object.open > .handle {
   min-height: 88px;
   margin-right: -24px;
   margin-left: -24px;
-  padding-right: 48px;
-  padding-left: 48px;
+  margin-bottom: -24px;
+  padding-right: 24px;
+  padding-left: 24px;
   border-top-width: 1px;
   border-top-style: solid;
   border-top-color: #EAECF0;

@@ -70,7 +70,7 @@ if ( ! class_exists( 'ACF_Admin' ) ) :
 		 * @param   string $classes Space-separated list of CSS classes.
 		 * @return  string
 		 */
-		function admin_body_class( $classes ) {
+		public function admin_body_class( $classes ) {
 			global $wp_version;
 
 			// Determine body class version.
@@ -82,7 +82,7 @@ if ( ! class_exists( 'ACF_Admin' ) ) :
 			}
 
 			// Add browser for specific CSS.
-			$classes .= ' acf-browser-' . acf_get_browser();
+			$classes .= ' acf-browser-' . esc_attr( acf_get_browser() );
 
 			// Return classes.
 			return $classes;

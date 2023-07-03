@@ -4,7 +4,7 @@ Tags: acf, fields, custom fields, meta, repeater
 Requires at least: 4.7
 Tested up to: 6.2
 Requires PHP: 5.6
-Stable tag: 6.1.1
+Stable tag: 6.1.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -91,6 +91,48 @@ From your WordPress dashboard
 
 
 == Changelog ==
+
+= 6.1.6 =
+*Release Date 4th May 2023*
+
+* Security Fix - This release resolves an XSS vulnerability in ACF’s admin pages (Thanks to Rafie Muhammad for the responsible disclosure)
+* Fix - Duplicating fields in a new field group with field setting tabs disabled now behaves correctly
+
+= 6.1.5 =
+*Release Date 2nd May 2023*
+
+* Enhancement - Creating a new field group from the post-save actions for a post type or taxonomy will automatically populate the field group title
+* Enhancement - Empty values in list tables now display as a dash, rather than blank
+* Enhancement - The `Generate PHP` export tool for field groups now displays the code wrapped in the `acf/include_fields` action hook to match the recommended way of using `acf_add_local_field_group`, and the code is formatted correctly
+* Enhancement - Post count and Term count values in list tables now link through to the matching posts or terms
+* Enhancement - Added post-save actions to post type and taxonomies to create another
+* Enhancement - Selecting existing taxonomies when registering a Custom Post Type is now available in the Basic settings section rather than Advanced
+* Fix - `Exclude From Search` setting for custom post types now behaves correctly
+* Fix - Duplicating fields with sub fields no longer results in JS errors
+* Fix - Select2 field settings now render correctly when duplicating fields
+* Fix - Checkbox fields allowing custom values which use integer keys can now be updated over the REST API
+* Fix - Using the `No Permalink` rewrite setting for post type will no longer generate PHP warnings
+* Fix - The `minimum rows not met` validation message for the Repeater field type now correctly states the minimum rows are not met
+* Fix - The Range field type no longer cuts off three digit values
+* Fix - `Created on` and `Delete Field Group` now correctly only appear on the Group Settings tab of a field group
+* Fix - Padding for field settings tabs is now correct
+* i18n - Updated all PRO translation files, removing legacy free strings which are now handled through [translate.wordpress.org](https://translate.wordpress.org/projects/wp-plugins/advanced-custom-fields/stable/)
+* i18n - Updated PRO translations with the latest contributions from [GitHub](https://github.com/AdvancedCustomFields/acf/tree/master/lang/pro) (Thanks to @MilenDalchev, @Xilonz and @wiliamjk)
+
+= 6.1.4 =
+*Release Date 12th April 2023*
+
+* Fix - ACF now detects when another plugin or theme is loading an incompatible version of Select2, and will fallback to a basic select field for the field type selection
+* Fix - Post Object, Page Link and Relationship field types now use a default `post_status` filter of `any`, matching the behavior prior to ACF 6.1. This can be edited per field in the field group admin or via the `acf/fields/$field_type/query` filters
+* Fix - Post Type and Taxonomy key generation now uses dashes rather than underscores
+* Fix - The "add first" text no longer appears when no search results are found for ACF field groups, post types or taxonomies
+
+= 6.1.3 =
+*Release Date 5th April 2023*
+
+* Fix - 'Create Terms' button for taxonomy fields now displays correctly
+* Fix - ACF JSON field group files which have unsupported keys (not beginning with `group_`) will now load as field groups
+* Fix - Renaming capabilities for post types will now set `map_meta_cap` to `true` solving an issue with assigning permissions to roles for that post type
 
 = 6.1.2 =
 *Release Date 4th April 2023*
@@ -244,6 +286,11 @@ From your WordPress dashboard
 * i18n - All strings inside ACF are now translatable
 * i18n - Accented term names in taxonomy fields are no longer corrupted at output
 * i18n - ACF translations are now synced with contributions from translation.wordpress.org at each release, increasing ACF's supported languages and updating many other translations. PRO strings should still be submitted as pull requests on GitHub (Additional thanks to maximebj, emreerkan and Timothée Moulin for their contributions which are included here)
+
+= 5.12.6 =
+*Release Date 4th May 2023*
+
+* Security Fix - This release resolves an XSS vulnerability in ACF’s admin pages (Thanks to Rafie Muhammad for the responsible disclosure)
 
 = 5.12.5 =
 *Release Date 3rd April 2023*
