@@ -92,6 +92,16 @@ From your WordPress dashboard
 
 == Changelog ==
 
+= 6.2-beta1 =
+*Release Date 27th July 2023*
+
+* [View Release Post](https://www.advancedcustomfields.com/blog/acf-6-2-beta1/)
+* New - Bidirectional Relationships now supported for Relationship, Post Object, User and Taxonomy fields. View the [release post](https://www.advancedcustomfields.com/blog/acf-6-2-beta1/) for full information
+* New - Options Pages can now be registered and managed by the admin UI
+* Enhancement - ACF JSON now supports multiple save locations
+* Enhancement - ACF Post Types and Taxonomies now support duplication
+* Fix - REST updates of fields with choices containing integer or mixed keys now behave correctly
+
 = 6.1.7 =
 *Release Date 27th June 2023*
 
@@ -170,7 +180,7 @@ From your WordPress dashboard
 
 * [View Release Post](https://www.advancedcustomfields.com/blog/acf-6-1-0-released/)
 * New - Register Custom Post Types and Taxonomies using ACF. View the [release post](https://www.advancedcustomfields.com/blog/acf-6-1-0-released/#cpts-taxonomies) for full information
-* New - A new field type selection browser providing details on each type of field. View the [release post](https://www.advancedcustomfields.com/blog/acf-6-1-0-released/#field-type-modal) for full information.
+* New - A new field type selection browser providing details on each type of field. View the [release post](https://www.advancedcustomfields.com/blog/acf-6-1-0-released/#field-type-modal) for full information
 * New - PHP 8.1 and 8.2 support
 * Security Fix - ACF's data serialization system will now prevent classes being unserialized. This prevents a potential security issue should an attacker know a vulnerable class is available, and can write malicious data to the database.
 * Enhancement - Post Object, Page Link and Relationship fields now support filtering by post status

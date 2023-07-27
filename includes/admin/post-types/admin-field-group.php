@@ -116,8 +116,9 @@ if ( ! class_exists( 'acf_admin_field_group' ) ) :
 					'Selection is greater than'         => __( 'Selection is greater than', 'acf' ),
 					'Selection is less than'            => __( 'Selection is less than', 'acf' ),
 
-					// Field type selection modal.
+					// Custom Select2 templates.
 					'Type to search...'                 => __( 'Type to search...', 'acf' ),
+					'This Field'                        => __( 'This Field', 'acf' ),
 				)
 			);
 
