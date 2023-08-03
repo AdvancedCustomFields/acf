@@ -92,10 +92,26 @@ From your WordPress dashboard
 
 == Changelog ==
 
-= 6.1.8 =
+= 6.2-RC1 =
 *Release Date 3rd August 2023*
-
 * Security Fix - This release resolves a stored XSS vulnerability in admin screens with ACF post type and taxonomy labels (Thanks to Satoo Nakano and Ryotaro Imamura)
+* Enhancement - The filename for JSON files can now be customized with the `acf/json/save_file_name` filter
+* Fix - The newline added to the end of JSON files will now use `PHP_EOL` to detect the correct newline character
+* Fix - The `acf/settings/enable_options_pages_ui` filter now works as expected
+* Fix - Using the `block_type_metadata_settings` PHP filter to add usesContext values no longer breaks ACF blocks
+* Fix - Notice to import post types/taxonomies from CPTUI no longer flashes on page load
+* Fix - Various buttons for fields in blocks now display correctly
+* Fix - The settings for the DateTime field are no longer cut off when nested in several fields in the field group editor
+
+= 6.2-beta1 =
+*Release Date 27th July 2023*
+
+* [View Release Post](https://www.advancedcustomfields.com/blog/acf-6-2-beta1/)
+* New - Bidirectional Relationships now supported for Relationship, Post Object, User and Taxonomy fields. View the [release post](https://www.advancedcustomfields.com/blog/acf-6-2-beta1/) for full information
+* New - Options Pages can now be registered and managed by the admin UI
+* Enhancement - ACF JSON now supports multiple save locations
+* Enhancement - ACF Post Types and Taxonomies now support duplication
+* Fix - REST updates of fields with choices containing integer or mixed keys now behave correctly
 
 = 6.1.7 =
 *Release Date 27th June 2023*
@@ -119,7 +135,7 @@ From your WordPress dashboard
 = 6.1.6 =
 *Release Date 4th May 2023*
 
-* Security Fix - This release resolves an XSS vulnerability in ACF's admin pages (Thanks to Rafie Muhammad for the responsible disclosure)
+* Security Fix - This release resolves an XSS vulnerability in ACF’s admin pages (Thanks to Rafie Muhammad for the responsible disclosure)
 * Fix - Duplicating fields in a new field group with field setting tabs disabled now behaves correctly
 
 = 6.1.5 =
@@ -175,7 +191,7 @@ From your WordPress dashboard
 
 * [View Release Post](https://www.advancedcustomfields.com/blog/acf-6-1-0-released/)
 * New - Register Custom Post Types and Taxonomies using ACF. View the [release post](https://www.advancedcustomfields.com/blog/acf-6-1-0-released/#cpts-taxonomies) for full information
-* New - A new field type selection browser providing details on each type of field. View the [release post](https://www.advancedcustomfields.com/blog/acf-6-1-0-released/#field-type-modal) for full information.
+* New - A new field type selection browser providing details on each type of field. View the [release post](https://www.advancedcustomfields.com/blog/acf-6-1-0-released/#field-type-modal) for full information
 * New - PHP 8.1 and 8.2 support
 * Security Fix - ACF's data serialization system will now prevent classes being unserialized. This prevents a potential security issue should an attacker know a vulnerable class is available, and can write malicious data to the database.
 * Enhancement - Post Object, Page Link and Relationship fields now support filtering by post status
