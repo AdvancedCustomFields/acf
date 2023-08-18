@@ -84,7 +84,7 @@ if ( ! acf_get_setting( 'pro' ) ) {
 	);
 }
 
-if ( ! defined( 'PWP_NAME' ) ) {
+if ( ! defined( 'PWP_NAME' ) && ! defined( 'ACF_HIDE_UPSELL' ) ) {
 	$acf_wpengine_logo     = acf_get_url( 'assets/images/wp-engine-horizontal-black.svg' );
 	$acf_wpengine_logo     = sprintf( '<span><img class="acf-wp-engine-pro" src="%s" alt="WP Engine" /></span>', $acf_wpengine_logo );
 	$utm_content           = acf_is_pro() ? 'acf_pro_plugin_topbar_dropdown_cta' : 'acf_free_plugin_topbar_dropdown_cta';
