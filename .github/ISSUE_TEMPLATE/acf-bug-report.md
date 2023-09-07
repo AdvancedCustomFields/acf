@@ -10,6 +10,7 @@ assignees: ''
 <!--
 The ACF Team only accept technical bug reports via Github Issues
 If you need support debugging a problem please contact support@advancedcustomfields.com
+If you've got a feature request or suggestion for ACF, please submit it at https://www.advancedcustomfields.com/feedback/
 If you need help or advice using or implementing something with ACF, try the ACF support forum at https://support.advancedcustomfields.com
 -->
 
@@ -28,6 +29,10 @@ A clear and concise description of what you expected to happen.
 
 **Screenshots or Video**
 If applicable, add screenshots or video to help explain your problem.
+
+**Code**
+Please drag and drop an export of your field group, option page, custom post type or taxonomy JSON here.
+If your issue relates to ACF Blocks, please also provide a reproducable code example of your ACF Block including it's block.json so we can reproduce the issue.
 
 **Version Information:**
  - WordPress Version [e.g 6.3.1]
