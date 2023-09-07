@@ -1,6 +1,6 @@
 ---
 name: ACF Bug report
-about: Create a report to help us improve
+about: Provide a technical bug report to help us improve
 title: ''
 labels: ''
 assignees: ''
@@ -8,7 +8,7 @@ assignees: ''
 ---
 
 <!--
-The ACF Team only accept technical bug reports via. Github Issues
+The ACF Team only accept technical bug reports via Github Issues
 If you need support debugging a problem please contact support@advancedcustomfields.com
 If you need help or advice using or implementing something with ACF, try the ACF support forum at https://support.advancedcustomfields.com
 -->
