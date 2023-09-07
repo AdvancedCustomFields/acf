@@ -1,5 +1,5 @@
 ---
-name: ACF Bug report
+name: ACF Bug Report
 about: Provide a technical bug report to help us improve
 title: ''
 labels: ''
