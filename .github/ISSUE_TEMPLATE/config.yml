@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: ACF Feedback and Feature Suggestions
+    url: https://advancedcustomfields.com/feedback/
+    about: Please submit feedback or feature suggestions here.
+  - name: ACF Community Support
+    url: https://support.advancedcustomfields.com
+    about: Community support for building with ACF.
+  - name: ACF Support Team
+    url: https://www.advancedcustomfields.com/contact/
+    about: Contact our support team for help debugging an issue, or account and billing enquiries.
