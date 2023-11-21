@@ -147,6 +147,9 @@ if ( ! class_exists( 'acf_field_taxonomy' ) ) :
 				// update vars
 				$args['search'] = $s;
 				$is_search      = true;
+				
+				// prepend ancestor names in taxonomy field search result
+				add_filter('acf/fields/taxonomy/result', array($this, 'prepend_ancestor_names'), 10, 3);
 
 			}
 
@@ -210,7 +213,36 @@ if ( ! class_exists( 'acf_field_taxonomy' ) ) :
 			return $response;
 
 		}
+		/**
+		 * This function prepend ancestor names to taxonomy child title.
+		 *
+		 * @date    19/3/2023
+		 * @since   6.0.7
+		 *
+		 * @param   string $title The term title.
+		 * @param   WP_Term $term The term object.
+		 * @param   array $field The field settings.
+		 * @return  string
+		 */
 
+		function prepend_ancestor_names($title, $term, $field) {
+			
+			$ancestors = get_ancestors( $term->term_id, $term->taxonomy );
+
+			if( !empty($ancestors) ) {
+				asort($ancestors);				
+				$prefix = "";
+				foreach($ancestors as $ancestor){
+					$parent_term = get_term_by( 'term_id', $ancestor, $field['taxonomy'] );
+					if($term->term_id != $parent_term->term_id)
+						$prefix .= $parent_term->name . ' » ' ;
+				}
+				return $prefix . $term->name;
+
+			}
+			return $title;
+
+		}
 		/**
 		 * Returns the Term's title displayed in the field UI.
 		 *
