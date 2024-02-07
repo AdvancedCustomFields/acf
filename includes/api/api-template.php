@@ -54,7 +54,12 @@ function get_field( $selector, $post_id = false, $format_value = true, $escape_h
 			if ( acf_field_type_supports( $field['type'], 'escaping_html' ) ) {
 				$value = acf_format_value( $value, $post_id, $field, true );
 			} else {
-				$value = acf_esc_html( acf_format_value( $value, $post_id, $field ) );
+				$new_value = acf_format_value( $value, $post_id, $field );
+				if ( is_array( $new_value ) ) {
+					$value = map_deep( $new_value, 'acf_esc_html' );
+				} else {
+					$value = acf_esc_html( $new_value );
+				}
 			}
 		} else {
 			// get value for field
@@ -64,7 +69,11 @@ function get_field( $selector, $post_id = false, $format_value = true, $escape_h
 
 	// If we've built a dummy text field, we won't format the value, but they may still request it escaped. Use `acf_esc_html`
 	if ( $dummy_field && $escape_html ) {
-		$value = acf_esc_html( $value );
+		if ( is_array( $value ) ) {
+			$value = map_deep( $value, 'acf_esc_html' );
+		} else {
+			$value = acf_esc_html( $value );
+		}
 	}
 
 	// return
@@ -327,7 +336,12 @@ function get_field_object( $selector, $post_id = false, $format_value = true, $l
 			if ( acf_field_type_supports( $field['type'], 'escaping_html' ) ) {
 				$field['value'] = acf_format_value( $field['value'], $post_id, $field, true );
 			} else {
-				$field['value'] = acf_esc_html( acf_format_value( $field['value'], $post_id, $field ) );
+				$new_value = acf_format_value( $field['value'], $post_id, $field );
+				if ( is_array( $new_value ) ) {
+					$field['value'] = map_deep( $new_value, 'acf_esc_html' );
+				} else {
+					$field['value'] = acf_esc_html( $new_value );
+				}
 			}
 		} else {
 			// get value for field
@@ -536,7 +550,12 @@ function get_field_objects( $post_id = false, $format_value = true, $load_value 
 				if ( acf_field_type_supports( $field['type'], 'escaping_html' ) ) {
 					$field['value'] = acf_format_value( $field['value'], $post_id, $field, true );
 				} else {
-					$field['value'] = acf_esc_html( acf_format_value( $field['value'], $post_id, $field ) );
+					$new_value = acf_format_value( $field['value'], $post_id, $field );
+					if ( is_array( $new_value ) ) {
+						$field['value'] = map_deep( $new_value, 'acf_esc_html' );
+					} else {
+						$field['value'] = acf_esc_html( $new_value );
+					}
 				}
 			} else {
 				// get value for field
@@ -1015,7 +1034,12 @@ function get_sub_field_object( $selector, $format_value = true, $load_value = tr
 			if ( acf_field_type_supports( $sub_field['type'], 'escaping_html' ) ) {
 				$sub_field['value'] = acf_format_value( $sub_field['value'], $row['post_id'], $sub_field, true );
 			} else {
-				$sub_field['value'] = acf_esc_html( acf_format_value( $sub_field['value'], $row['post_id'], $sub_field ) );
+				$new_value = acf_format_value( $sub_field['value'], $row['post_id'], $sub_field );
+				if ( is_array( $new_value ) ) {
+					$sub_field['value'] = map_deep( $new_value, 'acf_esc_html' );
+				} else {
+					$sub_field['value'] = acf_esc_html( $new_value );
+				}
 			}
 		} else {
 			// get value for field

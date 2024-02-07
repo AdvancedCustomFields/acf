@@ -6072,7 +6072,7 @@
     onChange: function () {
       // preview hack allows post to save with no title or content
       $('#_acf_changed').val(1);
-      if (typeof wp.data !== 'undefined') {
+      if (acf.isGutenbergPostEditor()) {
         wp.data.dispatch('core/editor').editPost({
           meta: {
             _acf_changed: 1

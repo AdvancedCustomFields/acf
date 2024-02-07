@@ -4,7 +4,7 @@ Tags: acf, fields, custom fields, meta, repeater
 Requires at least: 5.8
 Tested up to: 6.4.3
 Requires PHP: 7.0
-Stable tag: 6.2.6
+Stable tag: 6.2.6.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -92,12 +92,18 @@ From your WordPress dashboard
 
 == Changelog ==
 
+= 6.2.6.1 =
+*Release Date 7th February 2024*
+
+* Fix - Fatal JS error no longer occurs when editing fields in the classic editor when Yoast or other plugins which load block editor components are installed
+* Fix - Using `$escape_html` on get functions for array returning field types no longer produces an Array to string conversion error
+
 = 6.2.6 =
 *Release Date 6th February 2024*
 
 * Enhancement - The `get_field()` and other `get_` functions now support an `escape_html` parameter which return an HTML safe field value
 * Enhancement - The URL field will be now escaped with `esc_url` rather than `wp_kses_post` when returning an HTML safe value
-* Fix - ACF fields will now correctly save into the WordPress created revision resolving issues with previews of drafts on WordPress 6.4 or newer.
+* Fix - ACF fields will now correctly save into the WordPress created revision resolving issues with previews of drafts on WordPress 6.4 or newer
 * Fix - Multisite subsites will now correctly be activated by the main site where the ACF PRO license allows, hiding the updates page on those subsites
 * Fix - Field types in which the `required` property would have no effect (such as the tab, or accordion) will no longer show the option
 * Fix - Duplicating a field group now maintains the current page of field groups being displayed
@@ -106,7 +112,7 @@ From your WordPress dashboard
 * Fix - The word `link` is now prohibited from being used as a CPT name to avoid a WordPress core conflict
 * Fix - Flexible content layouts can no longer be duplicated over their maximum count limit
 * Fix - All ACF notifications shown outside of ACF’s admin screens are now prefixed with the plugin name
-* Fix - ACF no longer checks if a polyfill is needed for <PHP7 and the polyfill has been removed.
+* Fix - ACF no longer checks if a polyfill is needed for <PHP7 and the polyfill has been removed
 
 = 6.2.5 =
 *Release Date 16th January 2024*
