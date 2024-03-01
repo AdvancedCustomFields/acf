@@ -43,7 +43,6 @@ if ( ! class_exists( 'ACF_Admin_Internal_Post_Type' ) ) :
 		 */
 		public function __construct() {
 			add_action( 'current_screen', array( $this, 'current_screen' ) );
-			add_action( 'save_post_' . $this->post_type, array( $this, 'save_post' ), 10, 2 );
 			add_action( 'wp_ajax_acf/link_field_groups', array( $this, 'ajax_link_field_groups' ) );
 			add_filter( 'post_updated_messages', array( $this, 'post_updated_messages' ) );
 			add_filter( 'use_block_editor_for_post_type', array( $this, 'use_block_editor_for_post_type' ), 10, 2 );
