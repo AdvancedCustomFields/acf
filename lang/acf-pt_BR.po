@@ -12,7 +12,7 @@
 # This file is distributed under the same license as Advanced Custom Fields.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-04-08T08:54:42+00:00\n"
+"PO-Revision-Date: 2024-05-22T11:47:45+00:00\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -24,43 +24,48 @@ msgstr ""
 #: includes/Blocks/Bindings.php:35
 msgctxt "The core ACF block binding source name for fields on the current page"
 msgid "ACF Fields"
-msgstr ""
+msgstr "Campos do ACF"
 
 #: includes/admin/views/escaped-html-notice.php:5
 msgid "Learn how to fix this"
-msgstr ""
+msgstr "Saiba como corrigir"
 
 #: includes/admin/views/browse-fields-modal.php:14
 msgid "ACF PRO Feature"
-msgstr ""
+msgstr "Funcionalidade ACF PRO"
 
 #: includes/admin/views/browse-fields-modal.php:10
 msgid "Renew PRO to Unlock"
-msgstr ""
+msgstr "Renove o PRO para desbloquear"
 
 #: includes/admin/views/browse-fields-modal.php:8
 msgid "Renew PRO License"
-msgstr ""
+msgstr "Renovar a licença PRO"
 
 #: includes/admin/views/acf-field-group/field.php:41
 msgid "PRO fields cannot be edited without an active license."
-msgstr ""
+msgstr "Campos PRO não podem ser editados sem uma licença ativa."
 
 #: includes/admin/admin-internal-post-type-list.php:232
 msgid ""
 "Please activate your ACF PRO license to edit field groups assigned to an ACF "
 "Block."
 msgstr ""
+"Por favor, ative sua licença do ACF PRO para editar grupos de campos "
+"atribuídos a um Bloco ACF."
 
 #: includes/admin/admin-internal-post-type-list.php:231
 msgid "Please activate your ACF PRO license to edit this options page."
-msgstr ""
+msgstr "Ative sua licença ACF PRO para editar essa página de opções."
 
 #: includes/api/api-template.php:376 includes/api/api-template.php:430
 msgid ""
 "Returning escaped HTML values is only possible when format_value is also "
 "true. The field values have not been returned for security."
 msgstr ""
+"Retornar valores de HTML escapados só é possível quando format_value também "
+"é verdadeiro. Os valores do campo não foram retornados por motivos de "
+"segurança."
 
 #: includes/api/api-template.php:46 includes/api/api-template.php:242
 #: includes/api/api-template.php:934
@@ -68,6 +73,9 @@ msgid ""
 "Returning an escaped HTML value is only possible when format_value is also "
 "true. The field value has not been returned for security."
 msgstr ""
+"Retornar um valor de HTML escapado é apenas possível quando format_value "
+"também é verdadeiro. O valor do campo não foi retornado por motivos de "
+"segurança."
 
 #. translators: %1$s - name of the ACF plugin. %2$s - Link to documentation.
 #. %3$s - Link to show more details about the error
@@ -78,44 +86,50 @@ msgid ""
 "some of your fields has been modified by this change, but this may not be a "
 "breaking change. %2$s. %3$s."
 msgstr ""
+"%1$s O ACF agora escapa automaticamente o HTML inseguro ao ser renderizado "
+"por <code>the_field</code> ou pelo shortcode do ACF. Detectamos que a saída "
+"de alguns dos seus campos foi modificada por essa alteração, mas essa "
+"mudança provavelmente não causa problemas. %2$s. %3$s."
 
 #: includes/admin/views/escaped-html-notice.php:14
 msgid "Please contact your site administrator or developer for more details."
 msgstr ""
+"Entre em contato com o administrador do seu site ou com o desenvolvedor para "
+"mais detalhes."
 
 #: includes/admin/admin.php:63
 msgid "Hide&nbsp;details"
-msgstr ""
+msgstr "Ocultar&nbsp;detalhes"
 
 #: includes/admin/admin.php:62 includes/admin/views/escaped-html-notice.php:11
 msgid "Show&nbsp;details"
-msgstr ""
+msgstr "Mostrar&nbsp;detalhes"
 
 #. translators: %1$s - The selector used  %2$s The field name  3%$s The parent
 #. function name
 #: includes/admin/views/escaped-html-notice.php:34
 msgid "%1$s (%2$s) - rendered via %3$s"
-msgstr ""
+msgstr "%1$s (%2$s) - renderizado mediante %3$s"
 
 #: includes/admin/views/global/navigation.php:223
 msgid "Renew ACF PRO License"
-msgstr ""
+msgstr "Renovar a licença ACF PRO"
 
 #: includes/admin/views/acf-field-group/pro-features.php:17
 msgid "Renew License"
-msgstr ""
+msgstr "Renovar licença"
 
 #: includes/admin/views/acf-field-group/pro-features.php:14
 msgid "Manage License"
-msgstr ""
+msgstr "Gerenciar licença"
 
 #: includes/admin/views/acf-field-group/options.php:102
 msgid "'High' position not supported in the Block Editor"
-msgstr ""
+msgstr "A posição \"alta\" não é suportada pelo editor de blocos."
 
 #: includes/admin/views/options-page-preview.php:30
 msgid "Upgrade to ACF PRO"
-msgstr ""
+msgstr "Upgrade para ACF PRO"
 
 #. translators: %s URL to ACF options pages documentation
 #: includes/admin/views/options-page-preview.php:7
@@ -124,88 +138,92 @@ msgid ""
 "pages for managing global settings via fields. You can create multiple pages "
 "and sub-pages."
 msgstr ""
+"As <a href=\"%s\" target=\"_blank\">páginas de opções do ACF</a> são páginas "
+"de administração personalizadas para gerenciar configurações globais através "
+"de campos. Você pode criar várias páginas e subpáginas."
 
 #: includes/admin/views/global/header.php:35
 msgid "Add Options Page"
-msgstr ""
+msgstr "Adicionar página de opções"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:708
 msgid "In the editor used as the placeholder of the title."
-msgstr ""
+msgstr "No editor usado como espaço reservado para o título."
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:707
 msgid "Title Placeholder"
-msgstr ""
+msgstr "Título de marcação"
 
 #: includes/admin/views/global/navigation.php:97
 msgid "4 Months Free"
-msgstr ""
+msgstr "4 meses grátis"
 
 #. translators: %s - A singular label for a post type or taxonomy.
 #: includes/admin/views/global/form-top.php:56
 msgid "(Duplicated from %s)"
-msgstr ""
+msgstr " (Duplicado de %s)"
 
 #: includes/admin/tools/class-acf-admin-tool-export.php:289
 msgid "Select Options Pages"
-msgstr ""
+msgstr "Selecionar páginas de opções"
 
 #: includes/admin/post-types/admin-taxonomy.php:107
 msgid "Duplicate taxonomy"
-msgstr ""
+msgstr "Duplicar taxonomia"
 
 #: includes/admin/post-types/admin-post-type.php:106
 #: includes/admin/post-types/admin-taxonomy.php:106
 msgid "Create taxonomy"
-msgstr ""
+msgstr "Criar taxonomia"
 
 #: includes/admin/post-types/admin-post-type.php:105
 msgid "Duplicate post type"
-msgstr ""
+msgstr "Duplicar tipo de post"
 
 #: includes/admin/post-types/admin-post-type.php:104
 #: includes/admin/post-types/admin-taxonomy.php:108
 msgid "Create post type"
-msgstr ""
+msgstr "Criar tipo de post"
 
 #: includes/admin/post-types/admin-post-type.php:103
 #: includes/admin/post-types/admin-taxonomy.php:105
 msgid "Link field groups"
-msgstr ""
+msgstr "Vincular grupos de campos"
 
 #: includes/admin/post-types/admin-post-type.php:102
 #: includes/admin/post-types/admin-taxonomy.php:104
 msgid "Add fields"
-msgstr ""
+msgstr "Adicionar campos"
 
 #: includes/admin/post-types/admin-field-group.php:117
 #: assets/build/js/acf-field-group.js:2782
 #: assets/build/js/acf-field-group.js:3272
 msgid "This Field"
-msgstr ""
+msgstr "Este campo"
 
 #: includes/admin/admin.php:311
 msgid "ACF PRO"
-msgstr ""
+msgstr "ACF PRO"
 
 #: includes/admin/admin.php:309
 msgid "Feedback"
-msgstr ""
+msgstr "Sugestões"
 
 #: includes/admin/admin.php:307
 msgid "Support"
-msgstr ""
+msgstr "Suporte"
 
 #. translators: This text is prepended by a link to ACF's website, and appended
 #. by a link to WP Engine's website.
 #: includes/admin/admin.php:282
 msgid "is developed and maintained by"
-msgstr ""
+msgstr "é desenvolvido e mantido por"
 
 #. translators: %s - either "post type" or "taxonomy"
 #: includes/admin/admin-internal-post-type.php:313
 msgid "Add this %s to the location rules of the selected field groups."
 msgstr ""
+"Adicione este %s às regras de localização dos grupos de campos selecionados"
 
 #. translators: %s the URL to ACF's bidirectional relationship documentation
 #: includes/acf-bidirectional-functions.php:272
@@ -224,30 +242,37 @@ msgid ""
 "field is being displayed. For example, if this field is displayed on a "
 "Taxonomy, your target field should be of type Taxonomy"
 msgstr ""
+"Selecione o(s) campo(s) para armazenar a referência de volta ao item que "
+"está sendo atualizado. Você pode selecionar este campo. Os campos de destino "
+"devem ser compatíveis com onde este campo está sendo exibido. Por exemplo, "
+"se este campo estiver sendo exibido em uma Taxonomia, seu campo de destino "
+"deve ser do tipo Taxonomia"
 
 #: includes/acf-bidirectional-functions.php:247
 msgid "Target Field"
-msgstr ""
+msgstr "Campo de destino"
 
 #: includes/acf-bidirectional-functions.php:221
 msgid "Update a field on the selected values, referencing back to this ID"
 msgstr ""
+"Atualize um campo nos valores selecionados, referenciando de volta para este "
+"ID"
 
 #: includes/acf-bidirectional-functions.php:220
 msgid "Bidirectional"
-msgstr ""
+msgstr "Bidirecional"
 
 #. translators: %s A field type name, such as "Relationship"
 #: includes/acf-bidirectional-functions.php:193
 msgid "%s Field"
-msgstr ""
+msgstr "Campo %s"
 
 #: includes/fields/class-acf-field-page_link.php:465
 #: includes/fields/class-acf-field-post_object.php:387
 #: includes/fields/class-acf-field-select.php:386
 #: includes/fields/class-acf-field-user.php:82
 msgid "Select Multiple"
-msgstr ""
+msgstr "Selecionar vários"
 
 #: includes/admin/views/global/navigation.php:235
 msgid "WP Engine logo"
@@ -275,11 +300,11 @@ msgstr ""
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:1102
 msgid "The capability name for editing terms of this taxonomy."
-msgstr ""
+msgstr "O nome da capacidade para editar termos desta taxonomia."
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:1101
 msgid "Edit Terms Capability"
-msgstr ""
+msgstr "Editar capacidade dos termos"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:1085
 msgid "The capability name for managing terms of this taxonomy."
@@ -2862,7 +2887,7 @@ msgid "[ACF shortcode value disabled for preview]"
 msgstr "[Valor de shortcode ACF desativado para visualização]"
 
 #: includes/admin/admin-internal-post-type.php:290
-#: includes/admin/post-types/admin-field-group.php:538
+#: includes/admin/post-types/admin-field-group.php:539
 msgid "Close Modal"
 msgstr "Fechar modal"
 
@@ -4143,22 +4168,22 @@ msgstr "Atualizar o banco de dados"
 msgid "Custom Fields"
 msgstr "Campos personalizados"
 
-#: includes/admin/post-types/admin-field-group.php:583
+#: includes/admin/post-types/admin-field-group.php:584
 msgid "Move Field"
 msgstr "Mover campo"
 
-#: includes/admin/post-types/admin-field-group.php:572
-#: includes/admin/post-types/admin-field-group.php:576
+#: includes/admin/post-types/admin-field-group.php:573
+#: includes/admin/post-types/admin-field-group.php:577
 msgid "Please select the destination for this field"
 msgstr "Selecione o destino para este campo"
 
 #. translators: Confirmation message once a field has been moved to a different
 #. field group.
-#: includes/admin/post-types/admin-field-group.php:534
+#: includes/admin/post-types/admin-field-group.php:535
 msgid "The %1$s field can now be found in the %2$s field group"
 msgstr "O campo %1$s pode agora ser encontrado no grupo de campos %2$s"
 
-#: includes/admin/post-types/admin-field-group.php:531
+#: includes/admin/post-types/admin-field-group.php:532
 msgid "Move Complete."
 msgstr "Movimentação concluída."
 
@@ -4409,24 +4434,24 @@ msgstr "Cancelar"
 msgid "Are you sure?"
 msgstr "Você tem certeza?"
 
-#: includes/assets.php:370 assets/build/js/acf-input.js:9458
-#: assets/build/js/acf-input.js:10325
+#: includes/assets.php:370 assets/build/js/acf-input.js:9464
+#: assets/build/js/acf-input.js:10331
 msgid "%d fields require attention"
 msgstr "%d campos requerem atenção"
 
-#: includes/assets.php:369 assets/build/js/acf-input.js:9456
-#: assets/build/js/acf-input.js:10321
+#: includes/assets.php:369 assets/build/js/acf-input.js:9462
+#: assets/build/js/acf-input.js:10327
 msgid "1 field requires attention"
 msgstr "1 campo requer atenção"
 
 #: includes/assets.php:368 includes/validation.php:253
-#: includes/validation.php:261 assets/build/js/acf-input.js:9451
-#: assets/build/js/acf-input.js:10316
+#: includes/validation.php:261 assets/build/js/acf-input.js:9457
+#: assets/build/js/acf-input.js:10322
 msgid "Validation failed"
 msgstr "Falha na validação"
 
-#: includes/assets.php:367 assets/build/js/acf-input.js:9619
-#: assets/build/js/acf-input.js:10504
+#: includes/assets.php:367 assets/build/js/acf-input.js:9625
+#: assets/build/js/acf-input.js:10510
 msgid "Validation successful"
 msgstr "Validação bem-sucedida"
 
@@ -4462,8 +4487,8 @@ msgctxt "verb"
 msgid "Edit"
 msgstr "Editar"
 
-#: includes/assets.php:364 assets/build/js/acf-input.js:9228
-#: assets/build/js/acf-input.js:10087
+#: includes/assets.php:364 assets/build/js/acf-input.js:9234
+#: assets/build/js/acf-input.js:10093
 msgid "The changes you made will be lost if you navigate away from this page"
 msgstr "As alterações feitas serão perdidas se você sair desta página"
 
@@ -4888,7 +4913,7 @@ msgstr "Todas as funções de usuário"
 
 #: includes/fields/class-acf-field-user.php:51
 msgid "Filter by Role"
-msgstr ""
+msgstr "Filtrar por função"
 
 #: includes/fields/class-acf-field-user.php:15 includes/locations.php:103
 msgid "User"
@@ -5144,7 +5169,7 @@ msgstr "Grupo de botões"
 #: includes/fields/class-acf-field-taxonomy.php:710
 #: includes/fields/class-acf-field-user.php:103
 msgid "Allow Null"
-msgstr ""
+msgstr "Permitir \"em branco\""
 
 #: includes/fields/class-acf-field-page_link.php:236
 #: includes/fields/class-acf-field-post_object.php:230
