@@ -92,6 +92,13 @@ From your WordPress dashboard
 
 == Changelog ==
 
+= 6.3.1.2 =
+*Release Date 6th June 2024*
+*PRO Only Release*
+
+* Fix - ACF Blocks in widget areas no longer cause a fatal error when no context is available
+* Fix - ACF Blocks with no fields assigned no longer show a gap in the sidebar where the form would render
+
 = 6.3.1.1 =
 *Release Date 6th June 2024*
 *PRO Only Release*
