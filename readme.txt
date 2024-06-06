@@ -92,6 +92,17 @@ From your WordPress dashboard
 
 == Changelog ==
 
+= 6.3.1.1 =
+*Release Date 6th June 2024*
+*PRO Only Release*
+
+* Fix - Repeater and Flexible Content fields no longer error when duplicating or removing rows containing Icon Picker subfields
+* Fix - ACF Blocks containing Flexible Content fields now correctly load their edit form
+* Fix - ACF Blocks no longer have a race condition where the data store is not initialized when read
+* Fix - ACF Blocks no longer trigger a JS error for blocks without fields and with an empty no-fields message
+* Fix - ACF Block preloading now works correctly for fields consuming custom block context
+* Fix - ACF Block JavaScript debug messages now correctly appear when SCRIPT_DEBUG is true
+
 = 6.3.1 =
 *Release Date 4th June 2024*
 
