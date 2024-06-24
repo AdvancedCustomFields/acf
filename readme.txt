@@ -94,6 +94,12 @@ From your WordPress dashboard
 
 == Changelog ==
 
+= 6.3.2.1 =
+*Release Date 24th June 2024*
+*PRO Only Release*
+
+* Fix - ACF Blocks no longer trigger a JavaScript error when fetched via AJAX
+
 = 6.3.2 =
 *Release Date 24th June 2024*
 
