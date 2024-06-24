@@ -12,7 +12,7 @@
 # This file is distributed under the same license as Advanced Custom Fields.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-06-04T13:24:02+00:00\n"
+"PO-Revision-Date: 2024-06-24T10:56:57+00:00\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "Language: fa_IR\n"
 "MIME-Version: 1.0\n"
@@ -21,1018 +21,1032 @@ msgstr ""
 "X-Generator: gettext\n"
 "Project-Id-Version: Advanced Custom Fields\n"
 
+#: includes/class-acf-site-health.php:643
+msgid "Blocks Using Post Meta"
+msgstr ""
+
+#: includes/admin/views/acf-field-group/pro-features.php:25
+#: includes/admin/views/acf-field-group/pro-features.php:27
+#: includes/admin/views/global/header.php:27
+msgid "ACF PRO logo"
+msgstr ""
+
+#: includes/admin/views/acf-field-group/field.php:37
+msgid "ACF PRO Logo"
+msgstr ""
+
 #. translators: %s - field/param name
-#: includes/fields/class-acf-field-icon_picker.php:671
+#: includes/fields/class-acf-field-icon_picker.php:676
 msgid "%s requires a valid attachment ID when type is set to media_library."
 msgstr ""
 
 #. translators: %s - field name
-#: includes/fields/class-acf-field-icon_picker.php:655
+#: includes/fields/class-acf-field-icon_picker.php:660
 msgid "%s is a required property of acf."
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:631
+#: includes/fields/class-acf-field-icon_picker.php:636
 msgid "The value of icon to save."
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:625
+#: includes/fields/class-acf-field-icon_picker.php:630
 msgid "The type of icon to save."
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:605
+#: includes/fields/class-acf-field-icon_picker.php:610
 msgid "Yes icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:604
+#: includes/fields/class-acf-field-icon_picker.php:609
 msgid "Wordpress-alt icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:603
+#: includes/fields/class-acf-field-icon_picker.php:608
 msgid "Wordpress icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:602
+#: includes/fields/class-acf-field-icon_picker.php:607
 msgid "Welcome write-blog icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:601
+#: includes/fields/class-acf-field-icon_picker.php:606
 msgid "Welcome widgets-menus icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:600
+#: includes/fields/class-acf-field-icon_picker.php:605
 msgid "Welcome view-site icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:599
+#: includes/fields/class-acf-field-icon_picker.php:604
 msgid "Welcome learn-more icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:598
+#: includes/fields/class-acf-field-icon_picker.php:603
 msgid "Welcome comments icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:597
+#: includes/fields/class-acf-field-icon_picker.php:602
 msgid "Welcome add-page icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:596
+#: includes/fields/class-acf-field-icon_picker.php:601
 msgid "Warning icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:595
+#: includes/fields/class-acf-field-icon_picker.php:600
 msgid "Visibility icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:594
+#: includes/fields/class-acf-field-icon_picker.php:599
 msgid "Video-alt3 icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:593
+#: includes/fields/class-acf-field-icon_picker.php:598
 msgid "Video-alt2 icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:592
+#: includes/fields/class-acf-field-icon_picker.php:597
 msgid "Video-alt icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:591
+#: includes/fields/class-acf-field-icon_picker.php:596
 msgid "Vault icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:590
+#: includes/fields/class-acf-field-icon_picker.php:595
 msgid "Upload icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:589
+#: includes/fields/class-acf-field-icon_picker.php:594
 msgid "Update icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:588
+#: includes/fields/class-acf-field-icon_picker.php:593
 msgid "Unlock icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:587
+#: includes/fields/class-acf-field-icon_picker.php:592
 msgid "Universal access alternative icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:586
+#: includes/fields/class-acf-field-icon_picker.php:591
 msgid "Universal access icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:585
+#: includes/fields/class-acf-field-icon_picker.php:590
 msgid "Undo icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:584
+#: includes/fields/class-acf-field-icon_picker.php:589
 msgid "Twitter icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:583
+#: includes/fields/class-acf-field-icon_picker.php:588
 msgid "Trash icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:582
+#: includes/fields/class-acf-field-icon_picker.php:587
 msgid "Translation icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:581
+#: includes/fields/class-acf-field-icon_picker.php:586
 msgid "Tickets alternative icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:580
+#: includes/fields/class-acf-field-icon_picker.php:585
 msgid "Tickets icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:579
+#: includes/fields/class-acf-field-icon_picker.php:584
 msgid "Thumbs-up icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:578
+#: includes/fields/class-acf-field-icon_picker.php:583
 msgid "Thumbs-down icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:577
+#: includes/fields/class-acf-field-icon_picker.php:582
 msgid "Text icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:576
+#: includes/fields/class-acf-field-icon_picker.php:581
 msgid "Testimonial icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:575
+#: includes/fields/class-acf-field-icon_picker.php:580
 msgid "Tagcloud icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:574
+#: includes/fields/class-acf-field-icon_picker.php:579
 msgid "Tag icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:573
+#: includes/fields/class-acf-field-icon_picker.php:578
 msgid "Tablet icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:572
+#: includes/fields/class-acf-field-icon_picker.php:577
 msgid "Store icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:571
+#: includes/fields/class-acf-field-icon_picker.php:576
 msgid "Sticky icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:570
+#: includes/fields/class-acf-field-icon_picker.php:575
 msgid "Star-half icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:569
+#: includes/fields/class-acf-field-icon_picker.php:574
 msgid "Star-filled icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:568
+#: includes/fields/class-acf-field-icon_picker.php:573
 msgid "Star-empty icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:567
+#: includes/fields/class-acf-field-icon_picker.php:572
 msgid "Sos icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:566
+#: includes/fields/class-acf-field-icon_picker.php:571
 msgid "Sort icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:565
+#: includes/fields/class-acf-field-icon_picker.php:570
 msgid "Smiley icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:564
+#: includes/fields/class-acf-field-icon_picker.php:569
 msgid "Smartphone icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:563
+#: includes/fields/class-acf-field-icon_picker.php:568
 msgid "Slides icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:562
+#: includes/fields/class-acf-field-icon_picker.php:567
 msgid "Shield-alt icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:561
+#: includes/fields/class-acf-field-icon_picker.php:566
 msgid "Shield icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:560
+#: includes/fields/class-acf-field-icon_picker.php:565
 msgid "Share-alt2 icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:559
+#: includes/fields/class-acf-field-icon_picker.php:564
 msgid "Share-alt icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:558
+#: includes/fields/class-acf-field-icon_picker.php:563
 msgid "Share icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:557
+#: includes/fields/class-acf-field-icon_picker.php:562
 msgid "Search icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:556
+#: includes/fields/class-acf-field-icon_picker.php:561
 msgid "Screenoptions icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:555
+#: includes/fields/class-acf-field-icon_picker.php:560
 msgid "Schedule icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:554
+#: includes/fields/class-acf-field-icon_picker.php:559
 msgid "Rss icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:553
+#: includes/fields/class-acf-field-icon_picker.php:558
 msgid "Redo icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:552
+#: includes/fields/class-acf-field-icon_picker.php:557
 msgid "Randomize icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:551
+#: includes/fields/class-acf-field-icon_picker.php:556
 msgid "Products icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:550
+#: includes/fields/class-acf-field-icon_picker.php:555
 msgid "Pressthis icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:549
+#: includes/fields/class-acf-field-icon_picker.php:554
 msgid "Post-status icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:548
+#: includes/fields/class-acf-field-icon_picker.php:553
 msgid "Portfolio icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:547
+#: includes/fields/class-acf-field-icon_picker.php:552
 msgid "Plus-alt icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:546
+#: includes/fields/class-acf-field-icon_picker.php:551
 msgid "Plus icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:545
+#: includes/fields/class-acf-field-icon_picker.php:550
 msgid "Playlist-video icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:544
+#: includes/fields/class-acf-field-icon_picker.php:549
 msgid "Playlist-audio icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:543
+#: includes/fields/class-acf-field-icon_picker.php:548
 msgid "Phone icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:542
+#: includes/fields/class-acf-field-icon_picker.php:547
 msgid "Performance icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:541
+#: includes/fields/class-acf-field-icon_picker.php:546
 msgid "Paperclip icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:540
+#: includes/fields/class-acf-field-icon_picker.php:545
 msgid "Palmtree icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:539
+#: includes/fields/class-acf-field-icon_picker.php:544
 msgid "No alternative icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:538
+#: includes/fields/class-acf-field-icon_picker.php:543
 msgid "No icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:537
+#: includes/fields/class-acf-field-icon_picker.php:542
 msgid "Networking icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:536
+#: includes/fields/class-acf-field-icon_picker.php:541
 msgid "Nametag icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:535
+#: includes/fields/class-acf-field-icon_picker.php:540
 msgid "Move icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:534
+#: includes/fields/class-acf-field-icon_picker.php:539
 msgid "Money icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:533
+#: includes/fields/class-acf-field-icon_picker.php:538
 msgid "Minus icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:532
+#: includes/fields/class-acf-field-icon_picker.php:537
 msgid "Migrate icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:531
+#: includes/fields/class-acf-field-icon_picker.php:536
 msgid "Microphone icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:530
+#: includes/fields/class-acf-field-icon_picker.php:535
 msgid "Menu icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:529
+#: includes/fields/class-acf-field-icon_picker.php:534
 msgid "Megaphone icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:528
+#: includes/fields/class-acf-field-icon_picker.php:533
 msgid "Media video icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:527
+#: includes/fields/class-acf-field-icon_picker.php:532
 msgid "Media text icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:526
+#: includes/fields/class-acf-field-icon_picker.php:531
 msgid "Media spreadsheet icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:525
+#: includes/fields/class-acf-field-icon_picker.php:530
 msgid "Media interactive icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:524
+#: includes/fields/class-acf-field-icon_picker.php:529
 msgid "Media document icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:523
+#: includes/fields/class-acf-field-icon_picker.php:528
 msgid "Media default icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:522
+#: includes/fields/class-acf-field-icon_picker.php:527
 msgid "Media code icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:521
+#: includes/fields/class-acf-field-icon_picker.php:526
 msgid "Media audio icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:520
+#: includes/fields/class-acf-field-icon_picker.php:525
 msgid "Media archive icon"
-msgstr ""
+msgstr "آیکون بایگانی رسانه"
 
-#: includes/fields/class-acf-field-icon_picker.php:519
+#: includes/fields/class-acf-field-icon_picker.php:524
 msgid "Marker icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:518
+#: includes/fields/class-acf-field-icon_picker.php:523
 msgid "Lock icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:517
+#: includes/fields/class-acf-field-icon_picker.php:522
 msgid "Location-alt icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:516
+#: includes/fields/class-acf-field-icon_picker.php:521
 msgid "Location icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:515
+#: includes/fields/class-acf-field-icon_picker.php:520
 msgid "List-view icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:514
+#: includes/fields/class-acf-field-icon_picker.php:519
 msgid "Lightbulb icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:513
+#: includes/fields/class-acf-field-icon_picker.php:518
 msgid "Leftright icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:512
+#: includes/fields/class-acf-field-icon_picker.php:517
 msgid "Layout icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:511
+#: includes/fields/class-acf-field-icon_picker.php:516
 msgid "Laptop icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:510
+#: includes/fields/class-acf-field-icon_picker.php:515
 msgid "Info icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:509
+#: includes/fields/class-acf-field-icon_picker.php:514
 msgid "Index-card icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:508
+#: includes/fields/class-acf-field-icon_picker.php:513
 msgid "Images-alt2 icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:507
+#: includes/fields/class-acf-field-icon_picker.php:512
 msgid "Images-alt icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:506
+#: includes/fields/class-acf-field-icon_picker.php:511
 msgid "Image rotate-right icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:505
+#: includes/fields/class-acf-field-icon_picker.php:510
 msgid "Image rotate-left icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:504
+#: includes/fields/class-acf-field-icon_picker.php:509
 msgid "Image rotate icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:503
+#: includes/fields/class-acf-field-icon_picker.php:508
 msgid "Image flip-vertical icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:502
+#: includes/fields/class-acf-field-icon_picker.php:507
 msgid "Image flip-horizontal icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:501
+#: includes/fields/class-acf-field-icon_picker.php:506
 msgid "Image filter icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:500
+#: includes/fields/class-acf-field-icon_picker.php:505
 msgid "Image crop icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:499
+#: includes/fields/class-acf-field-icon_picker.php:504
 msgid "Id-alt icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:498
+#: includes/fields/class-acf-field-icon_picker.php:503
 msgid "Id icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:497
+#: includes/fields/class-acf-field-icon_picker.php:502
 msgid "Hidden icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:496
+#: includes/fields/class-acf-field-icon_picker.php:501
 msgid "Heart icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:495
+#: includes/fields/class-acf-field-icon_picker.php:500
 msgid "Hammer icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:494
+#: includes/fields/class-acf-field-icon_picker.php:499
 msgid "Groups icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:493
+#: includes/fields/class-acf-field-icon_picker.php:498
 msgid "Grid-view icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:492
+#: includes/fields/class-acf-field-icon_picker.php:497
 msgid "Googleplus icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:491
+#: includes/fields/class-acf-field-icon_picker.php:496
 msgid "Forms icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:490
+#: includes/fields/class-acf-field-icon_picker.php:495
 msgid "Format video icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:489
+#: includes/fields/class-acf-field-icon_picker.php:494
 msgid "Format status icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:488
+#: includes/fields/class-acf-field-icon_picker.php:493
 msgid "Format quote icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:487
+#: includes/fields/class-acf-field-icon_picker.php:492
 msgid "Format image icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:486
+#: includes/fields/class-acf-field-icon_picker.php:491
 msgid "Format gallery icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:485
+#: includes/fields/class-acf-field-icon_picker.php:490
 msgid "Format chat icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:484
+#: includes/fields/class-acf-field-icon_picker.php:489
 msgid "Format audio icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:483
+#: includes/fields/class-acf-field-icon_picker.php:488
 msgid "Format aside icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:482
+#: includes/fields/class-acf-field-icon_picker.php:487
 msgid "Flag icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:481
+#: includes/fields/class-acf-field-icon_picker.php:486
 msgid "Filter icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:480
+#: includes/fields/class-acf-field-icon_picker.php:485
 msgid "Feedback icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:479
+#: includes/fields/class-acf-field-icon_picker.php:484
 msgid "Facebook alt icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:478
+#: includes/fields/class-acf-field-icon_picker.php:483
 msgid "Facebook icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:477
+#: includes/fields/class-acf-field-icon_picker.php:482
 msgid "External icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:476
+#: includes/fields/class-acf-field-icon_picker.php:481
 msgid "Exerpt-view icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:475
+#: includes/fields/class-acf-field-icon_picker.php:480
 msgid "Email alt icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:474
+#: includes/fields/class-acf-field-icon_picker.php:479
 msgid "Email icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:473
+#: includes/fields/class-acf-field-icon_picker.php:478
 msgid "Video icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:472
+#: includes/fields/class-acf-field-icon_picker.php:477
 msgid "Unlink icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:471
+#: includes/fields/class-acf-field-icon_picker.php:476
 msgid "Underline icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:470
+#: includes/fields/class-acf-field-icon_picker.php:475
 msgid "Ul icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:469
+#: includes/fields/class-acf-field-icon_picker.php:474
 msgid "Textcolor icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:468
+#: includes/fields/class-acf-field-icon_picker.php:473
 msgid "Table icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:467
+#: includes/fields/class-acf-field-icon_picker.php:472
 msgid "Strikethrough icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:466
+#: includes/fields/class-acf-field-icon_picker.php:471
 msgid "Spellcheck icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:465
+#: includes/fields/class-acf-field-icon_picker.php:470
 msgid "Rtl icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:464
+#: includes/fields/class-acf-field-icon_picker.php:469
 msgid "Removeformatting icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:463
+#: includes/fields/class-acf-field-icon_picker.php:468
 msgid "Quote icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:462
+#: includes/fields/class-acf-field-icon_picker.php:467
 msgid "Paste word icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:461
+#: includes/fields/class-acf-field-icon_picker.php:466
 msgid "Paste text icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:460
+#: includes/fields/class-acf-field-icon_picker.php:465
 msgid "Paragraph icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:459
+#: includes/fields/class-acf-field-icon_picker.php:464
 msgid "Outdent icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:458
+#: includes/fields/class-acf-field-icon_picker.php:463
 msgid "Ol icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:457
+#: includes/fields/class-acf-field-icon_picker.php:462
 msgid "Kitchensink icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:456
+#: includes/fields/class-acf-field-icon_picker.php:461
 msgid "Justify icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:455
+#: includes/fields/class-acf-field-icon_picker.php:460
 msgid "Italic icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:454
+#: includes/fields/class-acf-field-icon_picker.php:459
 msgid "Insertmore icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:453
+#: includes/fields/class-acf-field-icon_picker.php:458
 msgid "Indent icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:452
+#: includes/fields/class-acf-field-icon_picker.php:457
 msgid "Help icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:451
+#: includes/fields/class-acf-field-icon_picker.php:456
 msgid "Expand icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:450
+#: includes/fields/class-acf-field-icon_picker.php:455
 msgid "Customchar icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:449
+#: includes/fields/class-acf-field-icon_picker.php:454
 msgid "Contract icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:448
+#: includes/fields/class-acf-field-icon_picker.php:453
 msgid "Code icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:447
+#: includes/fields/class-acf-field-icon_picker.php:452
 msgid "Break icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:446
+#: includes/fields/class-acf-field-icon_picker.php:451
 msgid "Bold icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:445
+#: includes/fields/class-acf-field-icon_picker.php:450
 msgid "alignright icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:444
+#: includes/fields/class-acf-field-icon_picker.php:449
 msgid "alignleft icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:443
+#: includes/fields/class-acf-field-icon_picker.php:448
 msgid "aligncenter icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:442
+#: includes/fields/class-acf-field-icon_picker.php:447
 msgid "Edit icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:441
+#: includes/fields/class-acf-field-icon_picker.php:446
 msgid "Download icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:440
+#: includes/fields/class-acf-field-icon_picker.php:445
 msgid "Dismiss icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:439
+#: includes/fields/class-acf-field-icon_picker.php:444
 msgid "Desktop icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:438
+#: includes/fields/class-acf-field-icon_picker.php:443
 msgid "Dashboard icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:437
+#: includes/fields/class-acf-field-icon_picker.php:442
 msgid "Controls volumeon icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:436
+#: includes/fields/class-acf-field-icon_picker.php:441
 msgid "Controls volumeoff icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:435
+#: includes/fields/class-acf-field-icon_picker.php:440
 msgid "Controls skipforward icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:434
+#: includes/fields/class-acf-field-icon_picker.php:439
 msgid "Controls skipback icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:433
+#: includes/fields/class-acf-field-icon_picker.php:438
 msgid "Controls repeat icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:432
+#: includes/fields/class-acf-field-icon_picker.php:437
 msgid "Controls play icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:431
+#: includes/fields/class-acf-field-icon_picker.php:436
 msgid "Controls pause icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:430
+#: includes/fields/class-acf-field-icon_picker.php:435
 msgid "Controls forward icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:429
+#: includes/fields/class-acf-field-icon_picker.php:434
 msgid "Controls back icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:428
+#: includes/fields/class-acf-field-icon_picker.php:433
 msgid "Cloud icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:427
+#: includes/fields/class-acf-field-icon_picker.php:432
 msgid "Clock icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:426
+#: includes/fields/class-acf-field-icon_picker.php:431
 msgid "Clipboard icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:425
+#: includes/fields/class-acf-field-icon_picker.php:430
 msgid "Chart pie icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:424
+#: includes/fields/class-acf-field-icon_picker.php:429
 msgid "Chart line icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:423
+#: includes/fields/class-acf-field-icon_picker.php:428
 msgid "Chart bar icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:422
+#: includes/fields/class-acf-field-icon_picker.php:427
 msgid "Chart area icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:421
+#: includes/fields/class-acf-field-icon_picker.php:426
 msgid "Category icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:420
+#: includes/fields/class-acf-field-icon_picker.php:425
 msgid "Cart icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:419
+#: includes/fields/class-acf-field-icon_picker.php:424
 msgid "Carrot icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:418
+#: includes/fields/class-acf-field-icon_picker.php:423
 msgid "Camera icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:417
+#: includes/fields/class-acf-field-icon_picker.php:422
 msgid "Calendar alt icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:416
+#: includes/fields/class-acf-field-icon_picker.php:421
 msgid "Calendar icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:415
+#: includes/fields/class-acf-field-icon_picker.php:420
 msgid "Businessman icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:414
+#: includes/fields/class-acf-field-icon_picker.php:419
 msgid "Building icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:413
+#: includes/fields/class-acf-field-icon_picker.php:418
 msgid "Book alt icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:412
+#: includes/fields/class-acf-field-icon_picker.php:417
 msgid "Book icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:411
+#: includes/fields/class-acf-field-icon_picker.php:416
 msgid "Backup icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:410
+#: includes/fields/class-acf-field-icon_picker.php:415
 msgid "Awards icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:409
+#: includes/fields/class-acf-field-icon_picker.php:414
 msgid "Art icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:408
+#: includes/fields/class-acf-field-icon_picker.php:413
 msgid "Arrow up-alt2 icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:407
+#: includes/fields/class-acf-field-icon_picker.php:412
 msgid "Arrow up-alt icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:406
+#: includes/fields/class-acf-field-icon_picker.php:411
 msgid "Arrow up icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:405
+#: includes/fields/class-acf-field-icon_picker.php:410
 msgid "Arrow right-alt2 icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:404
+#: includes/fields/class-acf-field-icon_picker.php:409
 msgid "Arrow right-alt icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:403
+#: includes/fields/class-acf-field-icon_picker.php:408
 msgid "Arrow right icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:402
+#: includes/fields/class-acf-field-icon_picker.php:407
 msgid "Arrow left-alt2 icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:401
+#: includes/fields/class-acf-field-icon_picker.php:406
 msgid "Arrow left-alt icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:400
+#: includes/fields/class-acf-field-icon_picker.php:405
 msgid "Arrow left icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:399
+#: includes/fields/class-acf-field-icon_picker.php:404
 msgid "Arrow down-alt2 icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:398
+#: includes/fields/class-acf-field-icon_picker.php:403
 msgid "Arrow down-alt icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:397
+#: includes/fields/class-acf-field-icon_picker.php:402
 msgid "Arrow down icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:396
+#: includes/fields/class-acf-field-icon_picker.php:401
 msgid "Archive icon"
-msgstr ""
+msgstr "آیکون بایگانی"
 
-#: includes/fields/class-acf-field-icon_picker.php:395
+#: includes/fields/class-acf-field-icon_picker.php:400
 msgid "Analytics icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:394
+#: includes/fields/class-acf-field-icon_picker.php:399
 msgid "Align-right icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:393
+#: includes/fields/class-acf-field-icon_picker.php:398
 msgid "Align-none icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:392
+#: includes/fields/class-acf-field-icon_picker.php:397
 msgid "Align-left icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:391
+#: includes/fields/class-acf-field-icon_picker.php:396
 msgid "Align-center icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:390
+#: includes/fields/class-acf-field-icon_picker.php:395
 msgid "Album icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:389
+#: includes/fields/class-acf-field-icon_picker.php:394
 msgid "Users icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:388
+#: includes/fields/class-acf-field-icon_picker.php:393
 msgid "Tools icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:387
+#: includes/fields/class-acf-field-icon_picker.php:392
 msgid "Site icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:386
+#: includes/fields/class-acf-field-icon_picker.php:391
 msgid "Settings icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:385
+#: includes/fields/class-acf-field-icon_picker.php:390
 msgid "Post icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:384
+#: includes/fields/class-acf-field-icon_picker.php:389
 msgid "Plugins icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:383
+#: includes/fields/class-acf-field-icon_picker.php:388
 msgid "Page icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:382
+#: includes/fields/class-acf-field-icon_picker.php:387
 msgid "Network icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:381
+#: includes/fields/class-acf-field-icon_picker.php:386
 msgid "Multisite icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:380
+#: includes/fields/class-acf-field-icon_picker.php:385
 msgid "Media icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:379
+#: includes/fields/class-acf-field-icon_picker.php:384
 msgid "Links icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:378
+#: includes/fields/class-acf-field-icon_picker.php:383
 msgid "Home icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:377
+#: includes/fields/class-acf-field-icon_picker.php:382
 msgid "Customizer icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:376
+#: includes/fields/class-acf-field-icon_picker.php:381
 msgid "Comments icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:375
+#: includes/fields/class-acf-field-icon_picker.php:380
 msgid "Collapse icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:374
+#: includes/fields/class-acf-field-icon_picker.php:379
 msgid "Appearance icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:373
+#: includes/fields/class-acf-field-icon_picker.php:378
 msgid "Generic icon"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:309
+#: includes/fields/class-acf-field-icon_picker.php:314
 msgid "Icon picker requires a value."
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:304
+#: includes/fields/class-acf-field-icon_picker.php:309
 msgid "Icon picker requires an icon type."
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:273
+#: includes/fields/class-acf-field-icon_picker.php:278
 msgid ""
 "The available icons matching your search query have been updated in the icon "
 "picker below."
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:272
+#: includes/fields/class-acf-field-icon_picker.php:277
 msgid "No results found for that search term"
-msgstr ""
+msgstr "برای آن عبارت جستجو نتیجه‌ای یافت نشد"
 
-#: includes/fields/class-acf-field-icon_picker.php:254
+#: includes/fields/class-acf-field-icon_picker.php:259
 msgid "Array"
-msgstr ""
+msgstr "آرایه"
 
-#: includes/fields/class-acf-field-icon_picker.php:253
+#: includes/fields/class-acf-field-icon_picker.php:258
 msgid "String"
-msgstr ""
+msgstr "رشته متن"
 
 #. translators: %s - link to documentation
-#: includes/fields/class-acf-field-icon_picker.php:241
+#: includes/fields/class-acf-field-icon_picker.php:246
 msgid "Specify the return format for the icon. %s"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:226
+#: includes/fields/class-acf-field-icon_picker.php:231
 msgid "Select where content editors can choose the icon from."
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:198
+#: includes/fields/class-acf-field-icon_picker.php:204
 msgid "The URL to the icon you'd like to use, or svg as Data URI"
 msgstr ""
 
-#: includes/fields/class-acf-field-icon_picker.php:181
+#: includes/fields/class-acf-field-icon_picker.php:187
 msgid "Browse Media Library"
-msgstr ""
+msgstr "مرور کتابخانه‌ی رسانه"
 
-#: includes/fields/class-acf-field-icon_picker.php:172
+#: includes/fields/class-acf-field-icon_picker.php:178
 msgid "The currently selected image preview"
-msgstr ""
+msgstr "پیش‌نمایش تصویری که در حال حاضر انتخاب شده است"
 
-#: includes/fields/class-acf-field-icon_picker.php:163
+#: includes/fields/class-acf-field-icon_picker.php:169
 msgid "Click to change the icon in the Media Library"
-msgstr ""
+msgstr "برای تغییر آیکون در کتابخانه‌ی رسانه کلیک کنید"
 
-#: includes/fields/class-acf-field-icon_picker.php:136
+#: includes/fields/class-acf-field-icon_picker.php:142
 msgid "Search icons..."
-msgstr ""
+msgstr "جستجوی آیکون‌ها..."
 
 #: includes/fields/class-acf-field-icon_picker.php:53
 msgid "Media Library"
-msgstr ""
+msgstr "کتابخانه پرونده‌های چندرسانه‌ای"
 
 #: includes/fields/class-acf-field-icon_picker.php:49
 msgid "Dashicons"
-msgstr ""
+msgstr "دش آیکون"
 
 #: includes/fields/class-acf-field-icon_picker.php:26
 msgid ""
@@ -1042,73 +1056,73 @@ msgstr ""
 
 #: includes/fields/class-acf-field-icon_picker.php:23
 msgid "Icon Picker"
-msgstr ""
+msgstr "انتخابگر آیکون"
 
-#: includes/class-acf-site-health.php:690
+#: includes/class-acf-site-health.php:704
 msgid "JSON Load Paths"
 msgstr ""
 
-#: includes/class-acf-site-health.php:684
+#: includes/class-acf-site-health.php:698
 msgid "JSON Save Paths"
 msgstr ""
 
-#: includes/class-acf-site-health.php:675
+#: includes/class-acf-site-health.php:689
 msgid "Registered ACF Forms"
 msgstr ""
 
-#: includes/class-acf-site-health.php:669
+#: includes/class-acf-site-health.php:683
 msgid "Shortcode Enabled"
 msgstr ""
 
-#: includes/class-acf-site-health.php:661
+#: includes/class-acf-site-health.php:675
 msgid "Field Settings Tabs Enabled"
 msgstr ""
 
-#: includes/class-acf-site-health.php:653
+#: includes/class-acf-site-health.php:667
 msgid "Field Type Modal Enabled"
 msgstr ""
 
-#: includes/class-acf-site-health.php:645
+#: includes/class-acf-site-health.php:659
 msgid "Admin UI Enabled"
 msgstr ""
 
-#: includes/class-acf-site-health.php:636
+#: includes/class-acf-site-health.php:650
 msgid "Block Preloading Enabled"
 msgstr ""
 
-#: includes/class-acf-site-health.php:629
+#: includes/class-acf-site-health.php:638
 msgid "Blocks Per ACF Block Version"
 msgstr ""
 
-#: includes/class-acf-site-health.php:624
+#: includes/class-acf-site-health.php:633
 msgid "Blocks Per API Version"
 msgstr ""
 
-#: includes/class-acf-site-health.php:602
+#: includes/class-acf-site-health.php:606
 msgid "Registered ACF Blocks"
 msgstr ""
 
-#: includes/class-acf-site-health.php:596
+#: includes/class-acf-site-health.php:600
 msgid "Light"
 msgstr ""
 
-#: includes/class-acf-site-health.php:596
+#: includes/class-acf-site-health.php:600
 msgid "Standard"
 msgstr ""
 
-#: includes/class-acf-site-health.php:595
+#: includes/class-acf-site-health.php:599
 msgid "REST API Format"
 msgstr ""
 
-#: includes/class-acf-site-health.php:587
+#: includes/class-acf-site-health.php:591
 msgid "Registered Options Pages (PHP)"
 msgstr ""
 
-#: includes/class-acf-site-health.php:573
+#: includes/class-acf-site-health.php:577
 msgid "Registered Options Pages (JSON)"
 msgstr ""
 
-#: includes/class-acf-site-health.php:568
+#: includes/class-acf-site-health.php:572
 msgid "Registered Options Pages (UI)"
 msgstr ""
 
@@ -1166,15 +1180,15 @@ msgstr ""
 
 #: includes/class-acf-site-health.php:379
 msgid "Active Plugins"
-msgstr ""
+msgstr "افزونه‌های فعال"
 
 #: includes/class-acf-site-health.php:353
 msgid "Parent Theme"
-msgstr ""
+msgstr "پوسته‌ی مادر"
 
 #: includes/class-acf-site-health.php:342
 msgid "Active Theme"
-msgstr ""
+msgstr "پوسته‌ی فعال"
 
 #: includes/class-acf-site-health.php:333
 msgid "Is Multisite"
@@ -1218,7 +1232,7 @@ msgstr ""
 
 #: includes/class-acf-site-health.php:280
 msgid "Plugin Version"
-msgstr ""
+msgstr "نگارش افزونه"
 
 #: includes/class-acf-site-health.php:251
 msgid ""
@@ -1226,8 +1240,8 @@ msgid ""
 "can be useful to provide to support."
 msgstr ""
 
-#: includes/assets.php:373 assets/build/js/acf-input.js:11323
-#: assets/build/js/acf-input.js:12409
+#: includes/assets.php:373 assets/build/js/acf-input.js:11317
+#: assets/build/js/acf-input.js:12400
 msgid "An ACF Block on this page requires attention before you can save."
 msgstr ""
 
@@ -1409,7 +1423,7 @@ msgstr "ویژگی ACF حرفه‌ای"
 
 #: includes/admin/views/browse-fields-modal.php:10
 msgid "Renew PRO to Unlock"
-msgstr ""
+msgstr "نسخه‌ی حرفه‌ای را تمدید کنید تا باز شود"
 
 #: includes/admin/views/browse-fields-modal.php:8
 msgid "Renew PRO License"
@@ -1417,7 +1431,7 @@ msgstr "تمدید لایسنس حرفه‌ای"
 
 #: includes/admin/views/acf-field-group/field.php:41
 msgid "PRO fields cannot be edited without an active license."
-msgstr ""
+msgstr "فیلدهای حرفه‌ای نمی‌توانند بدون یک لایسنس فعال ویرایش شوند."
 
 #: includes/admin/admin-internal-post-type-list.php:232
 msgid ""
@@ -1458,15 +1472,15 @@ msgstr ""
 
 #: includes/admin/views/escaped-html-notice.php:5
 msgid "Learn&nbsp;more"
-msgstr ""
+msgstr "بیشتر یاد بگیرید"
 
 #: includes/admin/admin.php:63
 msgid "Hide&nbsp;details"
-msgstr ""
+msgstr "مخفی کردن جزئیات"
 
 #: includes/admin/admin.php:62 includes/admin/views/escaped-html-notice.php:24
 msgid "Show&nbsp;details"
-msgstr ""
+msgstr "نمایش جزئیات"
 
 #. translators: %1$s - The selector used  %2$s The field name  3%$s The parent
 #. function name
@@ -1474,7 +1488,7 @@ msgstr ""
 msgid "%1$s (%2$s) - rendered via %3$s"
 msgstr ""
 
-#: includes/admin/views/global/navigation.php:223
+#: includes/admin/views/global/navigation.php:226
 msgid "Renew ACF PRO License"
 msgstr "تمدید لایسنس ACF حرفه‌ای"
 
@@ -1488,7 +1502,7 @@ msgstr "مدیریت لایسنس"
 
 #: includes/admin/views/acf-field-group/options.php:102
 msgid "'High' position not supported in the Block Editor"
-msgstr ""
+msgstr "موقعیت «بالا» در ویرایشگر بلوکی پشتیبانی نمی‌شود"
 
 #: includes/admin/views/options-page-preview.php:30
 msgid "Upgrade to ACF PRO"
@@ -1504,7 +1518,7 @@ msgstr ""
 
 #: includes/admin/views/global/header.php:35
 msgid "Add Options Page"
-msgstr ""
+msgstr "افزودن برگه‌ی گزینه‌ها"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:708
 msgid "In the editor used as the placeholder of the title."
@@ -1512,20 +1526,20 @@ msgstr ""
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:707
 msgid "Title Placeholder"
-msgstr ""
+msgstr "نگهدارنده متن عنوان"
 
 #: includes/admin/views/global/navigation.php:97
 msgid "4 Months Free"
 msgstr "۴ ماه رایگان"
 
 #. translators: %s - A singular label for a post type or taxonomy.
-#: includes/admin/views/global/form-top.php:56
+#: includes/admin/views/global/form-top.php:59
 msgid "(Duplicated from %s)"
 msgstr "(تکثیر شده از %s)"
 
 #: includes/admin/tools/class-acf-admin-tool-export.php:289
 msgid "Select Options Pages"
-msgstr ""
+msgstr "انتخاب صفحات گزینه‌ها"
 
 #: includes/admin/post-types/admin-taxonomy.php:107
 msgid "Duplicate taxonomy"
@@ -1548,7 +1562,7 @@ msgstr "ایجاد نوع نوشته"
 #: includes/admin/post-types/admin-post-type.php:103
 #: includes/admin/post-types/admin-taxonomy.php:105
 msgid "Link field groups"
-msgstr ""
+msgstr "پیوند دادن گروه‌های فیلد"
 
 #: includes/admin/post-types/admin-post-type.php:102
 #: includes/admin/post-types/admin-taxonomy.php:104
@@ -1577,7 +1591,7 @@ msgstr "پشتیبانی"
 #. by a link to WP Engine's website.
 #: includes/admin/admin.php:323
 msgid "is developed and maintained by"
-msgstr ""
+msgstr "توسعه‌داده و نگهداری‌شده توسط"
 
 #. translators: %s - either "post type" or "taxonomy"
 #: includes/admin/admin-internal-post-type.php:313
@@ -1612,12 +1626,12 @@ msgstr ""
 
 #: includes/acf-bidirectional-functions.php:220
 msgid "Bidirectional"
-msgstr ""
+msgstr "دو جهته"
 
 #. translators: %s A field type name, such as "Relationship"
 #: includes/acf-bidirectional-functions.php:193
 msgid "%s Field"
-msgstr ""
+msgstr "فیلد %s"
 
 #: includes/fields/class-acf-field-page_link.php:490
 #: includes/fields/class-acf-field-post_object.php:401
@@ -1626,13 +1640,13 @@ msgstr ""
 msgid "Select Multiple"
 msgstr "انتخاب چندتایی"
 
-#: includes/admin/views/global/navigation.php:235
+#: includes/admin/views/global/navigation.php:238
 msgid "WP Engine logo"
 msgstr "نماد WP Engine"
 
 #: includes/admin/views/acf-taxonomy/basic-settings.php:58
 msgid "Lower case letters, underscores and dashes only, Max 32 characters."
-msgstr ""
+msgstr "فقط حروف انگلیسی کوچک، زیرخط و خط تیره، حداکثر 32 حرف."
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:1136
 msgid "The capability name for assigning terms of this taxonomy."
@@ -1671,6 +1685,8 @@ msgid ""
 "Sets whether posts should be excluded from search results and taxonomy "
 "archive pages."
 msgstr ""
+"تنظیم می‌کند که آیا نوشته‌ها باید از نتایج جستجو و برگه‌های بایگانی طبقه‌بندی "
+"مستثنی شوند."
 
 #: includes/admin/views/acf-field-group/pro-features.php:78
 msgid "More Tools from WP Engine"
@@ -1687,7 +1703,7 @@ msgstr ""
 
 #: includes/admin/views/acf-field-group/pro-features.php:3
 #: includes/admin/views/options-page-preview.php:29
-#: includes/fields/class-acf-field-icon_picker.php:236
+#: includes/fields/class-acf-field-icon_picker.php:241
 msgid "Learn More"
 msgstr "بیشتر یاد بگیرید"
 
@@ -1705,23 +1721,23 @@ msgstr ""
 #. translators: %s - singular label of post type/taxonomy, i.e. "Movie"/"Genre"
 #: includes/admin/views/global/form-top.php:19
 msgid "%s fields"
-msgstr ""
+msgstr "%s فیلد"
 
 #: includes/admin/post-types/admin-taxonomies.php:267
 msgid "No terms"
-msgstr ""
+msgstr "شرطی وجود ندارد"
 
 #: includes/admin/post-types/admin-taxonomies.php:240
 msgid "No post types"
-msgstr ""
+msgstr "نوع نوشته‌ای وجود ندارد"
 
 #: includes/admin/post-types/admin-post-types.php:264
 msgid "No posts"
-msgstr ""
+msgstr "نوشته‌ای وجود ندارد"
 
 #: includes/admin/post-types/admin-post-types.php:238
 msgid "No taxonomies"
-msgstr ""
+msgstr "طبقه‌بندی‌ای وجود ندارد"
 
 #: includes/admin/post-types/admin-post-types.php:183
 #: includes/admin/post-types/admin-taxonomies.php:182
@@ -1730,47 +1746,47 @@ msgstr "گروه فیلدی وجود ندارد"
 
 #: includes/admin/post-types/admin-field-groups.php:255
 msgid "No fields"
-msgstr ""
+msgstr "فیلدی وجود ندارد"
 
 #: includes/admin/post-types/admin-field-groups.php:128
 #: includes/admin/post-types/admin-post-types.php:147
 #: includes/admin/post-types/admin-taxonomies.php:146
 msgid "No description"
-msgstr ""
+msgstr "توضیحاتی وجود ندارد"
 
 #: includes/fields/class-acf-field-page_link.php:457
 #: includes/fields/class-acf-field-post_object.php:364
 #: includes/fields/class-acf-field-relationship.php:573
 msgid "Any post status"
-msgstr ""
+msgstr "هر وضعیت نوشته‌ای"
 
 #: includes/post-types/class-acf-taxonomy.php:288
 msgid ""
 "This taxonomy key is already in use by another taxonomy registered outside "
 "of ACF and cannot be used."
 msgstr ""
-"کلید طبقه بندی موجود است و خارج از ACF درحال استفاده است و نمیتوان از این "
-"کلید استفاده کرد."
+"این کلید طبقه‌بندی در حال حاضر توسط طبقه‌بندی دیگری که خارج از ACF ثبت شده در "
+"حال استفاده است و نمی‌تواند استفاده شود."
 
 #: includes/post-types/class-acf-taxonomy.php:284
 msgid ""
 "This taxonomy key is already in use by another taxonomy in ACF and cannot be "
 "used."
 msgstr ""
-"این کلید طبقه بندی موجود است و توسط یکی از طبقه بندی های ACF درحال استفاده "
-"می باشد و نمیتوان از این کلید استفاده کرد."
+"این کلید طبقه‌بندی در حال حاضر توسط طبقه‌بندی دیگری در ACF در حال استفاده است "
+"و نمی‌تواند استفاده شود."
 
 #: includes/post-types/class-acf-taxonomy.php:256
 msgid ""
 "The taxonomy key must only contain lower case alphanumeric characters, "
 "underscores or dashes."
 msgstr ""
-"کلید طبقه بندی فقط باید شامل حروف کوچک انگلیسی و اعداد و زیر خط (_) یا خط "
+"کلید طبقه‌بندی فقط باید شامل حروف کوچک و اعداد انگلیسی، زیر خط (_) و یا خط "
 "تیره (-) باشد."
 
 #: includes/post-types/class-acf-taxonomy.php:251
 msgid "The taxonomy key must be under 32 characters."
-msgstr ""
+msgstr "کلید طبقه‌بندی بایستی زیر 32 حرف باشد."
 
 #: includes/post-types/class-acf-taxonomy.php:99
 msgid "No Taxonomies found in Trash"
@@ -1782,15 +1798,15 @@ msgstr "هیچ طبقه‌بندی‌ای یافت نشد"
 
 #: includes/post-types/class-acf-taxonomy.php:97
 msgid "Search Taxonomies"
-msgstr "جستجوی طبقه بندی ها"
+msgstr "جستجوی طبقه‌بندی‌ها"
 
 #: includes/post-types/class-acf-taxonomy.php:96
 msgid "View Taxonomy"
-msgstr "مشاهده طبقه بندی ها"
+msgstr "مشاهده طبقه‌بندی"
 
 #: includes/post-types/class-acf-taxonomy.php:95
 msgid "New Taxonomy"
-msgstr "افزودن طبقه بندی جدید"
+msgstr "طبقه‌بندی جدید"
 
 #: includes/post-types/class-acf-taxonomy.php:94
 msgid "Edit Taxonomy"
@@ -1850,8 +1866,8 @@ msgid ""
 "This field must not be a WordPress <a href=\"%s\" target=\"_blank\">reserved "
 "term</a>."
 msgstr ""
-"این زمینه نباید یک <a href=\"%s\" target=\"_blank\">مورد رزرو شده</a>در "
-"وردپرس باشد."
+"این فیلد نباید یک <a href=\"%s\" target=\"_blank\">واژه‌ی از پیش ذخیره‌شده</"
+"a>در وردپرس باشد."
 
 #: includes/post-types/class-acf-post-type.php:333
 msgid ""
@@ -1867,7 +1883,7 @@ msgstr "کلید نوع پست حداکثر باید 20 حرفی باشد."
 
 #: includes/fields/class-acf-field-wysiwyg.php:24
 msgid "We do not recommend using this field in ACF Blocks."
-msgstr "توصیه نمیکنیم از این زمینه در بلوک های ACF استفاده کنید."
+msgstr "توصیه نمی‌کنیم از این فیلد در بلوک‌های ACF استفاده کنید."
 
 #: includes/fields/class-acf-field-wysiwyg.php:24
 msgid ""
@@ -1918,11 +1934,11 @@ msgstr ""
 
 #: includes/fields/class-acf-field-textarea.php:23
 msgid "A basic textarea input for storing paragraphs of text."
-msgstr ""
+msgstr "یک ورودیِ «ناحیه متن» ساده برای ذخیره‌سازی چندین بند متن."
 
 #: includes/fields/class-acf-field-text.php:23
 msgid "A basic text input, useful for storing single string values."
-msgstr ""
+msgstr "یک ورودی متن ساده، مناسب برای ذخیره‌سازی مقادیر تک‌خطی."
 
 #: includes/fields/class-acf-field-taxonomy.php:22
 msgid ""
@@ -1938,7 +1954,7 @@ msgstr ""
 
 #: includes/fields/class-acf-field-select.php:24
 msgid "A dropdown list with a selection of choices that you specify."
-msgstr ""
+msgstr "یک فهرست کشویی با یک گزینش از انتخاب‌هایی که مشخص می‌کنید."
 
 #: includes/fields/class-acf-field-relationship.php:19
 msgid ""
@@ -1967,7 +1983,7 @@ msgstr ""
 
 #: includes/fields/class-acf-field-password.php:23
 msgid "An input for providing a password using a masked field."
-msgstr ""
+msgstr "یک ورودی برای وارد کردن رمزعبور به وسیله‌ی ناحیه‌ی پوشیده شده."
 
 #: includes/fields/class-acf-field-page_link.php:449
 #: includes/fields/class-acf-field-post_object.php:356
@@ -1989,7 +2005,7 @@ msgstr ""
 
 #: includes/fields/class-acf-field-number.php:23
 msgid "An input limited to numerical values."
-msgstr ""
+msgstr "یک ورودی محدود شده به مقادیر عددی."
 
 #: includes/fields/class-acf-field-message.php:25
 msgid ""
@@ -2006,6 +2022,7 @@ msgstr ""
 #: includes/fields/class-acf-field-image.php:24
 msgid "Uses the native WordPress media picker to upload, or choose images."
 msgstr ""
+"از انتخابگر رسانه‌ی بومی وردپرس برای بارگذاری یا انتخاب تصاویر استفاده می‌کند."
 
 #: includes/fields/class-acf-field-group.php:24
 msgid ""
@@ -2022,38 +2039,49 @@ msgstr ""
 #: includes/fields/class-acf-field-file.php:24
 msgid "Uses the native WordPress media picker to upload, or choose files."
 msgstr ""
+"از انتخابگر رسانه‌ی بومی وردپرس برای بارگذاری یا انتخاب پرونده‌ها استفاده "
+"می‌کند."
 
 #: includes/fields/class-acf-field-email.php:23
 msgid "A text input specifically designed for storing email addresses."
 msgstr ""
+"یک ورودی متنی که به طور ویژه برای ذخیره‌سازی نشانی‌های رایانامه طراحی شده است."
 
 #: includes/fields/class-acf-field-date_time_picker.php:24
 msgid ""
 "An interactive UI for picking a date and time. The date return format can be "
 "customized using the field settings."
 msgstr ""
+"یک رابط کاربری تعاملی برای انتخاب یک تاریخ و زمان. قالب برگرداندن تاریخ "
+"می‌تواند به وسیله‌ی تنظیمات فیلد سفارشی‌سازی شود."
 
 #: includes/fields/class-acf-field-date_picker.php:24
 msgid ""
 "An interactive UI for picking a date. The date return format can be "
 "customized using the field settings."
 msgstr ""
+"یک رابط کاربری تعاملی برای انتخاب یک تاریخ. قالب برگرداندن تاریخ می‌تواند به "
+"وسیله‌ی تنظیمات فیلد سفارشی‌سازی شود."
 
 #: includes/fields/class-acf-field-color_picker.php:24
 msgid "An interactive UI for selecting a color, or specifying a Hex value."
-msgstr ""
+msgstr "یک رابط کاربری تعاملی برای انتخاب یک رنگ یا مشخص کردن یک مقدار Hex."
 
 #: includes/fields/class-acf-field-checkbox.php:24
 msgid ""
 "A group of checkbox inputs that allow the user to select one, or multiple "
 "values that you specify."
 msgstr ""
+"یک گروه از ورودی‌های انتخابی که به کاربر اجازه می‌دهد یک یا چند تا از مقادیری "
+"که مشخص کرده‌اید را انتخاب کند."
 
 #: includes/fields/class-acf-field-button-group.php:25
 msgid ""
 "A group of buttons with values that you specify, users can choose one option "
 "from the values provided."
 msgstr ""
+"یک گروه از دکمه‌ها با مقادیری که مشخص کرده‌اید. کاربران می‌توانند یکی از "
+"گزینه‌ها را از مقادیر ارائه شده انتخاب کنند."
 
 #: includes/fields/class-acf-field-accordion.php:26
 msgid ""
@@ -2094,7 +2122,7 @@ msgstr ""
 #: includes/fields.php:416
 msgctxt "noun"
 msgid "Clone"
-msgstr "کپی (هیچ)"
+msgstr "تکثیرکردن"
 
 #: includes/admin/views/global/navigation.php:86
 #: includes/class-acf-site-health.php:286 includes/fields.php:331
@@ -2111,17 +2139,17 @@ msgstr "JSON (جدیدتر)"
 
 #: includes/ajax/class-acf-ajax-local-json-diff.php:81
 msgid "Original"
-msgstr ""
+msgstr "اصلی"
 
 #: includes/ajax/class-acf-ajax-local-json-diff.php:55
 msgid "Invalid post ID."
-msgstr ""
+msgstr "شناسه پست نامعتبر."
 
 #: includes/ajax/class-acf-ajax-local-json-diff.php:47
 msgid "Invalid post type selected for review."
 msgstr ""
 
-#: includes/admin/views/global/navigation.php:186
+#: includes/admin/views/global/navigation.php:189
 msgid "More"
 msgstr "بیشتر"
 
@@ -2136,21 +2164,21 @@ msgstr "انتخاب فیلد"
 #. translators: %s: A link to the popular fields used in ACF
 #: includes/admin/views/browse-fields-modal.php:60
 msgid "Try a different search term or browse %s"
-msgstr ""
+msgstr "واژه‌ی جستجوی متفاوتی را امتحان کنید یا %s را مرور کنید"
 
 #: includes/admin/views/browse-fields-modal.php:57
 msgid "Popular fields"
-msgstr ""
+msgstr "فیلدهای پرطرفدار"
 
 #. translators: %s: The invalid search term
 #: includes/admin/views/browse-fields-modal.php:50
-#: includes/fields/class-acf-field-icon_picker.php:149
+#: includes/fields/class-acf-field-icon_picker.php:155
 msgid "No search results for '%s'"
-msgstr ""
+msgstr "نتیجه جستجویی برای '%s' نبود"
 
 #: includes/admin/views/browse-fields-modal.php:23
 msgid "Search fields..."
-msgstr ""
+msgstr "جستجوی فیلدها..."
 
 #: includes/admin/views/browse-fields-modal.php:21
 msgid "Select Field Type"
@@ -2166,11 +2194,11 @@ msgstr "افزودن طبقه‌بندی"
 
 #: includes/admin/views/acf-taxonomy/list-empty.php:14
 msgid "Create custom taxonomies to classify post type content"
-msgstr ""
+msgstr "طبقه‌بندی‌های سفارشی ایجاد کنید تا محتوای نوع نوشته را رده‌بندی کنید"
 
 #: includes/admin/views/acf-taxonomy/list-empty.php:13
 msgid "Add Your First Taxonomy"
-msgstr ""
+msgstr "اولین طبقه‌بندی خود را اضافه کنید"
 
 #: includes/admin/views/acf-taxonomy/basic-settings.php:122
 msgid "Hierarchical taxonomies can have descendants (like categories)."
@@ -2331,7 +2359,7 @@ msgstr ""
 #. translators: %s Singular form of taxonomy name
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:698
 msgid "A link to a %s"
-msgstr ""
+msgstr "پیوندی به یک %s"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:683
 msgid "Tag Link"
@@ -2344,7 +2372,7 @@ msgstr ""
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:663
 msgid "← Go to tags"
-msgstr ""
+msgstr "→ برو به برچسب‌ها"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:662
 msgid ""
@@ -2358,7 +2386,7 @@ msgstr "بازگشت به موارد"
 #. translators: %s Plural form of taxonomy name
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:657
 msgid "← Go to %s"
-msgstr ""
+msgstr "→ برو به %s"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:642
 msgid "Tags list"
@@ -2378,7 +2406,7 @@ msgstr ""
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:597
 msgid "Filter by category"
-msgstr ""
+msgstr "پالایش بر اساس دسته‌بندی"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:596
 msgid "Assigns text to the filter button in the posts lists table."
@@ -2386,12 +2414,12 @@ msgstr ""
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:595
 msgid "Filter By Item"
-msgstr ""
+msgstr "پالایش بر اساس مورد"
 
 #. translators: %s Singular form of taxonomy name
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:591
 msgid "Filter by %s"
-msgstr ""
+msgstr "پالایش بر اساس %s"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:575
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:576
@@ -2453,7 +2481,7 @@ msgstr ""
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:507
 msgid "No tags"
-msgstr ""
+msgstr "برچسبی نیست"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:506
 msgid ""
@@ -2463,12 +2491,12 @@ msgstr ""
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:505
 msgid "No Terms"
-msgstr ""
+msgstr "بدون شرایط"
 
 #. translators: %s Plural form of taxonomy name
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:501
 msgid "No %s"
-msgstr ""
+msgstr "بدون %s"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:486
 msgid "No tags found"
@@ -2531,11 +2559,11 @@ msgstr "افزودن یا حذف موارد"
 #. translators: %s Plural form of taxonomy name
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:412
 msgid "Add or remove %s"
-msgstr ""
+msgstr "افزودن یا حذف %s"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:392
 msgid "Separate tags with commas"
-msgstr ""
+msgstr "برچسب‌ها را با کاما (,) از هم جدا کنید"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:391
 msgid ""
@@ -2545,16 +2573,16 @@ msgstr ""
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:390
 msgid "Separate Items With Commas"
-msgstr ""
+msgstr "موارد را با کاما (,) از هم جدا کنید"
 
 #. translators: %s Plural form of taxonomy name
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:386
 msgid "Separate %s with commas"
-msgstr ""
+msgstr "%s را با کاما (,) از هم جدا کنید"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:366
 msgid "Popular Tags"
-msgstr ""
+msgstr "برچسب‌های محبوب"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:365
 msgid "Assigns popular items text. Only used for non-hierarchical taxonomies."
@@ -2567,7 +2595,7 @@ msgstr ""
 #. translators: %s Plural form of taxonomy name
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:361
 msgid "Popular %s"
-msgstr ""
+msgstr "%s محبوب"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:347
 msgid "Search Tags"
@@ -2591,7 +2619,7 @@ msgstr ""
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:298
 msgid "Parent Category"
-msgstr ""
+msgstr "دسته‌بندی والد"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:297
 msgid "Assigns parent item text. Only used on hierarchical taxonomies."
@@ -2604,24 +2632,24 @@ msgstr ""
 #. translators: %s Singular form of taxonomy name
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:293
 msgid "Parent %s"
-msgstr ""
+msgstr "والد %s"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:278
 msgid "New Tag Name"
-msgstr ""
+msgstr "نام برچسب تازه"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:277
 msgid "Assigns the new item name text."
-msgstr ""
+msgstr "متن نام مورد تازه را اختصاص می‌دهد."
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:276
 msgid "New Item Name"
-msgstr ""
+msgstr "نام مورد تازه"
 
 #. translators: %s Singular form of taxonomy name
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:273
 msgid "New %s Name"
-msgstr ""
+msgstr "نام %s جدید"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:258
 msgid "Add New Tag"
@@ -2629,7 +2657,7 @@ msgstr "افزودن برچسب تازه"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:257
 msgid "Assigns the add new item text."
-msgstr ""
+msgstr "متن «افزودن مورد تازه» را اختصاص می‌دهد."
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:238
 msgid "Update Tag"
@@ -2646,7 +2674,7 @@ msgstr ""
 #. translators: %s Singular form of taxonomy name
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:233
 msgid "Update %s"
-msgstr ""
+msgstr "به‌روزرسانی %s"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:218
 msgid "View Tag"
@@ -2658,7 +2686,7 @@ msgstr ""
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:198
 msgid "Edit Tag"
-msgstr ""
+msgstr "ویرایش برچسب"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:197
 msgid "At the top of the editor screen when editing a term."
@@ -2678,7 +2706,7 @@ msgstr ""
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:157
 msgid "Menu Label"
-msgstr ""
+msgstr "برچسب فهرست"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:131
 msgid "Active taxonomies are enabled and registered with WordPress."
@@ -2888,17 +2916,19 @@ msgstr ""
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:1148
 msgid "Custom slug for the Archive URL."
-msgstr ""
+msgstr "نامک سفارشی برای پیوند بایگانی."
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:1147
 msgid "Archive Slug"
-msgstr ""
+msgstr "نامک بایگانی"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:1134
 msgid ""
 "Has an item archive that can be customized with an archive template file in "
 "your theme."
 msgstr ""
+"یک بایگانی مورد دارد که می‌تواند با یک پرونده قالب بایگانی در پوسته‌ی شما "
+"سفارشی‌سازی شود."
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:1133
 msgid "Archive"
@@ -2961,7 +2991,7 @@ msgstr ""
 #: includes/admin/views/acf-post-type/advanced-settings.php:1029
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:914
 msgid "Custom Permalink"
-msgstr ""
+msgstr "پیوند یکتای سفارشی"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:1028
 #: includes/admin/views/acf-post-type/advanced-settings.php:1198
@@ -3027,7 +3057,7 @@ msgstr ""
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:913
 msgid "Exclude From Search"
-msgstr ""
+msgstr "مستثنی کردن از جستجو"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:900
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:854
@@ -3069,7 +3099,7 @@ msgstr ""
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:777
 msgid "Menu Position"
-msgstr ""
+msgstr "جایگاه فهرست"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:759
 msgid ""
@@ -3090,7 +3120,7 @@ msgstr ""
 #: includes/admin/views/acf-post-type/advanced-settings.php:738
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:733
 msgid "Show In Admin Menu"
-msgstr ""
+msgstr "نمایش در نوار مدیریت"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:725
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:719
@@ -3100,11 +3130,11 @@ msgstr ""
 #: includes/admin/views/acf-post-type/advanced-settings.php:724
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:718
 msgid "Show In UI"
-msgstr ""
+msgstr "نمایش در رابط کاربری"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:694
 msgid "A link to a post."
-msgstr ""
+msgstr "یک پیوند به یک نوشته."
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:693
 msgid "Description for a navigation link block variation."
@@ -3118,11 +3148,11 @@ msgstr ""
 #. translators: %s Singular form of post type name
 #: includes/admin/views/acf-post-type/advanced-settings.php:688
 msgid "A link to a %s."
-msgstr ""
+msgstr "یک پیوند به یک %s."
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:673
 msgid "Post Link"
-msgstr ""
+msgstr "پیوند نوشته"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:672
 msgid "Title for a navigation link block variation."
@@ -3155,11 +3185,11 @@ msgstr ""
 #. translators: %s Singular form of post type name
 #: includes/admin/views/acf-post-type/advanced-settings.php:648
 msgid "%s updated."
-msgstr ""
+msgstr "%s بروزرسانی شد."
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:633
 msgid "Post scheduled."
-msgstr ""
+msgstr "نوشته زمان‌بندی شد."
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:632
 msgid "In the editor notice after scheduling an item."
@@ -3167,16 +3197,16 @@ msgstr ""
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:631
 msgid "Item Scheduled"
-msgstr ""
+msgstr "مورد زمان‌بندی شد"
 
 #. translators: %s Singular form of post type name
 #: includes/admin/views/acf-post-type/advanced-settings.php:628
 msgid "%s scheduled."
-msgstr ""
+msgstr "%s زمان‌بندی شد."
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:613
 msgid "Post reverted to draft."
-msgstr ""
+msgstr "نوشته به پیش‌نویس بازگشت."
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:612
 msgid "In the editor notice after reverting an item to draft."
@@ -3189,11 +3219,11 @@ msgstr ""
 #. translators: %s Singular form of post type name
 #: includes/admin/views/acf-post-type/advanced-settings.php:608
 msgid "%s reverted to draft."
-msgstr ""
+msgstr "%s به پیش‌نویس بازگشت."
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:593
 msgid "Post published privately."
-msgstr ""
+msgstr "نوشته به صورت خصوصی منتشر شد."
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:592
 msgid "In the editor notice after publishing a private item."
@@ -3201,16 +3231,16 @@ msgstr ""
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:591
 msgid "Item Published Privately"
-msgstr ""
+msgstr "مورد به صورت خصوصی منتشر شد"
 
 #. translators: %s Singular form of post type name
 #: includes/admin/views/acf-post-type/advanced-settings.php:588
 msgid "%s published privately."
-msgstr ""
+msgstr "%s به صورت خصوصی منتشر شد."
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:573
 msgid "Post published."
-msgstr ""
+msgstr "نوشته منتشر شد."
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:572
 msgid "In the editor notice after publishing an item."
@@ -3218,16 +3248,16 @@ msgstr ""
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:571
 msgid "Item Published"
-msgstr ""
+msgstr "مورد منتشر شد"
 
 #. translators: %s Singular form of post type name
 #: includes/admin/views/acf-post-type/advanced-settings.php:568
 msgid "%s published."
-msgstr ""
+msgstr "%s منتشر شد."
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:553
 msgid "Posts list"
-msgstr ""
+msgstr "فهرست نوشته‌ها"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:552
 msgid "Used by screen readers for the items list on the post type list screen."
@@ -3236,14 +3266,14 @@ msgstr ""
 #: includes/admin/views/acf-post-type/advanced-settings.php:551
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:640
 msgid "Items List"
-msgstr ""
+msgstr "فهرست موارد"
 
 #. translators: %s Plural form of post type name
 #. translators: %s Plural form of taxonomy name
 #: includes/admin/views/acf-post-type/advanced-settings.php:548
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:637
 msgid "%s list"
-msgstr ""
+msgstr "فهرست %s"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:533
 msgid "Posts list navigation"
@@ -3258,14 +3288,14 @@ msgstr ""
 #: includes/admin/views/acf-post-type/advanced-settings.php:531
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:620
 msgid "Items List Navigation"
-msgstr ""
+msgstr "ناوبری فهرست موارد"
 
 #. translators: %s Plural form of post type name
 #. translators: %s Plural form of taxonomy name
 #: includes/admin/views/acf-post-type/advanced-settings.php:528
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:617
 msgid "%s list navigation"
-msgstr ""
+msgstr "ناوبری فهرست %s"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:512
 msgid "Filter posts by date"
@@ -3311,16 +3341,16 @@ msgstr ""
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:468
 msgid "Uploaded To This Item"
-msgstr ""
+msgstr "در این مورد بارگذاری شد"
 
 #. translators: %s Singular form of post type name
 #: includes/admin/views/acf-post-type/advanced-settings.php:464
 msgid "Uploaded to this %s"
-msgstr ""
+msgstr "در این %s بارگذاری شد"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:449
 msgid "Insert into post"
-msgstr ""
+msgstr "درج در نوشته"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:448
 msgid "As the button label when adding media to content."
@@ -3333,7 +3363,7 @@ msgstr ""
 #. translators: %s Singular form of post type name
 #: includes/admin/views/acf-post-type/advanced-settings.php:443
 msgid "Insert into %s"
-msgstr ""
+msgstr "درج در %s"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:428
 msgid "Use as featured image"
@@ -3346,11 +3376,11 @@ msgstr ""
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:426
 msgid "Use Featured Image"
-msgstr ""
+msgstr "استفاده از تصویر شاخص"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:413
 msgid "Remove featured image"
-msgstr ""
+msgstr "حذف تصویر شاخص"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:412
 msgid "As the button label when removing the featured image."
@@ -3399,11 +3429,11 @@ msgstr ""
 #. translators: %s Singular form of post type name
 #: includes/admin/views/acf-post-type/advanced-settings.php:363
 msgid "%s Attributes"
-msgstr ""
+msgstr "ویژگی‌های %s"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:348
 msgid "Post Archives"
-msgstr ""
+msgstr "بایگانی‌های نوشته"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:347
 msgid ""
@@ -3415,16 +3445,16 @@ msgstr ""
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:346
 msgid "Archives Nav Menu"
-msgstr ""
+msgstr "فهرست ناوبری بایگانی‌ها"
 
 #. translators: %s Singular form of post type name
 #: includes/admin/views/acf-post-type/advanced-settings.php:343
 msgid "%s Archives"
-msgstr ""
+msgstr "بایگانی‌های %s"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:328
 msgid "No posts found in Trash"
-msgstr ""
+msgstr "هیچ نوشته‌ای در زباله‌دان یافت نشد"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:327
 msgid ""
@@ -3438,7 +3468,7 @@ msgstr ""
 #. translators: %s Plural form of post type name
 #: includes/admin/views/acf-post-type/advanced-settings.php:322
 msgid "No %s found in Trash"
-msgstr ""
+msgstr "هیچ %s‌ای در زباله‌دان یافت نشد"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:307
 msgid "No posts found"
@@ -3451,18 +3481,18 @@ msgstr ""
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:305
 msgid "No Items Found"
-msgstr ""
+msgstr "موردی یافت نشد"
 
 #. translators: %s Plural form of post type name
 #. translators: %s Plural form of taxonomy name
 #: includes/admin/views/acf-post-type/advanced-settings.php:301
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:480
 msgid "No %s found"
-msgstr ""
+msgstr "%sای یافت نشد"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:286
 msgid "Search Posts"
-msgstr ""
+msgstr "جستجوی نوشته‌ها"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:285
 msgid "At the top of the items screen when searching for an item."
@@ -3471,18 +3501,18 @@ msgstr ""
 #: includes/admin/views/acf-post-type/advanced-settings.php:284
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:345
 msgid "Search Items"
-msgstr ""
+msgstr "جستجوی موارد"
 
 #. translators: %s Singular form of post type name
 #. translators: %s Plural form of taxonomy name
 #: includes/admin/views/acf-post-type/advanced-settings.php:281
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:342
 msgid "Search %s"
-msgstr ""
+msgstr "جستجوی %s"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:266
 msgid "Parent Page:"
-msgstr ""
+msgstr "برگهٔ والد:"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:265
 msgid "For hierarchical types in the post type list screen."
@@ -3497,15 +3527,15 @@ msgstr ""
 #: includes/admin/views/acf-post-type/advanced-settings.php:261
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:318
 msgid "Parent %s:"
-msgstr ""
+msgstr "والد %s:"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:246
 msgid "New Post"
-msgstr ""
+msgstr "نوشتهٔ تازه"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:244
 msgid "New Item"
-msgstr ""
+msgstr "مورد تازه"
 
 #. translators: %s Singular form of post type name
 #: includes/admin/views/acf-post-type/advanced-settings.php:241
@@ -3519,7 +3549,7 @@ msgstr "افزودن نوشتۀ تازه"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:205
 msgid "At the top of the editor screen when adding a new item."
-msgstr ""
+msgstr "در بالای صفحه‌ی ویرایشگر، در هنگام افزودن یک مورد جدید."
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:204
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:256
@@ -3546,11 +3576,11 @@ msgstr ""
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:184
 msgid "View Items"
-msgstr ""
+msgstr "نمایش موارد"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:166
 msgid "View Post"
-msgstr ""
+msgstr "نمایش نوشته"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:165
 msgid "In the admin bar to view item when editing it."
@@ -3559,7 +3589,7 @@ msgstr ""
 #: includes/admin/views/acf-post-type/advanced-settings.php:164
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:216
 msgid "View Item"
-msgstr ""
+msgstr "نمایش مورد"
 
 #. translators: %s Singular form of post type name
 #. translators: %s Plural form of post type name
@@ -3581,18 +3611,18 @@ msgstr ""
 #: includes/admin/views/acf-post-type/advanced-settings.php:144
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:196
 msgid "Edit Item"
-msgstr ""
+msgstr "ویرایش مورد"
 
 #. translators: %s Singular form of post type name
 #. translators: %s Singular form of taxonomy name
 #: includes/admin/views/acf-post-type/advanced-settings.php:141
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:193
 msgid "Edit %s"
-msgstr ""
+msgstr "ویرایش %s"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:126
 msgid "All Posts"
-msgstr ""
+msgstr "همه‌ی نوشته‌ها"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:125
 #: includes/admin/views/acf-post-type/advanced-settings.php:225
@@ -3603,7 +3633,7 @@ msgstr ""
 #: includes/admin/views/acf-post-type/advanced-settings.php:124
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:176
 msgid "All Items"
-msgstr ""
+msgstr "همۀ موارد"
 
 #. translators: %s Plural form of post type name
 #. translators: %s Plural form of taxonomy name
@@ -3618,7 +3648,7 @@ msgstr ""
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:104
 msgid "Menu Name"
-msgstr ""
+msgstr "نام فهرست"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:90
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:142
@@ -3628,7 +3658,7 @@ msgstr "تولید دوباره تمامی برچسب‌های مفرد و جم�
 #: includes/admin/views/acf-post-type/advanced-settings.php:88
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:140
 msgid "Regenerate"
-msgstr ""
+msgstr "بازتولید"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:79
 msgid "Active post types are enabled and registered with WordPress."
@@ -3721,11 +3751,11 @@ msgstr ""
 
 #: includes/admin/tools/class-acf-admin-tool-export.php:353
 msgid "Export - Generate PHP"
-msgstr ""
+msgstr "برون‌ریزی - ایجاد PHP"
 
 #: includes/admin/tools/class-acf-admin-tool-export.php:330
 msgid "Export"
-msgstr ""
+msgstr "برون‌ریزی"
 
 #: includes/admin/tools/class-acf-admin-tool-export.php:264
 msgid "Select Taxonomies"
@@ -3733,7 +3763,7 @@ msgstr "انتخاب طبقه‌بندی‌ها"
 
 #: includes/admin/tools/class-acf-admin-tool-export.php:239
 msgid "Select Post Types"
-msgstr ""
+msgstr "نوع‌های نوشته را انتخاب کنید"
 
 #: includes/admin/tools/class-acf-admin-tool-export.php:155
 msgid "Exported 1 item."
@@ -3755,24 +3785,24 @@ msgstr "برچسب"
 #. translators: %s taxonomy name
 #: includes/admin/post-types/admin-taxonomy.php:82
 msgid "%s taxonomy created"
-msgstr ""
+msgstr "طبقه‌بندی %s ایجاد شد"
 
 #. translators: %s taxonomy name
 #: includes/admin/post-types/admin-taxonomy.php:76
 msgid "%s taxonomy updated"
-msgstr ""
+msgstr "طبقه‌بندی %s بروزرسانی شد"
 
 #: includes/admin/post-types/admin-taxonomy.php:56
 msgid "Taxonomy draft updated."
-msgstr ""
+msgstr "پیش‌نویس طبقه‌بندی به‌روزرسانی شد."
 
 #: includes/admin/post-types/admin-taxonomy.php:55
 msgid "Taxonomy scheduled for."
-msgstr ""
+msgstr "طبقه‌بندی برنامه‌ریزی شد."
 
 #: includes/admin/post-types/admin-taxonomy.php:54
 msgid "Taxonomy submitted."
-msgstr ""
+msgstr "طبقه‌بندی ثبت شد."
 
 #: includes/admin/post-types/admin-taxonomy.php:53
 msgid "Taxonomy saved."
@@ -3883,21 +3913,21 @@ msgstr ""
 #. translators: %s post type name
 #: includes/admin/post-types/admin-post-type.php:80
 msgid "%s post type created"
-msgstr ""
+msgstr "%s نوع نوشته ایجاد شد"
 
 #. translators: %s taxonomy name
 #: includes/admin/post-types/admin-taxonomy.php:78
 msgid "Add fields to %s"
-msgstr ""
+msgstr "افزودن فیلدها به %s"
 
 #. translators: %s post type name
 #: includes/admin/post-types/admin-post-type.php:76
 msgid "%s post type updated"
-msgstr ""
+msgstr "%s نوع نوشته بروزرسانی شد"
 
 #: includes/admin/post-types/admin-post-type.php:56
 msgid "Post type draft updated."
-msgstr ""
+msgstr "پیش‌نویس نوع نوشته بروزرسانی شد."
 
 #: includes/admin/post-types/admin-post-type.php:55
 msgid "Post type scheduled for."
@@ -3992,8 +4022,8 @@ msgid ""
 "This item could not be registered because its key is in use by another item "
 "registered by another plugin or theme."
 msgstr ""
-"این مورد ثبت نشد زیرا کلید آن توسط مورد دیگری که توسط افزونه یا طرح زمینه "
-"دیگری ثبت شده است استفاده می شود."
+"این مورد نمی‌تواند ثبت شود، زیرا کلید آن توسط مورد دیگری که توسط افزونه یا "
+"پوسته‌ی دیگری ثبت شده، در حال استفاده است."
 
 #: includes/acf-internal-post-type-functions.php:509
 #: includes/acf-internal-post-type-functions.php:538
@@ -4041,7 +4071,7 @@ msgid "[ACF shortcode value disabled for preview]"
 msgstr "[مقدار کد کوتاه ACF برای پیش نمایش غیرفعال است]"
 
 #: includes/admin/admin-internal-post-type.php:290
-#: includes/admin/post-types/admin-field-group.php:569
+#: includes/admin/post-types/admin-field-group.php:572
 msgid "Close Modal"
 msgstr "بستن صفحه"
 
@@ -4049,7 +4079,7 @@ msgstr "بستن صفحه"
 #: assets/build/js/acf-field-group.js:1701
 #: assets/build/js/acf-field-group.js:2032
 msgid "Field moved to other group"
-msgstr "زمینه به یک گروه دیگر منتقل شد"
+msgstr "فیلد به گروه دیگری منتقل شد"
 
 #: includes/admin/post-types/admin-field-group.php:91
 #: assets/build/js/acf.js:1443 assets/build/js/acf.js:1521
@@ -4094,19 +4124,20 @@ msgid "Checkbox custom values cannot be empty. Uncheck any empty values."
 msgstr ""
 "مقادیر سفارشی کادر انتخاب نمی‌تواند خالی باشد. انتخاب مقادیر خالی را بردارید."
 
-#: includes/admin/views/global/navigation.php:250
+#: includes/admin/views/global/navigation.php:253
 msgid "Updates"
 msgstr "بروزرسانی ها"
 
-#: includes/admin/views/global/navigation.php:176
+#: includes/admin/views/global/navigation.php:177
+#: includes/admin/views/global/navigation.php:181
 msgid "Advanced Custom Fields logo"
 msgstr "لوگوی فیلدهای سفارشی پیشرفته"
 
-#: includes/admin/views/global/form-top.php:89
+#: includes/admin/views/global/form-top.php:92
 msgid "Save Changes"
 msgstr "ذخیره تغییرات"
 
-#: includes/admin/views/global/form-top.php:76
+#: includes/admin/views/global/form-top.php:79
 msgid "Field Group Title"
 msgstr "عنوان گروه فیلد"
 
@@ -4145,7 +4176,7 @@ msgstr "اولین گروه فیلد خود را اضافه نمایید"
 #: includes/admin/admin-options-pages-preview.php:28
 #: includes/admin/views/acf-field-group/pro-features.php:58
 #: includes/admin/views/global/navigation.php:86
-#: includes/admin/views/global/navigation.php:252
+#: includes/admin/views/global/navigation.php:255
 msgid "Options Pages"
 msgstr "برگه‌های گزینه‌ها"
 
@@ -4159,15 +4190,15 @@ msgstr "فیلد گالری"
 
 #: includes/admin/views/acf-field-group/pro-features.php:42
 msgid "Flexible Content Field"
-msgstr "زمینه محتوای انعطاف پذیر"
+msgstr "فیلد محتوای انعطاف پذیر"
 
 #: includes/admin/views/acf-field-group/pro-features.php:46
 msgid "Repeater Field"
-msgstr "زمینه تکرارشونده"
+msgstr "فیلد تکرارشونده"
 
-#: includes/admin/views/global/navigation.php:212
+#: includes/admin/views/global/navigation.php:215
 msgid "Unlock Extra Features with ACF PRO"
-msgstr ""
+msgstr "قفل ویژگی‌های اضافی را با ACF PRO باز کنید"
 
 #: includes/admin/views/acf-field-group/options.php:267
 msgid "Delete Field Group"
@@ -4192,6 +4223,8 @@ msgid ""
 "Choose from over 30 field types. <a href=\"%s\" target=\"_blank\">Learn "
 "more</a>."
 msgstr ""
+"از بین بیش از 30 نوع فیلد انتخاب کنید. <a href=\"%s\" "
+"target=\"_blank\">بیشتر بدانید</a>."
 
 #: includes/admin/views/acf-field-group/fields.php:65
 msgid ""
@@ -4212,7 +4245,7 @@ msgstr "#"
 #: includes/admin/views/acf-field-group/fields.php:33
 #: includes/admin/views/acf-field-group/fields.php:67
 #: includes/admin/views/acf-field-group/fields.php:101
-#: includes/admin/views/global/form-top.php:85
+#: includes/admin/views/global/form-top.php:88
 msgid "Add Field"
 msgstr "افزودن فیلد"
 
@@ -4241,7 +4274,7 @@ msgstr "برون بری با JSON"
 #: includes/admin/post-types/admin-field-groups.php:360
 msgid "Field group deactivated."
 msgid_plural "%s field groups deactivated."
-msgstr[0] ""
+msgstr[0] "%s گروه فیلد غیرفعال شد."
 
 #. translators: %s number of field groups activated
 #: includes/admin/post-types/admin-field-groups.php:353
@@ -4249,21 +4282,21 @@ msgid "Field group activated."
 msgid_plural "%s field groups activated."
 msgstr[0] ""
 
-#: includes/admin/admin-internal-post-type-list.php:468
-#: includes/admin/admin-internal-post-type-list.php:494
+#: includes/admin/admin-internal-post-type-list.php:470
+#: includes/admin/admin-internal-post-type-list.php:496
 msgid "Deactivate"
 msgstr "غیرفعال کردن"
 
-#: includes/admin/admin-internal-post-type-list.php:468
+#: includes/admin/admin-internal-post-type-list.php:470
 msgid "Deactivate this item"
 msgstr "غیرفعال کردن این مورد"
 
-#: includes/admin/admin-internal-post-type-list.php:464
-#: includes/admin/admin-internal-post-type-list.php:493
+#: includes/admin/admin-internal-post-type-list.php:466
+#: includes/admin/admin-internal-post-type-list.php:495
 msgid "Activate"
 msgstr "فعال کردن"
 
-#: includes/admin/admin-internal-post-type-list.php:464
+#: includes/admin/admin-internal-post-type-list.php:466
 msgid "Activate this item"
 msgstr "فعال کردن این مورد"
 
@@ -4291,16 +4324,17 @@ msgid ""
 "Advanced Custom Fields and Advanced Custom Fields PRO should not be active "
 "at the same time. We've automatically deactivated Advanced Custom Fields PRO."
 msgstr ""
-"افزونه زمینه های سفارشی و افزونه زمینه های سفارشی پیشرفته نباید همزمان فعال "
-"باشند. ما به طور خودکار افزونه زمینه های سفارشی پیشرفته را غیرفعال کردیم."
+"افزونه فیلدهای سفارشی پیشرفته و افزونه فیلدهای سفارشی پیشرفته‌ی حرفه‌ای نباید "
+"همزمان فعال باشند. ما به طور خودکار افزونه فیلدهای سفارشی پیشرفته را غیرفعال "
+"کردیم."
 
 #: acf.php:556
 msgid ""
 "Advanced Custom Fields and Advanced Custom Fields PRO should not be active "
 "at the same time. We've automatically deactivated Advanced Custom Fields."
 msgstr ""
-"افزونه زمینه های سفارشی و افزونه زمینه های سفارشی پیشرفته نباید همزمان فعال "
-"باشند. ما به طور خودکار فیلدهای سفارشی پیشرفته را غیرفعال کرده ایم."
+"افزونه فیلدهای سفارشی پیشرفته و افزونه فیلدهای سفارشی پیشرفته‌ی حرفه‌ای نباید "
+"همزمان فعال باشند. ما به طور خودکار فیلدهای سفارشی پیشرفته را غیرفعال کردیم."
 
 #. translators: %1 plugin name, %2 the URL to the documentation on this error
 #: includes/acf-value-functions.php:376
@@ -4447,7 +4481,7 @@ msgstr "آخرین به‌روزرسانی: %s"
 
 #: includes/ajax/class-acf-ajax-local-json-diff.php:70
 msgid "Sorry, this post is unavailable for diff comparison."
-msgstr ""
+msgstr "متاسفیم، این نوشته برای مقایسه‌ی تفاوت در دسترس نیست."
 
 #: includes/ajax/class-acf-ajax-local-json-diff.php:42
 msgid "Invalid field group parameter(s)."
@@ -4487,7 +4521,7 @@ msgid "Various"
 msgstr "مختلف"
 
 #: includes/admin/admin-internal-post-type-list.php:230
-#: includes/admin/admin-internal-post-type-list.php:501
+#: includes/admin/admin-internal-post-type-list.php:503
 msgid "Sync changes"
 msgstr "همگام‌سازی تغییرات"
 
@@ -4570,9 +4604,9 @@ msgid ""
 "href=\"%s\" target=\"_blank\">Getting started</a> guide to familiarize "
 "yourself with the plugin's philosophy and best practises."
 msgstr ""
-"قبل از ایجاد اولین گروه زمینه خود <a href=\"%s\" target=\"_blank\"></a> را، "
-"ما توصیه می کنیم برای اولین بار خواندن راهنمای شروع به کار ما برای آشنایی با "
-"فلسفه پلاگین و بهترین تمرین."
+"پیشنهاد می‌کنیم قبل از ایجاد اولین گروه فیلد خود، راهنمای <a href=\"%s\" "
+"target=\"_blank\">شروع به کار</a> را بخوانید تا با فلسفه‌ی افزونه و بهترین "
+"مثال‌های آن آشنا شوید."
 
 #: includes/admin/admin.php:134
 msgid ""
@@ -4580,9 +4614,9 @@ msgid ""
 "customize WordPress edit screens with extra fields, and an intuitive API to "
 "display custom field values in any theme template file."
 msgstr ""
-"افزونه پیشرفته زمینه های سفارشی فراهم می کند یک سازنده فرم بصری برای سفارشی "
-"کردن وردپرس ویرایش صفحه نمایش با زمینه های اضافی، و API بصری برای نمایش ارزش "
-"های زمینه سفارشی در هر فایل قالب تم."
+"افزونه فیلدهای سفارشی پیشرفته، به کمک فیلدهای اضافی و API بصری، یک فرم‌ساز "
+"بصری را برای سفارشی‌کردن صفحات ویرایش وردپرس برای نمایش مقادیر فیلدهای سفارشی "
+"در هر پرونده‌ی قالب پوسته فراهم می‌کند."
 
 #: includes/admin/admin.php:131 includes/admin/admin.php:133
 msgid "Overview"
@@ -4604,7 +4638,7 @@ msgstr "کلید نامعتبر است"
 
 #: includes/fields/class-acf-field-user.php:402
 msgid "Error loading field."
-msgstr "خطا در بارگزاری زمینه"
+msgstr "خطا در بارگزاری فیلد"
 
 #: assets/build/js/acf-input.js:3438 assets/build/js/acf-input.js:3507
 #: assets/build/js/acf-input.js:3686 assets/build/js/acf-input.js:3760
@@ -4789,7 +4823,7 @@ msgstr "این نسخه شامل بهبودهایی در پایگاه داده �
 #. translators: %1 plugin name, %2 version number
 #: includes/admin/views/upgrade/notice.php:28
 msgid "Thank you for updating to %1$s v%2$s!"
-msgstr ""
+msgstr "از شما برای بروزرسانی به %1$s نسخه‌ی %2$s متشکریم!"
 
 #: includes/admin/views/upgrade/notice.php:26
 msgid "Database Upgrade Required"
@@ -4810,7 +4844,7 @@ msgstr "محتوای انعطاف پذیر"
 
 #: includes/admin/views/upgrade/notice.php:8 includes/fields.php:446
 msgid "Repeater"
-msgstr "زمینه تکرار کننده"
+msgstr "تکرار‌کننده"
 
 #: includes/admin/views/tools/tools.php:16
 msgid "Back to all tools"
@@ -4919,11 +4953,11 @@ msgstr "برچسب‌های زیر"
 
 #: includes/admin/views/acf-field-group/options.php:139
 msgid "Instruction Placement"
-msgstr ""
+msgstr "قرارگیری دستورالعمل"
 
 #: includes/admin/views/acf-field-group/options.php:122
 msgid "Label Placement"
-msgstr ""
+msgstr "قرارگیری برچسب"
 
 #: includes/admin/views/acf-field-group/options.php:110
 msgid "Side"
@@ -5112,7 +5146,7 @@ msgstr "سایت به روز است"
 #. translators: %1 current db version, %2 available db version
 #: includes/admin/views/upgrade/network.php:77
 msgid "Site requires database upgrade from %1$s to %2$s"
-msgstr ""
+msgstr "سایت نیاز به بروزرسانی پایگاه داده از %1$s به %2$s دارد"
 
 #: includes/admin/views/upgrade/network.php:34
 #: includes/admin/views/upgrade/network.php:45
@@ -5183,7 +5217,7 @@ msgstr "تولید کد PHP"
 
 #: includes/admin/tools/class-acf-admin-tool-export.php:34
 msgid "Export Field Groups"
-msgstr "برون بری گروه های زمینه"
+msgstr "برون‌ریزی گروه‌های فیلد"
 
 #: includes/admin/tools/class-acf-admin-tool-import.php:172
 msgid "Import file empty"
@@ -5205,24 +5239,24 @@ msgstr ""
 
 #: includes/admin/tools/class-acf-admin-tool-import.php:26
 msgid "Import Field Groups"
-msgstr "وارد کردن گروه های زمینه"
+msgstr "وارد کردن گروه‌های فیلد"
 
 #: includes/admin/admin-internal-post-type-list.php:417
 msgid "Sync"
 msgstr "هماهنگ"
 
 #. translators: %s: field group title
-#: includes/admin/admin-internal-post-type-list.php:885
+#: includes/admin/admin-internal-post-type-list.php:887
 msgid "Select %s"
 msgstr "انتخاب %s"
 
-#: includes/admin/admin-internal-post-type-list.php:458
-#: includes/admin/admin-internal-post-type-list.php:490
+#: includes/admin/admin-internal-post-type-list.php:460
+#: includes/admin/admin-internal-post-type-list.php:492
 #: includes/admin/views/acf-field-group/field.php:90
 msgid "Duplicate"
 msgstr "تکثیر"
 
-#: includes/admin/admin-internal-post-type-list.php:458
+#: includes/admin/admin-internal-post-type-list.php:460
 msgid "Duplicate this item"
 msgstr "تکثیر این مورد"
 
@@ -5247,7 +5281,7 @@ msgid "Description"
 msgstr "توضیحات"
 
 #: includes/admin/admin-internal-post-type-list.php:414
-#: includes/admin/admin-internal-post-type-list.php:757
+#: includes/admin/admin-internal-post-type-list.php:759
 msgid "Sync available"
 msgstr "هماهنگ سازی موجود است"
 
@@ -5284,22 +5318,22 @@ msgstr "به‌روزرسانی پایگاه داده"
 msgid "Custom Fields"
 msgstr "فیلدهای سفارشی"
 
-#: includes/admin/post-types/admin-field-group.php:614
+#: includes/admin/post-types/admin-field-group.php:609
 msgid "Move Field"
-msgstr "جابجایی زمینه"
+msgstr "جابجایی فیلد"
 
-#: includes/admin/post-types/admin-field-group.php:603
-#: includes/admin/post-types/admin-field-group.php:607
+#: includes/admin/post-types/admin-field-group.php:602
+#: includes/admin/post-types/admin-field-group.php:606
 msgid "Please select the destination for this field"
-msgstr "مقصد انتقال این زمینه را مشخص کنید"
+msgstr "مقصد انتقال این فیلد را مشخص کنید"
 
 #. translators: Confirmation message once a field has been moved to a different
 #. field group.
-#: includes/admin/post-types/admin-field-group.php:565
+#: includes/admin/post-types/admin-field-group.php:568
 msgid "The %1$s field can now be found in the %2$s field group"
 msgstr ""
 
-#: includes/admin/post-types/admin-field-group.php:562
+#: includes/admin/post-types/admin-field-group.php:565
 msgid "Move Complete."
 msgstr "انتقال کامل شد."
 
@@ -5351,23 +5385,23 @@ msgstr "انتخاب شده"
 #: assets/build/js/acf-field-group.js:1646
 #: assets/build/js/acf-field-group.js:1972
 msgid "Move Custom Field"
-msgstr "جابجایی زمینه دلخواه"
+msgstr "جابجایی فیلد سفارشی"
 
 #: includes/admin/post-types/admin-field-group.php:89
 #: assets/build/js/acf-field-group.js:653
 #: assets/build/js/acf-field-group.js:808
 msgid "No toggle fields available"
-msgstr "هیچ زمینه شرط پذیری موجود نیست"
+msgstr "هیچ فیلد تغییر وضعیت دهنده‌ای در دسترس نیست"
 
 #: includes/admin/post-types/admin-field-group.php:87
 msgid "Field group title is required"
-msgstr "عنوان گروه زمینه ضروری است"
+msgstr "عنوان گروه فیلد ضروری است"
 
 #: includes/admin/post-types/admin-field-group.php:86
 #: assets/build/js/acf-field-group.js:1635
 #: assets/build/js/acf-field-group.js:1958
 msgid "This field cannot be moved until its changes have been saved"
-msgstr "این زمینه قبل از اینکه ذخیره شود نمی تواند جابجا شود"
+msgstr "این فیلد تا زمانی که تغییراتش ذخیره شود، نمی‌تواند جابجا شود"
 
 #: includes/admin/post-types/admin-field-group.php:85
 #: assets/build/js/acf-field-group.js:1445
@@ -5377,11 +5411,11 @@ msgstr "کلمه متنی \"field_\" نباید در ابتدای نام فیل�
 
 #: includes/admin/post-types/admin-field-group.php:69
 msgid "Field group draft updated."
-msgstr "پیش نویش گروه زمینه بروز شد."
+msgstr "پیش‌نویس گروه فیلد بروز شد."
 
 #: includes/admin/post-types/admin-field-group.php:68
 msgid "Field group scheduled for."
-msgstr "گروه زمینه برنامه ریزی انتشار پیدا کرده برای."
+msgstr "گروه فیلد برنامه‌ریزی شده برای."
 
 #: includes/admin/post-types/admin-field-group.php:67
 msgid "Field group submitted."
@@ -5406,7 +5440,7 @@ msgid "Field group updated."
 msgstr "گروه فیلد به‌روز شد."
 
 #: includes/admin/admin-tools.php:107
-#: includes/admin/views/global/navigation.php:248
+#: includes/admin/views/global/navigation.php:251
 #: includes/admin/views/tools/tools.php:13
 msgid "Tools"
 msgstr "ابزارها"
@@ -5483,7 +5517,7 @@ msgid "Title"
 msgstr "عنوان"
 
 #: includes/assets.php:376 includes/forms/form-comment.php:140
-#: assets/build/js/acf-input.js:8428 assets/build/js/acf-input.js:9206
+#: assets/build/js/acf-input.js:8422 assets/build/js/acf-input.js:9197
 msgid "Edit field group"
 msgstr "ویرایش گروه فیلد"
 
@@ -5550,50 +5584,50 @@ msgstr "لغو"
 msgid "Are you sure?"
 msgstr "اطمینان دارید؟"
 
-#: includes/assets.php:370 assets/build/js/acf-input.js:10493
-#: assets/build/js/acf-input.js:11547
+#: includes/assets.php:370 assets/build/js/acf-input.js:10487
+#: assets/build/js/acf-input.js:11538
 msgid "%d fields require attention"
 msgstr "%d گزینه نیاز به بررسی دارد"
 
-#: includes/assets.php:369 assets/build/js/acf-input.js:10491
-#: assets/build/js/acf-input.js:11545
+#: includes/assets.php:369 assets/build/js/acf-input.js:10485
+#: assets/build/js/acf-input.js:11536
 msgid "1 field requires attention"
 msgstr "یکی از گزینه ها نیاز به بررسی دارد"
 
 #: includes/assets.php:368 includes/validation.php:247
-#: includes/validation.php:255 assets/build/js/acf-input.js:10486
-#: assets/build/js/acf-input.js:11540
+#: includes/validation.php:255 assets/build/js/acf-input.js:10480
+#: assets/build/js/acf-input.js:11531
 msgid "Validation failed"
 msgstr "مشکل در اعتبار سنجی"
 
-#: includes/assets.php:367 assets/build/js/acf-input.js:10654
-#: assets/build/js/acf-input.js:11718
+#: includes/assets.php:367 assets/build/js/acf-input.js:10648
+#: assets/build/js/acf-input.js:11709
 msgid "Validation successful"
 msgstr "اعتبار سنجی موفق بود"
 
-#: includes/media.php:54 assets/build/js/acf-input.js:8256
-#: assets/build/js/acf-input.js:9010
+#: includes/media.php:54 assets/build/js/acf-input.js:8250
+#: assets/build/js/acf-input.js:9001
 msgid "Restricted"
 msgstr "ممنوع"
 
-#: includes/media.php:53 assets/build/js/acf-input.js:8071
-#: assets/build/js/acf-input.js:8774
+#: includes/media.php:53 assets/build/js/acf-input.js:8065
+#: assets/build/js/acf-input.js:8765
 msgid "Collapse Details"
 msgstr "عدم نمایش جزئیات"
 
-#: includes/media.php:52 assets/build/js/acf-input.js:8071
-#: assets/build/js/acf-input.js:8771
+#: includes/media.php:52 assets/build/js/acf-input.js:8065
+#: assets/build/js/acf-input.js:8762
 msgid "Expand Details"
 msgstr "نمایش جزئیات"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:470
-#: includes/media.php:51 assets/build/js/acf-input.js:7938
-#: assets/build/js/acf-input.js:8619
+#: includes/media.php:51 assets/build/js/acf-input.js:7932
+#: assets/build/js/acf-input.js:8610
 msgid "Uploaded to this post"
 msgstr "بارگذاری شده در این نوشته"
 
-#: includes/media.php:50 assets/build/js/acf-input.js:7977
-#: assets/build/js/acf-input.js:8658
+#: includes/media.php:50 assets/build/js/acf-input.js:7971
+#: assets/build/js/acf-input.js:8649
 msgctxt "verb"
 msgid "Update"
 msgstr "بروزرسانی"
@@ -5603,8 +5637,8 @@ msgctxt "verb"
 msgid "Edit"
 msgstr "ویرایش"
 
-#: includes/assets.php:364 assets/build/js/acf-input.js:10264
-#: assets/build/js/acf-input.js:11312
+#: includes/assets.php:364 assets/build/js/acf-input.js:10258
+#: assets/build/js/acf-input.js:11303
 msgid "The changes you made will be lost if you navigate away from this page"
 msgstr "اگر از صفحه جاری خارج شوید ، تغییرات شما ذخیره نخواهند شد"
 
@@ -5693,7 +5727,7 @@ msgstr "اضافه کردن چک باکس اضافی برای انتخاب هم�
 
 #: includes/fields/class-acf-field-checkbox.php:383
 msgid "Save 'custom' values to the field's choices"
-msgstr "ذخیره مقادیر دلخواه در انتخاب های زمینه"
+msgstr "ذخیره مقادیر سفارشی در انتخاب‌های فیلد"
 
 #: includes/fields/class-acf-field-checkbox.php:372
 msgid "Allow 'custom' values to be added"
@@ -5713,103 +5747,103 @@ msgstr "اجازه آدرس های آرشیو"
 
 #: includes/fields/class-acf-field-page_link.php:187
 msgid "Archives"
-msgstr "بایگانی ها"
+msgstr "بایگانی‌ها"
 
 #: includes/fields/class-acf-field-page_link.php:22
 msgid "Page Link"
 msgstr "پیوند (لینک) برگه/نوشته"
 
-#: includes/fields/class-acf-field-taxonomy.php:883
+#: includes/fields/class-acf-field-taxonomy.php:888
 #: includes/locations/class-acf-location-user-form.php:72
 msgid "Add"
 msgstr "افزودن"
 
 #: includes/admin/views/acf-field-group/fields.php:53
-#: includes/fields/class-acf-field-taxonomy.php:853
+#: includes/fields/class-acf-field-taxonomy.php:858
 msgid "Name"
 msgstr "نام"
 
-#: includes/fields/class-acf-field-taxonomy.php:838
+#: includes/fields/class-acf-field-taxonomy.php:843
 msgid "%s added"
 msgstr "%s اضافه شد"
 
-#: includes/fields/class-acf-field-taxonomy.php:802
+#: includes/fields/class-acf-field-taxonomy.php:807
 msgid "%s already exists"
 msgstr "%s هم اکنون موجود است"
 
-#: includes/fields/class-acf-field-taxonomy.php:790
+#: includes/fields/class-acf-field-taxonomy.php:795
 msgid "User unable to add new %s"
 msgstr "کاربر قادر به اضافه کردن %s تازه نیست"
 
-#: includes/fields/class-acf-field-taxonomy.php:670
+#: includes/fields/class-acf-field-taxonomy.php:675
 msgid "Term ID"
 msgstr "شناسه مورد"
 
-#: includes/fields/class-acf-field-taxonomy.php:669
+#: includes/fields/class-acf-field-taxonomy.php:674
 msgid "Term Object"
 msgstr "به صورت آبجکت"
 
-#: includes/fields/class-acf-field-taxonomy.php:654
+#: includes/fields/class-acf-field-taxonomy.php:659
 msgid "Load value from posts terms"
 msgstr "خواندن مقادیر از ترم های نوشته"
 
-#: includes/fields/class-acf-field-taxonomy.php:653
+#: includes/fields/class-acf-field-taxonomy.php:658
 msgid "Load Terms"
 msgstr "خواندن ترم ها"
 
-#: includes/fields/class-acf-field-taxonomy.php:643
+#: includes/fields/class-acf-field-taxonomy.php:648
 msgid "Connect selected terms to the post"
 msgstr "الصاق آیتم های انتخابی به نوشته"
 
-#: includes/fields/class-acf-field-taxonomy.php:642
+#: includes/fields/class-acf-field-taxonomy.php:647
 msgid "Save Terms"
 msgstr "ذخیره ترم ها"
 
-#: includes/fields/class-acf-field-taxonomy.php:632
+#: includes/fields/class-acf-field-taxonomy.php:637
 msgid "Allow new terms to be created whilst editing"
 msgstr "اجازه به ساخت آیتم‌ها(ترم‌ها) جدید در زمان ویرایش"
 
-#: includes/fields/class-acf-field-taxonomy.php:631
+#: includes/fields/class-acf-field-taxonomy.php:636
 msgid "Create Terms"
 msgstr "ساخت آیتم (ترم)"
 
-#: includes/fields/class-acf-field-taxonomy.php:690
+#: includes/fields/class-acf-field-taxonomy.php:695
 msgid "Radio Buttons"
 msgstr "دکمه‌های رادیویی"
 
-#: includes/fields/class-acf-field-taxonomy.php:689
+#: includes/fields/class-acf-field-taxonomy.php:694
 msgid "Single Value"
 msgstr "تک مقدار"
 
-#: includes/fields/class-acf-field-taxonomy.php:687
+#: includes/fields/class-acf-field-taxonomy.php:692
 msgid "Multi Select"
 msgstr "چندین انتخاب"
 
 #: includes/fields/class-acf-field-checkbox.php:22
-#: includes/fields/class-acf-field-taxonomy.php:686
+#: includes/fields/class-acf-field-taxonomy.php:691
 msgid "Checkbox"
 msgstr "چک باکس"
 
-#: includes/fields/class-acf-field-taxonomy.php:685
+#: includes/fields/class-acf-field-taxonomy.php:690
 msgid "Multiple Values"
 msgstr "چندین مقدار"
 
-#: includes/fields/class-acf-field-taxonomy.php:680
+#: includes/fields/class-acf-field-taxonomy.php:685
 msgid "Select the appearance of this field"
-msgstr "ظاهر این زمینه را مشخص کنید"
+msgstr "ظاهر این فیلد را مشخص کنید"
 
-#: includes/fields/class-acf-field-taxonomy.php:679
+#: includes/fields/class-acf-field-taxonomy.php:684
 msgid "Appearance"
 msgstr "ظاهر"
 
-#: includes/fields/class-acf-field-taxonomy.php:621
+#: includes/fields/class-acf-field-taxonomy.php:626
 msgid "Select the taxonomy to be displayed"
 msgstr "طبقه‌بندی را برای برون بری انتخاب کنید"
 
-#: includes/fields/class-acf-field-taxonomy.php:585
+#: includes/fields/class-acf-field-taxonomy.php:590
 msgctxt "No Terms"
 msgid "No %s"
-msgstr ""
+msgstr "بدون %s"
 
 #: includes/fields/class-acf-field-number.php:240
 msgid "Value must be equal to or lower than %d"
@@ -5829,13 +5863,13 @@ msgstr "عدد"
 
 #: includes/fields/class-acf-field-radio.php:254
 msgid "Save 'other' values to the field's choices"
-msgstr "ذخیره مقادیر دیگر در انتخاب های زمینه"
+msgstr "ذخیره مقادیر دیگر در انتخاب‌های فیلد"
 
 #: includes/fields/class-acf-field-radio.php:243
 msgid "Add 'other' choice to allow for custom values"
 msgstr "افزودن گزینه 'دیگر' برای ثبت مقادیر دلخواه"
 
-#: includes/admin/views/global/navigation.php:196
+#: includes/admin/views/global/navigation.php:199
 msgid "Other"
 msgstr "دیگر"
 
@@ -5939,7 +5973,7 @@ msgid "Enter each default value on a new line"
 msgstr "هر مقدار پیش فرض را در یک خط جدید وارد کنید"
 
 #: includes/fields/class-acf-field-select.php:231 includes/media.php:48
-#: assets/build/js/acf-input.js:7836 assets/build/js/acf-input.js:8504
+#: assets/build/js/acf-input.js:7830 assets/build/js/acf-input.js:8495
 msgctxt "verb"
 msgid "Select"
 msgstr "انتخاب"
@@ -6006,7 +6040,7 @@ msgid "One result is available, press enter to select it."
 msgstr "یک نتیجه موجود است برای انتخاب اینتر را فشار دهید."
 
 #: includes/fields/class-acf-field-select.php:22
-#: includes/fields/class-acf-field-taxonomy.php:691
+#: includes/fields/class-acf-field-taxonomy.php:696
 msgctxt "noun"
 msgid "Select"
 msgstr "انتخاب"
@@ -6222,7 +6256,7 @@ msgstr "هر دو (آرایه)"
 #: includes/fields/class-acf-field-radio.php:209
 #: includes/fields/class-acf-field-select.php:372
 msgid "Label"
-msgstr "برچسب زمینه"
+msgstr "برچسب فیلد"
 
 #: includes/fields/class-acf-field-button-group.php:163
 #: includes/fields/class-acf-field-checkbox.php:348
@@ -6280,14 +6314,14 @@ msgstr "گروه دکمه‌ها"
 #: includes/fields/class-acf-field-post_object.php:422
 #: includes/fields/class-acf-field-radio.php:228
 #: includes/fields/class-acf-field-select.php:402
-#: includes/fields/class-acf-field-taxonomy.php:700
+#: includes/fields/class-acf-field-taxonomy.php:705
 #: includes/fields/class-acf-field-user.php:132
 msgid "Allow Null"
-msgstr ""
+msgstr "اجازه دادن به «خالی»"
 
 #: includes/fields/class-acf-field-page_link.php:264
 #: includes/fields/class-acf-field-post_object.php:245
-#: includes/fields/class-acf-field-taxonomy.php:871
+#: includes/fields/class-acf-field-taxonomy.php:876
 msgid "Parent"
 msgstr "مادر"
 
@@ -6319,7 +6353,7 @@ msgstr "فقط بصری"
 msgid "Visual & Text"
 msgstr "بصری و متنی"
 
-#: includes/fields/class-acf-field-icon_picker.php:225
+#: includes/fields/class-acf-field-icon_picker.php:230
 #: includes/fields/class-acf-field-wysiwyg.php:324
 msgid "Tabs"
 msgstr "تب ها"
@@ -6436,11 +6470,11 @@ msgstr "آبجکت یک نوشته"
 
 #: includes/fields/class-acf-field-relationship.php:648
 msgid "Maximum Posts"
-msgstr ""
+msgstr "حداکثر نوشته‌ها"
 
 #: includes/fields/class-acf-field-relationship.php:638
 msgid "Minimum Posts"
-msgstr ""
+msgstr "حداقل نوشته‌ها"
 
 #: includes/admin/views/acf-field-group/options.php:183
 #: includes/admin/views/acf-post-type/advanced-settings.php:29
@@ -6458,7 +6492,7 @@ msgstr "عناصر"
 
 #: includes/fields/class-acf-field-relationship.php:602
 #: includes/fields/class-acf-field-taxonomy.php:20
-#: includes/fields/class-acf-field-taxonomy.php:620
+#: includes/fields/class-acf-field-taxonomy.php:625
 #: includes/locations/class-acf-location-taxonomy.php:22
 msgid "Taxonomy"
 msgstr "طبقه بندی"
@@ -6510,17 +6544,17 @@ msgid "Select post type"
 msgstr "انتحاب نوع نوشته"
 
 #: includes/fields/class-acf-field-relationship.php:78
-#: assets/build/js/acf-input.js:4944 assets/build/js/acf-input.js:5412
+#: assets/build/js/acf-input.js:4938 assets/build/js/acf-input.js:5403
 msgid "No matches found"
 msgstr "مطابقتی یافت نشد"
 
 #: includes/fields/class-acf-field-relationship.php:77
-#: assets/build/js/acf-input.js:4927 assets/build/js/acf-input.js:5391
+#: assets/build/js/acf-input.js:4921 assets/build/js/acf-input.js:5382
 msgid "Loading"
 msgstr "درحال خواندن"
 
 #: includes/fields/class-acf-field-relationship.php:76
-#: assets/build/js/acf-input.js:4832 assets/build/js/acf-input.js:5282
+#: assets/build/js/acf-input.js:4826 assets/build/js/acf-input.js:5273
 msgid "Maximum values reached ( {max} values )"
 msgstr "مقادیر به حداکثر رسیده اند ( {max} آیتم )"
 
@@ -6536,7 +6570,7 @@ msgstr "با کامای انگلیسی جدا کرده یا برای عدم مح
 #: includes/fields/class-acf-field-file.php:276
 #: includes/fields/class-acf-field-image.php:306
 msgid "Allowed File Types"
-msgstr ""
+msgstr "نوع پرونده‌های مجاز"
 
 #: includes/fields/class-acf-field-file.php:264
 #: includes/fields/class-acf-field-image.php:270
@@ -6617,7 +6651,7 @@ msgstr "مقدار برگشتی در نمایش نهایی را تعیین کن�
 #: includes/fields/class-acf-field-file.php:199
 #: includes/fields/class-acf-field-link.php:146
 #: includes/fields/class-acf-field-radio.php:202
-#: includes/fields/class-acf-field-taxonomy.php:664
+#: includes/fields/class-acf-field-taxonomy.php:669
 msgid "Return Value"
 msgstr "مقدار بازگشت"
 
@@ -6644,23 +6678,23 @@ msgid "Edit"
 msgstr "ویرایش"
 
 #: includes/fields/class-acf-field-image.php:63 includes/media.php:55
-#: assets/build/js/acf-input.js:7883 assets/build/js/acf-input.js:8558
+#: assets/build/js/acf-input.js:7877 assets/build/js/acf-input.js:8549
 msgid "All images"
 msgstr "تمام تصاویر"
 
 #: includes/fields/class-acf-field-image.php:62
-#: assets/build/js/acf-input.js:4189 assets/build/js/acf-input.js:4590
+#: assets/build/js/acf-input.js:4183 assets/build/js/acf-input.js:4581
 msgid "Update Image"
 msgstr "بروزرسانی تصویر"
 
 #: includes/fields/class-acf-field-image.php:61
-#: assets/build/js/acf-input.js:4188 assets/build/js/acf-input.js:4589
+#: assets/build/js/acf-input.js:4182 assets/build/js/acf-input.js:4580
 msgid "Edit Image"
 msgstr "ویرایش تصویر"
 
 #: includes/fields/class-acf-field-image.php:60
-#: assets/build/js/acf-input.js:4024 assets/build/js/acf-input.js:4164
-#: assets/build/js/acf-input.js:4415 assets/build/js/acf-input.js:4564
+#: assets/build/js/acf-input.js:4018 assets/build/js/acf-input.js:4158
+#: assets/build/js/acf-input.js:4406 assets/build/js/acf-input.js:4555
 msgid "Select Image"
 msgstr "انتخاب تصویر"
 
@@ -6925,7 +6959,7 @@ msgstr "قالب توسط توابع پوسته نمایش داده خواهد �
 #: includes/fields/class-acf-field-color_picker.php:168
 #: includes/fields/class-acf-field-date_picker.php:200
 #: includes/fields/class-acf-field-date_time_picker.php:188
-#: includes/fields/class-acf-field-icon_picker.php:248
+#: includes/fields/class-acf-field-icon_picker.php:253
 #: includes/fields/class-acf-field-image.php:177
 #: includes/fields/class-acf-field-post_object.php:386
 #: includes/fields/class-acf-field-relationship.php:610
@@ -6968,11 +7002,11 @@ msgstr[0] ""
 
 #: acf.php:467
 msgid "No Fields found in Trash"
-msgstr "گروه زمینه ای در زباله دان یافت نشد"
+msgstr "گروه فیلدی در زباله‌دان یافت نشد"
 
 #: acf.php:466
 msgid "No Fields found"
-msgstr "گروه زمینه ای یافت نشد"
+msgstr "گروه فیلدی یافت نشد"
 
 #: acf.php:465
 msgid "Search Fields"
@@ -7062,7 +7096,7 @@ msgstr "https://www.advancedcustomfields.com"
 #. Plugin Name of the plugin
 #: acf.php acf.php:93
 msgid "Advanced Custom Fields"
-msgstr "زمینه‌های سفارشی پیشرفته"
+msgstr "فیلدهای سفارشی پیشرفته"
 
 #: pro/acf-pro.php:27
 msgid "Advanced Custom Fields PRO"

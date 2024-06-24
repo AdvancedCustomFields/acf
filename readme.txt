@@ -4,7 +4,7 @@ Tags: acf, fields, custom fields, meta, repeater
 Requires at least: 6.0
 Tested up to: 6.5
 Requires PHP: 7.4
-Stable tag: 6.3.1
+Stable tag: 6.3.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,6 +15,8 @@ Advanced Custom Fields (ACF) helps you easily customize WordPress with powerful,
 Advanced Custom Fields (ACF) turns WordPress sites into a fully-fledged content management system by giving you all the tools to do more with your data.
 
 Use the ACF plugin to take full control of your WordPress edit screens, custom field data, and more.
+
+https://www.youtube.com/watch?v=9C6_roqghZQ&rel=0
 
 **Add fields on demand.**
 The ACF field builder allows you to quickly and easily add fields to WP edit screens with only the click of a few buttons! Whether it's something simple like adding an “author” field to a book review post, or something more complex like the structured data needs of an ecommerce site or marketplace, ACF makes adding fields to your content model easy.
@@ -91,6 +93,15 @@ From your WordPress dashboard
 
 
 == Changelog ==
+
+= 6.3.2 =
+*Release Date 24th June 2024*
+
+* Security Fix - ACF now generates different nonces for each AJAX-enabled field, preventing subscribers or front-end form users from querying other field results
+* Security Fix - ACF now correctly verifies permissions for certain editor only actions, preventing subscribers performing those actions
+* Security Fix - Deprecated a legacy private internal field type (output) to prevent it being able to output unsafe HTML
+* Security Fix - Improved handling of some SQL filters and other internal functions to ensure output is always correctly escaped
+* Security Fix - ACF now includes blank index.php files in all folders to prevent directory listing of ACF plugin folders for incorrectly configured web servers
 
 = 6.3.1.2 =
 *Release Date 6th June 2024*
@@ -640,5 +651,3 @@ From your WordPress dashboard
 [View the full changelog](https://www.advancedcustomfields.com/changelog/)
 
 == Upgrade Notice ==
-= 6.2.5 =
-From ACF 6.2.5, the shortcode will now escape unsafe HTML automatically. This may be a breaking change. Please view [our release blog](https://www.advancedcustomfields.com/blog/acf-6-2-5-security-release/) for more information.

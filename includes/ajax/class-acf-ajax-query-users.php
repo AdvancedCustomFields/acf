@@ -12,6 +12,26 @@ if ( ! class_exists( 'ACF_Ajax_Query_Users' ) ) :
 		var $action = 'acf/ajax/query_users';
 
 		/**
+		 * Verifies the request.
+		 *
+		 * @since 6.3.2
+		 *
+		 * @param array $request The request args.
+		 * @return  (bool|WP_Error) True on success, WP_Error on fail.
+		 */
+		public function verify_request( $request ) {
+			if ( empty( $request['nonce'] ) || empty( $request['field_key'] ) ) {
+				return new WP_Error( 'acf_invalid_args', __( 'Invalid request args.', 'acf' ), array( 'status' => 404 ) );
+			}
+
+			if ( ! acf_verify_ajax( $request['nonce'], $request['field_key'] ) ) {
+				return new WP_Error( 'acf_invalid_nonce', __( 'Invalid nonce.', 'acf' ), array( 'status' => 404 ) );
+			}
+
+			return true;
+		}
+
+		/**
 		 * init_request
 		 *
 		 * Called at the beginning of a request to setup properties.

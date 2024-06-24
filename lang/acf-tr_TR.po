@@ -12,7 +12,7 @@
 # This file is distributed under the same license as Advanced Custom Fields.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-06-04T13:24:02+00:00\n"
+"PO-Revision-Date: 2024-06-24T10:56:57+00:00\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "Language: tr_TR\n"
 "MIME-Version: 1.0\n"
@@ -21,1010 +21,1027 @@ msgstr ""
 "X-Generator: gettext\n"
 "Project-Id-Version: Advanced Custom Fields\n"
 
+#: includes/class-acf-site-health.php:643
+msgid "Blocks Using Post Meta"
+msgstr "Yazı metası kullanan bloklar"
+
+#: includes/admin/views/acf-field-group/pro-features.php:25
+#: includes/admin/views/acf-field-group/pro-features.php:27
+#: includes/admin/views/global/header.php:27
+msgid "ACF PRO logo"
+msgstr "ACF PRO logosu"
+
+#: includes/admin/views/acf-field-group/field.php:37
+msgid "ACF PRO Logo"
+msgstr "ACF PRO Logosu"
+
 #. translators: %s - field/param name
-#: includes/fields/class-acf-field-icon_picker.php:671
+#: includes/fields/class-acf-field-icon_picker.php:676
 msgid "%s requires a valid attachment ID when type is set to media_library."
 msgstr ""
+"Tip media_library olarak ayarlandığında %s geçerli bir ek kimliği gerektirir."
 
 #. translators: %s - field name
-#: includes/fields/class-acf-field-icon_picker.php:655
+#: includes/fields/class-acf-field-icon_picker.php:660
 msgid "%s is a required property of acf."
-msgstr ""
+msgstr "%s acf'nin gerekli bir özelliğidir."
 
-#: includes/fields/class-acf-field-icon_picker.php:631
+#: includes/fields/class-acf-field-icon_picker.php:636
 msgid "The value of icon to save."
-msgstr ""
+msgstr "Kaydedilecek simgenin değeri."
 
-#: includes/fields/class-acf-field-icon_picker.php:625
+#: includes/fields/class-acf-field-icon_picker.php:630
 msgid "The type of icon to save."
-msgstr ""
+msgstr "Kaydedilecek simgenin türü."
 
-#: includes/fields/class-acf-field-icon_picker.php:605
+#: includes/fields/class-acf-field-icon_picker.php:610
 msgid "Yes icon"
-msgstr ""
+msgstr "Evet simgesi"
 
-#: includes/fields/class-acf-field-icon_picker.php:604
+#: includes/fields/class-acf-field-icon_picker.php:609
 msgid "Wordpress-alt icon"
 msgstr "WordPress-alt simgesi"
 
-#: includes/fields/class-acf-field-icon_picker.php:603
+#: includes/fields/class-acf-field-icon_picker.php:608
 msgid "Wordpress icon"
 msgstr "WordPress simgesi"
 
-#: includes/fields/class-acf-field-icon_picker.php:602
+#: includes/fields/class-acf-field-icon_picker.php:607
 msgid "Welcome write-blog icon"
 msgstr "Hoş geldiniz yazma-blog simgesi"
 
-#: includes/fields/class-acf-field-icon_picker.php:601
+#: includes/fields/class-acf-field-icon_picker.php:606
 msgid "Welcome widgets-menus icon"
-msgstr ""
+msgstr "Karşılama araçlar-menüler simgesi"
 
-#: includes/fields/class-acf-field-icon_picker.php:600
+#: includes/fields/class-acf-field-icon_picker.php:605
 msgid "Welcome view-site icon"
-msgstr ""
+msgstr "Karşılama siteyi-görüntüle simgesi"
 
-#: includes/fields/class-acf-field-icon_picker.php:599
+#: includes/fields/class-acf-field-icon_picker.php:604
 msgid "Welcome learn-more icon"
-msgstr ""
+msgstr "Karşılama daha-fazla-öğren simgesi"
 
-#: includes/fields/class-acf-field-icon_picker.php:598
+#: includes/fields/class-acf-field-icon_picker.php:603
 msgid "Welcome comments icon"
-msgstr ""
+msgstr "Karşılama yorumlar simgesi"
 
-#: includes/fields/class-acf-field-icon_picker.php:597
+#: includes/fields/class-acf-field-icon_picker.php:602
 msgid "Welcome add-page icon"
-msgstr ""
+msgstr "Karşılama sayfa-ekle simgesi"
 
-#: includes/fields/class-acf-field-icon_picker.php:596
+#: includes/fields/class-acf-field-icon_picker.php:601
 msgid "Warning icon"
 msgstr "Uyarı simgesi"
 
-#: includes/fields/class-acf-field-icon_picker.php:595
+#: includes/fields/class-acf-field-icon_picker.php:600
 msgid "Visibility icon"
 msgstr "Görünürlük simgesi"
 
-#: includes/fields/class-acf-field-icon_picker.php:594
+#: includes/fields/class-acf-field-icon_picker.php:599
 msgid "Video-alt3 icon"
 msgstr "Video-alt3 simgesi"
 
-#: includes/fields/class-acf-field-icon_picker.php:593
+#: includes/fields/class-acf-field-icon_picker.php:598
 msgid "Video-alt2 icon"
 msgstr "Video-alt2 simgesi"
 
-#: includes/fields/class-acf-field-icon_picker.php:592
+#: includes/fields/class-acf-field-icon_picker.php:597
 msgid "Video-alt icon"
 msgstr "Video-alt simgesi"
 
-#: includes/fields/class-acf-field-icon_picker.php:591
+#: includes/fields/class-acf-field-icon_picker.php:596
 msgid "Vault icon"
 msgstr "Kasa simgesi"
 
-#: includes/fields/class-acf-field-icon_picker.php:590
+#: includes/fields/class-acf-field-icon_picker.php:595
 msgid "Upload icon"
 msgstr "Yükleme simgesi"
 
-#: includes/fields/class-acf-field-icon_picker.php:589
+#: includes/fields/class-acf-field-icon_picker.php:594
 msgid "Update icon"
 msgstr "Güncelleme simgesi"
 
-#: includes/fields/class-acf-field-icon_picker.php:588
+#: includes/fields/class-acf-field-icon_picker.php:593
 msgid "Unlock icon"
 msgstr "Kilit açma simgesi"
 
-#: includes/fields/class-acf-field-icon_picker.php:587
+#: includes/fields/class-acf-field-icon_picker.php:592
 msgid "Universal access alternative icon"
 msgstr "Evrensel erişim alternatif simgesi"
 
-#: includes/fields/class-acf-field-icon_picker.php:586
+#: includes/fields/class-acf-field-icon_picker.php:591
 msgid "Universal access icon"
 msgstr "Evrensel erişim simgesi"
 
-#: includes/fields/class-acf-field-icon_picker.php:585
+#: includes/fields/class-acf-field-icon_picker.php:590
 msgid "Undo icon"
 msgstr "Geri al simgesi"
 
-#: includes/fields/class-acf-field-icon_picker.php:584
+#: includes/fields/class-acf-field-icon_picker.php:589
 msgid "Twitter icon"
 msgstr "Twitter simgesi"
 
-#: includes/fields/class-acf-field-icon_picker.php:583
+#: includes/fields/class-acf-field-icon_picker.php:588
 msgid "Trash icon"
 msgstr "Çöp kutusu simgesi"
 
-#: includes/fields/class-acf-field-icon_picker.php:582
+#: includes/fields/class-acf-field-icon_picker.php:587
 msgid "Translation icon"
 msgstr "Çeviri simgesi"
 
-#: includes/fields/class-acf-field-icon_picker.php:581
+#: includes/fields/class-acf-field-icon_picker.php:586
 msgid "Tickets alternative icon"
 msgstr "Bilet alternatif simge"
 
-#: includes/fields/class-acf-field-icon_picker.php:580
+#: includes/fields/class-acf-field-icon_picker.php:585
 msgid "Tickets icon"
 msgstr "Bilet simgesi"
 
-#: includes/fields/class-acf-field-icon_picker.php:579
+#: includes/fields/class-acf-field-icon_picker.php:584
 msgid "Thumbs-up icon"
 msgstr "Başparmak yukarı simgesi"
 
-#: includes/fields/class-acf-field-icon_picker.php:578
+#: includes/fields/class-acf-field-icon_picker.php:583
 msgid "Thumbs-down icon"
 msgstr "Başparmak aşağı simgesi"
 
-#: includes/fields/class-acf-field-icon_picker.php:577
+#: includes/fields/class-acf-field-icon_picker.php:582
 msgid "Text icon"
 msgstr "Metin simgesi"
 
-#: includes/fields/class-acf-field-icon_picker.php:576
+#: includes/fields/class-acf-field-icon_picker.php:581
 msgid "Testimonial icon"
 msgstr "Referans simgesi"
 
-#: includes/fields/class-acf-field-icon_picker.php:575
+#: includes/fields/class-acf-field-icon_picker.php:580
 msgid "Tagcloud icon"
 msgstr "Etiket bulutu simgesi"
 
-#: includes/fields/class-acf-field-icon_picker.php:574
+#: includes/fields/class-acf-field-icon_picker.php:579
 msgid "Tag icon"
 msgstr "Etiket simgesi"
 
-#: includes/fields/class-acf-field-icon_picker.php:573
+#: includes/fields/class-acf-field-icon_picker.php:578
 msgid "Tablet icon"
 msgstr "Tablet simgesi"
 
-#: includes/fields/class-acf-field-icon_picker.php:572
+#: includes/fields/class-acf-field-icon_picker.php:577
 msgid "Store icon"
 msgstr "Mağaza simgesi"
 
-#: includes/fields/class-acf-field-icon_picker.php:571
+#: includes/fields/class-acf-field-icon_picker.php:576
 msgid "Sticky icon"
 msgstr "Yapışkan simge"
 
-#: includes/fields/class-acf-field-icon_picker.php:570
+#: includes/fields/class-acf-field-icon_picker.php:575
 msgid "Star-half icon"
 msgstr "Yıldız-yarım simgesi"
 
-#: includes/fields/class-acf-field-icon_picker.php:569
+#: includes/fields/class-acf-field-icon_picker.php:574
 msgid "Star-filled icon"
 msgstr "Yıldız dolu simge"
 
-#: includes/fields/class-acf-field-icon_picker.php:568
+#: includes/fields/class-acf-field-icon_picker.php:573
 msgid "Star-empty icon"
 msgstr "Yıldız-boş simgesi"
 
-#: includes/fields/class-acf-field-icon_picker.php:567
+#: includes/fields/class-acf-field-icon_picker.php:572
 msgid "Sos icon"
 msgstr "Sos simgesi"
 
-#: includes/fields/class-acf-field-icon_picker.php:566
+#: includes/fields/class-acf-field-icon_picker.php:571
 msgid "Sort icon"
 msgstr "Sıralama simgesi"
 
-#: includes/fields/class-acf-field-icon_picker.php:565
+#: includes/fields/class-acf-field-icon_picker.php:570
 msgid "Smiley icon"
 msgstr "Gülen yüz simgesi"
 
-#: includes/fields/class-acf-field-icon_picker.php:564
+#: includes/fields/class-acf-field-icon_picker.php:569
 msgid "Smartphone icon"
 msgstr "Akıllı telefon simgesi"
 
-#: includes/fields/class-acf-field-icon_picker.php:563
+#: includes/fields/class-acf-field-icon_picker.php:568
 msgid "Slides icon"
 msgstr "Slaytlar simgesi"
 
-#: includes/fields/class-acf-field-icon_picker.php:562
+#: includes/fields/class-acf-field-icon_picker.php:567
 msgid "Shield-alt icon"
 msgstr "Kalkan-alt simgesi"
 
-#: includes/fields/class-acf-field-icon_picker.php:561
+#: includes/fields/class-acf-field-icon_picker.php:566
 msgid "Shield icon"
 msgstr "Kalkan Simgesi"
 
-#: includes/fields/class-acf-field-icon_picker.php:560
+#: includes/fields/class-acf-field-icon_picker.php:565
 msgid "Share-alt2 icon"
 msgstr "Paylaş-alt2 simgesi"
 
-#: includes/fields/class-acf-field-icon_picker.php:559
+#: includes/fields/class-acf-field-icon_picker.php:564
 msgid "Share-alt icon"
 msgstr "Paylaş-alt simgesi"
 
-#: includes/fields/class-acf-field-icon_picker.php:558
+#: includes/fields/class-acf-field-icon_picker.php:563
 msgid "Share icon"
 msgstr "Paylaş simgesi"
 
-#: includes/fields/class-acf-field-icon_picker.php:557
+#: includes/fields/class-acf-field-icon_picker.php:562
 msgid "Search icon"
 msgstr "Arama simgesi"
 
-#: includes/fields/class-acf-field-icon_picker.php:556
+#: includes/fields/class-acf-field-icon_picker.php:561
 msgid "Screenoptions icon"
-msgstr ""
+msgstr "Ekran ayarları simgesi"
+
+#: includes/fields/class-acf-field-icon_picker.php:560
+msgid "Schedule icon"
+msgstr "Zamanlama simgesi"
+
+#: includes/fields/class-acf-field-icon_picker.php:559
+msgid "Rss icon"
+msgstr "Rss simgesi"
+
+#: includes/fields/class-acf-field-icon_picker.php:558
+msgid "Redo icon"
+msgstr "İleri al simgesi"
+
+#: includes/fields/class-acf-field-icon_picker.php:557
+msgid "Randomize icon"
+msgstr "Rastgele simgesi"
+
+#: includes/fields/class-acf-field-icon_picker.php:556
+msgid "Products icon"
+msgstr "Ürünler simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:555
-msgid "Schedule icon"
-msgstr ""
+msgid "Pressthis icon"
+msgstr "Pressthis simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:554
-msgid "Rss icon"
-msgstr ""
+msgid "Post-status icon"
+msgstr "Yazı-durumu simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:553
-msgid "Redo icon"
-msgstr ""
+msgid "Portfolio icon"
+msgstr "Portföy simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:552
-msgid "Randomize icon"
-msgstr ""
+msgid "Plus-alt icon"
+msgstr "Artı-alt simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:551
-msgid "Products icon"
-msgstr ""
+msgid "Plus icon"
+msgstr "Artı simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:550
-msgid "Pressthis icon"
-msgstr ""
+msgid "Playlist-video icon"
+msgstr "Oynatma listesi-video simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:549
-msgid "Post-status icon"
-msgstr ""
+msgid "Playlist-audio icon"
+msgstr "Oynatma listesi-ses simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:548
-msgid "Portfolio icon"
-msgstr ""
+msgid "Phone icon"
+msgstr "Telefon simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:547
-msgid "Plus-alt icon"
-msgstr ""
+msgid "Performance icon"
+msgstr "Performans simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:546
-msgid "Plus icon"
-msgstr ""
+msgid "Paperclip icon"
+msgstr "Ataç simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:545
-msgid "Playlist-video icon"
-msgstr ""
+msgid "Palmtree icon"
+msgstr "Palmiye-ağacı simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:544
-msgid "Playlist-audio icon"
-msgstr ""
+msgid "No alternative icon"
+msgstr "Alternatif yok simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:543
-msgid "Phone icon"
-msgstr ""
+msgid "No icon"
+msgstr "Hayır simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:542
-msgid "Performance icon"
-msgstr ""
+msgid "Networking icon"
+msgstr "Ağ simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:541
-msgid "Paperclip icon"
-msgstr ""
+msgid "Nametag icon"
+msgstr "İsim etiketi simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:540
-msgid "Palmtree icon"
-msgstr ""
+msgid "Move icon"
+msgstr "Taşıma simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:539
-msgid "No alternative icon"
-msgstr ""
+msgid "Money icon"
+msgstr "Para simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:538
-msgid "No icon"
-msgstr ""
+msgid "Minus icon"
+msgstr "Eksi simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:537
-msgid "Networking icon"
-msgstr ""
+msgid "Migrate icon"
+msgstr "Aktarma simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:536
-msgid "Nametag icon"
-msgstr ""
+msgid "Microphone icon"
+msgstr "Mikrofon simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:535
-msgid "Move icon"
-msgstr ""
+msgid "Menu icon"
+msgstr "Menü simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:534
-msgid "Money icon"
-msgstr ""
+msgid "Megaphone icon"
+msgstr "Megafon simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:533
-msgid "Minus icon"
-msgstr ""
+msgid "Media video icon"
+msgstr "Ortam video simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:532
-msgid "Migrate icon"
-msgstr ""
+msgid "Media text icon"
+msgstr "Ortam metin simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:531
-msgid "Microphone icon"
-msgstr ""
+msgid "Media spreadsheet icon"
+msgstr "Ortam elektronik tablo simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:530
-msgid "Menu icon"
-msgstr ""
+msgid "Media interactive icon"
+msgstr "Ortam etkileşim simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:529
-msgid "Megaphone icon"
-msgstr ""
+msgid "Media document icon"
+msgstr "Ortam belge simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:528
-msgid "Media video icon"
-msgstr ""
+msgid "Media default icon"
+msgstr "Ortam varsayılan simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:527
-msgid "Media text icon"
-msgstr ""
+msgid "Media code icon"
+msgstr "Ortam kod simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:526
-msgid "Media spreadsheet icon"
-msgstr ""
+msgid "Media audio icon"
+msgstr "Ortam ses simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:525
-msgid "Media interactive icon"
-msgstr ""
+msgid "Media archive icon"
+msgstr "Ortam arşiv simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:524
-msgid "Media document icon"
-msgstr ""
-
-#: includes/fields/class-acf-field-icon_picker.php:523
-msgid "Media default icon"
-msgstr ""
-
-#: includes/fields/class-acf-field-icon_picker.php:522
-msgid "Media code icon"
-msgstr ""
-
-#: includes/fields/class-acf-field-icon_picker.php:521
-msgid "Media audio icon"
-msgstr ""
-
-#: includes/fields/class-acf-field-icon_picker.php:520
-msgid "Media archive icon"
-msgstr ""
-
-#: includes/fields/class-acf-field-icon_picker.php:519
 msgid "Marker icon"
 msgstr "İşaret simgesi"
 
-#: includes/fields/class-acf-field-icon_picker.php:518
+#: includes/fields/class-acf-field-icon_picker.php:523
 msgid "Lock icon"
-msgstr ""
+msgstr "Kilit simgesi"
+
+#: includes/fields/class-acf-field-icon_picker.php:522
+msgid "Location-alt icon"
+msgstr "Konum-alt simgesi"
+
+#: includes/fields/class-acf-field-icon_picker.php:521
+msgid "Location icon"
+msgstr "Konum simgesi"
+
+#: includes/fields/class-acf-field-icon_picker.php:520
+msgid "List-view icon"
+msgstr "Liste-görünümü simgesi"
+
+#: includes/fields/class-acf-field-icon_picker.php:519
+msgid "Lightbulb icon"
+msgstr "Ampul simgesi"
+
+#: includes/fields/class-acf-field-icon_picker.php:518
+msgid "Leftright icon"
+msgstr "Sol-sağ simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:517
-msgid "Location-alt icon"
-msgstr ""
+msgid "Layout icon"
+msgstr "Düzen simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:516
-msgid "Location icon"
-msgstr ""
+msgid "Laptop icon"
+msgstr "Dizüstü bilgisayar simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:515
-msgid "List-view icon"
-msgstr ""
+msgid "Info icon"
+msgstr "Bilgi simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:514
-msgid "Lightbulb icon"
-msgstr ""
+msgid "Index-card icon"
+msgstr "Dizin-kartı simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:513
-msgid "Leftright icon"
-msgstr ""
+msgid "Images-alt2 icon"
+msgstr "Görseller-alt2 simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:512
-msgid "Layout icon"
-msgstr ""
+msgid "Images-alt icon"
+msgstr "Görseller-alt simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:511
-msgid "Laptop icon"
-msgstr ""
+msgid "Image rotate-right icon"
+msgstr "Görsel döndürme-sağ simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:510
-msgid "Info icon"
-msgstr ""
+msgid "Image rotate-left icon"
+msgstr "Görsel döndürme-sol simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:509
-msgid "Index-card icon"
-msgstr ""
+msgid "Image rotate icon"
+msgstr "Görsel döndürme simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:508
-msgid "Images-alt2 icon"
-msgstr ""
+msgid "Image flip-vertical icon"
+msgstr "Görsel çevirme-dikey simge"
 
 #: includes/fields/class-acf-field-icon_picker.php:507
-msgid "Images-alt icon"
-msgstr ""
+msgid "Image flip-horizontal icon"
+msgstr "Görsel çevirme-yatay simge"
 
 #: includes/fields/class-acf-field-icon_picker.php:506
-msgid "Image rotate-right icon"
-msgstr ""
+msgid "Image filter icon"
+msgstr "Görsel filtresi simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:505
-msgid "Image rotate-left icon"
-msgstr ""
+msgid "Image crop icon"
+msgstr "Görsel kırpma simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:504
-msgid "Image rotate icon"
-msgstr ""
+msgid "Id-alt icon"
+msgstr "Kimlik-alt simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:503
-msgid "Image flip-vertical icon"
-msgstr ""
+msgid "Id icon"
+msgstr "Kimlik simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:502
-msgid "Image flip-horizontal icon"
-msgstr ""
+msgid "Hidden icon"
+msgstr "Gizli simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:501
-msgid "Image filter icon"
-msgstr ""
+msgid "Heart icon"
+msgstr "Kalp Simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:500
-msgid "Image crop icon"
-msgstr ""
+msgid "Hammer icon"
+msgstr "Çekiç simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:499
-msgid "Id-alt icon"
-msgstr ""
+msgid "Groups icon"
+msgstr "Gruplar simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:498
-msgid "Id icon"
-msgstr ""
+msgid "Grid-view icon"
+msgstr "Izgara-görünümü simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:497
-msgid "Hidden icon"
-msgstr ""
+msgid "Googleplus icon"
+msgstr "Googleplus simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:496
-msgid "Heart icon"
-msgstr ""
+msgid "Forms icon"
+msgstr "Formlar simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:495
-msgid "Hammer icon"
-msgstr ""
+msgid "Format video icon"
+msgstr "Biçim video simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:494
-msgid "Groups icon"
-msgstr ""
+msgid "Format status icon"
+msgstr "Biçim durum simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:493
-msgid "Grid-view icon"
-msgstr ""
+msgid "Format quote icon"
+msgstr "Biçim alıntı simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:492
-msgid "Googleplus icon"
-msgstr ""
+msgid "Format image icon"
+msgstr "Biçim görsel simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:491
-msgid "Forms icon"
-msgstr ""
+msgid "Format gallery icon"
+msgstr "Biçim galeri simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:490
-msgid "Format video icon"
-msgstr ""
+msgid "Format chat icon"
+msgstr "Biçim sohbet simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:489
-msgid "Format status icon"
-msgstr ""
+msgid "Format audio icon"
+msgstr "Biçim ses simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:488
-msgid "Format quote icon"
-msgstr ""
+msgid "Format aside icon"
+msgstr "Biçim kenar simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:487
-msgid "Format image icon"
-msgstr ""
+msgid "Flag icon"
+msgstr "Bayrak simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:486
-msgid "Format gallery icon"
-msgstr ""
+msgid "Filter icon"
+msgstr "Filtre simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:485
-msgid "Format chat icon"
-msgstr ""
+msgid "Feedback icon"
+msgstr "Geri bildirim simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:484
-msgid "Format audio icon"
-msgstr ""
+msgid "Facebook alt icon"
+msgstr "Facebook alt simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:483
-msgid "Format aside icon"
-msgstr ""
-
-#: includes/fields/class-acf-field-icon_picker.php:482
-msgid "Flag icon"
-msgstr ""
-
-#: includes/fields/class-acf-field-icon_picker.php:481
-msgid "Filter icon"
-msgstr ""
-
-#: includes/fields/class-acf-field-icon_picker.php:480
-msgid "Feedback icon"
-msgstr ""
-
-#: includes/fields/class-acf-field-icon_picker.php:479
-msgid "Facebook alt icon"
-msgstr ""
-
-#: includes/fields/class-acf-field-icon_picker.php:478
 msgid "Facebook icon"
 msgstr "Facebook simgesi"
 
-#: includes/fields/class-acf-field-icon_picker.php:477
+#: includes/fields/class-acf-field-icon_picker.php:482
 msgid "External icon"
-msgstr ""
+msgstr "Harici simgesi"
+
+#: includes/fields/class-acf-field-icon_picker.php:481
+msgid "Exerpt-view icon"
+msgstr "Alıntı-görüntüleme simgesi"
+
+#: includes/fields/class-acf-field-icon_picker.php:480
+msgid "Email alt icon"
+msgstr "E-posta alt simgesi"
+
+#: includes/fields/class-acf-field-icon_picker.php:479
+msgid "Email icon"
+msgstr "E-posta simgesi"
+
+#: includes/fields/class-acf-field-icon_picker.php:478
+msgid "Video icon"
+msgstr "Video simgesi"
+
+#: includes/fields/class-acf-field-icon_picker.php:477
+msgid "Unlink icon"
+msgstr "Bağlantıyı kaldır simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:476
-msgid "Exerpt-view icon"
-msgstr ""
+msgid "Underline icon"
+msgstr "Altı çizili simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:475
-msgid "Email alt icon"
-msgstr ""
+msgid "Ul icon"
+msgstr "Ul simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:474
-msgid "Email icon"
-msgstr ""
+msgid "Textcolor icon"
+msgstr "Metin rengi simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:473
-msgid "Video icon"
-msgstr ""
+msgid "Table icon"
+msgstr "Tablo simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:472
-msgid "Unlink icon"
-msgstr ""
+msgid "Strikethrough icon"
+msgstr "Üstü çizili simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:471
-msgid "Underline icon"
-msgstr ""
+msgid "Spellcheck icon"
+msgstr "Yazım denetimi simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:470
-msgid "Ul icon"
-msgstr ""
+msgid "Rtl icon"
+msgstr "Rtl simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:469
-msgid "Textcolor icon"
-msgstr ""
+msgid "Removeformatting icon"
+msgstr "Biçimlendirme kaldır simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:468
-msgid "Table icon"
-msgstr ""
+msgid "Quote icon"
+msgstr "Alıntı simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:467
-msgid "Strikethrough icon"
-msgstr ""
+msgid "Paste word icon"
+msgstr "Kelime yapıştır simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:466
-msgid "Spellcheck icon"
-msgstr ""
+msgid "Paste text icon"
+msgstr "Metin yapıştır simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:465
-msgid "Rtl icon"
-msgstr ""
+msgid "Paragraph icon"
+msgstr "Paragraf simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:464
-msgid "Removeformatting icon"
-msgstr ""
+msgid "Outdent icon"
+msgstr "Dışarı it simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:463
-msgid "Quote icon"
-msgstr ""
+msgid "Ol icon"
+msgstr "Ol simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:462
-msgid "Paste word icon"
-msgstr ""
+msgid "Kitchensink icon"
+msgstr "Mutfak lavabosu simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:461
-msgid "Paste text icon"
-msgstr ""
+msgid "Justify icon"
+msgstr "İki yana yasla simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:460
-msgid "Paragraph icon"
-msgstr ""
+msgid "Italic icon"
+msgstr "Eğik simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:459
-msgid "Outdent icon"
-msgstr ""
+msgid "Insertmore icon"
+msgstr "Daha fazla ekle simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:458
-msgid "Ol icon"
-msgstr ""
+msgid "Indent icon"
+msgstr "Girinti simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:457
-msgid "Kitchensink icon"
-msgstr ""
-
-#: includes/fields/class-acf-field-icon_picker.php:456
-msgid "Justify icon"
-msgstr ""
-
-#: includes/fields/class-acf-field-icon_picker.php:455
-msgid "Italic icon"
-msgstr ""
-
-#: includes/fields/class-acf-field-icon_picker.php:454
-msgid "Insertmore icon"
-msgstr ""
-
-#: includes/fields/class-acf-field-icon_picker.php:453
-msgid "Indent icon"
-msgstr ""
-
-#: includes/fields/class-acf-field-icon_picker.php:452
 msgid "Help icon"
 msgstr "Yardım simgesi"
 
-#: includes/fields/class-acf-field-icon_picker.php:451
+#: includes/fields/class-acf-field-icon_picker.php:456
 msgid "Expand icon"
-msgstr ""
+msgstr "Genişletme simgesi"
+
+#: includes/fields/class-acf-field-icon_picker.php:455
+msgid "Customchar icon"
+msgstr "Özel karakter simgesi"
+
+#: includes/fields/class-acf-field-icon_picker.php:454
+msgid "Contract icon"
+msgstr "Sözleşme simgesi"
+
+#: includes/fields/class-acf-field-icon_picker.php:453
+msgid "Code icon"
+msgstr "Kod simgesi"
+
+#: includes/fields/class-acf-field-icon_picker.php:452
+msgid "Break icon"
+msgstr "Mola simgesi"
+
+#: includes/fields/class-acf-field-icon_picker.php:451
+msgid "Bold icon"
+msgstr "Kalın simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:450
-msgid "Customchar icon"
-msgstr ""
+msgid "alignright icon"
+msgstr "sağa hizala simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:449
-msgid "Contract icon"
-msgstr ""
+msgid "alignleft icon"
+msgstr "sola hizala simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:448
-msgid "Code icon"
-msgstr ""
+msgid "aligncenter icon"
+msgstr "ortala simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:447
-msgid "Break icon"
-msgstr ""
+msgid "Edit icon"
+msgstr "Düzenle simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:446
-msgid "Bold icon"
-msgstr ""
+msgid "Download icon"
+msgstr "İndirme simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:445
-msgid "alignright icon"
-msgstr ""
+msgid "Dismiss icon"
+msgstr "Kapat simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:444
-msgid "alignleft icon"
-msgstr ""
+msgid "Desktop icon"
+msgstr "Masaüstü simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:443
-msgid "aligncenter icon"
-msgstr ""
+msgid "Dashboard icon"
+msgstr "Pano simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:442
-msgid "Edit icon"
-msgstr ""
+msgid "Controls volumeon icon"
+msgstr "Kontroller ses açık simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:441
-msgid "Download icon"
-msgstr ""
+msgid "Controls volumeoff icon"
+msgstr "Kontroller ses kapalı simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:440
-msgid "Dismiss icon"
-msgstr ""
+msgid "Controls skipforward icon"
+msgstr "Kontroller ileri atla simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:439
-msgid "Desktop icon"
-msgstr ""
+msgid "Controls skipback icon"
+msgstr "Kontroller geri atla simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:438
-msgid "Dashboard icon"
-msgstr ""
+msgid "Controls repeat icon"
+msgstr "Kontroller tekrarla simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:437
-msgid "Controls volumeon icon"
-msgstr ""
+msgid "Controls play icon"
+msgstr "Kontroller oynat simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:436
-msgid "Controls volumeoff icon"
-msgstr ""
+msgid "Controls pause icon"
+msgstr "Kontroller durdur simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:435
-msgid "Controls skipforward icon"
-msgstr ""
+msgid "Controls forward icon"
+msgstr "Kontroller ileri simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:434
-msgid "Controls skipback icon"
-msgstr ""
+msgid "Controls back icon"
+msgstr "Kontroller geri simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:433
-msgid "Controls repeat icon"
-msgstr ""
+msgid "Cloud icon"
+msgstr "Bulut simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:432
-msgid "Controls play icon"
-msgstr ""
+msgid "Clock icon"
+msgstr "Saat simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:431
-msgid "Controls pause icon"
-msgstr ""
+msgid "Clipboard icon"
+msgstr "Pano simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:430
-msgid "Controls forward icon"
-msgstr ""
+msgid "Chart pie icon"
+msgstr "Pasta grafiği simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:429
-msgid "Controls back icon"
-msgstr ""
+msgid "Chart line icon"
+msgstr "Grafik çizgisi simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:428
-msgid "Cloud icon"
-msgstr ""
+msgid "Chart bar icon"
+msgstr "Grafik çubuğu simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:427
-msgid "Clock icon"
-msgstr ""
+msgid "Chart area icon"
+msgstr "Grafik alanı simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:426
-msgid "Clipboard icon"
-msgstr ""
+msgid "Category icon"
+msgstr "Kategori simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:425
-msgid "Chart pie icon"
-msgstr ""
+msgid "Cart icon"
+msgstr "Sepet simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:424
-msgid "Chart line icon"
-msgstr ""
+msgid "Carrot icon"
+msgstr "Havuç simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:423
-msgid "Chart bar icon"
-msgstr ""
+msgid "Camera icon"
+msgstr "Kamera simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:422
-msgid "Chart area icon"
-msgstr ""
+msgid "Calendar alt icon"
+msgstr "Takvim alt simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:421
-msgid "Category icon"
-msgstr ""
+msgid "Calendar icon"
+msgstr "Takvim simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:420
-msgid "Cart icon"
-msgstr ""
+msgid "Businessman icon"
+msgstr "İş adamı simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:419
-msgid "Carrot icon"
-msgstr ""
+msgid "Building icon"
+msgstr "Bina simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:418
-msgid "Camera icon"
-msgstr ""
+msgid "Book alt icon"
+msgstr "Kitap alt simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:417
-msgid "Calendar alt icon"
-msgstr ""
+msgid "Book icon"
+msgstr "Kitap simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:416
-msgid "Calendar icon"
-msgstr ""
+msgid "Backup icon"
+msgstr "Yedekleme simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:415
-msgid "Businessman icon"
-msgstr ""
+msgid "Awards icon"
+msgstr "Ödül simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:414
-msgid "Building icon"
-msgstr ""
+msgid "Art icon"
+msgstr "Sanat simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:413
-msgid "Book alt icon"
-msgstr ""
+msgid "Arrow up-alt2 icon"
+msgstr "Yukarı ok-alt2 simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:412
-msgid "Book icon"
-msgstr ""
+msgid "Arrow up-alt icon"
+msgstr "Yukarı ok-alt simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:411
-msgid "Backup icon"
-msgstr ""
+msgid "Arrow up icon"
+msgstr "Yukarı ok simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:410
-msgid "Awards icon"
-msgstr ""
+msgid "Arrow right-alt2 icon"
+msgstr "Sağ ok-alt2 simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:409
-msgid "Art icon"
-msgstr ""
+msgid "Arrow right-alt icon"
+msgstr "Sağ ok-alt simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:408
-msgid "Arrow up-alt2 icon"
-msgstr ""
+msgid "Arrow right icon"
+msgstr "Sağ ok simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:407
-msgid "Arrow up-alt icon"
-msgstr ""
+msgid "Arrow left-alt2 icon"
+msgstr "Sol ok-alt2 simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:406
-msgid "Arrow up icon"
-msgstr ""
+msgid "Arrow left-alt icon"
+msgstr "Sol ok-alt simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:405
-msgid "Arrow right-alt2 icon"
-msgstr ""
+msgid "Arrow left icon"
+msgstr "Sol ok simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:404
-msgid "Arrow right-alt icon"
-msgstr ""
+msgid "Arrow down-alt2 icon"
+msgstr "Aşağı ok-alt2 simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:403
-msgid "Arrow right icon"
-msgstr ""
+msgid "Arrow down-alt icon"
+msgstr "Aşağı ok-alt simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:402
-msgid "Arrow left-alt2 icon"
-msgstr ""
+msgid "Arrow down icon"
+msgstr "Aşağı ok simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:401
-msgid "Arrow left-alt icon"
-msgstr ""
+msgid "Archive icon"
+msgstr "Arşiv simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:400
-msgid "Arrow left icon"
-msgstr ""
+msgid "Analytics icon"
+msgstr "Analitik simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:399
-msgid "Arrow down-alt2 icon"
-msgstr ""
+msgid "Align-right icon"
+msgstr "Hizalama-sağ simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:398
-msgid "Arrow down-alt icon"
-msgstr ""
+msgid "Align-none icon"
+msgstr "Hizalama-yok simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:397
-msgid "Arrow down icon"
-msgstr ""
+msgid "Align-left icon"
+msgstr "Hizalama-sol simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:396
-msgid "Archive icon"
-msgstr ""
+msgid "Align-center icon"
+msgstr "Hizalama-ortala simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:395
-msgid "Analytics icon"
-msgstr ""
+msgid "Album icon"
+msgstr "Albüm simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:394
-msgid "Align-right icon"
-msgstr ""
+msgid "Users icon"
+msgstr "Kullanıcı simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:393
-msgid "Align-none icon"
-msgstr ""
+msgid "Tools icon"
+msgstr "Araçlar simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:392
-msgid "Align-left icon"
-msgstr ""
+msgid "Site icon"
+msgstr "Site simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:391
-msgid "Align-center icon"
-msgstr ""
+msgid "Settings icon"
+msgstr "Ayarlar simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:390
-msgid "Album icon"
-msgstr ""
+msgid "Post icon"
+msgstr "Yazı simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:389
-msgid "Users icon"
-msgstr ""
+msgid "Plugins icon"
+msgstr "Eklentiler simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:388
-msgid "Tools icon"
-msgstr ""
+msgid "Page icon"
+msgstr "Sayfa simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:387
-msgid "Site icon"
-msgstr ""
+msgid "Network icon"
+msgstr "Ağ simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:386
-msgid "Settings icon"
-msgstr ""
+msgid "Multisite icon"
+msgstr "Çoklu site simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:385
-msgid "Post icon"
-msgstr ""
+msgid "Media icon"
+msgstr "Ortam simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:384
-msgid "Plugins icon"
-msgstr ""
+msgid "Links icon"
+msgstr "Bağlantılar simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:383
-msgid "Page icon"
-msgstr ""
+msgid "Home icon"
+msgstr "Ana sayfa simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:382
-msgid "Network icon"
-msgstr ""
+msgid "Customizer icon"
+msgstr "Özelleştirici simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:381
-msgid "Multisite icon"
-msgstr ""
+msgid "Comments icon"
+msgstr "Yorumlar simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:380
-msgid "Media icon"
-msgstr ""
+msgid "Collapse icon"
+msgstr "Daraltma simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:379
-msgid "Links icon"
-msgstr ""
+msgid "Appearance icon"
+msgstr "Görünüm simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:378
-msgid "Home icon"
-msgstr ""
-
-#: includes/fields/class-acf-field-icon_picker.php:377
-msgid "Customizer icon"
-msgstr ""
-
-#: includes/fields/class-acf-field-icon_picker.php:376
-msgid "Comments icon"
-msgstr ""
-
-#: includes/fields/class-acf-field-icon_picker.php:375
-msgid "Collapse icon"
-msgstr ""
-
-#: includes/fields/class-acf-field-icon_picker.php:374
-msgid "Appearance icon"
-msgstr ""
-
-#: includes/fields/class-acf-field-icon_picker.php:373
 msgid "Generic icon"
-msgstr ""
+msgstr "Jenerik simgesi"
+
+#: includes/fields/class-acf-field-icon_picker.php:314
+msgid "Icon picker requires a value."
+msgstr "Simge seçici bir değer gerektirir."
 
 #: includes/fields/class-acf-field-icon_picker.php:309
-msgid "Icon picker requires a value."
-msgstr ""
-
-#: includes/fields/class-acf-field-icon_picker.php:304
 msgid "Icon picker requires an icon type."
-msgstr ""
+msgstr "Simge seçici bir simge türü gerektirir."
 
-#: includes/fields/class-acf-field-icon_picker.php:273
+#: includes/fields/class-acf-field-icon_picker.php:278
 msgid ""
 "The available icons matching your search query have been updated in the icon "
 "picker below."
 msgstr ""
+"Arama sorgunuzla eşleşen mevcut simgeler aşağıdaki simge seçicide "
+"güncellenmiştir."
 
-#: includes/fields/class-acf-field-icon_picker.php:272
+#: includes/fields/class-acf-field-icon_picker.php:277
 msgid "No results found for that search term"
-msgstr ""
+msgstr "Bu arama terimi için sonuç bulunamadı"
 
-#: includes/fields/class-acf-field-icon_picker.php:254
+#: includes/fields/class-acf-field-icon_picker.php:259
 msgid "Array"
-msgstr ""
+msgstr "Dizi"
 
-#: includes/fields/class-acf-field-icon_picker.php:253
+#: includes/fields/class-acf-field-icon_picker.php:258
 msgid "String"
-msgstr ""
+msgstr "Dize"
 
 #. translators: %s - link to documentation
-#: includes/fields/class-acf-field-icon_picker.php:241
+#: includes/fields/class-acf-field-icon_picker.php:246
 msgid "Specify the return format for the icon. %s"
-msgstr ""
+msgstr "Simge için dönüş biçimini belirtin. %s"
 
-#: includes/fields/class-acf-field-icon_picker.php:226
+#: includes/fields/class-acf-field-icon_picker.php:231
 msgid "Select where content editors can choose the icon from."
-msgstr ""
+msgstr "İçerik editörlerinin simgeyi nereden seçebileceğini seçin."
 
-#: includes/fields/class-acf-field-icon_picker.php:198
+#: includes/fields/class-acf-field-icon_picker.php:204
 msgid "The URL to the icon you'd like to use, or svg as Data URI"
-msgstr ""
+msgstr "Kullanmak istediğiniz simgenin web adresi veya Veri adresi olarak svg"
 
-#: includes/fields/class-acf-field-icon_picker.php:181
+#: includes/fields/class-acf-field-icon_picker.php:187
 msgid "Browse Media Library"
-msgstr ""
+msgstr "Ortam kütüphanesine göz at"
 
-#: includes/fields/class-acf-field-icon_picker.php:172
+#: includes/fields/class-acf-field-icon_picker.php:178
 msgid "The currently selected image preview"
-msgstr ""
+msgstr "Seçili görselin önizlemesi"
 
-#: includes/fields/class-acf-field-icon_picker.php:163
+#: includes/fields/class-acf-field-icon_picker.php:169
 msgid "Click to change the icon in the Media Library"
-msgstr ""
+msgstr "Ortam kütüphanesinnde simgeyi değiştirmek için tıklayın"
 
-#: includes/fields/class-acf-field-icon_picker.php:136
+#: includes/fields/class-acf-field-icon_picker.php:142
 msgid "Search icons..."
-msgstr ""
+msgstr "Arama simgeleri..."
 
 #: includes/fields/class-acf-field-icon_picker.php:53
 msgid "Media Library"
@@ -1039,130 +1056,132 @@ msgid ""
 "An interactive UI for selecting an icon. Select from Dashicons, the media "
 "library, or a standalone URL input."
 msgstr ""
+"Bir simge seçmek için etkileşimli bir kullanıcı arayüzü. Dashicons, ortam "
+"kütüphanesi veya bağımsız bir adres girişi arasından seçim yapın."
 
 #: includes/fields/class-acf-field-icon_picker.php:23
 msgid "Icon Picker"
 msgstr "Simge seçici"
 
-#: includes/class-acf-site-health.php:690
+#: includes/class-acf-site-health.php:704
 msgid "JSON Load Paths"
-msgstr ""
+msgstr "JSON yükleme yolları"
 
-#: includes/class-acf-site-health.php:684
+#: includes/class-acf-site-health.php:698
 msgid "JSON Save Paths"
-msgstr ""
+msgstr "JSON kaydetme yolları"
+
+#: includes/class-acf-site-health.php:689
+msgid "Registered ACF Forms"
+msgstr "Kayıtlı ACF formları"
+
+#: includes/class-acf-site-health.php:683
+msgid "Shortcode Enabled"
+msgstr "Kısa kod etkin"
 
 #: includes/class-acf-site-health.php:675
-msgid "Registered ACF Forms"
-msgstr ""
-
-#: includes/class-acf-site-health.php:669
-msgid "Shortcode Enabled"
-msgstr ""
-
-#: includes/class-acf-site-health.php:661
 msgid "Field Settings Tabs Enabled"
-msgstr ""
+msgstr "Saha ayarları sekmeleri etkin"
 
-#: includes/class-acf-site-health.php:653
+#: includes/class-acf-site-health.php:667
 msgid "Field Type Modal Enabled"
-msgstr ""
+msgstr "Alan türü modali etkin"
 
-#: includes/class-acf-site-health.php:645
+#: includes/class-acf-site-health.php:659
 msgid "Admin UI Enabled"
-msgstr ""
+msgstr "Yönetici kullanıcı arayüzü etkin"
 
-#: includes/class-acf-site-health.php:636
+#: includes/class-acf-site-health.php:650
 msgid "Block Preloading Enabled"
-msgstr ""
+msgstr "Blok ön yükleme etkin"
 
-#: includes/class-acf-site-health.php:629
+#: includes/class-acf-site-health.php:638
 msgid "Blocks Per ACF Block Version"
-msgstr ""
+msgstr "Her bir ACF blok sürümü için bloklar"
 
-#: includes/class-acf-site-health.php:624
+#: includes/class-acf-site-health.php:633
 msgid "Blocks Per API Version"
-msgstr ""
+msgstr "Her bir API sürümü için bloklar"
 
-#: includes/class-acf-site-health.php:602
+#: includes/class-acf-site-health.php:606
 msgid "Registered ACF Blocks"
-msgstr ""
+msgstr "Kayıtlı ACF blokları"
 
-#: includes/class-acf-site-health.php:596
+#: includes/class-acf-site-health.php:600
 msgid "Light"
 msgstr "Açık"
 
-#: includes/class-acf-site-health.php:596
+#: includes/class-acf-site-health.php:600
 msgid "Standard"
 msgstr "Standart"
 
-#: includes/class-acf-site-health.php:595
+#: includes/class-acf-site-health.php:599
 msgid "REST API Format"
-msgstr ""
+msgstr "REST API biçimi"
 
-#: includes/class-acf-site-health.php:587
+#: includes/class-acf-site-health.php:591
 msgid "Registered Options Pages (PHP)"
-msgstr ""
+msgstr "Kayıtlı seçenekler sayfaları (PHP)"
 
-#: includes/class-acf-site-health.php:573
+#: includes/class-acf-site-health.php:577
 msgid "Registered Options Pages (JSON)"
-msgstr ""
+msgstr "Kayıtlı seçenekler sayfaları (JSON)"
 
-#: includes/class-acf-site-health.php:568
+#: includes/class-acf-site-health.php:572
 msgid "Registered Options Pages (UI)"
-msgstr ""
+msgstr "Kayıtlı seçenekler sayfaları (UI)"
 
 #: includes/class-acf-site-health.php:542
 msgid "Options Pages UI Enabled"
-msgstr ""
+msgstr "Seçenekler sayfaları UI etkin"
 
 #: includes/class-acf-site-health.php:534
 msgid "Registered Taxonomies (JSON)"
-msgstr ""
+msgstr "Kayıtlı taksonomiler (JSON)"
 
 #: includes/class-acf-site-health.php:522
 msgid "Registered Taxonomies (UI)"
-msgstr ""
+msgstr "Kayıtlı taksonomiler (UI)"
 
 #: includes/class-acf-site-health.php:510
 msgid "Registered Post Types (JSON)"
-msgstr ""
+msgstr "Kayıtlı yazı tipleri (JSON)"
 
 #: includes/class-acf-site-health.php:498
 msgid "Registered Post Types (UI)"
-msgstr ""
+msgstr "Kayıtlı yazı tipleri (UI)"
 
 #: includes/class-acf-site-health.php:485
 msgid "Post Types and Taxonomies Enabled"
-msgstr ""
+msgstr "Yazı tipleri ve taksonomiler etkinleştirildi"
 
 #: includes/class-acf-site-health.php:478
 msgid "Number of Third Party Fields by Field Type"
-msgstr ""
+msgstr "Alan türüne göre üçüncü taraf alanlarının sayısı"
 
 #: includes/class-acf-site-health.php:473
 msgid "Number of Fields by Field Type"
-msgstr ""
+msgstr "Alan türüne göre alan sayısı"
 
 #: includes/class-acf-site-health.php:440
 msgid "Field Groups Enabled for GraphQL"
-msgstr ""
+msgstr "GraphQL için alan grupları etkinleştirildi"
 
 #: includes/class-acf-site-health.php:427
 msgid "Field Groups Enabled for REST API"
-msgstr ""
+msgstr "REST API için alan grupları etkinleştirildi"
 
 #: includes/class-acf-site-health.php:415
 msgid "Registered Field Groups (JSON)"
-msgstr ""
+msgstr "Kayıtlı alan grupları (JSON)"
 
 #: includes/class-acf-site-health.php:403
 msgid "Registered Field Groups (PHP)"
-msgstr ""
+msgstr "Kayıtlı alan grupları (PHP)"
 
 #: includes/class-acf-site-health.php:391
 msgid "Registered Field Groups (UI)"
-msgstr ""
+msgstr "Kayıtlı alan grupları (UI)"
 
 #: includes/class-acf-site-health.php:379
 msgid "Active Plugins"
@@ -1178,7 +1197,7 @@ msgstr "Etkin tema"
 
 #: includes/class-acf-site-health.php:333
 msgid "Is Multisite"
-msgstr ""
+msgstr "Çoklu site mi"
 
 #: includes/class-acf-site-health.php:328
 msgid "MySQL Version"
@@ -1190,23 +1209,23 @@ msgstr "WordPress Sürümü"
 
 #: includes/class-acf-site-health.php:316
 msgid "Subscription Expiry Date"
-msgstr ""
+msgstr "Abonelik sona erme tarihi"
 
 #: includes/class-acf-site-health.php:308
 msgid "License Status"
-msgstr ""
+msgstr "Lisans durumu"
 
 #: includes/class-acf-site-health.php:303
 msgid "License Type"
-msgstr ""
+msgstr "Lisans türü"
 
 #: includes/class-acf-site-health.php:298
 msgid "Licensed URL"
-msgstr ""
+msgstr "Lisanslanan web adresi"
 
 #: includes/class-acf-site-health.php:292
 msgid "License Activated"
-msgstr ""
+msgstr "Lisans etkinleştirildi"
 
 #: includes/class-acf-site-health.php:286
 msgid "Free"
@@ -1214,22 +1233,25 @@ msgstr "Ücretsiz"
 
 #: includes/class-acf-site-health.php:285
 msgid "Plugin Type"
-msgstr ""
+msgstr "Eklenti tipi"
 
 #: includes/class-acf-site-health.php:280
 msgid "Plugin Version"
-msgstr ""
+msgstr "Eklenti sürümü"
 
 #: includes/class-acf-site-health.php:251
 msgid ""
 "This section contains debug information about your ACF configuration which "
 "can be useful to provide to support."
 msgstr ""
+"Bu bölüm, ACF yapılandırmanız hakkında destek ekibine sağlamak için yararlı "
+"olabilecek hata ayıklama bilgilerini içerir."
 
-#: includes/assets.php:373 assets/build/js/acf-input.js:11323
-#: assets/build/js/acf-input.js:12409
+#: includes/assets.php:373 assets/build/js/acf-input.js:11317
+#: assets/build/js/acf-input.js:12400
 msgid "An ACF Block on this page requires attention before you can save."
 msgstr ""
+"Kaydetmeden önce bu sayfadaki bir ACF Bloğuna dikkat edilmesi gerekiyor."
 
 #. translators: %s - The clear log button opening HTML tag. %s - The closing
 #. HTML tag.
@@ -1239,201 +1261,211 @@ msgid ""
 "output. %1$sClear log and dismiss%2$s after escaping the values in your "
 "code. The notice will reappear if we detect changed values again."
 msgstr ""
+"Bu veriler, çıktı sırasında değiştirilen değerleri tespit ettiğimizde "
+"günlüğe kaydedilir. Kodunuzdaki değerleri temizledikten sonra %1$sgünlüğü "
+"temizleyin ve kapatın%2$s. Değişen değerleri tekrar tespit edersek bildirim "
+"yeniden görünecektir."
 
 #: includes/admin/views/escaped-html-notice.php:25
 msgid "Dismiss permanently"
-msgstr ""
+msgstr "Kalıcı olarak kapat"
 
 #: includes/admin/views/acf-field-group/field.php:220
 msgid "Instructions for content editors. Shown when submitting data."
-msgstr ""
+msgstr "İçerik düzenleyicileri için talimatlar. Veri gönderirken gösterilir."
 
 #: includes/admin/post-types/admin-field-group.php:143
 #: assets/build/js/acf-input.js:1460 assets/build/js/acf-input.js:1558
 msgid "Has no term selected"
-msgstr ""
+msgstr "Seçilmiş bir terim yok"
 
 #: includes/admin/post-types/admin-field-group.php:142
 #: assets/build/js/acf-input.js:1437 assets/build/js/acf-input.js:1534
 msgid "Has any term selected"
-msgstr ""
+msgstr "Seçilmiş herhangi bir terim"
 
 #: includes/admin/post-types/admin-field-group.php:141
 #: assets/build/js/acf-input.js:1412 assets/build/js/acf-input.js:1507
 msgid "Terms do not contain"
-msgstr ""
+msgstr "Terimler şunları içermez"
 
 #: includes/admin/post-types/admin-field-group.php:140
 #: assets/build/js/acf-input.js:1387 assets/build/js/acf-input.js:1481
 msgid "Terms contain"
-msgstr ""
+msgstr "Terimler şunları içerir"
 
 #: includes/admin/post-types/admin-field-group.php:139
 #: assets/build/js/acf-input.js:1368 assets/build/js/acf-input.js:1461
 msgid "Term is not equal to"
-msgstr ""
+msgstr "Terim şuna eşit değildir"
 
 #: includes/admin/post-types/admin-field-group.php:138
 #: assets/build/js/acf-input.js:1349 assets/build/js/acf-input.js:1441
 msgid "Term is equal to"
-msgstr ""
+msgstr "Terim şuna eşittir"
 
 #: includes/admin/post-types/admin-field-group.php:137
 #: assets/build/js/acf-input.js:1052 assets/build/js/acf-input.js:1116
 msgid "Has no user selected"
-msgstr ""
+msgstr "Seçili kullanıcı yok"
 
 #: includes/admin/post-types/admin-field-group.php:136
 #: assets/build/js/acf-input.js:1029 assets/build/js/acf-input.js:1092
 msgid "Has any user selected"
-msgstr ""
+msgstr "Herhangi bir kullanıcı"
 
 #: includes/admin/post-types/admin-field-group.php:135
 #: assets/build/js/acf-input.js:1003 assets/build/js/acf-input.js:1064
 msgid "Users do not contain"
-msgstr ""
+msgstr "Şunları içermeyen kullanıcılar"
 
 #: includes/admin/post-types/admin-field-group.php:134
 #: assets/build/js/acf-input.js:976 assets/build/js/acf-input.js:1035
 msgid "Users contain"
-msgstr ""
+msgstr "Şunları içeren kullanıcılar"
 
 #: includes/admin/post-types/admin-field-group.php:133
 #: assets/build/js/acf-input.js:957 assets/build/js/acf-input.js:1015
 msgid "User is not equal to"
-msgstr ""
+msgstr "Şuna eşit olmayan kullanıcı"
 
 #: includes/admin/post-types/admin-field-group.php:132
 #: assets/build/js/acf-input.js:938 assets/build/js/acf-input.js:995
 msgid "User is equal to"
-msgstr ""
+msgstr "Şuna eşit olan kullanıcı"
 
 #: includes/admin/post-types/admin-field-group.php:131
 #: assets/build/js/acf-input.js:915 assets/build/js/acf-input.js:971
 msgid "Has no page selected"
-msgstr ""
+msgstr "Seçili sayfa yok"
 
 #: includes/admin/post-types/admin-field-group.php:130
 #: assets/build/js/acf-input.js:892 assets/build/js/acf-input.js:947
 msgid "Has any page selected"
-msgstr ""
+msgstr "Seçili herhangi bir sayfa"
 
 #: includes/admin/post-types/admin-field-group.php:129
 #: assets/build/js/acf-input.js:865 assets/build/js/acf-input.js:918
 msgid "Pages do not contain"
-msgstr ""
+msgstr "Şunu içermeyen sayfalar"
 
 #: includes/admin/post-types/admin-field-group.php:128
 #: assets/build/js/acf-input.js:838 assets/build/js/acf-input.js:889
 msgid "Pages contain"
-msgstr ""
+msgstr "Şunu içeren sayfalar"
 
 #: includes/admin/post-types/admin-field-group.php:127
 #: assets/build/js/acf-input.js:819 assets/build/js/acf-input.js:869
 msgid "Page is not equal to"
-msgstr ""
+msgstr "Şuna eşit olmayan sayfa"
 
 #: includes/admin/post-types/admin-field-group.php:126
 #: assets/build/js/acf-input.js:800 assets/build/js/acf-input.js:849
 msgid "Page is equal to"
-msgstr ""
+msgstr "Şuna eşit olan sayfa"
 
 #: includes/admin/post-types/admin-field-group.php:125
 #: assets/build/js/acf-input.js:1188 assets/build/js/acf-input.js:1259
 msgid "Has no relationship selected"
-msgstr ""
+msgstr "Seçili llişkisi olmayan"
 
 #: includes/admin/post-types/admin-field-group.php:124
 #: assets/build/js/acf-input.js:1165 assets/build/js/acf-input.js:1235
 msgid "Has any relationship selected"
-msgstr ""
+msgstr "Herhangi bir ilişki seçilmiş olan"
 
 #: includes/admin/post-types/admin-field-group.php:123
 #: assets/build/js/acf-input.js:1326 assets/build/js/acf-input.js:1415
 msgid "Has no post selected"
-msgstr ""
+msgstr "Seçili hiç bir yazısı olmayan"
 
 #: includes/admin/post-types/admin-field-group.php:122
 #: assets/build/js/acf-input.js:1303 assets/build/js/acf-input.js:1389
 msgid "Has any post selected"
-msgstr ""
+msgstr "Seçili herhangi bir yazısı olan"
 
 #: includes/admin/post-types/admin-field-group.php:121
 #: assets/build/js/acf-input.js:1276 assets/build/js/acf-input.js:1358
 msgid "Posts do not contain"
-msgstr ""
+msgstr "Şunu içermeyen yazı"
 
 #: includes/admin/post-types/admin-field-group.php:120
 #: assets/build/js/acf-input.js:1249 assets/build/js/acf-input.js:1327
 msgid "Posts contain"
-msgstr ""
+msgstr "Şunu içeren yazı"
 
 #: includes/admin/post-types/admin-field-group.php:119
 #: assets/build/js/acf-input.js:1230 assets/build/js/acf-input.js:1305
 msgid "Post is not equal to"
-msgstr ""
+msgstr "Şuna eşit olmayan yazı"
 
 #: includes/admin/post-types/admin-field-group.php:118
 #: assets/build/js/acf-input.js:1211 assets/build/js/acf-input.js:1283
 msgid "Post is equal to"
-msgstr ""
+msgstr "Şuna eşit olan yazı"
 
 #: includes/admin/post-types/admin-field-group.php:117
 #: assets/build/js/acf-input.js:1139 assets/build/js/acf-input.js:1207
 msgid "Relationships do not contain"
-msgstr ""
+msgstr "Şunu içermeyen ilişliler"
 
 #: includes/admin/post-types/admin-field-group.php:116
 #: assets/build/js/acf-input.js:1113 assets/build/js/acf-input.js:1180
 msgid "Relationships contain"
-msgstr ""
+msgstr "Şunu içeren ilişliler"
 
 #: includes/admin/post-types/admin-field-group.php:115
 #: assets/build/js/acf-input.js:1094 assets/build/js/acf-input.js:1160
 msgid "Relationship is not equal to"
-msgstr ""
+msgstr "Şuna eşit olmayan ilişkiler"
 
 #: includes/admin/post-types/admin-field-group.php:114
 #: assets/build/js/acf-input.js:1075 assets/build/js/acf-input.js:1140
 msgid "Relationship is equal to"
-msgstr ""
+msgstr "Şuna eşit olan ilişkiler"
 
 #: includes/Blocks/Bindings.php:35
 msgctxt "The core ACF block binding source name for fields on the current page"
 msgid "ACF Fields"
-msgstr ""
+msgstr "ACF alanları"
 
 #: includes/admin/views/browse-fields-modal.php:14
 msgid "ACF PRO Feature"
-msgstr ""
+msgstr "ACF PRO Özelliği"
 
 #: includes/admin/views/browse-fields-modal.php:10
 msgid "Renew PRO to Unlock"
-msgstr ""
+msgstr "Kilidi açmak için PRO'yu yenileyin"
 
 #: includes/admin/views/browse-fields-modal.php:8
 msgid "Renew PRO License"
-msgstr ""
+msgstr "PRO lisansını yenile"
 
 #: includes/admin/views/acf-field-group/field.php:41
 msgid "PRO fields cannot be edited without an active license."
-msgstr ""
+msgstr "PRO alanları etkin bir lisans olmadan düzenlenemez."
 
 #: includes/admin/admin-internal-post-type-list.php:232
 msgid ""
 "Please activate your ACF PRO license to edit field groups assigned to an ACF "
 "Block."
 msgstr ""
+"Bir ACF bloğuna atanan alan gruplarını düzenlemek için lütfen ACF PRO "
+"lisansınızı etkinleştirin."
 
 #: includes/admin/admin-internal-post-type-list.php:231
 msgid "Please activate your ACF PRO license to edit this options page."
 msgstr ""
+"Bu seçenekler sayfasını düzenlemek için lütfen ACF PRO lisansınızı "
+"etkinleştirin."
 
 #: includes/api/api-template.php:381 includes/api/api-template.php:435
 msgid ""
 "Returning escaped HTML values is only possible when format_value is also "
 "true. The field values have not been returned for security."
 msgstr ""
+"Temizlenmiş HTML değerlerinin döndürülmesi yalnızca format_value da true "
+"olduğunda mümkündür. Alan değerleri güvenlik için döndürülmemiştir."
 
 #: includes/api/api-template.php:46 includes/api/api-template.php:247
 #: includes/api/api-template.php:939
@@ -1441,6 +1473,8 @@ msgid ""
 "Returning an escaped HTML value is only possible when format_value is also "
 "true. The field value has not been returned for security."
 msgstr ""
+"Temizlenmiş bir HTML değerinin döndürülmesi yalnızca format_value da true "
+"olduğunda mümkündür. Alan değeri güvenlik için döndürülmemiştir."
 
 #. translators: %1$s - name of the ACF plugin. %2$s - Link to documentation.
 #. %3$s - Link to show more details about the error
@@ -1451,32 +1485,38 @@ msgid ""
 "some of your fields has been modified by this change, but this may not be a "
 "breaking change. %2$s."
 msgstr ""
+"%1$s ACF artık <code>the_field</code> veya ACF kısa kodu tarafından "
+"işlendiğinde güvenli olmayan HTML’i otomatik olarak temizliyor. Bazı "
+"alanlarınızın çıktısının bu değişiklikle değiştirildiğini tespit ettik, "
+"ancak bu kritik bir değişiklik olmayabilir. %2$s."
 
 #: includes/admin/views/escaped-html-notice.php:27
 msgid "Please contact your site administrator or developer for more details."
 msgstr ""
+"Daha fazla ayrıntı için lütfen site yöneticinize veya geliştiricinize "
+"başvurun."
 
 #: includes/admin/views/escaped-html-notice.php:5
 msgid "Learn&nbsp;more"
-msgstr ""
+msgstr "Daha&nbsp;fazlasını&nbsp;öğren"
 
 #: includes/admin/admin.php:63
 msgid "Hide&nbsp;details"
-msgstr ""
+msgstr "Ayrıntıları&nbsp;gizle"
 
 #: includes/admin/admin.php:62 includes/admin/views/escaped-html-notice.php:24
 msgid "Show&nbsp;details"
-msgstr ""
+msgstr "Detayları&nbsp;göster"
 
 #. translators: %1$s - The selector used  %2$s The field name  3%$s The parent
 #. function name
 #: includes/admin/views/escaped-html-notice.php:49
 msgid "%1$s (%2$s) - rendered via %3$s"
-msgstr ""
+msgstr "%1$s (%2$s) - %3$s aracılığıyla işlenir"
 
-#: includes/admin/views/global/navigation.php:223
+#: includes/admin/views/global/navigation.php:226
 msgid "Renew ACF PRO License"
-msgstr ""
+msgstr "ACF PRO lisansını yenile"
 
 #: includes/admin/views/acf-field-group/pro-features.php:17
 msgid "Renew License"
@@ -1488,11 +1528,11 @@ msgstr "Lisansı yönet"
 
 #: includes/admin/views/acf-field-group/options.php:102
 msgid "'High' position not supported in the Block Editor"
-msgstr ""
+msgstr "'Yüksek' konum blok düzenleyicide desteklenmiyor"
 
 #: includes/admin/views/options-page-preview.php:30
 msgid "Upgrade to ACF PRO"
-msgstr ""
+msgstr "ACF PRO'ya yükseltin"
 
 #. translators: %s URL to ACF options pages documentation
 #: includes/admin/views/options-page-preview.php:7
@@ -1501,69 +1541,72 @@ msgid ""
 "pages for managing global settings via fields. You can create multiple pages "
 "and sub-pages."
 msgstr ""
+"ACF <a href=\"%s\" target=\"_blank\">seçenek sayfaları</a>, alanlar "
+"aracılığıyla genel ayarları yönetmeye yönelik özel yönetici sayfalarıdır. "
+"Birden fazla sayfa ve alt sayfa oluşturabilirsiniz."
 
 #: includes/admin/views/global/header.php:35
 msgid "Add Options Page"
-msgstr ""
+msgstr "Seçenekler sayfası ekle"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:708
 msgid "In the editor used as the placeholder of the title."
-msgstr ""
+msgstr "Editörde başlığın yer tutucusu olarak kullanılır."
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:707
 msgid "Title Placeholder"
-msgstr ""
+msgstr "Başlık yer tutucusu"
 
 #: includes/admin/views/global/navigation.php:97
 msgid "4 Months Free"
-msgstr ""
+msgstr "4 Ay ücretsiz"
 
 #. translators: %s - A singular label for a post type or taxonomy.
-#: includes/admin/views/global/form-top.php:56
+#: includes/admin/views/global/form-top.php:59
 msgid "(Duplicated from %s)"
-msgstr ""
+msgstr "(%s öğesinden çoğaltıldı)"
 
 #: includes/admin/tools/class-acf-admin-tool-export.php:289
 msgid "Select Options Pages"
-msgstr ""
+msgstr "Seçenekler sayfalarını seçin"
 
 #: includes/admin/post-types/admin-taxonomy.php:107
 msgid "Duplicate taxonomy"
-msgstr ""
+msgstr "Taksonomiyi çoğalt"
 
 #: includes/admin/post-types/admin-post-type.php:106
 #: includes/admin/post-types/admin-taxonomy.php:106
 msgid "Create taxonomy"
-msgstr ""
+msgstr "Taksonomi oluştur"
 
 #: includes/admin/post-types/admin-post-type.php:105
 msgid "Duplicate post type"
-msgstr ""
+msgstr "Yazı tipini çoğalt"
 
 #: includes/admin/post-types/admin-post-type.php:104
 #: includes/admin/post-types/admin-taxonomy.php:108
 msgid "Create post type"
-msgstr ""
+msgstr "Yazı tipi oluştur"
 
 #: includes/admin/post-types/admin-post-type.php:103
 #: includes/admin/post-types/admin-taxonomy.php:105
 msgid "Link field groups"
-msgstr ""
+msgstr "Alan gruplarını bağla"
 
 #: includes/admin/post-types/admin-post-type.php:102
 #: includes/admin/post-types/admin-taxonomy.php:104
 msgid "Add fields"
-msgstr ""
+msgstr "Alan ekle"
 
 #: includes/admin/post-types/admin-field-group.php:147
 #: assets/build/js/acf-field-group.js:2803
 #: assets/build/js/acf-field-group.js:3298
 msgid "This Field"
-msgstr ""
+msgstr "Bu alan"
 
 #: includes/admin/admin.php:352
 msgid "ACF PRO"
-msgstr ""
+msgstr "ACF PRO"
 
 #: includes/admin/admin.php:350
 msgid "Feedback"
@@ -1577,12 +1620,12 @@ msgstr "Destek"
 #. by a link to WP Engine's website.
 #: includes/admin/admin.php:323
 msgid "is developed and maintained by"
-msgstr ""
+msgstr "geliştiren ve devam ettiren"
 
 #. translators: %s - either "post type" or "taxonomy"
 #: includes/admin/admin-internal-post-type.php:313
 msgid "Add this %s to the location rules of the selected field groups."
-msgstr ""
+msgstr "Bu %s öğesini seçilen alan gruplarının konum kurallarına ekleyin."
 
 #. translators: %s the URL to ACF's bidirectional relationship documentation
 #: includes/acf-bidirectional-functions.php:272
@@ -1593,6 +1636,11 @@ msgid ""
 "information, please read the <a href=\"%s\" target=\"_blank\">documentation</"
 "a>."
 msgstr ""
+"Çift yönlü ayarın etkinleştirilmesi, güncellenen öğenin Posta Kimliğini, "
+"Sınıflandırma Kimliğini veya Kullanıcı Kimliğini ekleyerek veya kaldırarak, "
+"bu alan için seçilen her değer için hedef alanlardaki bir değeri "
+"güncellemenize olanak tanır. Daha fazla bilgi için lütfen <a href=\"%s\" "
+"target=\"_blank\">belgeleri</a> okuyun."
 
 #: includes/acf-bidirectional-functions.php:248
 msgid ""
@@ -1601,93 +1649,100 @@ msgid ""
 "field is being displayed. For example, if this field is displayed on a "
 "Taxonomy, your target field should be of type Taxonomy"
 msgstr ""
+"Referansı güncellenmekte olan öğeye geri depolamak için alanları seçin. Bu "
+"alanı seçebilirsiniz. Hedef alanlar bu alanın görüntülendiği yerle uyumlu "
+"olmalıdır. Örneğin, bu alan bir Taksonomide görüntüleniyorsa, hedef alanınız "
+"Taksonomi türünde olmalıdır"
 
 #: includes/acf-bidirectional-functions.php:247
 msgid "Target Field"
-msgstr ""
+msgstr "Hedef alan"
 
 #: includes/acf-bidirectional-functions.php:221
 msgid "Update a field on the selected values, referencing back to this ID"
-msgstr ""
+msgstr "Seçilen değerlerdeki bir alanı bu kimliğe referans vererek güncelleyin"
 
 #: includes/acf-bidirectional-functions.php:220
 msgid "Bidirectional"
-msgstr ""
+msgstr "Çift yönlü"
 
 #. translators: %s A field type name, such as "Relationship"
 #: includes/acf-bidirectional-functions.php:193
 msgid "%s Field"
-msgstr ""
+msgstr "%s alanı"
 
 #: includes/fields/class-acf-field-page_link.php:490
 #: includes/fields/class-acf-field-post_object.php:401
 #: includes/fields/class-acf-field-select.php:381
 #: includes/fields/class-acf-field-user.php:111
 msgid "Select Multiple"
-msgstr ""
+msgstr "Birden çok seçin"
 
-#: includes/admin/views/global/navigation.php:235
+#: includes/admin/views/global/navigation.php:238
 msgid "WP Engine logo"
-msgstr ""
+msgstr "WP Engine logosu"
 
 #: includes/admin/views/acf-taxonomy/basic-settings.php:58
 msgid "Lower case letters, underscores and dashes only, Max 32 characters."
 msgstr ""
+"Yalnızca küçük harfler, alt çizgiler ve kısa çizgiler, en fazla 32 karakter."
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:1136
 msgid "The capability name for assigning terms of this taxonomy."
-msgstr ""
+msgstr "Bu sınıflandırmanın terimlerini atamak için kullanılan yetenek adı."
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:1135
 msgid "Assign Terms Capability"
-msgstr ""
+msgstr "Terim yeteneği ata"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:1119
 msgid "The capability name for deleting terms of this taxonomy."
-msgstr ""
+msgstr "Bu sınıflandırmanın terimlerini silmeye yönelik yetenek adı."
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:1118
 msgid "Delete Terms Capability"
-msgstr ""
+msgstr "Terim yeteneği sil"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:1102
 msgid "The capability name for editing terms of this taxonomy."
-msgstr ""
+msgstr "Bu sınıflandırmanın terimlerini düzenlemeye yönelik yetenek adı."
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:1101
 msgid "Edit Terms Capability"
-msgstr ""
+msgstr "Terim yeteneği düzenle"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:1085
 msgid "The capability name for managing terms of this taxonomy."
-msgstr ""
+msgstr "Bu sınıflandırmanın terimlerini yönetmeye yönelik yetenek adı."
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:1084
 msgid "Manage Terms Capability"
-msgstr ""
+msgstr "Terim yeteneği yönet"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:914
 msgid ""
 "Sets whether posts should be excluded from search results and taxonomy "
 "archive pages."
 msgstr ""
+"Yazıların arama sonuçlarından ve sınıflandırma arşivi sayfalarından hariç "
+"tutulup tutulmayacağını ayarlar."
 
 #: includes/admin/views/acf-field-group/pro-features.php:78
 msgid "More Tools from WP Engine"
-msgstr ""
+msgstr "WP Engine'den daha fazla araç"
 
 #. translators: %s - WP Engine logo
 #: includes/admin/views/acf-field-group/pro-features.php:73
 msgid "Built for those that build with WordPress, by the team at %s"
-msgstr ""
+msgstr "WordPress ile geliştirenler için, %s ekibi tarafından oluşturuldu"
 
 #: includes/admin/views/acf-field-group/pro-features.php:6
 msgid "View Pricing & Upgrade"
-msgstr ""
+msgstr "Fiyatlandırmayı görüntüle ve yükselt"
 
 #: includes/admin/views/acf-field-group/pro-features.php:3
 #: includes/admin/views/options-page-preview.php:29
-#: includes/fields/class-acf-field-icon_picker.php:236
+#: includes/fields/class-acf-field-icon_picker.php:241
 msgid "Learn More"
 msgstr "Daha fazla bilgi"
 
@@ -1697,23 +1752,27 @@ msgid ""
 "Blocks and Options Pages, and sophisticated field types like Repeater, "
 "Flexible Content, Clone, and Gallery."
 msgstr ""
+"ACF blokları ve seçenek sayfaları gibi özelliklerin yanı sıra tekrarlayıcı, "
+"esnek içerik, klonlama ve galeri gibi gelişmiş alan türleriyle iş akışınızı "
+"hızlandırın ve daha iyi web siteleri geliştirin."
 
 #: includes/admin/views/acf-field-group/pro-features.php:2
 msgid "Unlock Advanced Features and Build Even More with ACF PRO"
 msgstr ""
+"ACF PRO ile gelişmiş özelliklerin kilidini açın ve daha fazlasını oluşturun"
 
 #. translators: %s - singular label of post type/taxonomy, i.e. "Movie"/"Genre"
 #: includes/admin/views/global/form-top.php:19
 msgid "%s fields"
-msgstr ""
+msgstr "%s alanları"
 
 #: includes/admin/post-types/admin-taxonomies.php:267
 msgid "No terms"
-msgstr ""
+msgstr "Terim yok"
 
 #: includes/admin/post-types/admin-taxonomies.php:240
 msgid "No post types"
-msgstr ""
+msgstr "Yazı tipi yok"
 
 #: includes/admin/post-types/admin-post-types.php:264
 msgid "No posts"
@@ -1721,16 +1780,16 @@ msgstr "Yazı yok"
 
 #: includes/admin/post-types/admin-post-types.php:238
 msgid "No taxonomies"
-msgstr ""
+msgstr "Taksonomi yok"
 
 #: includes/admin/post-types/admin-post-types.php:183
 #: includes/admin/post-types/admin-taxonomies.php:182
 msgid "No field groups"
-msgstr ""
+msgstr "Alan grubu yok"
 
 #: includes/admin/post-types/admin-field-groups.php:255
 msgid "No fields"
-msgstr ""
+msgstr "Alan yok"
 
 #: includes/admin/post-types/admin-field-groups.php:128
 #: includes/admin/post-types/admin-post-types.php:147
@@ -1749,90 +1808,100 @@ msgid ""
 "This taxonomy key is already in use by another taxonomy registered outside "
 "of ACF and cannot be used."
 msgstr ""
+"Bu taksonomi anahtarı, ACF dışında kayıtlı başka bir taksonomi tarafından "
+"zaten kullanılıyor ve kullanılamaz."
 
 #: includes/post-types/class-acf-taxonomy.php:284
 msgid ""
 "This taxonomy key is already in use by another taxonomy in ACF and cannot be "
 "used."
 msgstr ""
+"Bu taksonomi anahtarı ACF'deki başka bir taksonomi tarafından zaten "
+"kullanılıyor ve kullanılamaz."
 
 #: includes/post-types/class-acf-taxonomy.php:256
 msgid ""
 "The taxonomy key must only contain lower case alphanumeric characters, "
 "underscores or dashes."
 msgstr ""
+"Taksonomi anahtarı yalnızca küçük harf alfasayısal karakterler, alt çizgiler "
+"veya kısa çizgiler içermelidir."
 
 #: includes/post-types/class-acf-taxonomy.php:251
 msgid "The taxonomy key must be under 32 characters."
-msgstr ""
+msgstr "Taksonomi anahtarı 32 karakterden kısa olmalıdır."
 
 #: includes/post-types/class-acf-taxonomy.php:99
 msgid "No Taxonomies found in Trash"
-msgstr ""
+msgstr "Çöp kutusunda taksonomi bulunamadı"
 
 #: includes/post-types/class-acf-taxonomy.php:98
 msgid "No Taxonomies found"
-msgstr ""
+msgstr "Taksonomi bulunamadı"
 
 #: includes/post-types/class-acf-taxonomy.php:97
 msgid "Search Taxonomies"
-msgstr ""
+msgstr "Taksonomilerde ara"
 
 #: includes/post-types/class-acf-taxonomy.php:96
 msgid "View Taxonomy"
-msgstr ""
+msgstr "Taksonomi görüntüle"
 
 #: includes/post-types/class-acf-taxonomy.php:95
 msgid "New Taxonomy"
-msgstr ""
+msgstr "Yeni taksonomi"
 
 #: includes/post-types/class-acf-taxonomy.php:94
 msgid "Edit Taxonomy"
-msgstr ""
+msgstr "Taksonomi düzenle"
 
 #: includes/post-types/class-acf-taxonomy.php:93
 msgid "Add New Taxonomy"
-msgstr ""
+msgstr "Yeni taksonomi ekle"
 
 #: includes/post-types/class-acf-post-type.php:100
 msgid "No Post Types found in Trash"
-msgstr ""
+msgstr "Çöp kutusunda yazı tipi bulunamadı"
 
 #: includes/post-types/class-acf-post-type.php:99
 msgid "No Post Types found"
-msgstr ""
+msgstr "Yazı tipi bulunamadı"
 
 #: includes/post-types/class-acf-post-type.php:98
 msgid "Search Post Types"
-msgstr ""
+msgstr "Yazı tiplerinde ara"
 
 #: includes/post-types/class-acf-post-type.php:97
 msgid "View Post Type"
-msgstr ""
+msgstr "Yazı tipini görüntüle"
 
 #: includes/post-types/class-acf-post-type.php:96
 msgid "New Post Type"
-msgstr ""
+msgstr "Yeni yazı tipi"
 
 #: includes/post-types/class-acf-post-type.php:95
 msgid "Edit Post Type"
-msgstr ""
+msgstr "Yazı tipini düzenle"
 
 #: includes/post-types/class-acf-post-type.php:94
 msgid "Add New Post Type"
-msgstr ""
+msgstr "Yeni yazı tipi ekle"
 
 #: includes/post-types/class-acf-post-type.php:366
 msgid ""
 "This post type key is already in use by another post type registered outside "
 "of ACF and cannot be used."
 msgstr ""
+"Bu yazı tipi anahtarı, ACF dışında kayıtlı başka bir yazı tipi tarafından "
+"zaten kullanılıyor ve kullanılamaz."
 
 #: includes/post-types/class-acf-post-type.php:361
 msgid ""
 "This post type key is already in use by another post type in ACF and cannot "
 "be used."
 msgstr ""
+"Bu yazı tipi anahtarı, ACF'deki başka bir yazı tipi tarafından zaten "
+"kullanılıyor ve kullanılamaz."
 
 #. translators: %s a link to WordPress.org's Reserved Terms page
 #: includes/post-types/class-acf-post-type.php:339
@@ -1841,40 +1910,50 @@ msgid ""
 "This field must not be a WordPress <a href=\"%s\" target=\"_blank\">reserved "
 "term</a>."
 msgstr ""
+"Bu alan, WordPress'e <a href=\"%s\" target=\"_blank\">ayrılmış bir terim</a> "
+"olmamalıdır."
 
 #: includes/post-types/class-acf-post-type.php:333
 msgid ""
 "The post type key must only contain lower case alphanumeric characters, "
 "underscores or dashes."
 msgstr ""
+"Yazı tipi anahtarı yalnızca küçük harf alfasayısal karakterler, alt çizgiler "
+"veya kısa çizgiler içermelidir."
 
 #: includes/post-types/class-acf-post-type.php:328
 msgid "The post type key must be under 20 characters."
-msgstr ""
+msgstr "Yazı tipi anahtarı 20 karakterin altında olmalıdır."
 
 #: includes/fields/class-acf-field-wysiwyg.php:24
 msgid "We do not recommend using this field in ACF Blocks."
-msgstr ""
+msgstr "Bu alanın ACF bloklarında kullanılmasını önermiyoruz."
 
 #: includes/fields/class-acf-field-wysiwyg.php:24
 msgid ""
 "Displays the WordPress WYSIWYG editor as seen in Posts and Pages allowing "
 "for a rich text-editing experience that also allows for multimedia content."
 msgstr ""
+"WordPress WYSIWYG düzenleyicisini yazılar ve sayfalarda görüldüğü gibi "
+"görüntüler ve multimedya içeriğine de olanak tanıyan zengin bir metin "
+"düzenleme deneyimi sunar."
 
 #: includes/fields/class-acf-field-wysiwyg.php:22
 msgid "WYSIWYG Editor"
-msgstr ""
+msgstr "WYSIWYG düzenleyicisi"
 
 #: includes/fields/class-acf-field-user.php:17
 msgid ""
 "Allows the selection of one or more users which can be used to create "
 "relationships between data objects."
 msgstr ""
+"Veri nesneleri arasında ilişkiler oluşturmak için kullanılabilecek bir veya "
+"daha fazla kullanıcının seçilmesine olanak tanır."
 
 #: includes/fields/class-acf-field-url.php:20
 msgid "A text input specifically designed for storing web addresses."
 msgstr ""
+"Web adreslerini depolamak için özel olarak tasarlanmış bir metin girişi."
 
 #: includes/fields/class-acf-field-icon_picker.php:56
 #: includes/fields/class-acf-field-url.php:19
@@ -1886,36 +1965,45 @@ msgid ""
 "A toggle that allows you to pick a value of 1 or 0 (on or off, true or "
 "false, etc). Can be presented as a stylized switch or checkbox."
 msgstr ""
+"1 veya 0 değerini seçmenizi sağlayan bir geçiş (açık veya kapalı, doğru veya "
+"yanlış vb.). Stilize edilmiş bir anahtar veya onay kutusu olarak sunulabilir."
 
 #: includes/fields/class-acf-field-time_picker.php:24
 msgid ""
 "An interactive UI for picking a time. The time format can be customized "
 "using the field settings."
 msgstr ""
+"Zaman seçmek için etkileşimli bir kullanıcı arayüzü. Saat formatı alan "
+"ayarları kullanılarak özelleştirilebilir."
 
 #: includes/fields/class-acf-field-textarea.php:23
 msgid "A basic textarea input for storing paragraphs of text."
-msgstr ""
+msgstr "Metin paragraflarını depolamak için temel bir metin alanı girişi."
 
 #: includes/fields/class-acf-field-text.php:23
 msgid "A basic text input, useful for storing single string values."
 msgstr ""
+"Tek dize değerlerini depolamak için kullanışlı olan temel bir metin girişi."
 
 #: includes/fields/class-acf-field-taxonomy.php:22
 msgid ""
 "Allows the selection of one or more taxonomy terms based on the criteria and "
 "options specified in the fields settings."
 msgstr ""
+"Alan ayarlarında belirtilen kriterlere ve seçeneklere göre bir veya daha "
+"fazla sınıflandırma teriminin seçilmesine olanak tanır."
 
 #: includes/fields/class-acf-field-tab.php:25
 msgid ""
 "Allows you to group fields into tabbed sections in the edit screen. Useful "
 "for keeping fields organized and structured."
 msgstr ""
+"Düzenleme ekranında alanları sekmeli bölümler halinde gruplandırmanıza "
+"olanak tanır. Alanları düzenli ve yapılandırılmış tutmak için kullanışlıdır."
 
 #: includes/fields/class-acf-field-select.php:24
 msgid "A dropdown list with a selection of choices that you specify."
-msgstr ""
+msgstr "Belirttiğiniz seçeneklerin yer aldığı açılır liste."
 
 #: includes/fields/class-acf-field-relationship.php:19
 msgid ""
@@ -1923,24 +2011,34 @@ msgid ""
 "type items to create a relationship with the item that you're currently "
 "editing. Includes options to search and filter."
 msgstr ""
+"Şu anda düzenlemekte olduğunuz öğeyle bir ilişki oluşturmak amacıyla bir "
+"veya daha fazla gönderiyi, sayfayı veya özel gönderi türü öğesini seçmek "
+"için çift sütunlu bir arayüz. Arama ve filtreleme seçeneklerini içerir."
 
 #: includes/fields/class-acf-field-range.php:23
 msgid ""
 "An input for selecting a numerical value within a specified range using a "
 "range slider element."
 msgstr ""
+"Bir aralık kaydırıcı öğesi kullanılarak belirli bir aralıktaki sayısal bir "
+"değerin seçilmesine yönelik bir giriş."
 
 #: includes/fields/class-acf-field-radio.php:24
 msgid ""
 "A group of radio button inputs that allows the user to make a single "
 "selection from values that you specify."
 msgstr ""
+"Kullanıcının belirttiğiniz değerlerden tek bir seçim yapmasına olanak "
+"tanıyan bir grup radyo düğmesi girişi."
 
 #: includes/fields/class-acf-field-post_object.php:17
 msgid ""
 "An interactive and customizable UI for picking one or many posts, pages or "
 "post type items with the option to search. "
 msgstr ""
+"Bir veya daha fazla yazıyı, sayfayı veya yazı tipi öğesini arama seçeneğiyle "
+"birlikte seçmek için etkileşimli ve özelleştirilebilir bir kullanıcı "
+"arayüzü. "
 
 #: includes/fields/class-acf-field-password.php:23
 msgid "An input for providing a password using a masked field."
@@ -2098,7 +2196,7 @@ msgstr "Geçersiz yazı kimliği."
 msgid "Invalid post type selected for review."
 msgstr ""
 
-#: includes/admin/views/global/navigation.php:186
+#: includes/admin/views/global/navigation.php:189
 msgid "More"
 msgstr "Daha fazlası"
 
@@ -2121,7 +2219,7 @@ msgstr ""
 
 #. translators: %s: The invalid search term
 #: includes/admin/views/browse-fields-modal.php:50
-#: includes/fields/class-acf-field-icon_picker.php:149
+#: includes/fields/class-acf-field-icon_picker.php:155
 msgid "No search results for '%s'"
 msgstr ""
 
@@ -3866,22 +3964,22 @@ msgstr "Sayfalar"
 
 #: includes/admin/admin-internal-post-type.php:347
 msgid "Link Existing Field Groups"
-msgstr ""
+msgstr "Mevcut alan gruplarını bağlayın"
 
 #. translators: %s post type name
 #: includes/admin/post-types/admin-post-type.php:80
 msgid "%s post type created"
-msgstr ""
+msgstr "%s yazı tipi oluşturuldu"
 
 #. translators: %s taxonomy name
 #: includes/admin/post-types/admin-taxonomy.php:78
 msgid "Add fields to %s"
-msgstr ""
+msgstr "%s taksonomisine alan ekle"
 
 #. translators: %s post type name
 #: includes/admin/post-types/admin-post-type.php:76
 msgid "%s post type updated"
-msgstr ""
+msgstr "%s yazı tipi güncellendi"
 
 #: includes/admin/post-types/admin-post-type.php:56
 msgid "Post type draft updated."
@@ -3937,15 +4035,15 @@ msgstr ""
 #: includes/admin/admin.php:46 includes/admin/admin.php:352
 #: includes/class-acf-site-health.php:250
 msgid "ACF"
-msgstr ""
+msgstr "ACF"
 
 #: includes/admin/admin-internal-post-type.php:314
 msgid "taxonomy"
-msgstr ""
+msgstr "taksonomi"
 
 #: includes/admin/admin-internal-post-type.php:314
 msgid "post type"
-msgstr ""
+msgstr "yazı tipi"
 
 #: includes/admin/admin-internal-post-type.php:338
 msgid "Done"
@@ -3953,28 +4051,28 @@ msgstr "Tamamlandı"
 
 #: includes/admin/admin-internal-post-type.php:324
 msgid "Field Group(s)"
-msgstr ""
+msgstr "Alan grup(lar)ı"
 
 #: includes/admin/admin-internal-post-type.php:323
 msgid "Select one or many field groups..."
-msgstr ""
+msgstr "Bir veya daha fazla alan grubu seçin..."
 
 #: includes/admin/admin-internal-post-type.php:322
 msgid "Please select the field groups to link."
-msgstr ""
+msgstr "Lütfen bağlanacak alan gruplarını seçin."
 
 #: includes/admin/admin-internal-post-type.php:280
 msgid "Field group linked successfully."
 msgid_plural "Field groups linked successfully."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Alan grubu başarıyla bağlandı."
+msgstr[1] "Alan grubu başarıyla bağlandı."
 
 #: includes/admin/admin-internal-post-type-list.php:277
 #: includes/admin/post-types/admin-post-types.php:346
 #: includes/admin/post-types/admin-taxonomies.php:352
 msgctxt "post status"
 msgid "Registration Failed"
-msgstr ""
+msgstr "Kayıt başarısız"
 
 #: includes/admin/admin-internal-post-type-list.php:276
 msgid ""
@@ -4026,7 +4124,7 @@ msgid "[ACF shortcode value disabled for preview]"
 msgstr ""
 
 #: includes/admin/admin-internal-post-type.php:290
-#: includes/admin/post-types/admin-field-group.php:569
+#: includes/admin/post-types/admin-field-group.php:572
 msgid "Close Modal"
 msgstr ""
 
@@ -4078,19 +4176,20 @@ msgstr ""
 msgid "Checkbox custom values cannot be empty. Uncheck any empty values."
 msgstr ""
 
-#: includes/admin/views/global/navigation.php:250
+#: includes/admin/views/global/navigation.php:253
 msgid "Updates"
 msgstr "Güncellemeler"
 
-#: includes/admin/views/global/navigation.php:176
+#: includes/admin/views/global/navigation.php:177
+#: includes/admin/views/global/navigation.php:181
 msgid "Advanced Custom Fields logo"
 msgstr ""
 
-#: includes/admin/views/global/form-top.php:89
+#: includes/admin/views/global/form-top.php:92
 msgid "Save Changes"
 msgstr "Değişiklikleri kaydet"
 
-#: includes/admin/views/global/form-top.php:76
+#: includes/admin/views/global/form-top.php:79
 msgid "Field Group Title"
 msgstr ""
 
@@ -4127,7 +4226,7 @@ msgstr ""
 #: includes/admin/admin-options-pages-preview.php:28
 #: includes/admin/views/acf-field-group/pro-features.php:58
 #: includes/admin/views/global/navigation.php:86
-#: includes/admin/views/global/navigation.php:252
+#: includes/admin/views/global/navigation.php:255
 msgid "Options Pages"
 msgstr ""
 
@@ -4147,7 +4246,7 @@ msgstr ""
 msgid "Repeater Field"
 msgstr ""
 
-#: includes/admin/views/global/navigation.php:212
+#: includes/admin/views/global/navigation.php:215
 msgid "Unlock Extra Features with ACF PRO"
 msgstr ""
 
@@ -4183,28 +4282,28 @@ msgstr ""
 
 #: includes/admin/views/acf-field-group/fields.php:64
 msgid "Add Your First Field"
-msgstr ""
+msgstr "İlk alanınızı ekleyin"
 
 #. translators: A symbol (or text, if not available in your locale) meaning
 #. "Order Number", in terms of positional placement.
 #: includes/admin/views/acf-field-group/fields.php:43
 msgid "#"
-msgstr ""
+msgstr "#"
 
 #: includes/admin/views/acf-field-group/fields.php:33
 #: includes/admin/views/acf-field-group/fields.php:67
 #: includes/admin/views/acf-field-group/fields.php:101
-#: includes/admin/views/global/form-top.php:85
+#: includes/admin/views/global/form-top.php:88
 msgid "Add Field"
 msgstr "Alan ekle"
 
 #: includes/acf-field-group-functions.php:496 includes/fields.php:384
 msgid "Presentation"
-msgstr ""
+msgstr "Sunum"
 
 #: includes/fields.php:383
 msgid "Validation"
-msgstr ""
+msgstr "Doğrulama"
 
 #: includes/acf-internal-post-type-functions.php:504
 #: includes/acf-internal-post-type-functions.php:533 includes/fields.php:382
@@ -4213,11 +4312,11 @@ msgstr "Genel"
 
 #: includes/admin/tools/class-acf-admin-tool-import.php:67
 msgid "Import JSON"
-msgstr ""
+msgstr "JSON'u içe aktar"
 
 #: includes/admin/tools/class-acf-admin-tool-export.php:338
 msgid "Export As JSON"
-msgstr ""
+msgstr "JSON olarak dışa aktar"
 
 #. translators: %s number of field groups deactivated
 #: includes/admin/post-types/admin-field-groups.php:360
@@ -4233,21 +4332,21 @@ msgid_plural "%s field groups activated."
 msgstr[0] "Alan grubu kaydedildi."
 msgstr[1] "%s alan grubu kaydedildi."
 
-#: includes/admin/admin-internal-post-type-list.php:468
-#: includes/admin/admin-internal-post-type-list.php:494
+#: includes/admin/admin-internal-post-type-list.php:470
+#: includes/admin/admin-internal-post-type-list.php:496
 msgid "Deactivate"
 msgstr "Devre dışı bırak"
 
-#: includes/admin/admin-internal-post-type-list.php:468
+#: includes/admin/admin-internal-post-type-list.php:470
 msgid "Deactivate this item"
 msgstr "Bu öğeyi devre dışı bırak"
 
-#: includes/admin/admin-internal-post-type-list.php:464
-#: includes/admin/admin-internal-post-type-list.php:493
+#: includes/admin/admin-internal-post-type-list.php:466
+#: includes/admin/admin-internal-post-type-list.php:495
 msgid "Activate"
 msgstr "Etkinleştir"
 
-#: includes/admin/admin-internal-post-type-list.php:464
+#: includes/admin/admin-internal-post-type-list.php:466
 msgid "Activate this item"
 msgstr "Bu öğeyi etkinleştir"
 
@@ -4255,7 +4354,7 @@ msgstr "Bu öğeyi etkinleştir"
 #: assets/build/js/acf-field-group.js:2862
 #: assets/build/js/acf-field-group.js:3375
 msgid "Move field group to trash?"
-msgstr ""
+msgstr "Alan grubu çöp kutusuna taşınsın mı?"
 
 #: acf.php:500 includes/admin/admin-internal-post-type-list.php:264
 #: includes/admin/post-types/admin-field-group.php:304
@@ -4268,7 +4367,7 @@ msgstr "Devre dışı"
 #. Author of the plugin
 #: acf.php
 msgid "WP Engine"
-msgstr ""
+msgstr "WP Engine"
 
 #: acf.php:558
 msgid ""
@@ -4476,7 +4575,7 @@ msgid "Various"
 msgstr "Çeşitli"
 
 #: includes/admin/admin-internal-post-type-list.php:230
-#: includes/admin/admin-internal-post-type-list.php:501
+#: includes/admin/admin-internal-post-type-list.php:503
 msgid "Sync changes"
 msgstr "Değişiklikleri eşitle"
 
@@ -5215,17 +5314,17 @@ msgid "Sync"
 msgstr "Eşitle"
 
 #. translators: %s: field group title
-#: includes/admin/admin-internal-post-type-list.php:885
+#: includes/admin/admin-internal-post-type-list.php:887
 msgid "Select %s"
 msgstr "Seç %s"
 
-#: includes/admin/admin-internal-post-type-list.php:458
-#: includes/admin/admin-internal-post-type-list.php:490
+#: includes/admin/admin-internal-post-type-list.php:460
+#: includes/admin/admin-internal-post-type-list.php:492
 #: includes/admin/views/acf-field-group/field.php:90
 msgid "Duplicate"
-msgstr "Mükerrer"
+msgstr "Çoğalt"
 
-#: includes/admin/admin-internal-post-type-list.php:458
+#: includes/admin/admin-internal-post-type-list.php:460
 msgid "Duplicate this item"
 msgstr "Bu ögeyi çoğalt"
 
@@ -5250,7 +5349,7 @@ msgid "Description"
 msgstr "Açıklama"
 
 #: includes/admin/admin-internal-post-type-list.php:414
-#: includes/admin/admin-internal-post-type-list.php:757
+#: includes/admin/admin-internal-post-type-list.php:759
 msgid "Sync available"
 msgstr "Eşitleme mevcut"
 
@@ -5290,22 +5389,22 @@ msgstr "Veritabanını güncelle"
 msgid "Custom Fields"
 msgstr "Ek alanlar"
 
-#: includes/admin/post-types/admin-field-group.php:614
+#: includes/admin/post-types/admin-field-group.php:609
 msgid "Move Field"
 msgstr "Alanı taşı"
 
-#: includes/admin/post-types/admin-field-group.php:603
-#: includes/admin/post-types/admin-field-group.php:607
+#: includes/admin/post-types/admin-field-group.php:602
+#: includes/admin/post-types/admin-field-group.php:606
 msgid "Please select the destination for this field"
 msgstr "Lütfen bu alan için bir hedef seçin"
 
 #. translators: Confirmation message once a field has been moved to a different
 #. field group.
-#: includes/admin/post-types/admin-field-group.php:565
+#: includes/admin/post-types/admin-field-group.php:568
 msgid "The %1$s field can now be found in the %2$s field group"
 msgstr "%1$s alanı artık %2$s alan grubunda bulunabilir"
 
-#: includes/admin/post-types/admin-field-group.php:562
+#: includes/admin/post-types/admin-field-group.php:565
 msgid "Move Complete."
 msgstr "Taşıma tamamlandı."
 
@@ -5412,7 +5511,7 @@ msgid "Field group updated."
 msgstr "Alan grubu güncellendi."
 
 #: includes/admin/admin-tools.php:107
-#: includes/admin/views/global/navigation.php:248
+#: includes/admin/views/global/navigation.php:251
 #: includes/admin/views/tools/tools.php:13
 msgid "Tools"
 msgstr "Araçlar"
@@ -5489,7 +5588,7 @@ msgid "Title"
 msgstr "Ba&#351l&#305k"
 
 #: includes/assets.php:376 includes/forms/form-comment.php:140
-#: assets/build/js/acf-input.js:8428 assets/build/js/acf-input.js:9206
+#: assets/build/js/acf-input.js:8422 assets/build/js/acf-input.js:9197
 msgid "Edit field group"
 msgstr "Alan grubunu düzenle"
 
@@ -5556,50 +5655,50 @@ msgstr "Vazgeç"
 msgid "Are you sure?"
 msgstr "Emin misiniz?"
 
-#: includes/assets.php:370 assets/build/js/acf-input.js:10493
-#: assets/build/js/acf-input.js:11547
+#: includes/assets.php:370 assets/build/js/acf-input.js:10487
+#: assets/build/js/acf-input.js:11538
 msgid "%d fields require attention"
 msgstr "%d alan dikkatinizi gerektiriyor"
 
-#: includes/assets.php:369 assets/build/js/acf-input.js:10491
-#: assets/build/js/acf-input.js:11545
+#: includes/assets.php:369 assets/build/js/acf-input.js:10485
+#: assets/build/js/acf-input.js:11536
 msgid "1 field requires attention"
 msgstr "1 alan dikkatinizi gerektiriyor"
 
 #: includes/assets.php:368 includes/validation.php:247
-#: includes/validation.php:255 assets/build/js/acf-input.js:10486
-#: assets/build/js/acf-input.js:11540
+#: includes/validation.php:255 assets/build/js/acf-input.js:10480
+#: assets/build/js/acf-input.js:11531
 msgid "Validation failed"
 msgstr "Doğrulama başarısız"
 
-#: includes/assets.php:367 assets/build/js/acf-input.js:10654
-#: assets/build/js/acf-input.js:11718
+#: includes/assets.php:367 assets/build/js/acf-input.js:10648
+#: assets/build/js/acf-input.js:11709
 msgid "Validation successful"
 msgstr "Doğrulama başarılı"
 
-#: includes/media.php:54 assets/build/js/acf-input.js:8256
-#: assets/build/js/acf-input.js:9010
+#: includes/media.php:54 assets/build/js/acf-input.js:8250
+#: assets/build/js/acf-input.js:9001
 msgid "Restricted"
 msgstr "Kısıtlı"
 
-#: includes/media.php:53 assets/build/js/acf-input.js:8071
-#: assets/build/js/acf-input.js:8774
+#: includes/media.php:53 assets/build/js/acf-input.js:8065
+#: assets/build/js/acf-input.js:8765
 msgid "Collapse Details"
 msgstr "Detayları daralt"
 
-#: includes/media.php:52 assets/build/js/acf-input.js:8071
-#: assets/build/js/acf-input.js:8771
+#: includes/media.php:52 assets/build/js/acf-input.js:8065
+#: assets/build/js/acf-input.js:8762
 msgid "Expand Details"
 msgstr "Ayrıntıları genişlet"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:470
-#: includes/media.php:51 assets/build/js/acf-input.js:7938
-#: assets/build/js/acf-input.js:8619
+#: includes/media.php:51 assets/build/js/acf-input.js:7932
+#: assets/build/js/acf-input.js:8610
 msgid "Uploaded to this post"
 msgstr "Bu yazıya yüklenmiş"
 
-#: includes/media.php:50 assets/build/js/acf-input.js:7977
-#: assets/build/js/acf-input.js:8658
+#: includes/media.php:50 assets/build/js/acf-input.js:7971
+#: assets/build/js/acf-input.js:8649
 msgctxt "verb"
 msgid "Update"
 msgstr "Güncelleme"
@@ -5609,8 +5708,8 @@ msgctxt "verb"
 msgid "Edit"
 msgstr "Düzenle"
 
-#: includes/assets.php:364 assets/build/js/acf-input.js:10264
-#: assets/build/js/acf-input.js:11312
+#: includes/assets.php:364 assets/build/js/acf-input.js:10258
+#: assets/build/js/acf-input.js:11303
 msgid "The changes you made will be lost if you navigate away from this page"
 msgstr ""
 "Bu sayfadan başka bir sayfaya geçerseniz yaptığınız değişiklikler kaybolacak"
@@ -5727,94 +5826,94 @@ msgstr "Arşivler"
 msgid "Page Link"
 msgstr "Sayfa bağlantısı"
 
-#: includes/fields/class-acf-field-taxonomy.php:883
+#: includes/fields/class-acf-field-taxonomy.php:888
 #: includes/locations/class-acf-location-user-form.php:72
 msgid "Add"
 msgstr "Ekle"
 
 #: includes/admin/views/acf-field-group/fields.php:53
-#: includes/fields/class-acf-field-taxonomy.php:853
+#: includes/fields/class-acf-field-taxonomy.php:858
 msgid "Name"
 msgstr "Bağlantı ismi"
 
-#: includes/fields/class-acf-field-taxonomy.php:838
+#: includes/fields/class-acf-field-taxonomy.php:843
 msgid "%s added"
 msgstr "%s eklendi"
 
-#: includes/fields/class-acf-field-taxonomy.php:802
+#: includes/fields/class-acf-field-taxonomy.php:807
 msgid "%s already exists"
 msgstr "%s zaten mevcut"
 
-#: includes/fields/class-acf-field-taxonomy.php:790
+#: includes/fields/class-acf-field-taxonomy.php:795
 msgid "User unable to add new %s"
 msgstr "Kullanıcı yeni %s ekleyemiyor"
 
-#: includes/fields/class-acf-field-taxonomy.php:670
+#: includes/fields/class-acf-field-taxonomy.php:675
 msgid "Term ID"
 msgstr "Terim no"
 
-#: includes/fields/class-acf-field-taxonomy.php:669
+#: includes/fields/class-acf-field-taxonomy.php:674
 msgid "Term Object"
 msgstr "Terim nesnesi"
 
-#: includes/fields/class-acf-field-taxonomy.php:654
+#: includes/fields/class-acf-field-taxonomy.php:659
 msgid "Load value from posts terms"
 msgstr "Yazının terimlerinden değerleri yükle"
 
-#: includes/fields/class-acf-field-taxonomy.php:653
+#: includes/fields/class-acf-field-taxonomy.php:658
 msgid "Load Terms"
 msgstr "Terimleri yükle"
 
-#: includes/fields/class-acf-field-taxonomy.php:643
+#: includes/fields/class-acf-field-taxonomy.php:648
 msgid "Connect selected terms to the post"
 msgstr "Seçilmiş terimleri yazıya bağla"
 
-#: includes/fields/class-acf-field-taxonomy.php:642
+#: includes/fields/class-acf-field-taxonomy.php:647
 msgid "Save Terms"
 msgstr "Terimleri kaydet"
 
-#: includes/fields/class-acf-field-taxonomy.php:632
+#: includes/fields/class-acf-field-taxonomy.php:637
 msgid "Allow new terms to be created whilst editing"
 msgstr "Düzenlenirken yeni terimlerin oluşabilmesine izin ver"
 
-#: includes/fields/class-acf-field-taxonomy.php:631
+#: includes/fields/class-acf-field-taxonomy.php:636
 msgid "Create Terms"
 msgstr "Terimleri oluştur"
 
-#: includes/fields/class-acf-field-taxonomy.php:690
+#: includes/fields/class-acf-field-taxonomy.php:695
 msgid "Radio Buttons"
 msgstr "Tekli seçim"
 
-#: includes/fields/class-acf-field-taxonomy.php:689
+#: includes/fields/class-acf-field-taxonomy.php:694
 msgid "Single Value"
 msgstr "Tek değer"
 
-#: includes/fields/class-acf-field-taxonomy.php:687
+#: includes/fields/class-acf-field-taxonomy.php:692
 msgid "Multi Select"
 msgstr "Çoklu seçim"
 
 #: includes/fields/class-acf-field-checkbox.php:22
-#: includes/fields/class-acf-field-taxonomy.php:686
+#: includes/fields/class-acf-field-taxonomy.php:691
 msgid "Checkbox"
 msgstr "İşaret kutusu"
 
-#: includes/fields/class-acf-field-taxonomy.php:685
+#: includes/fields/class-acf-field-taxonomy.php:690
 msgid "Multiple Values"
 msgstr "Çoklu değer"
 
-#: includes/fields/class-acf-field-taxonomy.php:680
+#: includes/fields/class-acf-field-taxonomy.php:685
 msgid "Select the appearance of this field"
 msgstr "Bu alanın görünümünü seçin"
 
-#: includes/fields/class-acf-field-taxonomy.php:679
+#: includes/fields/class-acf-field-taxonomy.php:684
 msgid "Appearance"
 msgstr "Görünüm"
 
-#: includes/fields/class-acf-field-taxonomy.php:621
+#: includes/fields/class-acf-field-taxonomy.php:626
 msgid "Select the taxonomy to be displayed"
 msgstr "Görüntülenecek taksonomiyi seçin"
 
-#: includes/fields/class-acf-field-taxonomy.php:585
+#: includes/fields/class-acf-field-taxonomy.php:590
 msgctxt "No Terms"
 msgid "No %s"
 msgstr "%s yok"
@@ -5843,7 +5942,7 @@ msgstr "‘Diğer’ değerlerini alanın seçenekleri arasına kaydet"
 msgid "Add 'other' choice to allow for custom values"
 msgstr "Özel değerlere izin vermek için 'diğer' seçeneği ekle"
 
-#: includes/admin/views/global/navigation.php:196
+#: includes/admin/views/global/navigation.php:199
 msgid "Other"
 msgstr "Diğer"
 
@@ -5947,7 +6046,7 @@ msgid "Enter each default value on a new line"
 msgstr "Her satıra bir değer girin"
 
 #: includes/fields/class-acf-field-select.php:231 includes/media.php:48
-#: assets/build/js/acf-input.js:7836 assets/build/js/acf-input.js:8504
+#: assets/build/js/acf-input.js:7830 assets/build/js/acf-input.js:8495
 msgctxt "verb"
 msgid "Select"
 msgstr "Seçim"
@@ -6013,7 +6112,7 @@ msgid "One result is available, press enter to select it."
 msgstr "Bir sonuç bulundu, seçmek için enter tuşuna basın."
 
 #: includes/fields/class-acf-field-select.php:22
-#: includes/fields/class-acf-field-taxonomy.php:691
+#: includes/fields/class-acf-field-taxonomy.php:696
 msgctxt "noun"
 msgid "Select"
 msgstr "Seçim"
@@ -6289,14 +6388,14 @@ msgstr "Tuş grubu"
 #: includes/fields/class-acf-field-post_object.php:422
 #: includes/fields/class-acf-field-radio.php:228
 #: includes/fields/class-acf-field-select.php:402
-#: includes/fields/class-acf-field-taxonomy.php:700
+#: includes/fields/class-acf-field-taxonomy.php:705
 #: includes/fields/class-acf-field-user.php:132
 msgid "Allow Null"
 msgstr "Null değere izin ver"
 
 #: includes/fields/class-acf-field-page_link.php:264
 #: includes/fields/class-acf-field-post_object.php:245
-#: includes/fields/class-acf-field-taxonomy.php:871
+#: includes/fields/class-acf-field-taxonomy.php:876
 msgid "Parent"
 msgstr "Ana"
 
@@ -6328,7 +6427,7 @@ msgstr "Sadece görsel"
 msgid "Visual & Text"
 msgstr "Görsel ve metin"
 
-#: includes/fields/class-acf-field-icon_picker.php:225
+#: includes/fields/class-acf-field-icon_picker.php:230
 #: includes/fields/class-acf-field-wysiwyg.php:324
 msgid "Tabs"
 msgstr "Seklemeler"
@@ -6468,7 +6567,7 @@ msgstr "Elemanlar"
 
 #: includes/fields/class-acf-field-relationship.php:602
 #: includes/fields/class-acf-field-taxonomy.php:20
-#: includes/fields/class-acf-field-taxonomy.php:620
+#: includes/fields/class-acf-field-taxonomy.php:625
 #: includes/locations/class-acf-location-taxonomy.php:22
 msgid "Taxonomy"
 msgstr "Etiketleme"
@@ -6520,17 +6619,17 @@ msgid "Select post type"
 msgstr "Yazı tipi seç"
 
 #: includes/fields/class-acf-field-relationship.php:78
-#: assets/build/js/acf-input.js:4944 assets/build/js/acf-input.js:5412
+#: assets/build/js/acf-input.js:4938 assets/build/js/acf-input.js:5403
 msgid "No matches found"
 msgstr "Eşleşme yok"
 
 #: includes/fields/class-acf-field-relationship.php:77
-#: assets/build/js/acf-input.js:4927 assets/build/js/acf-input.js:5391
+#: assets/build/js/acf-input.js:4921 assets/build/js/acf-input.js:5382
 msgid "Loading"
 msgstr "Yükleniyor"
 
 #: includes/fields/class-acf-field-relationship.php:76
-#: assets/build/js/acf-input.js:4832 assets/build/js/acf-input.js:5282
+#: assets/build/js/acf-input.js:4826 assets/build/js/acf-input.js:5273
 msgid "Maximum values reached ( {max} values )"
 msgstr "En yüksek değerlere ulaşıldı ({max} değerleri)"
 
@@ -6627,7 +6726,7 @@ msgstr "Ön yüzden dönecek değeri belirleyin"
 #: includes/fields/class-acf-field-file.php:199
 #: includes/fields/class-acf-field-link.php:146
 #: includes/fields/class-acf-field-radio.php:202
-#: includes/fields/class-acf-field-taxonomy.php:664
+#: includes/fields/class-acf-field-taxonomy.php:669
 msgid "Return Value"
 msgstr "Dönüş değeri"
 
@@ -6654,23 +6753,23 @@ msgid "Edit"
 msgstr "Düzenle"
 
 #: includes/fields/class-acf-field-image.php:63 includes/media.php:55
-#: assets/build/js/acf-input.js:7883 assets/build/js/acf-input.js:8558
+#: assets/build/js/acf-input.js:7877 assets/build/js/acf-input.js:8549
 msgid "All images"
 msgstr "Tüm görseller"
 
 #: includes/fields/class-acf-field-image.php:62
-#: assets/build/js/acf-input.js:4189 assets/build/js/acf-input.js:4590
+#: assets/build/js/acf-input.js:4183 assets/build/js/acf-input.js:4581
 msgid "Update Image"
 msgstr "Görseli güncelle"
 
 #: includes/fields/class-acf-field-image.php:61
-#: assets/build/js/acf-input.js:4188 assets/build/js/acf-input.js:4589
+#: assets/build/js/acf-input.js:4182 assets/build/js/acf-input.js:4580
 msgid "Edit Image"
 msgstr "Resmi düzenle"
 
 #: includes/fields/class-acf-field-image.php:60
-#: assets/build/js/acf-input.js:4024 assets/build/js/acf-input.js:4164
-#: assets/build/js/acf-input.js:4415 assets/build/js/acf-input.js:4564
+#: assets/build/js/acf-input.js:4018 assets/build/js/acf-input.js:4158
+#: assets/build/js/acf-input.js:4406 assets/build/js/acf-input.js:4555
 msgid "Select Image"
 msgstr "Resim Seç"
 
@@ -6935,7 +7034,7 @@ msgstr "Tema işlevlerinden dönen biçim"
 #: includes/fields/class-acf-field-color_picker.php:168
 #: includes/fields/class-acf-field-date_picker.php:200
 #: includes/fields/class-acf-field-date_time_picker.php:188
-#: includes/fields/class-acf-field-icon_picker.php:248
+#: includes/fields/class-acf-field-icon_picker.php:253
 #: includes/fields/class-acf-field-image.php:177
 #: includes/fields/class-acf-field-post_object.php:386
 #: includes/fields/class-acf-field-relationship.php:610
