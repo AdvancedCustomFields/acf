@@ -2441,7 +2441,8 @@ html[dir=rtl] .acf-field-object.open > .handle {
 .acf-taxonomy-select-id,
 .acf-relationship-select-id,
 .acf-post_object-select-id,
-.acf-page_link-select-id {
+.acf-page_link-select-id,
+.acf-user-select-id {
   color: #98A2B3;
   padding-left: 10px;
 }

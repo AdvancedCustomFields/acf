@@ -4,7 +4,7 @@ Tags: acf, fields, custom fields, meta, repeater
 Requires at least: 6.0
 Tested up to: 6.5
 Requires PHP: 7.4
-Stable tag: 6.3.2
+Stable tag: 6.3.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -93,6 +93,15 @@ From your WordPress dashboard
 
 
 == Changelog ==
+
+= 6.3.3 =
+*Release Date 27th June 2024*
+
+* Enhancement - All dashicons are now available to the icon picker field type
+* Fix - The True/False field now correctly shows it’s description message beside the switch when using the Stylized UI setting
+* Fix - Conditional logic values now correctly load options when loaded over AJAX
+* Fix - ACF PRO will no longer trigger license validation calls when loading a front-end page
+* i18n - Fixed an untranslatable string on Option Page previews
 
 = 6.3.2.1 =
 *Release Date 24th June 2024*

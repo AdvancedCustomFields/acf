@@ -1269,6 +1269,12 @@ html[dir=rtl] .acf-button-group label:last-child {
   border-radius: 120px;
 }
 
+.acf-true-false:has(.acf-switch) label {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+
 /* in media modal */
 .compat-item .acf-true-false .message {
   float: none;

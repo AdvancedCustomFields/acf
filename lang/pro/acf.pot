@@ -7,7 +7,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language-Team: WP Engine <support@advancedcustomfields.com>\n"
-"POT-Creation-Date: 2024-06-24 10:56+0000\n"
+"POT-Creation-Date: 2024-06-27 14:24+0000\n"
 "Report-Msgid-Bugs-To: https://support.advancedcustomfields.com\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
@@ -20,27 +20,27 @@ msgstr ""
 msgid "Advanced Custom Fields PRO"
 msgstr ""
 
-#: pro/acf-pro.php:173
+#: pro/acf-pro.php:175
 msgid "Your ACF PRO license is no longer active. Please renew to continue to have access to updates, support, & PRO features."
 msgstr ""
 
-#: pro/acf-pro.php:170
+#: pro/acf-pro.php:172
 msgid "Your license has expired. Please renew to continue to have access to updates, support &amp; PRO features."
 msgstr ""
 
-#: pro/acf-pro.php:167
+#: pro/acf-pro.php:169
 msgid "Activate your license to enable access to updates, support &amp; PRO features."
 msgstr ""
 
-#: pro/acf-pro.php:188, pro/admin/views/html-settings-updates.php:114
+#: pro/acf-pro.php:190, pro/admin/views/html-settings-updates.php:114
 msgid "Manage License"
 msgstr ""
 
-#: pro/acf-pro.php:256
+#: pro/acf-pro.php:258
 msgid "A valid license is required to edit options pages."
 msgstr ""
 
-#: pro/acf-pro.php:254
+#: pro/acf-pro.php:256
 msgid "A valid license is required to edit field groups assigned to a block."
 msgstr ""
 
@@ -70,12 +70,12 @@ msgstr ""
 msgid "%s settings"
 msgstr ""
 
-#: pro/blocks.php:1018
+#: pro/blocks.php:1019
 msgid "This block contains no editable fields."
 msgstr ""
 
 #. translators: %s: an admin URL to the field group edit screen
-#: pro/blocks.php:1024
+#: pro/blocks.php:1025
 msgid "Assign a <a href=\"%s\" target=\"_blank\">field group</a> to add fields to this block."
 msgstr ""
 

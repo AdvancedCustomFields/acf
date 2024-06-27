@@ -12,7 +12,7 @@
 # This file is distributed under the same license as Advanced Custom Fields.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-06-24T10:56:57+00:00\n"
+"PO-Revision-Date: 2024-06-27T14:24:00+00:00\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "Language: ko_KR\n"
 "MIME-Version: 1.0\n"
@@ -20,6 +20,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: gettext\n"
 "Project-Id-Version: Advanced Custom Fields\n"
+
+#: includes/ajax/class-acf-ajax-upgrade.php:24
+msgid "Sorry, you don't have permission to do that."
+msgstr ""
+
+#: includes/ajax/class-acf-ajax-query-users.php:24
+msgid "Invalid request args."
+msgstr ""
+
+#: includes/ajax/class-acf-ajax-local-json-diff.php:37
+msgid "Sorry, you are not allowed to do that."
+msgstr ""
+
+#: includes/ajax/class-acf-ajax-check-screen.php:27
+#: includes/ajax/class-acf-ajax-user-setting.php:38
+msgid "Sorry, you do not have permission to do that."
+msgstr ""
 
 #: includes/class-acf-site-health.php:643
 msgid "Blocks Using Post Meta"
@@ -36,965 +53,965 @@ msgid "ACF PRO Logo"
 msgstr "ACF PRO 로고"
 
 #. translators: %s - field/param name
-#: includes/fields/class-acf-field-icon_picker.php:676
+#: includes/fields/class-acf-field-icon_picker.php:683
 msgid "%s requires a valid attachment ID when type is set to media_library."
 msgstr ""
 "유형이 미디어_라이브러리로 설정된 경우 %s에 유효한 첨부 파일 ID가 필요합니다."
 
 #. translators: %s - field name
-#: includes/fields/class-acf-field-icon_picker.php:660
+#: includes/fields/class-acf-field-icon_picker.php:667
 msgid "%s is a required property of acf."
 msgstr "%s는 acf의 필수 속성입니다."
 
-#: includes/fields/class-acf-field-icon_picker.php:636
+#: includes/fields/class-acf-field-icon_picker.php:643
 msgid "The value of icon to save."
 msgstr "저장할 아이콘의 값입니다."
 
-#: includes/fields/class-acf-field-icon_picker.php:630
+#: includes/fields/class-acf-field-icon_picker.php:637
 msgid "The type of icon to save."
 msgstr "저장할 아이콘 유형입니다."
 
-#: includes/fields/class-acf-field-icon_picker.php:610
+#: includes/fields/class-acf-field-icon_picker.php:617
 msgid "Yes icon"
 msgstr "예 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:609
+#: includes/fields/class-acf-field-icon_picker.php:616
 msgid "Wordpress-alt icon"
 msgstr "워드프레스-알트 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:608
+#: includes/fields/class-acf-field-icon_picker.php:615
 msgid "Wordpress icon"
 msgstr "워드프레스 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:607
+#: includes/fields/class-acf-field-icon_picker.php:614
 msgid "Welcome write-blog icon"
 msgstr "환영 글쓰기-블로그 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:606
+#: includes/fields/class-acf-field-icon_picker.php:613
 msgid "Welcome widgets-menus icon"
 msgstr "시작 위젯-메뉴 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:605
+#: includes/fields/class-acf-field-icon_picker.php:612
 msgid "Welcome view-site icon"
 msgstr "환영 보기 사이트 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:604
+#: includes/fields/class-acf-field-icon_picker.php:611
 msgid "Welcome learn-more icon"
 msgstr "자세히 알아보기 환영 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:603
+#: includes/fields/class-acf-field-icon_picker.php:610
 msgid "Welcome comments icon"
 msgstr "환영 댓글 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:602
+#: includes/fields/class-acf-field-icon_picker.php:609
 msgid "Welcome add-page icon"
 msgstr "환영 추가 페이지 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:601
+#: includes/fields/class-acf-field-icon_picker.php:608
 msgid "Warning icon"
 msgstr "경고 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:600
+#: includes/fields/class-acf-field-icon_picker.php:607
 msgid "Visibility icon"
 msgstr "가시성 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:599
+#: includes/fields/class-acf-field-icon_picker.php:606
 msgid "Video-alt3 icon"
 msgstr "비디오-alt3 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:598
+#: includes/fields/class-acf-field-icon_picker.php:605
 msgid "Video-alt2 icon"
 msgstr "비디오-alt2 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:597
+#: includes/fields/class-acf-field-icon_picker.php:604
 msgid "Video-alt icon"
 msgstr "비디오-알트 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:596
+#: includes/fields/class-acf-field-icon_picker.php:603
 msgid "Vault icon"
 msgstr "볼트 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:595
+#: includes/fields/class-acf-field-icon_picker.php:602
 msgid "Upload icon"
 msgstr "업로드 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:594
+#: includes/fields/class-acf-field-icon_picker.php:601
 msgid "Update icon"
 msgstr "업데이트 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:593
+#: includes/fields/class-acf-field-icon_picker.php:600
 msgid "Unlock icon"
 msgstr "잠금 해제 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:592
+#: includes/fields/class-acf-field-icon_picker.php:599
 msgid "Universal access alternative icon"
 msgstr "유니버설 액세스 대체 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:591
+#: includes/fields/class-acf-field-icon_picker.php:598
 msgid "Universal access icon"
 msgstr "유니버설 액세스 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:590
+#: includes/fields/class-acf-field-icon_picker.php:597
 msgid "Undo icon"
 msgstr "실행 취소 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:589
+#: includes/fields/class-acf-field-icon_picker.php:596
 msgid "Twitter icon"
 msgstr "트위터 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:588
+#: includes/fields/class-acf-field-icon_picker.php:595
 msgid "Trash icon"
 msgstr "휴지통 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:587
+#: includes/fields/class-acf-field-icon_picker.php:594
 msgid "Translation icon"
 msgstr "번역 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:586
+#: includes/fields/class-acf-field-icon_picker.php:593
 msgid "Tickets alternative icon"
 msgstr "티켓 대체 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:585
+#: includes/fields/class-acf-field-icon_picker.php:592
 msgid "Tickets icon"
 msgstr "티켓 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:584
+#: includes/fields/class-acf-field-icon_picker.php:591
 msgid "Thumbs-up icon"
 msgstr "위로 가기 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:583
+#: includes/fields/class-acf-field-icon_picker.php:590
 msgid "Thumbs-down icon"
 msgstr "썸네일 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:582
+#: includes/fields/class-acf-field-icon_picker.php:589
 msgid "Text icon"
 msgstr "텍스트 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:581
+#: includes/fields/class-acf-field-icon_picker.php:588
 msgid "Testimonial icon"
 msgstr "추천 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:580
+#: includes/fields/class-acf-field-icon_picker.php:587
 msgid "Tagcloud icon"
 msgstr "태그클라우드 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:579
+#: includes/fields/class-acf-field-icon_picker.php:586
 msgid "Tag icon"
 msgstr "태그 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:578
+#: includes/fields/class-acf-field-icon_picker.php:585
 msgid "Tablet icon"
 msgstr "태블릿 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:577
+#: includes/fields/class-acf-field-icon_picker.php:584
 msgid "Store icon"
 msgstr "스토어 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:576
+#: includes/fields/class-acf-field-icon_picker.php:583
 msgid "Sticky icon"
 msgstr "스티커 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:575
+#: includes/fields/class-acf-field-icon_picker.php:582
 msgid "Star-half icon"
 msgstr "별 반쪽 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:574
+#: includes/fields/class-acf-field-icon_picker.php:581
 msgid "Star-filled icon"
 msgstr "별 가득 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:573
+#: includes/fields/class-acf-field-icon_picker.php:580
 msgid "Star-empty icon"
 msgstr "별 비어 있음 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:572
+#: includes/fields/class-acf-field-icon_picker.php:579
 msgid "Sos icon"
 msgstr "구조 요청 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:571
+#: includes/fields/class-acf-field-icon_picker.php:578
 msgid "Sort icon"
 msgstr "정렬 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:570
+#: includes/fields/class-acf-field-icon_picker.php:577
 msgid "Smiley icon"
 msgstr "스마일 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:569
+#: includes/fields/class-acf-field-icon_picker.php:576
 msgid "Smartphone icon"
 msgstr "스마트폰 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:568
+#: includes/fields/class-acf-field-icon_picker.php:575
 msgid "Slides icon"
 msgstr "슬라이드 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:567
+#: includes/fields/class-acf-field-icon_picker.php:574
 msgid "Shield-alt icon"
 msgstr "방패-알트 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:566
+#: includes/fields/class-acf-field-icon_picker.php:573
 msgid "Shield icon"
 msgstr "방패 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:565
+#: includes/fields/class-acf-field-icon_picker.php:572
 msgid "Share-alt2 icon"
 msgstr "공유-알트2 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:564
+#: includes/fields/class-acf-field-icon_picker.php:571
 msgid "Share-alt icon"
 msgstr "공유-알트 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:563
+#: includes/fields/class-acf-field-icon_picker.php:570
 msgid "Share icon"
 msgstr "공유 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:562
+#: includes/fields/class-acf-field-icon_picker.php:569
 msgid "Search icon"
 msgstr "검색 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:561
+#: includes/fields/class-acf-field-icon_picker.php:568
 msgid "Screenoptions icon"
 msgstr "화면 옵션 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:560
+#: includes/fields/class-acf-field-icon_picker.php:567
 msgid "Schedule icon"
 msgstr "일정 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:559
+#: includes/fields/class-acf-field-icon_picker.php:566
 msgid "Rss icon"
 msgstr "Rss 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:558
+#: includes/fields/class-acf-field-icon_picker.php:565
 msgid "Redo icon"
 msgstr "다시 실행 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:557
+#: includes/fields/class-acf-field-icon_picker.php:564
 msgid "Randomize icon"
 msgstr "무작위 추출 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:556
+#: includes/fields/class-acf-field-icon_picker.php:563
 msgid "Products icon"
 msgstr "제품 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:555
+#: includes/fields/class-acf-field-icon_picker.php:562
 msgid "Pressthis icon"
 msgstr "프레스트 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:554
+#: includes/fields/class-acf-field-icon_picker.php:561
 msgid "Post-status icon"
 msgstr "글 상태 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:553
+#: includes/fields/class-acf-field-icon_picker.php:560
 msgid "Portfolio icon"
 msgstr "포트폴리오 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:552
+#: includes/fields/class-acf-field-icon_picker.php:559
 msgid "Plus-alt icon"
 msgstr "플러스-알트 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:551
+#: includes/fields/class-acf-field-icon_picker.php:558
 msgid "Plus icon"
 msgstr "플러스 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:550
+#: includes/fields/class-acf-field-icon_picker.php:557
 msgid "Playlist-video icon"
 msgstr "재생목록-비디오 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:549
+#: includes/fields/class-acf-field-icon_picker.php:556
 msgid "Playlist-audio icon"
 msgstr "재생목록 오디오 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:548
+#: includes/fields/class-acf-field-icon_picker.php:555
 msgid "Phone icon"
 msgstr "전화 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:547
+#: includes/fields/class-acf-field-icon_picker.php:554
 msgid "Performance icon"
 msgstr "성능 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:546
+#: includes/fields/class-acf-field-icon_picker.php:553
 msgid "Paperclip icon"
 msgstr "종이 클립 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:545
+#: includes/fields/class-acf-field-icon_picker.php:552
 msgid "Palmtree icon"
 msgstr "손바닥 모양 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:544
+#: includes/fields/class-acf-field-icon_picker.php:551
 msgid "No alternative icon"
 msgstr "대체 아이콘 없음"
 
-#: includes/fields/class-acf-field-icon_picker.php:543
+#: includes/fields/class-acf-field-icon_picker.php:550
 msgid "No icon"
 msgstr "아이콘 없음"
 
-#: includes/fields/class-acf-field-icon_picker.php:542
+#: includes/fields/class-acf-field-icon_picker.php:549
 msgid "Networking icon"
 msgstr "네트워킹 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:541
+#: includes/fields/class-acf-field-icon_picker.php:548
 msgid "Nametag icon"
 msgstr "네임택 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:540
+#: includes/fields/class-acf-field-icon_picker.php:547
 msgid "Move icon"
 msgstr "이동 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:539
+#: includes/fields/class-acf-field-icon_picker.php:546
 msgid "Money icon"
 msgstr "돈 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:538
+#: includes/fields/class-acf-field-icon_picker.php:545
 msgid "Minus icon"
 msgstr "마이너스 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:537
+#: includes/fields/class-acf-field-icon_picker.php:544
 msgid "Migrate icon"
 msgstr "마이그레이션 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:536
+#: includes/fields/class-acf-field-icon_picker.php:543
 msgid "Microphone icon"
 msgstr "마이크 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:535
+#: includes/fields/class-acf-field-icon_picker.php:542
 msgid "Menu icon"
 msgstr "메뉴 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:534
+#: includes/fields/class-acf-field-icon_picker.php:541
 msgid "Megaphone icon"
 msgstr "메가폰 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:533
+#: includes/fields/class-acf-field-icon_picker.php:540
 msgid "Media video icon"
 msgstr "미디어 비디오 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:532
+#: includes/fields/class-acf-field-icon_picker.php:539
 msgid "Media text icon"
 msgstr "미디어 텍스트 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:531
+#: includes/fields/class-acf-field-icon_picker.php:538
 msgid "Media spreadsheet icon"
 msgstr "미디어 스프레드시트 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:530
+#: includes/fields/class-acf-field-icon_picker.php:537
 msgid "Media interactive icon"
 msgstr "미디어 대화형 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:529
+#: includes/fields/class-acf-field-icon_picker.php:536
 msgid "Media document icon"
 msgstr "미디어 문서 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:528
+#: includes/fields/class-acf-field-icon_picker.php:535
 msgid "Media default icon"
 msgstr "미디어 기본 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:527
+#: includes/fields/class-acf-field-icon_picker.php:534
 msgid "Media code icon"
 msgstr "미디어 코드 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:526
+#: includes/fields/class-acf-field-icon_picker.php:533
 msgid "Media audio icon"
 msgstr "미디어 오디오 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:525
+#: includes/fields/class-acf-field-icon_picker.php:532
 msgid "Media archive icon"
 msgstr "미디어 아카이브 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:524
+#: includes/fields/class-acf-field-icon_picker.php:531
 msgid "Marker icon"
 msgstr "마커 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:523
+#: includes/fields/class-acf-field-icon_picker.php:530
 msgid "Lock icon"
 msgstr "잠금 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:522
+#: includes/fields/class-acf-field-icon_picker.php:529
 msgid "Location-alt icon"
 msgstr "위치 - 알트 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:521
+#: includes/fields/class-acf-field-icon_picker.php:528
 msgid "Location icon"
 msgstr "위치 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:520
+#: includes/fields/class-acf-field-icon_picker.php:527
 msgid "List-view icon"
 msgstr "목록 보기 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:519
+#: includes/fields/class-acf-field-icon_picker.php:526
 msgid "Lightbulb icon"
 msgstr "전구 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:518
+#: includes/fields/class-acf-field-icon_picker.php:525
 msgid "Leftright icon"
 msgstr "왼쪽 오른쪽 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:517
+#: includes/fields/class-acf-field-icon_picker.php:524
 msgid "Layout icon"
 msgstr "레이아웃 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:516
+#: includes/fields/class-acf-field-icon_picker.php:523
 msgid "Laptop icon"
 msgstr "노트북 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:515
+#: includes/fields/class-acf-field-icon_picker.php:522
 msgid "Info icon"
 msgstr "정보 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:514
+#: includes/fields/class-acf-field-icon_picker.php:521
 msgid "Index-card icon"
 msgstr "색인 카드 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:513
+#: includes/fields/class-acf-field-icon_picker.php:520
 msgid "Images-alt2 icon"
 msgstr "Images-alt2 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:512
+#: includes/fields/class-acf-field-icon_picker.php:519
 msgid "Images-alt icon"
 msgstr "Images-alt 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:511
+#: includes/fields/class-acf-field-icon_picker.php:518
 msgid "Image rotate-right icon"
 msgstr "이미지 오른쪽 회전 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:510
+#: includes/fields/class-acf-field-icon_picker.php:517
 msgid "Image rotate-left icon"
 msgstr "이미지 왼쪽 회전 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:509
+#: includes/fields/class-acf-field-icon_picker.php:516
 msgid "Image rotate icon"
 msgstr "이미지 회전 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:508
+#: includes/fields/class-acf-field-icon_picker.php:515
 msgid "Image flip-vertical icon"
 msgstr "이미지 뒤집기-수직 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:507
+#: includes/fields/class-acf-field-icon_picker.php:514
 msgid "Image flip-horizontal icon"
 msgstr "이미지 뒤집기 가로 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:506
+#: includes/fields/class-acf-field-icon_picker.php:513
 msgid "Image filter icon"
 msgstr "이미지 필터 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:505
+#: includes/fields/class-acf-field-icon_picker.php:512
 msgid "Image crop icon"
 msgstr "이미지 자르기 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:504
+#: includes/fields/class-acf-field-icon_picker.php:511
 msgid "Id-alt icon"
 msgstr "아이디-알트 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:503
+#: includes/fields/class-acf-field-icon_picker.php:510
 msgid "Id icon"
 msgstr "아이디 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:502
+#: includes/fields/class-acf-field-icon_picker.php:509
 msgid "Hidden icon"
 msgstr "숨겨진 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:501
+#: includes/fields/class-acf-field-icon_picker.php:508
 msgid "Heart icon"
 msgstr "하트 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:500
+#: includes/fields/class-acf-field-icon_picker.php:507
 msgid "Hammer icon"
 msgstr "해머 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:499
+#: includes/fields/class-acf-field-icon_picker.php:506
 msgid "Groups icon"
 msgstr "그룹 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:498
+#: includes/fields/class-acf-field-icon_picker.php:505
 msgid "Grid-view icon"
 msgstr "그리드 보기 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:497
+#: includes/fields/class-acf-field-icon_picker.php:504
 msgid "Googleplus icon"
 msgstr "Google플러스 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:496
+#: includes/fields/class-acf-field-icon_picker.php:503
 msgid "Forms icon"
 msgstr "양식 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:495
+#: includes/fields/class-acf-field-icon_picker.php:502
 msgid "Format video icon"
 msgstr "비디오 포맷 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:494
+#: includes/fields/class-acf-field-icon_picker.php:501
 msgid "Format status icon"
 msgstr "상태 포맷 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:493
+#: includes/fields/class-acf-field-icon_picker.php:500
 msgid "Format quote icon"
 msgstr "견적서 서식 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:492
+#: includes/fields/class-acf-field-icon_picker.php:499
 msgid "Format image icon"
 msgstr "이미지 서식 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:491
+#: includes/fields/class-acf-field-icon_picker.php:498
 msgid "Format gallery icon"
 msgstr "갤러리 포맷 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:490
+#: includes/fields/class-acf-field-icon_picker.php:497
 msgid "Format chat icon"
 msgstr "채팅 서식 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:489
+#: includes/fields/class-acf-field-icon_picker.php:496
 msgid "Format audio icon"
 msgstr "오디오 서식 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:488
+#: includes/fields/class-acf-field-icon_picker.php:495
 msgid "Format aside icon"
 msgstr "서식 옆으로 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:487
+#: includes/fields/class-acf-field-icon_picker.php:494
 msgid "Flag icon"
 msgstr "플래그 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:486
+#: includes/fields/class-acf-field-icon_picker.php:493
 msgid "Filter icon"
 msgstr "필터 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:485
+#: includes/fields/class-acf-field-icon_picker.php:492
 msgid "Feedback icon"
 msgstr "피드백 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:484
+#: includes/fields/class-acf-field-icon_picker.php:491
 msgid "Facebook alt icon"
 msgstr "Facebook 대체 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:483
+#: includes/fields/class-acf-field-icon_picker.php:490
 msgid "Facebook icon"
 msgstr "Facebook icon"
 
-#: includes/fields/class-acf-field-icon_picker.php:482
+#: includes/fields/class-acf-field-icon_picker.php:489
 msgid "External icon"
 msgstr "외부 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:481
+#: includes/fields/class-acf-field-icon_picker.php:488
 msgid "Exerpt-view icon"
 msgstr "발췌 보기 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:480
+#: includes/fields/class-acf-field-icon_picker.php:487
 msgid "Email alt icon"
 msgstr "이메일 대체 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:479
+#: includes/fields/class-acf-field-icon_picker.php:486
 msgid "Email icon"
 msgstr "이메일 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:478
+#: includes/fields/class-acf-field-icon_picker.php:485
 msgid "Video icon"
 msgstr "비디오 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:477
+#: includes/fields/class-acf-field-icon_picker.php:484
 msgid "Unlink icon"
 msgstr "링크 해제 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:476
+#: includes/fields/class-acf-field-icon_picker.php:483
 msgid "Underline icon"
 msgstr "밑줄 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:475
+#: includes/fields/class-acf-field-icon_picker.php:482
 msgid "Ul icon"
 msgstr "UI 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:474
+#: includes/fields/class-acf-field-icon_picker.php:481
 msgid "Textcolor icon"
 msgstr "텍스트색 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:473
+#: includes/fields/class-acf-field-icon_picker.php:480
 msgid "Table icon"
 msgstr "표 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:472
+#: includes/fields/class-acf-field-icon_picker.php:479
 msgid "Strikethrough icon"
 msgstr "취소선 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:471
+#: includes/fields/class-acf-field-icon_picker.php:478
 msgid "Spellcheck icon"
 msgstr "맞춤법 검사 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:470
+#: includes/fields/class-acf-field-icon_picker.php:477
 msgid "Rtl icon"
 msgstr "Rtl 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:469
+#: includes/fields/class-acf-field-icon_picker.php:476
 msgid "Removeformatting icon"
 msgstr "서식 제거 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:468
+#: includes/fields/class-acf-field-icon_picker.php:475
 msgid "Quote icon"
 msgstr "견적 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:467
+#: includes/fields/class-acf-field-icon_picker.php:474
 msgid "Paste word icon"
 msgstr "단어 붙여넣기 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:466
+#: includes/fields/class-acf-field-icon_picker.php:473
 msgid "Paste text icon"
 msgstr "텍스트 붙여넣기 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:465
+#: includes/fields/class-acf-field-icon_picker.php:472
 msgid "Paragraph icon"
 msgstr "단락 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:464
+#: includes/fields/class-acf-field-icon_picker.php:471
 msgid "Outdent icon"
 msgstr "아웃덴트 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:463
+#: includes/fields/class-acf-field-icon_picker.php:470
 msgid "Ol icon"
 msgstr "Ol 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:462
+#: includes/fields/class-acf-field-icon_picker.php:469
 msgid "Kitchensink icon"
 msgstr "주방 싱크 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:461
+#: includes/fields/class-acf-field-icon_picker.php:468
 msgid "Justify icon"
 msgstr "맞춤 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:460
+#: includes/fields/class-acf-field-icon_picker.php:467
 msgid "Italic icon"
 msgstr "이탤릭체 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:459
+#: includes/fields/class-acf-field-icon_picker.php:466
 msgid "Insertmore icon"
 msgstr "더 삽입 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:458
+#: includes/fields/class-acf-field-icon_picker.php:465
 msgid "Indent icon"
 msgstr "들여쓰기 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:457
+#: includes/fields/class-acf-field-icon_picker.php:464
 msgid "Help icon"
 msgstr "도움말 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:456
+#: includes/fields/class-acf-field-icon_picker.php:463
 msgid "Expand icon"
 msgstr "펼치기 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:455
+#: includes/fields/class-acf-field-icon_picker.php:462
 msgid "Customchar icon"
 msgstr "사용자 지정 문자 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:454
+#: includes/fields/class-acf-field-icon_picker.php:461
 msgid "Contract icon"
 msgstr "계약 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:453
+#: includes/fields/class-acf-field-icon_picker.php:460
 msgid "Code icon"
 msgstr "코드 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:452
+#: includes/fields/class-acf-field-icon_picker.php:459
 msgid "Break icon"
 msgstr "나누기 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:451
+#: includes/fields/class-acf-field-icon_picker.php:458
 msgid "Bold icon"
 msgstr "굵은 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:450
+#: includes/fields/class-acf-field-icon_picker.php:457
 msgid "alignright icon"
 msgstr "오른쪽 정렬 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:449
+#: includes/fields/class-acf-field-icon_picker.php:456
 msgid "alignleft icon"
 msgstr "왼쪽 정렬 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:448
+#: includes/fields/class-acf-field-icon_picker.php:455
 msgid "aligncenter icon"
 msgstr "가운데 정렬 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:447
+#: includes/fields/class-acf-field-icon_picker.php:454
 msgid "Edit icon"
 msgstr "수정 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:446
+#: includes/fields/class-acf-field-icon_picker.php:453
 msgid "Download icon"
 msgstr "다운로드 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:445
+#: includes/fields/class-acf-field-icon_picker.php:452
 msgid "Dismiss icon"
 msgstr "해지 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:444
+#: includes/fields/class-acf-field-icon_picker.php:451
 msgid "Desktop icon"
 msgstr "데스크톱 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:443
+#: includes/fields/class-acf-field-icon_picker.php:450
 msgid "Dashboard icon"
 msgstr "대시보드 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:442
+#: includes/fields/class-acf-field-icon_picker.php:449
 msgid "Controls volumeon icon"
 msgstr "볼륨 높이기 아이콘 제어"
 
-#: includes/fields/class-acf-field-icon_picker.php:441
+#: includes/fields/class-acf-field-icon_picker.php:448
 msgid "Controls volumeoff icon"
 msgstr "볼륨 끄기 아이콘 제어"
 
-#: includes/fields/class-acf-field-icon_picker.php:440
+#: includes/fields/class-acf-field-icon_picker.php:447
 msgid "Controls skipforward icon"
 msgstr "건너뛰기 아이콘 제어"
 
-#: includes/fields/class-acf-field-icon_picker.php:439
+#: includes/fields/class-acf-field-icon_picker.php:446
 msgid "Controls skipback icon"
 msgstr "스킵백 아이콘 제어"
 
-#: includes/fields/class-acf-field-icon_picker.php:438
+#: includes/fields/class-acf-field-icon_picker.php:445
 msgid "Controls repeat icon"
 msgstr "반복 아이콘 제어"
 
-#: includes/fields/class-acf-field-icon_picker.php:437
+#: includes/fields/class-acf-field-icon_picker.php:444
 msgid "Controls play icon"
 msgstr "재생 제어 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:436
+#: includes/fields/class-acf-field-icon_picker.php:443
 msgid "Controls pause icon"
 msgstr "컨트롤 일시 중지 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:435
+#: includes/fields/class-acf-field-icon_picker.php:442
 msgid "Controls forward icon"
 msgstr "컨트롤 앞으로 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:434
+#: includes/fields/class-acf-field-icon_picker.php:441
 msgid "Controls back icon"
 msgstr "뒤로 컨트롤 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:433
+#: includes/fields/class-acf-field-icon_picker.php:440
 msgid "Cloud icon"
 msgstr "구름 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:432
+#: includes/fields/class-acf-field-icon_picker.php:439
 msgid "Clock icon"
 msgstr "시계 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:431
+#: includes/fields/class-acf-field-icon_picker.php:438
 msgid "Clipboard icon"
 msgstr "클립보드 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:430
+#: includes/fields/class-acf-field-icon_picker.php:437
 msgid "Chart pie icon"
 msgstr "차트 원형 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:429
+#: includes/fields/class-acf-field-icon_picker.php:436
 msgid "Chart line icon"
 msgstr "차트 선 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:428
+#: includes/fields/class-acf-field-icon_picker.php:435
 msgid "Chart bar icon"
 msgstr "차트 막대 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:427
+#: includes/fields/class-acf-field-icon_picker.php:434
 msgid "Chart area icon"
 msgstr "차트 영역 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:426
+#: includes/fields/class-acf-field-icon_picker.php:433
 msgid "Category icon"
 msgstr "카테고리 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:425
+#: includes/fields/class-acf-field-icon_picker.php:432
 msgid "Cart icon"
 msgstr "장바구니 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:424
+#: includes/fields/class-acf-field-icon_picker.php:431
 msgid "Carrot icon"
 msgstr "당근 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:423
+#: includes/fields/class-acf-field-icon_picker.php:430
 msgid "Camera icon"
 msgstr "카메라 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:422
+#: includes/fields/class-acf-field-icon_picker.php:429
 msgid "Calendar alt icon"
 msgstr "캘린더 대체 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:421
+#: includes/fields/class-acf-field-icon_picker.php:428
 msgid "Calendar icon"
 msgstr "캘린더 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:420
+#: includes/fields/class-acf-field-icon_picker.php:427
 msgid "Businessman icon"
 msgstr "비즈니스맨 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:419
+#: includes/fields/class-acf-field-icon_picker.php:426
 msgid "Building icon"
 msgstr "건물 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:418
+#: includes/fields/class-acf-field-icon_picker.php:425
 msgid "Book alt icon"
 msgstr "예약 대체 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:417
+#: includes/fields/class-acf-field-icon_picker.php:424
 msgid "Book icon"
 msgstr "예약 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:416
+#: includes/fields/class-acf-field-icon_picker.php:423
 msgid "Backup icon"
 msgstr "백업 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:415
+#: includes/fields/class-acf-field-icon_picker.php:422
 msgid "Awards icon"
 msgstr "수상 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:414
+#: includes/fields/class-acf-field-icon_picker.php:421
 msgid "Art icon"
 msgstr "아트 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:413
+#: includes/fields/class-acf-field-icon_picker.php:420
 msgid "Arrow up-alt2 icon"
 msgstr "위쪽 화살표-알트2 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:412
+#: includes/fields/class-acf-field-icon_picker.php:419
 msgid "Arrow up-alt icon"
 msgstr "위쪽 화살표-왼쪽 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:411
+#: includes/fields/class-acf-field-icon_picker.php:418
 msgid "Arrow up icon"
 msgstr "위쪽 화살표 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:410
+#: includes/fields/class-acf-field-icon_picker.php:417
 msgid "Arrow right-alt2 icon"
 msgstr "오른쪽 화살표-왼쪽 화살표2 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:409
+#: includes/fields/class-acf-field-icon_picker.php:416
 msgid "Arrow right-alt icon"
 msgstr "오른쪽 화살표-왼쪽 화살표 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:408
+#: includes/fields/class-acf-field-icon_picker.php:415
 msgid "Arrow right icon"
 msgstr "오른쪽 화살표 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:407
+#: includes/fields/class-acf-field-icon_picker.php:414
 msgid "Arrow left-alt2 icon"
 msgstr "왼쪽 화살표-왼쪽 화살표2 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:406
+#: includes/fields/class-acf-field-icon_picker.php:413
 msgid "Arrow left-alt icon"
 msgstr "왼쪽 화살표-왼쪽 화살표 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:405
+#: includes/fields/class-acf-field-icon_picker.php:412
 msgid "Arrow left icon"
 msgstr "왼쪽 화살표 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:404
+#: includes/fields/class-acf-field-icon_picker.php:411
 msgid "Arrow down-alt2 icon"
 msgstr "아래쪽 화살표-위쪽 화살표2 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:403
+#: includes/fields/class-acf-field-icon_picker.php:410
 msgid "Arrow down-alt icon"
 msgstr "아래쪽 화살표-왼쪽 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:402
+#: includes/fields/class-acf-field-icon_picker.php:409
 msgid "Arrow down icon"
 msgstr "아래쪽 화살표 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:401
+#: includes/fields/class-acf-field-icon_picker.php:408
 msgid "Archive icon"
 msgstr "아카이브 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:400
+#: includes/fields/class-acf-field-icon_picker.php:407
 msgid "Analytics icon"
 msgstr "애널리틱스 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:399
+#: includes/fields/class-acf-field-icon_picker.php:406
 msgid "Align-right icon"
 msgstr "오른쪽 정렬 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:398
+#: includes/fields/class-acf-field-icon_picker.php:405
 msgid "Align-none icon"
 msgstr "정렬 안 함 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:397
+#: includes/fields/class-acf-field-icon_picker.php:404
 msgid "Align-left icon"
 msgstr "왼쪽 정렬 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:396
+#: includes/fields/class-acf-field-icon_picker.php:403
 msgid "Align-center icon"
 msgstr "가운데 정렬 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:395
+#: includes/fields/class-acf-field-icon_picker.php:402
 msgid "Album icon"
 msgstr "앨범 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:394
+#: includes/fields/class-acf-field-icon_picker.php:401
 msgid "Users icon"
 msgstr "사용자 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:393
+#: includes/fields/class-acf-field-icon_picker.php:400
 msgid "Tools icon"
 msgstr "도구 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:392
+#: includes/fields/class-acf-field-icon_picker.php:399
 msgid "Site icon"
 msgstr "사이트 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:391
+#: includes/fields/class-acf-field-icon_picker.php:398
 msgid "Settings icon"
 msgstr "설정 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:390
+#: includes/fields/class-acf-field-icon_picker.php:397
 msgid "Post icon"
 msgstr "글 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:389
+#: includes/fields/class-acf-field-icon_picker.php:396
 msgid "Plugins icon"
 msgstr "플러그인 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:388
+#: includes/fields/class-acf-field-icon_picker.php:395
 msgid "Page icon"
 msgstr "페이지 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:387
+#: includes/fields/class-acf-field-icon_picker.php:394
 msgid "Network icon"
 msgstr "네트워크 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:386
+#: includes/fields/class-acf-field-icon_picker.php:393
 msgid "Multisite icon"
 msgstr "다중 사이트 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:385
+#: includes/fields/class-acf-field-icon_picker.php:392
 msgid "Media icon"
 msgstr "미디어 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:384
+#: includes/fields/class-acf-field-icon_picker.php:391
 msgid "Links icon"
 msgstr "링크 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:383
+#: includes/fields/class-acf-field-icon_picker.php:390
 msgid "Home icon"
 msgstr "홈 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:382
+#: includes/fields/class-acf-field-icon_picker.php:389
 msgid "Customizer icon"
 msgstr "커스터마이저 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:381
+#: includes/fields/class-acf-field-icon_picker.php:388
 msgid "Comments icon"
 msgstr "댓글 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:380
+#: includes/fields/class-acf-field-icon_picker.php:387
 msgid "Collapse icon"
 msgstr "접기 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:379
+#: includes/fields/class-acf-field-icon_picker.php:386
 msgid "Appearance icon"
 msgstr "표시 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:378
+#: includes/fields/class-acf-field-icon_picker.php:385
 msgid "Generic icon"
 msgstr "일반 아이콘"
 
-#: includes/fields/class-acf-field-icon_picker.php:314
+#: includes/fields/class-acf-field-icon_picker.php:321
 msgid "Icon picker requires a value."
 msgstr "아이콘 선택기에는 값이 필요합니다."
 
-#: includes/fields/class-acf-field-icon_picker.php:309
+#: includes/fields/class-acf-field-icon_picker.php:316
 msgid "Icon picker requires an icon type."
 msgstr "아이콘 선택기에는 아이콘 유형이 필요합니다."
 
-#: includes/fields/class-acf-field-icon_picker.php:278
+#: includes/fields/class-acf-field-icon_picker.php:285
 msgid ""
 "The available icons matching your search query have been updated in the icon "
 "picker below."
@@ -1002,40 +1019,40 @@ msgstr ""
 "아래의 아이콘 선택기에서 검색어와 일치하는 사용 가능한 아이콘이 업데이트되었"
 "습니다."
 
-#: includes/fields/class-acf-field-icon_picker.php:277
+#: includes/fields/class-acf-field-icon_picker.php:284
 msgid "No results found for that search term"
 msgstr "해당 검색어에 대한 결과를 찾을 수 없습니다."
 
-#: includes/fields/class-acf-field-icon_picker.php:259
+#: includes/fields/class-acf-field-icon_picker.php:266
 msgid "Array"
 msgstr "배열"
 
-#: includes/fields/class-acf-field-icon_picker.php:258
+#: includes/fields/class-acf-field-icon_picker.php:265
 msgid "String"
 msgstr "문자열"
 
 #. translators: %s - link to documentation
-#: includes/fields/class-acf-field-icon_picker.php:246
+#: includes/fields/class-acf-field-icon_picker.php:253
 msgid "Specify the return format for the icon. %s"
 msgstr "아이콘의 반환 형식을 지정합니다. %s"
 
-#: includes/fields/class-acf-field-icon_picker.php:231
+#: includes/fields/class-acf-field-icon_picker.php:238
 msgid "Select where content editors can choose the icon from."
 msgstr "콘텐츠 편집자가 아이콘을 선택할 수 있는 위치를 선택합니다."
 
-#: includes/fields/class-acf-field-icon_picker.php:204
+#: includes/fields/class-acf-field-icon_picker.php:211
 msgid "The URL to the icon you'd like to use, or svg as Data URI"
 msgstr "사용하려는 아이콘의 URL(또는 데이터 URI로서의 svg)"
 
-#: includes/fields/class-acf-field-icon_picker.php:187
+#: includes/fields/class-acf-field-icon_picker.php:194
 msgid "Browse Media Library"
 msgstr "미디어 라이브러리 찾아보기"
 
-#: includes/fields/class-acf-field-icon_picker.php:178
+#: includes/fields/class-acf-field-icon_picker.php:185
 msgid "The currently selected image preview"
 msgstr "현재 선택된 이미지 미리보기"
 
-#: includes/fields/class-acf-field-icon_picker.php:169
+#: includes/fields/class-acf-field-icon_picker.php:176
 msgid "Click to change the icon in the Media Library"
 msgstr "미디어 라이브러리에서 아이콘을 변경하려면 클릭합니다."
 
@@ -1247,8 +1264,8 @@ msgstr ""
 "이 섹션에는 지원팀에 제공하는 데 유용할 수 있는 ACF 구성에 대한 디버그 정보"
 "가 포함되어 있습니다."
 
-#: includes/assets.php:373 assets/build/js/acf-input.js:11317
-#: assets/build/js/acf-input.js:12400
+#: includes/assets.php:373 assets/build/js/acf-input.js:11311
+#: assets/build/js/acf-input.js:12393
 msgid "An ACF Block on this page requires attention before you can save."
 msgstr "이 페이지의 ACF 블록은 저장하기 전에 주의가 필요합니다."
 
@@ -1661,9 +1678,9 @@ msgstr "양방향"
 msgid "%s Field"
 msgstr "%s 필드"
 
-#: includes/fields/class-acf-field-page_link.php:490
-#: includes/fields/class-acf-field-post_object.php:401
-#: includes/fields/class-acf-field-select.php:381
+#: includes/fields/class-acf-field-page_link.php:487
+#: includes/fields/class-acf-field-post_object.php:400
+#: includes/fields/class-acf-field-select.php:380
 #: includes/fields/class-acf-field-user.php:111
 msgid "Select Multiple"
 msgstr "여러 개 선택"
@@ -1731,7 +1748,7 @@ msgstr "가격 및 업그레이드 보기"
 
 #: includes/admin/views/acf-field-group/pro-features.php:3
 #: includes/admin/views/options-page-preview.php:29
-#: includes/fields/class-acf-field-icon_picker.php:241
+#: includes/fields/class-acf-field-icon_picker.php:248
 msgid "Learn More"
 msgstr "더 알아보기"
 
@@ -1785,9 +1802,9 @@ msgstr "필드 없음"
 msgid "No description"
 msgstr "설명 없음"
 
-#: includes/fields/class-acf-field-page_link.php:457
-#: includes/fields/class-acf-field-post_object.php:364
-#: includes/fields/class-acf-field-relationship.php:573
+#: includes/fields/class-acf-field-page_link.php:454
+#: includes/fields/class-acf-field-post_object.php:363
+#: includes/fields/class-acf-field-relationship.php:562
 msgid "Any post status"
 msgstr "모든 게시물 상태"
 
@@ -2026,9 +2043,9 @@ msgstr ""
 msgid "An input for providing a password using a masked field."
 msgstr "마스킹된 필드를 사용하여 암호를 제공하기 위한 입력입니다."
 
-#: includes/fields/class-acf-field-page_link.php:449
-#: includes/fields/class-acf-field-post_object.php:356
-#: includes/fields/class-acf-field-relationship.php:565
+#: includes/fields/class-acf-field-page_link.php:446
+#: includes/fields/class-acf-field-post_object.php:355
+#: includes/fields/class-acf-field-relationship.php:554
 msgid "Filter by Post Status"
 msgstr "게시물 상태로 필터링"
 
@@ -2198,19 +2215,19 @@ msgstr "프로"
 msgid "Advanced"
 msgstr "고급의"
 
-#: includes/ajax/class-acf-ajax-local-json-diff.php:85
+#: includes/ajax/class-acf-ajax-local-json-diff.php:90
 msgid "JSON (newer)"
 msgstr "JSON(최신)"
 
-#: includes/ajax/class-acf-ajax-local-json-diff.php:81
+#: includes/ajax/class-acf-ajax-local-json-diff.php:86
 msgid "Original"
 msgstr "원본"
 
-#: includes/ajax/class-acf-ajax-local-json-diff.php:55
+#: includes/ajax/class-acf-ajax-local-json-diff.php:60
 msgid "Invalid post ID."
 msgstr "게시물 ID가 잘못되었습니다."
 
-#: includes/ajax/class-acf-ajax-local-json-diff.php:47
+#: includes/ajax/class-acf-ajax-local-json-diff.php:52
 msgid "Invalid post type selected for review."
 msgstr "검토를 위해 잘못된 게시물 유형을 선택했습니다."
 
@@ -4231,7 +4248,7 @@ msgstr "이 탭에서 새 탭 그룹을 시작합니다."
 msgid "New Tab Group"
 msgstr "새 탭 그룹"
 
-#: includes/fields/class-acf-field-select.php:424
+#: includes/fields/class-acf-field-select.php:423
 #: includes/fields/class-acf-field-true_false.php:188
 msgid "Use a stylized checkbox using select2"
 msgstr "Select2를 사용하여 양식화된 체크박스 사용"
@@ -4489,34 +4506,34 @@ msgstr ""
 "된 데이터가 발생할 수 있습니다. <a href=\"%2$s\" target=\"_blank\">이 문제를 "
 "해결하는 방법을 알아보세요</a>."
 
-#: includes/fields/class-acf-field-user.php:577
+#: includes/fields/class-acf-field-user.php:578
 msgid "%1$s must have a user with the %2$s role."
 msgid_plural "%1$s must have a user with one of the following roles: %2$s"
 msgstr[0] "%1$s에는 다음 역할 중 하나를 가진 사용자가 있어야 합니다. %2$s"
 
-#: includes/fields/class-acf-field-user.php:568
+#: includes/fields/class-acf-field-user.php:569
 msgid "%1$s must have a valid user ID."
 msgstr "%1$s에는 유효한 사용자 ID가 있어야 합니다."
 
-#: includes/fields/class-acf-field-user.php:407
+#: includes/fields/class-acf-field-user.php:408
 msgid "Invalid request."
 msgstr "잘못된 요청."
 
-#: includes/fields/class-acf-field-select.php:638
+#: includes/fields/class-acf-field-select.php:637
 msgid "%1$s is not one of %2$s"
 msgstr "%1$s은(는) %2$s 중 하나가 아닙니다."
 
-#: includes/fields/class-acf-field-post_object.php:650
+#: includes/fields/class-acf-field-post_object.php:649
 msgid "%1$s must have term %2$s."
 msgid_plural "%1$s must have one of the following terms: %2$s"
 msgstr[0] "%1$s에는 다음 용어 중 하나가 있어야 합니다. %2$s"
 
-#: includes/fields/class-acf-field-post_object.php:634
+#: includes/fields/class-acf-field-post_object.php:633
 msgid "%1$s must be of post type %2$s."
 msgid_plural "%1$s must be of one of the following post types: %2$s"
 msgstr[0] "%1$s은(는) 다음 게시물 유형 중 하나여야 합니다: %2$s"
 
-#: includes/fields/class-acf-field-post_object.php:625
+#: includes/fields/class-acf-field-post_object.php:624
 msgid "%1$s must have a valid post ID."
 msgstr "%1$s에는 유효한 게시물 ID가 있어야 합니다."
 
@@ -4615,15 +4632,15 @@ msgstr "택소노미"
 msgid "Posts"
 msgstr "게시물"
 
-#: includes/ajax/class-acf-ajax-local-json-diff.php:76
+#: includes/ajax/class-acf-ajax-local-json-diff.php:81
 msgid "Last updated: %s"
 msgstr "최근 업데이트: %s"
 
-#: includes/ajax/class-acf-ajax-local-json-diff.php:70
+#: includes/ajax/class-acf-ajax-local-json-diff.php:75
 msgid "Sorry, this post is unavailable for diff comparison."
 msgstr "죄송합니다. 이 게시물은 diff 비교에 사용할 수 없습니다."
 
-#: includes/ajax/class-acf-ajax-local-json-diff.php:42
+#: includes/ajax/class-acf-ajax-local-json-diff.php:47
 msgid "Invalid field group parameter(s)."
 msgstr "잘못된 필드 그룹 매개변수입니다."
 
@@ -4767,11 +4784,12 @@ msgstr "위치 유형 \"%s\"이(가) 이미 등록되어 있습니다."
 msgid "Class \"%s\" does not exist."
 msgstr "\"%s\" 클래스가 존재하지 않습니다."
 
+#: includes/ajax/class-acf-ajax-query-users.php:28
 #: includes/ajax/class-acf-ajax.php:157
 msgid "Invalid nonce."
 msgstr "논스가 잘못되었습니다."
 
-#: includes/fields/class-acf-field-user.php:402
+#: includes/fields/class-acf-field-user.php:400
 msgid "Error loading field."
 msgstr "필드를 로드하는 중 오류가 발생했습니다."
 
@@ -5389,7 +5407,7 @@ msgid "Sync"
 msgstr "동기화하기"
 
 #. translators: %s: field group title
-#: includes/admin/admin-internal-post-type-list.php:887
+#: includes/admin/admin-internal-post-type-list.php:960
 msgid "Select %s"
 msgstr "%s 선택하기"
 
@@ -5424,7 +5442,7 @@ msgid "Description"
 msgstr "설명"
 
 #: includes/admin/admin-internal-post-type-list.php:414
-#: includes/admin/admin-internal-post-type-list.php:759
+#: includes/admin/admin-internal-post-type-list.php:832
 msgid "Sync available"
 msgstr "동기화 가능"
 
@@ -5660,7 +5678,7 @@ msgid "Title"
 msgstr "제목"
 
 #: includes/assets.php:376 includes/forms/form-comment.php:140
-#: assets/build/js/acf-input.js:8422 assets/build/js/acf-input.js:9197
+#: assets/build/js/acf-input.js:8413 assets/build/js/acf-input.js:9185
 msgid "Edit field group"
 msgstr "필드 그룹 편집하기"
 
@@ -5727,50 +5745,50 @@ msgstr "취소하기"
 msgid "Are you sure?"
 msgstr "확실합니까?"
 
-#: includes/assets.php:370 assets/build/js/acf-input.js:10487
-#: assets/build/js/acf-input.js:11538
+#: includes/assets.php:370 assets/build/js/acf-input.js:10481
+#: assets/build/js/acf-input.js:11531
 msgid "%d fields require attention"
 msgstr "%d개의 필드에 주의가 필요합니다."
 
-#: includes/assets.php:369 assets/build/js/acf-input.js:10485
-#: assets/build/js/acf-input.js:11536
+#: includes/assets.php:369 assets/build/js/acf-input.js:10479
+#: assets/build/js/acf-input.js:11529
 msgid "1 field requires attention"
 msgstr "주의가 필요한 필드 1개"
 
 #: includes/assets.php:368 includes/validation.php:247
-#: includes/validation.php:255 assets/build/js/acf-input.js:10480
-#: assets/build/js/acf-input.js:11531
+#: includes/validation.php:255 assets/build/js/acf-input.js:10474
+#: assets/build/js/acf-input.js:11524
 msgid "Validation failed"
 msgstr "검증에 실패했습니다"
 
-#: includes/assets.php:367 assets/build/js/acf-input.js:10648
-#: assets/build/js/acf-input.js:11709
+#: includes/assets.php:367 assets/build/js/acf-input.js:10642
+#: assets/build/js/acf-input.js:11702
 msgid "Validation successful"
 msgstr "유효성 검사 성공"
 
-#: includes/media.php:54 assets/build/js/acf-input.js:8250
-#: assets/build/js/acf-input.js:9001
+#: includes/media.php:54 assets/build/js/acf-input.js:8241
+#: assets/build/js/acf-input.js:8989
 msgid "Restricted"
 msgstr "제한했습니다"
 
-#: includes/media.php:53 assets/build/js/acf-input.js:8065
-#: assets/build/js/acf-input.js:8765
+#: includes/media.php:53 assets/build/js/acf-input.js:8056
+#: assets/build/js/acf-input.js:8753
 msgid "Collapse Details"
 msgstr "세부 정보 접기"
 
-#: includes/media.php:52 assets/build/js/acf-input.js:8065
-#: assets/build/js/acf-input.js:8762
+#: includes/media.php:52 assets/build/js/acf-input.js:8056
+#: assets/build/js/acf-input.js:8750
 msgid "Expand Details"
 msgstr "세부정보 확장하기"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:470
-#: includes/media.php:51 assets/build/js/acf-input.js:7932
-#: assets/build/js/acf-input.js:8610
+#: includes/media.php:51 assets/build/js/acf-input.js:7923
+#: assets/build/js/acf-input.js:8598
 msgid "Uploaded to this post"
 msgstr "이 게시물에 업로드됨"
 
-#: includes/media.php:50 assets/build/js/acf-input.js:7971
-#: assets/build/js/acf-input.js:8649
+#: includes/media.php:50 assets/build/js/acf-input.js:7962
+#: assets/build/js/acf-input.js:8637
 msgctxt "verb"
 msgid "Update"
 msgstr "업데이트"
@@ -5780,12 +5798,12 @@ msgctxt "verb"
 msgid "Edit"
 msgstr "편집하기"
 
-#: includes/assets.php:364 assets/build/js/acf-input.js:10258
-#: assets/build/js/acf-input.js:11303
+#: includes/assets.php:364 assets/build/js/acf-input.js:10252
+#: assets/build/js/acf-input.js:11296
 msgid "The changes you made will be lost if you navigate away from this page"
 msgstr "페이지를 벗어나면 변경 한 내용이 손실 됩니다"
 
-#: includes/api/api-helpers.php:2950
+#: includes/api/api-helpers.php:2959
 msgid "File type must be %s."
 msgstr "파일 유형은 %s여야 합니다."
 
@@ -5794,54 +5812,54 @@ msgstr "파일 유형은 %s여야 합니다."
 #: includes/admin/views/acf-field-group/conditional-logic.php:182
 #: includes/admin/views/acf-field-group/location-group.php:3
 #: includes/admin/views/acf-field-group/locations.php:35
-#: includes/api/api-helpers.php:2947 assets/build/js/acf-field-group.js:781
+#: includes/api/api-helpers.php:2956 assets/build/js/acf-field-group.js:781
 #: assets/build/js/acf-field-group.js:2427
 #: assets/build/js/acf-field-group.js:946
 #: assets/build/js/acf-field-group.js:2859
 msgid "or"
 msgstr "또는"
 
-#: includes/api/api-helpers.php:2923
+#: includes/api/api-helpers.php:2932
 msgid "File size must not exceed %s."
 msgstr "파일 크기는 %s를 초과할 수 없습니다."
 
-#: includes/api/api-helpers.php:2919
+#: includes/api/api-helpers.php:2928
 msgid "File size must be at least %s."
 msgstr "파일 크기는 %s 이상이어야 합니다."
 
-#: includes/api/api-helpers.php:2906
+#: includes/api/api-helpers.php:2915
 msgid "Image height must not exceed %dpx."
 msgstr "이미지 높이는 %dpx를 초과할 수 없습니다."
 
-#: includes/api/api-helpers.php:2902
+#: includes/api/api-helpers.php:2911
 msgid "Image height must be at least %dpx."
 msgstr "이미지 높이는 %dpx 이상이어야 합니다."
 
-#: includes/api/api-helpers.php:2890
+#: includes/api/api-helpers.php:2899
 msgid "Image width must not exceed %dpx."
 msgstr "이미지 너비는 %dpx를 초과할 수 없습니다."
 
-#: includes/api/api-helpers.php:2886
+#: includes/api/api-helpers.php:2895
 msgid "Image width must be at least %dpx."
 msgstr "이미지 너비는 %dpx 이상이어야 합니다."
 
-#: includes/api/api-helpers.php:1400 includes/api/api-term.php:140
+#: includes/api/api-helpers.php:1409 includes/api/api-term.php:140
 msgid "(no title)"
 msgstr "(제목 없음)"
 
-#: includes/api/api-helpers.php:760
+#: includes/api/api-helpers.php:765
 msgid "Full Size"
 msgstr "전체 크기"
 
-#: includes/api/api-helpers.php:725
+#: includes/api/api-helpers.php:730
 msgid "Large"
 msgstr "크기가 큰"
 
-#: includes/api/api-helpers.php:724
+#: includes/api/api-helpers.php:729
 msgid "Medium"
 msgstr "중간"
 
-#: includes/api/api-helpers.php:723
+#: includes/api/api-helpers.php:728
 msgid "Thumbnail"
 msgstr "썸네일"
 
@@ -5884,11 +5902,11 @@ msgstr "새로운 선택 추가하기"
 msgid "Toggle All"
 msgstr "모두 토글하기"
 
-#: includes/fields/class-acf-field-page_link.php:479
+#: includes/fields/class-acf-field-page_link.php:476
 msgid "Allow Archives URLs"
 msgstr "보관소 URLs 허용하기"
 
-#: includes/fields/class-acf-field-page_link.php:187
+#: includes/fields/class-acf-field-page_link.php:185
 msgid "Archives"
 msgstr "아카이브"
 
@@ -5896,94 +5914,94 @@ msgstr "아카이브"
 msgid "Page Link"
 msgstr "페이지 링크"
 
-#: includes/fields/class-acf-field-taxonomy.php:888
+#: includes/fields/class-acf-field-taxonomy.php:870
 #: includes/locations/class-acf-location-user-form.php:72
 msgid "Add"
 msgstr "추가하기"
 
 #: includes/admin/views/acf-field-group/fields.php:53
-#: includes/fields/class-acf-field-taxonomy.php:858
+#: includes/fields/class-acf-field-taxonomy.php:840
 msgid "Name"
 msgstr "이름"
 
-#: includes/fields/class-acf-field-taxonomy.php:843
+#: includes/fields/class-acf-field-taxonomy.php:825
 msgid "%s added"
 msgstr "%s 추가됨"
 
-#: includes/fields/class-acf-field-taxonomy.php:807
+#: includes/fields/class-acf-field-taxonomy.php:789
 msgid "%s already exists"
 msgstr "%s이(가) 이미 존재합니다."
 
-#: includes/fields/class-acf-field-taxonomy.php:795
+#: includes/fields/class-acf-field-taxonomy.php:777
 msgid "User unable to add new %s"
 msgstr "사용자가 새 %s을(를) 추가할 수 없습니다."
 
-#: includes/fields/class-acf-field-taxonomy.php:675
+#: includes/fields/class-acf-field-taxonomy.php:664
 msgid "Term ID"
 msgstr "용어 ID"
 
-#: includes/fields/class-acf-field-taxonomy.php:674
+#: includes/fields/class-acf-field-taxonomy.php:663
 msgid "Term Object"
 msgstr "용어 객체"
 
-#: includes/fields/class-acf-field-taxonomy.php:659
+#: includes/fields/class-acf-field-taxonomy.php:648
 msgid "Load value from posts terms"
 msgstr "글 용어에서 값 로드하기"
 
-#: includes/fields/class-acf-field-taxonomy.php:658
+#: includes/fields/class-acf-field-taxonomy.php:647
 msgid "Load Terms"
 msgstr "용어 로드하기"
 
-#: includes/fields/class-acf-field-taxonomy.php:648
+#: includes/fields/class-acf-field-taxonomy.php:637
 msgid "Connect selected terms to the post"
 msgstr "글에 선택한 조건을 연결하기"
 
-#: includes/fields/class-acf-field-taxonomy.php:647
+#: includes/fields/class-acf-field-taxonomy.php:636
 msgid "Save Terms"
 msgstr "조건 저장하기"
 
-#: includes/fields/class-acf-field-taxonomy.php:637
+#: includes/fields/class-acf-field-taxonomy.php:626
 msgid "Allow new terms to be created whilst editing"
 msgstr "편집하는 동안 생성할 새로운 조건을 허용하기"
 
-#: includes/fields/class-acf-field-taxonomy.php:636
+#: includes/fields/class-acf-field-taxonomy.php:625
 msgid "Create Terms"
 msgstr "용어 만들기"
 
-#: includes/fields/class-acf-field-taxonomy.php:695
+#: includes/fields/class-acf-field-taxonomy.php:684
 msgid "Radio Buttons"
 msgstr "라디오 버튼"
 
-#: includes/fields/class-acf-field-taxonomy.php:694
+#: includes/fields/class-acf-field-taxonomy.php:683
 msgid "Single Value"
 msgstr "단일 값"
 
-#: includes/fields/class-acf-field-taxonomy.php:692
+#: includes/fields/class-acf-field-taxonomy.php:681
 msgid "Multi Select"
 msgstr "다중 선택"
 
 #: includes/fields/class-acf-field-checkbox.php:22
-#: includes/fields/class-acf-field-taxonomy.php:691
+#: includes/fields/class-acf-field-taxonomy.php:680
 msgid "Checkbox"
 msgstr "체크박스"
 
-#: includes/fields/class-acf-field-taxonomy.php:690
+#: includes/fields/class-acf-field-taxonomy.php:679
 msgid "Multiple Values"
 msgstr "여러 값"
 
-#: includes/fields/class-acf-field-taxonomy.php:685
+#: includes/fields/class-acf-field-taxonomy.php:674
 msgid "Select the appearance of this field"
 msgstr "이 필드의 외관 선택하기"
 
-#: includes/fields/class-acf-field-taxonomy.php:684
+#: includes/fields/class-acf-field-taxonomy.php:673
 msgid "Appearance"
 msgstr "외관"
 
-#: includes/fields/class-acf-field-taxonomy.php:626
+#: includes/fields/class-acf-field-taxonomy.php:615
 msgid "Select the taxonomy to be displayed"
 msgstr "보일 할 분류를 선택하기"
 
-#: includes/fields/class-acf-field-taxonomy.php:590
+#: includes/fields/class-acf-field-taxonomy.php:579
 msgctxt "No Terms"
 msgid "No %s"
 msgstr "%s 없음"
@@ -6101,21 +6119,21 @@ msgstr "파일"
 msgid "Password"
 msgstr "비밀번호"
 
-#: includes/fields/class-acf-field-select.php:366
+#: includes/fields/class-acf-field-select.php:365
 msgid "Specify the value returned"
 msgstr "반환할 값 지정하기"
 
-#: includes/fields/class-acf-field-select.php:434
+#: includes/fields/class-acf-field-select.php:433
 msgid "Use AJAX to lazy load choices?"
 msgstr "지연 로드 선택에 AJAX를 사용하시겠습니까?"
 
 #: includes/fields/class-acf-field-checkbox.php:333
-#: includes/fields/class-acf-field-select.php:355
+#: includes/fields/class-acf-field-select.php:354
 msgid "Enter each default value on a new line"
 msgstr "새로운 줄에 기본 값 입력하기"
 
-#: includes/fields/class-acf-field-select.php:231 includes/media.php:48
-#: assets/build/js/acf-input.js:7830 assets/build/js/acf-input.js:8495
+#: includes/fields/class-acf-field-select.php:229 includes/media.php:48
+#: assets/build/js/acf-input.js:7821 assets/build/js/acf-input.js:8483
 msgctxt "verb"
 msgid "Select"
 msgstr "선택하기"
@@ -6181,7 +6199,7 @@ msgid "One result is available, press enter to select it."
 msgstr "1개 결과를 사용할 수 있습니다. 선택하려면 Enter 키를 누르세요."
 
 #: includes/fields/class-acf-field-select.php:22
-#: includes/fields/class-acf-field-taxonomy.php:696
+#: includes/fields/class-acf-field-taxonomy.php:685
 msgctxt "noun"
 msgid "Select"
 msgstr "선택하기"
@@ -6387,7 +6405,7 @@ msgstr "범위"
 #: includes/fields/class-acf-field-button-group.php:165
 #: includes/fields/class-acf-field-checkbox.php:350
 #: includes/fields/class-acf-field-radio.php:210
-#: includes/fields/class-acf-field-select.php:373
+#: includes/fields/class-acf-field-select.php:372
 msgid "Both (Array)"
 msgstr "모두(배열)"
 
@@ -6395,14 +6413,14 @@ msgstr "모두(배열)"
 #: includes/fields/class-acf-field-button-group.php:164
 #: includes/fields/class-acf-field-checkbox.php:349
 #: includes/fields/class-acf-field-radio.php:209
-#: includes/fields/class-acf-field-select.php:372
+#: includes/fields/class-acf-field-select.php:371
 msgid "Label"
 msgstr "레이블"
 
 #: includes/fields/class-acf-field-button-group.php:163
 #: includes/fields/class-acf-field-checkbox.php:348
 #: includes/fields/class-acf-field-radio.php:208
-#: includes/fields/class-acf-field-select.php:371
+#: includes/fields/class-acf-field-select.php:370
 msgid "Value"
 msgstr "값"
 
@@ -6421,28 +6439,28 @@ msgstr "수평"
 #: includes/fields/class-acf-field-button-group.php:138
 #: includes/fields/class-acf-field-checkbox.php:323
 #: includes/fields/class-acf-field-radio.php:183
-#: includes/fields/class-acf-field-select.php:344
+#: includes/fields/class-acf-field-select.php:343
 msgid "red : Red"
 msgstr "빨강 : 빨강"
 
 #: includes/fields/class-acf-field-button-group.php:138
 #: includes/fields/class-acf-field-checkbox.php:323
 #: includes/fields/class-acf-field-radio.php:183
-#: includes/fields/class-acf-field-select.php:344
+#: includes/fields/class-acf-field-select.php:343
 msgid "For more control, you may specify both a value and label like this:"
 msgstr "더 많은 제어를 위해 다음과 같이 값과 레이블을 모두 지정할 수 있습니다."
 
 #: includes/fields/class-acf-field-button-group.php:138
 #: includes/fields/class-acf-field-checkbox.php:323
 #: includes/fields/class-acf-field-radio.php:183
-#: includes/fields/class-acf-field-select.php:344
+#: includes/fields/class-acf-field-select.php:343
 msgid "Enter each choice on a new line."
 msgstr "새 줄에 각 선택 항목을 입력합니다."
 
 #: includes/fields/class-acf-field-button-group.php:137
 #: includes/fields/class-acf-field-checkbox.php:322
 #: includes/fields/class-acf-field-radio.php:182
-#: includes/fields/class-acf-field-select.php:343
+#: includes/fields/class-acf-field-select.php:342
 msgid "Choices"
 msgstr "선택하기"
 
@@ -6451,18 +6469,18 @@ msgid "Button Group"
 msgstr "버튼 그룹"
 
 #: includes/fields/class-acf-field-button-group.php:183
-#: includes/fields/class-acf-field-page_link.php:511
-#: includes/fields/class-acf-field-post_object.php:422
+#: includes/fields/class-acf-field-page_link.php:508
+#: includes/fields/class-acf-field-post_object.php:421
 #: includes/fields/class-acf-field-radio.php:228
-#: includes/fields/class-acf-field-select.php:402
-#: includes/fields/class-acf-field-taxonomy.php:705
+#: includes/fields/class-acf-field-select.php:401
+#: includes/fields/class-acf-field-taxonomy.php:694
 #: includes/fields/class-acf-field-user.php:132
 msgid "Allow Null"
 msgstr "Null 값 허용"
 
-#: includes/fields/class-acf-field-page_link.php:264
-#: includes/fields/class-acf-field-post_object.php:245
-#: includes/fields/class-acf-field-taxonomy.php:876
+#: includes/fields/class-acf-field-page_link.php:262
+#: includes/fields/class-acf-field-post_object.php:243
+#: includes/fields/class-acf-field-taxonomy.php:858
 msgid "Parent"
 msgstr "부모"
 
@@ -6494,7 +6512,7 @@ msgstr "비주얼 전용"
 msgid "Visual & Text"
 msgstr "비주얼 및 텍스트"
 
-#: includes/fields/class-acf-field-icon_picker.php:230
+#: includes/fields/class-acf-field-icon_picker.php:237
 #: includes/fields/class-acf-field-wysiwyg.php:324
 msgid "Tabs"
 msgstr "탭"
@@ -6593,109 +6611,109 @@ msgstr "새 게시물을 작성할 때 나타납니다."
 msgid "Text"
 msgstr "텍스트"
 
-#: includes/fields/class-acf-field-relationship.php:753
+#: includes/fields/class-acf-field-relationship.php:742
 msgid "%1$s requires at least %2$s selection"
 msgid_plural "%1$s requires at least %2$s selections"
 msgstr[0] "%1$s에는 %2$s개 이상의 선택 항목이 필요합니다."
 
-#: includes/fields/class-acf-field-post_object.php:392
-#: includes/fields/class-acf-field-relationship.php:616
+#: includes/fields/class-acf-field-post_object.php:391
+#: includes/fields/class-acf-field-relationship.php:605
 msgid "Post ID"
 msgstr "게시물 ID"
 
 #: includes/fields/class-acf-field-post_object.php:15
-#: includes/fields/class-acf-field-post_object.php:391
-#: includes/fields/class-acf-field-relationship.php:615
+#: includes/fields/class-acf-field-post_object.php:390
+#: includes/fields/class-acf-field-relationship.php:604
 msgid "Post Object"
 msgstr "개체 게시"
 
-#: includes/fields/class-acf-field-relationship.php:648
+#: includes/fields/class-acf-field-relationship.php:637
 msgid "Maximum Posts"
 msgstr "최대 게시물"
 
-#: includes/fields/class-acf-field-relationship.php:638
+#: includes/fields/class-acf-field-relationship.php:627
 msgid "Minimum Posts"
 msgstr "최소 게시물"
 
 #: includes/admin/views/acf-field-group/options.php:183
 #: includes/admin/views/acf-post-type/advanced-settings.php:29
-#: includes/fields/class-acf-field-relationship.php:673
+#: includes/fields/class-acf-field-relationship.php:662
 msgid "Featured Image"
 msgstr "특성 이미지"
 
-#: includes/fields/class-acf-field-relationship.php:669
+#: includes/fields/class-acf-field-relationship.php:658
 msgid "Selected elements will be displayed in each result"
 msgstr "선택한 요소가 각 결과에 표시됩니다."
 
-#: includes/fields/class-acf-field-relationship.php:668
+#: includes/fields/class-acf-field-relationship.php:657
 msgid "Elements"
 msgstr "엘리먼트"
 
-#: includes/fields/class-acf-field-relationship.php:602
+#: includes/fields/class-acf-field-relationship.php:591
 #: includes/fields/class-acf-field-taxonomy.php:20
-#: includes/fields/class-acf-field-taxonomy.php:625
+#: includes/fields/class-acf-field-taxonomy.php:614
 #: includes/locations/class-acf-location-taxonomy.php:22
 msgid "Taxonomy"
 msgstr "택소노미"
 
-#: includes/fields/class-acf-field-relationship.php:601
+#: includes/fields/class-acf-field-relationship.php:590
 #: includes/locations/class-acf-location-post-type.php:22
 #: includes/post-types/class-acf-post-type.php:92
 msgid "Post Type"
 msgstr "게시물 유형"
 
-#: includes/fields/class-acf-field-relationship.php:595
+#: includes/fields/class-acf-field-relationship.php:584
 msgid "Filters"
 msgstr "필터"
 
-#: includes/fields/class-acf-field-page_link.php:472
-#: includes/fields/class-acf-field-post_object.php:379
-#: includes/fields/class-acf-field-relationship.php:588
+#: includes/fields/class-acf-field-page_link.php:469
+#: includes/fields/class-acf-field-post_object.php:378
+#: includes/fields/class-acf-field-relationship.php:577
 msgid "All taxonomies"
 msgstr "모든 분류"
 
-#: includes/fields/class-acf-field-page_link.php:464
-#: includes/fields/class-acf-field-post_object.php:371
-#: includes/fields/class-acf-field-relationship.php:580
+#: includes/fields/class-acf-field-page_link.php:461
+#: includes/fields/class-acf-field-post_object.php:370
+#: includes/fields/class-acf-field-relationship.php:569
 msgid "Filter by Taxonomy"
 msgstr "분류로 필터하기"
 
-#: includes/fields/class-acf-field-page_link.php:442
-#: includes/fields/class-acf-field-post_object.php:349
-#: includes/fields/class-acf-field-relationship.php:558
+#: includes/fields/class-acf-field-page_link.php:439
+#: includes/fields/class-acf-field-post_object.php:348
+#: includes/fields/class-acf-field-relationship.php:547
 msgid "All post types"
 msgstr "모든 게시물 유형"
 
-#: includes/fields/class-acf-field-page_link.php:434
-#: includes/fields/class-acf-field-post_object.php:341
-#: includes/fields/class-acf-field-relationship.php:550
+#: includes/fields/class-acf-field-page_link.php:431
+#: includes/fields/class-acf-field-post_object.php:340
+#: includes/fields/class-acf-field-relationship.php:539
 msgid "Filter by Post Type"
 msgstr "글 유형으로 필터하기"
 
-#: includes/fields/class-acf-field-relationship.php:450
+#: includes/fields/class-acf-field-relationship.php:439
 msgid "Search..."
 msgstr "검색하기..."
 
-#: includes/fields/class-acf-field-relationship.php:381
+#: includes/fields/class-acf-field-relationship.php:369
 msgid "Select taxonomy"
 msgstr "분류 선택하기"
 
-#: includes/fields/class-acf-field-relationship.php:373
+#: includes/fields/class-acf-field-relationship.php:361
 msgid "Select post type"
 msgstr "글 유형 선택하기"
 
 #: includes/fields/class-acf-field-relationship.php:78
-#: assets/build/js/acf-input.js:4938 assets/build/js/acf-input.js:5403
+#: assets/build/js/acf-input.js:4937 assets/build/js/acf-input.js:5402
 msgid "No matches found"
 msgstr "검색 결과가 없습니다"
 
 #: includes/fields/class-acf-field-relationship.php:77
-#: assets/build/js/acf-input.js:4921 assets/build/js/acf-input.js:5382
+#: assets/build/js/acf-input.js:4920 assets/build/js/acf-input.js:5381
 msgid "Loading"
 msgstr "로딩중"
 
 #: includes/fields/class-acf-field-relationship.php:76
-#: assets/build/js/acf-input.js:4826 assets/build/js/acf-input.js:5273
+#: assets/build/js/acf-input.js:4824 assets/build/js/acf-input.js:5271
 msgid "Maximum values reached ( {max} values )"
 msgstr "최대 값에 도달함( {max} values ​​)"
 
@@ -6792,7 +6810,7 @@ msgstr "프론트 엔드에 반환 값 지정하기"
 #: includes/fields/class-acf-field-file.php:199
 #: includes/fields/class-acf-field-link.php:146
 #: includes/fields/class-acf-field-radio.php:202
-#: includes/fields/class-acf-field-taxonomy.php:669
+#: includes/fields/class-acf-field-taxonomy.php:658
 msgid "Return Value"
 msgstr "값 반환하기"
 
@@ -6819,23 +6837,23 @@ msgid "Edit"
 msgstr "편집하기"
 
 #: includes/fields/class-acf-field-image.php:63 includes/media.php:55
-#: assets/build/js/acf-input.js:7877 assets/build/js/acf-input.js:8549
+#: assets/build/js/acf-input.js:7868 assets/build/js/acf-input.js:8537
 msgid "All images"
 msgstr "모든 이미지"
 
 #: includes/fields/class-acf-field-image.php:62
-#: assets/build/js/acf-input.js:4183 assets/build/js/acf-input.js:4581
+#: assets/build/js/acf-input.js:4181 assets/build/js/acf-input.js:4579
 msgid "Update Image"
 msgstr "이미지 업데이트"
 
 #: includes/fields/class-acf-field-image.php:61
-#: assets/build/js/acf-input.js:4182 assets/build/js/acf-input.js:4580
+#: assets/build/js/acf-input.js:4180 assets/build/js/acf-input.js:4578
 msgid "Edit Image"
 msgstr "이미지 편집하기"
 
 #: includes/fields/class-acf-field-image.php:60
-#: assets/build/js/acf-input.js:4018 assets/build/js/acf-input.js:4158
-#: assets/build/js/acf-input.js:4406 assets/build/js/acf-input.js:4555
+#: assets/build/js/acf-input.js:4016 assets/build/js/acf-input.js:4156
+#: assets/build/js/acf-input.js:4404 assets/build/js/acf-input.js:4553
 msgid "Select Image"
 msgstr "이미지 선택하기"
 
@@ -6920,16 +6938,16 @@ msgstr "날짜 선택기"
 
 #: includes/fields/class-acf-field-image.php:238
 #: includes/fields/class-acf-field-image.php:274
-#: includes/fields/class-acf-field-oembed.php:250
+#: includes/fields/class-acf-field-oembed.php:241
 msgid "Width"
 msgstr "너비"
 
-#: includes/fields/class-acf-field-oembed.php:247
-#: includes/fields/class-acf-field-oembed.php:259
+#: includes/fields/class-acf-field-oembed.php:238
+#: includes/fields/class-acf-field-oembed.php:250
 msgid "Embed Size"
 msgstr "임베드 크기"
 
-#: includes/fields/class-acf-field-oembed.php:207
+#: includes/fields/class-acf-field-oembed.php:198
 msgid "Enter URL"
 msgstr "URL 입력"
 
@@ -6953,7 +6971,7 @@ msgstr "활성 상태일 때 표시되는 텍스트"
 msgid "On Text"
 msgstr "텍스트에"
 
-#: includes/fields/class-acf-field-select.php:423
+#: includes/fields/class-acf-field-select.php:422
 #: includes/fields/class-acf-field-true_false.php:187
 msgid "Stylized UI"
 msgstr "양식에 일치하는 UI"
@@ -6965,7 +6983,7 @@ msgstr "양식에 일치하는 UI"
 #: includes/fields/class-acf-field-number.php:113
 #: includes/fields/class-acf-field-radio.php:192
 #: includes/fields/class-acf-field-range.php:153
-#: includes/fields/class-acf-field-select.php:354
+#: includes/fields/class-acf-field-select.php:353
 #: includes/fields/class-acf-field-text.php:95
 #: includes/fields/class-acf-field-textarea.php:93
 #: includes/fields/class-acf-field-true_false.php:135
@@ -7043,7 +7061,7 @@ msgstr "지도 높이 맞춤설정"
 #: includes/fields/class-acf-field-google-map.php:221
 #: includes/fields/class-acf-field-image.php:249
 #: includes/fields/class-acf-field-image.php:285
-#: includes/fields/class-acf-field-oembed.php:262
+#: includes/fields/class-acf-field-oembed.php:253
 msgid "Height"
 msgstr "키"
 
@@ -7078,7 +7096,7 @@ msgid "Clear location"
 msgstr "위치 지우기"
 
 #: includes/fields/class-acf-field-google-map.php:149
-#: includes/fields/class-acf-field-relationship.php:600
+#: includes/fields/class-acf-field-relationship.php:589
 msgid "Search"
 msgstr "검색하기"
 
@@ -7100,11 +7118,11 @@ msgstr "템플릿 함수를 통해 반환되는 형식"
 #: includes/fields/class-acf-field-color_picker.php:168
 #: includes/fields/class-acf-field-date_picker.php:200
 #: includes/fields/class-acf-field-date_time_picker.php:188
-#: includes/fields/class-acf-field-icon_picker.php:253
+#: includes/fields/class-acf-field-icon_picker.php:260
 #: includes/fields/class-acf-field-image.php:177
-#: includes/fields/class-acf-field-post_object.php:386
-#: includes/fields/class-acf-field-relationship.php:610
-#: includes/fields/class-acf-field-select.php:365
+#: includes/fields/class-acf-field-post_object.php:385
+#: includes/fields/class-acf-field-relationship.php:599
+#: includes/fields/class-acf-field-select.php:364
 #: includes/fields/class-acf-field-time_picker.php:121
 #: includes/fields/class-acf-field-user.php:95
 msgid "Return Format"

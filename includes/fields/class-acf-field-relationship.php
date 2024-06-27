@@ -88,8 +88,19 @@ if ( ! class_exists( 'acf_field_relationship' ) ) :
 		 * @return void
 		 */
 		public function ajax_query() {
-			$nonce = acf_request_arg( 'nonce', '' );
-			$key   = acf_request_arg( 'field_key', '' );
+			$nonce             = acf_request_arg( 'nonce', '' );
+			$key               = acf_request_arg( 'field_key', '' );
+			$conditional_logic = (bool) acf_request_arg( 'conditional_logic', false );
+
+			if ( $conditional_logic ) {
+				if ( ! acf_current_user_can_admin() ) {
+					die();
+				}
+
+				// Use the standard ACF admin nonce.
+				$nonce = '';
+				$key   = '';
+			}
 
 			if ( ! acf_verify_ajax( $nonce, $key ) ) {
 				die();

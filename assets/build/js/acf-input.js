@@ -777,6 +777,7 @@
       ajaxData: function (data) {
         ajaxData.paged = data.paged;
         ajaxData.s = data.s;
+        ajaxData.conditional_logic = true;
         ajaxData.include = $.isNumeric(data.s) ? Number(data.s) : '';
         return acf.prepareForAjax(ajaxData);
       },
