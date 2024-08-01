@@ -11308,7 +11308,7 @@
               const acfBlockState = acf.blockInstances[selectedBlockId];
               if (acfBlockState.validation_errors) {
                 // Deselect the block to show the error and lock the save.
-                console.log('Rejecting save because the block editor has a invalid ACF block selected.');
+                acf.debug('Rejecting save because the block editor has a invalid ACF block selected.');
                 notices.createErrorNotice(acf.__('An ACF Block on this page requires attention before you can save.'), {
                   id: 'acf-validation',
                   isDismissible: true

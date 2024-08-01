@@ -1076,6 +1076,10 @@ function acf_shortcode( $atts ) {
 		return;
 	}
 
+	if ( is_array( $value ) ) {
+		$value = implode( ', ', $value );
+	}
+
 	// Temporarily always get the unescaped version for action comparison.
 	$unescaped_value = get_field( $atts['field'], $post_id, $atts['format_value'], false );
 

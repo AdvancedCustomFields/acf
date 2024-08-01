@@ -4,7 +4,7 @@ Tags: acf, fields, custom fields, meta, repeater
 Requires at least: 6.0
 Tested up to: 6.6
 Requires PHP: 7.4
-Stable tag: 6.3.4
+Stable tag: 6.3.5
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -93,6 +93,15 @@ From your WordPress dashboard
 
 
 == Changelog ==
+
+= 6.3.5 =
+*Release Date 1st August 2024*
+
+* Fix - The ACF Shortcode now correctly outputs a comma separated list of values for arrays
+* Fix - ACF Blocks rendered in auto mode now correctly re-render their previews after editing fields
+* Fix - ACF Block validation no longer raises required validation messages if HTML will automatically select the first value when rendered
+* Fix - ACF Block validation no longer raises required validation messages if a default value will be rendered as the field value
+* Fix - ACF Block validation no longer raises required validation messages for fields hidden by conditional logic when adding a new block
 
 = 6.3.4 =
 *Release Date 18th July 2024*
