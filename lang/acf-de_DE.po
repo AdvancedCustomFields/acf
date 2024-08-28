@@ -12,7 +12,7 @@
 # This file is distributed under the same license as Advanced Custom Fields.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-08-01T09:50:26+00:00\n"
+"PO-Revision-Date: 2024-08-28T11:15:15+00:00\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
@@ -115,7 +115,7 @@ msgstr ""
 
 #: includes/fields/class-acf-field-icon_picker.php:686
 msgid "Text Page Icon"
-msgstr ""
+msgstr "Textseite-Icon"
 
 #: includes/fields/class-acf-field-icon_picker.php:680
 msgid "Table Row Delete Icon"
@@ -183,7 +183,7 @@ msgstr "REST-API-Icon"
 
 #: includes/fields/class-acf-field-icon_picker.php:649
 msgid "Remove Icon"
-msgstr ""
+msgstr "Entfernen-Icon"
 
 #: includes/fields/class-acf-field-icon_picker.php:647
 msgid "Reddit Icon"
@@ -219,7 +219,7 @@ msgstr "Pinterest-Icon"
 
 #: includes/fields/class-acf-field-icon_picker.php:630
 msgid "Pets Icon"
-msgstr ""
+msgstr "Haustiere-Icon"
 
 #: includes/fields/class-acf-field-icon_picker.php:628
 msgid "PDF Icon"
@@ -227,7 +227,7 @@ msgstr "PDF-Icon"
 
 #: includes/fields/class-acf-field-icon_picker.php:626
 msgid "Palm Tree Icon"
-msgstr ""
+msgstr "Palme-Icon"
 
 #: includes/fields/class-acf-field-icon_picker.php:625
 msgid "Open Folder Icon"
@@ -327,10 +327,10 @@ msgstr ""
 
 #: includes/fields/class-acf-field-icon_picker.php:575
 msgid "Crop Icon"
-msgstr ""
+msgstr "Zuschneiden-Icon"
 
 #: includes/fields/class-acf-field-icon_picker.php:574
-msgid "Id (alt) Icon"
+msgid "ID (alt) Icon"
 msgstr ""
 
 #: includes/fields/class-acf-field-icon_picker.php:572
@@ -343,7 +343,7 @@ msgstr "Sanduhr-Icon"
 
 #: includes/fields/class-acf-field-icon_picker.php:568
 msgid "Heading Icon"
-msgstr ""
+msgstr "Überschrift-Icon"
 
 #: includes/fields/class-acf-field-icon_picker.php:564
 msgid "Google Icon"
@@ -460,7 +460,7 @@ msgstr ""
 
 #: includes/fields/class-acf-field-icon_picker.php:497
 msgid "Drumstick Icon"
-msgstr ""
+msgstr "Hähnchenkeule-Icon"
 
 #: includes/fields/class-acf-field-icon_picker.php:493
 msgid "Database View Icon"
@@ -508,11 +508,11 @@ msgstr ""
 
 #: includes/fields/class-acf-field-icon_picker.php:481
 msgid "Repeat Icon"
-msgstr ""
+msgstr "Wiederholen-Icon"
 
 #: includes/fields/class-acf-field-icon_picker.php:480
 msgid "Play Icon"
-msgstr ""
+msgstr "Abspielen-Icon"
 
 #: includes/fields/class-acf-field-icon_picker.php:479
 msgid "Pause Icon"
@@ -524,7 +524,7 @@ msgstr ""
 
 #: includes/fields/class-acf-field-icon_picker.php:477
 msgid "Back Icon"
-msgstr ""
+msgstr "Zurück-Icon"
 
 #: includes/fields/class-acf-field-icon_picker.php:476
 msgid "Columns Icon"
@@ -583,7 +583,7 @@ msgid "Replies Icon"
 msgstr ""
 
 #: includes/fields/class-acf-field-icon_picker.php:446
-msgid "Pm Icon"
+msgid "PM Icon"
 msgstr ""
 
 #: includes/fields/class-acf-field-icon_picker.php:444
@@ -599,8 +599,8 @@ msgid "BuddyPress Icon"
 msgstr "BuddyPress-Icon"
 
 #: includes/fields/class-acf-field-icon_picker.php:440
-msgid "BbPress Icon"
-msgstr "BbPress-Icon"
+msgid "bbPress Icon"
+msgstr "bbPress-Icon"
 
 #: includes/fields/class-acf-field-icon_picker.php:439
 msgid "Activity Icon"
@@ -698,20 +698,14 @@ msgstr ""
 msgid "Upgrade to ACF PRO to create options pages in just a few clicks"
 msgstr ""
 
-#: includes/ajax/class-acf-ajax-upgrade.php:24
-msgid "Sorry, you don't have permission to do that."
-msgstr "Du bist leider nicht berechtigt, diese Aktion durchzuführen."
-
 #: includes/ajax/class-acf-ajax-query-users.php:24
 msgid "Invalid request args."
 msgstr ""
 
-#: includes/ajax/class-acf-ajax-local-json-diff.php:37
-msgid "Sorry, you are not allowed to do that."
-msgstr "Du bist leider nicht berechtigt, diese Aktion durchzuführen."
-
 #: includes/ajax/class-acf-ajax-check-screen.php:37
+#: includes/ajax/class-acf-ajax-local-json-diff.php:37
 #: includes/ajax/class-acf-ajax-query-users.php:32
+#: includes/ajax/class-acf-ajax-upgrade.php:24
 #: includes/ajax/class-acf-ajax-user-setting.php:38
 msgid "Sorry, you do not have permission to do that."
 msgstr "Du bist leider nicht berechtigt, diese Aktion durchzuführen."
@@ -863,7 +857,7 @@ msgstr "Sortieren-Icon"
 
 #: includes/fields/class-acf-field-icon_picker.php:664
 msgid "Smiley Icon"
-msgstr ""
+msgstr "Smiley-Icon"
 
 #: includes/fields/class-acf-field-icon_picker.php:663
 msgid "Smartphone Icon"
@@ -967,7 +961,7 @@ msgstr "Minus-Icon"
 
 #: includes/fields/class-acf-field-icon_picker.php:616
 msgid "Migrate Icon"
-msgstr ""
+msgstr "Migrieren-Icon"
 
 #: includes/fields/class-acf-field-icon_picker.php:615
 msgid "Microphone Icon"
@@ -979,7 +973,7 @@ msgstr "Megafon-Icon"
 
 #: includes/fields/class-acf-field-icon_picker.php:600
 msgid "Marker Icon"
-msgstr ""
+msgstr "Marker-Icon"
 
 #: includes/fields/class-acf-field-icon_picker.php:599
 msgid "Lock Icon"
@@ -991,7 +985,7 @@ msgstr ""
 
 #: includes/fields/class-acf-field-icon_picker.php:596
 msgid "List View Icon"
-msgstr ""
+msgstr "Listenansicht-Icon"
 
 #: includes/fields/class-acf-field-icon_picker.php:594
 msgid "Lightbulb Icon"
@@ -999,7 +993,7 @@ msgstr "Glühbirnen-Icon"
 
 #: includes/fields/class-acf-field-icon_picker.php:593
 msgid "Left Right Icon"
-msgstr ""
+msgstr "Links-Rechts-Icon"
 
 #: includes/fields/class-acf-field-icon_picker.php:592
 msgid "Layout Icon"
@@ -1018,8 +1012,8 @@ msgid "Index Card Icon"
 msgstr "Karteikarte-Icon"
 
 #: includes/fields/class-acf-field-icon_picker.php:573
-msgid "Id Icon"
-msgstr ""
+msgid "ID Icon"
+msgstr "ID-Icon"
 
 #: includes/fields/class-acf-field-icon_picker.php:570
 msgid "Hidden Icon"
@@ -1057,7 +1051,7 @@ msgstr "Filter-Icon"
 
 #: includes/fields/class-acf-field-icon_picker.php:548
 msgid "Feedback Icon"
-msgstr ""
+msgstr "Feedback-Icon"
 
 #: includes/fields/class-acf-field-icon_picker.php:547
 msgid "Facebook (alt) Icon"
@@ -1091,7 +1085,7 @@ msgstr ""
 
 #: includes/fields/class-acf-field-icon_picker.php:531
 msgid "Underline Icon"
-msgstr ""
+msgstr "Unterstreichen-Icon"
 
 #: includes/fields/class-acf-field-icon_picker.php:529
 msgid "Text Color Icon"
@@ -1341,7 +1335,7 @@ msgstr "Einstellungen-Icon"
 
 #: includes/fields/class-acf-field-icon_picker.php:397
 msgid "Post Icon"
-msgstr ""
+msgstr "Beitrag-Icon"
 
 #: includes/fields/class-acf-field-icon_picker.php:396
 msgid "Plugins Icon"
@@ -1349,7 +1343,7 @@ msgstr "Plugins-Icon"
 
 #: includes/fields/class-acf-field-icon_picker.php:395
 msgid "Page Icon"
-msgstr ""
+msgstr "Seite-Icon"
 
 #: includes/fields/class-acf-field-icon_picker.php:394
 msgid "Network Icon"
@@ -1408,7 +1402,7 @@ msgstr ""
 
 #: includes/fields/class-acf-field-icon_picker.php:284
 msgid "No results found for that search term"
-msgstr ""
+msgstr "Es wurden keine Ergebnisse für diesen Suchbegriff gefunden"
 
 #: includes/fields/class-acf-field-icon_picker.php:266
 msgid "Array"
@@ -1416,7 +1410,7 @@ msgstr "Array"
 
 #: includes/fields/class-acf-field-icon_picker.php:265
 msgid "String"
-msgstr ""
+msgstr "Zeichenfolge"
 
 #. translators: %s - link to documentation
 #: includes/fields/class-acf-field-icon_picker.php:253
@@ -1433,7 +1427,7 @@ msgstr ""
 
 #: includes/fields/class-acf-field-icon_picker.php:194
 msgid "Browse Media Library"
-msgstr ""
+msgstr "Mediathek durchsuchen"
 
 #: includes/fields/class-acf-field-icon_picker.php:185
 msgid "The currently selected image preview"
@@ -1463,7 +1457,7 @@ msgstr ""
 
 #: includes/fields/class-acf-field-icon_picker.php:23
 msgid "Icon Picker"
-msgstr ""
+msgstr "Icon-Wähler"
 
 #: includes/class-acf-site-health.php:704
 msgid "JSON Load Paths"
@@ -1475,7 +1469,7 @@ msgstr ""
 
 #: includes/class-acf-site-health.php:689
 msgid "Registered ACF Forms"
-msgstr ""
+msgstr "Registrierte ACF-Formulare"
 
 #: includes/class-acf-site-health.php:683
 msgid "Shortcode Enabled"
@@ -1539,7 +1533,7 @@ msgstr ""
 
 #: includes/class-acf-site-health.php:534
 msgid "Registered Taxonomies (JSON)"
-msgstr ""
+msgstr "Registrierte Taxonomien (JSON)"
 
 #: includes/class-acf-site-health.php:522
 msgid "Registered Taxonomies (UI)"
@@ -1547,7 +1541,7 @@ msgstr ""
 
 #: includes/class-acf-site-health.php:510
 msgid "Registered Post Types (JSON)"
-msgstr ""
+msgstr "Registrierte Inhaltstypen (JSON)"
 
 #: includes/class-acf-site-health.php:498
 msgid "Registered Post Types (UI)"
@@ -1648,7 +1642,7 @@ msgid ""
 msgstr ""
 
 #: includes/assets.php:373 assets/build/js/acf-input.js:11312
-#: assets/build/js/acf-input.js:12394
+#: assets/build/js/acf-input.js:12396
 msgid "An ACF Block on this page requires attention before you can save."
 msgstr ""
 
@@ -1663,7 +1657,7 @@ msgstr ""
 
 #: includes/admin/views/escaped-html-notice.php:25
 msgid "Dismiss permanently"
-msgstr ""
+msgstr "Dauerhaft verwerfen"
 
 #: includes/admin/views/acf-field-group/field.php:220
 msgid "Instructions for content editors. Shown when submitting data."
@@ -1884,7 +1878,7 @@ msgstr ""
 
 #: includes/admin/views/escaped-html-notice.php:5
 msgid "Learn&nbsp;more"
-msgstr ""
+msgstr "Mehr&nbsp;erfahren"
 
 #: includes/admin/admin.php:63
 msgid "Hide&nbsp;details"

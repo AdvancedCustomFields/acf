@@ -12,7 +12,7 @@
 # This file is distributed under the same license as Advanced Custom Fields.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-08-01T09:50:26+00:00\n"
+"PO-Revision-Date: 2024-08-28T11:15:15+00:00\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "Language: en_GB\n"
 "MIME-Version: 1.0\n"
@@ -330,8 +330,8 @@ msgid "Crop Icon"
 msgstr "Crop Icon"
 
 #: includes/fields/class-acf-field-icon_picker.php:574
-msgid "Id (alt) Icon"
-msgstr "ID (alt) Icon"
+msgid "ID (alt) Icon"
+msgstr "ID (alt) icon"
 
 #: includes/fields/class-acf-field-icon_picker.php:572
 msgid "HTML Icon"
@@ -583,8 +583,8 @@ msgid "Replies Icon"
 msgstr "Replies Icon"
 
 #: includes/fields/class-acf-field-icon_picker.php:446
-msgid "Pm Icon"
-msgstr "PM Icon"
+msgid "PM Icon"
+msgstr "PM icon"
 
 #: includes/fields/class-acf-field-icon_picker.php:444
 msgid "Friends Icon"
@@ -599,8 +599,8 @@ msgid "BuddyPress Icon"
 msgstr "BuddyPress Icon"
 
 #: includes/fields/class-acf-field-icon_picker.php:440
-msgid "BbPress Icon"
-msgstr "bbPress Icon"
+msgid "bbPress Icon"
+msgstr "bbPress icon"
 
 #: includes/fields/class-acf-field-icon_picker.php:439
 msgid "Activity Icon"
@@ -698,20 +698,14 @@ msgstr "Site (alt) Icon"
 msgid "Upgrade to ACF PRO to create options pages in just a few clicks"
 msgstr "Upgrade to ACF PRO to create options pages in just a few clicks"
 
-#: includes/ajax/class-acf-ajax-upgrade.php:24
-msgid "Sorry, you don't have permission to do that."
-msgstr "Sorry, you don't have permission to do that."
-
 #: includes/ajax/class-acf-ajax-query-users.php:24
 msgid "Invalid request args."
 msgstr "Invalid request args."
 
-#: includes/ajax/class-acf-ajax-local-json-diff.php:37
-msgid "Sorry, you are not allowed to do that."
-msgstr "Sorry, you are not allowed to do that."
-
 #: includes/ajax/class-acf-ajax-check-screen.php:37
+#: includes/ajax/class-acf-ajax-local-json-diff.php:37
 #: includes/ajax/class-acf-ajax-query-users.php:32
+#: includes/ajax/class-acf-ajax-upgrade.php:24
 #: includes/ajax/class-acf-ajax-user-setting.php:38
 msgid "Sorry, you do not have permission to do that."
 msgstr "Sorry, you do not have permission to do that."
@@ -1018,7 +1012,7 @@ msgid "Index Card Icon"
 msgstr "Index card icon"
 
 #: includes/fields/class-acf-field-icon_picker.php:573
-msgid "Id Icon"
+msgid "ID Icon"
 msgstr "ID icon"
 
 #: includes/fields/class-acf-field-icon_picker.php:570
@@ -1654,7 +1648,7 @@ msgstr ""
 "can be useful to provide to support."
 
 #: includes/assets.php:373 assets/build/js/acf-input.js:11312
-#: assets/build/js/acf-input.js:12394
+#: assets/build/js/acf-input.js:12396
 msgid "An ACF Block on this page requires attention before you can save."
 msgstr "An ACF Block on this page requires attention before you can save."
 

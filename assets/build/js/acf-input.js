@@ -10675,7 +10675,7 @@
       // ajax
       $.ajax({
         url: acf.get('ajaxurl'),
-        data: acf.prepareForAjax(data),
+        data: acf.prepareForAjax(data, true),
         type: 'post',
         dataType: 'json',
         context: this,

@@ -1428,8 +1428,9 @@ function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t =
     },
     onChangeLabel: function (e, $el) {
       // set
-      var label = $el.val();
-      this.set('label', label);
+      const label = $el.val();
+      const safeLabel = acf.encode(label);
+      this.set('label', safeLabel);
 
       // render name
       if (this.prop('name') == '') {

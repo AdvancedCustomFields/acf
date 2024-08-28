@@ -2469,17 +2469,25 @@
   //console.log( acf.escHtml( '<script>js1</script><script>js2</script>' ) );
 
   /**
-   *  acf.decode
+   * Encode a string potentially containing HTML into it's HTML entities equivalent.
    *
-   *  description
+   * @since 6.3.6
    *
-   *  @date	13/1/18
-   *  @since	5.6.5
-   *
-   *  @param	type $var Description. Default.
-   *  @return	type Description.
+   * @param {string} string String to encode.
+   * @return {string} The encoded string
    */
+  acf.encode = function (string) {
+    return $('<textarea/>').text(string).html();
+  };
 
+  /**
+   * Decode a HTML encoded string into it's original form.
+   *
+   * @since 5.6.5
+   *
+   * @param {string} string String to encode.
+   * @return {string} The encoded string
+   */
   acf.decode = function (string) {
     return $('<textarea/>').html(string).text();
   };
@@ -3310,12 +3318,13 @@
    *
    * @since 5.6.5
    *
-   * @param {Object} data The data to prepare
-   * @return {Object} The prepared data.
+   * @param Object  data             The data to prepare
+   * @param boolean use_global_nonce Should we ignore any nonce provided in the data object and force ACF's global nonce for this request
+   * @return Object The prepared data.
    */
-  acf.prepareForAjax = function (data) {
+  acf.prepareForAjax = function (data, use_global_nonce = false) {
     // Set a default nonce if we don't have one already.
-    if ('undefined' === typeof data.nonce) {
+    if (use_global_nonce || 'undefined' === typeof data.nonce) {
       data.nonce = acf.get('nonce');
     }
     data.post_id = acf.get('post_id');

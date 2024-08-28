@@ -12,7 +12,7 @@
 # This file is distributed under the same license as Advanced Custom Fields.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-08-01T09:50:26+00:00\n"
+"PO-Revision-Date: 2024-08-28T11:15:15+00:00\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "Language: tr_TR\n"
 "MIME-Version: 1.0\n"
@@ -331,8 +331,8 @@ msgid "Crop Icon"
 msgstr "Kırpma simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:574
-msgid "Id (alt) Icon"
-msgstr "Kimlik (alt) simgesi"
+msgid "ID (alt) Icon"
+msgstr ""
 
 #: includes/fields/class-acf-field-icon_picker.php:572
 msgid "HTML Icon"
@@ -584,8 +584,8 @@ msgid "Replies Icon"
 msgstr "Yanıtlar simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:446
-msgid "Pm Icon"
-msgstr "Pm simgesi"
+msgid "PM Icon"
+msgstr ""
 
 #: includes/fields/class-acf-field-icon_picker.php:444
 msgid "Friends Icon"
@@ -600,8 +600,8 @@ msgid "BuddyPress Icon"
 msgstr "BuddyPress simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:440
-msgid "BbPress Icon"
-msgstr "BbPress simgesi"
+msgid "bbPress Icon"
+msgstr ""
 
 #: includes/fields/class-acf-field-icon_picker.php:439
 msgid "Activity Icon"
@@ -701,20 +701,14 @@ msgstr ""
 "Sadece birkaç tıklamayla seçenek sayfaları oluşturmak için ACF PRO'ya "
 "yükseltin"
 
-#: includes/ajax/class-acf-ajax-upgrade.php:24
-msgid "Sorry, you don't have permission to do that."
-msgstr "Üzgünüm, bunu yapmak için izniniz yok."
-
 #: includes/ajax/class-acf-ajax-query-users.php:24
 msgid "Invalid request args."
 msgstr "Geçersiz istek argümanları."
 
-#: includes/ajax/class-acf-ajax-local-json-diff.php:37
-msgid "Sorry, you are not allowed to do that."
-msgstr "Üzgünüm, bunu yapmanıza izin verilmiyor."
-
 #: includes/ajax/class-acf-ajax-check-screen.php:37
+#: includes/ajax/class-acf-ajax-local-json-diff.php:37
 #: includes/ajax/class-acf-ajax-query-users.php:32
+#: includes/ajax/class-acf-ajax-upgrade.php:24
 #: includes/ajax/class-acf-ajax-user-setting.php:38
 msgid "Sorry, you do not have permission to do that."
 msgstr "Üzgünüm, bunu yapmak için izniniz yok."
@@ -1022,8 +1016,8 @@ msgid "Index Card Icon"
 msgstr "Dizin-kartı simgesi"
 
 #: includes/fields/class-acf-field-icon_picker.php:573
-msgid "Id Icon"
-msgstr "Kimlik simgesi"
+msgid "ID Icon"
+msgstr ""
 
 #: includes/fields/class-acf-field-icon_picker.php:570
 msgid "Hidden Icon"
@@ -1658,7 +1652,7 @@ msgstr ""
 "olabilecek hata ayıklama bilgilerini içerir."
 
 #: includes/assets.php:373 assets/build/js/acf-input.js:11312
-#: assets/build/js/acf-input.js:12394
+#: assets/build/js/acf-input.js:12396
 msgid "An ACF Block on this page requires attention before you can save."
 msgstr ""
 "Kaydetmeden önce bu sayfadaki bir ACF Bloğuna dikkat edilmesi gerekiyor."

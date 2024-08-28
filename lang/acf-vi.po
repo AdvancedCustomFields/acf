@@ -12,7 +12,7 @@
 # This file is distributed under the same license as Advanced Custom Fields.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-08-01T09:50:26+00:00\n"
+"PO-Revision-Date: 2024-08-28T11:15:15+00:00\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "Language: vi\n"
 "MIME-Version: 1.0\n"
@@ -331,8 +331,8 @@ msgid "Crop Icon"
 msgstr "Biểu tượng cắt"
 
 #: includes/fields/class-acf-field-icon_picker.php:574
-msgid "Id (alt) Icon"
-msgstr "Biểu tượng Id (thay thế)"
+msgid "ID (alt) Icon"
+msgstr "Biểu tượng ID (thay thế)"
 
 #: includes/fields/class-acf-field-icon_picker.php:572
 msgid "HTML Icon"
@@ -584,8 +584,8 @@ msgid "Replies Icon"
 msgstr "Biểu tượng trả lời"
 
 #: includes/fields/class-acf-field-icon_picker.php:446
-msgid "Pm Icon"
-msgstr "Biểu tượng Pm"
+msgid "PM Icon"
+msgstr "Biểu tượng PM"
 
 #: includes/fields/class-acf-field-icon_picker.php:444
 msgid "Friends Icon"
@@ -600,7 +600,7 @@ msgid "BuddyPress Icon"
 msgstr "Biểu tượng BuddyPress"
 
 #: includes/fields/class-acf-field-icon_picker.php:440
-msgid "BbPress Icon"
+msgid "bbPress Icon"
 msgstr "Biểu tượng BbPress"
 
 #: includes/fields/class-acf-field-icon_picker.php:439
@@ -698,22 +698,16 @@ msgstr "Biểu tượng trang web (thay thế)"
 #: includes/admin/views/options-page-preview.php:26
 msgid "Upgrade to ACF PRO to create options pages in just a few clicks"
 msgstr ""
-"Cập nhật lên ACF pro để tạo các trang tùy chọn chỉ trong vài cú nhấp chuột"
-
-#: includes/ajax/class-acf-ajax-upgrade.php:24
-msgid "Sorry, you don't have permission to do that."
-msgstr "Xin lỗi, bạn không được phép làm điều đó."
+"Cập nhật lên ACF pro để tạo các Trang cài đặt chỉ trong vài cú nhấp chuột"
 
 #: includes/ajax/class-acf-ajax-query-users.php:24
 msgid "Invalid request args."
 msgstr "Yêu cầu không hợp lệ của Args."
 
-#: includes/ajax/class-acf-ajax-local-json-diff.php:37
-msgid "Sorry, you are not allowed to do that."
-msgstr "Xin lỗi, bạn không được phép làm điều đó."
-
 #: includes/ajax/class-acf-ajax-check-screen.php:37
+#: includes/ajax/class-acf-ajax-local-json-diff.php:37
 #: includes/ajax/class-acf-ajax-query-users.php:32
+#: includes/ajax/class-acf-ajax-upgrade.php:24
 #: includes/ajax/class-acf-ajax-user-setting.php:38
 msgid "Sorry, you do not have permission to do that."
 msgstr "Xin lỗi, bạn không được phép làm điều đó."
@@ -744,11 +738,11 @@ msgstr "%s là thuộc tính bắt buộc của acf."
 
 #: includes/fields/class-acf-field-icon_picker.php:748
 msgid "The value of icon to save."
-msgstr "Giá trị của icon để tiết kiệm."
+msgstr "Giá trị của biểu tượng cần lưu."
 
 #: includes/fields/class-acf-field-icon_picker.php:742
 msgid "The type of icon to save."
-msgstr "Loại biểu tượng để tiết kiệm"
+msgstr "Loại biểu tượng để lưu."
 
 #: includes/fields/class-acf-field-icon_picker.php:720
 msgid "Yes Icon"
@@ -825,7 +819,7 @@ msgstr "Biểu tượng lời chứng thực"
 
 #: includes/fields/class-acf-field-icon_picker.php:683
 msgid "Tagcloud Icon"
-msgstr "Biểu tượng đám mây thẻ"
+msgstr "Biểu tượng mây thẻ"
 
 #: includes/fields/class-acf-field-icon_picker.php:682
 msgid "Tag Icon"
@@ -1020,7 +1014,7 @@ msgid "Index Card Icon"
 msgstr "Biểu tượng thẻ chỉ mục"
 
 #: includes/fields/class-acf-field-icon_picker.php:573
-msgid "Id Icon"
+msgid "ID Icon"
 msgstr "Biểu tượng ID"
 
 #: includes/fields/class-acf-field-icon_picker.php:570
@@ -1408,7 +1402,7 @@ msgid ""
 "picker below."
 msgstr ""
 "Các biểu tượng có sẵn phù hợp với truy vấn tìm kiếm của bạn đã được cập nhật "
-"trong biểu tượng picker bên dưới."
+"trong bộ chọn biểu tượng bên dưới."
 
 #: includes/fields/class-acf-field-icon_picker.php:284
 msgid "No results found for that search term"
@@ -1416,11 +1410,11 @@ msgstr "Không tìm thấy kết quả cho thời gian tìm kiếm đó"
 
 #: includes/fields/class-acf-field-icon_picker.php:266
 msgid "Array"
-msgstr "Array"
+msgstr "Mảng"
 
 #: includes/fields/class-acf-field-icon_picker.php:265
 msgid "String"
-msgstr "Ống"
+msgstr "Chuỗi"
 
 #. translators: %s - link to documentation
 #: includes/fields/class-acf-field-icon_picker.php:253
@@ -1429,7 +1423,7 @@ msgstr "Chọn định dạng trở lại cho biểu tượng. %s"
 
 #: includes/fields/class-acf-field-icon_picker.php:238
 msgid "Select where content editors can choose the icon from."
-msgstr "Chọn nơi các biên tập nội dung có thể chọn biểu tượng từ."
+msgstr "Chọn nơi các trình chỉnh sửa nội dung có thể chọn biểu tượng từ."
 
 #: includes/fields/class-acf-field-icon_picker.php:211
 msgid "The URL to the icon you'd like to use, or svg as Data URI"
@@ -1453,11 +1447,11 @@ msgstr "Biểu tượng tìm kiếm..."
 
 #: includes/fields/class-acf-field-icon_picker.php:53
 msgid "Media Library"
-msgstr "Thư viện Media"
+msgstr "Thư viện media"
 
 #: includes/fields/class-acf-field-icon_picker.php:49
 msgid "Dashicons"
-msgstr "Biểu tượng Dash"
+msgstr "Dashicons"
 
 #: includes/fields/class-acf-field-icon_picker.php:26
 msgid ""
@@ -1469,7 +1463,7 @@ msgstr ""
 
 #: includes/fields/class-acf-field-icon_picker.php:23
 msgid "Icon Picker"
-msgstr "Biểu tượng Picker"
+msgstr "Bộ chọn biểu tượng"
 
 #: includes/class-acf-site-health.php:704
 msgid "JSON Load Paths"
@@ -1477,7 +1471,7 @@ msgstr "Json tải đường"
 
 #: includes/class-acf-site-health.php:698
 msgid "JSON Save Paths"
-msgstr "Json tiết kiệm con đường"
+msgstr "Đường dẫn lưu JSON"
 
 #: includes/class-acf-site-health.php:689
 msgid "Registered ACF Forms"
@@ -1493,15 +1487,15 @@ msgstr "Bảng cài đặt trường được bật"
 
 #: includes/class-acf-site-health.php:667
 msgid "Field Type Modal Enabled"
-msgstr "Chất loại modal được kích hoạt"
+msgstr "Chất loại hộp cửa sổ được kích hoạt"
 
 #: includes/class-acf-site-health.php:659
 msgid "Admin UI Enabled"
-msgstr "Admin UI được kích hoạt"
+msgstr "Giao diện quản trị đã bật"
 
 #: includes/class-acf-site-health.php:650
 msgid "Block Preloading Enabled"
-msgstr "Block Preloading được bật"
+msgstr "Tải trước khối đã bật"
 
 #: includes/class-acf-site-health.php:638
 msgid "Blocks Per ACF Block Version"
@@ -1517,7 +1511,7 @@ msgstr "Các khối ACF đã đăng ký"
 
 #: includes/class-acf-site-health.php:600
 msgid "Light"
-msgstr "Ánh sáng"
+msgstr "Sáng"
 
 #: includes/class-acf-site-health.php:600
 msgid "Standard"
@@ -1529,39 +1523,39 @@ msgstr "Khởi động API"
 
 #: includes/class-acf-site-health.php:591
 msgid "Registered Options Pages (PHP)"
-msgstr "Các trang tùy chọn đăng ký (Php)"
+msgstr "Trang cài đặt đăng ký (PHP)"
 
 #: includes/class-acf-site-health.php:577
 msgid "Registered Options Pages (JSON)"
-msgstr "Các trang tùy chọn đăng ký (Json)"
+msgstr "Trang cài đặt đăng ký (JSON)"
 
 #: includes/class-acf-site-health.php:572
 msgid "Registered Options Pages (UI)"
-msgstr "Các trang tùy chọn đăng ký (Ui)"
+msgstr "Trang cài đặt đăng ký (UI)"
 
 #: includes/class-acf-site-health.php:542
 msgid "Options Pages UI Enabled"
-msgstr "Các tùy chọn trang Ui bật"
+msgstr "Giao diện trang cài đặt đã bật"
 
 #: includes/class-acf-site-health.php:534
 msgid "Registered Taxonomies (JSON)"
-msgstr "Tài chính đăng ký (Json)"
+msgstr "Phân loại đã đăng ký (JSON)"
 
 #: includes/class-acf-site-health.php:522
 msgid "Registered Taxonomies (UI)"
-msgstr "Taxonomies Đăng ký (Ui)"
+msgstr "Phân loại đã đăng ký (UI)"
 
 #: includes/class-acf-site-health.php:510
 msgid "Registered Post Types (JSON)"
-msgstr "Các loại thư đăng ký (Json)"
+msgstr "Loại nội dung đã đăng ký (JSON)"
 
 #: includes/class-acf-site-health.php:498
 msgid "Registered Post Types (UI)"
-msgstr "Các loại thư đăng ký (Ui)"
+msgstr "Loại nội dung đã đăng ký (UI)"
 
 #: includes/class-acf-site-health.php:485
 msgid "Post Types and Taxonomies Enabled"
-msgstr "Các loại thư và taxonomies được cho phép"
+msgstr "Loại nội dung và phân loại đã được bật"
 
 #: includes/class-acf-site-health.php:478
 msgid "Number of Third Party Fields by Field Type"
@@ -1573,23 +1567,23 @@ msgstr "Số trường theo loại trường"
 
 #: includes/class-acf-site-health.php:440
 msgid "Field Groups Enabled for GraphQL"
-msgstr "Nhóm trường được kích hoạt cho Graphql"
+msgstr "Nhóm trường đã được kích hoạt cho GraphQL"
 
 #: includes/class-acf-site-health.php:427
 msgid "Field Groups Enabled for REST API"
-msgstr "Các nhóm trường được kích hoạt để nghỉ API"
+msgstr "Nhóm trường đã được kích hoạt cho REST API"
 
 #: includes/class-acf-site-health.php:415
 msgid "Registered Field Groups (JSON)"
-msgstr "Các nhóm lĩnh vực đăng ký (Json)"
+msgstr "Nhóm trường đã đăng ký (JSON)"
 
 #: includes/class-acf-site-health.php:403
 msgid "Registered Field Groups (PHP)"
-msgstr "Các nhóm lĩnh vực đăng ký (Php)"
+msgstr "Nhóm trường đã đăng ký (PHP)"
 
 #: includes/class-acf-site-health.php:391
 msgid "Registered Field Groups (UI)"
-msgstr "Các nhóm lĩnh vực đăng ký (Ui)"
+msgstr "Nhóm trường đã đăng ký (UI)"
 
 #: includes/class-acf-site-health.php:379
 msgid "Active Plugins"
@@ -1597,11 +1591,11 @@ msgstr "Plugin hoạt động"
 
 #: includes/class-acf-site-health.php:353
 msgid "Parent Theme"
-msgstr "Chủ đề phụ huynh"
+msgstr "Giao diện cha"
 
 #: includes/class-acf-site-health.php:342
 msgid "Active Theme"
-msgstr "Chủ đề hoạt động"
+msgstr "Giao diện hoạt động"
 
 #: includes/class-acf-site-health.php:333
 msgid "Is Multisite"
@@ -1621,11 +1615,11 @@ msgstr "Đăng ký ngày hết hạn"
 
 #: includes/class-acf-site-health.php:308
 msgid "License Status"
-msgstr "Trạng thái giấy phép"
+msgstr "Trạng thái bản quyền"
 
 #: includes/class-acf-site-health.php:303
 msgid "License Type"
-msgstr "Loại giấy phép"
+msgstr "Loại bản quyền"
 
 #: includes/class-acf-site-health.php:298
 msgid "Licensed URL"
@@ -1633,7 +1627,7 @@ msgstr "URL được cấp phép"
 
 #: includes/class-acf-site-health.php:292
 msgid "License Activated"
-msgstr "Giấy phép được kích hoạt"
+msgstr "Bản quyền được kích hoạt"
 
 #: includes/class-acf-site-health.php:286
 msgid "Free"
@@ -1645,21 +1639,20 @@ msgstr "Plugin loại"
 
 #: includes/class-acf-site-health.php:280
 msgid "Plugin Version"
-msgstr "Phiên bản Plugin"
+msgstr "Phiên bản plugin"
 
 #: includes/class-acf-site-health.php:251
 msgid ""
 "This section contains debug information about your ACF configuration which "
 "can be useful to provide to support."
 msgstr ""
-"Phần này chứa thông tin Debug về cấu hình ACF của bạn mà có thể hữu ích để "
-"cung cấp hỗ trợ."
+"Phần này chứa thông tin gỡ lỗi về cấu hình ACF của bạn, có thể hữu ích để "
+"cung cấp cho bộ phận hỗ trợ."
 
 #: includes/assets.php:373 assets/build/js/acf-input.js:11312
-#: assets/build/js/acf-input.js:12394
+#: assets/build/js/acf-input.js:12396
 msgid "An ACF Block on this page requires attention before you can save."
-msgstr ""
-"Một khối ACF trên trang này đòi hỏi sự chú ý trước khi bạn có thể tiết kiệm."
+msgstr "Một khối ACF trên trang này cần được chú ý trước khi bạn có thể lưu."
 
 #. translators: %s - The clear log button opening HTML tag. %s - The closing
 #. HTML tag.
@@ -1669,18 +1662,19 @@ msgid ""
 "output. %1$sClear log and dismiss%2$s after escaping the values in your "
 "code. The notice will reappear if we detect changed values again."
 msgstr ""
-"Dữ liệu này được ghi lại khi chúng tôi phát hiện các giá trị đã được thay "
-"đổi trong quá trình phát hành. %1$sClear log and dismiss%2$s sau khi thoát "
-"khỏi các giá trị trong mã của bạn. Thông báo sẽ xuất hiện lại nếu chúng tôi "
-"phát hiện lại các giá trị đã thay đổi."
+"Dữ liệu này được ghi lại khi chúng tôi phát hiện các giá trị đã bị thay đổi "
+"trong quá trình xuất. %1$sXóa nhật ký và đóng thông báo%2$s sau khi bạn đã "
+"thoát các giá trị trong mã của mình. Thông báo sẽ xuất hiện lại nếu chúng "
+"tôi phát hiện các giá trị bị thay đổi lần nữa."
 
 #: includes/admin/views/escaped-html-notice.php:25
 msgid "Dismiss permanently"
-msgstr "Dismiss liên tục"
+msgstr "Xóa vĩnh viễn"
 
 #: includes/admin/views/acf-field-group/field.php:220
 msgid "Instructions for content editors. Shown when submitting data."
-msgstr "Hướng dẫn dành cho người biên tập nội dung. Hiển thị khi gửi dữ liệu."
+msgstr ""
+"Hướng dẫn dành cho người trình chỉnh sửa nội dung. Hiển thị khi gửi dữ liệu."
 
 #: includes/admin/post-types/admin-field-group.php:143
 #: assets/build/js/acf-input.js:1461 assets/build/js/acf-input.js:1559
@@ -1690,17 +1684,17 @@ msgstr "Không có thời hạn được chọn"
 #: includes/admin/post-types/admin-field-group.php:142
 #: assets/build/js/acf-input.js:1438 assets/build/js/acf-input.js:1535
 msgid "Has any term selected"
-msgstr "Có bất kỳ thuật ngữ nào được chọn"
+msgstr "Có bất kỳ mục phân loại nào được chọn"
 
 #: includes/admin/post-types/admin-field-group.php:141
 #: assets/build/js/acf-input.js:1413 assets/build/js/acf-input.js:1508
 msgid "Terms do not contain"
-msgstr "Các điều khoản không chứa"
+msgstr "Các mục phân loại không chứa"
 
 #: includes/admin/post-types/admin-field-group.php:140
 #: assets/build/js/acf-input.js:1388 assets/build/js/acf-input.js:1482
 msgid "Terms contain"
-msgstr "Điều khoản chứa"
+msgstr "Mục phân loại chứa"
 
 #: includes/admin/post-types/admin-field-group.php:139
 #: assets/build/js/acf-input.js:1369 assets/build/js/acf-input.js:1462
@@ -1785,12 +1779,12 @@ msgstr "Có bất kỳ mối quan hệ nào được chọn"
 #: includes/admin/post-types/admin-field-group.php:123
 #: assets/build/js/acf-input.js:1327 assets/build/js/acf-input.js:1416
 msgid "Has no post selected"
-msgstr "Không có bài đăng được chọn"
+msgstr "Không có bài viết được chọn"
 
 #: includes/admin/post-types/admin-field-group.php:122
 #: assets/build/js/acf-input.js:1304 assets/build/js/acf-input.js:1390
 msgid "Has any post selected"
-msgstr "Có bất kỳ bài đăng nào được chọn"
+msgstr "Có bất kỳ bài viết nào được chọn"
 
 #: includes/admin/post-types/admin-field-group.php:121
 #: assets/build/js/acf-input.js:1277 assets/build/js/acf-input.js:1359
@@ -1800,12 +1794,12 @@ msgstr "Các bài viết không chứa"
 #: includes/admin/post-types/admin-field-group.php:120
 #: assets/build/js/acf-input.js:1250 assets/build/js/acf-input.js:1328
 msgid "Posts contain"
-msgstr "Posts chứa"
+msgstr "Bài viết chứa"
 
 #: includes/admin/post-types/admin-field-group.php:119
 #: assets/build/js/acf-input.js:1231 assets/build/js/acf-input.js:1306
 msgid "Post is not equal to"
-msgstr "Post không giống như"
+msgstr "Bài viết không bằng với"
 
 #: includes/admin/post-types/admin-field-group.php:118
 #: assets/build/js/acf-input.js:1212 assets/build/js/acf-input.js:1284
@@ -1864,7 +1858,7 @@ msgstr ""
 #: includes/admin/admin-internal-post-type-list.php:231
 msgid "Please activate your ACF PRO license to edit this options page."
 msgstr ""
-"Vui lòng kích hoạt giấy phép ACF PRO của bạn để chỉnh sửa trang tùy chọn này."
+"Vui lòng kích hoạt giấy phép ACF PRO của bạn để chỉnh sửa Trang cài đặt này."
 
 #: includes/api/api-template.php:385 includes/api/api-template.php:439
 msgid ""
@@ -1923,15 +1917,15 @@ msgstr "%1$s (%2$s) - được hiển thị qua %3$s"
 
 #: includes/admin/views/global/navigation.php:226
 msgid "Renew ACF PRO License"
-msgstr "Gia hạn giấy phép ACF PRO"
+msgstr "Gia hạn bản quyền ACF PRO"
 
 #: includes/admin/views/acf-field-group/pro-features.php:17
 msgid "Renew License"
-msgstr "Gia hạn giấy phép"
+msgstr "Gia hạn bản quyền"
 
 #: includes/admin/views/acf-field-group/pro-features.php:14
 msgid "Manage License"
-msgstr "Quản lý giấy phép"
+msgstr "Quản lý bản quyền"
 
 #: includes/admin/views/acf-field-group/options.php:102
 msgid "'High' position not supported in the Block Editor"
@@ -1948,13 +1942,13 @@ msgid ""
 "pages for managing global settings via fields. You can create multiple pages "
 "and sub-pages."
 msgstr ""
-"Trang tùy chọn ACF <a href=\"%s\" target=\"_blank\"></a> là các trang quản "
+"Trang cài đặt ACF <a href=\"%s\" target=\"_blank\"></a> là các trang quản "
 "trị tùy chỉnh để quản lý cài đặt toàn cầu thông qua các trường. Bạn có thể "
 "tạo nhiều trang và trang con."
 
 #: includes/admin/views/global/header.php:35
 msgid "Add Options Page"
-msgstr "Thêm trang tùy chọn"
+msgstr "Thêm trang cài đặt"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:708
 msgid "In the editor used as the placeholder of the title."
@@ -1975,7 +1969,7 @@ msgstr "(Đã sao chép từ %s)"
 
 #: includes/admin/tools/class-acf-admin-tool-export.php:289
 msgid "Select Options Pages"
-msgstr "Chọn trang tùy chọn"
+msgstr "Chọn trang cài đặt"
 
 #: includes/admin/post-types/admin-taxonomy.php:107
 msgid "Duplicate taxonomy"
@@ -1988,12 +1982,12 @@ msgstr "Tạo phân loại"
 
 #: includes/admin/post-types/admin-post-type.php:105
 msgid "Duplicate post type"
-msgstr "Sao chép loại bài viết"
+msgstr "Sao chép loại nội dung"
 
 #: includes/admin/post-types/admin-post-type.php:104
 #: includes/admin/post-types/admin-taxonomy.php:108
 msgid "Create post type"
-msgstr "Tạo loại bài viết"
+msgstr "Tạo loại nội dung"
 
 #: includes/admin/post-types/admin-post-type.php:103
 #: includes/admin/post-types/admin-taxonomy.php:105
@@ -2097,35 +2091,35 @@ msgstr ""
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:1136
 msgid "The capability name for assigning terms of this taxonomy."
-msgstr "Tên khả năng để gán các thuật ngữ của phân loại này."
+msgstr "Tên khả năng để gán các mục phân loại của phân loại này."
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:1135
 msgid "Assign Terms Capability"
-msgstr "Khả năng gán thuật ngữ"
+msgstr "Khả năng gán mục phân loại"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:1119
 msgid "The capability name for deleting terms of this taxonomy."
-msgstr "Tên khả năng để xóa các thuật ngữ của phân loại này."
+msgstr "Tên khả năng để xóa các mục phân loại của phân loại này."
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:1118
 msgid "Delete Terms Capability"
-msgstr "Khả năng xóa thuật ngữ"
+msgstr "Khả năng xóa mục phân loại"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:1102
 msgid "The capability name for editing terms of this taxonomy."
-msgstr "Tên khả năng để chỉnh sửa các thuật ngữ của phân loại này."
+msgstr "Tên khả năng để chỉnh sửa các mục phân loại của phân loại này."
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:1101
 msgid "Edit Terms Capability"
-msgstr "Khả năng chỉnh sửa thuật ngữ"
+msgstr "Khả năng chỉnh sửa mục phân loại"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:1085
 msgid "The capability name for managing terms of this taxonomy."
-msgstr "Tên khả năng để quản lý các thuật ngữ của phân loại này."
+msgstr "Tên khả năng để quản lý các mục phân loại của phân loại này."
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:1084
 msgid "Manage Terms Capability"
-msgstr "Khả năng quản lý thuật ngữ"
+msgstr "Khả năng quản lý mục phân loại"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:914
 msgid ""
@@ -2162,7 +2156,7 @@ msgid ""
 "Flexible Content, Clone, and Gallery."
 msgstr ""
 "Tăng tốc độ công việc và phát triển các trang web tốt hơn với các tính năng "
-"như Khối ACF và Trang tùy chọn, và Các loại trường phức tạp như Lặp lại, Nội "
+"như Khối ACF và Trang cài đặt, và Các loại trường phức tạp như Lặp lại, Nội "
 "dung linh hoạt, Tạo bản sao và Album ảnh."
 
 #: includes/admin/views/acf-field-group/pro-features.php:2
@@ -2176,11 +2170,11 @@ msgstr "%s các trường"
 
 #: includes/admin/post-types/admin-taxonomies.php:267
 msgid "No terms"
-msgstr "Không có thuật ngữ"
+msgstr "Không có mục phân loại"
 
 #: includes/admin/post-types/admin-taxonomies.php:240
 msgid "No post types"
-msgstr "Không có loại bài viết"
+msgstr "Không có loại nội dung"
 
 #: includes/admin/post-types/admin-post-types.php:264
 msgid "No posts"
@@ -2241,7 +2235,7 @@ msgstr "Khóa phân loại phải dưới 32 ký tự."
 
 #: includes/post-types/class-acf-taxonomy.php:99
 msgid "No Taxonomies found in Trash"
-msgstr "Không tìm thấy Phân loại nào trong Thùng rác"
+msgstr "Không tìm thấy phân loại nào trong thùng rác"
 
 #: includes/post-types/class-acf-taxonomy.php:98
 msgid "No Taxonomies found"
@@ -2269,38 +2263,38 @@ msgstr "Thêm phân loại mới"
 
 #: includes/post-types/class-acf-post-type.php:100
 msgid "No Post Types found in Trash"
-msgstr "Không tìm thấy loại bài viết trong Thùng rác"
+msgstr "Không tìm thấy loại nội dung trong thùng rác"
 
 #: includes/post-types/class-acf-post-type.php:99
 msgid "No Post Types found"
-msgstr "Không tìm thấy loại bài viết"
+msgstr "Không tìm thấy loại nội dung"
 
 #: includes/post-types/class-acf-post-type.php:98
 msgid "Search Post Types"
-msgstr "Tìm kiếm loại bài viết"
+msgstr "Tìm kiếm loại nội dung"
 
 #: includes/post-types/class-acf-post-type.php:97
 msgid "View Post Type"
-msgstr "Xem loại bài viết"
+msgstr "Xem loại nội dung"
 
 #: includes/post-types/class-acf-post-type.php:96
 msgid "New Post Type"
-msgstr "Loại bài viết mới"
+msgstr "Loại nội dung mới"
 
 #: includes/post-types/class-acf-post-type.php:95
 msgid "Edit Post Type"
-msgstr "Chỉnh sửa loại bài viết"
+msgstr "Chỉnh sửa loại nội dung"
 
 #: includes/post-types/class-acf-post-type.php:94
 msgid "Add New Post Type"
-msgstr "Thêm loại bài viết mới"
+msgstr "Thêm loại nội dung mới"
 
 #: includes/post-types/class-acf-post-type.php:366
 msgid ""
 "This post type key is already in use by another post type registered outside "
 "of ACF and cannot be used."
 msgstr ""
-"Khóa loại bài viết này đã được sử dụng bởi một loại bài viết khác đã được "
+"Khóa loại nội dung này đã được sử dụng bởi một loại nội dung khác đã được "
 "đăng ký bên ngoài ACF và không thể sử dụng."
 
 #: includes/post-types/class-acf-post-type.php:361
@@ -2308,7 +2302,7 @@ msgid ""
 "This post type key is already in use by another post type in ACF and cannot "
 "be used."
 msgstr ""
-"Khóa loại bài viết này đã được sử dụng bởi một loại bài viết khác trong ACF "
+"Khóa loại nội dung này đã được sử dụng bởi một loại nội dung khác trong ACF "
 "và không thể sử dụng."
 
 #. translators: %s a link to WordPress.org's Reserved Terms page
@@ -2318,20 +2312,20 @@ msgid ""
 "This field must not be a WordPress <a href=\"%s\" target=\"_blank\">reserved "
 "term</a>."
 msgstr ""
-"Trường này không được là một <a href=\"%s\" target=\"_blank\">thuật ngữ dành "
-"riêng</a> của WordPress."
+"Trường này không được là một <a href=\"%s\" target=\"_blank\">mục phân loại "
+"dành riêng</a> của WordPress."
 
 #: includes/post-types/class-acf-post-type.php:333
 msgid ""
 "The post type key must only contain lower case alphanumeric characters, "
 "underscores or dashes."
 msgstr ""
-"Khóa loại bài viết chỉ được chứa các ký tự chữ và số viết thường, dấu gạch "
+"Khóa loại nội dung chỉ được chứa các ký tự chữ và số viết thường, dấu gạch "
 "dưới hoặc dấu gạch ngang."
 
 #: includes/post-types/class-acf-post-type.php:328
 msgid "The post type key must be under 20 characters."
-msgstr "Khóa loại bài viết phải dưới 20 ký tự."
+msgstr "Khóa loại nội dung phải dưới 20 ký tự."
 
 #: includes/fields/class-acf-field-wysiwyg.php:24
 msgid "We do not recommend using this field in ACF Blocks."
@@ -2386,7 +2380,7 @@ msgstr ""
 
 #: includes/fields/class-acf-field-textarea.php:23
 msgid "A basic textarea input for storing paragraphs of text."
-msgstr "Một đầu vào textarea cơ bản để lưu trữ đoạn văn bản."
+msgstr "Một ô nhập liệu dạng văn bản cơ bản để lưu trữ các đoạn văn bản."
 
 #: includes/fields/class-acf-field-text.php:23
 msgid "A basic text input, useful for storing single string values."
@@ -2397,8 +2391,8 @@ msgid ""
 "Allows the selection of one or more taxonomy terms based on the criteria and "
 "options specified in the fields settings."
 msgstr ""
-"Cho phép chọn một hoặc nhiều thuật ngữ phân loại dựa trên tiêu chí và tùy "
-"chọn được chỉ định trong cài đặt trường."
+"Cho phép chọn một hoặc nhiều mục phân loại phân loại dựa trên tiêu chí và "
+"tùy chọn được chỉ định trong cài đặt trường."
 
 #: includes/fields/class-acf-field-tab.php:25
 msgid ""
@@ -2418,8 +2412,8 @@ msgid ""
 "type items to create a relationship with the item that you're currently "
 "editing. Includes options to search and filter."
 msgstr ""
-"Giao diện hai cột để chọn một hoặc nhiều bài viết, trang hoặc mục loại bài "
-"viết tùy chỉnh để tạo mối quan hệ với mục bạn đang chỉnh sửa. Bao gồm các "
+"Giao diện hai cột để chọn một hoặc nhiều bài viết, trang hoặc mục loại nội "
+"dung tùy chỉnh để tạo mối quan hệ với mục bạn đang chỉnh sửa. Bao gồm các "
 "tùy chọn để tìm kiếm và lọc."
 
 #: includes/fields/class-acf-field-range.php:23
@@ -2444,7 +2438,7 @@ msgid ""
 "post type items with the option to search. "
 msgstr ""
 "Giao diện người dùng tương tác và tùy chỉnh để chọn một hoặc nhiều bài viết, "
-"trang hoặc mục loại bài viết với tùy chọn tìm kiếm. "
+"trang hoặc mục loại nội dung với tùy chọn tìm kiếm. "
 
 #: includes/fields/class-acf-field-password.php:23
 msgid "An input for providing a password using a masked field."
@@ -2463,7 +2457,7 @@ msgid ""
 "items or archive URLs, with the option to search."
 msgstr ""
 "Một danh sách thả xuống tương tác để chọn một hoặc nhiều bài viết, trang, "
-"mục loại bài viết tùy chỉnh hoặc URL lưu trữ, với tùy chọn tìm kiếm."
+"mục loại nội dung tùy chỉnh hoặc URL lưu trữ, với tùy chọn tìm kiếm."
 
 #: includes/fields/class-acf-field-oembed.php:24
 msgid ""
@@ -2482,7 +2476,7 @@ msgid ""
 "Used to display a message to editors alongside other fields. Useful for "
 "providing additional context or instructions around your fields."
 msgstr ""
-"Được sử dụng để hiển thị một thông điệp cho các biên tập viên cùng với các "
+"Được sử dụng để hiển thị một thông điệp cho các trình chỉnh sửa cùng với các "
 "trường khác. Hữu ích để cung cấp ngữ cảnh hoặc hướng dẫn bổ sung xung quanh "
 "các trường của bạn."
 
@@ -2578,8 +2572,8 @@ msgid ""
 "can be repeated again and again."
 msgstr ""
 "Điều này cung cấp một giải pháp để lặp lại nội dung như slide, thành viên "
-"nhóm và ô kêu gọi hành động, bằng cách hoạt động như một cha mẹ cho một tập "
-"hợp các trường con có thể được lặp lại đi lặp lại."
+"nhóm và ô kêu gọi hành động, bằng cách hoạt động như một cha cho một tập hợp "
+"các trường con có thể được lặp lại đi lặp lại."
 
 #: includes/fields.php:439
 msgid ""
@@ -2600,7 +2594,7 @@ msgid ""
 "control by using layouts and subfields to design the available blocks."
 msgstr ""
 "Điều này cung cấp một trình soạn thảo dựa trên bố cục, có cấu trúc, đơn "
-"giản. Trường Nội dung Linh hoạt cho phép bạn định nghĩa, tạo và quản lý nội "
+"giản. Trường nội dung linh hoạt cho phép bạn định nghĩa, tạo và quản lý nội "
 "dung với quyền kiểm soát tuyệt đối bằng cách sử dụng bố cục và trường con để "
 "thiết kế các khối có sẵn."
 
@@ -2625,7 +2619,7 @@ msgstr "Sao chép"
 #: includes/admin/views/global/navigation.php:86
 #: includes/class-acf-site-health.php:286 includes/fields.php:331
 msgid "PRO"
-msgstr "Chuyên nghiệp"
+msgstr "PRO"
 
 #: includes/fields.php:329 includes/fields.php:386
 msgid "Advanced"
@@ -2645,7 +2639,7 @@ msgstr "ID bài viết không hợp lệ."
 
 #: includes/ajax/class-acf-ajax-local-json-diff.php:52
 msgid "Invalid post type selected for review."
-msgstr "Loại bài viết được chọn để xem xét không hợp lệ."
+msgstr "Loại nội dung được chọn để xem xét không hợp lệ."
 
 #: includes/admin/views/global/navigation.php:189
 msgid "More"
@@ -2657,7 +2651,7 @@ msgstr "Hướng dẫn"
 
 #: includes/admin/views/browse-fields-modal.php:73
 msgid "Select Field"
-msgstr "Chọn Trường"
+msgstr "Chọn trường"
 
 #. translators: %s: A link to the popular fields used in ACF
 #: includes/admin/views/browse-fields-modal.php:60
@@ -2680,7 +2674,7 @@ msgstr "Tìm kiếm trường..."
 
 #: includes/admin/views/browse-fields-modal.php:21
 msgid "Select Field Type"
-msgstr "Chọn Loại Trường"
+msgstr "Chọn loại trường"
 
 #: includes/admin/views/browse-fields-modal.php:4
 msgid "Popular"
@@ -2692,7 +2686,7 @@ msgstr "Thêm phân loại"
 
 #: includes/admin/views/acf-taxonomy/list-empty.php:14
 msgid "Create custom taxonomies to classify post type content"
-msgstr "Tạo phân loại tùy chỉnh để phân loại nội dung loại bài viết"
+msgstr "Tạo phân loại tùy chỉnh để phân loại nội dung loại nội dung"
 
 #: includes/admin/views/acf-taxonomy/list-empty.php:13
 msgid "Add Your First Taxonomy"
@@ -2710,7 +2704,7 @@ msgstr ""
 
 #: includes/admin/views/acf-taxonomy/basic-settings.php:91
 msgid "One or many post types that can be classified with this taxonomy."
-msgstr "Một hoặc nhiều loại bài viết có thể được phân loại bằng phân loại này."
+msgstr "Một hoặc nhiều loại nội dung có thể được phân loại bằng phân loại này."
 
 #. translators: example taxonomy
 #: includes/admin/views/acf-taxonomy/basic-settings.php:60
@@ -2736,7 +2730,7 @@ msgstr ""
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:1155
 msgid "Expose this post type in the REST API."
-msgstr "Tiết lộ loại bài viết này trong REST API."
+msgstr "Tiết lộ loại nội dung này trong REST API."
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:1055
 msgid "Customize the query variable name"
@@ -2747,20 +2741,20 @@ msgid ""
 "Terms can be accessed using the non-pretty permalink, e.g., {query_var}"
 "={term_slug}."
 msgstr ""
-"Các thuật ngữ có thể được truy cập bằng cách sử dụng đường dẫn tĩnh không "
-"đẹp, ví dụ, {query_var}={term_slug}."
+"Các mục phân loại có thể được truy cập bằng cách sử dụng đường dẫn cố định "
+"không đẹp, ví dụ, {query_var}={term_slug}."
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:981
 msgid "Parent-child terms in URLs for hierarchical taxonomies."
-msgstr "Các thuật ngữ cha-con trong URL cho các phân loại theo hệ thống."
+msgstr "Các mục phân loại cha-con trong URL cho các phân loại theo hệ thống."
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:941
 msgid "Customize the slug used in the URL"
-msgstr "Tùy chỉnh slug được sử dụng trong URL"
+msgstr "Tùy chỉnh đường dẫn cố định được sử dụng trong URL"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:924
 msgid "Permalinks for this taxonomy are disabled."
-msgstr "Đường dẫn tĩnh cho phân loại này đã bị vô hiệu hóa."
+msgstr "Liên kết cố định cho phân loại này đã bị vô hiệu hóa."
 
 #. translators: this string will be appended with the new permalink structure.
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:921
@@ -2768,26 +2762,26 @@ msgid ""
 "Rewrite the URL using the taxonomy key as the slug. Your permalink structure "
 "will be"
 msgstr ""
-"Viết lại URL bằng cách sử dụng khóa phân loại làm slug. Cấu trúc đường dẫn "
-"tĩnh của bạn sẽ là"
+"Thay đổi URL bằng cách sử dụng khóa phân loại làm đường dẫn cố định. Cấu "
+"trúc đường dẫn cố định của bạn sẽ là"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:913
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:1030
 #: includes/admin/views/acf-taxonomy/basic-settings.php:57
 msgid "Taxonomy Key"
-msgstr "Khóa Phân loại"
+msgstr "Liên kết phân loại"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:911
 msgid "Select the type of permalink to use for this taxonomy."
-msgstr "Chọn loại đường dẫn tĩnh để sử dụng cho phân loại này."
+msgstr "Chọn loại liên kết cố định để sử dụng cho phân loại này."
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:896
 msgid "Display a column for the taxonomy on post type listing screens."
-msgstr "Hiển thị một cột cho phân loại trên màn hình liệt kê loại bài viết."
+msgstr "Hiển thị một cột cho phân loại trên màn hình liệt kê loại nội dung."
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:895
 msgid "Show Admin Column"
-msgstr "Hiển thị Cột Quản trị"
+msgstr "Hiển thị cột quản trị"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:882
 msgid "Show the taxonomy in the quick/bulk edit panel."
@@ -2795,15 +2789,15 @@ msgstr "Hiển thị phân loại trong bảng chỉnh sửa nhanh / hàng loạ
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:881
 msgid "Quick Edit"
-msgstr "Chỉnh sửa Nhanh"
+msgstr "Chỉnh sửa nhanh"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:868
 msgid "List the taxonomy in the Tag Cloud Widget controls."
-msgstr "Liệt kê phân loại trong các điều khiển Widget Đám mây Thẻ."
+msgstr "Liệt kê phân loại trong các điều khiển Widget mây thẻ."
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:867
 msgid "Tag Cloud"
-msgstr "Đám mây Thẻ"
+msgstr "Mây thẻ"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:824
 msgid ""
@@ -2843,9 +2837,9 @@ msgid ""
 "Categories meta box is shown for hierarchical taxonomies, and the Tags meta "
 "box is shown for non-hierarchical taxonomies."
 msgstr ""
-"Điều khiển hộp meta trên màn hình biên tập nội dung. Theo mặc định, hộp meta "
-"Danh mục được hiển thị cho các phân loại theo hệ thống, và hộp meta Thẻ được "
-"hiển thị cho các phân loại không theo hệ thống."
+"Điều khiển hộp meta trên màn hình trình chỉnh sửa nội dung. Theo mặc định, "
+"hộp meta danh mục được hiển thị cho các phân loại theo hệ thống, và hộp meta "
+"Thẻ được hiển thị cho các phân loại không theo hệ thống."
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:757
 msgid "Meta Box"
@@ -2896,7 +2890,7 @@ msgid ""
 "Assigns the text used to link back to the main index after updating a term."
 msgstr ""
 "Gán văn bản được sử dụng để liên kết trở lại chỉ mục chính sau khi cập nhật "
-"một thuật ngữ."
+"một mục phân loại."
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:661
 msgid "Back To Items"
@@ -2905,7 +2899,7 @@ msgstr "Quay lại mục"
 #. translators: %s Plural form of taxonomy name
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:657
 msgid "← Go to %s"
-msgstr "← Đi đến %s"
+msgstr "← Đi tới %s"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:642
 msgid "Tags list"
@@ -2951,11 +2945,11 @@ msgstr ""
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:574
 msgid "Describes the Description field on the Edit Tags screen."
-msgstr "Mô tả trường Mô tả trên màn hình Chỉnh sửa Thẻ."
+msgstr "Thông tin về trường mô tả trên màn hình chỉnh sửa thẻ."
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:573
 msgid "Description Field Description"
-msgstr "Mô tả trường Mô tả"
+msgstr "Thông tin về trường mô tả"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:554
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:555
@@ -2963,16 +2957,16 @@ msgid ""
 "Assign a parent term to create a hierarchy. The term Jazz, for example, "
 "would be the parent of Bebop and Big Band"
 msgstr ""
-"Gán một thuật ngữ cha để tạo ra một hệ thống phân cấp. Thuật ngữ Jazz, ví "
-"dụ, sẽ là cha của Bebop và Big Band"
+"Gán một mục phân loại cha để tạo ra một hệ thống phân cấp. Thuật ngữ Jazz, "
+"ví dụ, sẽ là cha của Bebop và Big Band"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:553
 msgid "Describes the Parent field on the Edit Tags screen."
-msgstr "Mô tả trường Cha trên màn hình Chỉnh sửa Thẻ."
+msgstr "Mô tả trường cha trên màn hình chỉnh sửa thẻ."
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:552
 msgid "Parent Field Description"
-msgstr "Mô tả trường Cha"
+msgstr "Mô tả trường cha"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:538
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:539
@@ -2980,16 +2974,16 @@ msgid ""
 "The \"slug\" is the URL-friendly version of the name. It is usually all "
 "lower case and contains only letters, numbers, and hyphens."
 msgstr ""
-"\"Slug\" là phiên bản thân thiện với URL của tên. Nó thường là tất cả chữ "
-"thường và chỉ chứa các chữ cái, số và dấu gạch ngang."
+"\"Đường dẫn cố định\" là phiên bản thân thiện với URL của tên. Nó thường là "
+"tất cả chữ thường và chỉ chứa các chữ cái, số và dấu gạch ngang."
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:537
 msgid "Describes the Slug field on the Edit Tags screen."
-msgstr "Mô tả trường Slug trên màn hình Chỉnh sửa Thẻ."
+msgstr "Mô tả trường đường dẫn cố định trên màn hình chỉnh sửa thẻ."
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:536
 msgid "Slug Field Description"
-msgstr "Mô tả trường Slug"
+msgstr "Mô tả trường đường dẫn cố định"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:522
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:523
@@ -2998,7 +2992,7 @@ msgstr "Tên là cách nó xuất hiện trên trang web của bạn"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:521
 msgid "Describes the Name field on the Edit Tags screen."
-msgstr "Mô tả trường Tên trên màn hình Chỉnh sửa Thẻ."
+msgstr "Mô tả trường tên trên màn hình chỉnh sửa thẻ."
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:520
 msgid "Name Field Description"
@@ -3018,7 +3012,7 @@ msgstr ""
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:505
 msgid "No Terms"
-msgstr "Không có thuật ngữ"
+msgstr "Không có mục phân loại"
 
 #. translators: %s Plural form of taxonomy name
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:501
@@ -3037,8 +3031,8 @@ msgid ""
 msgstr ""
 "Gán văn bản hiển thị khi nhấp vào văn bản 'chọn từ những thẻ được sử dụng "
 "nhiều nhất' trong hộp meta phân loại khi không có thẻ nào có sẵn, và gán văn "
-"bản được sử dụng trong bảng danh sách thuật ngữ khi không có mục nào cho một "
-"phân loại."
+"bản được sử dụng trong bảng danh sách mục phân loại khi không có mục nào cho "
+"một phân loại."
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:484
 msgid "Not Found"
@@ -3221,7 +3215,7 @@ msgstr "Xem thẻ"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:217
 msgid "In the admin bar to view term during editing."
-msgstr "Trong thanh quản trị để xem thuật ngữ trong quá trình chỉnh sửa."
+msgstr "Trong thanh quản trị để xem mục phân loại trong quá trình chỉnh sửa."
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:198
 msgid "Edit Tag"
@@ -3229,7 +3223,7 @@ msgstr "Chỉnh sửa thẻ"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:197
 msgid "At the top of the editor screen when editing a term."
-msgstr "Ở đầu màn hình biên tập khi chỉnh sửa một thuật ngữ."
+msgstr "Ở đầu màn hình trình chỉnh sửa khi sửa một mục phân loại."
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:178
 msgid "All Tags"
@@ -3257,11 +3251,11 @@ msgstr "Một tóm tắt mô tả về phân loại."
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:95
 msgid "A descriptive summary of the term."
-msgstr "Một tóm tắt mô tả về thuật ngữ."
+msgstr "Một tóm tắt mô tả về mục phân loại."
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:94
 msgid "Term Description"
-msgstr "Mô tả thuật ngữ"
+msgstr "Mô tả mục phân loại"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:76
 msgid "Single word, no spaces. Underscores and dashes allowed."
@@ -3270,43 +3264,43 @@ msgstr ""
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:75
 msgid "Term Slug"
-msgstr "Slug thuật ngữ"
+msgstr "Đường dẫn cố định mục phân loại"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:56
 msgid "The name of the default term."
-msgstr "Tên của thuật ngữ mặc định."
+msgstr "Tên của mục phân loại mặc định."
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:55
 msgid "Term Name"
-msgstr "Tên thuật ngữ"
+msgstr "Tên mục phân loại"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:41
 msgid ""
 "Create a term for the taxonomy that cannot be deleted. It will not be "
 "selected for posts by default."
 msgstr ""
-"Tạo một thuật ngữ cho phân loại không thể bị xóa. Nó sẽ không được chọn cho "
-"bài viết theo mặc định."
+"Tạo một mục cho phân loại không thể bị xóa. Nó sẽ không được chọn cho bài "
+"viết theo mặc định."
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:40
 msgid "Default Term"
-msgstr "Thuật ngữ mặc định"
+msgstr "Mục phân loại mặc định"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:28
 msgid ""
 "Whether terms in this taxonomy should be sorted in the order they are "
 "provided to `wp_set_object_terms()`."
 msgstr ""
-"Có nên sắp xếp các thuật ngữ trong phân loại này theo thứ tự chúng được cung "
-"cấp cho `wp_set_object_terms()` hay không."
+"Có nên sắp xếp các mục phân loại trong phân loại này theo thứ tự chúng được "
+"cung cấp cho `wp_set_object_terms()` hay không."
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:27
 msgid "Sort Terms"
-msgstr "Sắp xếp thuật ngữ"
+msgstr "Sắp xếp mục phân loại"
 
 #: includes/admin/views/acf-post-type/list-empty.php:14
 msgid "Add Post Type"
-msgstr "Thêm loại bài viết"
+msgstr "Thêm loại nội dung"
 
 #: includes/admin/views/acf-post-type/list-empty.php:13
 msgid ""
@@ -3314,11 +3308,11 @@ msgid ""
 "custom post types."
 msgstr ""
 "Mở rộng chức năng của WordPress vượt ra khỏi bài viết và trang tiêu chuẩn "
-"với các loại bài đăng tùy chỉnh."
+"với các loại nội dung tùy chỉnh."
 
 #: includes/admin/views/acf-post-type/list-empty.php:12
 msgid "Add Your First Post Type"
-msgstr "Thêm loại bài viết đầu tiên của bạn"
+msgstr "Thêm loại nội dung đầu tiên của bạn"
 
 #: includes/admin/views/acf-post-type/basic-settings.php:136
 #: includes/admin/views/acf-taxonomy/basic-settings.php:135
@@ -3332,7 +3326,7 @@ msgstr "Cấu hình nâng cao"
 
 #: includes/admin/views/acf-post-type/basic-settings.php:123
 msgid "Hierarchical post types can have descendants (like pages)."
-msgstr "Các loại bài viết phân cấp có thể có các mục con (như trang)."
+msgstr "Tùy chọn này giúp loại nội dung có thể tạo các mục con (như trang)."
 
 #: includes/admin/views/acf-post-type/basic-settings.php:122
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:980
@@ -3367,7 +3361,7 @@ msgstr "Phim"
 #: includes/admin/views/acf-post-type/basic-settings.php:39
 #: includes/admin/views/acf-taxonomy/basic-settings.php:40
 msgid "Singular Label"
-msgstr "Nhãn số ít"
+msgstr "Tên số ít"
 
 #. translators: example post type
 #: includes/admin/views/acf-post-type/basic-settings.php:24
@@ -3377,7 +3371,7 @@ msgstr "Phim"
 #: includes/admin/views/acf-post-type/basic-settings.php:22
 #: includes/admin/views/acf-taxonomy/basic-settings.php:23
 msgid "Plural Label"
-msgstr "Nhãn số nhiều"
+msgstr "Tên số nhiều"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:1298
 msgid ""
@@ -3398,23 +3392,23 @@ msgstr "Phần không gian tên của URL REST API."
 #: includes/admin/views/acf-post-type/advanced-settings.php:1278
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:1190
 msgid "Namespace Route"
-msgstr "Không gian Tuyến đường"
+msgstr "Namespace Route"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:1260
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:1172
 msgid "The base URL for the post type REST API URLs."
-msgstr "URL cơ sở cho các URL API REST của loại bài viết."
+msgstr "URL cơ sở cho các URL API REST của loại nội dung."
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:1259
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:1171
 msgid "Base URL"
-msgstr "URL cơ sở"
+msgstr "Base URL"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:1245
 msgid ""
 "Exposes this post type in the REST API. Required to use the block editor."
 msgstr ""
-"Tiết lộ loại bài viết này trong API REST. Yêu cầu sử dụng trình soạn thảo "
+"Tiết lộ loại nội dung này trong API REST. Yêu cầu sử dụng trình soạn thảo "
 "khối."
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:1244
@@ -3429,7 +3423,7 @@ msgstr "Tùy chỉnh tên biến truy vấn."
 #: includes/admin/views/acf-post-type/advanced-settings.php:1222
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:1054
 msgid "Query Variable"
-msgstr "Biến Truy Vấn"
+msgstr "Biến truy Vấn"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:1200
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:1032
@@ -3446,8 +3440,8 @@ msgid ""
 "Items can be accessed using the non-pretty permalink, eg. {post_type}"
 "={post_slug}."
 msgstr ""
-"Các mục có thể được truy cập bằng cách sử dụng permalink không đẹp, ví dụ: "
-"{post_type}={post_slug}."
+"Các mục có thể được truy cập bằng cách sử dụng đường dẫn cố định không đẹp, "
+"ví dụ: {post_type}={post_slug}."
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:1195
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:1027
@@ -3467,7 +3461,7 @@ msgstr "Có thể truy vấn công khai"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:1148
 msgid "Custom slug for the Archive URL."
-msgstr "Slug tùy chỉnh cho URL Trang lưu trữ."
+msgstr "Đường dẫn cố định tùy chỉnh cho URL trang lưu trữ."
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:1147
 msgid "Archive Slug"
@@ -3495,7 +3489,7 @@ msgstr "Phân trang"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:1095
 msgid "RSS feed URL for the post type items."
-msgstr "URL nguồn cấp dữ liệu RSS cho các mục loại bài viết."
+msgstr "URL nguồn cấp dữ liệu RSS cho các mục loại nội dung."
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:1094
 msgid "Feed URL"
@@ -3517,16 +3511,16 @@ msgstr "Tiền tố URL phía trước"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:1056
 msgid "Customize the slug used in the URL."
-msgstr "Tùy chỉnh slug được sử dụng trong URL."
+msgstr "Tùy chỉnh đường dẫn cố định được sử dụng trong URL."
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:1055
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:940
 msgid "URL Slug"
-msgstr "Slug URL"
+msgstr "Đường dẫn cố định URL"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:1039
 msgid "Permalinks for this post type are disabled."
-msgstr "Đường dẫn tĩnh cho loại bài viết này đã bị vô hiệu hóa."
+msgstr "Liên kết cố định cho loại nội dung này đã bị vô hiệu hóa."
 
 #. translators: this string will be appended with the new permalink structure.
 #: includes/admin/views/acf-post-type/advanced-settings.php:1038
@@ -3535,13 +3529,13 @@ msgid ""
 "Rewrite the URL using a custom slug defined in the input below. Your "
 "permalink structure will be"
 msgstr ""
-"Viết lại URL bằng cách sử dụng slug tùy chỉnh được định nghĩa trong đầu vào "
-"dưới đây. Cấu trúc đường dẫn tĩnh của bạn sẽ là"
+"Thay đổi URL bằng cách sử dụng đường dẫn cố định tùy chỉnh được định nghĩa "
+"trong đầu vào dưới đây. Cấu trúc đường dẫn cố định của bạn sẽ là"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:1030
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:915
 msgid "No Permalink (prevent URL rewriting)"
-msgstr "Không có đường dẫn tĩnh (ngăn chặn việc viết lại URL)"
+msgstr "Không có liên kết cố định (ngăn chặn việc viết lại URL)"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:1029
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:914
@@ -3552,7 +3546,7 @@ msgstr "Liên kết tĩnh tùy chỉnh"
 #: includes/admin/views/acf-post-type/advanced-settings.php:1198
 #: includes/admin/views/acf-post-type/basic-settings.php:56
 msgid "Post Type Key"
-msgstr "Khóa loại bài viết"
+msgstr "Khóa loại nội dung"
 
 #. translators: this string will be appended with the new permalink structure.
 #: includes/admin/views/acf-post-type/advanced-settings.php:1026
@@ -3561,13 +3555,13 @@ msgid ""
 "Rewrite the URL using the post type key as the slug. Your permalink "
 "structure will be"
 msgstr ""
-"Viết lại URL bằng cách sử dụng khóa loại bài viết làm slug. Cấu trúc đường "
-"dẫn tĩnh của bạn sẽ là"
+"Thay đổi URL bằng cách sử dụng khóa loại nội dung làm đường dẫn cố định. Cấu "
+"trúc liên kết cố định của bạn sẽ là"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:1024
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:910
 msgid "Permalink Rewrite"
-msgstr "Viết lại đường dẫn tĩnh"
+msgstr "Thay đổi liên kết cố định"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:1010
 msgid "Delete items by a user when that user is deleted."
@@ -3579,7 +3573,7 @@ msgstr "Xóa với người dùng"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:995
 msgid "Allow the post type to be exported from 'Tools' > 'Export'."
-msgstr "Cho phép loại bài viết được xuất từ 'Công cụ' > 'Xuất'."
+msgstr "Cho phép loại nội dung được xuất từ 'Công cụ' > 'Xuất'."
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:994
 msgid "Can Export"
@@ -3596,7 +3590,7 @@ msgstr "Tên khả năng số nhiều"
 #: includes/admin/views/acf-post-type/advanced-settings.php:944
 msgid "Choose another post type to base the capabilities for this post type."
 msgstr ""
-"Chọn một loại bài viết khác để cơ sở các khả năng cho loại bài viết này."
+"Chọn một loại nội dung khác để cơ sở các khả năng cho loại nội dung này."
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:943
 msgid "Singular Capability Name"
@@ -3608,9 +3602,9 @@ msgid ""
 "capability names, eg. edit_post, delete_posts. Enable to use post type "
 "specific capabilities, eg. edit_{singular}, delete_{plural}."
 msgstr ""
-"Theo mặc định, các khả năng của loại bài viết sẽ kế thừa tên khả năng 'Bài "
+"Theo mặc định, các khả năng của loại nội dung sẽ kế thừa tên khả năng 'Bài "
 "viết', ví dụ: edit_post, delete_posts. Kích hoạt để sử dụng khả năng cụ thể "
-"của loại bài viết, ví dụ: edit_{singular}, delete_{plural}."
+"của loại nội dung, ví dụ: edit_{singular}, delete_{plural}."
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:928
 msgid "Rename Capabilities"
@@ -3672,8 +3666,8 @@ msgid ""
 "an existing top level item is supplied here, the post type will be added as "
 "a submenu item under it."
 msgstr ""
-"Theo mặc định, loại bài viết sẽ nhận được một mục cấp cao mới trong menu "
-"quản trị. Nếu một mục cấp cao hiện có được cung cấp ở đây, loại bài đăng sẽ "
+"Theo mặc định, loại nội dung sẽ nhận được một mục cấp cao mới trong menu "
+"quản trị. Nếu một mục cấp cao hiện có được cung cấp ở đây, loại bài viết sẽ "
 "được thêm dưới dạng mục con dưới nó."
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:758
@@ -3683,7 +3677,7 @@ msgstr "Menu quản trị cấp trên"
 #: includes/admin/views/acf-post-type/advanced-settings.php:739
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:734
 msgid "Admin editor navigation in the sidebar menu."
-msgstr "Điều hướng trình soạn thảo quản trị trong menu thanh bên."
+msgstr "Điều hướng trình chỉnh sửa của quản trị trong menu thanh bên."
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:738
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:733
@@ -3832,7 +3826,7 @@ msgstr "Danh sách bài viết"
 msgid "Used by screen readers for the items list on the post type list screen."
 msgstr ""
 "Được sử dụng bởi máy đọc màn hình cho danh sách mục trên màn hình danh sách "
-"loại bài viết."
+"loại nội dung."
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:551
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:640
@@ -3844,7 +3838,7 @@ msgstr "Danh sách mục"
 #: includes/admin/views/acf-post-type/advanced-settings.php:548
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:637
 msgid "%s list"
-msgstr "%s Danh sách"
+msgstr "Danh sách %s"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:533
 msgid "Posts list navigation"
@@ -3856,7 +3850,7 @@ msgid ""
 "screen."
 msgstr ""
 "Được sử dụng bởi máy đọc màn hình cho phân trang danh sách bộ lọc trên màn "
-"hình danh sách loại bài viết."
+"hình danh sách loại nội dung."
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:531
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:620
@@ -3868,7 +3862,7 @@ msgstr "Điều hướng danh sách mục"
 #: includes/admin/views/acf-post-type/advanced-settings.php:528
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:617
 msgid "%s list navigation"
-msgstr "%s Điều hướng danh sách"
+msgstr "Điều hướng danh sách %s"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:512
 msgid "Filter posts by date"
@@ -3880,7 +3874,7 @@ msgid ""
 "screen."
 msgstr ""
 "Được sử dụng bởi máy đọc màn hình cho tiêu đề lọc theo ngày trên màn hình "
-"danh sách loại bài viết."
+"danh sách loại nội dung."
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:510
 msgid "Filter Items By Date"
@@ -3901,7 +3895,7 @@ msgid ""
 "screen."
 msgstr ""
 "Được sử dụng bởi máy đọc màn hình cho tiêu đề liên kết bộ lọc trên màn hình "
-"danh sách loại bài viết."
+"danh sách loại nội dung."
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:489
 msgid "Filter Items List"
@@ -4023,10 +4017,10 @@ msgid ""
 "appears when editing menus in 'Live Preview' mode and a custom archive slug "
 "has been provided."
 msgstr ""
-"Thêm các mục 'Lưu trữ loại bài đăng' với nhãn này vào danh sách bài viết "
+"Thêm các mục 'Lưu trữ loại nội dung' với nhãn này vào danh sách bài viết "
 "hiển thị khi thêm mục vào menu hiện tại trong CPT có kích hoạt lưu trữ. Chỉ "
-"xuất hiện khi chỉnh sửa menu trong chế độ 'Xem Trước Trực Tiếp' và đã cung "
-"cấp slug lưu trữ tùy chỉnh."
+"xuất hiện khi chỉnh sửa menu trong chế độ 'Xem trước trực tiếp' và đã cung "
+"cấp đường dẫn cố định lưu trữ tùy chỉnh."
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:346
 msgid "Archives Nav Menu"
@@ -4039,13 +4033,13 @@ msgstr "%s Trang lưu trữ"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:328
 msgid "No posts found in Trash"
-msgstr "Không tìm thấy bài viết nào trong Thùng rác"
+msgstr "Không tìm thấy bài viết nào trong thùng rác"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:327
 msgid ""
 "At the top of the post type list screen when there are no posts in the trash."
 msgstr ""
-"Ở đầu màn hình danh sách loại bài viết khi không có bài viết nào trong Thùng "
+"Ở đầu màn hình danh sách loại nội dung khi không có bài viết nào trong thùng "
 "rác."
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:326
@@ -4055,7 +4049,7 @@ msgstr "Không tìm thấy mục nào trong thùng rác"
 #. translators: %s Plural form of post type name
 #: includes/admin/views/acf-post-type/advanced-settings.php:322
 msgid "No %s found in Trash"
-msgstr "Không tìm thấy %s trong Thùng rác"
+msgstr "Không tìm thấy %s trong thùng rác"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:307
 msgid "No posts found"
@@ -4065,7 +4059,7 @@ msgstr "Không tìm thấy bài viết nào"
 msgid ""
 "At the top of the post type list screen when there are no posts to display."
 msgstr ""
-"Ở đầu màn hình danh sách loại bài viết khi không có bài viết nào để hiển thị."
+"Ở đầu màn hình danh sách loại nội dung khi không có bài viết nào để hiển thị."
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:305
 msgid "No Items Found"
@@ -4104,18 +4098,18 @@ msgstr "Trang cha:"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:265
 msgid "For hierarchical types in the post type list screen."
-msgstr "Đối với các loại phân cấp trong màn hình danh sách loại bài viết."
+msgstr "Đối với các loại phân cấp trong màn hình danh sách loại nội dung."
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:264
 msgid "Parent Item Prefix"
-msgstr "Tiền tố mục mẹ"
+msgstr "Tiền tố mục cha"
 
 #. translators: %s Singular form of post type name
 #. translators: %s Singular form of taxonomy name
 #: includes/admin/views/acf-post-type/advanced-settings.php:261
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:318
 msgid "Parent %s:"
-msgstr "Mẹ %s:"
+msgstr "Cha %s:"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:246
 msgid "New Post"
@@ -4137,7 +4131,7 @@ msgstr "Thêm bài viết mới"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:205
 msgid "At the top of the editor screen when adding a new item."
-msgstr "Ở đầu màn hình biên tập khi thêm một mục mới."
+msgstr "Ở đầu màn hình trình chỉnh sửa khi thêm một mục mới."
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:204
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:256
@@ -4162,8 +4156,8 @@ msgid ""
 "supports archives and the home page is not an archive of that post type."
 msgstr ""
 "Xuất hiện trong thanh quản trị trong chế độ xem 'Tất cả bài viết', miễn là "
-"loại bài viết hỗ trợ lưu trữ và trang chủ không phải là lưu trữ của loại bài "
-"viết đó."
+"loại nội dung hỗ trợ lưu trữ và trang chủ không phải là lưu trữ của loại nội "
+"dung đó."
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:184
 msgid "View Items"
@@ -4197,7 +4191,7 @@ msgstr "Chỉnh sửa bài viết"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:145
 msgid "At the top of the editor screen when editing an item."
-msgstr "Ở đầu màn hình biên tập khi chỉnh sửa một mục."
+msgstr "Ở đầu màn hình trình chỉnh sửa khi sửa một mục."
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:144
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:196
@@ -4219,7 +4213,7 @@ msgstr "Tất cả bài viết"
 #: includes/admin/views/acf-post-type/advanced-settings.php:225
 #: includes/admin/views/acf-post-type/advanced-settings.php:245
 msgid "In the post type submenu in the admin dashboard."
-msgstr "Trong submenu loại bài viết trong bảng điều khiển quản trị."
+msgstr "Trong submenu loại nội dung trong bảng điều khiển quản trị."
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:124
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:176
@@ -4235,7 +4229,7 @@ msgstr "Tất cả %s"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:105
 msgid "Admin menu name for the post type."
-msgstr "Tên menu quản trị cho loại bài viết."
+msgstr "Tên menu quản trị cho loại nội dung."
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:104
 msgid "Menu Name"
@@ -4244,7 +4238,7 @@ msgstr "Tên menu"
 #: includes/admin/views/acf-post-type/advanced-settings.php:90
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:142
 msgid "Regenerate all labels using the Singular and Plural labels"
-msgstr "Tạo lại tất cả các nhãn bằng cách sử dụng nhãn Số ít và Số nhiều"
+msgstr "Tạo lại tất cả các tên bằng cách sử dụng tên số ít và tên số nhiều"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:88
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:140
@@ -4254,11 +4248,11 @@ msgstr "Tạo lại"
 #: includes/admin/views/acf-post-type/advanced-settings.php:79
 msgid "Active post types are enabled and registered with WordPress."
 msgstr ""
-"Các loại bài viết đang hoạt động đã được kích hoạt và đăng ký với WordPress."
+"Các loại nội dung đang hoạt động đã được kích hoạt và đăng ký với WordPress."
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:63
 msgid "A descriptive summary of the post type."
-msgstr "Một tóm tắt mô tả về loại bài viết."
+msgstr "Một tóm tắt mô tả về loại nội dung."
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:48
 msgid "Add Custom"
@@ -4266,7 +4260,7 @@ msgstr "Thêm tùy chỉnh"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:42
 msgid "Enable various features in the content editor."
-msgstr "Kích hoạt các tính năng khác nhau trong trình biên tập nội dung."
+msgstr "Kích hoạt các tính năng khác nhau trong trình chỉnh sửa nội dung."
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:31
 msgid "Post Formats"
@@ -4274,19 +4268,19 @@ msgstr "Định dạng bài viết"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:25
 msgid "Editor"
-msgstr "Biên tập"
+msgstr "Trình chỉnh sửa"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:24
 msgid "Trackbacks"
-msgstr "Theo dõi lại"
+msgstr "Theo dõi liên kết"
 
 #: includes/admin/views/acf-post-type/basic-settings.php:87
 msgid "Select existing taxonomies to classify items of the post type."
-msgstr "Chọn các phân loại hiện có để phân loại các mục của loại bài viết."
+msgstr "Chọn các phân loại hiện có để phân loại các mục của loại nội dung."
 
 #: includes/admin/views/acf-field-group/field.php:158
 msgid "Browse Fields"
-msgstr "Duyệt trường"
+msgstr "Duyệt các trường"
 
 #: includes/admin/tools/class-acf-admin-tool-import.php:287
 msgid "Nothing to import"
@@ -4295,14 +4289,14 @@ msgstr "Không có gì để nhập"
 #: includes/admin/tools/class-acf-admin-tool-import.php:282
 msgid ". The Custom Post Type UI plugin can be deactivated."
 msgstr ""
-". Plugin Giao diện người dùng loại bài viết tùy chỉnh có thể được hủy kích "
+". Plugin Giao diện người dùng loại nội dung tùy chỉnh có thể được hủy kích "
 "hoạt."
 
 #. translators: %d - number of items imported from CPTUI
 #: includes/admin/tools/class-acf-admin-tool-import.php:273
 msgid "Imported %d item from Custom Post Type UI -"
 msgid_plural "Imported %d items from Custom Post Type UI -"
-msgstr[0] "Đã nhập %d mục từ Giao diện người dùng loại bài viết tùy chỉnh -"
+msgstr[0] "Đã nhập %d mục từ giao diện người dùng loại nội dung tùy chỉnh -"
 
 #: includes/admin/tools/class-acf-admin-tool-import.php:257
 msgid "Failed to import taxonomies."
@@ -4310,12 +4304,12 @@ msgstr "Không thể nhập phân loại."
 
 #: includes/admin/tools/class-acf-admin-tool-import.php:239
 msgid "Failed to import post types."
-msgstr "Không thể nhập loại bài viết."
+msgstr "Không thể nhập loại nội dung."
 
 #: includes/admin/tools/class-acf-admin-tool-import.php:228
 msgid "Nothing from Custom Post Type UI plugin selected for import."
 msgstr ""
-"Không có gì từ plugin Giao diện người dùng loại bài viết tùy chỉnh được chọn "
+"Không có gì từ plugin Giao diện người dùng loại nội dung tùy chỉnh được chọn "
 "để nhập."
 
 #: includes/admin/tools/class-acf-admin-tool-import.php:204
@@ -4329,14 +4323,14 @@ msgid ""
 "exists will overwrite the settings for the existing Post Type or Taxonomy "
 "with those of the import."
 msgstr ""
-"Nhập một Loại Bài viết hoặc Phân loại với khóa giống như một cái đã tồn tại "
-"sẽ ghi đè các cài đặt cho Loại Bài viết hoặc Phân loại hiện tại với những "
+"Nhập một loại nội dung hoặc Phân loại với khóa giống như một cái đã tồn tại "
+"sẽ ghi đè các cài đặt cho loại nội dung hoặc Phân loại hiện tại với những "
 "cái của nhập khẩu."
 
 #: includes/admin/tools/class-acf-admin-tool-import.php:108
 #: includes/admin/tools/class-acf-admin-tool-import.php:124
 msgid "Import from Custom Post Type UI"
-msgstr "Nhập từ Giao diện người dùng Loại Bài viết Tùy chỉnh"
+msgstr "Nhập từ Giao diện người dùng loại nội dung Tùy chỉnh"
 
 #: includes/admin/tools/class-acf-admin-tool-export.php:354
 msgid ""
@@ -4348,7 +4342,7 @@ msgid ""
 "the items from the ACF admin."
 msgstr ""
 "Mã sau đây có thể được sử dụng để đăng ký một phiên bản địa phương của các "
-"mục đã chọn. Lưu trữ nhóm trường, loại bài viết hoặc phân loại một cách địa "
+"mục đã chọn. Lưu trữ nhóm trường, loại nội dung hoặc phân loại một cách địa "
 "phương có thể mang lại nhiều lợi ích như thời gian tải nhanh hơn, kiểm soát "
 "phiên bản và trường/cài đặt động. Chỉ cần sao chép và dán mã sau vào tệp "
 "functions.php của chủ đề của bạn hoặc bao gồm nó trong một tệp bên ngoài, "
@@ -4368,7 +4362,7 @@ msgstr "Chọn Phân loại"
 
 #: includes/admin/tools/class-acf-admin-tool-export.php:239
 msgid "Select Post Types"
-msgstr "Chọn Loại Bài viết"
+msgstr "Chọn loại nội dung"
 
 #: includes/admin/tools/class-acf-admin-tool-export.php:155
 msgid "Exported 1 item."
@@ -4456,31 +4450,31 @@ msgstr[0] "Đã kích hoạt %s phân loại."
 
 #: includes/admin/post-types/admin-taxonomies.php:113
 msgid "Terms"
-msgstr "Điều khoản"
+msgstr "Mục phân loại"
 
 #. translators: %s number of post types synchronized
 #: includes/admin/post-types/admin-post-types.php:327
 msgid "Post type synchronized."
 msgid_plural "%s post types synchronized."
-msgstr[0] "Đã đồng bộ hóa %s loại bài viết."
+msgstr[0] "Đã đồng bộ hóa %s loại nội dung."
 
 #. translators: %s number of post types duplicated
 #: includes/admin/post-types/admin-post-types.php:320
 msgid "Post type duplicated."
 msgid_plural "%s post types duplicated."
-msgstr[0] "Đã nhân đôi %s loại bài viết."
+msgstr[0] "Đã nhân đôi %s loại nội dung."
 
 #. translators: %s number of post types deactivated
 #: includes/admin/post-types/admin-post-types.php:313
 msgid "Post type deactivated."
 msgid_plural "%s post types deactivated."
-msgstr[0] "Đã hủy kích hoạt %s loại bài viết."
+msgstr[0] "Đã hủy kích hoạt %s loại nội dung."
 
 #. translators: %s number of post types activated
 #: includes/admin/post-types/admin-post-types.php:306
 msgid "Post type activated."
 msgid_plural "%s post types activated."
-msgstr[0] "Đã kích hoạt %s loại bài viết."
+msgstr[0] "Đã kích hoạt %s loại nội dung."
 
 #: includes/admin/post-types/admin-post-types.php:87
 #: includes/admin/post-types/admin-taxonomies.php:111
@@ -4488,7 +4482,7 @@ msgstr[0] "Đã kích hoạt %s loại bài viết."
 #: includes/admin/views/acf-taxonomy/basic-settings.php:82
 #: includes/post-types/class-acf-post-type.php:91
 msgid "Post Types"
-msgstr "Loại Bài viết"
+msgstr "Loại nội dung"
 
 #: includes/admin/post-types/admin-post-type.php:158
 #: includes/admin/post-types/admin-taxonomy.php:160
@@ -4506,8 +4500,8 @@ msgid ""
 "This post type could not be registered because its key is in use by another "
 "post type registered by another plugin or theme."
 msgstr ""
-"Loại bài viết này không thể được đăng ký vì khóa của nó đang được sử dụng "
-"bởi một loại bài viết khác được đăng ký bởi một plugin hoặc chủ đề khác."
+"Loại nội dung này không thể được đăng ký vì khóa của nó đang được sử dụng "
+"bởi một loại nội dung khác được đăng ký bởi một plugin hoặc chủ đề khác."
 
 #: includes/admin/post-types/admin-post-type.php:126
 #: assets/build/js/acf-internal-post-type.js:176
@@ -4522,7 +4516,7 @@ msgstr "Liên kết Nhóm Trường Hiện tại"
 #. translators: %s post type name
 #: includes/admin/post-types/admin-post-type.php:80
 msgid "%s post type created"
-msgstr "%s Đã tạo loại bài viết"
+msgstr "%s Đã tạo loại nội dung"
 
 #. translators: %s taxonomy name
 #: includes/admin/post-types/admin-taxonomy.php:78
@@ -4532,31 +4526,31 @@ msgstr "Thêm trường vào %s"
 #. translators: %s post type name
 #: includes/admin/post-types/admin-post-type.php:76
 msgid "%s post type updated"
-msgstr "%s Đã cập nhật loại bài viết"
+msgstr "%s Đã cập nhật loại nội dung"
 
 #: includes/admin/post-types/admin-post-type.php:56
 msgid "Post type draft updated."
-msgstr "Bản nháp loại bài viết đã được cập nhật."
+msgstr "Bản nháp loại nội dung đã được cập nhật."
 
 #: includes/admin/post-types/admin-post-type.php:55
 msgid "Post type scheduled for."
-msgstr "Loại bài viết được lên lịch cho."
+msgstr "Loại nội dung được lên lịch cho."
 
 #: includes/admin/post-types/admin-post-type.php:54
 msgid "Post type submitted."
-msgstr "Loại bài viết đã được gửi."
+msgstr "Loại nội dung đã được gửi."
 
 #: includes/admin/post-types/admin-post-type.php:53
 msgid "Post type saved."
-msgstr "Loại bài viết đã được lưu."
+msgstr "Loại nội dung đã được lưu."
 
 #: includes/admin/post-types/admin-post-type.php:50
 msgid "Post type updated."
-msgstr "Loại bài viết đã được cập nhật."
+msgstr "Loại nội dung đã được cập nhật."
 
 #: includes/admin/post-types/admin-post-type.php:49
 msgid "Post type deleted."
-msgstr "Loại bài viết đã được xóa."
+msgstr "Loại nội dung đã được xóa."
 
 #: includes/admin/post-types/admin-field-group.php:146
 #: assets/build/js/acf-field-group.js:1159
@@ -4584,8 +4578,8 @@ msgid ""
 "Import Post Types and Taxonomies registered with Custom Post Type UI and "
 "manage them with ACF. <a href=\"%s\">Get Started</a>."
 msgstr ""
-"Nhập Loại Bài viết và Phân loại đã đăng ký với Giao diện người dùng Loại Bài "
-"viết Tùy chỉnh và quản lý chúng với ACF. <a href=\"%s\">Bắt đầu</a>."
+"Nhập loại nội dung và Phân loại đã đăng ký với Giao diện người dùng loại nội "
+"dung Tùy chỉnh và quản lý chúng với ACF. <a href=\"%s\">Bắt đầu</a>."
 
 #: includes/admin/admin.php:46 includes/admin/admin.php:352
 #: includes/class-acf-site-health.php:250
@@ -4598,7 +4592,7 @@ msgstr "phân loại"
 
 #: includes/admin/admin-internal-post-type.php:314
 msgid "post type"
-msgstr "loại bài viết"
+msgstr "loại nội dung"
 
 #: includes/admin/admin-internal-post-type.php:338
 msgid "Done"
@@ -4606,7 +4600,7 @@ msgstr "Hoàn tất"
 
 #: includes/admin/admin-internal-post-type.php:324
 msgid "Field Group(s)"
-msgstr "Nhóm Trường"
+msgstr "Nhóm trường"
 
 #: includes/admin/admin-internal-post-type.php:323
 msgid "Select one or many field groups..."
@@ -4679,12 +4673,12 @@ msgstr ""
 
 #: includes/api/api-template.php:1027
 msgid "[ACF shortcode value disabled for preview]"
-msgstr "[Giá trị shortcode ACF bị vô hiệu hóa cho xem trước]"
+msgstr "[Giá trị shortcode ACF bị tắt xem trước]"
 
 #: includes/admin/admin-internal-post-type.php:290
 #: includes/admin/post-types/admin-field-group.php:572
 msgid "Close Modal"
-msgstr "Thoát Modal"
+msgstr "Thoát hộp cửa sổ"
 
 #: includes/admin/post-types/admin-field-group.php:92
 #: assets/build/js/acf-field-group.js:1701
@@ -4695,7 +4689,7 @@ msgstr "Trường được chuyển đến nhóm khác"
 #: includes/admin/post-types/admin-field-group.php:91
 #: assets/build/js/acf.js:1443 assets/build/js/acf.js:1521
 msgid "Close modal"
-msgstr "Thoát Modal"
+msgstr "Thoát hộp cửa sổ"
 
 #: includes/fields/class-acf-field-tab.php:119
 msgid "Start a new group of tabs at this tab."
@@ -4712,7 +4706,7 @@ msgstr "Sử dụng hộp kiểm được tạo kiểu bằng select2"
 
 #: includes/fields/class-acf-field-radio.php:250
 msgid "Save Other Choice"
-msgstr "Lưu Lựa chọn Khác"
+msgstr "Lưu Lựa chọn khác"
 
 #: includes/fields/class-acf-field-radio.php:239
 msgid "Allow Other Choice"
@@ -4793,7 +4787,7 @@ msgstr "Thêm nhóm trường đầu tiên của bạn"
 #: includes/admin/views/global/navigation.php:86
 #: includes/admin/views/global/navigation.php:255
 msgid "Options Pages"
-msgstr "Trang tùy chọn"
+msgstr "Trang cài đặt"
 
 #: includes/admin/views/acf-field-group/pro-features.php:54
 msgid "ACF Blocks"
@@ -4805,15 +4799,15 @@ msgstr "Trường Album ảnh"
 
 #: includes/admin/views/acf-field-group/pro-features.php:42
 msgid "Flexible Content Field"
-msgstr "Trường Nội dung Linh hoạt"
+msgstr "Trường nội dung linh hoạt"
 
 #: includes/admin/views/acf-field-group/pro-features.php:46
 msgid "Repeater Field"
-msgstr "Trường Lặp lại"
+msgstr "Trường lặp lại"
 
 #: includes/admin/views/global/navigation.php:215
 msgid "Unlock Extra Features with ACF PRO"
-msgstr "Mở khóa Tính năng Phụ với ACF PRO"
+msgstr "Mở khóa tính năng mở rộng với ACF PRO"
 
 #: includes/admin/views/acf-field-group/options.php:267
 msgid "Delete Field Group"
@@ -4830,7 +4824,7 @@ msgstr "Cài đặt nhóm"
 
 #: includes/acf-field-group-functions.php:495
 msgid "Location Rules"
-msgstr "Quy tắc địa điểm"
+msgstr "Quy tắc vị trí"
 
 #. translators: %s url to field types list
 #: includes/admin/views/acf-field-group/fields.php:73
@@ -4846,7 +4840,7 @@ msgid ""
 "Get started creating new custom fields for your posts, pages, custom post "
 "types and other WordPress content."
 msgstr ""
-"Bắt đầu tạo các trường tùy chỉnh mới cho bài viết, trang, loại bài viết tùy "
+"Bắt đầu tạo các trường tùy chỉnh mới cho bài viết, trang, loại nội dung tùy "
 "chỉnh và nội dung WordPress khác của bạn."
 
 #: includes/admin/views/acf-field-group/fields.php:64
@@ -4877,7 +4871,7 @@ msgstr "Xác thực"
 #: includes/acf-internal-post-type-functions.php:504
 #: includes/acf-internal-post-type-functions.php:533 includes/fields.php:382
 msgid "General"
-msgstr "Chung"
+msgstr "Tổng quan"
 
 #: includes/admin/tools/class-acf-admin-tool-import.php:67
 msgid "Import JSON"
@@ -4891,7 +4885,7 @@ msgstr "Xuất JSON"
 #: includes/admin/post-types/admin-field-groups.php:360
 msgid "Field group deactivated."
 msgid_plural "%s field groups deactivated."
-msgstr[0] "Nhóm trường %s đã bị vô hiệu hóa."
+msgstr[0] "Nhóm trường %s đã bị ngừng kích hoạt."
 
 #. translators: %s number of field groups activated
 #: includes/admin/post-types/admin-field-groups.php:353
@@ -4902,11 +4896,11 @@ msgstr[0] "Nhóm trường %s đã được kích hoạt."
 #: includes/admin/admin-internal-post-type-list.php:470
 #: includes/admin/admin-internal-post-type-list.php:496
 msgid "Deactivate"
-msgstr "Vô hiệu hóa"
+msgstr "Ngừng kích hoạt"
 
 #: includes/admin/admin-internal-post-type-list.php:470
 msgid "Deactivate this item"
-msgstr "Vô hiệu hóa mục này"
+msgstr "Ngừng kích hoạt mục này"
 
 #: includes/admin/admin-internal-post-type-list.php:466
 #: includes/admin/admin-internal-post-type-list.php:495
@@ -4985,12 +4979,12 @@ msgstr "%1$s không phải là một trong %2$s"
 #: includes/fields/class-acf-field-post_object.php:660
 msgid "%1$s must have term %2$s."
 msgid_plural "%1$s must have one of the following terms: %2$s"
-msgstr[0] "%1$s phải có thuật ngữ %2$s."
+msgstr[0] "%1$s phải có mục phân loại %2$s."
 
 #: includes/fields/class-acf-field-post_object.php:644
 msgid "%1$s must be of post type %2$s."
 msgid_plural "%1$s must be of one of the following post types: %2$s"
-msgstr[0] "%1$s phải là loại bài viết %2$s."
+msgstr[0] "%1$s phải là loại nội dung %2$s."
 
 #: includes/fields/class-acf-field-post_object.php:635
 msgid "%1$s must have a valid post ID."
@@ -5295,7 +5289,7 @@ msgstr "Trang thái bài viết"
 #: includes/acf-wp-functions.php:74
 #: includes/locations/class-acf-location-nav-menu.php:89
 msgid "Menus"
-msgstr "Thực đơn"
+msgstr "Menus"
 
 #: includes/locations/class-acf-location-nav-menu.php:80
 msgid "Menu Locations"
@@ -5303,7 +5297,7 @@ msgstr "Vị trí menu"
 
 #: includes/locations/class-acf-location-nav-menu.php:22
 msgid "Menu"
-msgstr "Thực đơn"
+msgstr "Menu"
 
 #: includes/locations/class-acf-location-post-taxonomy.php:22
 msgid "Post Taxonomy"
@@ -5315,7 +5309,7 @@ msgstr "Trang con (có trang cha)"
 
 #: includes/locations/class-acf-location-page-type.php:113
 msgid "Parent Page (has children)"
-msgstr "Trang Mẹ (có trang con)"
+msgstr "Trang cha (có trang con)"
 
 #: includes/locations/class-acf-location-page-type.php:112
 msgid "Top Level Page (no parent)"
@@ -5323,15 +5317,15 @@ msgstr "Trang cấp cao nhất (không có trang cha)"
 
 #: includes/locations/class-acf-location-page-type.php:111
 msgid "Posts Page"
-msgstr "Trang Bài viết"
+msgstr "Trang bài viết"
 
 #: includes/locations/class-acf-location-page-type.php:110
 msgid "Front Page"
-msgstr "Trang Chủ"
+msgstr "Trang chủ"
 
 #: includes/locations/class-acf-location-page-type.php:22
 msgid "Page Type"
-msgstr "Loại Trang"
+msgstr "Loại trang"
 
 #: includes/locations/class-acf-location-current-user.php:73
 msgid "Viewing back end"
@@ -5351,7 +5345,7 @@ msgstr "Người dùng hiện tại"
 
 #: includes/locations/class-acf-location-page-template.php:22
 msgid "Page Template"
-msgstr "Mẫu Trang"
+msgstr "Mẫu trang"
 
 #: includes/locations/class-acf-location-user-form.php:74
 msgid "Register"
@@ -5363,7 +5357,7 @@ msgstr "Thêm / Chỉnh sửa"
 
 #: includes/locations/class-acf-location-user-form.php:22
 msgid "User Form"
-msgstr "Form Người dùng"
+msgstr "Form người dùng"
 
 #: includes/locations/class-acf-location-page-parent.php:22
 msgid "Page Parent"
@@ -5453,7 +5447,7 @@ msgstr "Yêu cầu Nâng cấp Cơ sở dữ liệu"
 #: includes/admin/post-types/admin-field-group.php:159
 #: includes/admin/views/upgrade/notice.php:17
 msgid "Options Page"
-msgstr "Trang tùy Chọn"
+msgstr "Trang cài đặt"
 
 #: includes/admin/views/upgrade/notice.php:14 includes/fields.php:436
 msgid "Gallery"
@@ -5489,7 +5483,7 @@ msgstr "Ẩn trên màn hình"
 
 #: includes/admin/views/acf-field-group/options.php:186
 msgid "Send Trackbacks"
-msgstr "Gửi theo dõi lại"
+msgstr "Gửi theo dõi liên kết"
 
 #: includes/admin/post-types/admin-taxonomy.php:126
 #: includes/admin/views/acf-field-group/options.php:185
@@ -5497,7 +5491,7 @@ msgstr "Gửi theo dõi lại"
 #: assets/build/js/acf-internal-post-type.js:180
 #: assets/build/js/acf-internal-post-type.js:254
 msgid "Tags"
-msgstr "Thẻ Tags"
+msgstr "Thẻ tag"
 
 #: includes/admin/post-types/admin-taxonomy.php:128
 #: includes/admin/views/acf-field-group/options.php:184
@@ -5522,12 +5516,12 @@ msgstr "Tác giả"
 
 #: includes/admin/views/acf-field-group/options.php:179
 msgid "Slug"
-msgstr "Slug"
+msgstr "Đường dẫn cố định"
 
 #: includes/admin/views/acf-field-group/options.php:178
 #: includes/admin/views/acf-post-type/advanced-settings.php:27
 msgid "Revisions"
-msgstr "Sửa đổi"
+msgstr "Bản sửa đổi"
 
 #: includes/acf-wp-functions.php:66
 #: includes/admin/views/acf-field-group/options.php:177
@@ -5582,7 +5576,7 @@ msgstr "Vị trí nhãn"
 
 #: includes/admin/views/acf-field-group/options.php:110
 msgid "Side"
-msgstr "Bên"
+msgstr "Thanh bên"
 
 #: includes/admin/views/acf-field-group/options.php:109
 msgid "Normal (after content)"
@@ -5781,7 +5775,7 @@ msgstr "Trang web"
 #: includes/admin/views/upgrade/network.php:25
 #: includes/admin/views/upgrade/network.php:94
 msgid "Upgrade Sites"
-msgstr "Nâng cấp Trang web"
+msgstr "Nâng cấp trang web"
 
 #. translators: %s The button label name, translated seperately
 #: includes/admin/views/upgrade/network.php:24
@@ -5869,7 +5863,7 @@ msgstr ""
 
 #: includes/admin/tools/class-acf-admin-tool-import.php:26
 msgid "Import Field Groups"
-msgstr "Nhập Nhóm trường"
+msgstr "Nhập nhóm trường"
 
 #: includes/admin/admin-internal-post-type-list.php:417
 msgid "Sync"
@@ -5878,7 +5872,7 @@ msgstr "Đồng bộ"
 #. translators: %s: field group title
 #: includes/admin/admin-internal-post-type-list.php:960
 msgid "Select %s"
-msgstr "Chọn %s"
+msgstr "Lự chọn %s"
 
 #: includes/admin/admin-internal-post-type-list.php:460
 #: includes/admin/admin-internal-post-type-list.php:492
@@ -5897,7 +5891,7 @@ msgstr "Hỗ trợ"
 #: includes/admin/admin.php:346
 #: includes/admin/views/browse-fields-modal.php:102
 msgid "Documentation"
-msgstr "Tài liệu"
+msgstr "Tài liệu hướng dẫn"
 
 #: includes/admin/post-types/admin-field-groups.php:90
 #: includes/admin/post-types/admin-post-types.php:110
@@ -5989,7 +5983,7 @@ msgstr "Vị trí"
 #: includes/admin/post-types/admin-field-group.php:100
 #: assets/build/js/acf-input.js:1689 assets/build/js/acf-input.js:1851
 msgid "Null"
-msgstr "Null"
+msgstr "Giá trị rỗng"
 
 #: includes/admin/post-types/admin-field-group.php:97
 #: includes/class-acf-internal-post-type.php:728
@@ -6344,7 +6338,7 @@ msgstr "(không nhãn)"
 
 #: includes/fields/class-acf-field-textarea.php:135
 msgid "Sets the textarea height"
-msgstr "Đặt chiều cao của textarea"
+msgstr "Đặt chiều cao của ô nhập liệu dạng văn bản"
 
 #: includes/fields/class-acf-field-textarea.php:134
 msgid "Rows"
@@ -6410,39 +6404,39 @@ msgstr "Người dùng không thể thêm mới %s"
 
 #: includes/fields/class-acf-field-taxonomy.php:675
 msgid "Term ID"
-msgstr "ID thuật ngữ"
+msgstr "ID mục phân loại"
 
 #: includes/fields/class-acf-field-taxonomy.php:674
 msgid "Term Object"
-msgstr "Đối tượng thuật ngữ"
+msgstr "Đối tượng mục phân loại"
 
 #: includes/fields/class-acf-field-taxonomy.php:659
 msgid "Load value from posts terms"
-msgstr "Tải giá trị từ các thuật ngữ bài viết"
+msgstr "Tải giá trị từ các mục phân loại bài viết"
 
 #: includes/fields/class-acf-field-taxonomy.php:658
 msgid "Load Terms"
-msgstr "Tải thuật ngữ"
+msgstr "Tải mục phân loại"
 
 #: includes/fields/class-acf-field-taxonomy.php:648
 msgid "Connect selected terms to the post"
-msgstr "Kết nối các thuật ngữ đã chọn với bài viết"
+msgstr "Kết nối các mục phân loại đã chọn với bài viết"
 
 #: includes/fields/class-acf-field-taxonomy.php:647
 msgid "Save Terms"
-msgstr "Lưu thuật ngữ"
+msgstr "Lưu mục phân loại"
 
 #: includes/fields/class-acf-field-taxonomy.php:637
 msgid "Allow new terms to be created whilst editing"
-msgstr "Cho phép tạo thuật ngữ mới trong khi chỉnh sửa"
+msgstr "Cho phép tạo mục phân loại mới trong khi chỉnh sửa"
 
 #: includes/fields/class-acf-field-taxonomy.php:636
 msgid "Create Terms"
-msgstr "Tạo thuật ngữ"
+msgstr "Tạo mục phân loại"
 
 #: includes/fields/class-acf-field-taxonomy.php:695
 msgid "Radio Buttons"
-msgstr "Các Nút chọn"
+msgstr "Các nút chọn"
 
 #: includes/fields/class-acf-field-taxonomy.php:694
 msgid "Single Value"
@@ -6524,7 +6518,7 @@ msgstr "Cho phép accordion này mở mà không đóng các accordion khác."
 
 #: includes/fields/class-acf-field-accordion.php:91
 msgid "Multi-Expand"
-msgstr "Mở rộng Đa"
+msgstr "Mở rộng đa dạng"
 
 #: includes/fields/class-acf-field-accordion.php:81
 msgid "Display this accordion as open on page load."
@@ -6545,19 +6539,19 @@ msgstr "Hạn chế các tệp có thể tải lên"
 
 #: includes/fields/class-acf-field-file.php:207
 msgid "File ID"
-msgstr "ID Tệp"
+msgstr "ID tệp"
 
 #: includes/fields/class-acf-field-file.php:206
 msgid "File URL"
-msgstr "URL Tệp"
+msgstr "URL tệp"
 
 #: includes/fields/class-acf-field-file.php:205
 msgid "File Array"
-msgstr "Mảng Tệp"
+msgstr "Mảng tập tin"
 
 #: includes/fields/class-acf-field-file.php:176
 msgid "Add File"
-msgstr "Thêm Tệp"
+msgstr "Thêm tệp"
 
 #: includes/admin/tools/class-acf-admin-tool-import.php:151
 #: includes/fields/class-acf-field-file.php:176
@@ -6571,18 +6565,18 @@ msgstr "Tên tệp"
 #: includes/fields/class-acf-field-file.php:57
 #: assets/build/js/acf-input.js:3163 assets/build/js/acf-input.js:3386
 msgid "Update File"
-msgstr "Cập nhật Tệp"
+msgstr "Cập nhật tệp tin"
 
 #: includes/fields/class-acf-field-file.php:56
 #: assets/build/js/acf-input.js:3162 assets/build/js/acf-input.js:3385
 msgid "Edit File"
-msgstr "Chỉnh sửa Tệp"
+msgstr "Sửa tệp tin"
 
 #: includes/admin/tools/class-acf-admin-tool-import.php:55
 #: includes/fields/class-acf-field-file.php:55
 #: assets/build/js/acf-input.js:3136 assets/build/js/acf-input.js:3358
 msgid "Select File"
-msgstr "Chọn Tệp"
+msgstr "Chọn tệp tin"
 
 #: includes/fields/class-acf-field-file.php:22
 msgid "File"
@@ -6609,7 +6603,7 @@ msgstr "Nhập mỗi giá trị mặc định trên một dòng mới"
 #: assets/build/js/acf-input.js:7822 assets/build/js/acf-input.js:8484
 msgctxt "verb"
 msgid "Select"
-msgstr "Danh sách chọn"
+msgstr "Lựa chọn"
 
 #: includes/fields/class-acf-field-select.php:109
 msgctxt "Select2 JS load_fail"
@@ -6676,7 +6670,7 @@ msgstr "Có một kết quả, nhấn enter để chọn."
 #: includes/fields/class-acf-field-taxonomy.php:696
 msgctxt "noun"
 msgid "Select"
-msgstr "Chọn"
+msgstr "Lựa chọn"
 
 #: includes/fields/class-acf-field-user.php:102
 msgid "User ID"
@@ -6684,11 +6678,11 @@ msgstr "ID Người dùng"
 
 #: includes/fields/class-acf-field-user.php:101
 msgid "User Object"
-msgstr "Đối tượng Người dùng"
+msgstr "Đối tượng người dùng"
 
 #: includes/fields/class-acf-field-user.php:100
 msgid "User Array"
-msgstr "Mảng Người dùng"
+msgstr "Mảng người dùng"
 
 #: includes/fields/class-acf-field-user.php:88
 msgid "All user roles"
@@ -6708,7 +6702,7 @@ msgstr "Dấu phân cách"
 
 #: includes/fields/class-acf-field-color_picker.php:69
 msgid "Select Color"
-msgstr "Chọn Màu"
+msgstr "Chọn màu"
 
 #: includes/admin/post-types/admin-post-type.php:127
 #: includes/admin/post-types/admin-taxonomy.php:129
@@ -6827,7 +6821,7 @@ msgstr "Vị trí"
 
 #: includes/fields/class-acf-field-tab.php:23
 msgid "Tab"
-msgstr "Thẻ"
+msgstr "Tab"
 
 #: includes/fields/class-acf-field-url.php:138
 msgid "Value must be a valid URL"
@@ -6957,7 +6951,7 @@ msgstr "Cho phép để trống"
 #: includes/fields/class-acf-field-post_object.php:254
 #: includes/fields/class-acf-field-taxonomy.php:869
 msgid "Parent"
-msgstr "Cha mẹ"
+msgstr "Cha"
 
 #: includes/fields/class-acf-field-wysiwyg.php:367
 msgid "TinyMCE will not be initialized until field is clicked"
@@ -7135,7 +7129,7 @@ msgstr "Phân loại"
 #: includes/locations/class-acf-location-post-type.php:22
 #: includes/post-types/class-acf-post-type.php:92
 msgid "Post Type"
-msgstr "Loại bài viết"
+msgstr "Loại nội dung"
 
 #: includes/fields/class-acf-field-relationship.php:595
 msgid "Filters"
@@ -7157,13 +7151,13 @@ msgstr "Lọc theo phân loại"
 #: includes/fields/class-acf-field-post_object.php:359
 #: includes/fields/class-acf-field-relationship.php:558
 msgid "All post types"
-msgstr "Tất cả loại bài viết"
+msgstr "Tất cả loại nội dung"
 
 #: includes/fields/class-acf-field-page_link.php:442
 #: includes/fields/class-acf-field-post_object.php:351
 #: includes/fields/class-acf-field-relationship.php:550
 msgid "Filter by Post Type"
-msgstr "Lọc theo loại bài viết"
+msgstr "Lọc theo loại nội dung"
 
 #: includes/fields/class-acf-field-relationship.php:450
 msgid "Search..."
@@ -7175,7 +7169,7 @@ msgstr "Chọn phân loại"
 
 #: includes/fields/class-acf-field-relationship.php:372
 msgid "Select post type"
-msgstr "Chọn loại bài viết"
+msgstr "Chọn loại nội dung"
 
 #: includes/fields/class-acf-field-relationship.php:78
 #: assets/build/js/acf-input.js:4938 assets/build/js/acf-input.js:5403
@@ -7343,12 +7337,12 @@ msgstr ""
 
 #: includes/fields/class-acf-field-message.php:109
 msgid "Escape HTML"
-msgstr "Thoát HTML"
+msgstr "Escape HTML"
 
 #: includes/fields/class-acf-field-message.php:101
 #: includes/fields/class-acf-field-textarea.php:162
 msgid "No Formatting"
-msgstr "Không Định Dạng"
+msgstr "Không định dạng"
 
 #: includes/fields/class-acf-field-message.php:100
 #: includes/fields/class-acf-field-textarea.php:161
@@ -7429,7 +7423,7 @@ msgstr "Nhập URL"
 
 #: includes/fields/class-acf-field-oembed.php:22
 msgid "oEmbed"
-msgstr "oNhúng"
+msgstr "Nhúng"
 
 #: includes/fields/class-acf-field-true_false.php:172
 msgid "Text shown when inactive"
@@ -7637,7 +7631,7 @@ msgstr[0] "<span class=\"count\">(%s)</span> không hoạt động"
 
 #: acf.php:467
 msgid "No Fields found in Trash"
-msgstr "Không tìm thấy trường nào trong Thùng rác"
+msgstr "Không tìm thấy trường nào trong thùng rác"
 
 #: acf.php:466
 msgid "No Fields found"
@@ -7675,7 +7669,7 @@ msgstr "Các trường"
 
 #: acf.php:433
 msgid "No Field Groups found in Trash"
-msgstr "Không tìm thấy Nhóm trường nào trong Thùng rác"
+msgstr "Không tìm thấy nhóm trường nào trong thùng rác"
 
 #: acf.php:432
 msgid "No Field Groups found"
@@ -7732,4 +7726,4 @@ msgstr "https://www.advancedcustomfields.com"
 #. Plugin Name of the plugin
 #: acf.php acf.php:93
 msgid "Advanced Custom Fields"
-msgstr "Trường tùy chỉnh nâng cao"
+msgstr "Advanced Custom Fields"

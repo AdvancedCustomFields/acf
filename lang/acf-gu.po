@@ -12,7 +12,7 @@
 # This file is distributed under the same license as Advanced Custom Fields.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-08-01T09:50:26+00:00\n"
+"PO-Revision-Date: 2024-08-28T11:15:15+00:00\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "Language: gu\n"
 "MIME-Version: 1.0\n"
@@ -330,7 +330,7 @@ msgid "Crop Icon"
 msgstr ""
 
 #: includes/fields/class-acf-field-icon_picker.php:574
-msgid "Id (alt) Icon"
+msgid "ID (alt) Icon"
 msgstr ""
 
 #: includes/fields/class-acf-field-icon_picker.php:572
@@ -583,7 +583,7 @@ msgid "Replies Icon"
 msgstr ""
 
 #: includes/fields/class-acf-field-icon_picker.php:446
-msgid "Pm Icon"
+msgid "PM Icon"
 msgstr ""
 
 #: includes/fields/class-acf-field-icon_picker.php:444
@@ -599,7 +599,7 @@ msgid "BuddyPress Icon"
 msgstr ""
 
 #: includes/fields/class-acf-field-icon_picker.php:440
-msgid "BbPress Icon"
+msgid "bbPress Icon"
 msgstr ""
 
 #: includes/fields/class-acf-field-icon_picker.php:439
@@ -698,20 +698,14 @@ msgstr ""
 msgid "Upgrade to ACF PRO to create options pages in just a few clicks"
 msgstr ""
 
-#: includes/ajax/class-acf-ajax-upgrade.php:24
-msgid "Sorry, you don't have permission to do that."
-msgstr ""
-
 #: includes/ajax/class-acf-ajax-query-users.php:24
 msgid "Invalid request args."
 msgstr ""
 
-#: includes/ajax/class-acf-ajax-local-json-diff.php:37
-msgid "Sorry, you are not allowed to do that."
-msgstr ""
-
 #: includes/ajax/class-acf-ajax-check-screen.php:37
+#: includes/ajax/class-acf-ajax-local-json-diff.php:37
 #: includes/ajax/class-acf-ajax-query-users.php:32
+#: includes/ajax/class-acf-ajax-upgrade.php:24
 #: includes/ajax/class-acf-ajax-user-setting.php:38
 msgid "Sorry, you do not have permission to do that."
 msgstr ""
@@ -1018,7 +1012,7 @@ msgid "Index Card Icon"
 msgstr ""
 
 #: includes/fields/class-acf-field-icon_picker.php:573
-msgid "Id Icon"
+msgid "ID Icon"
 msgstr ""
 
 #: includes/fields/class-acf-field-icon_picker.php:570
@@ -1515,7 +1509,7 @@ msgstr ""
 
 #: includes/class-acf-site-health.php:600
 msgid "Standard"
-msgstr ""
+msgstr "સામાન્ય"
 
 #: includes/class-acf-site-health.php:599
 msgid "REST API Format"
@@ -1648,7 +1642,7 @@ msgid ""
 msgstr ""
 
 #: includes/assets.php:373 assets/build/js/acf-input.js:11312
-#: assets/build/js/acf-input.js:12394
+#: assets/build/js/acf-input.js:12396
 msgid "An ACF Block on this page requires attention before you can save."
 msgstr ""
 

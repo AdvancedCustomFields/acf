@@ -2806,6 +2806,7 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
   order: 2;
   display: block;
   align-items: center;
+  max-width: 550px !important;
   margin-top: 2px;
   margin-bottom: 0;
   margin-left: 12px;
