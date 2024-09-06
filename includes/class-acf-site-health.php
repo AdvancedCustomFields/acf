@@ -20,7 +20,7 @@ if ( ! class_exists( 'ACF_Site_Health' ) ) {
 		 *
 		 * @var string
 		 */
-		public string $option_name = 'acf_site_health';
+		public $option_name = 'acf_site_health';
 
 		/**
 		 * Constructs the ACF_Site_Health class.
