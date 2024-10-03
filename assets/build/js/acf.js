@@ -60,7 +60,7 @@
      * Performs an action if it exists. You can pass as many arguments as you want to this function; the only rule is
      * that the first argument must always be the action.
      */
-    function doAction( /* action, arg1, arg2, ... */
+    function doAction(/* action, arg1, arg2, ... */
     ) {
       var args = Array.prototype.slice.call(arguments);
       var action = args.shift();
@@ -103,7 +103,7 @@
      * Performs a filter if it exists. You should only ever pass 1 argument to be filtered. The only rule is that
      * the first argument must always be the filter.
      */
-    function applyFilters( /* filter, filtered arg, arg2, ... */
+    function applyFilters(/* filter, filtered arg, arg2, ... */
     ) {
       var args = Array.prototype.slice.call(arguments);
       var filter = args.shift();

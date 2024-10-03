@@ -691,7 +691,7 @@ html[dir=rtl] input.acf-is-prepended.acf-is-appended {
 }
 .select2-container.-acf .select2-choices .select2-search-choice.ui-sortable-helper {
   background: #5897fb;
-  border-color: #3f87fa;
+  border-color: rgb(63.0964912281, 135.4912280702, 250.4035087719);
   color: #fff !important;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
 }
@@ -1005,7 +1005,7 @@ html[dir=rtl] ul.acf-checkbox-list input[type=radio] {
 }
 .acf-button-group label.selected {
   border-color: #007cba;
-  background: #008dd4;
+  background: rgb(0, 141, 211.5);
   color: #fff;
   z-index: 2;
 }
@@ -1468,7 +1468,7 @@ html[dir=rtl] .pac-container .pac-item {
   font-weight: normal;
 }
 .acf-relationship .list .acf-rel-item .thumbnail {
-  background: #e0e0e0;
+  background: rgb(223.5, 223.5, 223.5);
   width: 22px;
   height: 22px;
   float: left;
@@ -1492,7 +1492,7 @@ html[dir=rtl] .pac-container .pac-item {
   color: #fff;
 }
 .acf-relationship .list .acf-rel-item:hover .thumbnail, .acf-relationship .list .acf-rel-item.relationship-hover .thumbnail {
-  background: #a2bfec;
+  background: rgb(162.1610878661, 190.6192468619, 236.3389121339);
 }
 .acf-relationship .list .acf-rel-item:hover .thumbnail.-icon, .acf-relationship .list .acf-rel-item.relationship-hover .thumbnail.-icon {
   background: #fff;
@@ -1506,7 +1506,7 @@ html[dir=rtl] .pac-container .pac-item {
   cursor: default;
 }
 .acf-relationship .list .acf-rel-item.disabled:hover .thumbnail {
-  background: #e0e0e0;
+  background: rgb(223.5, 223.5, 223.5);
 }
 .acf-relationship .list .acf-rel-item.disabled:hover .thumbnail.-icon {
   background: #fff;

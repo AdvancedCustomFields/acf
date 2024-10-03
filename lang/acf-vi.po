@@ -12,7 +12,7 @@
 # This file is distributed under the same license as Advanced Custom Fields.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-08-28T11:15:15+00:00\n"
+"PO-Revision-Date: 2024-10-02T12:08:46+00:00\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "Language: vi\n"
 "MIME-Version: 1.0\n"
@@ -20,6 +20,56 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: gettext\n"
 "Project-Id-Version: Advanced Custom Fields\n"
+
+#: includes/validation.php:136
+msgid ""
+"ACF was unable to perform validation due to an invalid security nonce being "
+"provided."
+msgstr ""
+"ACF không thể thực hiện xác thực do mã bảo mật được cung cấp không hợp lệ."
+
+#: includes/fields/class-acf-field.php:359
+msgid "Allow Access to Value in Editor UI"
+msgstr "Cho phép truy cập giá trị trong giao diện trình chỉnh sửa"
+
+#: includes/fields/class-acf-field.php:341
+msgid "Learn more."
+msgstr "Xem thêm."
+
+#. translators: %s A "Learn More" link to documentation explaining the setting
+#. further.
+#: includes/fields/class-acf-field.php:340
+msgid ""
+"Allow content editors to access and display the field value in the editor UI "
+"using Block Bindings or the ACF Shortcode. %s"
+msgstr ""
+"Cho phép người chỉnh sửa nội dung truy cập và hiển thị giá trị của trường "
+"trong giao diện trình chỉnh sửa bằng cách sử dụng Block Bindings hoặc ACF "
+"Shortcode. %s"
+
+#: includes/Blocks/Bindings.php:64
+msgid ""
+"The requested ACF field type does not support output in Block Bindings or "
+"the ACF shortcode."
+msgstr ""
+"Loại trường ACF được yêu cầu không hỗ trợ xuất trong Block Bindings hoặc ACF "
+"Shortcode."
+
+#: includes/api/api-template.php:1085 includes/Blocks/Bindings.php:72
+msgid ""
+"The requested ACF field is not allowed to be output in bindings or the ACF "
+"Shortcode."
+msgstr ""
+"Trường ACF được yêu cầu không được phép xuất trong bindings hoặc ACF "
+"Shortcode."
+
+#: includes/api/api-template.php:1077
+msgid ""
+"The requested ACF field type does not support output in bindings or the ACF "
+"Shortcode."
+msgstr ""
+"Loại trường ACF được yêu cầu không hỗ trợ xuất trong bindings hoặc ACF "
+"Shortcode."
 
 #: includes/api/api-template.php:1054
 msgid "[The ACF shortcode cannot display fields from non-public posts]"
@@ -1410,7 +1460,7 @@ msgstr "Không tìm thấy kết quả cho thời gian tìm kiếm đó"
 
 #: includes/fields/class-acf-field-icon_picker.php:266
 msgid "Array"
-msgstr "Mảng"
+msgstr "Array"
 
 #: includes/fields/class-acf-field-icon_picker.php:265
 msgid "String"
@@ -1878,7 +1928,6 @@ msgstr ""
 "Giá trị trường chưa được trả lại vì lý do bảo mật."
 
 #. translators: %1$s - name of the ACF plugin. %2$s - Link to documentation.
-#. %3$s - Link to show more details about the error
 #: includes/admin/views/escaped-html-notice.php:32
 msgid ""
 "%1$s ACF now automatically escapes unsafe HTML when rendered by "
@@ -2000,8 +2049,8 @@ msgid "Add fields"
 msgstr "Thêm trường"
 
 #: includes/admin/post-types/admin-field-group.php:147
-#: assets/build/js/acf-field-group.js:2803
-#: assets/build/js/acf-field-group.js:3298
+#: assets/build/js/acf-field-group.js:2804
+#: assets/build/js/acf-field-group.js:3220
 msgid "This Field"
 msgstr "Trường này"
 
@@ -2071,11 +2120,11 @@ msgstr "Hai chiều"
 #. translators: %s A field type name, such as "Relationship"
 #: includes/acf-bidirectional-functions.php:193
 msgid "%s Field"
-msgstr "%s Trường"
+msgstr "Trường %s"
 
 #: includes/fields/class-acf-field-page_link.php:498
 #: includes/fields/class-acf-field-post_object.php:411
-#: includes/fields/class-acf-field-select.php:380
+#: includes/fields/class-acf-field-select.php:372
 #: includes/fields/class-acf-field-user.php:111
 msgid "Select Multiple"
 msgstr "Chọn nhiều"
@@ -2166,7 +2215,7 @@ msgstr "Mở khóa các tính năng nâng cao và xây dựng thêm nhiều hơn
 #. translators: %s - singular label of post type/taxonomy, i.e. "Movie"/"Genre"
 #: includes/admin/views/global/form-top.php:19
 msgid "%s fields"
-msgstr "%s các trường"
+msgstr "Các trường %s"
 
 #: includes/admin/post-types/admin-taxonomies.php:267
 msgid "No terms"
@@ -2899,7 +2948,7 @@ msgstr "Quay lại mục"
 #. translators: %s Plural form of taxonomy name
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:657
 msgid "← Go to %s"
-msgstr "← Đi tới %s"
+msgstr "← Quay lại %s"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:642
 msgid "Tags list"
@@ -3165,7 +3214,7 @@ msgstr "Mục cha"
 #. translators: %s Singular form of taxonomy name
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:293
 msgid "Parent %s"
-msgstr "Cha %s"
+msgstr "%s cha"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:278
 msgid "New Tag Name"
@@ -3473,7 +3522,7 @@ msgid ""
 "your theme."
 msgstr ""
 "Có một kho lưu trữ mục có thể được tùy chỉnh với một tệp mẫu lưu trữ trong "
-"chủ đề của bạn."
+"giao diện của bạn."
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:1133
 msgid "Archive"
@@ -3731,7 +3780,7 @@ msgstr "Liên kết mục"
 #: includes/admin/views/acf-post-type/advanced-settings.php:668
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:678
 msgid "%s Link"
-msgstr "%s Liên Kết"
+msgstr "Liên kết %s"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:653
 msgid "Post updated."
@@ -3913,7 +3962,7 @@ msgstr ""
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:468
 msgid "Uploaded To This Item"
-msgstr "Đã Tải Lên Mục Này"
+msgstr "Đã tải lên mục này"
 
 #. translators: %s Singular form of post type name
 #: includes/admin/views/acf-post-type/advanced-settings.php:464
@@ -3930,7 +3979,7 @@ msgstr "Như nhãn nút khi thêm phương tiện vào nội dung."
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:447
 msgid "Insert Into Media Button"
-msgstr "Đã tải lên mục này"
+msgstr "Chèn vào nút Media"
 
 #. translators: %s Singular form of post type name
 #: includes/admin/views/acf-post-type/advanced-settings.php:443
@@ -4008,7 +4057,7 @@ msgstr "Thuộc tính %s"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:348
 msgid "Post Archives"
-msgstr "Lưu Trữ Bài viết"
+msgstr "Lưu trữ bài viết"
 
 #: includes/admin/views/acf-post-type/advanced-settings.php:347
 msgid ""
@@ -4345,8 +4394,8 @@ msgstr ""
 "mục đã chọn. Lưu trữ nhóm trường, loại nội dung hoặc phân loại một cách địa "
 "phương có thể mang lại nhiều lợi ích như thời gian tải nhanh hơn, kiểm soát "
 "phiên bản và trường/cài đặt động. Chỉ cần sao chép và dán mã sau vào tệp "
-"functions.php của chủ đề của bạn hoặc bao gồm nó trong một tệp bên ngoài, "
-"sau đó hủy kích hoạt hoặc xóa các mục từ quản trị ACF."
+"functions.php giao diện của bạn hoặc bao gồm nó trong một tệp bên ngoài, sau "
+"đó hủy kích hoạt hoặc xóa các mục từ quản trị ACF."
 
 #: includes/admin/tools/class-acf-admin-tool-export.php:353
 msgid "Export - Generate PHP"
@@ -4422,7 +4471,7 @@ msgid ""
 "taxonomy registered by another plugin or theme."
 msgstr ""
 "Phân loại này không thể được đăng ký vì khóa của nó đang được sử dụng bởi "
-"một phân loại khác được đăng ký bởi một plugin hoặc chủ đề khác."
+"một phân loại khác được đăng ký bởi một plugin hoặc giao diện khác."
 
 #. translators: %s number of taxonomies synchronized
 #: includes/admin/post-types/admin-taxonomies.php:333
@@ -4501,7 +4550,7 @@ msgid ""
 "post type registered by another plugin or theme."
 msgstr ""
 "Loại nội dung này không thể được đăng ký vì khóa của nó đang được sử dụng "
-"bởi một loại nội dung khác được đăng ký bởi một plugin hoặc chủ đề khác."
+"bởi một loại nội dung khác được đăng ký bởi một plugin hoặc giao diện khác."
 
 #: includes/admin/post-types/admin-post-type.php:126
 #: assets/build/js/acf-internal-post-type.js:176
@@ -4554,15 +4603,15 @@ msgstr "Loại nội dung đã được xóa."
 
 #: includes/admin/post-types/admin-field-group.php:146
 #: assets/build/js/acf-field-group.js:1159
-#: assets/build/js/acf-field-group.js:1383
+#: assets/build/js/acf-field-group.js:1369
 msgid "Type to search..."
 msgstr "Nhập để tìm kiếm..."
 
 #: includes/admin/post-types/admin-field-group.php:101
 #: assets/build/js/acf-field-group.js:1186
-#: assets/build/js/acf-field-group.js:2349
-#: assets/build/js/acf-field-group.js:1429
-#: assets/build/js/acf-field-group.js:2761
+#: assets/build/js/acf-field-group.js:2350
+#: assets/build/js/acf-field-group.js:1404
+#: assets/build/js/acf-field-group.js:2683
 msgid "PRO Only"
 msgstr "Chỉ dành cho PRO"
 
@@ -4628,7 +4677,7 @@ msgid ""
 "registered by another plugin or theme."
 msgstr ""
 "Mục này không thể được đăng ký vì khóa của nó đang được sử dụng bởi một mục "
-"khác được đăng ký bởi một plugin hoặc chủ đề khác."
+"khác được đăng ký bởi một plugin hoặc giao diện khác."
 
 #: includes/acf-internal-post-type-functions.php:509
 #: includes/acf-internal-post-type-functions.php:538
@@ -4681,8 +4730,8 @@ msgid "Close Modal"
 msgstr "Thoát hộp cửa sổ"
 
 #: includes/admin/post-types/admin-field-group.php:92
-#: assets/build/js/acf-field-group.js:1701
-#: assets/build/js/acf-field-group.js:2032
+#: assets/build/js/acf-field-group.js:1702
+#: assets/build/js/acf-field-group.js:1972
 msgid "Field moved to other group"
 msgstr "Trường được chuyển đến nhóm khác"
 
@@ -4691,15 +4740,15 @@ msgstr "Trường được chuyển đến nhóm khác"
 msgid "Close modal"
 msgstr "Thoát hộp cửa sổ"
 
-#: includes/fields/class-acf-field-tab.php:119
+#: includes/fields/class-acf-field-tab.php:122
 msgid "Start a new group of tabs at this tab."
 msgstr "Bắt đầu một nhóm mới của các tab tại tab này."
 
-#: includes/fields/class-acf-field-tab.php:118
+#: includes/fields/class-acf-field-tab.php:121
 msgid "New Tab Group"
 msgstr "Nhóm Tab mới"
 
-#: includes/fields/class-acf-field-select.php:423
+#: includes/fields/class-acf-field-select.php:415
 #: includes/fields/class-acf-field-true_false.php:188
 msgid "Use a stylized checkbox using select2"
 msgstr "Sử dụng hộp kiểm được tạo kiểu bằng select2"
@@ -4912,8 +4961,8 @@ msgid "Activate this item"
 msgstr "Kích hoạt mục này"
 
 #: includes/admin/post-types/admin-field-group.php:88
-#: assets/build/js/acf-field-group.js:2862
-#: assets/build/js/acf-field-group.js:3375
+#: assets/build/js/acf-field-group.js:2863
+#: assets/build/js/acf-field-group.js:3297
 msgid "Move field group to trash?"
 msgstr "Chuyển nhóm trường vào thùng rác?"
 
@@ -4972,7 +5021,7 @@ msgstr "%1$s phải có một ID người dùng hợp lệ."
 msgid "Invalid request."
 msgstr "Yêu cầu không hợp lệ."
 
-#: includes/fields/class-acf-field-select.php:637
+#: includes/fields/class-acf-field-select.php:629
 msgid "%1$s is not one of %2$s"
 msgstr "%1$s không phải là một trong %2$s"
 
@@ -5004,7 +5053,7 @@ msgstr "Kích hoạt tính trong suốt"
 
 #: includes/fields/class-acf-field-color_picker.php:175
 msgid "RGBA Array"
-msgstr "Mảng RGBA"
+msgstr "Array RGBA"
 
 #: includes/fields/class-acf-field-color_picker.php:92
 msgid "RGBA String"
@@ -5124,7 +5173,7 @@ msgstr "Đặt trong plugin: %s"
 
 #: includes/admin/admin-internal-post-type-list.php:388
 msgid "Located in theme: %s"
-msgstr "Đặt trong chủ đề: %s"
+msgstr "Đặt trong giao diện: %s"
 
 #: includes/admin/post-types/admin-field-groups.php:235
 msgid "Various"
@@ -5227,8 +5276,8 @@ msgid ""
 msgstr ""
 "Plugin Advanced Custom Fields cung cấp một trình xây dựng form trực quan để "
 "tùy chỉnh màn hình chỉnh sửa WordPress với các trường bổ sung, và một API "
-"trực quan để hiển thị giá trị trường tùy chỉnh trong bất kỳ tệp mẫu chủ đề "
-"nào."
+"trực quan để hiển thị giá trị trường tùy chỉnh trong bất kỳ tệp mẫu giao "
+"diện nào."
 
 #: includes/admin/admin.php:131 includes/admin/admin.php:133
 msgid "Overview"
@@ -5349,7 +5398,7 @@ msgstr "Mẫu trang"
 
 #: includes/locations/class-acf-location-user-form.php:74
 msgid "Register"
-msgstr "Đăng ký"
+msgstr "Register"
 
 #: includes/locations/class-acf-location-user-form.php:73
 msgid "Add / Edit"
@@ -5418,7 +5467,7 @@ msgstr "JSON cục bộ"
 
 #: includes/admin/views/acf-field-group/pro-features.php:50
 msgid "Clone Field"
-msgstr "Trường sao chép"
+msgstr "Trường tạo bản sao"
 
 #. translators: %s a list of plugin
 #: includes/admin/views/upgrade/notice.php:32
@@ -5639,7 +5688,7 @@ msgstr "chiều rộng"
 msgid "Wrapper Attributes"
 msgstr "Thuộc tính bao bọc"
 
-#: includes/fields/class-acf-field.php:311
+#: includes/fields/class-acf-field.php:312
 msgid "Required"
 msgstr "Yêu cầu"
 
@@ -5700,8 +5749,8 @@ msgstr "Kéo để sắp xếp lại"
 
 #: includes/admin/post-types/admin-field-group.php:99
 #: includes/admin/views/acf-field-group/location-group.php:3
-#: assets/build/js/acf-field-group.js:2387
-#: assets/build/js/acf-field-group.js:2812
+#: assets/build/js/acf-field-group.js:2388
+#: assets/build/js/acf-field-group.js:2734
 msgid "Show this field group if"
 msgstr "Hiển thị nhóm trường này nếu"
 
@@ -5820,7 +5869,8 @@ msgid ""
 msgstr ""
 "Chọn các mục bạn muốn xuất và sau đó chọn phương pháp xuất của bạn. Xuất "
 "dưới dạng JSON để xuất ra tệp .json mà sau đó bạn có thể nhập vào cài đặt "
-"ACF khác. Tạo PHP để xuất ra mã PHP mà bạn có thể đặt trong chủ đề của mình."
+"ACF khác. Tạo PHP để xuất ra mã PHP mà bạn có thể đặt trong giao diện của "
+"mình."
 
 #: includes/admin/tools/class-acf-admin-tool-export.php:215
 msgid "Select Field Groups"
@@ -5988,8 +6038,8 @@ msgstr "Giá trị rỗng"
 #: includes/admin/post-types/admin-field-group.php:97
 #: includes/class-acf-internal-post-type.php:728
 #: includes/post-types/class-acf-field-group.php:345
-#: assets/build/js/acf-field-group.js:1541
-#: assets/build/js/acf-field-group.js:1860
+#: assets/build/js/acf-field-group.js:1542
+#: assets/build/js/acf-field-group.js:1805
 msgid "copy"
 msgstr "sao chép"
 
@@ -6006,8 +6056,8 @@ msgid "Checked"
 msgstr "Đã kiểm tra"
 
 #: includes/admin/post-types/admin-field-group.php:90
-#: assets/build/js/acf-field-group.js:1646
-#: assets/build/js/acf-field-group.js:1972
+#: assets/build/js/acf-field-group.js:1647
+#: assets/build/js/acf-field-group.js:1913
 msgid "Move Custom Field"
 msgstr "Di chuyển trường tùy chỉnh"
 
@@ -6022,15 +6072,15 @@ msgid "Field group title is required"
 msgstr "Tiêu đề nhóm trường là bắt buộc"
 
 #: includes/admin/post-types/admin-field-group.php:86
-#: assets/build/js/acf-field-group.js:1635
-#: assets/build/js/acf-field-group.js:1958
+#: assets/build/js/acf-field-group.js:1636
+#: assets/build/js/acf-field-group.js:1902
 msgid "This field cannot be moved until its changes have been saved"
 msgstr ""
 "Trường này không thể di chuyển cho đến khi các thay đổi của nó đã được lưu"
 
 #: includes/admin/post-types/admin-field-group.php:85
-#: assets/build/js/acf-field-group.js:1445
-#: assets/build/js/acf-field-group.js:1755
+#: assets/build/js/acf-field-group.js:1446
+#: assets/build/js/acf-field-group.js:1703
 msgid "The string \"field_\" may not be used at the start of a field name"
 msgstr "Chuỗi \"field_\" không được sử dụng ở đầu tên trường"
 
@@ -6279,9 +6329,9 @@ msgstr "Loại tệp phải là %s."
 #: includes/admin/views/acf-field-group/location-group.php:3
 #: includes/admin/views/acf-field-group/locations.php:35
 #: includes/api/api-helpers.php:2981 assets/build/js/acf-field-group.js:781
-#: assets/build/js/acf-field-group.js:2427
+#: assets/build/js/acf-field-group.js:2428
 #: assets/build/js/acf-field-group.js:946
-#: assets/build/js/acf-field-group.js:2859
+#: assets/build/js/acf-field-group.js:2781
 msgid "or"
 msgstr "hoặc"
 
@@ -6332,7 +6382,7 @@ msgstr "Hình thu nhỏ"
 #: includes/acf-field-functions.php:854
 #: includes/admin/post-types/admin-field-group.php:95
 #: assets/build/js/acf-field-group.js:1090
-#: assets/build/js/acf-field-group.js:1277
+#: assets/build/js/acf-field-group.js:1274
 msgid "(no label)"
 msgstr "(không nhãn)"
 
@@ -6444,7 +6494,7 @@ msgstr "Giá trị đơn"
 
 #: includes/fields/class-acf-field-taxonomy.php:692
 msgid "Multi Select"
-msgstr "Chọn nhiều"
+msgstr "Chọn nhiều mục"
 
 #: includes/fields/class-acf-field-checkbox.php:22
 #: includes/fields/class-acf-field-taxonomy.php:691
@@ -6504,7 +6554,7 @@ msgstr "Khác"
 msgid "Radio Button"
 msgstr "Nút chọn"
 
-#: includes/fields/class-acf-field-accordion.php:103
+#: includes/fields/class-acf-field-accordion.php:106
 msgid ""
 "Define an endpoint for the previous accordion to stop. This accordion will "
 "not be visible."
@@ -6512,19 +6562,19 @@ msgstr ""
 "Xác định một điểm cuối để accordion trước đó dừng lại. Accordion này sẽ "
 "không hiển thị."
 
-#: includes/fields/class-acf-field-accordion.php:92
+#: includes/fields/class-acf-field-accordion.php:95
 msgid "Allow this accordion to open without closing others."
 msgstr "Cho phép accordion này mở mà không đóng các accordion khác."
 
-#: includes/fields/class-acf-field-accordion.php:91
+#: includes/fields/class-acf-field-accordion.php:94
 msgid "Multi-Expand"
 msgstr "Mở rộng đa dạng"
 
-#: includes/fields/class-acf-field-accordion.php:81
+#: includes/fields/class-acf-field-accordion.php:84
 msgid "Display this accordion as open on page load."
 msgstr "Hiển thị accordion này như đang mở khi tải trang."
 
-#: includes/fields/class-acf-field-accordion.php:80
+#: includes/fields/class-acf-field-accordion.php:83
 msgid "Open"
 msgstr "Mở"
 
@@ -6547,7 +6597,7 @@ msgstr "URL tệp"
 
 #: includes/fields/class-acf-field-file.php:205
 msgid "File Array"
-msgstr "Mảng tập tin"
+msgstr "Array tập tin"
 
 #: includes/fields/class-acf-field-file.php:176
 msgid "Add File"
@@ -6586,82 +6636,88 @@ msgstr "Tệp tin"
 msgid "Password"
 msgstr "Mật khẩu"
 
-#: includes/fields/class-acf-field-select.php:365
+#: includes/fields/class-acf-field-select.php:357
 msgid "Specify the value returned"
 msgstr "Chỉ định giá trị trả về"
 
-#: includes/fields/class-acf-field-select.php:433
+#: includes/fields/class-acf-field-select.php:425
 msgid "Use AJAX to lazy load choices?"
 msgstr "Sử dụng AJAX để tải lựa chọn một cách lười biếng?"
 
 #: includes/fields/class-acf-field-checkbox.php:333
-#: includes/fields/class-acf-field-select.php:354
+#: includes/fields/class-acf-field-select.php:346
 msgid "Enter each default value on a new line"
 msgstr "Nhập mỗi giá trị mặc định trên một dòng mới"
 
-#: includes/fields/class-acf-field-select.php:229 includes/media.php:48
+#: includes/fields/class-acf-field-select.php:221 includes/media.php:48
 #: assets/build/js/acf-input.js:7822 assets/build/js/acf-input.js:8484
 msgctxt "verb"
 msgid "Select"
 msgstr "Lựa chọn"
 
-#: includes/fields/class-acf-field-select.php:109
+#: includes/fields/class-acf-field-select.php:101
 msgctxt "Select2 JS load_fail"
 msgid "Loading failed"
 msgstr "Tải thất bại"
 
-#: includes/fields/class-acf-field-select.php:108
+#: includes/fields/class-acf-field-select.php:100
 msgctxt "Select2 JS searching"
 msgid "Searching&hellip;"
 msgstr "Đang tìm kiếm&hellip;"
 
-#: includes/fields/class-acf-field-select.php:107
+#: includes/fields/class-acf-field-select.php:99
 msgctxt "Select2 JS load_more"
 msgid "Loading more results&hellip;"
 msgstr "Đang tải thêm kết quả&hellip;"
 
-#: includes/fields/class-acf-field-select.php:106
+#. translators: %d - maximum number of items that can be selected in the select
+#. field
+#: includes/fields/class-acf-field-select.php:98
 msgctxt "Select2 JS selection_too_long_n"
 msgid "You can only select %d items"
 msgstr "Bạn chỉ có thể chọn %d mục"
 
-#: includes/fields/class-acf-field-select.php:105
+#: includes/fields/class-acf-field-select.php:96
 msgctxt "Select2 JS selection_too_long_1"
 msgid "You can only select 1 item"
 msgstr "Bạn chỉ có thể chọn 1 mục"
 
-#: includes/fields/class-acf-field-select.php:104
+#. translators: %d - number of characters that should be removed from select
+#. field
+#: includes/fields/class-acf-field-select.php:95
 msgctxt "Select2 JS input_too_long_n"
 msgid "Please delete %d characters"
 msgstr "Vui lòng xóa %d ký tự"
 
-#: includes/fields/class-acf-field-select.php:103
+#: includes/fields/class-acf-field-select.php:93
 msgctxt "Select2 JS input_too_long_1"
 msgid "Please delete 1 character"
 msgstr "Vui lòng xóa 1 ký tự"
 
-#: includes/fields/class-acf-field-select.php:102
+#. translators: %d - number of characters to enter into select field input
+#: includes/fields/class-acf-field-select.php:92
 msgctxt "Select2 JS input_too_short_n"
 msgid "Please enter %d or more characters"
 msgstr "Vui lòng nhập %d ký tự hoặc nhiều hơn"
 
-#: includes/fields/class-acf-field-select.php:101
+#: includes/fields/class-acf-field-select.php:90
 msgctxt "Select2 JS input_too_short_1"
 msgid "Please enter 1 or more characters"
 msgstr "Vui lòng nhập 1 ký tự hoặc nhiều hơn"
 
-#: includes/fields/class-acf-field-select.php:100
+#: includes/fields/class-acf-field-select.php:89
 msgctxt "Select2 JS matches_0"
 msgid "No matches found"
 msgstr "Không tìm thấy kết quả phù hợp"
 
-#: includes/fields/class-acf-field-select.php:99
+#. translators: %d - number of results available in select field
+#: includes/fields/class-acf-field-select.php:88
 msgctxt "Select2 JS matches_n"
 msgid "%d results are available, use up and down arrow keys to navigate."
 msgstr ""
 "%d kết quả có sẵn, sử dụng các phím mũi tên lên và xuống để điều hướng."
 
-#: includes/fields/class-acf-field-select.php:98
+#: includes/fields/class-acf-field-select.php:86
 msgctxt "Select2 JS matches_1"
 msgid "One result is available, press enter to select it."
 msgstr "Có một kết quả, nhấn enter để chọn."
@@ -6682,7 +6738,7 @@ msgstr "Đối tượng người dùng"
 
 #: includes/fields/class-acf-field-user.php:100
 msgid "User Array"
-msgstr "Mảng người dùng"
+msgstr "Array người dùng"
 
 #: includes/fields/class-acf-field-user.php:88
 msgid "All user roles"
@@ -6801,21 +6857,21 @@ msgstr "Chọn thời gian"
 msgid "Date Time Picker"
 msgstr "Công cụ chọn ngày giờ"
 
-#: includes/fields/class-acf-field-accordion.php:102
+#: includes/fields/class-acf-field-accordion.php:105
 msgid "Endpoint"
 msgstr "Điểm cuối"
 
 #: includes/admin/views/acf-field-group/options.php:130
-#: includes/fields/class-acf-field-tab.php:109
+#: includes/fields/class-acf-field-tab.php:112
 msgid "Left aligned"
 msgstr "Căn lề trái"
 
 #: includes/admin/views/acf-field-group/options.php:129
-#: includes/fields/class-acf-field-tab.php:108
+#: includes/fields/class-acf-field-tab.php:111
 msgid "Top aligned"
 msgstr "Căn lề trên"
 
-#: includes/fields/class-acf-field-tab.php:104
+#: includes/fields/class-acf-field-tab.php:107
 msgid "Placement"
 msgstr "Vị trí"
 
@@ -6833,7 +6889,7 @@ msgstr "URL liên kết"
 
 #: includes/fields/class-acf-field-link.php:152
 msgid "Link Array"
-msgstr "Mảng liên kết"
+msgstr "Array liên kết"
 
 #: includes/fields/class-acf-field-link.php:124
 msgid "Opens in a new window/tab"
@@ -6873,22 +6929,22 @@ msgstr "Thanh trượt phạm vi"
 #: includes/fields/class-acf-field-button-group.php:165
 #: includes/fields/class-acf-field-checkbox.php:350
 #: includes/fields/class-acf-field-radio.php:210
-#: includes/fields/class-acf-field-select.php:372
+#: includes/fields/class-acf-field-select.php:364
 msgid "Both (Array)"
-msgstr "Cả hai (Mảng)"
+msgstr "Cả hai (Array)"
 
 #: includes/admin/views/acf-field-group/fields.php:52
 #: includes/fields/class-acf-field-button-group.php:164
 #: includes/fields/class-acf-field-checkbox.php:349
 #: includes/fields/class-acf-field-radio.php:209
-#: includes/fields/class-acf-field-select.php:371
+#: includes/fields/class-acf-field-select.php:363
 msgid "Label"
 msgstr "Nhãn"
 
 #: includes/fields/class-acf-field-button-group.php:163
 #: includes/fields/class-acf-field-checkbox.php:348
 #: includes/fields/class-acf-field-radio.php:208
-#: includes/fields/class-acf-field-select.php:370
+#: includes/fields/class-acf-field-select.php:362
 msgid "Value"
 msgstr "Giá trị"
 
@@ -6907,14 +6963,14 @@ msgstr "Ngang"
 #: includes/fields/class-acf-field-button-group.php:138
 #: includes/fields/class-acf-field-checkbox.php:323
 #: includes/fields/class-acf-field-radio.php:183
-#: includes/fields/class-acf-field-select.php:343
+#: includes/fields/class-acf-field-select.php:335
 msgid "red : Red"
 msgstr "red : Đỏ"
 
 #: includes/fields/class-acf-field-button-group.php:138
 #: includes/fields/class-acf-field-checkbox.php:323
 #: includes/fields/class-acf-field-radio.php:183
-#: includes/fields/class-acf-field-select.php:343
+#: includes/fields/class-acf-field-select.php:335
 msgid "For more control, you may specify both a value and label like this:"
 msgstr ""
 "Để kiểm soát nhiều hơn, bạn có thể chỉ định cả giá trị và nhãn như thế này:"
@@ -6922,14 +6978,14 @@ msgstr ""
 #: includes/fields/class-acf-field-button-group.php:138
 #: includes/fields/class-acf-field-checkbox.php:323
 #: includes/fields/class-acf-field-radio.php:183
-#: includes/fields/class-acf-field-select.php:343
+#: includes/fields/class-acf-field-select.php:335
 msgid "Enter each choice on a new line."
 msgstr "Nhập mỗi lựa chọn trên một dòng mới."
 
 #: includes/fields/class-acf-field-button-group.php:137
 #: includes/fields/class-acf-field-checkbox.php:322
 #: includes/fields/class-acf-field-radio.php:182
-#: includes/fields/class-acf-field-select.php:342
+#: includes/fields/class-acf-field-select.php:334
 msgid "Choices"
 msgstr "Lựa chọn"
 
@@ -6941,7 +6997,7 @@ msgstr "Nhóm nút"
 #: includes/fields/class-acf-field-page_link.php:519
 #: includes/fields/class-acf-field-post_object.php:432
 #: includes/fields/class-acf-field-radio.php:228
-#: includes/fields/class-acf-field-select.php:401
+#: includes/fields/class-acf-field-select.php:393
 #: includes/fields/class-acf-field-taxonomy.php:705
 #: includes/fields/class-acf-field-user.php:132
 msgid "Allow Null"
@@ -7264,7 +7320,7 @@ msgstr "URL Hình ảnh"
 
 #: includes/fields/class-acf-field-image.php:183
 msgid "Image Array"
-msgstr "Mảng hình ảnh"
+msgstr "Array hình ảnh"
 
 #: includes/fields/class-acf-field-button-group.php:158
 #: includes/fields/class-acf-field-checkbox.php:343
@@ -7330,36 +7386,36 @@ msgstr "Chọn Hình ảnh"
 msgid "Image"
 msgstr "Hình ảnh"
 
-#: includes/fields/class-acf-field-message.php:110
+#: includes/fields/class-acf-field-message.php:113
 msgid "Allow HTML markup to display as visible text instead of rendering"
 msgstr ""
 "Cho phép đánh dấu HTML hiển thị dưới dạng văn bản hiển thị thay vì hiển thị"
 
-#: includes/fields/class-acf-field-message.php:109
+#: includes/fields/class-acf-field-message.php:112
 msgid "Escape HTML"
 msgstr "Escape HTML"
 
-#: includes/fields/class-acf-field-message.php:101
+#: includes/fields/class-acf-field-message.php:104
 #: includes/fields/class-acf-field-textarea.php:162
 msgid "No Formatting"
 msgstr "Không định dạng"
 
-#: includes/fields/class-acf-field-message.php:100
+#: includes/fields/class-acf-field-message.php:103
 #: includes/fields/class-acf-field-textarea.php:161
 msgid "Automatically add &lt;br&gt;"
 msgstr "Tự động thêm &lt;br&gt;"
 
-#: includes/fields/class-acf-field-message.php:99
+#: includes/fields/class-acf-field-message.php:102
 #: includes/fields/class-acf-field-textarea.php:160
 msgid "Automatically add paragraphs"
 msgstr "Tự động thêm đoạn văn"
 
-#: includes/fields/class-acf-field-message.php:95
+#: includes/fields/class-acf-field-message.php:98
 #: includes/fields/class-acf-field-textarea.php:156
 msgid "Controls how new lines are rendered"
 msgstr "Điều khiển cách hiển thị các dòng mới"
 
-#: includes/fields/class-acf-field-message.php:94
+#: includes/fields/class-acf-field-message.php:97
 #: includes/fields/class-acf-field-textarea.php:155
 msgid "New Lines"
 msgstr "Dòng mới"
@@ -7441,7 +7497,7 @@ msgstr "Văn bản hiển thị khi hoạt động"
 msgid "On Text"
 msgstr "Văn bản bật"
 
-#: includes/fields/class-acf-field-select.php:422
+#: includes/fields/class-acf-field-select.php:414
 #: includes/fields/class-acf-field-true_false.php:187
 msgid "Stylized UI"
 msgstr "Giao diện người dùng được tạo kiểu"
@@ -7453,7 +7509,7 @@ msgstr "Giao diện người dùng được tạo kiểu"
 #: includes/fields/class-acf-field-number.php:113
 #: includes/fields/class-acf-field-radio.php:192
 #: includes/fields/class-acf-field-range.php:153
-#: includes/fields/class-acf-field-select.php:353
+#: includes/fields/class-acf-field-select.php:345
 #: includes/fields/class-acf-field-text.php:95
 #: includes/fields/class-acf-field-textarea.php:93
 #: includes/fields/class-acf-field-true_false.php:135
@@ -7467,7 +7523,7 @@ msgid "Displays text alongside the checkbox"
 msgstr "Hiển thị văn bản cùng với hộp kiểm"
 
 #: includes/fields/class-acf-field-message.php:23
-#: includes/fields/class-acf-field-message.php:84
+#: includes/fields/class-acf-field-message.php:87
 #: includes/fields/class-acf-field-true_false.php:125
 msgid "Message"
 msgstr "Hiển thị thông điệp"
@@ -7492,31 +7548,31 @@ msgstr "Có"
 msgid "True / False"
 msgstr "Đúng / Sai"
 
-#: includes/fields/class-acf-field-group.php:412
+#: includes/fields/class-acf-field-group.php:415
 msgid "Row"
 msgstr "Hàng"
 
-#: includes/fields/class-acf-field-group.php:411
+#: includes/fields/class-acf-field-group.php:414
 msgid "Table"
 msgstr "Bảng"
 
 #: includes/admin/post-types/admin-field-group.php:158
-#: includes/fields/class-acf-field-group.php:410
+#: includes/fields/class-acf-field-group.php:413
 msgid "Block"
 msgstr "Khối"
 
-#: includes/fields/class-acf-field-group.php:405
+#: includes/fields/class-acf-field-group.php:408
 msgid "Specify the style used to render the selected fields"
 msgstr "Chỉ định kiểu được sử dụng để hiển thị các trường đã chọn"
 
 #: includes/fields.php:330 includes/fields/class-acf-field-button-group.php:204
 #: includes/fields/class-acf-field-checkbox.php:405
-#: includes/fields/class-acf-field-group.php:404
+#: includes/fields/class-acf-field-group.php:407
 #: includes/fields/class-acf-field-radio.php:276
 msgid "Layout"
 msgstr "Bố cục"
 
-#: includes/fields/class-acf-field-group.php:388
+#: includes/fields/class-acf-field-group.php:391
 msgid "Sub Fields"
 msgstr "Các trường phụ"
 
@@ -7592,7 +7648,7 @@ msgstr "Định dạng được trả về qua các hàm mẫu"
 #: includes/fields/class-acf-field-image.php:177
 #: includes/fields/class-acf-field-post_object.php:396
 #: includes/fields/class-acf-field-relationship.php:610
-#: includes/fields/class-acf-field-select.php:364
+#: includes/fields/class-acf-field-select.php:356
 #: includes/fields/class-acf-field-time_picker.php:121
 #: includes/fields/class-acf-field-user.php:95
 msgid "Return Format"

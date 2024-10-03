@@ -652,7 +652,7 @@ a.acf-icon.dark.-minus:hover, a.acf-icon.dark.-cancel:hover {
   margin: 5px 0 15px;
   padding: 3px 12px;
   background: #2a9bd9;
-  border-left: #1f7db1 solid 3px;
+  border-left: rgb(31.4900398406, 125.1314741036, 176.5099601594) solid 3px;
 }
 .acf-notice p {
   font-size: 13px;
@@ -678,15 +678,15 @@ a.acf-icon.dark.-minus:hover, a.acf-icon.dark.-cancel:hover {
 }
 .acf-notice.-error {
   background: #d94f4f;
-  border-color: #c92c2c;
+  border-color: rgb(201.4953271028, 43.5046728972, 43.5046728972);
 }
 .acf-notice.-success {
   background: #49ad52;
-  border-color: #3a8941;
+  border-color: rgb(57.8658536585, 137.1341463415, 65);
 }
 .acf-notice.-warning {
   background: #fd8d3b;
-  border-color: #fc7009;
+  border-color: rgb(252.4848484848, 111.6363636364, 8.5151515152);
 }
 
 /*--------------------------------------------------------------------------------------------
@@ -2636,7 +2636,7 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
 .acf-admin-page textarea:disabled,
 .acf-admin-page select:disabled {
   background-color: #F9FAFB;
-  color: #808a9e;
+  color: rgb(128.2255319149, 137.7574468085, 157.7744680851);
 }
 .acf-admin-page input[type=text]::placeholder,
 .acf-admin-page input[type=search]::placeholder,
@@ -2865,12 +2865,12 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
   color: #0783BE;
 }
 .acf-admin-page .button:hover {
-  background-color: #f3f9fc;
+  background-color: rgb(243.16, 249.08, 252.04);
   border-color: #0783BE;
   color: #0783BE;
 }
 .acf-admin-page .button:focus {
-  background-color: #f3f9fc;
+  background-color: rgb(243.16, 249.08, 252.04);
   outline: 3px solid #EBF5FA;
   color: #0783BE;
 }
@@ -3605,7 +3605,7 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
 *
 *--------------------------------------------------------------------------------------------*/
 .acf-internal-post-type .row-actions a:hover {
-  color: #044767;
+  color: rgb(4.0632911392, 71.1075949367, 102.9367088608);
 }
 .acf-internal-post-type .row-actions .trash a {
   color: #a00;
@@ -3625,7 +3625,7 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
 *--------------------------------------------------------------------------------------------*/
 .acf-internal-post-type #the-list tr:hover td,
 .acf-internal-post-type #the-list tr:hover th {
-  background-color: #f7fbfd;
+  background-color: rgb(247.24, 251.12, 253.06);
 }
 
 /*---------------------------------------------------------------------------------------------
@@ -4894,7 +4894,7 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
   border-color: #0783BE;
 }
 .acf-btn.acf-btn-secondary:hover {
-  background-color: #f3f9fc;
+  background-color: rgb(243.16, 249.08, 252.04);
 }
 .acf-btn.acf-btn-muted {
   background-color: #667085;
@@ -4967,7 +4967,7 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
 *
 *---------------------------------------------------------------------------------------------*/
 .acf-btn.acf-delete-field-group:hover {
-  background-color: #fbeded;
+  background-color: rgb(250.9609756098, 237.4390243902, 237.4390243902);
   border-color: #D13737 !important;
   color: #D13737 !important;
 }

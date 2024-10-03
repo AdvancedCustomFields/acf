@@ -4,7 +4,7 @@ Tags: acf, fields, custom fields, meta, repeater
 Requires at least: 6.0
 Tested up to: 6.6
 Requires PHP: 7.4
-Stable tag: 6.3.6
+Stable tag: 6.3.7
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -93,6 +93,11 @@ From your WordPress dashboard
 
 
 == Changelog ==
+
+= 6.3.7 =
+*Release Date 2nd October 2024*
+
+* Security - ACF Free now uses its own update mechanism from WP Engine servers
 
 = 6.3.6 =
 *Release Date 28th August 2024*

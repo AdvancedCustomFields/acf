@@ -355,7 +355,7 @@
   margin-right: 4px;
 }
 .acf-field-object > .handle .row-options a:hover {
-  color: #044767;
+  color: rgb(4.0632911392, 71.1075949367, 102.9367088608);
 }
 .acf-field-object > .handle .row-options a.delete-field {
   color: #a00;
@@ -371,7 +371,7 @@
 }
 .acf-field-object.open > .handle {
   background: #2a9bd9;
-  border: #2696d3 solid 1px;
+  border: rgb(37.6669322709, 149.6764940239, 211.1330677291) solid 1px;
   text-shadow: #268FBB 0 1px 0;
   color: #fff;
   position: relative;
@@ -885,7 +885,7 @@ html[dir=rtl] .acf-field-object.open > .handle {
 .acf-admin-page textarea:disabled,
 .acf-admin-page select:disabled {
   background-color: #F9FAFB;
-  color: #808a9e;
+  color: rgb(128.2255319149, 137.7574468085, 157.7744680851);
 }
 .acf-admin-page input[type=text]::placeholder,
 .acf-admin-page input[type=search]::placeholder,
@@ -1114,12 +1114,12 @@ html[dir=rtl] .acf-field-object.open > .handle {
   color: #0783BE;
 }
 .acf-admin-page .button:hover {
-  background-color: #f3f9fc;
+  background-color: rgb(243.16, 249.08, 252.04);
   border-color: #0783BE;
   color: #0783BE;
 }
 .acf-admin-page .button:focus {
-  background-color: #f3f9fc;
+  background-color: rgb(243.16, 249.08, 252.04);
   outline: 3px solid #EBF5FA;
   color: #0783BE;
 }
@@ -1787,7 +1787,7 @@ html[dir=rtl] .acf-field-object.open > .handle {
   z-index: 500;
 }
 .post-type-acf-field-group .acf-field-object:hover {
-  background-color: #f7fbfd;
+  background-color: rgb(247.24, 251.12, 253.06);
 }
 .post-type-acf-field-group .acf-field-object.open {
   background-color: #fff;
@@ -2975,7 +2975,7 @@ html[dir=rtl] .acf-field-object.open > .handle {
   border-radius: 8px;
   border-width: 1px;
   border-style: solid;
-  border-color: #dbdfe5;
+  border-color: rgb(219.125, 222.5416666667, 229.375);
   box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.1);
 }
 .post-type-acf-field-group #acf-field-group-fields .acf-field-list-wrap .acf-input-sub .acf-sub-field-list-header {
@@ -3018,7 +3018,7 @@ html[dir=rtl] .acf-field-object.open > .handle {
 }
 
 .post-type-acf-field-group #acf-field-group-fields .acf-field-list-wrap .acf-input-sub .acf-field-object.open {
-  border-top-color: #dbdfe5;
+  border-top-color: rgb(219.125, 222.5416666667, 229.375);
 }
 
 /*---------------------------------------------------------------------------------------------
@@ -3064,7 +3064,7 @@ html[dir=rtl] .acf-field-object.open > .handle {
   padding-left: 0;
   border-width: 1px;
   border-style: solid;
-  border-color: #dbdfe5;
+  border-color: rgb(219.125, 222.5416666667, 229.375);
   border-radius: 8px;
   box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.1);
 }
@@ -3220,10 +3220,10 @@ html[dir=rtl] .acf-field-object.open > .handle {
   background-color: transparent;
 }
 .post-type-acf-field-group #acf-field-group-fields .acf-field-list-wrap .acf-input-sub .acf-field-object .handle:hover {
-  background-color: #f9f2fb;
+  background-color: rgb(248.6, 242, 251);
 }
 .post-type-acf-field-group #acf-field-group-fields .acf-field-list-wrap .acf-input-sub .acf-field-object.open .handle {
-  background-color: #f5eaf9;
+  background-color: rgb(244.76, 234.2, 248.6);
 }
 .post-type-acf-field-group #acf-field-group-fields .acf-field-list-wrap .acf-input-sub .acf-field-object .settings {
   border-left-color: #BF7DD7;
@@ -3232,10 +3232,10 @@ html[dir=rtl] .acf-field-object.open > .handle {
   background-color: transparent;
 }
 .post-type-acf-field-group #acf-field-group-fields .acf-field-list-wrap .acf-input-sub .acf-input-sub .acf-field-object .handle:hover {
-  background-color: #ebf7f4;
+  background-color: rgb(234.7348066298, 247.2651933702, 244.1712707182);
 }
 .post-type-acf-field-group #acf-field-group-fields .acf-field-list-wrap .acf-input-sub .acf-input-sub .acf-field-object.open .handle {
-  background-color: #e3f4f0;
+  background-color: rgb(227.3524861878, 244.4475138122, 240.226519337);
 }
 .post-type-acf-field-group #acf-field-group-fields .acf-field-list-wrap .acf-input-sub .acf-input-sub .acf-field-object .settings {
   border-left-color: #7CCDB9;
@@ -3244,10 +3244,10 @@ html[dir=rtl] .acf-field-object.open > .handle {
   background-color: transparent;
 }
 .post-type-acf-field-group #acf-field-group-fields .acf-field-list-wrap .acf-input-sub .acf-input-sub .acf-input-sub .acf-field-object .handle:hover {
-  background-color: #fcf5f2;
+  background-color: rgb(252.2544378698, 244.8698224852, 241.7455621302);
 }
 .post-type-acf-field-group #acf-field-group-fields .acf-field-list-wrap .acf-input-sub .acf-input-sub .acf-input-sub .acf-field-object.open .handle {
-  background-color: #fbeee9;
+  background-color: rgb(250.5041420118, 238.4118343195, 233.2958579882);
 }
 .post-type-acf-field-group #acf-field-group-fields .acf-field-list-wrap .acf-input-sub .acf-input-sub .acf-input-sub .acf-field-object .settings {
   border-left-color: #E29473;
@@ -3256,10 +3256,10 @@ html[dir=rtl] .acf-field-object.open > .handle {
   background-color: transparent;
 }
 .post-type-acf-field-group #acf-field-group-fields .acf-field-list-wrap .acf-input-sub .acf-input-sub .acf-input-sub .acf-input-sub .acf-field-object .handle:hover {
-  background-color: #fafbfb;
+  background-color: rgb(249.8888888889, 250.6666666667, 251.1111111111);
 }
 .post-type-acf-field-group #acf-field-group-fields .acf-field-list-wrap .acf-input-sub .acf-input-sub .acf-input-sub .acf-input-sub .acf-field-object.open .handle {
-  background-color: #f4f6f7;
+  background-color: rgb(244.0962962963, 245.7555555556, 246.7037037037);
 }
 .post-type-acf-field-group #acf-field-group-fields .acf-field-list-wrap .acf-input-sub .acf-input-sub .acf-input-sub .acf-input-sub .acf-field-object .settings {
   border-left-color: #A3B1B9;
