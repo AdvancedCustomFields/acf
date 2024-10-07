@@ -124,10 +124,13 @@ class PluginUpdater {
 			return $transient;
 		}
 
+		$res = $this->parse_plugin_info( $result );
+
 		if ( version_compare( $this->properties['plugin_version'], $result->version, '<' ) ) {
-			$res                                 = $this->parse_plugin_info( $result );
 			$transient->response[ $res->plugin ] = $res;
 			$transient->checked[ $res->plugin ]  = $result->version;
+		} else {
+			$transient->no_update[ $res->plugin ] = $res;
 		}
 
 		return $transient;

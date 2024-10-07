@@ -4,7 +4,7 @@ Tags: acf, fields, custom fields, meta, repeater
 Requires at least: 6.0
 Tested up to: 6.6
 Requires PHP: 7.4
-Stable tag: 6.3.7
+Stable tag: 6.3.8
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -93,6 +93,11 @@ From your WordPress dashboard
 
 
 == Changelog ==
+
+= 6.3.8 =
+*Release Date 7th October 2024*
+
+* Security - ACF defined Post Type and Taxonomy metabox callbacks no longer have access to $_POST data. (Thanks to the Automattic Security Team for the disclosure)
 
 = 6.3.7 =
 *Release Date 2nd October 2024*

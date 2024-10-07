@@ -528,9 +528,9 @@ if ( ! class_exists( 'ACF_Post_Type' ) ) {
 				$args['supports'] = $supports;
 			}
 
-			// Handle register meta box callbacks if set from an import.
+			// Handle register meta box callbacks safely
 			if ( ! empty( $post['register_meta_box_cb'] ) ) {
-				$args['register_meta_box_cb'] = (string) $post['register_meta_box_cb'];
+				$args['register_meta_box_cb'] = array( $this, 'build_safe_context_for_metabox_cb' );
 			}
 
 			// WordPress doesn't register any default taxonomies.
@@ -617,6 +617,45 @@ if ( ! class_exists( 'ACF_Post_Type' ) ) {
 			$args['delete_with_user'] = (bool) $post['delete_with_user'];
 
 			return apply_filters( 'acf/post_type/registration_args', $args, $post );
+		}
+
+		/**
+		 * Ensure the metabox being called does not perform any unsafe operations.
+		 *
+		 * @since 6.3.8
+		 *
+		 * @param WP_Post $post The post being rendered.
+		 * @return mixed The callback result.
+		 */
+		public function build_safe_context_for_metabox_cb( $post ) {
+			$post_types = $this->get_posts();
+			$this_post  = array_filter(
+				$post_types,
+				function ( $post_type ) use ( $post ) {
+					return $post_type['post_type'] === $post->post_type;
+				}
+			);
+			if ( empty( $this_post ) || ! is_array( $this_post ) ) {
+				// Unable to find the ACF post type. Don't do anything.
+				return;
+			}
+			$acf_post_type = array_shift( $this_post );
+			$original_cb   = isset( $acf_post_type['register_meta_box_cb'] ) ? $acf_post_type['register_meta_box_cb'] : false;
+
+			// Prevent access to any wp_ prefixed functions in a callback.
+			if ( apply_filters( 'acf/post_type/prevent_access_to_wp_functions_in_meta_box_cb', true ) && substr( strtolower( $original_cb ), 0, 3 ) === 'wp_' ) {
+				// Don't execute register meta box callbacks if an internal wp function by default.
+				return;
+			}
+
+			$original_post = $_POST; //phpcs:ignore -- Only used as temporary storage to prevent CSRFs in callbacks.
+			$_POST         = array();
+			$return        = false;
+			if ( is_callable( $original_cb ) ) {
+				$return = call_user_func( $original_cb, $post );
+			}
+			$_POST = $original_post;
+			return $return;
 		}
 
 		/**
