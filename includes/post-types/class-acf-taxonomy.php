@@ -535,12 +535,15 @@ if ( ! class_exists( 'ACF_Taxonomy' ) ) {
 			}
 
 			$original_post = $_POST; //phpcs:ignore -- Only used as temporary storage to prevent CSRFs in callbacks.
+			$original_request = $_REQUEST; //phpcs:ignore -- Only used as temporary storage to prevent CSRFs in callbacks.
 			$_POST         = array();
+			$_REQUEST      = array();
 			$return        = false;
 			if ( is_callable( $original_cb ) ) {
 				$return = call_user_func( $original_cb, $post, $tax );
 			}
 			$_POST = $original_post;
+			$_REQUEST = $original_request;
 			return $return;
 		}
 
