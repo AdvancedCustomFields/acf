@@ -846,7 +846,7 @@ foreach ( acf_get_combined_post_type_settings_tabs() as $tab_key => $tab_label )
 					'prefix'       => 'acf_post_type',
 					'value'        => $acf_post_type['register_meta_box_cb'],
 					'label'        => __( 'Custom Meta Box Callback', 'acf' ),
-					'instructions' => __( 'A PHP function name to be called when setting up the meta boxes for the edit screen.', 'acf' ),
+					'instructions' => __( 'A PHP function name to be called when setting up the meta boxes for the edit screen. For security, this callback will be executed in a special context without access to any superglobals like $_POST or $_GET.', 'acf' ),
 					'conditions'   => array(
 						'field'    => 'show_ui',
 						'operator' => '==',

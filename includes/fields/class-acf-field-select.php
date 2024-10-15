@@ -56,7 +56,7 @@ if ( ! class_exists( 'acf_field_select' ) ) :
 
 			global $wp_scripts;
 
-			$min   = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+			$min   = defined( 'ACF_DEVELOPMENT_MODE' ) && ACF_DEVELOPMENT_MODE ? '' : '.min';
 			$major = acf_get_setting( 'select2_version' );
 
 			// attempt to find 3rd party Select2 version

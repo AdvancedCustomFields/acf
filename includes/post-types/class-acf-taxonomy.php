@@ -534,13 +534,27 @@ if ( ! class_exists( 'ACF_Taxonomy' ) ) {
 				return;
 			}
 
-			$original_post = $_POST; //phpcs:ignore -- Only used as temporary storage to prevent CSRFs in callbacks.
-			$_POST         = array();
-			$return        = false;
+			$unset     = array( '_POST', '_GET', '_REQUEST', '_COOKIE', '_SESSION', '_FILES', '_ENV', '_SERVER' );
+			$originals = array();
+
+			foreach ( $unset as $var ) {
+				if ( isset( $GLOBALS[ $var ] ) ) {
+					$originals[ $var ] = $GLOBALS[ $var ];
+					$GLOBALS[ $var ]   = array(); //phpcs:ignore -- used for building a safe context
+				}
+			}
+
+			$return = false;
 			if ( is_callable( $original_cb ) ) {
 				$return = call_user_func( $original_cb, $post, $tax );
 			}
-			$_POST = $original_post;
+
+			foreach ( $unset as $var ) {
+				if ( isset( $originals[ $var ] ) ) {
+					$GLOBALS[ $var ] = $originals[ $var ]; //phpcs:ignore -- used for restoring the original context
+				}
+			}
+
 			return $return;
 		}
 
