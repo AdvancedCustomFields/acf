@@ -4,7 +4,6 @@ Tags: acf, fields, custom fields, meta, repeater
 Requires at least: 6.0
 Tested up to: 6.6
 Requires PHP: 7.4
-Stable tag: 6.3.8
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -93,6 +92,15 @@ From your WordPress dashboard
 
 
 == Changelog ==
+
+= 6.3.10 =
+*Release Date 29th October 2024*
+
+* Security - Setting a metabox callback for custom post types and taxonomies now requires being an admin, or super admin for multisite installs
+* Security - Field specific ACF nonces are now prefixed, resolving an issue where third party nonces could be treated as valid for AJAX calls
+* Enhancement - A new “Close and Add Field” option is now available when editing a field group, inserting a new field inline after the field being edited
+* Enhancement - ACF and ACF PRO now share the same plugin updater for improved reliability and performance
+* Fix - Exporting post types and taxonomies containing metabox callbacks now correctly exports the user defined callback
 
 = 6.3.9 =
 *Release Date 15th October 2024*

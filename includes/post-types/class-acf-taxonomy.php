@@ -577,7 +577,13 @@ if ( ! class_exists( 'ACF_Taxonomy' ) ) {
 			$objects      = (array) $post['object_type'];
 			$objects      = var_export( $objects, true ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions -- Used for PHP export.
 			$args         = $this->get_taxonomy_args( $post, false );
-			$args         = var_export( $args, true ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions -- Used for PHP export.
+
+			// Restore original metabox callback.
+			if ( ! empty( $args['meta_box_cb'] ) && ! empty( $post['meta_box_cb'] ) ) {
+				$args['meta_box_cb'] = $post['meta_box_cb'];
+			}
+
+			$args = var_export( $args, true ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions -- Used for PHP export.
 
 			if ( ! $args ) {
 				return $return;
@@ -652,6 +658,37 @@ if ( ! class_exists( 'ACF_Taxonomy' ) ) {
 			}
 
 			return $post;
+		}
+
+		/**
+		 * Prepares an ACF taxonomy for import.
+		 *
+		 * @since 6.3.10
+		 *
+		 * @param array $post The ACF post array.
+		 * @return array
+		 */
+		public function prepare_post_for_import( $post ) {
+			if ( ! acf_get_setting( 'enable_meta_box_cb_edit' ) && ( ! empty( $post['meta_box_cb'] ) || ! empty( $post['meta_box_sanitize_cb'] ) ) ) {
+				$post['meta_box_cb']          = '';
+				$post['meta_box_sanitize_cb'] = '';
+
+				if ( ! empty( $post['meta_box'] ) && 'custom' === $post['meta_box'] ) {
+					$post['meta_box'] = 'default';
+				}
+
+				if ( ! empty( $post['ID'] ) ) {
+					$existing_post = $this->get_post( $post['ID'] );
+
+					if ( is_array( $existing_post ) ) {
+						$post['meta_box']             = ! empty( $existing_post['meta_box'] ) ? (string) $existing_post['meta_box'] : '';
+						$post['meta_box_cb']          = ! empty( $existing_post['meta_box_cb'] ) ? (string) $existing_post['meta_box_cb'] : '';
+						$post['meta_box_sanitize_cb'] = ! empty( $existing_post['meta_box_sanitize_cb'] ) ? (string) $existing_post['meta_box_sanitize_cb'] : '';
+					}
+				}
+			}
+
+			return parent::prepare_post_for_import( $post );
 		}
 
 		/**
