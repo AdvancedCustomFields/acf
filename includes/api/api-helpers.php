@@ -1378,8 +1378,16 @@ function acf_get_grouped_posts( $args ) {
 		$data[ $label ] = $this_group;
 	}
 
-	// return
-	return $data;
+	/**
+	 * Filters the results found in the `acf_get_grouped_posts()` function.
+	 * This allows for 3rd party customization.
+	 *
+	 * @since tbd
+	 *
+	 * @param array $data The results from the `get_posts()` call.
+	 * @param array $args The arguments passed to `acf_get_grouped_posts()`.
+	 */
+	return apply_filter( 'acf/get_grouped_posts', $data, $args );
 }
 
 /**
