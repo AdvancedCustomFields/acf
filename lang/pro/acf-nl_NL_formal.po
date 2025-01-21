@@ -242,7 +242,7 @@ msgid ""
 "it appears in your receipt or your account."
 msgstr ""
 "Licentiesleutel niet gevonden. Zorg ervoor dat u de licentiesleutel precies "
-"zo hebt gekopieerd als op uw ontvangstbewijs of in je account."
+"zo hebt gekopieerd als op uw ontvangstbewijs of in uw account."
 
 #: pro/updates.php:194
 msgid "Your license key has been deactivated."
