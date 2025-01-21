@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Advanced Custom Fields PRO\n"
 "Report-Msgid-Bugs-To: https://support.advancedcustomfields.com\n"
-"POT-Creation-Date: 2024-10-02 12:08+0000\n"
-"PO-Revision-Date: 2024-10-17 10:43+0200\n"
+"POT-Creation-Date: 2025-01-21 10:45+0000\n"
+"PO-Revision-Date: 2025-01-21 19:14+0100\n"
 "Last-Translator: Toine Rademacher (toineenzo) <hi@toine.zip>\n"
 "Language-Team: WP Engine <support@advancedcustomfields.com>\n"
 "Language: nl_NL\n"
@@ -26,7 +26,7 @@ msgstr ""
 msgid "Advanced Custom Fields PRO"
 msgstr "Advanced Custom Fields PRO"
 
-#: pro/acf-pro.php:175
+#: pro/acf-pro.php:174
 msgid ""
 "Your ACF PRO license is no longer active. Please renew to continue to have "
 "access to updates, support, & PRO features."
@@ -34,7 +34,7 @@ msgstr ""
 "Je ACF PRO licentie is niet langer actief. Verleng om toegang te blijven "
 "houden tot updates, ondersteuning en PRO functies."
 
-#: pro/acf-pro.php:172
+#: pro/acf-pro.php:171
 msgid ""
 "Your license has expired. Please renew to continue to have access to "
 "updates, support &amp; PRO features."
@@ -42,7 +42,7 @@ msgstr ""
 "Je licentie is verlopen. Verleng om toegang te blijven houden tot updates, "
 "ondersteuning &amp; PRO functies."
 
-#: pro/acf-pro.php:169
+#: pro/acf-pro.php:168
 msgid ""
 "Activate your license to enable access to updates, support &amp; PRO "
 "features."
@@ -50,15 +50,15 @@ msgstr ""
 "Activeer je licentie om toegang te krijgen tot updates, ondersteuning &amp; "
 "PRO functies."
 
-#: pro/acf-pro.php:190, pro/admin/views/html-settings-updates.php:114
+#: pro/acf-pro.php:189, pro/admin/views/html-settings-updates.php:114
 msgid "Manage License"
 msgstr "Licentie beheren"
 
-#: pro/acf-pro.php:258
+#: pro/acf-pro.php:257
 msgid "A valid license is required to edit options pages."
 msgstr "Je hebt een geldige licentie nodig om opties pagina's te bewerken."
 
-#: pro/acf-pro.php:256
+#: pro/acf-pro.php:255
 msgid "A valid license is required to edit field groups assigned to a block."
 msgstr ""
 "Je hebt een geldige licentie nodig om veldgroepen, die aan een blok zijn "
@@ -265,7 +265,7 @@ msgstr ""
 "Er is een onbekende fout opgetreden tijdens het communiceren met de ACF "
 "activeringsservice: %s."
 
-#: pro/updates.php:333, pro/updates.php:975
+#: pro/updates.php:333, pro/updates.php:949
 msgid "<strong>ACF PRO &mdash;</strong>"
 msgstr "<strong>ACF PRO &mdash;</strong>"
 
@@ -273,12 +273,12 @@ msgstr "<strong>ACF PRO &mdash;</strong>"
 msgid "Check again"
 msgstr "Opnieuw controleren"
 
-#: pro/updates.php:683
+#: pro/updates.php:657
 msgid "Could not connect to the activation server"
 msgstr "Kon niet verbinden met de activeringsserver"
 
 #. translators: %s - URL to ACF updates page
-#: pro/updates.php:753
+#: pro/updates.php:727
 msgid ""
 "Your license key is valid but not activated on this site. Please <a "
 "href=\"%s\">deactivate</a> and then reactivate the license."
@@ -286,7 +286,7 @@ msgstr ""
 "Je licentiesleutel is geldig maar niet geactiveerd op deze site. <a "
 "href=\"%s\">Deactiveer</a> de licentie en activeer deze opnieuw."
 
-#: pro/updates.php:975
+#: pro/updates.php:949
 msgid ""
 "Your site URL has changed since last activating your license. We've "
 "automatically activated it for this site URL."
@@ -294,7 +294,7 @@ msgstr ""
 "De URL van je site is veranderd sinds de laatste keer dat je je licentie "
 "hebt geactiveerd. We hebben het automatisch geactiveerd voor deze site URL."
 
-#: pro/updates.php:967
+#: pro/updates.php:941
 msgid ""
 "Your site URL has changed since last activating your license, but we weren't "
 "able to automatically reactivate it: %s"
