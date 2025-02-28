@@ -512,7 +512,7 @@ msgstr "Actions de groupe"
 
 #: pro/fields/class-acf-field-gallery.php:509
 msgid "Sort by date uploaded"
-msgstr "Ranger par date d’import"
+msgstr "Ordonner par date d’import"
 
 #: pro/fields/class-acf-field-gallery.php:510
 msgid "Sort by date modified"
@@ -530,12 +530,12 @@ msgstr "Inverser l’ordre actuel"
 # @ acf
 #: pro/fields/class-acf-field-gallery.php:524
 msgid "Close"
-msgstr "Appliquer"
+msgstr "Fermer"
 
 # @ acf
 #: pro/fields/class-acf-field-gallery.php:556
 msgid "Return Format"
-msgstr "Format dans le modèle"
+msgstr "Format de la valeur retournée"
 
 # @ acf
 #: pro/fields/class-acf-field-gallery.php:562
@@ -567,17 +567,17 @@ msgstr "Tous"
 
 #: pro/fields/class-acf-field-gallery.php:579
 msgid "Uploaded to post"
-msgstr "Liés à cette publication"
+msgstr "Téléversé sur l'article"
 
 # @ acf
 #: pro/fields/class-acf-field-gallery.php:615
 msgid "Minimum Selection"
-msgstr "Minimum d’images"
+msgstr "Nombre minimum"
 
 # @ acf
 #: pro/fields/class-acf-field-gallery.php:625
 msgid "Maximum Selection"
-msgstr "Maximum d’images"
+msgstr "Nombre maximum"
 
 # @ acf
 #: pro/fields/class-acf-field-gallery.php:635
@@ -603,7 +603,7 @@ msgstr "Hauteur"
 #: pro/fields/class-acf-field-gallery.php:662,
 #: pro/fields/class-acf-field-gallery.php:698
 msgid "File size"
-msgstr "Poids du fichier"
+msgstr "Taille du fichier"
 
 # @ acf
 #: pro/fields/class-acf-field-gallery.php:671
@@ -626,11 +626,11 @@ msgstr "Insérer"
 
 #: pro/fields/class-acf-field-gallery.php:728
 msgid "Specify where new attachments are added"
-msgstr "Définir comment les images sont insérées"
+msgstr "Définir où les nouveaux fichiers attachés sont ajoutés"
 
 #: pro/fields/class-acf-field-gallery.php:732
 msgid "Append to the end"
-msgstr "Insérer à la fin"
+msgstr "Ajouter à la fin"
 
 #: pro/fields/class-acf-field-gallery.php:733
 msgid "Prepend to the beginning"
@@ -849,7 +849,7 @@ msgstr "Oui"
 # @ wp3i
 #: pro/admin/views/html-settings-updates.php:98
 msgid "Upgrade Notice"
-msgstr "Améliorations"
+msgstr "Informations de mise à niveau"
 
 #: pro/admin/views/html-settings-updates.php:126
 msgid "Check For Updates"
