@@ -192,7 +192,7 @@ acf_add_filter_variations( 'acf/format_value', array( 'type', 'name', 'key' ), 2
  * @param   mixed        $value   The new value.
  * @param   (int|string) $post_id The post id.
  * @param   array        $field   The field array.
- * @return  boolean
+ * @return  int|boolean Meta ID if the key didn't exist, true on successful update, false on failure.
  */
 function acf_update_value( $value, $post_id, $field ) {
 
