@@ -1133,7 +1133,7 @@ add_shortcode( 'acf', 'acf_shortcode' );
  * @param mixed  $value    The value to save in the database.
  * @param mixed  $post_id  The post_id of which the value is saved against.
  *
- * @return boolean
+ * @return int|boolean Meta ID if the key didn't exist, true on successful update, false on failure.
  */
 function update_field( $selector, $value, $post_id = false ) {
 
@@ -1168,7 +1168,7 @@ function update_field( $selector, $value, $post_id = false ) {
  * @param   $value (mixed) the value to save in the database
  * @param   $post_id (mixed) the post_id of which the value is saved against
  *
- * @return  boolean
+ * @return  int|boolean Meta ID if the key didn't exist, true on successful update, false on failure.
  */
 function update_sub_field( $selector, $value, $post_id = false ) {
 
