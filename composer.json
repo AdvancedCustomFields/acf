@@ -1,0 +1,20 @@
+{
+	"name": "wp-engine/advanced-custom-fields",
+	"description": "Advanced Custom Fields",
+	"type": "wordpress-plugin",
+	"license": "GPLv2 or later",
+	"autoload": {
+		"psr-4": {
+			"ACF\\": "src/"
+		}
+	},
+	"authors": [
+		{
+			"name": "WP Engine"
+		}
+	],
+	"config": {
+		"optimize-autoloader": true
+	},
+	"require": {}
+}
