@@ -2,9 +2,9 @@
 Contributors: deliciousbrains, wpengine, elliotcondon, mattshaw, lgladdy, antpb, johnstonphilip, dalewilliams, polevaultweb
 Tags: acf, fields, custom fields, meta, repeater
 Requires at least: 6.0
-Tested up to: 6.7.2
+Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 6.4.0
+Stable tag: 6.4.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -93,6 +93,11 @@ From your WordPress dashboard
 
 
 == Changelog ==
+
+= 6.4.0.1 =
+*Release Date 8th April 2025*
+
+* Fix - Calling `acf_get_reference()` with an invalid field name no longer causes a fatal error
 
 = 6.4.0 =
 *Release Date 7th April 2025*
