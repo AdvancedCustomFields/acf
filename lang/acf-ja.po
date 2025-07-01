@@ -5379,7 +5379,7 @@ msgstr "下位のフィールドグループを最初に表示"
 
 #: includes/admin/views/acf-field-group/options.php:156
 msgid "Order No."
-msgstr "注文番号"
+msgstr "順番"
 
 #: includes/admin/views/acf-field-group/options.php:147
 msgid "Below fields"
