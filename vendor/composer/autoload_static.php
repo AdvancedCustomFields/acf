@@ -29,7 +29,6 @@ class ComposerStaticInit94e23cbc47a4750e27ee21b7644f1866
         'ACF\\Meta\\Term' => __DIR__ . '/../..' . '/src/Meta/Term.php',
         'ACF\\Meta\\User' => __DIR__ . '/../..' . '/src/Meta/User.php',
         'ACF\\Site_Health\\Site_Health' => __DIR__ . '/../..' . '/src/Site_Health/Site_Health.php',
-        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

@@ -14,7 +14,13 @@
 		}
 	],
 	"config": {
-		"optimize-autoloader": true
+		"optimize-autoloader": true,
+		"classmap-authoritative": true
+	},
+	"scripts": {
+		"post-autoload-dump": [
+			"sed -i '' \"/InstalledVersions.php/d\" vendor/composer/autoload_static.php"
+		]
 	},
 	"require": {}
 }
