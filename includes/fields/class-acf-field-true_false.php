@@ -60,6 +60,14 @@ if ( ! class_exists( 'acf_field_true_false' ) ) :
 				'value' => 0,
 			);
 
+			if (!empty($field['readonly']) || !empty($field['disabled'])) {
+                		$input['disabled'] = 'disabled';
+                		unset($input['name']);
+
+                		// if the field meant to be disabled, the element not mutable, focusable, or even submitted with the form.
+                		$hidden['value'] = !empty($field['readonly']) && empty($field['disabled']) ? $field['value'] : 0;
+            		}
+
 			$active = $field['value'] ? true : false;
 			$switch = '';
 
