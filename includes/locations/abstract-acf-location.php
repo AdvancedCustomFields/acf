@@ -180,6 +180,10 @@ if ( ! class_exists( 'ACF_Location' ) ) :
 		 * @return  boolean
 		 */
 		public function compare_to_rule( $value, $rule ) {
+			if ( !isset($rule['value']) ) {
+				return false;
+			}
+
 			$result = ( $value == $rule['value'] );
 
 			// Allow "all" to match any value.
