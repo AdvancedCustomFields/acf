@@ -903,14 +903,15 @@ function acf_render_field_instructions( $field, $tooltip = false ) {
 		$instructions = acf_esc_html( $field['instructions'] );
 
 		if ( $tooltip ) {
-			printf( '<div class="acf-tip"><i tabindex="0" class="acf-icon acf-icon-help acf-js-tooltip" title="%s">?</i></div>', esc_attr( $instructions ) ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped earlier in function.
+			$description = sprintf( '<div class="acf-tip"><i tabindex="0" class="acf-icon acf-icon-help acf-js-tooltip" title="%s">?</i></div>', esc_attr( $instructions ) ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped earlier in function.
 		} else {
-			printf( '<p class="description">%s</p>', $instructions ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped earlier in function.
+			$description =sprintf( '<p class="description">%s</p>', $instructions ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped earlier in function.
 		}
 	} elseif ( ! empty( $field['hint'] ) ) {
 		$instructions = acf_esc_html( $field['hint'] );
-		printf( '<p class="description">%s</p>', $instructions ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped earlier in function.
+		$description =sprintf( '<p class="description">%s</p>', $instructions ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped earlier in function.
 	}
+	echo \apply_filters( 'acf/render_field_instructions', $description, $field, $tooltip ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped earlier in function.
 }
 
 /**
