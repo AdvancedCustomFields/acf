@@ -6,13 +6,28 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'ACF\\AI\\AI' => $baseDir . '/src/AI/AI.php',
+    'ACF\\AI\\Abilities\\ACF_REST_Ability' => $baseDir . '/src/AI/Abilities/ACF_REST_Ability.php',
+    'ACF\\AI\\Abilities\\Abilities' => $baseDir . '/src/AI/Abilities/Abilities.php',
+    'ACF\\AI\\Abilities\\AbstractAbilityGroup' => $baseDir . '/src/AI/Abilities/AbstractAbilityGroup.php',
+    'ACF\\AI\\Abilities\\FieldGroup' => $baseDir . '/src/AI/Abilities/FieldGroup.php',
+    'ACF\\AI\\Abilities\\PostType' => $baseDir . '/src/AI/Abilities/PostType.php',
+    'ACF\\AI\\Abilities\\Taxonomy' => $baseDir . '/src/AI/Abilities/Taxonomy.php',
+    'ACF\\AI\\GEO\\FieldSettings' => $baseDir . '/src/AI/GEO/FieldSettings.php',
+    'ACF\\AI\\GEO\\GEO' => $baseDir . '/src/AI/GEO/GEO.php',
+    'ACF\\AI\\GEO\\Outputs\\Posts' => $baseDir . '/src/AI/GEO/Outputs/Posts.php',
+    'ACF\\AI\\GEO\\Schema' => $baseDir . '/src/AI/GEO/Schema.php',
+    'ACF\\AI\\GEO\\SchemaData' => $baseDir . '/src/AI/GEO/SchemaData.php',
     'ACF\\Blocks\\Bindings' => $baseDir . '/src/Blocks/Bindings.php',
+    'ACF\\CLI\\CLI' => $baseDir . '/src/CLI/CLI.php',
+    'ACF\\CLI\\JsonCommand' => $baseDir . '/src/CLI/JsonCommand.php',
     'ACF\\Meta\\Comment' => $baseDir . '/src/Meta/Comment.php',
     'ACF\\Meta\\MetaLocation' => $baseDir . '/src/Meta/MetaLocation.php',
     'ACF\\Meta\\Option' => $baseDir . '/src/Meta/Option.php',
     'ACF\\Meta\\Post' => $baseDir . '/src/Meta/Post.php',
     'ACF\\Meta\\Term' => $baseDir . '/src/Meta/Term.php',
     'ACF\\Meta\\User' => $baseDir . '/src/Meta/User.php',
+    'ACF\\Site_Health\\AI_Usage' => $baseDir . '/src/Site_Health/AI_Usage.php',
     'ACF\\Site_Health\\Site_Health' => $baseDir . '/src/Site_Health/Site_Health.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
 );
