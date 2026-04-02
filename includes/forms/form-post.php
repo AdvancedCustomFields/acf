@@ -321,8 +321,9 @@ if ( ! class_exists( 'ACF_Form_Post' ) ) :
 				return $post_id;
 			}
 
-			// Validate for published post (allow draft to save without validation).
-			if ( $post->post_status === 'publish' ) {
+			// Validate the post. By default, only validate published posts.
+			$validate_post_statuses = apply_filters( 'acf/validate_save_post_statuses', array( 'publish' ) );
+			if ( in_array( $post->post_status, $validate_post_statuses ) ) {
 				// Bail early if validation fails.
 				if ( ! acf_validate_save_post() ) {
 					return;
