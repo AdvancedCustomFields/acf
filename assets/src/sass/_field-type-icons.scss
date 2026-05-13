@@ -1,0 +1,272 @@
+@use 'variables' as *;
+
+/*--------------------------------------------------------------------------------------------
+*
+*	Field type icon base styling
+*
+*--------------------------------------------------------------------------------------------*/
+.field-type-icon {
+	box-sizing: border-box;
+	display: inline-flex;
+	align-content: center;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	width: 24px;
+	height: 24px;
+	top: -4px;
+	background-color: $blue-50;
+	border: {
+		width: 1px;
+		style: solid;
+		color: $blue-200;
+	};
+	border-radius: 100%;
+
+	&:before {
+		$icon-size: 14px;
+		content: "";
+		width: $icon-size;
+		height: $icon-size;
+		position: relative;
+		background-color: $blue-500;
+		-webkit-mask-size: cover;
+		mask-size: cover;
+		-webkit-mask-repeat: no-repeat;
+		mask-repeat: no-repeat;
+		-webkit-mask-position: center;
+		mask-position: center;
+		-webkit-mask-image: url('../../images/field-type-icons/icon-field-default.svg');
+		mask-image: url('../../images/field-type-icons/icon-field-default.svg');
+	}
+
+}
+
+/*--------------------------------------------------------------------------------------------
+*
+*	Field type icons
+*
+*--------------------------------------------------------------------------------------------*/
+
+// Text field
+.field-type-icon.field-type-icon-text:before {
+	-webkit-mask-image: url('../../images/field-type-icons/icon-field-text.svg');
+	mask-image: url('../../images/field-type-icons/icon-field-text.svg');
+}
+
+// Textarea
+.field-type-icon.field-type-icon-textarea:before {
+	-webkit-mask-image: url('../../images/field-type-icons/icon-field-textarea.svg');
+	mask-image: url('../../images/field-type-icons/icon-field-textarea.svg');
+}
+
+// Textarea
+.field-type-icon.field-type-icon-textarea:before {
+	-webkit-mask-image: url('../../images/field-type-icons/icon-field-textarea.svg');
+	mask-image: url('../../images/field-type-icons/icon-field-textarea.svg');
+}
+
+// Number
+.field-type-icon.field-type-icon-number:before {
+	-webkit-mask-image: url('../../images/field-type-icons/icon-field-number.svg');
+	mask-image: url('../../images/field-type-icons/icon-field-number.svg');
+}
+
+// Range
+.field-type-icon.field-type-icon-range:before {
+	-webkit-mask-image: url('../../images/field-type-icons/icon-field-range.svg');
+	mask-image: url('../../images/field-type-icons/icon-field-range.svg');
+}
+
+// Email
+.field-type-icon.field-type-icon-email:before {
+	-webkit-mask-image: url('../../images/field-type-icons/icon-field-email.svg');
+	mask-image: url('../../images/field-type-icons/icon-field-email.svg');
+}
+
+// URL
+.field-type-icon.field-type-icon-url:before {
+	-webkit-mask-image: url('../../images/field-type-icons/icon-field-url.svg');
+	mask-image: url('../../images/field-type-icons/icon-field-url.svg');
+}
+
+// Password
+.field-type-icon.field-type-icon-password:before {
+	-webkit-mask-image: url('../../images/field-type-icons/icon-field-password.svg');
+	mask-image: url('../../images/field-type-icons/icon-field-password.svg');
+}
+
+// Image
+.field-type-icon.field-type-icon-image:before {
+	-webkit-mask-image: url('../../images/field-type-icons/icon-field-image.svg');
+	mask-image: url('../../images/field-type-icons/icon-field-image.svg');
+}
+
+// File
+.field-type-icon.field-type-icon-file:before {
+	-webkit-mask-image: url('../../images/field-type-icons/icon-field-file.svg');
+	mask-image: url('../../images/field-type-icons/icon-field-file.svg');
+}
+
+// WYSIWYG
+.field-type-icon.field-type-icon-wysiwyg:before {
+	-webkit-mask-image: url('../../images/field-type-icons/icon-field-wysiwyg.svg');
+	mask-image: url('../../images/field-type-icons/icon-field-wysiwyg.svg');
+}
+
+// oEmbed
+.field-type-icon.field-type-icon-oembed:before {
+	-webkit-mask-image: url('../../images/field-type-icons/icon-field-oembed.svg');
+	mask-image: url('../../images/field-type-icons/icon-field-oembed.svg');
+}
+
+// Gallery
+.field-type-icon.field-type-icon-gallery:before {
+	-webkit-mask-image: url('../../images/field-type-icons/icon-field-gallery.svg');
+	mask-image: url('../../images/field-type-icons/icon-field-gallery.svg');
+}
+
+// Select
+.field-type-icon.field-type-icon-select:before {
+	-webkit-mask-image: url('../../images/field-type-icons/icon-field-select.svg');
+	mask-image: url('../../images/field-type-icons/icon-field-select.svg');
+}
+
+// Checkbox
+.field-type-icon.field-type-icon-checkbox:before {
+	-webkit-mask-image: url('../../images/field-type-icons/icon-field-checkbox.svg');
+	mask-image: url('../../images/field-type-icons/icon-field-checkbox.svg');
+}
+
+// Radio Button
+.field-type-icon.field-type-icon-radio:before {
+	-webkit-mask-image: url('../../images/field-type-icons/icon-field-radio.svg');
+	mask-image: url('../../images/field-type-icons/icon-field-radio.svg');
+}
+
+// Button Group
+.field-type-icon.field-type-icon-button-group:before {
+	-webkit-mask-image: url('../../images/field-type-icons/icon-field-button-group.svg');
+	mask-image: url('../../images/field-type-icons/icon-field-button-group.svg');
+}
+
+// True / False
+.field-type-icon.field-type-icon-true-false:before {
+	-webkit-mask-image: url('../../images/field-type-icons/icon-field-true-false.svg');
+	mask-image: url('../../images/field-type-icons/icon-field-true-false.svg');
+}
+
+// Link
+.field-type-icon.field-type-icon-link:before {
+	-webkit-mask-image: url('../../images/field-type-icons/icon-field-link.svg');
+	mask-image: url('../../images/field-type-icons/icon-field-link.svg');
+}
+
+// Post Object
+.field-type-icon.field-type-icon-post-object:before {
+	-webkit-mask-image: url('../../images/field-type-icons/icon-field-post-object.svg');
+	mask-image: url('../../images/field-type-icons/icon-field-post-object.svg');
+}
+
+// Page Link
+.field-type-icon.field-type-icon-page-link:before {
+	-webkit-mask-image: url('../../images/field-type-icons/icon-field-page-link.svg');
+	mask-image: url('../../images/field-type-icons/icon-field-page-link.svg');
+}
+
+// Relationship
+.field-type-icon.field-type-icon-relationship:before {
+	-webkit-mask-image: url('../../images/field-type-icons/icon-field-relationship.svg');
+	mask-image: url('../../images/field-type-icons/icon-field-relationship.svg');
+}
+
+// Taxonomy
+.field-type-icon.field-type-icon-taxonomy:before {
+	-webkit-mask-image: url('../../images/field-type-icons/icon-field-taxonomy.svg');
+	mask-image: url('../../images/field-type-icons/icon-field-taxonomy.svg');
+}
+
+// User
+.field-type-icon.field-type-icon-user:before {
+	-webkit-mask-image: url('../../images/field-type-icons/icon-field-user.svg');
+	mask-image: url('../../images/field-type-icons/icon-field-user.svg');
+}
+
+// Google Map
+.field-type-icon.field-type-icon-google-map:before {
+	-webkit-mask-image: url('../../images/field-type-icons/icon-field-google-map.svg');
+	mask-image: url('../../images/field-type-icons/icon-field-google-map.svg');
+}
+
+// Date Picker
+.field-type-icon.field-type-icon-date-picker:before {
+	-webkit-mask-image: url('../../images/field-type-icons/icon-field-date-picker.svg');
+	mask-image: url('../../images/field-type-icons/icon-field-date-picker.svg');
+}
+
+// Date / Time Picker
+.field-type-icon.field-type-icon-date-time-picker:before {
+	-webkit-mask-image: url('../../images/field-type-icons/icon-field-date-time-picker.svg');
+	mask-image: url('../../images/field-type-icons/icon-field-date-time-picker.svg');
+}
+
+// Time Picker
+.field-type-icon.field-type-icon-time-picker:before {
+	-webkit-mask-image: url('../../images/field-type-icons/icon-field-time-picker.svg');
+	mask-image: url('../../images/field-type-icons/icon-field-time-picker.svg');
+}
+
+// Color Picker
+.field-type-icon.field-type-icon-color-picker:before {
+	-webkit-mask-image: url('../../images/field-type-icons/icon-field-color-picker.svg');
+	mask-image: url('../../images/field-type-icons/icon-field-color-picker.svg');
+}
+
+// Icon Picker
+.field-type-icon.field-type-icon-icon-picker:before {
+	-webkit-mask-image: url('../../images/field-type-icons/icon-field-icon-picker.svg');
+	mask-image: url('../../images/field-type-icons/icon-field-icon-picker.svg');
+}
+
+// Message
+.field-type-icon.field-type-icon-message:before {
+	-webkit-mask-image: url('../../images/field-type-icons/icon-field-message.svg');
+	mask-image: url('../../images/field-type-icons/icon-field-message.svg');
+}
+
+// Accordion
+.field-type-icon.field-type-icon-accordion:before {
+	-webkit-mask-image: url('../../images/field-type-icons/icon-field-accordion.svg');
+	mask-image: url('../../images/field-type-icons/icon-field-accordion.svg');
+}
+
+// Tab
+.field-type-icon.field-type-icon-tab:before {
+	-webkit-mask-image: url('../../images/field-type-icons/icon-field-tab.svg');
+	mask-image: url('../../images/field-type-icons/icon-field-tab.svg');
+}
+
+// Group
+.field-type-icon.field-type-icon-group:before {
+	-webkit-mask-image: url('../../images/field-type-icons/icon-field-group.svg');
+	mask-image: url('../../images/field-type-icons/icon-field-group.svg');
+}
+
+// Repeater
+.field-type-icon.field-type-icon-repeater:before {
+	-webkit-mask-image: url('../../images/field-type-icons/icon-field-repeater.svg');
+	mask-image: url('../../images/field-type-icons/icon-field-repeater.svg');
+}
+
+
+// Flexible Content
+.field-type-icon.field-type-icon-flexible-content:before {
+	-webkit-mask-image: url('../../images/field-type-icons/icon-field-flexible-content.svg');
+	mask-image: url('../../images/field-type-icons/icon-field-flexible-content.svg');
+}
+
+// Clone
+.field-type-icon.field-type-icon-clone:before {
+	-webkit-mask-image: url('../../images/field-type-icons/icon-field-clone.svg');
+	mask-image: url('../../images/field-type-icons/icon-field-clone.svg');
+}

@@ -1,0 +1,322 @@
+@use 'variables' as *;
+
+/*--------------------------------------------------------------------------------------------
+*
+*	Post type & taxonomies styles
+*
+*--------------------------------------------------------------------------------------------*/
+
+.acf-admin-single-post-type,
+.acf-admin-single-taxonomy,
+.acf-admin-single-options-page {
+	label[for="acf-basic-settings-hide"] {
+		display: none;
+	}
+	fieldset.columns-prefs {
+		display: none;
+	}
+
+	#acf-basic-settings {
+		.postbox-header {
+			display: none;
+		}
+	}
+
+	.postbox-container,
+	.notice {
+		max-width: $max-width;
+		clear: left;
+	}
+
+	#post-body-content {
+		margin: 0;
+	}
+
+	// Main postbox
+	.postbox,
+	.acf-box {
+		.inside {
+			padding: {
+				top: 48px;
+				right: 48px;
+				bottom: 48px;
+				left: 48px;
+			}
+		}
+	}
+
+	#acf-advanced-settings.postbox {
+		.inside {
+			padding: {
+				bottom: 24px;
+			}
+		}
+	}
+
+	.postbox-container .meta-box-sortables #acf-basic-settings .inside {
+		border: none;
+	}
+
+	// Input wrap
+	.acf-input-wrap {
+		overflow: visible;
+	}
+
+	// Field & label margins & paddings
+	.acf-field {
+		margin: {
+			top: 0;
+			right: 0;
+			bottom: 24px;
+			left: 0;
+		}
+
+		.acf-label {
+			margin: {
+				bottom: 6px;
+			}
+		}
+	}
+
+	// Specific field overrides
+	.acf-field-text,
+	.acf-field-textarea,
+	.acf-field-select {
+		max-width: 600px;
+	}
+
+	.acf-field-true-false {
+		max-width: 700px;
+	}
+
+	.acf-field-supports {
+		max-width: 600px;
+
+		.acf-label {
+			display: block;
+
+			.description {
+				margin: {
+					top: 4px;
+					bottom: 12px;
+				}
+			}
+		}
+
+		ul.acf_post_type_supports.acf-checkbox-list {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			grid-auto-flow: column;
+			grid-template-rows: repeat(4, auto);
+
+			// Hide clearfix pseudo-elements that interfere with grid layout.
+			&::before,
+			&::after {
+				display: none;
+			}
+
+			&:focus-within {
+				border-color: transparent;
+			}
+
+			> li {
+				float: none;
+				width: auto;
+
+				// Notes checkbox - indented child of Editor with tree branch indicator.
+				&:has(input[value="notes"]) {
+					padding-left: 24px;
+					position: relative;
+
+					&::before {
+						content: '';
+						position: absolute;
+						left: 4px;
+						top: 25%;
+						transform: translateY(-50%);
+						width: 10px;
+						height: 12px;
+						background-color: $gray-300;
+						-webkit-mask-image: url("../../images/icons/icon-tree-branch.svg");
+						mask-image: url("../../images/icons/icon-tree-branch.svg");
+						-webkit-mask-size: contain;
+						mask-size: contain;
+						-webkit-mask-repeat: no-repeat;
+						mask-repeat: no-repeat;
+					}
+				}
+
+				// Disabled checkbox styling.
+				&:has(input:disabled) {
+					label {
+						color: $gray-400;
+						cursor: not-allowed;
+					}
+
+					input[type="checkbox"] {
+						cursor: not-allowed;
+					}
+				}
+
+				// Add Custom button - spans full width below checkboxes.
+				&:has(a.button.acf-add-checkbox) {
+					grid-column: 1 / -1;
+					grid-row: 5;
+					margin-top: 8px;
+				}
+
+				a.button {
+					background-color: transparent;
+					padding: 0;
+					border: 0;
+					height: auto;
+					min-height: auto;
+					margin-top: 0;
+					border-radius: 0;
+					line-height: 22px;
+					&:before {
+						content: '';
+						$icon-size: 16px;
+						margin-right: 6px;
+						display: inline-flex;
+						width: $icon-size;
+						height: $icon-size;
+						background-color: currentColor;
+						border: none;
+						border-radius: 0;
+						-webkit-mask-size: contain;
+						mask-size: contain;
+						-webkit-mask-repeat: no-repeat;
+						mask-repeat: no-repeat;
+						-webkit-mask-position: center;
+						mask-position: center;
+						text-indent: 500%;
+						white-space: nowrap;
+						overflow: hidden;
+						-webkit-mask-image: url("../../images/icons/icon-add.svg");
+						mask-image: url("../../images/icons/icon-add.svg");
+					}
+					&:hover {
+						color: $blue-700;
+					}
+				}
+
+				input[type=text] {
+					width: calc(100% - 36px);
+					padding: 0;
+					box-shadow: none;
+					border: none;
+					border-bottom: 1px solid $gray-300;
+					border-radius: 0;
+					height: auto;
+					margin: 0;
+					min-height: auto;
+					&:focus {
+						outline: none;
+						border-bottom-color: $blue-400;
+					}
+				}
+			}
+		}
+	}
+
+	// Dividers
+	.acf-field-seperator {
+		margin: {
+			top: 40px;
+			bottom: 40px;
+		}
+		border: {
+			top: 1px solid $gray-200;
+			right: none;
+			bottom: none;
+			left: none;
+		}
+	}
+
+	// Remove margin from last fields in postbox
+	.acf-field-advanced-configuration {
+		margin: {
+			bottom: 0;
+		}
+	}
+
+	// Tabbed navigation & labels utility bar
+	.postbox-container .acf-tab-wrap,
+	.acf-regenerate-labels-bar {
+		position: relative;
+		top: -48px;
+		left: -48px;
+		width: calc(100% + 96px);
+	}
+
+	// Labels utility bar
+	.acf-regenerate-labels-bar {
+		display: flex;
+		align-items: center;
+		justify-content: right;
+		min-height: 48px;
+		margin: {
+			bottom: 0;
+		}
+		padding: {
+			right: 16px;
+			left: 16px;
+		}
+		gap: 8px;
+		border-bottom: {
+			width: 1px;
+			style: solid;
+			color: $gray-100;
+		}
+	}
+
+	// Labels utility bar help/tip icon
+	.acf-labels-tip {
+		display: inline-flex;
+		align-items: center;
+		min-height: 24px;
+		margin: {
+			right: 8px;
+		}
+		padding: {
+			left: 16px;
+		}
+		border-left: {
+			width: 1px;
+			style: solid;
+			color: $gray-200;
+		}
+
+		.acf-icon {
+			display: inline-flex;
+			align-items: center;
+			$icon-size: 16px;
+			width: $icon-size;
+			height: $icon-size;
+			-webkit-mask-size: $icon-size;
+			mask-size: $icon-size;
+			background-color: $gray-400;
+		}
+	}
+}
+
+// Select2 for default values in permalink rewrite
+.acf-select2-default-pill {
+	border-radius: 100px;
+	min-height: 20px;
+	padding: {
+		top: 2px;
+		bottom: 2px;
+		left: 8px;
+		right: 8px;
+	}
+	font-size: 11px;
+	margin-left: 6px;
+	background-color: $gray-200;
+	color: $gray-500;
+}
+
+.acf-menu-position-desc-child {
+	display: none;
+}

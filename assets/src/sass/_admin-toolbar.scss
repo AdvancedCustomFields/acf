@@ -1,0 +1,452 @@
+@use 'variables' as *;
+@use 'typography' as *;
+
+/*---------------------------------------------------------------------------------------------
+*
+*  Admin Navigation
+*
+*---------------------------------------------------------------------------------------------*/
+.acf-admin-toolbar {
+	position: unset;
+	top: 32px;
+	height: 72px;
+	z-index: 800;
+	background: $gray-700;
+	color: $gray-400;
+
+	.acf-admin-toolbar-inner {
+		display: flex;
+		justify-content: space-between;
+		align-content: center;
+		align-items: center;
+		max-width: 100%;
+
+		.acf-nav-wrap {
+			display: flex;
+			align-items: center;
+
+			position: relative;
+			padding-left: 72px;
+
+			@media screen and (max-width: 1250px) {
+				.acf-header-tab-acf-post-type,
+				.acf-header-tab-acf-taxonomy {
+					display: none;
+				}
+
+				.acf-more {
+					.acf-header-tab-acf-post-type,
+					.acf-header-tab-acf-taxonomy {
+						display: flex;
+					}
+				}
+			}
+
+		}
+		
+		.acf-nav-upgrade-wrap {
+			display: flex;
+			align-items: center;
+		}
+
+		.acf-nav-wpengine-logo {
+			display: inline-flex;
+			margin-left: 24px;
+
+			img {
+				height: 20px;
+			}
+
+			@media screen and (max-width: 1000px) {
+				display: none;
+			}
+		}
+	}
+
+	@media screen and (max-width: $md) {
+		position: static;
+	}
+
+	.acf-logo {
+		display: flex;
+		margin: {
+			right: 24px;
+		}
+		text-decoration: none;
+
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		img {
+			display: block;
+		}
+
+		&.pro img {
+			height: 46px;
+		}
+	}
+
+	h2 {
+		display: none;
+		color: $gray-50;
+	}
+
+	.acf-tab {
+		display: flex;
+		align-items: center;
+		box-sizing: border-box;
+		min-height: 40px;
+		margin: {
+			right: 8px;
+		}
+		padding: {
+			top: 8px;
+			right: 16px;
+			bottom: 8px;
+			left: 16px;
+		}
+		border: {
+			width: 1px;
+			style: solid;
+			color: transparent;
+		}
+		border-radius: $radius-md;
+		@extend .p4;
+		color: $gray-400;
+		text-decoration: none;
+
+		&.is-active {
+			background-color: $gray-600;
+			color: #fff;
+		}
+		&:hover {
+			background-color: $gray-600;
+			color: $gray-50;
+		}
+		&:focus-visible {
+			border: {
+				width: 1px;
+				style: solid;
+				color: $gray-500;
+			}
+		}
+		&:focus {
+			box-shadow: none;
+		}
+	}
+
+	.acf-more {
+		&:hover {
+			.acf-tab.acf-more-tab {
+				background-color: $gray-600;
+				color: $gray-50;
+			}
+		}
+		
+		ul {
+			display: none;
+			position: absolute;
+			box-sizing: border-box;
+			background: #fff;
+			z-index: 1051;
+			overflow: hidden;
+			min-width: 280px;
+			margin: {
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+			};
+			padding: 0;
+			border-radius: $radius-lg;
+			box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 8px 23px rgba(0, 0, 0, 0.12);
+			
+			.acf-wp-engine {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				min-height: 48px;
+				border-top: 1px solid rgba(0, 0, 0, 0.08);
+				background: #ECFBFC;
+				
+				a {
+					display: flex;
+					width: 100%;
+					justify-content: space-between;
+					border-top: none;
+				}
+				
+			}
+
+			li {
+				margin: 0;
+				padding: 0 16px;
+
+				.acf-header-tab-acf-post-type,
+				.acf-header-tab-acf-taxonomy {
+					display: none;
+				}
+
+				&.acf-more-section-header {
+					background: $gray-50;
+					padding: 1px 0 0 0;
+					margin-top: -1px;
+					border-top: 1px solid $gray-200;
+					border-bottom: 1px solid $gray-200;
+
+					span {
+						color: $gray-600;
+						font-size: 12px;
+						font-weight: bold;
+
+						&:hover {
+							background: $gray-50;
+						}
+					}
+				}
+				
+				// Links
+				a {
+					margin: 0;
+					padding: 0;
+					color: $gray-800;
+					border-radius: 0;
+					border-top: {
+						width: 1px;
+						style: solid;
+						color: $gray-100;
+					};
+					
+					&:hover,
+					&.acf-tab.is-active {
+						background-color: unset;
+						color: $blue-500;
+					}
+					
+					i.acf-icon {
+						display: none !important;
+						$icon-size: 16px;
+						width: $icon-size;
+						height: $icon-size;
+						-webkit-mask-size: $icon-size;
+						mask-size: $icon-size;
+						background-color: $gray-400 !important;
+					}
+
+					.acf-requires-pro {
+						justify-content: center;
+						align-items: center;
+						color: white;
+						background: $gradient-pro;
+						border-radius: 100px;
+						font-size: 11px;
+						position: absolute;
+						right: 16px;
+						padding: {
+							right: 6px;
+							left: 6px;
+						}
+					}
+
+					img.acf-wp-engine-pro {
+						display: block;
+						height: 16px;
+						width: auto;
+					}
+
+					.acf-wp-engine-upsell-pill {
+						display: inline-flex;
+						justify-content: center;
+						align-items: center;
+						min-height: 22px;
+						border-radius: 100px;
+						font-size: 11px;
+						padding: {
+							right: 8px;
+							left: 8px;
+						}
+						background: #0ECAD4;
+						color: #FFFFFF;
+						text-shadow: 0px 1px 0 rgba(0, 0, 0, 0.12);
+						text-transform: uppercase;
+					}
+				}
+				
+				// First list item
+				&:first-child {
+					a {
+						border-bottom: none;
+					}	
+				}
+				
+			}
+			
+			&:hover,
+			&:focus {
+				display: block;
+			}
+		}
+		&:hover,
+		&:focus {
+			ul {
+				display: block;
+			}
+		}
+	}
+
+	// Within wpcontent.
+	#wpcontent & {
+		box-sizing: border-box;
+		margin-left: -20px;
+		padding: {
+			top: 16px;
+			right: 32px;
+			bottom: 16px;
+			left: 32px;
+		}
+	}
+
+	// Mobile
+	@media screen and (max-width: 600px) {
+		& {
+			display: none;
+		}
+	}
+}
+
+.rtl {
+	#wpcontent .acf-admin-toolbar {
+		margin-left: 0;
+		margin-right: -20px;
+
+		.acf-tab {
+			margin: {
+				left: 8px;
+				right: 0;
+			}
+		}
+	}
+
+	.acf-logo {
+		margin: {
+			right: 0;
+			left: 32px;
+		}
+	}
+}
+
+/*---------------------------------------------------------------------------------------------
+*
+*  Admin Toolbar Icons
+*
+*---------------------------------------------------------------------------------------------*/
+.acf-admin-toolbar {
+	.acf-tab,
+	.acf-more {
+		i.acf-icon {
+			display: none; // Icons only shown for specified nav items below
+			margin: {
+				right: 8px;
+				left: -2px;
+			}
+			
+			&.acf-icon-dropdown {
+				-webkit-mask-image: url("../../images/icons/icon-chevron-down.svg");
+				mask-image: url("../../images/icons/icon-chevron-down.svg");
+				$icon-size: 16px;
+				width: $icon-size;
+				height: $icon-size;
+				-webkit-mask-size: $icon-size;
+				mask-size: $icon-size;
+				margin: {
+					right: -6px;
+					left: 6px;
+				};
+			}
+			
+		}
+
+		// Only show icons for specified nav items, stops third party plugin items with no icon appearing broken
+		&.acf-header-tab-acf-field-group,
+		&.acf-header-tab-acf-post-type,
+		&.acf-header-tab-acf-taxonomy,
+		&.acf-header-tab-acf-tools,
+		&.acf-header-tab-acf-settings-updates,
+		&.acf-header-tab-acf-more {
+			i.acf-icon {
+				display: inline-flex;
+			}
+		}
+
+		&.is-active,
+		&:hover {
+			i.acf-icon {
+				background-color: $gray-200;
+			}
+		}
+	}
+
+	.rtl & .acf-tab {
+		i.acf-icon {
+			margin: {
+				right: -2px;
+				left: 8px;
+			}
+		}
+	}
+
+	// Field groups tab
+	.acf-header-tab-acf-field-group {
+		i.acf-icon {
+			$icon-url: url("../../images/icons/icon-field-groups.svg");
+			-webkit-mask-image: $icon-url;
+			mask-image: $icon-url;
+		}
+	}
+
+	// Post types tab
+	.acf-header-tab-acf-post-type {
+		i.acf-icon {
+			$icon-url: url("../../images/icons/icon-post-type.svg");
+			-webkit-mask-image: $icon-url;
+			mask-image: $icon-url;
+		}
+	}
+
+	// Taxonomies tab
+	.acf-header-tab-acf-taxonomy {
+		i.acf-icon {
+			$icon-url: url("../../images/icons/icon-taxonomies.svg");
+			-webkit-mask-image: $icon-url;
+			mask-image: $icon-url;
+		}
+	}
+
+	// Tools tab
+	.acf-header-tab-acf-tools {
+		i.acf-icon {
+			$icon-url: url("../../images/icons/icon-tools.svg");
+			-webkit-mask-image: $icon-url;
+			mask-image: $icon-url;
+		}
+	}
+
+	// Updates tab
+	.acf-header-tab-acf-settings-updates {
+		i.acf-icon {
+			$icon-url: url("../../images/icons/icon-updates.svg");
+			-webkit-mask-image: $icon-url;
+			mask-image: $icon-url;
+		}
+	}
+	
+	// More tab
+	.acf-header-tab-acf-more {
+		i.acf-icon-more {
+			$icon-url: url("../../images/icons/icon-extended-menu.svg");
+			-webkit-mask-image: $icon-url;
+			mask-image: $icon-url;
+		}
+	}
+}

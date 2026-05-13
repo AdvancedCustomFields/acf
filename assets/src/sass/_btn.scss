@@ -1,0 +1,171 @@
+@use 'sass:color';
+@use 'variables' as *;
+@use 'typography' as *;
+
+/*---------------------------------------------------------------------------------------------
+*
+*  ACF Buttons
+*
+*---------------------------------------------------------------------------------------------*/
+.acf-btn {
+	display: inline-flex;
+	align-items: center;
+	box-sizing: border-box;
+	min-height: 40px;
+	padding: {
+		top: 8px;
+		right: 16px;
+		bottom: 8px;
+		left: 16px;
+	}
+	background-color: $color-primary;
+	border-radius: $radius-md;
+	border: {
+		width: 1px;
+		style: solid;
+		color: rgba($gray-900, 20%);
+	}
+	text-decoration: none;
+	color: #fff !important;
+	transition: all 0.2s ease-in-out;
+	transition-property: background, border, box-shadow;
+
+	&:hover {
+		background-color: $color-primary-hover;
+		color: #fff;
+		cursor: pointer;
+	}
+
+	&:disabled, &.disabled {
+		background-color: $gray-100;
+		border-color: $gray-200;
+		color: $gray-400 !important;
+		transition: none;
+		pointer-events: none;
+	}
+
+	&.acf-btn-sm {
+		min-height: 32px;
+		padding: {
+			top: 4px;
+			right: 12px;
+			bottom: 4px;
+			left: 12px;
+		}
+		@extend .p4;
+	}
+
+	&.acf-btn-secondary {
+		background-color: transparent;
+		color: $color-primary !important;
+		border-color: $color-primary;
+
+		&:hover {
+			background-color: color.adjust($blue-50, $lightness: 2%);
+		}
+	}
+
+	&.acf-btn-muted {
+		background-color: $gray-500;
+		color: white;
+		height: 48px;
+		padding: 8px 28px 8px 28px !important;
+		border-radius: 6px;
+		border: 1px;
+		gap: 6px;
+		
+		&:hover {
+			background-color: $gray-600 !important;
+		}
+	}
+
+	&.acf-btn-tertiary {
+		background-color: transparent;
+		color: $gray-500 !important;
+		border-color: $gray-300;
+
+		&:hover {
+			color: $gray-500 !important;
+			border-color: $gray-400;
+		}
+	}
+
+	&.acf-btn-clear {
+		background-color: transparent;
+		color: $gray-500 !important;
+		border-color: transparent;
+
+		&:hover {
+			color: $blue-500 !important;
+		}
+	}
+
+	&.acf-btn-pro {
+		background: $gradient-pro;
+		border: none;
+	}
+}
+
+/*---------------------------------------------------------------------------------------------
+*
+*  Button icons
+*
+*---------------------------------------------------------------------------------------------*/
+.acf-btn {
+	i.acf-icon {
+		$icon-size: 20px;
+		width: $icon-size;
+		height: $icon-size;
+		-webkit-mask-size: $icon-size;
+		mask-size: $icon-size;
+		margin: {
+			right: 6px;
+			left: -4px;
+		}
+	}
+
+	&.acf-btn-sm {
+		i.acf-icon {
+			$icon-size: 16px;
+			width: $icon-size;
+			height: $icon-size;
+			-webkit-mask-size: $icon-size;
+			mask-size: $icon-size;
+			margin: {
+				right: 6px;
+				left: -2px;
+			}
+		}
+	}
+}
+
+.rtl .acf-btn {
+	i.acf-icon {
+		margin: {
+			right: -4px;
+			left: 6px;
+		}
+	}
+
+	&.acf-btn-sm {
+		i.acf-icon {
+			margin: {
+				right: -4px;
+				left: 2px;
+			}
+		}
+	}
+}
+
+/*---------------------------------------------------------------------------------------------
+*
+*  Delete field group button
+*
+*---------------------------------------------------------------------------------------------*/
+.acf-btn.acf-delete-field-group {
+	&:hover {
+		background-color: color.adjust($color-danger, $lightness: 44%);
+		border-color: $color-danger !important;
+		color: $color-danger !important;
+	}
+}

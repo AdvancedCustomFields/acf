@@ -1,0 +1,466 @@
+@use 'variables' as *;
+
+/*--------------------------------------------------------------------------------------------
+*
+*	Icon base styling
+*
+*--------------------------------------------------------------------------------------------*/
+.acf-internal-post-type,
+.post-type-acf-field-group {
+	i.acf-icon {
+		$icon-size: 20px;
+		display: inline-flex;
+		width: $icon-size;
+		height: $icon-size;
+		background-color: currentColor;
+		border: none;
+		border-radius: 0;
+		-webkit-mask-size: contain;
+		mask-size: contain;
+		-webkit-mask-repeat: no-repeat;
+		mask-repeat: no-repeat;
+		-webkit-mask-position: center;
+		mask-position: center;
+		text-indent: 500%;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+}
+
+/*--------------------------------------------------------------------------------------------
+*
+*	Icons
+*
+*--------------------------------------------------------------------------------------------*/
+.acf-admin-page {
+
+	// Action icons for Flexible Content Field
+	i.acf-field-setting-fc-delete, i.acf-field-setting-fc-duplicate {
+		box-sizing: border-box;
+
+		/* Auto layout */
+
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		padding: 8px;
+		cursor: pointer;
+
+		width: 32px;
+		height: 32px;
+
+		/* Base / White */
+
+		background: #FFFFFF;
+		/* Gray/300 */
+
+		border: 1px solid $gray-300;
+		/* Elevation/01 */
+
+		box-shadow: $elevation-01;
+		border-radius: 6px;
+
+		/* Inside auto layout */
+
+		flex: none;
+		order: 0;
+		flex-grow: 0;
+	}
+
+	i.acf-icon-plus {
+		-webkit-mask-image: url("../../images/icons/icon-add.svg");
+		mask-image: url("../../images/icons/icon-add.svg");
+	}
+
+	i.acf-icon-stars {
+		-webkit-mask-image: url("../../images/icons/icon-stars.svg");
+		mask-image: url("../../images/icons/icon-stars.svg");
+	}
+
+	i.acf-icon-help {
+		-webkit-mask-image: url("../../images/icons/icon-help.svg");
+		mask-image: url("../../images/icons/icon-help.svg");
+	}
+
+	i.acf-icon-key {
+		-webkit-mask-image: url("../../images/icons/icon-key.svg");
+		mask-image: url("../../images/icons/icon-key.svg");
+	}
+
+	i.acf-icon-regenerate {
+		-webkit-mask-image: url("../../images/icons/icon-regenerate.svg");
+		mask-image: url("../../images/icons/icon-regenerate.svg");
+	}
+
+	i.acf-icon-trash, button.acf-icon-trash {
+		-webkit-mask-image: url("../../images/icons/icon-trash.svg");
+		mask-image: url("../../images/icons/icon-trash.svg");
+	}
+	
+	i.acf-icon-extended-menu, button.acf-icon-extended-menu {
+		-webkit-mask-image: url("../../images/icons/icon-extended-menu.svg");
+		mask-image: url("../../images/icons/icon-extended-menu.svg");
+	}
+
+	i.acf-icon.-duplicate, button.acf-icon-duplicate {
+		-webkit-mask-image: url("../../images/field-type-icons/icon-field-clone.svg");
+		mask-image: url("../../images/field-type-icons/icon-field-clone.svg");
+
+		&:before,
+		&:after {
+			content: none;
+		}
+	}
+
+	i.acf-icon-arrow-right {
+		-webkit-mask-image: url("../../images/icons/icon-arrow-right.svg");
+		mask-image: url("../../images/icons/icon-arrow-right.svg");
+	}
+
+	i.acf-icon-arrow-up-right {
+		-webkit-mask-image: url("../../images/icons/icon-arrow-up-right.svg");
+		mask-image: url("../../images/icons/icon-arrow-up-right.svg");
+	}
+
+	i.acf-icon-arrow-left {
+		-webkit-mask-image: url("../../images/icons/icon-arrow-left.svg");
+		mask-image: url("../../images/icons/icon-arrow-left.svg");
+	}
+
+	i.acf-icon-chevron-right,
+	.acf-icon.-right {
+		-webkit-mask-image: url("../../images/icons/icon-chevron-right.svg");
+		mask-image: url("../../images/icons/icon-chevron-right.svg");
+	}
+
+	i.acf-icon-chevron-left,
+	.acf-icon.-left {
+		-webkit-mask-image: url("../../images/icons/icon-chevron-left.svg");
+		mask-image: url("../../images/icons/icon-chevron-left.svg");
+	}
+
+	i.acf-icon-key-solid {
+		-webkit-mask-image: url("../../images/icons/icon-key-solid.svg");
+		mask-image: url("../../images/icons/icon-key-solid.svg");
+	}
+
+	i.acf-icon-globe,
+	.acf-icon.-globe {
+		-webkit-mask-image: url("../../images/icons/icon-globe.svg");
+		mask-image: url("../../images/icons/icon-globe.svg");
+	}
+
+	i.acf-icon-image,
+	.acf-icon.-picture {
+		-webkit-mask-image: url("../../images/field-type-icons/icon-field-image.svg");
+		mask-image: url("../../images/field-type-icons/icon-field-image.svg");
+	}
+	
+	i.acf-icon-warning {
+		-webkit-mask-image: url("../../images/icons/icon-warning-alt.svg");
+		mask-image: url("../../images/icons/icon-warning-alt.svg");
+	}
+	
+	i.acf-icon-warning-red {
+		-webkit-mask-image: url("../../images/icons/icon-warning-alt-red.svg");
+		mask-image: url("../../images/icons/icon-warning-alt-red.svg");
+	}
+
+	i.acf-icon-dots-grid {
+		-webkit-mask-image: url("../../images/icons/icon-dots-grid.svg");
+		mask-image: url("../../images/icons/icon-dots-grid.svg");
+	}
+
+	i.acf-icon-play {
+		-webkit-mask-image: url("../../images/icons/icon-play.svg");
+		mask-image: url("../../images/icons/icon-play.svg");
+	}
+	
+	i.acf-icon-lock {
+		-webkit-mask-image: url("../../images/icons/icon-lock.svg");
+		mask-image: url("../../images/icons/icon-lock.svg");
+	}
+
+	i.acf-icon-document {
+		-webkit-mask-image: url("../../images/icons/icon-document.svg");
+		mask-image: url("../../images/icons/icon-document.svg");
+	}
+	/*--------------------------------------------------------------------------------------------
+	*
+	*	Inactive group icon
+	*
+	*--------------------------------------------------------------------------------------------*/
+	.post-type-acf-field-group,
+	.acf-internal-post-type {
+		.post-state {
+			font-weight: normal;
+
+			.dashicons.dashicons-hidden {
+				$icon-size: 18px;
+				display: inline-flex;
+				width: $icon-size;
+				height: $icon-size;
+				background-color: $gray-400;
+				border: none;
+				border-radius: 0;
+				-webkit-mask-size: $icon-size;
+				mask-size: $icon-size;
+				-webkit-mask-repeat: no-repeat;
+				mask-repeat: no-repeat;
+				-webkit-mask-position: center;
+				mask-position: center;
+				-webkit-mask-image: url("../../images/icons/icon-hidden.svg");
+				mask-image: url("../../images/icons/icon-hidden.svg");
+
+				&:before {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+/*--------------------------------------------------------------------------------------------
+*
+*	Edit field group page postbox header icons
+*
+*--------------------------------------------------------------------------------------------*/
+#acf-field-group-fields,
+#acf-field-group-options,
+#acf-advanced-settings {
+	.postbox-header,
+	.acf-sub-field-list-header {
+		h2,
+		h3 {
+			display: inline-flex;
+			justify-content: flex-start;
+			align-content: stretch;
+			align-items: center;
+
+			&:before {
+				content: "";
+				$icon-size: 20px;
+				display: inline-block;
+				width: $icon-size;
+				height: $icon-size;
+				margin: {
+					right: 8px;
+				}
+				background-color: $gray-400;
+				border: none;
+				border-radius: 0;
+				-webkit-mask-size: contain;
+				mask-size: contain;
+				-webkit-mask-repeat: no-repeat;
+				mask-repeat: no-repeat;
+				-webkit-mask-position: center;
+				mask-position: center;
+			}
+		}
+	}
+}
+
+.rtl #acf-field-group-fields,
+.rtl #acf-field-group-options {
+	.postbox-header,
+	.acf-sub-field-list-header {
+		h2,
+		h3 {
+			&:before {
+				margin: {
+					right: 0;
+					left: 8px;
+				}
+			}
+		}
+	}
+}
+
+// Field icon
+#acf-field-group-fields .postbox-header h2:before,
+h3.acf-sub-field-list-title:before,
+.acf-link-field-groups-popup h3:before {
+	-webkit-mask-image: url("../../images/icons/icon-fields.svg");
+	mask-image: url("../../images/icons/icon-fields.svg");
+}
+
+// Create options page modal icon
+.acf-create-options-page-popup h3:before {
+	-webkit-mask-image: url("../../images/icons/icon-sliders.svg");
+	mask-image: url("../../images/icons/icon-sliders.svg");
+}
+
+// Settings icon
+#acf-field-group-options .postbox-header h2:before {
+	-webkit-mask-image: url("../../images/icons/icon-settings.svg");
+	mask-image: url("../../images/icons/icon-settings.svg");
+}
+
+// Layout icon
+.acf-field-setting-fc_layout .acf-field-settings-fc_head label:before {
+	-webkit-mask-image: url("../../images/icons/icon-layout.svg");
+	mask-image: url("../../images/icons/icon-layout.svg");
+}
+
+// Advanced post type and taxonomies settings icon
+.acf-admin-single-post-type,
+.acf-admin-single-taxonomy,
+.acf-admin-single-options-page {
+
+	#acf-advanced-settings .postbox-header h2:before {
+		-webkit-mask-image: url("../../images/icons/icon-post-type.svg");
+		mask-image: url("../../images/icons/icon-post-type.svg");
+	}
+
+}
+
+// Flexible Content reorder
+.acf-field-setting-fc_layout .acf-field-settings-fc_head .acf-fc_draggable:hover .reorder-layout:before {
+	width: 20px;
+	height: 11px;
+	background-color: $gray-600 !important;
+	-webkit-mask-image: url("../../images/icons/icon-draggable.svg");
+	mask-image: url("../../images/icons/icon-draggable.svg");
+}
+
+/*--------------------------------------------------------------------------------------------
+*
+*	Postbox expand / collapse icon
+*
+*--------------------------------------------------------------------------------------------*/
+.post-type-acf-field-group, 
+.post-type-acf-field-group #acf-field-group-fields,
+.post-type-acf-field-group #acf-field-group-options,
+.post-type-acf-field-group .postbox,
+.acf-admin-single-post-type #acf-advanced-settings,
+.acf-admin-single-taxonomy #acf-advanced-settings,
+.acf-admin-single-options-page #acf-advanced-settings{
+	
+	.postbox-header .handle-actions {
+		display: flex;
+
+		.toggle-indicator:before {
+			content: "";
+			$icon-size: 20px;
+			display: inline-flex;
+			width: $icon-size;
+			height: $icon-size;
+			background-color: currentColor;
+			border: none;
+			border-radius: 0;
+			-webkit-mask-size: contain;
+			mask-size: contain;
+			-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+			-webkit-mask-position: center;
+			mask-position: center;
+			-webkit-mask-image: url("../../images/icons/icon-chevron-up.svg");
+			mask-image: url("../../images/icons/icon-chevron-up.svg");
+		}
+	}
+
+	// Closed state
+	&.closed {
+		.postbox-header .handle-actions {
+			.toggle-indicator:before {
+				-webkit-mask-image: url("../../images/icons/icon-chevron-down.svg");
+				mask-image: url("../../images/icons/icon-chevron-down.svg");
+			}
+		}
+	}
+}
+
+/*---------------------------------------------------------------------------------------------
+*
+* Tools & updates page heading icons
+*
+*---------------------------------------------------------------------------------------------*/
+.post-type-acf-field-group {
+	#acf-admin-tool-export,
+	#acf-admin-tool-import,
+	#acf-license-information,
+	#acf-update-information {
+		h2,
+		h3 {
+			display: inline-flex;
+			justify-content: flex-start;
+			align-content: stretch;
+			align-items: center;
+
+			&:before {
+				content: "";
+				$icon-size: 20px;
+				display: inline-block;
+				width: $icon-size;
+				height: $icon-size;
+				margin: {
+					right: 8px;
+				}
+				background-color: $gray-400;
+				border: none;
+				border-radius: 0;
+				-webkit-mask-size: contain;
+				mask-size: contain;
+				-webkit-mask-repeat: no-repeat;
+				mask-repeat: no-repeat;
+				-webkit-mask-position: center;
+				mask-position: center;
+			}
+		}
+	}
+
+	&.rtl {
+		#acf-admin-tool-export,
+		#acf-admin-tool-import,
+		#acf-license-information,
+		#acf-update-information {
+			h2,
+			h3 {
+				&:before {
+					margin: {
+						right: 0;
+						left: 8px;
+					}
+				}
+			}
+		}
+	}
+}
+
+// Export icon
+.post-type-acf-field-group #acf-admin-tool-export h2:before {
+	-webkit-mask-image: url("../../images/icons/icon-export.svg");
+	mask-image: url("../../images/icons/icon-export.svg");
+}
+
+// Import icon
+.post-type-acf-field-group #acf-admin-tool-import h2:before {
+	-webkit-mask-image: url("../../images/icons/icon-import.svg");
+	mask-image: url("../../images/icons/icon-import.svg");
+}
+
+// License information icon
+.post-type-acf-field-group #acf-license-information h3:before {
+	-webkit-mask-image: url("../../images/icons/icon-key.svg");
+	mask-image: url("../../images/icons/icon-key.svg");
+}
+
+// Update information icon
+.post-type-acf-field-group #acf-update-information h3:before {
+	-webkit-mask-image: url("../../images/icons/icon-info.svg");
+	mask-image: url("../../images/icons/icon-info.svg");
+}
+
+/*--------------------------------------------------------------------------------------------
+*
+*	Admin field icons
+*
+*--------------------------------------------------------------------------------------------*/
+.acf-admin-single-field-group .acf-input {
+	.acf-icon {
+		$icon-size: 18px;
+		width: $icon-size;
+		height: $icon-size;
+	}
+}

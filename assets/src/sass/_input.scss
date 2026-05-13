@@ -1,0 +1,56 @@
+// Temp remove.
+.acf-temp-remove {
+	position: relative;
+	opacity: 1;
+	-webkit-transition: all 0.25s ease;
+	-moz-transition: all 0.25s ease;
+	-o-transition: all 0.25s ease;
+	transition: all 0.25s ease;
+	overflow: hidden;
+	
+	/* overlay prevents hover */
+	&:after {
+		display: block;
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 99;
+	}
+}
+
+// Conditional Logic.
+.hidden-by-conditional-logic {
+	display: none !important;
+	
+	// Table cells may "appear empty".
+	&.appear-empty {
+		display: table-cell !important;
+		.acf-input {
+			display: none !important;
+		}
+	}
+}
+
+// Compat support for "Tabify" plugin.
+.acf-postbox.acf-hidden {
+	display: none !important;
+}
+
+// Focus Attention.
+.acf-attention {
+	transition: border 0.250s ease-out;
+	&.-focused {
+		border: #23282d solid 1px !important;
+		transition: none;
+	}
+}
+tr.acf-attention {
+	transition: box-shadow 0.250s ease-out;
+	position: relative;
+	&.-focused {
+		box-shadow: #23282d 0 0 0px 1px !important;
+	}
+}

@@ -1,0 +1,317 @@
+/*--------------------------------------------------------------------------------------------
+*
+*	User
+*
+*--------------------------------------------------------------------------------------------*/
+
+.form-table > tbody {
+
+	/* field */
+	> .acf-field {
+
+		/* label */
+		> .acf-label {
+			padding: 20px 10px 20px 0;
+		    width: 210px;
+
+		    /* rtl */
+			html[dir="rtl"] & {
+				padding: 20px 0 20px 10px;
+			}
+
+		    label {
+				font-size: 14px;
+				color: #23282d;
+			}
+
+		}
+
+
+		/* input */
+		> .acf-input {
+			padding: 15px 10px;
+
+			/* rtl */
+			html[dir="rtl"] & {
+				padding: 15px 10px 15px 5%;
+			}
+		}
+
+	}
+
+
+	/* tab wrap */
+	> .acf-tab-wrap td {
+		padding: 15px 5% 15px 0;
+
+		/* rtl */
+		html[dir="rtl"] & {
+			padding: 15px 0 15px 5%;
+		}
+
+	}
+
+
+	/* misc */
+	.form-table th.acf-th {
+		width: auto;
+	}
+
+}
+
+#your-profile,
+#createuser {
+
+	/* override for user css */
+	.acf-field input[type="text"],
+	.acf-field input[type="password"],
+	.acf-field input[type="number"],
+	.acf-field input[type="search"],
+	.acf-field input[type="email"],
+	.acf-field input[type="url"],
+	.acf-field select {
+	    max-width: 25em;
+	}
+
+	.acf-field textarea {
+		max-width: 500px;
+	}
+
+
+	/* allow sub fields to display correctly */
+	.acf-field .acf-field input[type="text"],
+	.acf-field .acf-field input[type="password"],
+	.acf-field .acf-field input[type="number"],
+	.acf-field .acf-field input[type="search"],
+	.acf-field .acf-field input[type="email"],
+	.acf-field .acf-field input[type="url"],
+	.acf-field .acf-field textarea,
+	.acf-field .acf-field select {
+	    max-width: none;
+	}
+}
+
+#registerform {
+
+	h2 {
+		margin: 1em 0;
+	}
+
+	.acf-field  {
+		margin-top: 0;
+
+		.acf-label {
+			margin-bottom: 0;
+
+			label {
+				font-weight: normal;
+				line-height: 1.5;
+			}
+		}
+
+/*
+		.acf-input {
+			input {
+				font-size: 24px;
+				padding: 5px;
+				height: auto;
+			}
+		}
+*/
+	}
+
+	p.submit {
+		text-align: right;
+	}
+
+}
+
+/*--------------------------------------------------------------------------------------------
+*
+*	Term
+*
+*--------------------------------------------------------------------------------------------*/
+
+// add term
+#acf-term-fields {
+	padding-right: 5%;
+
+	> .acf-field {
+
+		> .acf-label {
+			margin: 0;
+
+			label {
+				font-size: 12px;
+				font-weight: normal;
+			}
+		}
+	}
+
+}
+
+p.submit .spinner,
+p.submit .acf-spinner {
+	vertical-align: top;
+	float: none;
+	margin: 4px 4px 0;
+}
+
+
+// edit term
+#edittag .acf-fields.-left {
+
+	> .acf-field {
+		padding-left: 220px;
+
+		&:before {
+			width: 209px;
+		}
+
+		> .acf-label {
+			width: 220px;
+			margin-left: -220px;
+			padding: 0 10px;
+		}
+
+		> .acf-input {
+			padding: 0;
+		}
+	}
+}
+
+#edittag > .acf-fields.-left {
+	width: 96%;
+
+	> .acf-field {
+
+		> .acf-label {
+			padding-left: 0;
+		}
+	}
+}
+
+
+/*--------------------------------------------------------------------------------------------
+*
+*	Comment
+*
+*--------------------------------------------------------------------------------------------*/
+
+.editcomment td:first-child {
+    white-space: nowrap;
+    width: 131px;
+}
+
+
+/*--------------------------------------------------------------------------------------------
+*
+*	Widget
+*
+*--------------------------------------------------------------------------------------------*/
+
+#widgets-right .widget .acf-field .description {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.acf-widget-fields {
+
+	> .acf-field {
+
+		.acf-label {
+			margin-bottom: 5px;
+
+			label {
+				font-weight: normal;
+				margin: 0;
+			}
+		}
+	}
+}
+
+/*--------------------------------------------------------------------------------------------
+*
+*	Nav Menu
+*
+*--------------------------------------------------------------------------------------------*/
+
+.acf-menu-settings {
+	border-top: 1px solid #eee;
+    margin-top: 2em;
+
+	// seamless
+	&.-seamless {
+		border-top: none;
+		margin-top: 15px;
+
+		> h2 { display: none; }
+	}
+
+	// Fix relationship conflict.
+	.list li {
+		display: block;
+		margin-bottom: 0;
+	}
+}
+
+.acf-fields.acf-menu-item-fields {
+	clear: both;
+	padding-top: 1px; // Fixes margin overlap.
+
+	> .acf-field {
+		margin: 5px 0;
+		padding-right: 10px;
+
+		.acf-label {
+			margin-bottom: 0;
+			label {
+				font-style: italic;
+				font-weight: normal;
+			}
+		}
+	}
+}
+
+/*---------------------------------------------------------------------------------------------
+*
+*  Attachment Form (single)
+*
+*---------------------------------------------------------------------------------------------*/
+
+#post .compat-attachment-fields {
+
+	.compat-field-acf-form-data {
+		display: none;
+	}
+
+	&,
+	> tbody,
+	> tbody > tr,
+	> tbody > tr > th,
+	> tbody > tr > td {
+		display: block;
+	}
+
+	> tbody > .acf-field {
+		margin: 15px 0;
+
+		> .acf-label {
+			margin: 0;
+
+			label {
+				margin: 0;
+				padding: 0;
+
+				p {
+					margin: 0 0 3px !important;
+				}
+			}
+		}
+
+		> .acf-input {
+			margin: 0;
+		}
+	}
+}
+

@@ -1,0 +1,1020 @@
+@use 'sass:color';
+@use 'variables' as *;
+@use 'typography' as *;
+
+/*---------------------------------------------------------------------------------------------
+*
+*  Field Groups
+*
+*---------------------------------------------------------------------------------------------*/
+.acf-internal-post-type {
+
+	// Hide tablenav top.
+	.tablenav.top {
+		display: none;
+	}
+
+	// Fix margin due to hidden tablenav.
+	.subsubsub {
+		margin-bottom: 3px;
+	}
+
+	// table.
+	.wp-list-table {
+		margin: {
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+		}
+		border-radius: $radius-lg;
+		border: none;
+		overflow: hidden;
+		box-shadow: $elevation-01;
+
+		strong {
+			color: $gray-400;
+			margin: 0;
+		}
+
+		a.row-title {
+			font-size: 13px !important;
+			font-weight: 500;
+		}
+
+		th,
+		td {
+			color: $gray-700;
+
+			&.sortable a {
+				padding: 0;
+			}
+
+			&.check-column {
+				padding: {
+					top: 12px;
+					right: 16px;
+					left: 16px;
+				};
+
+				@media screen and (max-width: $md) {
+					vertical-align: top;
+					padding: {
+						right: 2px;
+						left: 10px;
+					};
+				}
+
+			}
+
+			input {
+				margin: 0;
+				padding: 0;
+			}
+
+			.acf-more-items {
+				display: inline-flex;
+				flex-direction: row;
+				justify-content: center;
+				align-items: center;
+				padding: 0px 6px 1px;
+				gap: 8px;
+				width: 25px;
+				height: 16px;
+				background: $gray-200;
+				border-radius: 100px;
+				font-weight: 400;
+				font-size: 10px;
+				color: $gray-600;
+			}
+
+			.acf-emdash {
+				color: $gray-300;
+			}
+		}
+
+		// Table headers
+		thead th, thead td,
+		tfoot th, tfoot td {
+			height: 48px;
+			padding: {
+				right: 24px;
+				left: 24px;
+			};
+			box-sizing: border-box;
+			background-color: $gray-50;
+			border-color: $gray-200;
+			@extend .p4;
+			font-weight: 500;
+
+			@media screen and (max-width: $md) {
+				padding: {
+					right: 16px;
+					left: 8px;
+				};
+			}
+
+			&.check-column {
+				@media screen and (max-width: $md) {
+					vertical-align: middle;
+				}
+			}
+
+		}
+
+		// Table body
+		tbody th,
+		tbody td {
+			box-sizing: border-box;
+			height: 60px;
+			padding: {
+				top: 10px;
+				right: 24px;
+				bottom: 10px;
+				left: 24px;
+			};
+			vertical-align: top;
+			background-color: #fff;
+			border-bottom: {
+				width: 1px;
+				color: $gray-200;
+				style: solid;
+			};
+			@extend .p4;
+
+			@media screen and (max-width: $md) {
+				padding: {
+					right: 16px;
+					left: 8px;
+				};
+			}
+
+		}
+
+		.column-acf-key {
+			white-space: nowrap;
+			.copyable:not(.input-copyable, .copy-unsupported) {
+				cursor: pointer;
+				display: inline-flex;
+				align-items: center;
+	
+				&:hover:after {
+					content: '';
+					padding-left: 5px;
+					$icon-size: 12px;
+					display: inline-flex;
+					width: $icon-size;
+					height: $icon-size;
+					background-color: $gray-500;
+					border: none;
+					border-radius: 0;
+					-webkit-mask-size: contain;
+					mask-size: contain;
+					-webkit-mask-repeat: no-repeat;
+					mask-repeat: no-repeat;
+					-webkit-mask-position: center;
+					mask-position: center;
+					text-indent: 500%;
+					white-space: nowrap;
+					overflow: hidden;
+					-webkit-mask-image: url('../../images/icons/icon-copy.svg');
+					mask-image: url('../../images/icons/icon-copy.svg');
+					background-size: cover;
+				}
+	
+				&.sub-label {
+					padding-right: 22px;
+	
+					&:hover {
+						padding-right: 0;
+	
+						&:after {
+							$icon-size: 14px;
+							width: $icon-size;
+							height: $icon-size;
+							padding-left: 8px;
+						}
+					}
+				}
+	
+				&.copied:hover:after {
+					-webkit-mask-image: url('../../images/icons/icon-check-circle-solid.svg');
+					mask-image: url('../../images/icons/icon-check-circle-solid.svg');
+					background-color: $acf_success;
+				}
+			}
+	
+			.copyable.input-copyable:not(.copy-unsupported) {
+				cursor: pointer;
+				display: block;
+				position: relative;
+				align-items: center;
+	
+				input {
+					padding-right: 40px;
+				}
+	
+				.acf-input-wrap:after {
+					content: '';
+					padding-left: 5px;
+					$icon-size: 16px;
+					right: 12px;
+					top: 12px;
+					position: absolute;
+					width: $icon-size;
+					height: $icon-size;
+					background-color: $gray-400;
+					border: none;
+					border-radius: 0;
+					-webkit-mask-size: contain;
+					mask-size: contain;
+					-webkit-mask-repeat: no-repeat;
+					mask-repeat: no-repeat;
+					-webkit-mask-position: center;
+					mask-position: center;
+					text-indent: 500%;
+					white-space: nowrap;
+					overflow: hidden;
+					-webkit-mask-image: url('../../images/icons/icon-copy.svg');
+					mask-image: url('../../images/icons/icon-copy.svg');
+					background-size: cover;
+				}
+	
+				&.copied .acf-input-wrap:after {
+					-webkit-mask-image: url('../../images/icons/icon-check-circle-solid.svg');
+					mask-image: url('../../images/icons/icon-check-circle-solid.svg');
+					background-color: $acf_success;
+				}
+			}
+	
+		}
+
+		// SVG icons
+		.column-acf-key .acf-icon-key-solid {
+			display: inline-block;
+			position: relative;
+			bottom: -2px;
+			width: 15px;
+			height: 15px;
+			margin: {
+				right: 4px;
+			};
+			color: $gray-400;
+		}
+
+		// Post location icon
+		.acf-location .dashicons {
+			position: relative;
+			bottom: -2px;
+			width: 16px;
+			height: 16px;
+			margin: {
+				right: 6px;
+			};
+			font-size: 16px;
+			color: $gray-400;
+		}
+
+		.post-state {
+			@extend .p3;
+			color: $gray-500;
+		}
+
+		// Add subtle hover background to define row.
+		tr:hover,
+		tr:focus-within {
+			background: #f7f7f7;
+
+			.row-actions {
+				margin: {
+					bottom: 0;
+				};
+			};
+
+		}
+
+		// Use less specific identifier to inherit mobile styling.
+		@media screen and ( min-width: 782px ) {
+			.column-acf-count { width: 10%; }
+		}
+
+		.row-actions {
+			span.file {
+				display: block;
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+			}
+		}
+	}
+
+	&.rtl {
+		.wp-list-table {
+			.column-acf-key .acf-icon-key-solid {
+				margin: {
+					left: 4px;
+					right: 0;
+				};
+			}
+
+			.acf-location .dashicons {
+				margin: {
+					left: 6px;
+					right: 0;
+				};
+			}
+		}
+	}
+
+	// Actions
+	.row-actions {
+		margin: {
+			top: 2px;
+		};
+		padding: {
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+		}
+		@extend .p5;
+		line-height: 14px;
+		color: $gray-300;
+
+		.trash a {
+			color: $acf_error;
+		}
+
+	}
+
+
+	// Remove padding from checkbox column
+	.widefat thead td.check-column,
+	.widefat tfoot td.check-column {
+		padding: {
+			top: 0;
+		};
+	}
+
+}
+
+/*--------------------------------------------------------------------------------------------
+*
+*	Row actions
+*
+*--------------------------------------------------------------------------------------------*/
+.acf-internal-post-type {
+
+	.row-actions {
+		@extend .p6;
+
+		a:hover {
+			color: color.adjust($color-primary-hover, $lightness: -10%);
+		}
+
+		.trash a {
+			color: #a00;
+			&:hover { color: #f00; }
+		}
+
+		&.visible {
+			margin: {
+				bottom: 0;
+			};
+			opacity: 1;
+		}
+
+	}
+
+}
+
+
+/*--------------------------------------------------------------------------------------------
+*
+*	Row hover
+*
+*--------------------------------------------------------------------------------------------*/
+.acf-internal-post-type {
+
+	#the-list tr:hover td,
+	#the-list tr:hover th {
+		background-color: color.adjust($blue-50, $lightness: 3%);
+	}
+
+}
+
+/*---------------------------------------------------------------------------------------------
+*
+*  Table Nav
+*
+*---------------------------------------------------------------------------------------------*/
+.acf-internal-post-type {
+
+	.tablenav {
+		margin: {
+			top: 24px;
+			right: 0;
+			bottom: 0;
+			left: 0;
+		};
+		padding: {
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+		};
+		color: $gray-500;
+	}
+
+}
+
+/*--------------------------------------------------------------------------------------------
+*
+*	Search box
+*
+*--------------------------------------------------------------------------------------------*/
+.acf-internal-post-type #posts-filter p.search-box {
+	margin: {
+		top: 5px;
+		right: 0;
+		bottom: 24px;
+		left: 0;
+	};
+
+	#post-search-input {
+		min-width: 280px;
+		margin: {
+			top: 0;
+			right: 8px;
+			bottom: 0;
+			left: 0;
+		};
+	}
+
+	@media screen and (max-width: 768px) {
+		display: flex;
+		box-sizing: border-box;
+		padding-right: 24px;
+		margin-right: 16px;
+		position: inherit;
+
+		#post-search-input {
+			min-width: auto;
+		}
+
+	}
+
+}
+
+.rtl.acf-internal-post-type #posts-filter p.search-box {
+	#post-search-input {
+		margin: {
+			right: 0;
+			left: 8px;
+		};
+	}
+
+	@media screen and (max-width: 768px) {
+		padding-left: 24px;
+		padding-right: 0;
+		margin-left: 16px;
+		margin-right: 0;
+	}
+}
+
+/*--------------------------------------------------------------------------------------------
+*
+*	Status tabs
+*
+*--------------------------------------------------------------------------------------------*/
+.acf-internal-post-type .subsubsub {
+	display: flex;
+	align-items: flex-end;
+	height: 40px;
+	margin: {
+		bottom: 16px;
+	};
+
+	li {
+		margin: {
+			top: 0;
+			right: 4px;
+		};
+		color: $gray-400;
+		@extend .p4;
+
+		.count {
+			color: $gray-500;
+		}
+
+	}
+
+}
+
+/*--------------------------------------------------------------------------------------------
+*
+*	Pagination
+*
+*--------------------------------------------------------------------------------------------*/
+.acf-internal-post-type {
+
+	.tablenav-pages {
+		display: flex;
+		align-items: center;
+
+		&.no-pages{
+			display: none;
+		}
+
+		.displaying-num {
+			margin: {
+				top: 0;
+				right: 16px;
+				bottom: 0;
+				left: 0;
+			};
+		}
+
+		.pagination-links {
+			display: flex;
+			align-items: center;
+
+			#table-paging {
+				margin: {
+					top: 0;
+					right: 4px;
+					bottom: 0;
+					left: 8px;
+				};
+
+				.total-pages {
+					margin: {
+						right: 0;
+					};
+				}
+
+			}
+
+		}
+
+		// Hide pagination if there's only 1 page
+		&.one-page .pagination-links {
+			display: none;
+		}
+
+	}
+
+}
+
+/*--------------------------------------------------------------------------------------------
+*
+*	Pagination buttons & icons
+*
+*--------------------------------------------------------------------------------------------*/
+.acf-internal-post-type .tablenav-pages .pagination-links .button {
+	display: inline-flex;
+	align-items: center;
+	align-content: center;
+	justify-content: center;
+	min-width: 40px;
+	margin: {
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	};
+	padding: {
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	};
+	background-color: transparent;
+
+	// Pagination Buttons
+	&:nth-child(1),
+	&:nth-child(2),
+	&:last-child,
+	&:nth-last-child(2) {
+		display: inline-block;
+		position: relative;
+		text-indent: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+		margin: {
+			left: 4px;
+		}
+
+		// Pagination Button Icons
+		&:before {
+			$icon-size: 20px;
+			content: "";
+			display: block;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			$icon-size: $icon-size;
+			background-color: $link-color;
+			border-radius: 0;
+			-webkit-mask-size: $icon-size;
+			mask-size: $icon-size;
+			-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+			-webkit-mask-position: center;
+			mask-position: center;
+		}
+
+	}
+
+	// First Page Icon
+	&:nth-child(1):before {
+		-webkit-mask-image: url('../../images/icons/icon-chevron-left-double.svg');
+		mask-image: url('../../images/icons/icon-chevron-left-double.svg');
+	}
+
+	// Previous Page Icon
+	&:nth-child(2):before {
+		-webkit-mask-image: url('../../images/icons/icon-chevron-left.svg');
+		mask-image: url('../../images/icons/icon-chevron-left.svg');
+	}
+
+	// Next Page Icon
+	&:nth-last-child(2):before {
+		-webkit-mask-image: url('../../images/icons/icon-chevron-right.svg');
+		mask-image: url('../../images/icons/icon-chevron-right.svg');
+	}
+
+	// Last Page Icon
+	&:last-child:before {
+		-webkit-mask-image: url('../../images/icons/icon-chevron-right-double.svg');
+		mask-image: url('../../images/icons/icon-chevron-right-double.svg');
+	}
+
+	// Pagination Button Hover State
+	&:hover {
+		border-color: $blue-600;
+		background-color: rgba($link-color, .05);
+
+		&:before {
+			background-color: $blue-600;
+		}
+
+	}
+
+	// Pagination Button Disabled State
+	&.disabled {
+		background-color: transparent !important;
+
+		&.disabled:before {
+			background-color: $gray-300;
+		}
+
+	}
+
+}
+
+/*---------------------------------------------------------------------------------------------
+*
+*  Empty state
+*
+*---------------------------------------------------------------------------------------------*/
+.acf-no-field-groups-wrapper,
+.acf-no-taxonomies-wrapper,
+.acf-no-post-types-wrapper,
+.acf-no-options-pages-wrapper,
+.acf-options-preview-wrapper {
+	display: flex;
+	justify-content: center;
+	padding: {
+		top: 48px;
+		bottom: 48px;
+	};
+
+	.acf-no-field-groups-inner,
+	.acf-no-taxonomies-inner,
+	.acf-no-post-types-inner,
+	.acf-no-options-pages-inner,
+	.acf-options-preview-inner {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-content: center;
+		align-items: flex-start;
+		text-align: center;
+		max-width: 420px;
+		min-height: 320px;
+
+		img,
+		h2,
+		p {
+			flex: 1 0 100%;
+		}
+
+		h2 {
+			@extend .acf-h2;
+			margin: {
+				top: 32px;
+				bottom: 0;
+			};
+			padding: 0;
+			color: $gray-700;
+			line-height: 1.6rem;
+		}
+
+		p {
+			@extend .p2;
+			margin: {
+				top: 12px;
+				bottom: 0;
+			};
+			padding: 0;
+			color: $gray-500;
+
+			&.acf-small {
+				display: block;
+				position: relative;
+				margin: {
+					top: 32px;
+				};
+				@extend .p6;
+			}
+
+		}
+
+
+		img {
+			max-width: 284px;
+			margin: {
+				bottom: 0;
+			};
+		}
+
+		.acf-btn {
+			margin: {
+				top: 32px;
+			};
+		}
+
+	}
+
+	.acf-no-post-types-inner,
+	.acf-no-options-pages-inner {
+		img {
+			width: 106px;
+			height: 88px;
+		}
+	}
+
+	.acf-no-taxonomies-inner {
+		img {
+			width: 98px;
+			height: 88px;
+		}
+	}
+
+};
+
+.acf-no-field-groups,
+.acf-no-post-types,
+.acf-no-taxonomies,
+.acf-no-options-pages {
+
+	#the-list tr:hover td,
+	#the-list tr:hover th,
+	.acf-admin-field-groups .wp-list-table tr:hover,
+	.striped > tbody > :nth-child(odd), ul.striped > :nth-child(odd), .alternate {
+		background-color: transparent !important;
+	}
+
+	.wp-list-table {
+
+		thead,
+		tfoot {
+			display: none;
+		}
+
+		a.acf-btn {
+			border: 1px solid rgba(0, 0, 0, 0.16);
+			box-shadow: none;
+		}
+
+	}
+
+}
+
+.acf-internal-post-type #the-list .no-items td {
+	vertical-align: middle;
+}
+
+
+/*---------------------------------------------------------------------------------------------
+*
+*  Options Page Preview
+*
+*---------------------------------------------------------------------------------------------*/
+.acf-options-preview,
+.acf-no-options-pages-wrapper {
+	.acf-btn {
+		margin: {
+			left: 8px;
+		};
+	};
+
+	.disabled {
+		background-color: $gray-100 !important;
+		color: $gray-400 !important;
+		border: 1px $gray-300 solid;
+		cursor: default !important;
+	}
+
+	.acf-options-pages-preview-upgrade-button {
+		height: 48px;
+		padding: 8px 48px 8px 48px !important;
+		border: none !important;
+		gap: 6px;
+		display: inline-flex;
+		align-items: center;
+		align-self: stretch;
+		background: $gradient-pro;
+		border-radius: $radius-md;
+		text-decoration: none;
+
+		&:focus {
+			border: none;
+			outline: none;
+			box-shadow: none;
+		}
+
+		p {
+			margin: 0;
+			padding: {
+				top: 8px;
+				bottom: 8px;
+			}
+			@extend .p4;
+			font-weight: normal;
+			text-transform: none;
+			color: #fff;
+		}
+
+		.acf-icon {
+			$icon-size: 20px;
+			width: $icon-size;
+			height: $icon-size;
+			margin: {
+				right: 6px;
+				left: -2px;
+			};
+			background-color: $gray-50;
+		}
+	}
+
+	.acf-ui-options-page-pro-features-actions a.acf-btn i {
+		margin-right: -2px !important;
+		margin-left: 0px !important;
+	}
+
+	.acf-pro-label {
+		vertical-align: middle;
+	}
+
+	.acf_options_preview_wrap {
+		img {
+			max-height: 88px;
+		}
+	}
+
+}
+
+/*---------------------------------------------------------------------------------------------
+*
+*  Small screen list table info toggle
+*
+*---------------------------------------------------------------------------------------------*/
+.acf-internal-post-type {
+
+	.wp-list-table .toggle-row:before {
+		top: 4px;
+		left: 16px;
+		border-radius: 0;
+		$icon-size: 20px;
+		content: "";
+		display: block;
+		position: absolute;
+		width: 16px;
+		height: 16px;
+		$icon-size: $icon-size;
+		background-color: $link-color;
+		border-radius: 0;
+		-webkit-mask-size: $icon-size;
+		mask-size: $icon-size;
+		-webkit-mask-repeat: no-repeat;
+		mask-repeat: no-repeat;
+		-webkit-mask-position: center;
+		mask-position: center;
+		-webkit-mask-image: url('../../images/icons/icon-chevron-down.svg');
+		mask-image: url('../../images/icons/icon-chevron-down.svg');
+		text-indent: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+
+	.wp-list-table .is-expanded .toggle-row:before {
+		-webkit-mask-image: url('../../images/icons/icon-chevron-up.svg');
+		mask-image: url('../../images/icons/icon-chevron-up.svg');
+	}
+
+}
+
+/*---------------------------------------------------------------------------------------------
+*
+*  Small screen checkbox
+*
+*---------------------------------------------------------------------------------------------*/
+.acf-internal-post-type {
+
+	@media screen and (max-width: $md) {
+
+		.widefat th input[type="checkbox"],
+		.widefat thead td input[type="checkbox"],
+		.widefat tfoot td input[type="checkbox"] {
+			margin-bottom: 0;
+		}
+
+	}
+
+}
+
+/*---------------------------------------------------------------------------------------------
+*
+*  Invalid license states
+*
+*---------------------------------------------------------------------------------------------*/
+.acf-internal-post-type {
+	&.acf-pro-inactive-license {
+		&.acf-admin-options-pages {
+			.row-title {
+				color: $gray-500;
+				pointer-events: none;
+				display: inline-flex;
+				vertical-align: middle;
+				gap: 6px;
+
+				&:before {
+					content: "";
+					width: 16px;
+					height: 16px;
+					background-color: $gray-500;
+					display: inline-block;
+					align-self: center;
+					-webkit-mask-image: url("../../images/icons/icon-lock.svg");
+					mask-image: url("../../images/icons/icon-lock.svg");
+				}
+			}
+
+			.row-actions {
+				display: none;
+			}
+
+			.column-title .acf-js-tooltip {
+				display: inline-block;
+			}
+		}
+
+		tr.acf-has-block-location {
+			.row-title {
+				color: $gray-500;
+				pointer-events: none;
+				display: inline-flex;
+				vertical-align: middle;
+				gap: 6px;
+
+				&:before {
+					content: "";
+					width: 16px;
+					height: 16px;
+					background-color: $gray-500;
+					display: inline-block;
+					align-self: center;
+					-webkit-mask-image: url("../../images/icons/icon-lock.svg");
+					mask-image: url("../../images/icons/icon-lock.svg");
+				}
+			}
+
+			.acf-count a {
+				color: $gray-500;
+				pointer-events: none;
+			}
+
+			.row-actions {
+				display: none;
+			}
+
+			.column-title .acf-js-tooltip {
+				display: inline-block;
+			}
+		}
+	}
+}

@@ -1,0 +1,260 @@
+@use 'variables' as *;
+
+/*---------------------------------------------------------------------------------------------
+*
+*  Hide WP default controls
+*
+*---------------------------------------------------------------------------------------------*/
+.acf-admin-page {
+
+	// Prevents flicker caused by notice moving locations.
+	#wpbody-content > .notice:not(.inline, .below-h2) {
+		display: none;
+	}
+
+	h1.wp-heading-inline {
+		display: none;
+	}
+
+	.wrap .wp-heading-inline + .page-title-action {
+		display: none;
+	}
+
+}
+
+/*---------------------------------------------------------------------------------------------
+*
+*  Headerbar
+*
+*---------------------------------------------------------------------------------------------*/
+.acf-headerbar {
+	display: flex;
+	align-items: center;
+	position: sticky;
+	top: 32px;
+	z-index: 700;
+	box-sizing: border-box;
+	min-height: 72px;
+	margin: {
+		left: -20px;
+	};
+	padding: {
+		top: 8px;
+		right: 32px;
+		bottom: 8px;
+		left: 32px;
+	};
+	background-color: #fff;
+	box-shadow: $elevation-01;
+
+	.acf-headerbar-inner {
+		flex: 1 1 auto;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		max-width: $max-width;
+		gap: 8px;
+	}
+
+	.acf-page-title {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		margin: {
+			top: 0;
+			right: 16px;
+			bottom: 0;
+			left: 0;
+		};
+		padding: {
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+		};
+
+		.acf-duplicated-from {
+			color: $gray-400;
+		}
+
+		.acf-pro-label {
+			box-shadow: none;
+		}
+	}
+
+	@media screen and (max-width: $md) {
+		position: static;
+	}
+
+	@media screen and (max-width: 600px) {
+		justify-content: space-between;
+		position: relative;
+		top: 46px;
+		min-height: 64px;
+		padding: {
+			right: 12px;
+		};
+	}
+
+	.acf-headerbar-content {
+		flex: 1 1 auto;
+		display: flex;
+		align-items: center;
+
+		@media screen and (max-width: $md) {
+			flex-wrap: wrap;
+
+			.acf-headerbar-title,
+			.acf-title-wrap {
+				flex: 1 1 100%;
+			}
+
+			.acf-title-wrap {
+				margin: {
+					top: 8px;
+				};
+			}
+
+		}
+
+	}
+
+	.acf-input-error {
+		border: 1px rgba($color-danger, 0.5) solid !important;
+		box-shadow: 0 0 0 3px rgba(209, 55, 55, 0.12), 0 0 0 rgba(255, 54, 54, 0.25) !important;
+		background-image: url("../../images/icons/icon-warning-alt-red.svg");
+		background-position: right 10px top 50%;
+		background-size: 20px;
+		background-repeat: no-repeat;
+
+		&:focus {
+			outline: none !important;
+			border: 1px rgba($color-danger, 0.8) solid !important;
+			box-shadow: 0 0 0 3px rgba(209, 55, 55, 0.16), 0 0 0 rgba(255, 54, 54, 0.25) !important;
+		}
+	}
+
+	.acf-headerbar-title-field {
+		min-width: 320px;
+
+		@media screen and (max-width: $md) {
+			min-width: 100%;
+		}
+	}
+
+	.acf-headerbar-actions {
+		display: flex;
+
+		.acf-btn {
+			margin: {
+				left: 8px;
+			};
+		}
+
+		.disabled {
+			background-color: $gray-100;
+			color: $gray-400 !important;
+			border: 1px $gray-300 solid;
+			cursor: default;
+		}
+
+	}
+
+}
+
+/*---------------------------------------------------------------------------------------------
+*
+*  Edit Field Group Headerbar
+*
+*---------------------------------------------------------------------------------------------*/
+.acf-headerbar-field-editor {
+	position: sticky;
+	top: 32px;
+	z-index: 1020;
+	margin: {
+		left: -20px;
+	};
+	width: calc(100% + 20px);
+
+	@media screen and (max-width: $md) {
+		position: relative;
+		top: 0;
+		width: 100%;
+		margin: {
+			left: 0;
+		};
+		padding: {
+			right: 8px;
+			left: 8px;
+		};
+	}
+
+	@media screen and (max-width: $sm) {
+		position: relative;
+		top: 46px;
+		z-index: unset;
+	}
+
+
+	.acf-headerbar-inner {
+
+		@media screen and (max-width: $md) {
+			flex-wrap: wrap;
+			justify-content: flex-start;
+			align-content: flex-start;
+			align-items: flex-start;
+			width: 100%;
+
+			.acf-page-title {
+				flex: 1 1 auto;
+			}
+
+			.acf-headerbar-actions {
+				flex: 1 1 100%;
+				margin-top: 8px;
+				gap: 8px;
+
+				.acf-btn {
+					width: 100%;
+					display: inline-flex;
+					justify-content: center;
+					margin: 0;
+				}
+
+			}
+
+		}
+
+	}
+
+	.acf-page-title {
+		margin: {
+			right: 16px;
+		};
+	}
+
+}
+
+.rtl .acf-headerbar,
+.rtl .acf-headerbar-field-editor {
+	margin-left: 0;
+	margin-right: -20px;
+
+	.acf-page-title {
+		margin: {
+			left: 16px;
+			right: 0;
+		};
+	}
+
+	.acf-headerbar-actions {
+
+		.acf-btn {
+			margin: {
+				left: 0;
+				right: 8px;
+			};
+		}
+
+	}
+}

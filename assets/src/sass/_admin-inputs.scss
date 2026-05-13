@@ -1,0 +1,1039 @@
+@use 'sass:color';
+@use 'variables' as *;
+@use 'typography' as *;
+
+.acf-admin-page {
+
+	/*---------------------------------------------------------------------------------------------
+	*
+	*  All Inputs
+	*
+	*---------------------------------------------------------------------------------------------*/
+	input[type="text"],
+	input[type="search"],
+	input[type="number"],
+	textarea,
+	select {
+		box-sizing: border-box;
+		height: 40px;
+		padding: {
+			right: 12px;
+			left: 12px;
+		};
+		background-color: #fff;
+		border-color: $gray-300;
+		box-shadow: $elevation-01;
+		border-radius: $radius-md;
+		/* stylelint-disable-next-line scss/at-extend-no-missing-placeholder */
+		@extend .p4;
+		color: $gray-700;
+
+		&:focus {
+			outline: $outline;
+			border-color: $blue-400;
+		}
+
+		&:disabled {
+			background-color: $gray-50;
+			color: color.adjust($gray-500, $lightness: 10%);
+		}
+
+		&::placeholder {
+			color: $gray-400;
+		}
+
+	}
+
+	/*---------------------------------------------------------------------------------------------
+	*
+	*  Read only text inputs
+	*
+	*---------------------------------------------------------------------------------------------*/
+	input[type="text"] {
+
+		&:read-only {
+			background-color: $gray-50;
+			color: $gray-400;
+		}
+
+	}
+
+	/*---------------------------------------------------------------------------------------------
+	*
+	*  Number fields
+	*
+	*---------------------------------------------------------------------------------------------*/
+	.acf-field.acf-field-number {
+
+		.acf-label,
+		.acf-input input[type="number"] {
+			max-width: 180px;
+		}
+
+	}
+
+	/*---------------------------------------------------------------------------------------------
+	*
+	*  Textarea
+	*
+	*---------------------------------------------------------------------------------------------*/
+	textarea {
+		box-sizing: border-box;
+		padding: {
+			top: 10px;
+			bottom: 10px;
+		};
+		height: 80px;
+		min-height: 56px;
+	}
+
+	/*---------------------------------------------------------------------------------------------
+	*
+	*  Select
+	*
+	*---------------------------------------------------------------------------------------------*/
+	select {
+		min-width: 160px;
+		max-width: 100%;
+		padding: {
+			right: 40px;
+			left: 12px;
+		};
+		background-image: url('../../images/icons/icon-chevron-down.svg');
+		background-position: right 10px top 50%;
+		background-size: 20px;
+		@extend .p4;
+
+		&:hover,
+		&:focus {
+			color: $blue-500;
+		}
+
+		&::before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 5px;
+			left: 5px;
+			width: 20px;
+			height: 20px;
+		}
+
+	}
+
+	&.rtl {
+
+		select {
+			padding: {
+				right: 12px;
+				left: 40px;
+			};
+			background-position: left 10px top 50%;
+		}
+	}
+
+	/*---------------------------------------------------------------------------------------------
+	*
+	*  Radio Button & Checkbox base styling
+	*
+	*---------------------------------------------------------------------------------------------*/
+	input[type="radio"],
+	input[type="checkbox"] {
+		box-sizing: border-box;
+		width: 16px;
+		height: 16px;
+		padding: 0;
+		border: {
+			width: 1px;
+			style: solid;
+			color: $gray-400;
+		};
+		background: #fff;
+		box-shadow: none;
+
+		&:hover {
+			background-color: $blue-50;
+			border-color: $blue-500;
+		}
+
+		&:checked,
+		&:focus-visible {
+			background-color: $blue-50;
+			border-color: $blue-500;
+
+			&:before {
+				content: '';
+				position: relative;
+				top: -1px;
+				left: -1px;
+				width: 16px;
+				height: 16px;
+				margin: 0;
+				padding: 0;
+				background-color: transparent;
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center;
+			}
+
+		}
+
+		&:active {
+			box-shadow: 0px 0px 0px 3px $blue-50, 0px 0px 0px rgba(255, 54, 54, 0.25);
+		}
+
+		&:disabled {
+			background-color: $gray-50;
+			border-color: $gray-300;
+		}
+
+	}
+
+	&.rtl {
+
+		input[type="radio"],
+		input[type="checkbox"] {
+
+			&:checked,
+			&:focus-visible {
+
+				&:before {
+					left: 1px;
+				}
+			}
+		}
+	}
+
+
+	/*---------------------------------------------------------------------------------------------
+	*
+	*  Radio Buttons
+	*
+	*---------------------------------------------------------------------------------------------*/
+	input[type="radio"] {
+
+		&:checked,
+		&:focus {
+
+			&:before {
+				background-image: url('../../images/field-states/radio-active.svg');
+			}
+
+		}
+
+	}
+
+	/*---------------------------------------------------------------------------------------------
+	*
+	*  Checkboxes
+	*
+	*---------------------------------------------------------------------------------------------*/
+	input[type="checkbox"] {
+
+		&:checked,
+		&:focus {
+
+			&:before {
+				background-image: url('../../images/field-states/checkbox-active.svg');
+			}
+
+		}
+
+	}
+
+	/*---------------------------------------------------------------------------------------------
+	*
+	*  Radio Buttons & Checkbox lists
+	*
+	*---------------------------------------------------------------------------------------------*/
+	.acf-radio-list,
+	.acf-checkbox-list {
+
+		li input[type="radio"],
+		li input[type="checkbox"] {
+			margin: {
+				right: 6px;
+			};
+		}
+
+		&.acf-bl li {
+			margin: {
+				bottom: 8px;
+			};
+
+			&:last-of-type {
+				margin: {
+					bottom: 0;
+				};
+			}
+
+
+		}
+
+		label {
+			display: flex;
+			align-items: center;
+			align-content: center;
+		}
+
+	}
+
+	/*---------------------------------------------------------------------------------------------
+	*
+	*  ACF Switch
+	*
+	*---------------------------------------------------------------------------------------------*/
+	.acf-switch {
+		width: 42px;
+		height: 24px;
+		border: none;
+		background-color: $gray-300;
+		border-radius: 12px;
+
+		&:hover {
+			background-color: $gray-400;
+		}
+
+		&:active {
+			box-shadow: 0px 0px 0px 3px $blue-50, 0px 0px 0px rgba(255, 54, 54, 0.25);
+		}
+
+		&.-on {
+			background-color: $color-primary;
+
+			&:hover {
+				background-color: $color-primary-hover;
+			}
+
+			.acf-switch-slider {
+				left: 20px;
+			}
+
+		}
+
+		.acf-switch-off,
+		.acf-switch-on {
+			visibility: hidden;
+		}
+
+		.acf-switch-slider {
+			width: 20px;
+			height: 20px;
+			border: none;
+			border-radius: 100px;
+			box-shadow: 0px 1px 3px rgba(16, 24, 40, 0.1), 0px 1px 2px rgba(16, 24, 40, 0.06);
+		}
+
+	}
+
+	.acf-field-true-false {
+		display: flex;
+		align-items: flex-start;
+
+		.acf-label {
+			order: 2;
+			display: block;
+			align-items: center;
+			max-width: 550px !important;
+			margin: {
+				top: 2px;
+				bottom: 0;
+				left: 12px;
+			};
+
+			label {
+				margin: {
+					bottom: 0;
+				};
+			}
+
+			.acf-tip {
+				margin: {
+					left: 12px;
+				};
+			}
+
+			.description {
+				display: block;
+				margin: {
+					top: 2px;
+					left: 0;
+				};
+			}
+		}
+
+	}
+
+	&.rtl {
+
+		.acf-field-true-false {
+
+			.acf-label {
+				margin: {
+					right: 12px;
+					left: 0;
+				};
+			}
+
+			.acf-tip {
+				margin: {
+					right: 12px;
+					left: 0;
+				};
+			}
+		}
+	}
+
+	/*---------------------------------------------------------------------------------------------
+	*
+	*  File input button
+	*
+	*---------------------------------------------------------------------------------------------*/
+
+	input::file-selector-button {
+		box-sizing: border-box;
+		min-height: 40px;
+		margin: {
+			right: 16px;
+		};
+		padding: {
+			top: 8px;
+			right: 16px;
+			bottom: 8px;
+			left: 16px;
+		};
+		background-color: transparent;
+		color: $color-primary !important;
+		border-radius: $radius-md;
+		border: {
+			width: 1px;
+			style: solid;
+			color: $color-primary;
+		};
+		text-decoration: none;
+
+		&:hover {
+			border-color: $color-primary-hover;
+			cursor: pointer;
+			color: $color-primary-hover !important;
+		}
+
+	}
+
+
+	/*---------------------------------------------------------------------------------------------
+	*
+	*  Action Buttons
+	*
+	*---------------------------------------------------------------------------------------------*/
+	.button {
+		display: inline-flex;
+		align-items: center;
+		height: 40px;
+		padding: {
+			right: 16px;
+			left: 16px;
+		};
+		background-color: transparent;
+		border-width: 1px;
+		border-style: solid;
+		border-color: $blue-500;
+		border-radius: $radius-md;
+		@extend .p4;
+		color: $blue-500;
+
+		&:hover {
+			background-color: color.adjust($blue-50, $lightness: 2%);
+			border-color: $color-primary;
+			color: $color-primary;
+		}
+
+		&:focus {
+			background-color: color.adjust($blue-50, $lightness: 2%);
+			outline: $outline;
+			color: $color-primary;
+		}
+
+	}
+
+	/*---------------------------------------------------------------------------------------------
+	*
+	*  Edit field group header
+	*
+	*---------------------------------------------------------------------------------------------*/
+	.edit-field-group-header {
+		display: block !important;
+	}
+
+	/*---------------------------------------------------------------------------------------------
+	*
+	*  Select2 inputs
+	*
+	*---------------------------------------------------------------------------------------------*/
+	.acf-input,
+	.rule-groups {
+
+		.select2-container.-acf .select2-selection {
+			border: none;
+			line-height: 1;
+		}
+
+		.select2-container.-acf .select2-selection__rendered {
+			box-sizing: border-box;
+			padding: {
+				right: 0;
+				left: 0;
+			};
+			background-color: #fff;
+			border: {
+				width: 1px;
+				style: solid;
+				color: $gray-300;
+			};
+			box-shadow: $elevation-01;
+			border-radius: $radius-md;
+			/* stylelint-disable-next-line scss/at-extend-no-missing-placeholder */
+			@extend .p4;
+			color: $gray-700;
+		}
+
+		.acf-conditional-select-name {
+			min-width: 180px;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+
+		.acf-conditional-select-id {
+			padding-right: 30px;
+		}
+
+		.value .select2-container--focus {
+			height: 40px;
+		}
+
+		.value .select2-container--open .select2-selection__rendered {
+			border-color: $blue-400;
+		}
+
+		.select2-container--focus {
+			outline: $outline;
+			border-color: $blue-400;
+			border-radius: $radius-md;
+
+			.select2-selection__rendered {
+				border-color: $blue-400 !important;
+			}
+
+			&.select2-container--below.select2-container--open {
+
+				.select2-selection__rendered {
+					border-bottom-right-radius: 0 !important;
+					border-bottom-left-radius: 0 !important;
+				}
+
+			}
+
+			&.select2-container--above.select2-container--open {
+
+				.select2-selection__rendered {
+					border-top-right-radius: 0 !important;
+					border-top-left-radius: 0 !important;
+				}
+
+			}
+
+		}
+
+		.select2-container .select2-search--inline .select2-search__field {
+			margin: 0;
+			padding: {
+				left: 6px;
+			};
+
+			&:focus {
+				outline: none;
+				border: none;
+			}
+
+		}
+
+		.select2-container--default .select2-selection--multiple .select2-selection__rendered {
+			padding: {
+				top: 0;
+				right: 6px;
+				bottom: 0;
+				left: 6px;
+			};
+		}
+
+		.select2-selection__clear {
+			width: 18px;
+			height: 18px;
+			margin: {
+				top: 12px;
+				right: 1px;
+			};
+			text-indent: 100%;
+			white-space: nowrap;
+			overflow: hidden;
+			color: #fff;
+
+			&:before {
+				content: '';
+				$icon-size: 16px;
+				display: block;
+				width: $icon-size;
+				height: $icon-size;
+				top: 0;
+				left: 0;
+				border: none;
+				border-radius: 0;
+				-webkit-mask-size: contain;
+				mask-size: contain;
+				-webkit-mask-repeat: no-repeat;
+				mask-repeat: no-repeat;
+				-webkit-mask-position: center;
+				mask-position: center;
+				-webkit-mask-image: url('../../images/icons/icon-close.svg');
+				mask-image: url('../../images/icons/icon-close.svg');
+				background-color: $gray-400;
+			}
+
+			&:hover::before {
+				background-color: $blue-500;
+			}
+		}
+	}
+
+	/*---------------------------------------------------------------------------------------------
+	*
+	*  ACF label
+	*
+	*---------------------------------------------------------------------------------------------*/
+	.acf-label {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		.acf-icon-help {
+			$icon-size: 18px;
+			width: $icon-size;
+			height: $icon-size;
+			background-color: $gray-400;
+		}
+
+		label {
+			margin: {
+				bottom: 0;
+			};
+		}
+
+		.description {
+			margin: {
+				top: 2px;
+			};
+		}
+
+	}
+
+	/*---------------------------------------------------------------------------------------------
+	*
+	*  Tooltip for field name field setting (result of a fix for keyboard navigation)
+	*
+	*---------------------------------------------------------------------------------------------*/
+	.acf-field-setting-name .acf-tip {
+		position: absolute;
+		top: 0;
+		left: 654px;
+		color: #98A2B3;
+
+		@at-root .rtl#{&} {
+			left: auto;
+			right: 654px;
+		}
+
+		.acf-icon-help {
+			width: 18px;
+			height: 18px;
+		}
+	}
+
+	/* Field Type Selection select2 */
+	.acf-field-setting-type,
+	.acf-field-permalink-rewrite,
+	.acf-field-query-var,
+	.acf-field-capability,
+	.acf-field-parent-slug,
+	.acf-field-data-storage,
+	.acf-field-manage-terms,
+	.acf-field-edit-terms,
+	.acf-field-delete-terms,
+	.acf-field-assign-terms,
+	.acf-field-meta-box,
+	.rule-groups {
+
+		.select2-container.-acf {
+			min-height: 40px;
+		}
+
+		.select2-container--default .select2-selection--single {
+
+			.select2-selection__rendered {
+				display: flex;
+				align-items: center;
+				position: relative;
+				z-index: 800;
+				min-height: 40px;
+				padding: {
+					top: 0;
+					right: 12px;
+					bottom: 0;
+					left: 12px;
+				};
+			}
+
+			.field-type-icon {
+				top: auto;
+				width: 18px;
+				height: 18px;
+				margin: {
+					right: 2px;
+				};
+
+				&:before {
+					width: 9px;
+					height: 9px;
+				}
+
+			}
+		}
+
+		.select2-container--open .select2-selection__rendered {
+			border-color: $blue-300 !important;
+			border-bottom-color: $gray-300 !important;
+		}
+
+		.select2-container--open.select2-container--below .select2-selection__rendered {
+			border-bottom-right-radius: 0 !important;
+			border-bottom-left-radius: 0 !important;
+		}
+
+		.select2-container--open.select2-container--above .select2-selection__rendered {
+			border-top-right-radius: 0 !important;
+			border-top-left-radius: 0 !important;
+			border-bottom-color: $blue-300 !important;
+			border-top-color: $gray-300 !important;
+		}
+
+		// icon margins
+		.acf-selection.has-icon {
+			margin-left: 6px;
+	
+			@at-root .rtl#{&} {
+				margin-right: 6px;
+			}
+		}
+		
+		// Dropdown icon
+		.select2-selection__arrow {
+			width: 20px;
+			height: 20px;
+			top: calc(50% - 10px);
+			right: 12px;
+			background-color: transparent;
+			
+			&:after {
+				content: "";
+				$icon-size: 20px;
+				display: block;
+				position: absolute;
+				z-index: 850;
+				top: 1px;
+				left: 0;
+				width: $icon-size;
+				height: $icon-size;
+				-webkit-mask-image: url("../../images/icons/icon-chevron-down.svg");
+				mask-image: url("../../images/icons/icon-chevron-down.svg");
+				background-color: $gray-500;
+				border: none;
+				border-radius: 0;
+				-webkit-mask-size: contain;
+				mask-size: contain;
+				-webkit-mask-repeat: no-repeat;
+				mask-repeat: no-repeat;
+				-webkit-mask-position: center;
+				mask-position: center;
+				text-indent: 500%;
+				white-space: nowrap;
+				overflow: hidden;
+			}
+			
+			b[role="presentation"] {
+				display: none;
+			}
+			
+		}
+
+		// Open state
+		.select2-container--open {
+			
+			// Swap chevron icon
+			.select2-selection__arrow:after {
+				-webkit-mask-image: url("../../images/icons/icon-chevron-up.svg");
+				mask-image: url("../../images/icons/icon-chevron-up.svg");
+			}
+			
+		}
+
+	}
+
+	.acf-term-search-term-name {
+		background-color: $gray-50;
+		border-top: 1px solid $gray-200;
+		border-bottom: 1px solid $gray-200;
+		color: $gray-400;
+		padding: 5px 5px 5px 10px;
+		width: 100%;
+		margin: 0;
+		display: block;
+		font-weight: 300;
+	}
+
+	.field-type-select-results {
+		position: relative;
+		top: 4px;
+		z-index: 1002;
+		border-radius: 0 0 $radius-md $radius-md;
+		box-shadow: 0px 8px 24px 4px rgba(16, 24, 40, 0.12);
+
+		&.select2-dropdown--above {
+			display: flex;
+			flex-direction: column-reverse;	  
+			top: 0;
+			border-radius: $radius-md $radius-md 0 0;
+			z-index: 99999;
+		}
+		
+		@at-root .select2-container.select2-container--open#{&} {
+			// outline: 3px solid $blue-50;
+			box-shadow: 0px 0px 0px 3px #EBF5FA, 0px 8px 24px 4px rgba(16, 24, 40, 0.12);
+		}
+
+		// icon margins
+		.acf-selection.has-icon {
+			margin-left: 6px;
+
+			@at-root .rtl#{&} {
+				margin-right: 6px;
+			}
+		}
+
+		// Search field
+		.select2-search {
+			position: relative;
+			margin: 0;
+			padding: 0;
+
+			&--dropdown {
+
+				&:after {
+					content: "";
+					$icon-size: 16px;
+					display: block;
+					position: absolute;
+					top: 12px;
+					left: 13px;
+					width: $icon-size;
+					height: $icon-size;
+					-webkit-mask-image: url("../../images/icons/icon-search.svg");
+					mask-image: url("../../images/icons/icon-search.svg");
+					background-color: $gray-400;
+					border: none;
+					border-radius: 0;
+					-webkit-mask-size: contain;
+					mask-size: contain;
+					-webkit-mask-repeat: no-repeat;
+					mask-repeat: no-repeat;
+					-webkit-mask-position: center;
+					mask-position: center;
+					text-indent: 500%;
+					white-space: nowrap;
+					overflow: hidden;
+
+					@at-root .rtl#{&} {
+						right: 12px;
+						left: auto;
+					}
+				}
+			}
+
+			.select2-search__field {
+				padding-left: 38px;
+
+				border-right: 0;
+				border-bottom: 0;
+				border-left: 0;
+				border-radius: 0;
+
+				@at-root .rtl#{&} {
+					padding-right: 38px;
+					padding-left: 0;
+				}
+
+				&:focus {
+					border-top-color: $gray-300;
+					outline: 0;
+				}
+			}
+
+		}
+
+		.select2-results__options {
+			max-height: 440px;
+		}
+		
+		.select2-results__option {
+
+			.select2-results__option--highlighted {
+				background-color: $blue-500 !important;
+				color: $gray-50 !important;
+			}
+		}
+
+		// List items
+		.select2-results__option .select2-results__option {
+			display: inline-flex;
+			position: relative;
+			width: calc(100% - 24px);
+			min-height: 32px;
+			padding: {
+				top: 0;
+				right: 12px;
+				bottom: 0;
+				left: 12px;
+			}
+			align-items: center;
+			
+			.field-type-icon {
+				top: auto;
+				width: 18px;
+				height: 18px;
+				margin: {
+					right: 2px;
+				};
+				box-shadow: 0 0 0 1px $gray-50;
+			
+				&:before {
+					width: 9px;
+					height: 9px;
+				}
+			}
+			
+		}
+
+		.select2-results__option[aria-selected="true"] {
+			background-color: $blue-50 !important;
+			color: $gray-700 !important;
+			
+			&:after {
+				content: "";
+				$icon-size: 16px;
+				right: 13px;
+				position: absolute;
+				width: $icon-size;
+				height: $icon-size;
+				-webkit-mask-image: url("../../images/icons/icon-check.svg");
+				mask-image: url("../../images/icons/icon-check.svg");
+				background-color: $blue-500;
+				border: none;
+				border-radius: 0;
+				-webkit-mask-size: contain;
+				mask-size: contain;
+				-webkit-mask-repeat: no-repeat;
+				mask-repeat: no-repeat;
+				-webkit-mask-position: center;
+				mask-position: center;
+				text-indent: 500%;
+				white-space: nowrap;
+				overflow: hidden;
+
+				@at-root .rtl#{&} {
+					left: 13px;
+					right: auto;
+				}
+			}
+		}
+
+		.select2-results__group {
+			display: inline-flex;
+			align-items: center;
+			width: calc(100% - 24px);
+			min-height: 25px;
+			background-color: $gray-50;
+			border-top: {
+				width: 1px;
+				style: solid;
+				color: $gray-200;
+			};
+			border-bottom: {
+				width: 1px;
+				style: solid;
+				color: $gray-200;
+			};
+			color: $gray-400;
+			font-size: 11px;
+			margin: {
+				bottom: 0;
+			};
+			padding: {
+				top: 0;
+				right: 12px;
+				bottom: 0;
+				left: 12px;
+			};
+			font-weight: normal;
+		}
+	}
+
+	.schema-property-select-results,
+	.schema-type-select-results,
+	.schema-output-format-select-results {
+		@extend .field-type-select-results;
+
+		.select2-results__option .select2-results__option {
+			display: flex;
+		}
+
+		.select2-results__option .select2-results__options {
+			max-height: none;
+		}
+	}
+
+	/*---------------------------------------------------------------------------------------------
+	*
+	*  RTL arrow position
+	*
+	*---------------------------------------------------------------------------------------------*/
+	&.rtl {
+
+		.acf-field-setting-type,
+		.acf-field-permalink-rewrite,
+		.acf-field-query-var {
+
+			.select2-selection__arrow:after {
+				right: auto;
+				left: 10px;
+			}
+		}
+	}
+}
+
+.rtl.post-type-acf-field-group,
+.rtl.acf-internal-post-type {
+
+	.acf-field-setting-name .acf-tip {
+		left: auto;
+		right: 654px;
+	}
+}

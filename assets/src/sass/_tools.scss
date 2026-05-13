@@ -1,0 +1,188 @@
+@use 'variables' as *;
+@use 'typography' as *;
+
+/*---------------------------------------------------------------------------------------------
+*
+* Tools page layout
+*
+*---------------------------------------------------------------------------------------------*/
+#acf-admin-tools {
+
+	.postbox-header {
+		display: none; // Hide native WP postbox headers
+	}
+
+	.acf-meta-box-wrap.-grid {
+		margin: {
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+		};
+
+		.postbox {
+			width: 100%;
+			clear: none;
+			float: none;
+			margin: {
+				bottom: 0;
+			};
+
+			@media screen and (max-width: $md) {
+				flex: 1 1 100%;
+			}
+
+		}
+
+	}
+
+	.acf-meta-box-wrap.-grid .postbox:nth-child(odd) {
+		margin: {
+			left: 0;
+		};
+	}
+
+	.meta-box-sortables {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(1, 1fr);
+		grid-column-gap: 32px;
+		grid-row-gap: 32px;
+
+		@media screen and (max-width: $md) {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: flex-start;
+			align-content: flex-start;
+			align-items: center;
+			grid-column-gap: 8px;
+			grid-row-gap: 8px;
+		}
+
+	}
+
+}
+
+/*---------------------------------------------------------------------------------------------
+*
+* Tools export pages
+*
+*---------------------------------------------------------------------------------------------*/
+#acf-admin-tools {
+
+	&.tool-export {
+
+		.inside {
+			margin: 0;
+		}
+
+		// ACF custom postbox header
+		.acf-postbox-header {
+			margin: {
+				bottom: 24px;
+			};
+		}
+
+		// Main postbox area
+		.acf-postbox-main {
+			border: none;
+			margin: 0;
+			padding: {
+				top: 0;
+				right: 24px;
+				bottom: 0;
+				left: 0;
+			};
+		}
+
+		.acf-postbox-columns {
+			margin: {
+				top: 0;
+				right: 280px;
+				bottom: 0;
+				left: 0;
+			};
+			padding: 0;
+
+			.acf-postbox-side {
+				padding: 0;
+
+				.acf-panel {
+					margin: 0;
+					padding: 0;
+				}
+
+				&:before {
+					display: none;
+				}
+
+				.acf-btn {
+					display: block;
+					width: 100%;
+					text-align: center;
+				}
+
+			}
+
+		}
+
+		.meta-box-sortables {
+			display: block;
+		}
+
+		.acf-panel {
+			border: none;
+
+			h3 {
+				margin: 0;
+				padding: 0;
+				color: $gray-700;
+				@extend .p4;
+
+				&:before {
+					display: none;
+				}
+
+			}
+
+		}
+
+		.acf-checkbox-list {
+			margin: {
+				top: 16px;
+			};
+			border: {
+				width: 1px;
+				style: solid;
+				color: $gray-300;
+			};
+			border-radius: $radius-md;
+
+			li {
+				display: inline-flex;
+				box-sizing: border-box;
+				width: 100%;
+				height: 48px;
+				align-items: center;
+				margin: 0;
+				padding: {
+					right: 12px;
+					left: 12px;
+				};
+				border-bottom: {
+					width: 1px;
+					style: solid;
+					color: $gray-200;
+				};
+
+				&:last-child {
+					border-bottom: none;
+				}
+
+			}
+
+		}
+
+	}
+
+}

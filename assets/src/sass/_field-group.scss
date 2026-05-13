@@ -1,0 +1,835 @@
+@use 'sass:color';
+@use 'variables' as *;
+@use 'mixins' as *;
+
+/*--------------------------------------------------------------------------------------------
+*
+*	Field Group
+*
+*--------------------------------------------------------------------------------------------*/
+
+// Reset postbox inner padding.
+#acf-field-group-fields > .inside,
+#acf-field-group-locations > .inside,
+#acf-field-group-options > .inside {
+	padding: 0;
+	margin: 0;
+}
+
+// Hide metabox order buttons added in WP 5.5.
+.postbox {
+	.handle-order-higher,
+	.handle-order-lower {
+		display: none;
+	}
+}
+
+/*----------------------------------------------------------------------------
+*
+*  Postbox: Publish
+*
+*----------------------------------------------------------------------------*/
+#minor-publishing-actions,
+#misc-publishing-actions #visibility,
+#misc-publishing-actions .edit-timestamp {
+	display: none;
+}
+
+#minor-publishing {
+	border-bottom: 0 none;
+}
+
+#misc-pub-section {
+	border-bottom: 0 none;
+}
+
+#misc-publishing-actions .misc-pub-section {
+	border-bottom-color: #F5F5F5;
+}
+
+
+/*----------------------------------------------------------------------------
+*
+*  Postbox: Fields
+*
+*----------------------------------------------------------------------------*/
+#acf-field-group-fields {
+	border: 0 none;
+
+	.inside {
+		border-top: {
+			width: 0;
+			style: none;
+		};
+	}
+
+	/* links */
+	a {
+		text-decoration: none;
+	}
+
+	/* Field type */
+	.li-field-type {
+
+		.field-type-icon {
+			margin: {
+				right: 8px;
+			};
+
+			@media screen and (max-width: 600px) {
+				display: none;
+			}
+
+		}
+
+		.field-type-label {
+			display: flex;
+		}
+
+		.acf-pro-label-field-type {
+			position: relative;
+			top: -3px;
+			margin-left: 8px;
+
+			img {
+				max-width: 34px;
+			}
+		}
+
+	}
+
+	/* table header */
+	.li-field-order {
+		width: 64px;
+		justify-content: center;
+
+		@media screen and (max-width: $md) {
+			width: 32px;
+		}
+
+	}
+	.li-field-label { width: calc(50% - 64px); }
+	.li-field-name { width: 25%; word-break: break-word; }
+	.li-field-key { display: none; }
+	.li-field-type { width: 25%; }
+
+	/* show keys */
+	&.show-field-keys {
+
+		.li-field-label { width: calc(35% - 64px); };
+		.li-field-name { width: 15%; };
+		.li-field-key { width: 25%;  display: flex;  };
+		.li-field-type { width: 25%; };
+
+	}
+
+	/* hide tabs */
+	&.hide-tabs {
+		.acf-field-settings-tab-bar {
+			display: none;
+		}
+
+		.acf-field-settings-main {
+			padding: 0;
+
+			&.acf-field-settings-main-general {
+				padding-top: 32px;
+			}
+
+			.acf-field {
+				margin-bottom: 32px;
+			}
+
+			.acf-field-setting-wrapper {
+				padding-top: 0;
+				border-top: none;
+			}
+
+			.acf-field-settings-split .acf-field {
+				border-bottom: {
+					width: 1px;
+					style: solid;
+					color: $gray-200;
+				};
+			}
+
+			.acf-field-setting-first_day {
+				padding-top: 0;
+				border-top: none;
+			}
+		}
+
+		.acf-field-settings-footer {
+			margin-top: 32px;
+		}
+	}
+
+	/* fields */
+	.acf-field-list-wrap {
+		border: $wp-card-border solid 1px;
+	}
+
+	.acf-field-list {
+		background: #f5f5f5;
+		margin-top: -1px;
+
+		.acf-tbody {
+
+			> .li-field-name,
+			> .li-field-key {
+				align-items: flex-start;
+			}
+
+		}
+
+		.copyable:not(.input-copyable, .copy-unsupported) {
+			cursor: pointer;
+			display: inline-flex;
+			align-items: center;
+
+			&:hover:after {
+				content: '';
+				padding-left: 5px;
+				$icon-size: 12px;
+				display: inline-flex;
+				width: $icon-size;
+				height: $icon-size;
+				background-color: $gray-500;
+				border: none;
+				border-radius: 0;
+				-webkit-mask-size: contain;
+				mask-size: contain;
+				-webkit-mask-repeat: no-repeat;
+				mask-repeat: no-repeat;
+				-webkit-mask-position: center;
+				mask-position: center;
+				text-indent: 500%;
+				white-space: nowrap;
+				overflow: hidden;
+				-webkit-mask-image: url('../../images/icons/icon-copy.svg');
+				mask-image: url('../../images/icons/icon-copy.svg');
+				background-size: cover;
+			}
+
+			&.sub-label {
+				padding-right: 22px;
+
+				&:hover {
+					padding-right: 0;
+
+					&:after {
+						$icon-size: 14px;
+						width: $icon-size;
+						height: $icon-size;
+						padding-left: 8px;
+					}
+				}
+			}
+
+			&.copied:hover:after {
+				-webkit-mask-image: url('../../images/icons/icon-check-circle-solid.svg');
+				mask-image: url('../../images/icons/icon-check-circle-solid.svg');
+				background-color: $acf_success;
+			}
+		}
+
+		.copyable.input-copyable:not(.copy-unsupported) {
+			cursor: pointer;
+			display: block;
+			position: relative;
+			align-items: center;
+
+			input {
+				padding-right: 40px;
+			}
+
+			.acf-input-wrap:after {
+				content: '';
+				padding-left: 5px;
+				$icon-size: 16px;
+				right: 12px;
+				top: 12px;
+				position: absolute;
+				width: $icon-size;
+				height: $icon-size;
+				background-color: $gray-400;
+				border: none;
+				border-radius: 0;
+				-webkit-mask-size: contain;
+				mask-size: contain;
+				-webkit-mask-repeat: no-repeat;
+				mask-repeat: no-repeat;
+				-webkit-mask-position: center;
+				mask-position: center;
+				text-indent: 500%;
+				white-space: nowrap;
+				overflow: hidden;
+				-webkit-mask-image: url('../../images/icons/icon-copy.svg');
+				mask-image: url('../../images/icons/icon-copy.svg');
+				background-size: cover;
+			}
+
+			&.copied .acf-input-wrap:after {
+				-webkit-mask-image: url('../../images/icons/icon-check-circle-solid.svg');
+				mask-image: url('../../images/icons/icon-check-circle-solid.svg');
+				background-color: $acf_success;
+			}
+		}
+
+		
+
+		/* no fields */
+		.no-fields-message {
+			padding: 15px 15px;
+			background: #fff;
+			display: none;
+		}
+
+		/* empty */
+		&.-empty {
+			.no-fields-message {
+				display: block;
+			}
+		}
+	}
+
+	// WP Admin 3.8
+	@include wp-admin('3-8') {
+		.acf-field-list-wrap {
+			border-color: $wp38-card-border-1;
+		}
+	}
+}
+
+
+.rtl #acf-field-group-fields {
+	.li-field-type {
+		.field-type-icon {
+			margin: {
+				left: 8px;
+				right: 0;
+			};
+		}
+	}
+}
+
+/* field object */
+.acf-field-object {
+	border-top: $wp38-card-border-2 solid 1px;
+	background: #fff;
+
+	/* sortable */
+	&.ui-sortable-helper {
+		overflow: hidden !important;
+		border: {
+			width: 1px;
+			style: solid;
+			color: $blue-200 !important;
+		};
+		border-radius: $radius-lg;
+		filter: drop-shadow(0px 10px 20px rgba(16, 24, 40, 0.14)) drop-shadow(0px 1px 3px rgba(16, 24, 40, 0.1));
+
+		&:before {
+			display: none !important;
+		}
+
+	}
+
+	&.ui-sortable-placeholder {
+		box-shadow: 0 -1px 0 0 #DFDFDF;
+		visibility: visible !important;
+		background: #F9F9F9;
+		border-top-color: transparent;
+		min-height: 54px;
+
+		// hide tab field separator
+		&:after, &:before {
+			visibility: hidden;
+		}
+	}
+
+
+	/* meta */
+	> .meta {
+		display: none;
+	}
+
+
+	/* handle */
+	> .handle {
+
+		a {
+			-webkit-transition: none;
+			-moz-transition: none;
+			-o-transition: none;
+			transition: none;
+		}
+
+		li {
+			word-wrap: break-word;
+		}
+
+		strong {
+			display: block;
+			padding-bottom: 0;
+			font-size: 14px;
+			line-height: 14px;
+			min-height: 14px;
+		}
+
+		.row-options {
+			display: block;
+			opacity: 0;
+			margin: {
+				top: 5px;
+			};
+
+			@media screen and (max-width: 880px) {
+				opacity: 1;
+				margin: {
+					bottom: 0;
+				};
+			}
+
+			a {
+				margin-right: 4px;
+
+				&:hover {
+					color: color.adjust($color-primary-hover, $lightness: -10%);
+				}
+
+			}
+
+			a.delete-field {
+				color: #a00;
+
+				&:hover { color: #f00; }
+			}
+
+			&.active {
+				visibility: visible;
+			}
+		}
+
+	}
+
+	/* open */
+	&.open {
+
+		+ .acf-field-object {
+			border-top-color: #E1E1E1;
+		}
+
+		> .handle {
+			background: $acf_blue;
+			border: color.adjust($acf_blue, $lightness: -2%) solid 1px;
+			text-shadow: #268FBB 0 1px 0;
+			color: #fff;
+			position: relative;
+			margin: 0 -1px 0 -1px;
+
+			a {
+				color: #fff !important;
+
+				&:hover {
+					text-decoration: underline !important;
+				}
+			}
+
+		}
+	}
+
+
+	/*
+	// debug
+	&[data-save="meta"] {
+		> .handle {
+			border-left: #ffb700 solid 5px !important;
+		}
+	}
+
+	&[data-save="settings"] {
+		> .handle {
+			border-left: #0ec563 solid 5px !important;
+		}
+	}
+*/
+
+
+	/* hover */
+	&:hover, &.-hover, &:focus-within {
+
+		> .handle {
+
+			.row-options {
+				opacity: 1;
+				margin-bottom: 0;
+			}
+
+		}
+	}
+
+
+	/* settings */
+	> .settings {
+		display: none;
+		width: 100%;
+
+		> .acf-table {
+			border: none;
+		}
+	}
+
+
+	/* conditional logic */
+	.rule-groups {
+		margin-top: 20px;
+	}
+
+}
+
+
+/*----------------------------------------------------------------------------
+*
+* Postbox: Locations
+*
+*----------------------------------------------------------------------------*/
+
+.rule-groups {
+
+	h4 {
+		margin: 3px 0;
+	}
+
+	.rule-group {
+		margin: 0 0 5px;
+
+		h4 {
+			margin: 0 0 3px;
+		}
+
+		td.param {
+			width: 35%;
+		}
+
+		td.operator {
+			width: 20%;
+		}
+
+		td.add {
+			width: 40px;
+		}
+
+		td.remove {
+			width: 28px;
+			vertical-align: middle;
+
+			a {
+				width: 22px;
+				height: 22px;
+				visibility: hidden;
+
+				&:before {
+					position: relative;
+					top: -2px;
+					font-size: 16px;
+				}
+
+			}
+		}
+
+		tr:hover td.remove a {
+			visibility: visible;
+		}
+
+		// empty select
+		select:empty {
+			background: #f8f8f8;
+		}
+	}
+
+
+	&:not(.rule-groups-multiple) {
+		.rule-group {
+			&:first-child tr:first-child td.remove a {
+				/* Don't allow user to delete the only rule group */
+				visibility: hidden !important;
+			}
+		}
+	}
+}
+
+
+/*----------------------------------------------------------------------------
+*
+*	Options
+*
+*----------------------------------------------------------------------------*/
+
+#acf-field-group-options tr[data-name="hide_on_screen"] li {
+	float: left;
+	width: 33%;
+}
+
+@media (max-width: 1100px) {
+
+	#acf-field-group-options tr[data-name="hide_on_screen"] li {
+		width: 50%;
+	}
+
+}
+
+
+/*----------------------------------------------------------------------------
+*
+*	Conditional Logic
+*
+*----------------------------------------------------------------------------*/
+
+table.conditional-logic-rules {
+	background: transparent;
+	border: 0 none;
+	border-radius: 0;
+}
+
+table.conditional-logic-rules tbody td {
+	background: transparent;
+	border: 0 none !important;
+	padding: 5px 2px !important;
+}
+
+
+/*----------------------------------------------------------------------------
+*
+*	Field: Tab
+*
+*----------------------------------------------------------------------------*/
+
+.acf-field-object-tab {
+
+	// hide setting
+	.acf-field-setting-name,
+	.acf-field-setting-instructions,
+	.acf-field-setting-required,
+	.acf-field-setting-warning,
+	.acf-field-setting-wrapper {
+		display: none;
+	}
+
+	// hide name
+	.li-field-name {
+		visibility: hidden;
+	}
+
+	p:first-child {
+		margin: 0.5em 0;
+	}
+
+	// hide presentation setting tabs.
+	li.acf-settings-type-presentation,
+	.acf-field-settings-main-presentation {
+		display: none !important;
+	}
+}
+
+/*----------------------------------------------------------------------------
+*
+*	Field: Accordion
+*
+*----------------------------------------------------------------------------*/
+
+.acf-field-object-accordion {
+
+	// hide setting
+	.acf-field-setting-name,
+	.acf-field-setting-instructions,
+	.acf-field-setting-required,
+	.acf-field-setting-warning,
+	.acf-field-setting-wrapper {
+		display: none;
+	}
+
+	// hide name
+	.li-field-name {
+		visibility: hidden;
+	}
+
+	p:first-child {
+		margin: 0.5em 0;
+	}
+
+	// show settings
+	.acf-field-setting-instructions {
+		display: block;
+	}
+
+}
+
+
+/*----------------------------------------------------------------------------
+*
+*	Field: Message
+*
+*----------------------------------------------------------------------------*/
+
+// Legacy selectors for older table-based field group editor
+.acf-field-object-message tr[data-name="name"],
+.acf-field-object-message tr[data-name="instructions"],
+.acf-field-object-message tr[data-name="required"] {
+	display: none !important;
+}
+
+.acf-field-object-message {
+
+	// hide setting (modern div-based field group editor)
+	.acf-field-setting-name,
+	.acf-field-setting-instructions,
+	.acf-field-setting-required {
+		display: none !important;
+	}
+
+	// hide name
+	.li-field-name {
+		visibility: hidden;
+	}
+
+	textarea {
+		height: 175px !important;
+	}
+}
+
+
+/*----------------------------------------------------------------------------
+*
+*	Field: Separator
+*
+*----------------------------------------------------------------------------*/
+
+.acf-field-object-separator tr[data-name="name"],
+.acf-field-object-separator tr[data-name="instructions"],
+.acf-field-object-separator tr[data-name="required"] {
+	display: none !important;
+}
+
+
+/*----------------------------------------------------------------------------
+*
+*	Field: Date Picker
+*
+*----------------------------------------------------------------------------*/
+
+.acf-field-object-date-picker,
+.acf-field-object-time-picker,
+.acf-field-object-date-time-picker {
+
+	.acf-radio-list {
+
+		li {
+			line-height: 25px;
+		}
+
+		span {
+			display: inline-block;
+			min-width: 10em;
+		}
+
+		input[type="text"] {
+			width: 100px;
+		}
+	}
+
+}
+
+.acf-field-object-date-time-picker {
+
+	.acf-radio-list {
+
+		span {
+			min-width: 15em;
+		}
+
+		input[type="text"] {
+			width: 200px;
+		}
+	}
+
+}
+
+
+/*--------------------------------------------------------------------------------------------
+*
+*	Slug
+*
+*--------------------------------------------------------------------------------------------*/
+
+#slugdiv {
+
+	.inside {
+		padding: 12px;
+		margin: 0;
+	}
+
+	input[type="text"] {
+		width: 100%;
+		height: 28px;
+		font-size: 14px;
+	}
+}
+
+
+/*--------------------------------------------------------------------------------------------
+*
+*	RTL
+*
+*--------------------------------------------------------------------------------------------*/
+
+html[dir="rtl"] .acf-field-object.open > .handle {
+	margin: 0
+}
+
+/*----------------------------------------------------------------------------
+*
+*  Device
+*
+*----------------------------------------------------------------------------*/
+
+@media only screen and (max-width: 850px) {
+
+	tr.acf-field,
+	td.acf-label,
+	td.acf-input {
+		display: block !important;
+		width: auto !important;
+		border: 0 none !important;
+	}
+
+	tr.acf-field {
+		border-top: #ededed solid 1px !important;
+		margin-bottom: 0 !important;
+	}
+
+	td.acf-label {
+		background: transparent !important;
+		padding-bottom: 0 !important;
+
+	}
+
+}
+
+/*----------------------------------------------------------------------------
+*
+*  Subtle background on accordion & tab fields to separate them from others
+*
+*----------------------------------------------------------------------------*/
+.post-type-acf-field-group {
+
+	#acf-field-group-fields {
+
+		.acf-field-object-tab,
+		.acf-field-object-accordion {
+			background-color: $gray-50;
+		}
+
+	}
+
+}

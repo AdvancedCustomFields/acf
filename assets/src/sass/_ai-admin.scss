@@ -1,0 +1,102 @@
+/**
+ * ACF AI Plugin - Admin Styles
+ *
+ * Custom styles for the ACF AI plugin admin interface.
+ * This file is compiled to build/css/acf-ai-admin.css
+ *
+ * @package ACF
+ */
+
+@use 'sass:color';
+@use 'variables' as *;
+
+/**
+ * Schema Role and Schema Type Experimental Badge
+ *
+ * Adds an "Experimental" pill badge after the Schema Role label.
+ */
+.acf-admin-page .acf-field-setting-schema_property,
+.acf-admin-page .acf-field-setting-schema_output_format {
+	.acf-experimental-badge {
+		min-height: 0;
+		font-weight: normal;
+		padding: 0 6px;
+		vertical-align: middle;
+		margin: 0 4px;
+		line-height: 1.4;
+
+		&:before {
+			margin-right: 4px;
+		}
+	}
+
+	.acf-input .select2-selection__clear {
+		order: 1;
+		margin-top: 4px !important;
+		margin-left: auto;
+		margin-right: 20px;
+		z-index: 801;
+	}
+}
+
+.acf-experimental-badge {
+	display: inline-flex;
+	align-items: center;
+	background: #E6F0FB;
+	border: 1px solid #AACEF1;
+	color: #0059B2;
+	min-height: 24px;
+	border-radius: 9999px;
+	padding: 1px 8px;
+
+	&:before {
+		content: "";
+		-webkit-mask-image: url("../../images/icons/icon-experimental.svg");
+		mask-image: url("../../images/icons/icon-experimental.svg");
+		display: inline-block;
+		width: 14px;
+		height: 14px;
+		margin-right: 8px;
+		background-color: #2A84DD;
+		border: none;
+		border-radius: 0;
+		-webkit-mask-size: contain;
+		mask-size: contain;
+		-webkit-mask-repeat: no-repeat;
+		mask-repeat: no-repeat;
+		-webkit-mask-position: center;
+		mask-position: center;
+	}
+}
+
+.acf-admin-page .acf-field-setting-schema_output_format {
+	.select2-container--disabled {
+		&.select2-container--focus {
+			outline: none;
+			border-color: $gray-300;
+
+			.select2-selection__rendered {
+				border-color: $gray-300 !important;
+			}
+		}
+
+		.select2-selection__rendered {
+			background-color: $gray-50 !important;
+			color: color.adjust($gray-500, $lightness: 10%);
+		}
+	}
+}
+
+/**
+ * Schema Type Label Full Width Override
+ *
+ * Override ACF's default label display to allow full width for schema type.
+ */
+.acf-field-schema-type .acf-label {
+    display: block !important;
+
+    label {
+        display: inline-block;
+        width: auto;
+    }
+}

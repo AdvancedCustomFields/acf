@@ -1,0 +1,98 @@
+/*--------------------------------------------------------------------------------------------
+*
+*	Vars
+*
+*--------------------------------------------------------------------------------------------*/
+
+/* colors */
+$acf_blue: #2a9bd9;
+$acf_notice: #2a9bd9;
+$acf_error: #d94f4f;
+$acf_success: #49ad52;
+$acf_warning: #fd8d3b;
+
+/* acf-field */
+$field_padding: 15px 12px;
+$field_padding_x: 12px;
+$field_padding_y: 15px;
+$fp: 15px 12px;
+$fy: 15px;
+$fx: 12px;
+
+/* responsive */
+$md: 880px;
+$sm: 640px;
+
+// Admin.
+$wp-card-border: #ccd0d4;			// Card border.
+$wp-card-border-1: #d5d9dd;		  // Card inner border 1: Structural (darker).
+$wp-card-border-2: #eeeeee;		  // Card inner border 2: Fields (lighter).
+$wp-input-border: #7e8993;		   // Input border.
+
+// Admin 3.8
+$wp38-card-border: #E5E5E5;		  // Card border.
+$wp38-card-border-1: #dfdfdf;		// Card inner border 1: Structural (darker).
+$wp38-card-border-2: #eeeeee;		// Card inner border 2: Fields (lighter).
+$wp38-input-border: #dddddd;		 // Input border.
+
+/*--------------------------------------------------------------------------------------------
+*
+*	ACF 6 ↓
+*
+*--------------------------------------------------------------------------------------------*/
+
+// Grays
+$gray-50:  #F9FAFB;
+$gray-100: #F2F4F7;
+$gray-200: #EAECF0;
+$gray-300: #D0D5DD;
+$gray-400: #98A2B3;
+$gray-500: #667085;
+$gray-600: #475467;
+$gray-700: #344054;
+$gray-800: #1D2939;
+$gray-900: #101828;
+
+// Blues
+$blue-50:  #EBF5FA;
+$blue-100: #D8EBF5;
+$blue-200: #A5D2E7;
+$blue-300: #6BB5D8;
+$blue-400: #399CCB;
+$blue-500: #0783BE;
+$blue-600: #066998;
+$blue-700: #044E71;
+$blue-800: #033F5B;
+$blue-900: #032F45;
+
+// Utility
+$color-info:	#2D69DA;
+$color-success:	#52AA59;
+$color-warning:	#F79009;
+$color-danger:	#D13737;
+
+$color-primary: $blue-500;
+$color-primary-hover: $blue-600;
+$color-secondary: $gray-500;
+$color-secondary-hover: $gray-400;
+
+// Gradients
+$gradient-pro: radial-gradient(141.77% 141.08% at 100.26% 99.25%, #0ECAD4 0%, #7A45E5 100%);
+
+// Border radius
+$radius-sm:	4px;
+$radius-md: 6px;
+$radius-lg: 8px;
+$radius-xl: 12px;
+
+// Elevations / Box shadows
+$elevation-01: 0px 1px 2px rgba($gray-900, 0.10);
+
+// Input & button focus outline
+$outline: 3px solid $blue-50;
+
+// Link colours
+$link-color: $blue-500;
+
+// Responsive
+$max-width: 1440px;

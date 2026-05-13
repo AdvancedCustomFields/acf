@@ -1,0 +1,383 @@
+@use 'sass:color';
+@use 'variables' as *;
+@use 'typography' as *;
+
+/*---------------------------------------------------------------------------------------------
+*
+*  Sub-fields layout
+*
+*---------------------------------------------------------------------------------------------*/
+.post-type-acf-field-group #acf-field-group-fields .acf-field-list-wrap .acf-input-sub {
+	max-width: 100%;
+	overflow: hidden;
+	border-radius: $radius-lg;
+	border: {
+		width: 1px;
+		style: solid;
+		color: color.adjust($gray-200, $lightness: -5%);
+	};
+	box-shadow: $elevation-01;
+
+	// Header
+	.acf-sub-field-list-header {
+		display: flex;
+		justify-content: space-between;
+		align-content: stretch;
+		align-items: center;
+		min-height: 64px;
+		padding: {
+			right: 24px;
+			left: 24px;
+		};
+	}
+
+	// Main sub-fields wrapper
+	.acf-field-list-wrap {
+		box-shadow: none;
+	}
+
+	// Sub-field footer
+	.acf-hl.acf-tfoot {
+		min-height: 64px;
+		align-items: center;
+	}
+	
+	// Secondary level sub-fields
+	.acf-input.acf-input-sub {
+		max-width: 100%;
+		margin: {
+			right: 0;
+			left: 0;
+		};
+	}
+
+}
+
+.post-type-acf-field-group .acf-input-sub .acf-field-object .acf-sortable-handle {
+	width: 100%;
+	height: 100%;
+}
+
+.post-type-acf-field-group .acf-field-object:hover .acf-input-sub .acf-sortable-handle:before {
+	display: none;
+}
+
+.post-type-acf-field-group .acf-field-object:hover .acf-input-sub .acf-field-list .acf-field-object:hover .acf-sortable-handle:before {
+	display: block;
+}
+
+.post-type-acf-field-group .acf-field-object .acf-is-subfields .acf-thead .li-field-label:before {
+	display: none;
+}
+
+.post-type-acf-field-group #acf-field-group-fields .acf-field-list-wrap .acf-input-sub .acf-field-object.open {
+	border-top-color: color.adjust($gray-200, $lightness: -5%);
+}
+
+/*---------------------------------------------------------------------------------------------
+*
+*  Flexible content field
+*
+*---------------------------------------------------------------------------------------------*/
+.post-type-acf-field-group {
+
+	i.acf-icon.-duplicate.duplicate-layout {
+		margin: 0 auto !important;
+		background-color: $gray-500;
+		color: $gray-500;
+	}
+	i.acf-icon.acf-icon-trash.delete-layout {
+		margin: 0 auto !important;
+		background-color: $gray-500;
+		color: $gray-500;
+	}
+
+	button.acf-btn.acf-btn-tertiary.acf-field-setting-fc-duplicate, button.acf-btn.acf-btn-tertiary.acf-field-setting-fc-delete {
+		background-color: #ffffff !important;
+		box-shadow: $elevation-01;
+		border-radius: 6px;
+		width: 32px;
+		height: 32px !important;
+		min-height: 32px;
+		padding: 0;
+	}
+
+	button.add-layout.acf-btn.acf-btn-primary.add-field,
+	.acf-sub-field-list-header a.acf-btn.acf-btn-secondary.add-field, 
+	.acf-field-list-wrap.acf-is-subfields a.acf-btn.acf-btn-secondary.add-field {
+		height: 32px !important;
+		min-height: 32px;
+		margin-left: 5px;
+	}
+
+	.acf-field.acf-field-setting-fc_layout {
+		background-color: #ffffff;
+		margin-bottom: 16px;
+	}
+	
+	.acf-field-setting-fc_layout {
+		width: calc(100% - 144px);
+		margin: {
+			right: 72px;
+			left: 72px;
+		};
+		padding: {
+			right: 0;
+			left: 0;
+		};
+		border: {
+			width: 1px;
+			style: solid;
+			color: color.adjust($gray-200, $lightness: -5%);
+		};
+		border-radius: $radius-lg;
+		box-shadow: $elevation-01;
+		
+		.acf-field-layout-settings.open {
+			background-color: #ffffff;
+			border-top: {
+				width: 1px;
+				style: solid;
+				color: $gray-200;
+			};
+		}
+
+		@media screen and (max-width: 768px) {
+			width: calc(100% - 16px);
+			margin: {
+				right: 8px;
+				left: 8px;
+			};
+		}
+
+		// Secondary level sub-fields
+		.acf-input-sub {
+			max-width: 100%;
+			margin: {
+				right: 0;
+				left: 0;
+			};
+		}
+
+		.acf-label,
+		.acf-input {
+			max-width: 100% !important;
+		}
+
+		.acf-input-sub {
+			margin: {
+				right: 32px;
+				bottom: 32px;
+				left: 32px;
+			};
+		}
+
+		.acf-fc-meta {
+			max-width: 100%;
+			padding: {
+				top: 24px;
+				right: 32px;
+				left: 32px;
+			};
+		}
+
+	}
+
+	.acf-field-settings-fc_head {
+
+		display: flex;
+		align-items: center;
+		justify-content: left;
+
+		background-color: $gray-50;
+		border-radius: 8px;
+		min-height: 64px;
+		margin: {
+			bottom: 0px;
+		};
+		padding: {
+			right: 24px;
+		};
+
+		.acf-fc_draggable {
+			min-height: 64px;
+			padding-left: 24px;
+			display: flex;
+			white-space: nowrap;
+		}
+
+		.acf-fc-layout-name {
+			min-width: 0;
+			color: $gray-400;
+			padding-left: 8px;
+			font-size: 16px;
+
+			&.copyable:not(.input-copyable, .copy-unsupported):hover:after {
+				width: 14px !important;
+				height: 14px !important;
+			}
+
+			@media screen and (max-width: $md) {
+				display: none !important;
+			}
+
+			span {
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+		}
+
+		span.toggle-indicator {
+			pointer-events: none;
+			margin-top: 7px;
+		}
+
+		label {
+			display: inline-flex;
+			align-items: center;
+			@extend .acf-h3;
+
+			&.acf-fc-layout-name {
+				margin-left: 1rem;
+
+				@media screen and (max-width: $md) {
+					display: none !important;
+				}
+
+				span.acf-fc-layout-name {
+					text-overflow: ellipsis;
+					overflow: hidden;
+					height: 22px;
+					white-space: nowrap;
+				}
+			}
+
+			&.acf-fc-layout-label:before {
+				content: '';
+				$icon-size: 20px;
+				display: inline-block;
+				width: $icon-size;
+				height: $icon-size;
+				margin: {
+					right: 8px;
+				};
+				background-color: $gray-400;
+				border: none;
+				border-radius: 0;
+				-webkit-mask-size: contain;
+				mask-size: contain;
+				-webkit-mask-repeat: no-repeat;
+				mask-repeat: no-repeat;
+				-webkit-mask-position: center;
+				mask-position: center;
+
+				@at-root .rtl#{&} {
+					padding-right: 10px;
+				}
+
+			}
+
+		}
+
+		.acf-fl-actions {
+			display: flex;
+			align-items: center;
+			white-space: nowrap;
+			margin-left: auto;
+
+			.acf-fc-add-layout {
+				margin-left: 10px;
+			}
+
+			.acf-fc-add-layout .add-field {
+				margin-left: 0px !important;
+			}
+
+			li {
+				margin: {
+					right: 4px;
+				};
+
+				&:last-of-type {
+					margin: {
+						right: 0;
+					};
+				}
+
+			}
+
+		}
+
+	}
+
+	.acf-field-settings-fc_head.open {
+		border-radius: 8px 8px 0px 0px;
+	}
+
+}
+
+/*---------------------------------------------------------------------------------------------
+*
+*  Field open / closed icon state
+*
+*---------------------------------------------------------------------------------------------*/
+
+.post-type-acf-field-group .acf-field-object.open > .handle > .acf-tbody > .li-field-label::before {
+	-webkit-mask-image: url('../../images/icons/icon-chevron-up.svg');
+	mask-image: url('../../images/icons/icon-chevron-up.svg');
+}
+
+/*---------------------------------------------------------------------------------------------
+*
+*  Different coloured levels (current 5 supported)
+*
+*---------------------------------------------------------------------------------------------*/
+
+.post-type-acf-field-group #acf-field-group-fields .acf-field-list-wrap .acf-input-sub {
+	
+	// Second level
+	$nested-color: #BF7DD7;
+	// Row hover color 
+	.acf-field-object .handle { background-color: transparent; &:hover { background-color: color.adjust($nested-color, $lightness: 30%); } }
+	// Active row color 
+	.acf-field-object.open .handle { background-color: color.adjust($nested-color, $lightness: 28%); }
+	// Active border color 
+	.acf-field-object .settings { border-left: { color: $nested-color; }; }
+	
+	// Third level
+	.acf-input-sub {
+		$nested-color: #7CCDB9;
+		// Row hover color 
+		.acf-field-object .handle { background-color: transparent; &:hover { background-color: color.adjust($nested-color, $lightness: 30%); } }
+		// Active row color 
+		.acf-field-object.open .handle { background-color: color.adjust($nested-color, $lightness: 28%); }
+		// Active border color 
+		.acf-field-object .settings { border-left: { color: $nested-color; }; }
+		
+		// Fourth level
+		.acf-input-sub {
+			$nested-color: #E29473;
+			// Row hover color 
+			.acf-field-object .handle { background-color: transparent; &:hover { background-color: color.adjust($nested-color, $lightness: 30%); } }
+			// Active row color 
+			.acf-field-object.open .handle { background-color: color.adjust($nested-color, $lightness: 28%); }
+			// Active border color 
+			.acf-field-object .settings { border-left: { color: $nested-color; }; }
+			
+			// Fifth level
+			.acf-input-sub {
+				$nested-color: #A3B1B9;
+				// Row hover color 
+				.acf-field-object .handle { background-color: transparent; &:hover { background-color: color.adjust($nested-color, $lightness: 30%); } }
+				// Active row color 
+				.acf-field-object.open .handle { background-color: color.adjust($nested-color, $lightness: 28%); }
+				// Active border color 
+				.acf-field-object .settings { border-left: { color: $nested-color; }; }
+			}
+			
+		}
+		
+	}
+	
+}

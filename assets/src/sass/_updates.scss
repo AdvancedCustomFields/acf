@@ -1,0 +1,289 @@
+@use 'variables' as *;
+@use 'typography' as *;
+
+/*---------------------------------------------------------------------------------------------
+*
+*  Updates layout
+*
+*---------------------------------------------------------------------------------------------*/
+.acf-settings-wrap.acf-updates {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-content: flex-start;
+	align-items: flex-start;
+}
+
+.custom-fields_page_acf-settings-updates .notice {
+	flex: 1 1 100%;
+}
+
+/*---------------------------------------------------------------------------------------------
+*
+*  ACF Box
+*
+*---------------------------------------------------------------------------------------------*/
+.acf-settings-wrap.acf-updates {
+
+	.acf-box {
+		margin: {
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+		};
+
+		.inner {
+			padding: {
+				top: 24px;
+				right: 24px;
+				bottom: 24px;
+				left: 24px;
+			};
+		}
+
+		@media screen and (max-width: $md) {
+			flex: 1 1 100%;
+		}
+
+	}
+
+}
+
+/*---------------------------------------------------------------------------------------------
+*
+*  Notices
+*
+*---------------------------------------------------------------------------------------------*/
+.acf-settings-wrap.acf-updates {
+
+	.notice {
+		flex: 1 1 100%;
+		margin: {
+			top: 16px;
+			right: 0;
+			left: 0;
+		};
+	}
+
+}
+
+/*---------------------------------------------------------------------------------------------
+*
+* License information
+*
+*---------------------------------------------------------------------------------------------*/
+#acf-license-information {
+	flex: 1 1 65%;
+	margin: {
+		right: 32px;
+	};
+
+	.inner {
+		padding: 0;
+
+		.acf-license-defined {
+			padding: 24px;
+			margin: 0;
+		}
+
+		.acf-activation-form,
+		.acf-retry-activation {
+			padding: 24px;
+
+			&.acf-retry-activation {
+				padding-top: 0;
+				min-height: 40px;
+
+				.acf-recheck-license.acf-btn {
+					float: none;
+					line-height: initial;
+
+					i {
+						display: none;
+					}
+				}
+			}
+
+			.acf-manage-license-btn {
+				float: right;
+				line-height: 40px;
+				align-items: center;
+				display: inline-flex;
+
+				&.acf-renew-subscription {
+					float: none;
+					line-height: initial;
+				}
+
+				i {
+					margin: 0 0 0 5px;
+					width: 19px;
+					height: 19px;
+				}
+			}
+
+			.acf-recheck-license {
+				float: right;
+				line-height: 40px;
+
+				i {
+					margin-right: 8px;
+					vertical-align: middle;
+				}
+			}
+		}
+
+		.acf-license-status-wrap {
+			background: $gray-50;
+			border-top: 1px solid $gray-200;
+			border-bottom-left-radius: 8px;
+			border-bottom-right-radius: 8px;
+			
+			.acf-license-status-table {
+				font-size: 14px;
+				padding: 24px 24px 16px 24px;
+
+				th {
+					width: 160px;
+					font-weight: 500;
+					text-align: left;
+					padding-bottom: 16px;
+				}
+
+				td {
+					padding-bottom: 16px;
+
+					.acf-license-status {
+						display: inline-block;
+						height: 24px;
+						line-height: 24px;
+						border-radius: 100px;
+						background: $gray-200;
+						padding: 0 13px 1px 12px;
+						border: 1px solid rgba(0, 0, 0, 0.12);
+						color: $gray-500;
+
+						&.active {
+							background: rgba(18, 183, 106, 0.15);
+							border: 1px solid rgba(18, 183, 106, 0.24);
+							color: rgba(18, 183, 106, 1);
+						}
+
+						&.expired,
+						&.cancelled {
+							background: rgba(209, 55, 55, 0.24);
+							border: 1px solid rgba(209, 55, 55, 0.24);
+							color: rgba(209, 55, 55, 1);
+						}
+					}
+
+				}
+
+			}
+
+			.acf-no-license-view-pricing {
+				padding: 12px 24px;
+				border-top: 1px solid $gray-200;
+				color: $gray-500;
+			}
+		}
+	}
+
+	@media screen and (max-width: 1024px) {
+		margin: {
+			right: 0;
+			bottom: 32px;
+		};
+	}
+
+	label {
+		font-weight: 500;
+	}
+
+	.acf-input-wrap {
+		margin: {
+			top: 8px;
+			bottom: 24px;
+		};
+	}
+
+	#acf_pro_license {
+		width: 100%;
+	}
+
+}
+
+/*---------------------------------------------------------------------------------------------
+*
+*  Update information table
+*
+*---------------------------------------------------------------------------------------------*/
+#acf-update-information {
+	flex: 1 1 35%;
+	max-width: calc(35% - 32px);
+
+	.form-table {
+
+		th,
+		td {
+			padding: {
+				top: 0;
+				right: 0;
+				bottom: 24px;
+				left: 0;
+			};
+			@extend .p4;
+			color: $gray-700;
+		}
+
+	}
+
+	.acf-update-changelog {
+		margin: {
+			top: 8px;
+			bottom: 24px;
+		};
+		padding: {
+			top: 8px;
+		};
+		border-top: {
+			width: 1px;
+			style: solid;
+			color: $gray-200;
+		};
+		color: $gray-700;
+
+		h4 {
+			margin: {
+				bottom: 0;
+			};
+		}
+
+		p {
+			margin: {
+				top: 0;
+				bottom: 16px;
+			};
+
+			&:last-of-type {
+				margin: {
+					bottom: 0;
+				};
+			}
+
+			em {
+				@extend .p6;
+				color: $gray-500;
+			}
+
+		}
+
+	}
+
+	.acf-btn {
+		display: inline-flex;
+	}
+
+}

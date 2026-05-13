@@ -1,0 +1,492 @@
+@use 'variables' as *;
+@use 'typography' as *;
+
+/*--------------------------------------------------------------------------------------------
+*
+*	Header pro upgrade button
+*
+*--------------------------------------------------------------------------------------------*/
+.acf-admin-toolbar {
+
+	a.acf-admin-toolbar-upgrade-btn {
+		display: inline-flex;
+		align-items: center;
+		align-self: stretch;
+		padding: {
+			top: 0;
+			right: 16px;
+			bottom: 0;
+			left: 16px;
+		};
+		background: $gradient-pro;
+		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.16);
+		border-radius: $radius-md;
+		text-decoration: none;
+
+		@media screen and (max-width: 768px) {
+			display: none;
+		}
+
+		&:focus {
+			border: none;
+			outline: none;
+			box-shadow: none;
+		}
+
+		p {
+			margin: 0;
+			padding: {
+				top: 8px;
+				bottom: 8px;
+			}
+
+			@extend .p4;
+			font-weight: 400;
+			text-transform: none;
+			color: #fff;
+		}
+
+		.acf-icon {
+			$icon-size: 18px;
+			width: $icon-size;
+			height: $icon-size;
+			margin: {
+				right: 6px;
+				left: -2px;
+			};
+			background-color: $gray-50;
+		}
+
+	}
+
+}
+
+/*--------------------------------------------------------------------------------------------
+*
+*  Upsell block
+*
+*--------------------------------------------------------------------------------------------*/
+.acf-admin-page #tmpl-acf-field-group-pro-features,
+.acf-admin-page #acf-field-group-pro-features {
+	display: none;
+	align-items: center;
+	min-height: 120px;
+	background-color: #121833;
+	background-image: url(../../images/pro-upgrade-grid-bg.svg), url(../../images/pro-upgrade-overlay.svg);
+	background-repeat: repeat, no-repeat;
+	background-size: 1224px, 1880px;
+	background-position: left top, -520px -680px;
+	color: $gray-200;
+	border-radius: 8px;
+	margin-top: 24px;
+	margin-bottom: 24px;
+
+	@media screen and (max-width: 768px) {
+		background-size: 1024px, 980px;
+		background-position: left top, -500px -200px;
+	}
+
+	@media screen and (max-width: 1200px) {
+		background-size: 1024px, 1880px;
+		background-position: left top, -520px -300px;
+	}
+
+	.postbox-header {
+		display: none;
+	}
+
+	.inside {
+		width: 100%;
+		border: none;
+		padding: 0;
+	}
+
+	.acf-field-group-pro-features-wrapper {
+		display: flex;
+		justify-content: center;
+		align-content: stretch;
+		align-items: center;
+		gap: 96px;
+		height: 358px;
+		max-width: 950px;
+		margin: 0 auto;
+		padding: 0 35px;
+
+		@media screen and (max-width: 1200px) {
+			gap: 48px;
+		}
+
+		@media screen and (max-width: 768px) {
+			gap: 0;
+		}
+
+		.acf-field-group-pro-features-title,
+		.acf-field-group-pro-features-title-sm {
+			font-weight: 590;
+			line-height: 150%;
+
+			.acf-pro-label {
+				font-weight: 400;
+				margin-top: -6px;
+				margin-left: 2px;
+				vertical-align: middle;
+				height: 22px;
+				position: relative;
+				overflow: hidden;
+
+				&::before {
+					display: block;
+					position: absolute;
+					content: "";
+					top: 0;
+					right: 0;
+					bottom: 0;
+					left: 0;
+					border-radius: 9999px;
+					border: 1px solid rgba(255, 255, 255, 0.2);
+				}
+			}
+
+		}
+
+		.acf-field-group-pro-features-title-sm {
+			display: none !important;
+			font-size: 18px;
+
+			.acf-pro-label {
+				font-size: 10px;
+				height: 20px;
+			}
+
+			@media screen and (max-width: 768px) {
+				width: 100%;
+				text-align: center;
+			}
+
+		}
+
+		@media screen and (max-width: 768px) {
+			flex-direction: column;
+			flex-wrap: wrap;
+			justify-content: flex-start;
+			align-content: flex-start;
+			align-items: flex-start;
+			padding: 32px 32px 0 32px;
+			height: unset;
+
+			.acf-field-group-pro-features-title-sm {
+				display: block !important;
+				margin-bottom: 24px;
+			}
+		}
+
+		.acf-field-group-pro-features-content {
+			display: flex;
+			flex-direction: column;
+			width: 416px;
+
+			.acf-field-group-pro-features-desc {
+				margin-top: 8px;
+				margin-bottom: 24px;
+				font-size: 15px;
+				font-weight: 300;
+				color: $gray-300;
+			}
+
+			@media screen and (max-width: 768px) {
+				width: 100%;
+				order: 1;
+				margin: {
+					right: 0;
+					bottom: 8px;
+				};
+
+				.acf-field-group-pro-features-title,
+				.acf-field-group-pro-features-desc {
+					display: none !important;
+				}
+			}
+
+		}
+
+		.acf-field-group-pro-features-actions {
+			display: flex;
+			flex-direction: row;
+			align-items: flex-start;
+			min-width: 160px;
+			gap: 12px;
+
+			@media screen and (max-width: 768px) {
+				justify-content: flex-start;
+				flex-direction: column;
+				margin-bottom: 24px;
+
+				a {
+					justify-content: center;
+					text-align: center;
+					width: 100%;
+				}
+			}
+
+		}
+
+		.acf-field-group-pro-features-grid {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			gap: 16px;
+			width: 416px;
+
+			.acf-field-group-pro-feature {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				width: 128px;
+				height: 124px;
+				background: rgba(255, 255, 255, 0.08);
+				box-shadow: 0 0 4px rgba(0, 0, 0, 0.04), 0 8px 16px rgba(0, 0, 0, 0.08), inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+				backdrop-filter: blur(6px);
+				border-radius: 8px;
+
+				.field-type-icon {
+					border: none;
+					background: none;
+					width: 24px;
+					opacity: 0.8;
+
+					&::before {
+						background-color: #fff;
+						width: 20px;
+						height: 20px;
+					}
+
+					@media screen and (max-width: 1200px) {
+
+						&::before {
+							width: 18px;
+							height: 18px;
+						}
+					}
+
+				}
+
+				.pro-feature-blocks::before {
+					-webkit-mask-image: url("../../images/icons/icon-extended-menu.svg");
+					mask-image: url("../../images/icons/icon-extended-menu.svg");
+				}
+
+				.pro-feature-options-pages::before {
+					-webkit-mask-image: url("../../images/icons/icon-settings.svg");
+					mask-image: url("../../images/icons/icon-settings.svg");
+				}
+
+				.field-type-label {
+					margin-top: 4px;
+					font-size: 13px;
+					font-weight: 300;
+					text-align: center;
+					color: #fff;
+				}
+			}
+
+			@media screen and (max-width: 1200px) {
+				flex-direction: column;
+				gap: 8px;
+				width: 288px;
+
+				.acf-field-group-pro-feature {
+					width: 100%;
+					height: 40px;
+					flex-direction: row;
+					justify-content: unset;
+					gap: 8px;
+
+
+					.field-type-icon {
+						position: initial;
+						margin-left: 16px;
+					}
+
+					.field-type-label {
+						margin-top: 0;
+					}
+				}
+			}
+
+			@media screen and (max-width: 768px) {
+				gap: 0;
+				width: 100%;
+				height: auto;
+				margin-bottom: 16px;
+				flex-direction: unset;
+				flex-wrap: wrap;
+
+				.acf-field-group-pro-feature {
+					flex: 1 0 50%;
+					margin-bottom: 8px;
+					width: auto;
+					height: auto;
+					justify-content: center;
+					background: none;
+					box-shadow: none;
+					backdrop-filter: none;
+
+					.field-type-label {
+						margin-left: 2px;
+					}
+
+					.field-type-icon {
+						position: initial;
+						margin-left: 0;
+
+						&::before {
+							height: 16px;
+							width: 16px;
+						}
+					}
+
+					.field-type-label {
+						font-size: 12px;
+						margin-top: 0;
+					}
+				}
+			}
+		}
+
+	}
+
+	h1 {
+		margin: {
+			top: 0;
+			bottom: 4px;
+		};
+		padding: {
+			top: 0;
+			bottom: 0;
+		};
+
+		@extend .acf-h1;
+		font-weight: 700;
+		color: $gray-50;
+
+		.acf-icon {
+			margin: {
+				right: 8px;
+			};
+		}
+
+	}
+
+	// Upsell block btn
+	.acf-btn {
+		display: inline-flex;
+		background-color: rgba(#fff, 0.1);
+		border: none;
+		box-shadow: 0 0 4px rgba(0, 0, 0, 0.04), 0 4px 8px rgba(0, 0, 0, 0.06), inset 0 0 0 1px rgba(255, 255, 255, 0.16);
+		backdrop-filter: blur(6px);
+		padding: 8px 24px;
+		height: 48px;
+
+		&:hover {
+			background-color: rgba(#fff, 0.2);
+		}
+
+		.acf-icon {
+			margin: {
+				right: -2px;
+				left: 6px;
+			};
+		}
+
+		&.acf-pro-features-upgrade {
+			background: $gradient-pro;
+			box-shadow: 0 0 4px rgba(0, 0, 0, 0.04), 0 4px 8px rgba(0, 0, 0, 0.06), inset 0 0 0 1px rgba(255, 255, 255, 0.16);
+			border-radius: 6px;
+		}
+	}
+
+	.acf-field-group-pro-features-footer-wrap {
+		height: 48px;
+		background: rgba(16, 24, 40, 0.4);
+		backdrop-filter: blur(6px);
+		border-top: 1px solid rgba(255, 255, 255, 0.08);
+		border-bottom-left-radius: 8px;
+		border-bottom-right-radius: 8px;
+		color: $gray-400;
+		font-size: 13px;
+		font-weight: 300;
+		padding: 0 35px;
+
+		.acf-field-group-pro-features-footer {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			max-width: 950px;
+			height: 48px;
+			margin: 0 auto;
+		}
+
+		.acf-field-group-pro-features-wpengine-logo {
+			height: 16px;
+			vertical-align: middle;
+			margin-top: -2px;
+			margin-left: 3px;
+		}
+
+		a {
+			color: $gray-400;
+			text-decoration: none;
+
+			&:hover {
+				color: $gray-300;
+			}
+
+			.acf-icon {
+				width: 18px;
+				height: 18px;
+				margin-left: 4px;
+			}
+
+		}
+
+		.acf-more-tools-from-wpengine {
+
+			a {
+				display: inline-flex;
+				align-items: center;
+			}
+
+		}
+
+		@media screen and (max-width: 768px) {
+			height: 70px;
+			font-size: 12px;
+
+			.acf-more-tools-from-wpengine {
+				display: none;
+			}
+
+			.acf-field-group-pro-features-footer {
+				justify-content: center;
+				height: 70px;
+
+				.acf-field-group-pro-features-wpengine-logo {
+					clear: both;
+					margin: 6px auto 0 auto;
+					display: block;
+				}
+			}
+		}
+	}
+
+}
+
+.acf-no-field-groups,
+.acf-no-post-types,
+.acf-no-taxonomies {
+
+	#tmpl-acf-field-group-pro-features {
+		margin-top: 0;
+	}
+}
