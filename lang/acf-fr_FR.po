@@ -85,8 +85,9 @@ msgid "AI Support"
 msgstr ""
 
 #: src/Site_Health/Site_Health.php:396
+#: src/Pro/Fields/FlexibleContent/Layout.php:247
 msgid "Disabled"
-msgstr ""
+msgstr "Désactivé"
 
 #: src/Site_Health/Site_Health.php:395
 msgid "Enabled"
