@@ -12,7 +12,7 @@
 # This file is distributed under the same license as Advanced Custom Fields.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-07-14T01:00:08+00:00\n"
+"PO-Revision-Date: 2026-08-03T18:26:13+00:00\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
@@ -20,6 +20,62 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: gettext\n"
 "Project-Id-Version: Advanced Custom Fields\n"
+
+#: includes/admin/views/email-opt-in-banner.php:103
+msgid "Dismiss email opt-in banner"
+msgstr "Закрити банер з пропозицією підписатися на розсилку"
+
+#: includes/admin/views/email-opt-in-banner.php:95
+msgid "You're on the list! Keep an eye out for our next update."
+msgstr "Ви вже в списку! Слідкуйте за нашими наступними новинами."
+
+#: includes/admin/views/email-opt-in-banner.php:70
+msgid "Join the list"
+msgstr "Підпишіться на розсилку"
+
+#: includes/admin/views/email-opt-in-banner.php:63
+msgid "you@example.com"
+msgstr "you@example.com"
+
+#: includes/admin/views/email-opt-in-banner.php:54
+msgid "Email address"
+msgstr "Email адреса"
+
+#: includes/admin/views/email-opt-in-banner.php:42
+msgid ""
+"Get critical ACF security updates, releases, news, and workflow improvements."
+msgstr ""
+"Отримуйте важливі оновлення безпеки ACF, новини про випуски, новини та "
+"вдосконалення робочих процесів."
+
+#: includes/admin/views/email-opt-in-banner.php:39
+msgid "Join the ACF community."
+msgstr "Приєднуйтесь до спільноти ACF."
+
+#. translators: %s - Privacy Policy link, opens in a new tab.
+#: includes/admin/views/email-opt-in-banner.php:26
+msgid ""
+"We respect your inbox. Unsubscribe anytime. By signing up, you agree to our "
+"%s."
+msgstr ""
+"Ми поважаємо вашу поштову скриньку. Ви можете скасувати підписку будь-коли. "
+"Підписуючись, ви погоджуєтеся з нашими %s."
+
+#: includes/admin/views/email-opt-in-banner.php:21
+msgid "Privacy Policy"
+msgstr "Політика Конфіденційності"
+
+#: includes/admin/admin-email-opt-in-banner.php:265
+msgid "Something went wrong on our end. Please try again."
+msgstr "З нашого боку сталася помилка. Спробуйте ще раз."
+
+#: includes/admin/admin-email-opt-in-banner.php:264
+msgid "Please enter a valid email address."
+msgstr "Будь ласка, введіть правильний email."
+
+#: includes/admin/admin-email-opt-in-banner.php:263
+msgid "Email address is required."
+msgstr "Email-адреса обов'язкова."
 
 #: src/Site_Health/Site_Health.php:1009
 msgid "Datastore Enabled"
@@ -621,7 +677,7 @@ msgid "Toggle panel"
 msgstr "Перемкнути панель"
 
 #. translators: %1$s - Plugin name, %2$s URL to documentation
-#: includes/admin/admin.php:311
+#: includes/admin/admin.php:315
 msgid ""
 "%1$s We have detected that this website is configured to use v3 of the "
 "Select2 jQuery library, which has been deprecated in favor of v4 and will be "
@@ -702,7 +758,7 @@ msgstr ""
 
 #. translators: This text is prepended by a link to ACF's website, and appended
 #. by a link to WP Engine's website.
-#: includes/admin/admin.php:357
+#: includes/admin/admin.php:361
 msgid "are developed and maintained by"
 msgstr "розроблені та підтримуються"
 
@@ -769,18 +825,24 @@ msgid ""
 "Allow content editors to access and display the field value in the editor UI "
 "using Block Bindings or the ACF Shortcode. %s"
 msgstr ""
+"Надати редакторам контенту можливість отримувати доступ до значення поля та "
+"відображати його в інтерфейсі редактора за допомогою Block Bindings або "
+"короткого коду ACF. %s"
 
 #: src/Blocks/Bindings.php:70
 msgid ""
 "The requested ACF field type does not support output in Block Bindings or "
 "the ACF shortcode."
 msgstr ""
+"Запитуваний тип поля ACF не підтримує виведення у прив'язках блоків або "
+"шорткоді ACF."
 
 #: includes/api/api-template.php:1094 src/Blocks/Bindings.php:78
 msgid ""
 "The requested ACF field is not allowed to be output in bindings or the ACF "
 "Shortcode."
 msgstr ""
+"Запитане поле ACF не можна виводити у прив’язках або в короткому коді ACF."
 
 #: includes/api/api-template.php:1086
 msgid ""
@@ -1074,11 +1136,11 @@ msgstr ""
 
 #: includes/fields/class-acf-field-icon_picker.php:622
 msgid "Rotate Right Icon"
-msgstr ""
+msgstr "Іконка Повернути вправо"
 
 #: includes/fields/class-acf-field-icon_picker.php:621
 msgid "Rotate Left Icon"
-msgstr ""
+msgstr "Іконка Повернути вліво"
 
 #: includes/fields/class-acf-field-icon_picker.php:620
 msgid "Rotate Icon"
@@ -1138,7 +1200,7 @@ msgstr "Іконка зображення"
 
 #: includes/fields/class-acf-field-icon_picker.php:596
 msgid "Gallery Icon"
-msgstr ""
+msgstr "Іконка Галереї"
 
 #: includes/fields/class-acf-field-icon_picker.php:595
 msgid "Chat Icon"
@@ -1147,7 +1209,7 @@ msgstr "Чат- іконка"
 #: includes/fields/class-acf-field-icon_picker.php:594
 #: includes/fields/class-acf-field-icon_picker.php:643
 msgid "Audio Icon"
-msgstr ""
+msgstr "Іконка Аудіо"
 
 #: includes/fields/class-acf-field-icon_picker.php:593
 msgid "Aside Icon"
@@ -1159,11 +1221,11 @@ msgstr ""
 
 #: includes/fields/class-acf-field-icon_picker.php:585
 msgid "Exit Icon"
-msgstr ""
+msgstr "Іконка Вихід"
 
 #: includes/fields/class-acf-field-icon_picker.php:584
 msgid "Excerpt View Icon"
-msgstr ""
+msgstr "Іконка Перегляду уривка"
 
 #: includes/fields/class-acf-field-icon_picker.php:583
 msgid "Embed Video Icon"
@@ -1464,10 +1526,12 @@ msgstr ""
 #: includes/admin/views/options-page-preview.php:36
 msgid "Upgrade to ACF PRO to create options pages in just a few clicks"
 msgstr ""
+"Оновіть систему до ACF PRO, щоб створювати сторінки налаштувань всього за "
+"кілька кліків"
 
 #: includes/ajax/class-acf-ajax-query-users.php:33
 msgid "Invalid request args."
-msgstr ""
+msgstr "Невірні аргументи запиту."
 
 #: includes/ajax/class-acf-ajax-check-screen.php:46
 #: includes/ajax/class-acf-ajax-local-json-diff.php:46
@@ -1477,43 +1541,45 @@ msgstr ""
 #: includes/ajax/class-acf-ajax-user-setting.php:47
 #: src/AI/GEO/FieldSettings.php:82
 msgid "Sorry, you do not have permission to do that."
-msgstr ""
+msgstr "Вибачте, у вас немає дозволу на виконання цієї дії."
 
 #: src/Site_Health/Site_Health.php:855
 msgid "Blocks Using Post Meta"
-msgstr ""
+msgstr "Блоки з використанням метаданих запису"
 
 #: includes/admin/views/acf-field-group/pro-features.php:35
 #: includes/admin/views/acf-field-group/pro-features.php:37
 #: includes/admin/views/global/header.php:37
 msgid "ACF PRO logo"
-msgstr ""
+msgstr "Логотип ACF PRO"
 
 #: includes/admin/views/acf-field-group/field.php:47
 msgid "ACF PRO Logo"
-msgstr ""
+msgstr "Логотип ACF PRO"
 
 #. translators: %s - field/param name
 #: includes/fields/class-acf-field-icon_picker.php:829
 msgid "%s requires a valid attachment ID when type is set to media_library."
 msgstr ""
+"%s вимагає дійсний ID вкладення, якщо для типу встановлено значення "
+"media_library."
 
 #. translators: %s - field name
 #: includes/fields/class-acf-field-icon_picker.php:813
 msgid "%s is a required property of acf."
-msgstr ""
+msgstr "%s є обов'язковою властивістю acf."
 
 #: includes/fields/class-acf-field-icon_picker.php:789
 msgid "The value of icon to save."
-msgstr ""
+msgstr "Значення іконки для збереження."
 
 #: includes/fields/class-acf-field-icon_picker.php:783
 msgid "The type of icon to save."
-msgstr ""
+msgstr "Тип іконки для збереження."
 
 #: includes/fields/class-acf-field-icon_picker.php:761
 msgid "Yes Icon"
-msgstr ""
+msgstr "Іконка Так"
 
 #: includes/fields/class-acf-field-icon_picker.php:758
 msgid "WordPress Icon"
@@ -1525,7 +1591,7 @@ msgstr "Іконка попередження"
 
 #: includes/fields/class-acf-field-icon_picker.php:749
 msgid "Visibility Icon"
-msgstr ""
+msgstr "Іконка Видимості"
 
 #: includes/fields/class-acf-field-icon_picker.php:745
 msgid "Vault Icon"
@@ -2036,7 +2102,7 @@ msgstr ""
 
 #: includes/fields/class-acf-field-icon_picker.php:471
 msgid "Art Icon"
-msgstr ""
+msgstr "Ікона Мистецтва"
 
 #: includes/fields/class-acf-field-icon_picker.php:468
 msgid "Arrow Up Icon"
@@ -2157,54 +2223,58 @@ msgstr ""
 
 #: includes/fields/class-acf-field-icon_picker.php:362
 msgid "Icon picker requires a value."
-msgstr ""
+msgstr "Для вибору іконки потрібно вказати значення."
 
 #: includes/fields/class-acf-field-icon_picker.php:357
 msgid "Icon picker requires an icon type."
-msgstr ""
+msgstr "Для вибору іконки потрібно вказати тип іконки."
 
 #: includes/fields/class-acf-field-icon_picker.php:321
 msgid ""
 "The available icons matching your search query have been updated in the icon "
 "picker below."
 msgstr ""
+"Іконки, що відповідають вашому пошуковому запиту, оновлено у вікні вибору "
+"іконок нижче."
 
 #: includes/fields/class-acf-field-icon_picker.php:320
 msgid "No results found for that search term"
-msgstr ""
+msgstr "За цим пошуковим запитом не знайдено результатів"
 
 #: includes/fields/class-acf-field-icon_picker.php:302
 msgid "Array"
-msgstr ""
+msgstr "Масив"
 
 #: includes/fields/class-acf-field-icon_picker.php:301
 msgid "String"
-msgstr ""
+msgstr "Рядок"
 
 #. translators: %s - link to documentation
 #: includes/fields/class-acf-field-icon_picker.php:289
 msgid "Specify the return format for the icon. %s"
-msgstr ""
+msgstr "Вкажіть формат повернення для іконки. %s"
 
 #: includes/fields/class-acf-field-icon_picker.php:274
 msgid "Select where content editors can choose the icon from."
-msgstr ""
+msgstr "Виберіть, звідки редактори контенту зможуть обирати іконку."
 
 #: includes/fields/class-acf-field-icon_picker.php:246
 msgid "The URL to the icon you'd like to use, or svg as Data URI"
 msgstr ""
+"URL-адреса іконки, яку ви хочете використовувати, або файл SVG у форматі "
+"Data URI"
 
 #: includes/fields/class-acf-field-icon_picker.php:229
 msgid "Browse Media Library"
-msgstr ""
+msgstr "Переглянути Медіатеку"
 
 #: includes/fields/class-acf-field-icon_picker.php:220
 msgid "The currently selected image preview"
-msgstr ""
+msgstr "Попередній перегляд поточного зображення"
 
 #: includes/fields/class-acf-field-icon_picker.php:211
 msgid "Click to change the icon in the Media Library"
-msgstr ""
+msgstr "Натисніть, щоб змінити іконки в Бібліотеці Медіа"
 
 #: includes/fields/class-acf-field-icon_picker.php:99
 msgid "Search icons..."
@@ -2238,15 +2308,15 @@ msgstr ""
 
 #: src/Site_Health/Site_Health.php:906
 msgid "Registered ACF Forms"
-msgstr ""
+msgstr "Зареєстровані форми ACF"
 
 #: src/Site_Health/Site_Health.php:900
 msgid "Shortcode Enabled"
-msgstr ""
+msgstr "Короткий код увімкнено"
 
 #: src/Site_Health/Site_Health.php:892
 msgid "Field Settings Tabs Enabled"
-msgstr ""
+msgstr "Вкладки налаштувань поля ввімкнено"
 
 #: src/Site_Health/Site_Health.php:884
 msgid "Field Type Modal Enabled"
@@ -2254,11 +2324,11 @@ msgstr ""
 
 #: src/Site_Health/Site_Health.php:876
 msgid "Admin UI Enabled"
-msgstr ""
+msgstr "Інтерфейс адміністратора ввімкнено"
 
 #: src/Site_Health/Site_Health.php:867
 msgid "Block Preloading Enabled"
-msgstr ""
+msgstr "Увімкнено попереднє завантаження блоків"
 
 #: src/Site_Health/Site_Health.php:850
 msgid "Blocks Per ACF Block Version"
@@ -2282,27 +2352,27 @@ msgstr "Стандартний"
 
 #: src/Site_Health/Site_Health.php:797
 msgid "REST API Format"
-msgstr ""
+msgstr "Формат REST API"
 
 #: src/Site_Health/Site_Health.php:789
 msgid "Registered Options Pages (PHP)"
-msgstr ""
+msgstr "Сторінки зареєстрованих параметрів (PHP)"
 
 #: src/Site_Health/Site_Health.php:775
 msgid "Registered Options Pages (JSON)"
-msgstr ""
+msgstr "Сторінки зареєстрованих параметрів (JSON)"
 
 #: src/Site_Health/Site_Health.php:770
 msgid "Registered Options Pages (UI)"
-msgstr ""
+msgstr "Сторінки зареєстрованих параметрів (UI)"
 
 #: src/Site_Health/Site_Health.php:740
 msgid "Options Pages UI Enabled"
-msgstr ""
+msgstr "Увімкнено інтерфейс сторінок параметрів"
 
 #: src/Site_Health/Site_Health.php:732
 msgid "Registered Taxonomies (JSON)"
-msgstr ""
+msgstr "Зареєстровані таксономії (JSON)"
 
 #: src/Site_Health/Site_Health.php:720
 msgid "Registered Taxonomies (UI)"
@@ -2362,7 +2432,7 @@ msgstr "Активна тема"
 
 #: src/Site_Health/Site_Health.php:457
 msgid "Is Multisite"
-msgstr ""
+msgstr "Чи є це мультисайт"
 
 #: src/Site_Health/Site_Health.php:452
 msgid "MySQL Version"
@@ -2374,23 +2444,23 @@ msgstr "Версія WordPress"
 
 #: src/Site_Health/Site_Health.php:440
 msgid "Subscription Expiry Date"
-msgstr ""
+msgstr "Дата закінчення терміну дії підписки"
 
 #: src/Site_Health/Site_Health.php:432
 msgid "License Status"
-msgstr ""
+msgstr "Статус ліцензії"
 
 #: src/Site_Health/Site_Health.php:427
 msgid "License Type"
-msgstr ""
+msgstr "Тип ліцензії"
 
 #: src/Site_Health/Site_Health.php:422
 msgid "Licensed URL"
-msgstr ""
+msgstr "URL ліцензії"
 
 #: src/Site_Health/Site_Health.php:416
 msgid "License Activated"
-msgstr ""
+msgstr "Ліцензія активована"
 
 #: src/Site_Health/Site_Health.php:405
 msgid "Free"
@@ -2398,7 +2468,7 @@ msgstr "Безкоштовно"
 
 #: src/Site_Health/Site_Health.php:404
 msgid "Plugin Type"
-msgstr ""
+msgstr "Тип плагіна"
 
 #: src/Site_Health/Site_Health.php:399
 msgid "Plugin Version"
@@ -2409,10 +2479,13 @@ msgid ""
 "This section contains debug information about your ACF configuration which "
 "can be useful to provide to support."
 msgstr ""
+"Цей розділ містить інформацію про налагодження вашої конфігурації ACF, яку "
+"можна корисно надати службі підтримки."
 
 #: includes/assets.php:382
 msgid "An ACF Block on this page requires attention before you can save."
 msgstr ""
+"Перед збереженням необхідно звернути увагу на блок ACF на цій сторінці."
 
 #. translators: %s - The clear log button opening HTML tag. %s - The closing
 #. HTML tag.
@@ -2422,6 +2495,10 @@ msgid ""
 "output. %1$sClear log and dismiss%2$s after escaping the values in your "
 "code. The notice will reappear if we detect changed values again."
 msgstr ""
+"Ці дані записуються в журнал, коли ми виявляємо значення, які були змінені "
+"під час виведення. %1$sОчистити журнал і закрити%2$s після екранування "
+"значень у вашому коді. Повідомлення з’явиться знову, якщо ми знову виявимо "
+"змінені значення."
 
 #: includes/admin/views/escaped-html-notice.php:34
 msgid "Dismiss permanently"
@@ -2469,19 +2546,19 @@ msgstr ""
 
 #: includes/admin/post-types/admin-field-group.php:134
 msgid "Users contain"
-msgstr ""
+msgstr "Користувачі містять"
 
 #: includes/admin/post-types/admin-field-group.php:133
 msgid "User is not equal to"
-msgstr ""
+msgstr "Користувач не відповідає"
 
 #: includes/admin/post-types/admin-field-group.php:132
 msgid "User is equal to"
-msgstr ""
+msgstr "Користувач відповідає"
 
 #: includes/admin/post-types/admin-field-group.php:131
 msgid "Has no page selected"
-msgstr ""
+msgstr "Не вибрано жодної сторінки"
 
 #: includes/admin/post-types/admin-field-group.php:130
 msgid "Has any page selected"
@@ -2501,19 +2578,19 @@ msgstr ""
 
 #: includes/admin/post-types/admin-field-group.php:126
 msgid "Page is equal to"
-msgstr ""
+msgstr "Сторінка відповідає"
 
 #: includes/admin/post-types/admin-field-group.php:125
 msgid "Has no relationship selected"
-msgstr ""
+msgstr "Не вибрано жодних зв’язків"
 
 #: includes/admin/post-types/admin-field-group.php:124
 msgid "Has any relationship selected"
-msgstr ""
+msgstr "Чи вибрано якісь зв’язки"
 
 #: includes/admin/post-types/admin-field-group.php:123
 msgid "Has no post selected"
-msgstr ""
+msgstr "Не вибрано жодного запису"
 
 #: includes/admin/post-types/admin-field-group.php:122
 msgid "Has any post selected"
@@ -2628,7 +2705,7 @@ msgstr ""
 
 #: includes/admin/views/global/navigation.php:239
 msgid "Renew ACF PRO License"
-msgstr ""
+msgstr "Поновити ліцензію ACF PRO"
 
 #: includes/admin/views/acf-field-group/pro-features.php:27
 msgid "Renew License"
@@ -2644,7 +2721,7 @@ msgstr ""
 
 #: includes/admin/views/options-page-preview.php:40
 msgid "Upgrade to ACF PRO"
-msgstr ""
+msgstr "Оновлення до ACF PRO"
 
 #. translators: %s URL to ACF options pages documentation
 #: includes/admin/views/options-page-preview.php:17
@@ -2653,6 +2730,10 @@ msgid ""
 "pages for managing global settings via fields. You can create multiple pages "
 "and sub-pages."
 msgstr ""
+"ACF <a href=\"%s\" target=\"_blank\">сторінки налаштувань</a> — це "
+"настроювані адміністративні сторінки для управління глобальними "
+"налаштуваннями за допомогою полів. Ви можете створювати кілька сторінок та "
+"підсторінок."
 
 #: includes/admin/views/global/header.php:45
 msgid "Add Options Page"
@@ -2711,21 +2792,21 @@ msgstr "Добавити поле"
 msgid "This Field"
 msgstr "Це поле"
 
-#: includes/admin/admin.php:394
+#: includes/admin/admin.php:398
 msgid "ACF PRO"
 msgstr "ACF PRO"
 
-#: includes/admin/admin.php:392
+#: includes/admin/admin.php:396
 msgid "Feedback"
 msgstr "Зворотній зв’язок"
 
-#: includes/admin/admin.php:390
+#: includes/admin/admin.php:394
 msgid "Support"
 msgstr "Підтримка"
 
 #. translators: This text is prepended by a link to ACF's website, and appended
 #. by a link to WP Engine's website.
-#: includes/admin/admin.php:365
+#: includes/admin/admin.php:369
 msgid "is developed and maintained by"
 msgstr "розробляється та підтримується"
 
@@ -2807,11 +2888,11 @@ msgstr "Назва можливості для видалення терміні
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:1147
 msgid "Delete Terms Capability"
-msgstr ""
+msgstr "Можливість видалення термінів"
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:1131
 msgid "The capability name for editing terms of this taxonomy."
-msgstr ""
+msgstr "Назва можливості для видалення термінів цієї таксономії."
 
 #: includes/admin/views/acf-taxonomy/advanced-settings.php:1130
 msgid "Edit Terms Capability"
@@ -5075,13 +5156,13 @@ msgid "Field groups linked successfully."
 msgstr ""
 
 #. translators: %s - URL to ACF tools page.
-#: includes/admin/admin.php:204
+#: includes/admin/admin.php:208
 msgid ""
 "Import Post Types and Taxonomies registered with Custom Post Type UI and "
 "manage them with ACF. <a href=\"%s\">Get Started</a>."
 msgstr ""
 
-#: includes/admin/admin.php:56 includes/admin/admin.php:394
+#: includes/admin/admin.php:56 includes/admin/admin.php:398
 #: src/Site_Health/Site_Health.php:367
 msgid "ACF"
 msgstr "ACF"
@@ -5405,7 +5486,7 @@ msgstr "Активувати цей елемент"
 msgid "Move field group to trash?"
 msgstr ""
 
-#: acf.php:580 includes/admin/admin-internal-post-type-list.php:264
+#: acf.php:581 includes/admin/admin-internal-post-type-list.php:264
 #: includes/admin/post-types/admin-field-group.php:304
 #: includes/admin/post-types/admin-post-type.php:283
 #: includes/admin/post-types/admin-taxonomy.php:285
@@ -5418,13 +5499,13 @@ msgstr "Неактивний"
 msgid "WP Engine"
 msgstr "WP Engine"
 
-#: acf.php:638
+#: acf.php:639
 msgid ""
 "Advanced Custom Fields and Advanced Custom Fields PRO should not be active "
 "at the same time. We've automatically deactivated Advanced Custom Fields PRO."
 msgstr ""
 
-#: acf.php:636
+#: acf.php:637
 msgid ""
 "Advanced Custom Fields and Advanced Custom Fields PRO should not be active "
 "at the same time. We've automatically deactivated Advanced Custom Fields."
@@ -5618,23 +5699,23 @@ msgstr "Завантаження різного"
 msgid "Review local JSON changes"
 msgstr "Перегляньте локальні зміни JSON"
 
-#: includes/admin/admin.php:179
+#: includes/admin/admin.php:183
 msgid "Visit website"
 msgstr "Відвідати Сайт"
 
-#: includes/admin/admin.php:178
+#: includes/admin/admin.php:182
 msgid "View details"
 msgstr "Переглянути деталі"
 
-#: includes/admin/admin.php:177
+#: includes/admin/admin.php:181
 msgid "Version %s"
 msgstr "Версія %s"
 
-#: includes/admin/admin.php:176
+#: includes/admin/admin.php:180
 msgid "Information"
 msgstr "Інформація"
 
-#: includes/admin/admin.php:167
+#: includes/admin/admin.php:171
 msgid ""
 "<a href=\"%s\" target=\"_blank\">Help Desk</a>. The support professionals on "
 "our Help Desk will assist with your more in depth, technical challenges."
@@ -5643,14 +5724,14 @@ msgstr ""
 "підтримки в нашому довідковому бюро допоможуть вирішити ваші більш детальні "
 "технічні завдання."
 
-#: includes/admin/admin.php:163
+#: includes/admin/admin.php:167
 msgid ""
 "<a href=\"%s\" target=\"_blank\">Discussions</a>. We have an active and "
 "friendly community on our Community Forums who may be able to help you "
 "figure out the 'how-tos' of the ACF world."
 msgstr ""
 
-#: includes/admin/admin.php:159
+#: includes/admin/admin.php:163
 msgid ""
 "<a href=\"%s\" target=\"_blank\">Documentation</a>. Our extensive "
 "documentation contains references and guides for most situations you may "
@@ -5660,7 +5741,7 @@ msgstr ""
 "документація містить посилання та інструкції щодо більшості ситуацій, з "
 "якими ви можете зіткнутися."
 
-#: includes/admin/admin.php:156
+#: includes/admin/admin.php:160
 msgid ""
 "We are fanatical about support, and want you to get the best out of your "
 "website with ACF. If you run into any difficulties, there are several places "
@@ -5670,11 +5751,11 @@ msgstr ""
 "результати від свого веб-сайту за допомогою ACF. Якщо у вас виникнуть "
 "труднощі, ви можете знайти допомогу в кількох місцях:"
 
-#: includes/admin/admin.php:153 includes/admin/admin.php:155
+#: includes/admin/admin.php:157 includes/admin/admin.php:159
 msgid "Help & Support"
 msgstr "Довідка та Підтримка"
 
-#: includes/admin/admin.php:144
+#: includes/admin/admin.php:148
 msgid ""
 "Please use the Help & Support tab to get in touch should you find yourself "
 "requiring assistance."
@@ -5682,7 +5763,7 @@ msgstr ""
 "Будь ласка, скористайтесь вкладкою Довідка та Підтримка, щоб зв’язатись, "
 "якщо вам потрібна допомога."
 
-#: includes/admin/admin.php:141
+#: includes/admin/admin.php:145
 msgid ""
 "Before creating your first Field Group, we recommend first reading our <a "
 "href=\"%s\" target=\"_blank\">Getting started</a> guide to familiarize "
@@ -5692,7 +5773,7 @@ msgstr ""
 "прочитати наш посібник <a href=\"%s\" target=\"_blank\"> Початок роботи </"
 "a>, щоб ознайомитись із філософією та найкращими практиками плагіна."
 
-#: includes/admin/admin.php:139
+#: includes/admin/admin.php:143
 msgid ""
 "The Advanced Custom Fields plugin provides a visual form builder to "
 "customize WordPress edit screens with extra fields, and an intuitive API to "
@@ -5703,7 +5784,7 @@ msgstr ""
 "інтуїтивний API для відображення значень користувацьких полів у будь-якому "
 "файлі шаблону теми."
 
-#: includes/admin/admin.php:136 includes/admin/admin.php:138
+#: includes/admin/admin.php:140 includes/admin/admin.php:142
 msgid "Overview"
 msgstr "Огляд"
 
@@ -5755,11 +5836,11 @@ msgid "Post Status"
 msgstr "Статус запису"
 
 #: includes/acf-wp-functions.php:83
-#: includes/locations/class-acf-location-nav-menu.php:98
+#: includes/locations/class-acf-location-nav-menu.php:99
 msgid "Menus"
 msgstr "Меню"
 
-#: includes/locations/class-acf-location-nav-menu.php:89
+#: includes/locations/class-acf-location-nav-menu.php:90
 msgid "Menu Locations"
 msgstr "Області для меню"
 
@@ -5831,7 +5912,7 @@ msgstr "Форма користувача"
 msgid "Page Parent"
 msgstr "Батьківська сторінка"
 
-#: includes/locations/class-acf-location-current-user-role.php:86
+#: includes/locations/class-acf-location-current-user-role.php:87
 msgid "Super Admin"
 msgstr "Супер адмін"
 
@@ -5852,7 +5933,7 @@ msgstr "Шаблон запису"
 msgid "Post Category"
 msgstr "Категорія запису"
 
-#: includes/locations/class-acf-location-attachment.php:93
+#: includes/locations/class-acf-location-attachment.php:94
 msgid "All %s formats"
 msgstr "Всі %s формати"
 
@@ -6336,7 +6417,7 @@ msgstr "Дублювати цей елемент"
 msgid "Supports"
 msgstr "Підтримка"
 
-#: includes/admin/admin.php:388
+#: includes/admin/admin.php:392
 #: includes/admin/views/browse-fields-modal.php:112
 msgid "Documentation"
 msgstr "Документація"
@@ -6831,7 +6912,7 @@ msgstr "Зберегти терміни"
 
 #: includes/fields/class-acf-field-taxonomy.php:658
 msgid "Allow new terms to be created whilst editing"
-msgstr ""
+msgstr "Дозволити створення нових термінів під час редагування"
 
 #: includes/fields/class-acf-field-taxonomy.php:657
 msgid "Create Terms"
@@ -6860,7 +6941,7 @@ msgstr "Декілька значень"
 
 #: includes/fields/class-acf-field-taxonomy.php:706
 msgid "Select the appearance of this field"
-msgstr ""
+msgstr "Виберіть зовнішній вигляд цього поля"
 
 #: includes/fields/class-acf-field-taxonomy.php:705
 msgid "Appearance"
@@ -6868,7 +6949,7 @@ msgstr "Вигляд"
 
 #: includes/fields/class-acf-field-taxonomy.php:647
 msgid "Select the taxonomy to be displayed"
-msgstr ""
+msgstr "Виберіть таксономію, яку потрібно відобразити"
 
 #: includes/fields/class-acf-field-taxonomy.php:602
 msgctxt "No Terms"
@@ -6877,7 +6958,7 @@ msgstr "Ні %s"
 
 #: includes/fields/class-acf-field-number.php:249
 msgid "Value must be equal to or lower than %d"
-msgstr ""
+msgstr "Значення має бути рівним або меншим за %d"
 
 #: includes/fields/class-acf-field-number.php:244
 msgid "Value must be equal to or higher than %d"
@@ -6919,7 +7000,7 @@ msgstr ""
 
 #: includes/fields/class-acf-field-accordion.php:103
 msgid "Multi-Expand"
-msgstr ""
+msgstr "Багаторазове розширення"
 
 #: includes/fields/class-acf-field-accordion.php:93
 msgid "Display this accordion as open on page load."
@@ -6936,7 +7017,7 @@ msgstr "Акордеон"
 #: includes/fields/class-acf-field-file.php:266
 #: includes/fields/class-acf-field-file.php:278
 msgid "Restrict which files can be uploaded"
-msgstr ""
+msgstr "Обмежити, які файли можна завантажувати"
 
 #: includes/fields/class-acf-field-file.php:220
 msgid "File ID"
@@ -6985,7 +7066,7 @@ msgstr "Пароль"
 
 #: includes/fields/class-acf-field-select.php:372
 msgid "Specify the value returned"
-msgstr ""
+msgstr "Вкажіть значення, яке повертається"
 
 #: includes/fields/class-acf-field-select.php:440
 msgid "Use AJAX to lazy load choices?"
@@ -7630,9 +7711,9 @@ msgstr "Завантажено до матеріалу"
 
 #: includes/fields/class-acf-field-file.php:234
 #: includes/fields/class-acf-field-image.php:208
-#: includes/locations/class-acf-location-attachment.php:82
+#: includes/locations/class-acf-location-attachment.php:83
 #: includes/locations/class-acf-location-comment.php:70
-#: includes/locations/class-acf-location-nav-menu.php:83
+#: includes/locations/class-acf-location-nav-menu.php:84
 #: includes/locations/class-acf-location-taxonomy.php:72
 #: includes/locations/class-acf-location-user-form.php:80
 #: includes/locations/class-acf-location-user-role.php:87
@@ -7727,6 +7808,8 @@ msgstr "Зображення"
 #: includes/fields/class-acf-field-message.php:122
 msgid "Allow HTML markup to display as visible text instead of rendering"
 msgstr ""
+"Дозволити відображення HTML-розмітки у вигляді звичайного тексту замість "
+"візуального відтворення"
 
 #: includes/fields/class-acf-field-message.php:121
 msgid "Escape HTML"
@@ -7764,7 +7847,7 @@ msgstr "Тиждень починається з"
 
 #: includes/fields/class-acf-field-date_picker.php:201
 msgid "The format used when saving a value"
-msgstr ""
+msgstr "Формат, що використовується під час збереження значення"
 
 #: includes/fields/class-acf-field-date_picker.php:200
 msgid "Save Format"
@@ -7999,7 +8082,7 @@ msgstr "Користувацький:"
 #: includes/fields/class-acf-field-date_time_picker.php:182
 #: includes/fields/class-acf-field-time_picker.php:115
 msgid "The format displayed when editing a post"
-msgstr ""
+msgstr "Формат, що відображається під час редагування запису"
 
 #: includes/fields/class-acf-field-date_picker.php:181
 #: includes/fields/class-acf-field-date_time_picker.php:181
@@ -8012,91 +8095,91 @@ msgid "Time Picker"
 msgstr "Вибір часу"
 
 #. translators: counts for inactive field groups
-#: acf.php:586
+#: acf.php:587
 msgid "Inactive <span class=\"count\">(%s)</span>"
 msgid_plural "Inactive <span class=\"count\">(%s)</span>"
 msgstr[0] "Неактивний <span class=\"count\">(%s)</span>"
 msgstr[1] "Неактивні <span class=\"count\">(%s)</span>"
 msgstr[2] "Неактивних <span class=\"count\">(%s)</span>"
 
-#: acf.php:547
+#: acf.php:548
 msgid "No Fields found in Trash"
 msgstr "Не знайдено полів у кошику"
 
-#: acf.php:546
+#: acf.php:547
 msgid "No Fields found"
 msgstr "Не знайдено полів"
 
-#: acf.php:545
+#: acf.php:546
 msgid "Search Fields"
 msgstr "Поля пошуку"
 
-#: acf.php:544
+#: acf.php:545
 msgid "View Field"
 msgstr "Переглянути\t поле"
 
-#: acf.php:543 includes/admin/views/acf-field-group/fields.php:124
+#: acf.php:544 includes/admin/views/acf-field-group/fields.php:124
 msgid "New Field"
 msgstr "Нове поле"
 
-#: acf.php:542
+#: acf.php:543
 msgid "Edit Field"
 msgstr "Редагувати поле"
 
-#: acf.php:541
+#: acf.php:542
 msgid "Add New Field"
 msgstr "Додати нове поле"
 
-#: acf.php:539
+#: acf.php:540
 msgid "Field"
 msgstr "Поле"
 
-#: acf.php:538 includes/admin/post-types/admin-field-group.php:179
+#: acf.php:539 includes/admin/post-types/admin-field-group.php:179
 #: includes/admin/post-types/admin-field-groups.php:98
 #: includes/admin/views/acf-field-group/fields.php:42
 msgid "Fields"
 msgstr "Поля"
 
-#: acf.php:513
+#: acf.php:514
 msgid "No Field Groups found in Trash"
 msgstr "У кошику немає груп полів"
 
-#: acf.php:512
+#: acf.php:513
 msgid "No Field Groups found"
 msgstr "Не знайдено груп полів"
 
-#: acf.php:511
+#: acf.php:512
 msgid "Search Field Groups"
 msgstr "Шукати групи полів"
 
-#: acf.php:510
+#: acf.php:511
 msgid "View Field Group"
 msgstr "Переглянути групу полів"
 
-#: acf.php:509
+#: acf.php:510
 msgid "New Field Group"
 msgstr "Нова група полів"
 
-#: acf.php:508
+#: acf.php:509
 msgid "Edit Field Group"
 msgstr "Редагувати групу полів"
 
-#: acf.php:507
+#: acf.php:508
 msgid "Add New Field Group"
 msgstr "Додати нову групу полів"
 
-#: acf.php:506 acf.php:540
+#: acf.php:507 acf.php:541
 #: includes/admin/views/acf-post-type/advanced-settings.php:244
 #: includes/post-types/class-acf-post-type.php:102
 #: includes/post-types/class-acf-taxonomy.php:101
 msgid "Add New"
 msgstr "Додати новий"
 
-#: acf.php:505
+#: acf.php:506
 msgid "Field Group"
 msgstr "Група полів"
 
-#: acf.php:504 includes/admin/post-types/admin-field-groups.php:61
+#: acf.php:505 includes/admin/post-types/admin-field-groups.php:61
 #: includes/admin/post-types/admin-post-types.php:118
 #: includes/admin/post-types/admin-taxonomies.php:117
 msgid "Field Groups"
@@ -8115,7 +8198,7 @@ msgid "https://www.advancedcustomfields.com"
 msgstr "https://www.advancedcustomfields.com"
 
 #. Plugin Name of the plugin
-#: acf.php acf.php:347
+#: acf.php acf.php:348
 msgid "Advanced Custom Fields"
 msgstr "Advanced Custom Fields"
 

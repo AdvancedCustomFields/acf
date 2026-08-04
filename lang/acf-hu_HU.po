@@ -12,7 +12,7 @@
 # This file is distributed under the same license as Advanced Custom Fields.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-07-14T01:00:08+00:00\n"
+"PO-Revision-Date: 2026-08-03T18:26:13+00:00\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "Language: hu_HU\n"
 "MIME-Version: 1.0\n"
@@ -20,6 +20,58 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: gettext\n"
 "Project-Id-Version: Advanced Custom Fields\n"
+
+#: includes/admin/views/email-opt-in-banner.php:103
+msgid "Dismiss email opt-in banner"
+msgstr ""
+
+#: includes/admin/views/email-opt-in-banner.php:95
+msgid "You're on the list! Keep an eye out for our next update."
+msgstr ""
+
+#: includes/admin/views/email-opt-in-banner.php:70
+msgid "Join the list"
+msgstr ""
+
+#: includes/admin/views/email-opt-in-banner.php:63
+msgid "you@example.com"
+msgstr ""
+
+#: includes/admin/views/email-opt-in-banner.php:54
+msgid "Email address"
+msgstr ""
+
+#: includes/admin/views/email-opt-in-banner.php:42
+msgid ""
+"Get critical ACF security updates, releases, news, and workflow improvements."
+msgstr ""
+
+#: includes/admin/views/email-opt-in-banner.php:39
+msgid "Join the ACF community."
+msgstr ""
+
+#. translators: %s - Privacy Policy link, opens in a new tab.
+#: includes/admin/views/email-opt-in-banner.php:26
+msgid ""
+"We respect your inbox. Unsubscribe anytime. By signing up, you agree to our "
+"%s."
+msgstr ""
+
+#: includes/admin/views/email-opt-in-banner.php:21
+msgid "Privacy Policy"
+msgstr ""
+
+#: includes/admin/admin-email-opt-in-banner.php:265
+msgid "Something went wrong on our end. Please try again."
+msgstr ""
+
+#: includes/admin/admin-email-opt-in-banner.php:264
+msgid "Please enter a valid email address."
+msgstr ""
+
+#: includes/admin/admin-email-opt-in-banner.php:263
+msgid "Email address is required."
+msgstr ""
 
 #: src/Site_Health/Site_Health.php:1009
 msgid "Datastore Enabled"
@@ -620,7 +672,7 @@ msgid "Toggle panel"
 msgstr "Panel váltása"
 
 #. translators: %1$s - Plugin name, %2$s URL to documentation
-#: includes/admin/admin.php:311
+#: includes/admin/admin.php:315
 msgid ""
 "%1$s We have detected that this website is configured to use v3 of the "
 "Select2 jQuery library, which has been deprecated in favor of v4 and will be "
@@ -703,7 +755,7 @@ msgstr ""
 
 #. translators: This text is prepended by a link to ACF's website, and appended
 #. by a link to WP Engine's website.
-#: includes/admin/admin.php:357
+#: includes/admin/admin.php:361
 msgid "are developed and maintained by"
 msgstr "fejlesztője és karbantartója"
 
@@ -2755,21 +2807,21 @@ msgstr "Mezők hozzáadása"
 msgid "This Field"
 msgstr "Ez a mező"
 
-#: includes/admin/admin.php:394
+#: includes/admin/admin.php:398
 msgid "ACF PRO"
 msgstr "ACF PRO"
 
-#: includes/admin/admin.php:392
+#: includes/admin/admin.php:396
 msgid "Feedback"
 msgstr "Visszajelzés"
 
-#: includes/admin/admin.php:390
+#: includes/admin/admin.php:394
 msgid "Support"
 msgstr "Támogatás"
 
 #. translators: This text is prepended by a link to ACF's website, and appended
 #. by a link to WP Engine's website.
-#: includes/admin/admin.php:365
+#: includes/admin/admin.php:369
 msgid "is developed and maintained by"
 msgstr "fejlesztője és karbantartója"
 
@@ -5321,7 +5373,7 @@ msgid "Field groups linked successfully."
 msgstr "A mezőcsoportok sikeresen össze lettek kapcsolva."
 
 #. translators: %s - URL to ACF tools page.
-#: includes/admin/admin.php:204
+#: includes/admin/admin.php:208
 msgid ""
 "Import Post Types and Taxonomies registered with Custom Post Type UI and "
 "manage them with ACF. <a href=\"%s\">Get Started</a>."
@@ -5329,7 +5381,7 @@ msgstr ""
 "Importáld a Custom Post Type UI-val regisztrált bejegyzéstípusokat és "
 "taxonómiákat, és kezeld őket az ACF-fel. <a href=\"%s\">Kezdés</a>."
 
-#: includes/admin/admin.php:56 includes/admin/admin.php:394
+#: includes/admin/admin.php:56 includes/admin/admin.php:398
 #: src/Site_Health/Site_Health.php:367
 msgid "ACF"
 msgstr "ACF"
@@ -5663,7 +5715,7 @@ msgstr "Elem bekapcsolása"
 msgid "Move field group to trash?"
 msgstr "Áthelyezed a mezőcsoportot a kukába?"
 
-#: acf.php:580 includes/admin/admin-internal-post-type-list.php:264
+#: acf.php:581 includes/admin/admin-internal-post-type-list.php:264
 #: includes/admin/post-types/admin-field-group.php:304
 #: includes/admin/post-types/admin-post-type.php:283
 #: includes/admin/post-types/admin-taxonomy.php:285
@@ -5676,7 +5728,7 @@ msgstr "Inaktív"
 msgid "WP Engine"
 msgstr "WP Engine"
 
-#: acf.php:638
+#: acf.php:639
 msgid ""
 "Advanced Custom Fields and Advanced Custom Fields PRO should not be active "
 "at the same time. We've automatically deactivated Advanced Custom Fields PRO."
@@ -5685,7 +5737,7 @@ msgstr ""
 "egyszerre aktív. Az Advanced Custom Fields PRO automatikusan kikapcsolásra "
 "került."
 
-#: acf.php:636
+#: acf.php:637
 msgid ""
 "Advanced Custom Fields and Advanced Custom Fields PRO should not be active "
 "at the same time. We've automatically deactivated Advanced Custom Fields."
@@ -5883,23 +5935,23 @@ msgstr "Eltérés betöltése"
 msgid "Review local JSON changes"
 msgstr "Helyi JSON-módosítások áttekintése"
 
-#: includes/admin/admin.php:179
+#: includes/admin/admin.php:183
 msgid "Visit website"
 msgstr "Webhely megnyitása"
 
-#: includes/admin/admin.php:178
+#: includes/admin/admin.php:182
 msgid "View details"
 msgstr "Részletek megtekintése"
 
-#: includes/admin/admin.php:177
+#: includes/admin/admin.php:181
 msgid "Version %s"
 msgstr "%s verzió"
 
-#: includes/admin/admin.php:176
+#: includes/admin/admin.php:180
 msgid "Information"
 msgstr "Információ"
 
-#: includes/admin/admin.php:167
+#: includes/admin/admin.php:171
 msgid ""
 "<a href=\"%s\" target=\"_blank\">Help Desk</a>. The support professionals on "
 "our Help Desk will assist with your more in depth, technical challenges."
@@ -5907,7 +5959,7 @@ msgstr ""
 "<a href=\"%s\" target=\"_blank\">Ügyfélszolgálat</a>. Az ügyfélszolgálatunk "
 "szakemberei segítenek a mélyebb, technikai kihívások megoldásában."
 
-#: includes/admin/admin.php:163
+#: includes/admin/admin.php:167
 msgid ""
 "<a href=\"%s\" target=\"_blank\">Discussions</a>. We have an active and "
 "friendly community on our Community Forums who may be able to help you "
@@ -5917,7 +5969,7 @@ msgstr ""
 "közösségünk van a közösségi fórumainkon, ahol segíthetnek eligazodni az ACF "
 "világának gyakorlati kérdéseiben."
 
-#: includes/admin/admin.php:159
+#: includes/admin/admin.php:163
 msgid ""
 "<a href=\"%s\" target=\"_blank\">Documentation</a>. Our extensive "
 "documentation contains references and guides for most situations you may "
@@ -5927,7 +5979,7 @@ msgstr ""
 "hivatkozásokat és útmutatókat tartalmaz a legtöbb helyzethez, amellyel "
 "találkozhatsz."
 
-#: includes/admin/admin.php:156
+#: includes/admin/admin.php:160
 msgid ""
 "We are fanatical about support, and want you to get the best out of your "
 "website with ACF. If you run into any difficulties, there are several places "
@@ -5937,11 +5989,11 @@ msgstr ""
 "hozza ki a webhelyedből az ACF segítségével. Ha bármilyen nehézségbe "
 "ütközik, több helyen is segítséget találhat:"
 
-#: includes/admin/admin.php:153 includes/admin/admin.php:155
+#: includes/admin/admin.php:157 includes/admin/admin.php:159
 msgid "Help & Support"
 msgstr "Súgó és támogatás"
 
-#: includes/admin/admin.php:144
+#: includes/admin/admin.php:148
 msgid ""
 "Please use the Help & Support tab to get in touch should you find yourself "
 "requiring assistance."
@@ -5949,7 +6001,7 @@ msgstr ""
 "Ha segítségre van szüksége, lépj kapcsolatba velünk a Súgó és támogatás lap "
 "használatával."
 
-#: includes/admin/admin.php:141
+#: includes/admin/admin.php:145
 msgid ""
 "Before creating your first Field Group, we recommend first reading our <a "
 "href=\"%s\" target=\"_blank\">Getting started</a> guide to familiarize "
@@ -5959,7 +6011,7 @@ msgstr ""
 "el a <a href=\"%s\" target=\"_blank\">Kezdés</a> útmutatónkat, hogy "
 "megismerkedjen a bővítmény szemléletével és bevált gyakorlataival."
 
-#: includes/admin/admin.php:139
+#: includes/admin/admin.php:143
 msgid ""
 "The Advanced Custom Fields plugin provides a visual form builder to "
 "customize WordPress edit screens with extra fields, and an intuitive API to "
@@ -5970,7 +6022,7 @@ msgstr ""
 "valamint egy intuitív API-t az egyéni mezőértékek megjelenítéséhez bármely "
 "sablonfájlban."
 
-#: includes/admin/admin.php:136 includes/admin/admin.php:138
+#: includes/admin/admin.php:140 includes/admin/admin.php:142
 msgid "Overview"
 msgstr "Áttekintés"
 
@@ -6022,11 +6074,11 @@ msgid "Post Status"
 msgstr "Bejegyzés-állapot"
 
 #: includes/acf-wp-functions.php:83
-#: includes/locations/class-acf-location-nav-menu.php:98
+#: includes/locations/class-acf-location-nav-menu.php:99
 msgid "Menus"
 msgstr "Menük"
 
-#: includes/locations/class-acf-location-nav-menu.php:89
+#: includes/locations/class-acf-location-nav-menu.php:90
 msgid "Menu Locations"
 msgstr "Menühelyek"
 
@@ -6098,7 +6150,7 @@ msgstr "Felhasználói adatlap"
 msgid "Page Parent"
 msgstr "Oldal szülő"
 
-#: includes/locations/class-acf-location-current-user-role.php:86
+#: includes/locations/class-acf-location-current-user-role.php:87
 msgid "Super Admin"
 msgstr "Szuper admin"
 
@@ -6119,7 +6171,7 @@ msgstr "Bejegyzéssablon"
 msgid "Post Category"
 msgstr "Bejegyzés-kategória"
 
-#: includes/locations/class-acf-location-attachment.php:93
+#: includes/locations/class-acf-location-attachment.php:94
 msgid "All %s formats"
 msgstr "Minden %s formátum"
 
@@ -6615,7 +6667,7 @@ msgstr "Elem másolása"
 msgid "Supports"
 msgstr "Támogatja"
 
-#: includes/admin/admin.php:388
+#: includes/admin/admin.php:392
 #: includes/admin/views/browse-fields-modal.php:112
 msgid "Documentation"
 msgstr "Dokumentáció"
@@ -7908,9 +7960,9 @@ msgstr "Feltöltve a bejegyzéshez"
 
 #: includes/fields/class-acf-field-file.php:234
 #: includes/fields/class-acf-field-image.php:208
-#: includes/locations/class-acf-location-attachment.php:82
+#: includes/locations/class-acf-location-attachment.php:83
 #: includes/locations/class-acf-location-comment.php:70
-#: includes/locations/class-acf-location-nav-menu.php:83
+#: includes/locations/class-acf-location-nav-menu.php:84
 #: includes/locations/class-acf-location-taxonomy.php:72
 #: includes/locations/class-acf-location-user-form.php:80
 #: includes/locations/class-acf-location-user-role.php:87
@@ -8291,90 +8343,90 @@ msgid "Time Picker"
 msgstr "Időválasztó"
 
 #. translators: counts for inactive field groups
-#: acf.php:586
+#: acf.php:587
 msgid "Inactive <span class=\"count\">(%s)</span>"
 msgid_plural "Inactive <span class=\"count\">(%s)</span>"
 msgstr[0] "Inaktív <span class=\"count\">(%s)</span>"
 msgstr[1] "Inaktív <span class=\"count\">(%s)</span>"
 
-#: acf.php:547
+#: acf.php:548
 msgid "No Fields found in Trash"
 msgstr "Nem található mezőcsoport a lomtárban."
 
-#: acf.php:546
+#: acf.php:547
 msgid "No Fields found"
 msgstr "Mezők nem találhatók"
 
-#: acf.php:545
+#: acf.php:546
 msgid "Search Fields"
 msgstr "Mezők keresése"
 
-#: acf.php:544
+#: acf.php:545
 msgid "View Field"
 msgstr "Mező megtekintése"
 
-#: acf.php:543 includes/admin/views/acf-field-group/fields.php:124
+#: acf.php:544 includes/admin/views/acf-field-group/fields.php:124
 msgid "New Field"
 msgstr "Új mező"
 
-#: acf.php:542
+#: acf.php:543
 msgid "Edit Field"
 msgstr "Mező szerkesztése"
 
-#: acf.php:541
+#: acf.php:542
 msgid "Add New Field"
 msgstr "Mező hozzáadása"
 
-#: acf.php:539
+#: acf.php:540
 msgid "Field"
 msgstr "Mező"
 
-#: acf.php:538 includes/admin/post-types/admin-field-group.php:179
+#: acf.php:539 includes/admin/post-types/admin-field-group.php:179
 #: includes/admin/post-types/admin-field-groups.php:98
 #: includes/admin/views/acf-field-group/fields.php:42
 msgid "Fields"
 msgstr "Mezők"
 
-#: acf.php:513
+#: acf.php:514
 msgid "No Field Groups found in Trash"
 msgstr "Nem található mezőcsoport a lomtárban."
 
-#: acf.php:512
+#: acf.php:513
 msgid "No Field Groups found"
 msgstr "Nincsenek mezőcsoportok"
 
-#: acf.php:511
+#: acf.php:512
 msgid "Search Field Groups"
 msgstr "Mezőcsoportok keresése"
 
-#: acf.php:510
+#: acf.php:511
 msgid "View Field Group"
 msgstr "Mezőcsoport megtekintése"
 
-#: acf.php:509
+#: acf.php:510
 msgid "New Field Group"
 msgstr "Új mezőcsoport"
 
-#: acf.php:508
+#: acf.php:509
 msgid "Edit Field Group"
 msgstr "Mezőcsoport szerkesztése"
 
-#: acf.php:507
+#: acf.php:508
 msgid "Add New Field Group"
 msgstr "Új mezőcsoport hozzáadása"
 
-#: acf.php:506 acf.php:540
+#: acf.php:507 acf.php:541
 #: includes/admin/views/acf-post-type/advanced-settings.php:244
 #: includes/post-types/class-acf-post-type.php:102
 #: includes/post-types/class-acf-taxonomy.php:101
 msgid "Add New"
 msgstr "Új hozzáadása"
 
-#: acf.php:505
+#: acf.php:506
 msgid "Field Group"
 msgstr "Mezőcsoport"
 
-#: acf.php:504 includes/admin/post-types/admin-field-groups.php:61
+#: acf.php:505 includes/admin/post-types/admin-field-groups.php:61
 #: includes/admin/post-types/admin-post-types.php:118
 #: includes/admin/post-types/admin-taxonomies.php:117
 msgid "Field Groups"
@@ -8392,7 +8444,7 @@ msgid "https://www.advancedcustomfields.com"
 msgstr "https://www.advancedcustomfields.com"
 
 #. Plugin Name of the plugin
-#: acf.php acf.php:347
+#: acf.php acf.php:348
 msgid "Advanced Custom Fields"
 msgstr "Advanced Custom Fields"
 

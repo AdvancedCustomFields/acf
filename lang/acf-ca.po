@@ -12,7 +12,7 @@
 # This file is distributed under the same license as Advanced Custom Fields.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-07-14T01:00:08+00:00\n"
+"PO-Revision-Date: 2026-08-03T18:26:13+00:00\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
@@ -20,6 +20,58 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: gettext\n"
 "Project-Id-Version: Advanced Custom Fields\n"
+
+#: includes/admin/views/email-opt-in-banner.php:103
+msgid "Dismiss email opt-in banner"
+msgstr ""
+
+#: includes/admin/views/email-opt-in-banner.php:95
+msgid "You're on the list! Keep an eye out for our next update."
+msgstr ""
+
+#: includes/admin/views/email-opt-in-banner.php:70
+msgid "Join the list"
+msgstr ""
+
+#: includes/admin/views/email-opt-in-banner.php:63
+msgid "you@example.com"
+msgstr ""
+
+#: includes/admin/views/email-opt-in-banner.php:54
+msgid "Email address"
+msgstr ""
+
+#: includes/admin/views/email-opt-in-banner.php:42
+msgid ""
+"Get critical ACF security updates, releases, news, and workflow improvements."
+msgstr ""
+
+#: includes/admin/views/email-opt-in-banner.php:39
+msgid "Join the ACF community."
+msgstr ""
+
+#. translators: %s - Privacy Policy link, opens in a new tab.
+#: includes/admin/views/email-opt-in-banner.php:26
+msgid ""
+"We respect your inbox. Unsubscribe anytime. By signing up, you agree to our "
+"%s."
+msgstr ""
+
+#: includes/admin/views/email-opt-in-banner.php:21
+msgid "Privacy Policy"
+msgstr ""
+
+#: includes/admin/admin-email-opt-in-banner.php:265
+msgid "Something went wrong on our end. Please try again."
+msgstr ""
+
+#: includes/admin/admin-email-opt-in-banner.php:264
+msgid "Please enter a valid email address."
+msgstr ""
+
+#: includes/admin/admin-email-opt-in-banner.php:263
+msgid "Email address is required."
+msgstr ""
 
 #: src/Site_Health/Site_Health.php:1009
 msgid "Datastore Enabled"
@@ -563,7 +615,7 @@ msgid "Toggle panel"
 msgstr ""
 
 #. translators: %1$s - Plugin name, %2$s URL to documentation
-#: includes/admin/admin.php:311
+#: includes/admin/admin.php:315
 msgid ""
 "%1$s We have detected that this website is configured to use v3 of the "
 "Select2 jQuery library, which has been deprecated in favor of v4 and will be "
@@ -633,7 +685,7 @@ msgstr ""
 
 #. translators: This text is prepended by a link to ACF's website, and appended
 #. by a link to WP Engine's website.
-#: includes/admin/admin.php:357
+#: includes/admin/admin.php:361
 msgid "are developed and maintained by"
 msgstr ""
 
@@ -2645,21 +2697,21 @@ msgstr "Afegeix camps"
 msgid "This Field"
 msgstr "Aquest camp"
 
-#: includes/admin/admin.php:394
+#: includes/admin/admin.php:398
 msgid "ACF PRO"
 msgstr "ACF PRO"
 
-#: includes/admin/admin.php:392
+#: includes/admin/admin.php:396
 msgid "Feedback"
 msgstr "Opinions"
 
-#: includes/admin/admin.php:390
+#: includes/admin/admin.php:394
 msgid "Support"
 msgstr "Suport"
 
 #. translators: This text is prepended by a link to ACF's website, and appended
 #. by a link to WP Engine's website.
-#: includes/admin/admin.php:365
+#: includes/admin/admin.php:369
 msgid "is developed and maintained by"
 msgstr "és desenvolupat i mantingut per"
 
@@ -5229,7 +5281,7 @@ msgid "Field groups linked successfully."
 msgstr "Grups de camps enllaçats correctament."
 
 #. translators: %s - URL to ACF tools page.
-#: includes/admin/admin.php:204
+#: includes/admin/admin.php:208
 msgid ""
 "Import Post Types and Taxonomies registered with Custom Post Type UI and "
 "manage them with ACF. <a href=\"%s\">Get Started</a>."
@@ -5237,7 +5289,7 @@ msgstr ""
 "Importa tipus de contingut i taxonomies registrades amb Custom Post Type UI "
 "i gestiona-les amb ACF. <a href=\"%s\">Comença</a>."
 
-#: includes/admin/admin.php:56 includes/admin/admin.php:394
+#: includes/admin/admin.php:56 includes/admin/admin.php:398
 #: src/Site_Health/Site_Health.php:367
 msgid "ACF"
 msgstr "ACF"
@@ -5571,7 +5623,7 @@ msgstr "Activa aquest element"
 msgid "Move field group to trash?"
 msgstr "Voleu moure el grup de camps a la paperera?"
 
-#: acf.php:580 includes/admin/admin-internal-post-type-list.php:264
+#: acf.php:581 includes/admin/admin-internal-post-type-list.php:264
 #: includes/admin/post-types/admin-field-group.php:304
 #: includes/admin/post-types/admin-post-type.php:283
 #: includes/admin/post-types/admin-taxonomy.php:285
@@ -5584,7 +5636,7 @@ msgstr "Inactiva"
 msgid "WP Engine"
 msgstr "WP Engine"
 
-#: acf.php:638
+#: acf.php:639
 msgid ""
 "Advanced Custom Fields and Advanced Custom Fields PRO should not be active "
 "at the same time. We've automatically deactivated Advanced Custom Fields PRO."
@@ -5593,7 +5645,7 @@ msgstr ""
 "actius al mateix temps. Hem desactivat Advanced Custom Fields PRO "
 "automàticament."
 
-#: acf.php:636
+#: acf.php:637
 msgid ""
 "Advanced Custom Fields and Advanced Custom Fields PRO should not be active "
 "at the same time. We've automatically deactivated Advanced Custom Fields."
@@ -5787,23 +5839,23 @@ msgstr "S'està carregant el diff"
 msgid "Review local JSON changes"
 msgstr "Revisa els canvis JSON locals"
 
-#: includes/admin/admin.php:179
+#: includes/admin/admin.php:183
 msgid "Visit website"
 msgstr "Visiteu el lloc web"
 
-#: includes/admin/admin.php:178
+#: includes/admin/admin.php:182
 msgid "View details"
 msgstr "Visualitza els detalls"
 
-#: includes/admin/admin.php:177
+#: includes/admin/admin.php:181
 msgid "Version %s"
 msgstr "Versió %s"
 
-#: includes/admin/admin.php:176
+#: includes/admin/admin.php:180
 msgid "Information"
 msgstr "Informació"
 
-#: includes/admin/admin.php:167
+#: includes/admin/admin.php:171
 msgid ""
 "<a href=\"%s\" target=\"_blank\">Help Desk</a>. The support professionals on "
 "our Help Desk will assist with your more in depth, technical challenges."
@@ -5811,7 +5863,7 @@ msgstr ""
 "<a href=\"%s\" target=\"_blank\">Servei d'ajuda</a>. Els professionals de "
 "suport al servei d'ajuda us ajudaran amb els problemes tècnics més profunds."
 
-#: includes/admin/admin.php:163
+#: includes/admin/admin.php:167
 msgid ""
 "<a href=\"%s\" target=\"_blank\">Discussions</a>. We have an active and "
 "friendly community on our Community Forums who may be able to help you "
@@ -5821,7 +5873,7 @@ msgstr ""
 "amistosa als nostres fòrums comunitaris que pot ajudar-vos a descobrir com "
 "es fan les coses al món de l'ACF."
 
-#: includes/admin/admin.php:159
+#: includes/admin/admin.php:163
 msgid ""
 "<a href=\"%s\" target=\"_blank\">Documentation</a>. Our extensive "
 "documentation contains references and guides for most situations you may "
@@ -5831,7 +5883,7 @@ msgstr ""
 "documentació conté referències i guies per a la majoria de situacions que "
 "podeu trobar."
 
-#: includes/admin/admin.php:156
+#: includes/admin/admin.php:160
 msgid ""
 "We are fanatical about support, and want you to get the best out of your "
 "website with ACF. If you run into any difficulties, there are several places "
@@ -5841,11 +5893,11 @@ msgstr ""
 "web amb l'ACF. Si trobeu alguna dificultat, hi ha diversos llocs on podeu "
 "trobar ajuda:"
 
-#: includes/admin/admin.php:153 includes/admin/admin.php:155
+#: includes/admin/admin.php:157 includes/admin/admin.php:159
 msgid "Help & Support"
 msgstr "Ajuda i suport"
 
-#: includes/admin/admin.php:144
+#: includes/admin/admin.php:148
 msgid ""
 "Please use the Help & Support tab to get in touch should you find yourself "
 "requiring assistance."
@@ -5853,7 +5905,7 @@ msgstr ""
 "Utilitzeu la pestanya d'ajuda i suport per posar-vos en contacte amb "
 "nosaltres si necessiteu ajuda."
 
-#: includes/admin/admin.php:141
+#: includes/admin/admin.php:145
 msgid ""
 "Before creating your first Field Group, we recommend first reading our <a "
 "href=\"%s\" target=\"_blank\">Getting started</a> guide to familiarize "
@@ -5863,7 +5915,7 @@ msgstr ""
 "nostra guia <a href=\"%s\" target=\"_blank\">Primers passos</a> per "
 "familiaritzar-vos amb la filosofia i les millors pràctiques de l'extensió."
 
-#: includes/admin/admin.php:139
+#: includes/admin/admin.php:143
 msgid ""
 "The Advanced Custom Fields plugin provides a visual form builder to "
 "customize WordPress edit screens with extra fields, and an intuitive API to "
@@ -5874,7 +5926,7 @@ msgstr ""
 "addicionals i una API intuïtiva per mostrar els valors dels camps "
 "personalitzats en qualsevol fitxer de plantilla de tema."
 
-#: includes/admin/admin.php:136 includes/admin/admin.php:138
+#: includes/admin/admin.php:140 includes/admin/admin.php:142
 msgid "Overview"
 msgstr "Resum"
 
@@ -5926,11 +5978,11 @@ msgid "Post Status"
 msgstr "Estat de l'entrada"
 
 #: includes/acf-wp-functions.php:83
-#: includes/locations/class-acf-location-nav-menu.php:98
+#: includes/locations/class-acf-location-nav-menu.php:99
 msgid "Menus"
 msgstr "Menús"
 
-#: includes/locations/class-acf-location-nav-menu.php:89
+#: includes/locations/class-acf-location-nav-menu.php:90
 msgid "Menu Locations"
 msgstr "Ubicacions dels menús"
 
@@ -6002,7 +6054,7 @@ msgstr "Formulari d'usuari"
 msgid "Page Parent"
 msgstr "Pàgina mare"
 
-#: includes/locations/class-acf-location-current-user-role.php:86
+#: includes/locations/class-acf-location-current-user-role.php:87
 msgid "Super Admin"
 msgstr "Superadministrador"
 
@@ -6023,7 +6075,7 @@ msgstr "Plantilla de l'entrada"
 msgid "Post Category"
 msgstr "Categoria de l'entrada"
 
-#: includes/locations/class-acf-location-attachment.php:93
+#: includes/locations/class-acf-location-attachment.php:94
 msgid "All %s formats"
 msgstr "Tots els formats de %s"
 
@@ -6517,7 +6569,7 @@ msgstr "Duplica aquest element"
 msgid "Supports"
 msgstr "Suports"
 
-#: includes/admin/admin.php:388
+#: includes/admin/admin.php:392
 #: includes/admin/views/browse-fields-modal.php:112
 msgid "Documentation"
 msgstr "Documentació"
@@ -7811,9 +7863,9 @@ msgstr "S'ha penjat a l'entrada"
 
 #: includes/fields/class-acf-field-file.php:234
 #: includes/fields/class-acf-field-image.php:208
-#: includes/locations/class-acf-location-attachment.php:82
+#: includes/locations/class-acf-location-attachment.php:83
 #: includes/locations/class-acf-location-comment.php:70
-#: includes/locations/class-acf-location-nav-menu.php:83
+#: includes/locations/class-acf-location-nav-menu.php:84
 #: includes/locations/class-acf-location-taxonomy.php:72
 #: includes/locations/class-acf-location-user-form.php:80
 #: includes/locations/class-acf-location-user-role.php:87
@@ -8195,90 +8247,90 @@ msgid "Time Picker"
 msgstr "Selector d'hora"
 
 #. translators: counts for inactive field groups
-#: acf.php:586
+#: acf.php:587
 msgid "Inactive <span class=\"count\">(%s)</span>"
 msgid_plural "Inactive <span class=\"count\">(%s)</span>"
 msgstr[0] "Inactiu <span class=\"count\">(%s)</span>"
 msgstr[1] "Inactius <span class=\"count\">(%s)</span>"
 
-#: acf.php:547
+#: acf.php:548
 msgid "No Fields found in Trash"
 msgstr "No s'ha trobat cap camp a la paperera"
 
-#: acf.php:546
+#: acf.php:547
 msgid "No Fields found"
 msgstr "No s'ha trobat cap camp"
 
-#: acf.php:545
+#: acf.php:546
 msgid "Search Fields"
 msgstr "Cerca camps"
 
-#: acf.php:544
+#: acf.php:545
 msgid "View Field"
 msgstr "Visualitza el camp"
 
-#: acf.php:543 includes/admin/views/acf-field-group/fields.php:124
+#: acf.php:544 includes/admin/views/acf-field-group/fields.php:124
 msgid "New Field"
 msgstr "Nou camp"
 
-#: acf.php:542
+#: acf.php:543
 msgid "Edit Field"
 msgstr "Edita el camp"
 
-#: acf.php:541
+#: acf.php:542
 msgid "Add New Field"
 msgstr "Afegeix un nou camp"
 
-#: acf.php:539
+#: acf.php:540
 msgid "Field"
 msgstr "Camp"
 
-#: acf.php:538 includes/admin/post-types/admin-field-group.php:179
+#: acf.php:539 includes/admin/post-types/admin-field-group.php:179
 #: includes/admin/post-types/admin-field-groups.php:98
 #: includes/admin/views/acf-field-group/fields.php:42
 msgid "Fields"
 msgstr "Camps"
 
-#: acf.php:513
+#: acf.php:514
 msgid "No Field Groups found in Trash"
 msgstr "No s'ha trobat cap grup de camps a la paperera"
 
-#: acf.php:512
+#: acf.php:513
 msgid "No Field Groups found"
 msgstr "No s'ha trobat cap grup de camps"
 
-#: acf.php:511
+#: acf.php:512
 msgid "Search Field Groups"
 msgstr "Cerca grups de camps"
 
-#: acf.php:510
+#: acf.php:511
 msgid "View Field Group"
 msgstr "Visualitza el grup de camps"
 
-#: acf.php:509
+#: acf.php:510
 msgid "New Field Group"
 msgstr "Nou grup de camps"
 
-#: acf.php:508
+#: acf.php:509
 msgid "Edit Field Group"
 msgstr "Edita el grup de camps"
 
-#: acf.php:507
+#: acf.php:508
 msgid "Add New Field Group"
 msgstr "Afegeix un nou grup de camps"
 
-#: acf.php:506 acf.php:540
+#: acf.php:507 acf.php:541
 #: includes/admin/views/acf-post-type/advanced-settings.php:244
 #: includes/post-types/class-acf-post-type.php:102
 #: includes/post-types/class-acf-taxonomy.php:101
 msgid "Add New"
 msgstr "Afegeix"
 
-#: acf.php:505
+#: acf.php:506
 msgid "Field Group"
 msgstr "Grup de camps"
 
-#: acf.php:504 includes/admin/post-types/admin-field-groups.php:61
+#: acf.php:505 includes/admin/post-types/admin-field-groups.php:61
 #: includes/admin/post-types/admin-post-types.php:118
 #: includes/admin/post-types/admin-taxonomies.php:117
 msgid "Field Groups"
@@ -8296,7 +8348,7 @@ msgid "https://www.advancedcustomfields.com"
 msgstr "https://www.advancedcustomfields.com"
 
 #. Plugin Name of the plugin
-#: acf.php acf.php:347
+#: acf.php acf.php:348
 msgid "Advanced Custom Fields"
 msgstr "Advanced Custom Fields"
 

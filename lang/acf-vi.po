@@ -12,7 +12,7 @@
 # This file is distributed under the same license as Advanced Custom Fields.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-07-14T01:00:08+00:00\n"
+"PO-Revision-Date: 2026-08-03T18:26:13+00:00\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "Language: vi\n"
 "MIME-Version: 1.0\n"
@@ -20,6 +20,58 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: gettext\n"
 "Project-Id-Version: Advanced Custom Fields\n"
+
+#: includes/admin/views/email-opt-in-banner.php:103
+msgid "Dismiss email opt-in banner"
+msgstr ""
+
+#: includes/admin/views/email-opt-in-banner.php:95
+msgid "You're on the list! Keep an eye out for our next update."
+msgstr ""
+
+#: includes/admin/views/email-opt-in-banner.php:70
+msgid "Join the list"
+msgstr ""
+
+#: includes/admin/views/email-opt-in-banner.php:63
+msgid "you@example.com"
+msgstr ""
+
+#: includes/admin/views/email-opt-in-banner.php:54
+msgid "Email address"
+msgstr ""
+
+#: includes/admin/views/email-opt-in-banner.php:42
+msgid ""
+"Get critical ACF security updates, releases, news, and workflow improvements."
+msgstr ""
+
+#: includes/admin/views/email-opt-in-banner.php:39
+msgid "Join the ACF community."
+msgstr ""
+
+#. translators: %s - Privacy Policy link, opens in a new tab.
+#: includes/admin/views/email-opt-in-banner.php:26
+msgid ""
+"We respect your inbox. Unsubscribe anytime. By signing up, you agree to our "
+"%s."
+msgstr ""
+
+#: includes/admin/views/email-opt-in-banner.php:21
+msgid "Privacy Policy"
+msgstr ""
+
+#: includes/admin/admin-email-opt-in-banner.php:265
+msgid "Something went wrong on our end. Please try again."
+msgstr ""
+
+#: includes/admin/admin-email-opt-in-banner.php:264
+msgid "Please enter a valid email address."
+msgstr ""
+
+#: includes/admin/admin-email-opt-in-banner.php:263
+msgid "Email address is required."
+msgstr ""
 
 #: src/Site_Health/Site_Health.php:1009
 msgid "Datastore Enabled"
@@ -559,7 +611,7 @@ msgid "Toggle panel"
 msgstr "Bật/tắt bảng điều khiển"
 
 #. translators: %1$s - Plugin name, %2$s URL to documentation
-#: includes/admin/admin.php:311
+#: includes/admin/admin.php:315
 msgid ""
 "%1$s We have detected that this website is configured to use v3 of the "
 "Select2 jQuery library, which has been deprecated in favor of v4 and will be "
@@ -638,7 +690,7 @@ msgstr "ACF không thể thực hiện xác thực vì máy chủ không nhận 
 
 #. translators: This text is prepended by a link to ACF's website, and appended
 #. by a link to WP Engine's website.
-#: includes/admin/admin.php:357
+#: includes/admin/admin.php:361
 msgid "are developed and maintained by"
 msgstr "được phát triển và duy trì bởi"
 
@@ -2680,21 +2732,21 @@ msgstr "Thêm trường"
 msgid "This Field"
 msgstr "Trường này"
 
-#: includes/admin/admin.php:394
+#: includes/admin/admin.php:398
 msgid "ACF PRO"
 msgstr "ACF PRO"
 
-#: includes/admin/admin.php:392
+#: includes/admin/admin.php:396
 msgid "Feedback"
 msgstr "Phản hồi"
 
-#: includes/admin/admin.php:390
+#: includes/admin/admin.php:394
 msgid "Support"
 msgstr "Hỗ trợ"
 
 #. translators: This text is prepended by a link to ACF's website, and appended
 #. by a link to WP Engine's website.
-#: includes/admin/admin.php:365
+#: includes/admin/admin.php:369
 msgid "is developed and maintained by"
 msgstr "được phát triển và duy trì bởi"
 
@@ -5218,7 +5270,7 @@ msgid "Field groups linked successfully."
 msgstr "Nhóm trường đã được liên kết thành công."
 
 #. translators: %s - URL to ACF tools page.
-#: includes/admin/admin.php:204
+#: includes/admin/admin.php:208
 msgid ""
 "Import Post Types and Taxonomies registered with Custom Post Type UI and "
 "manage them with ACF. <a href=\"%s\">Get Started</a>."
@@ -5226,7 +5278,7 @@ msgstr ""
 "Nhập loại nội dung và Phân loại đã đăng ký với Giao diện người dùng loại nội "
 "dung Tùy chỉnh và quản lý chúng với ACF. <a href=\"%s\">Bắt đầu</a>."
 
-#: includes/admin/admin.php:56 includes/admin/admin.php:394
+#: includes/admin/admin.php:56 includes/admin/admin.php:398
 #: src/Site_Health/Site_Health.php:367
 msgid "ACF"
 msgstr "ACF"
@@ -5557,7 +5609,7 @@ msgstr "Kích hoạt mục này"
 msgid "Move field group to trash?"
 msgstr "Chuyển nhóm trường vào thùng rác?"
 
-#: acf.php:580 includes/admin/admin-internal-post-type-list.php:264
+#: acf.php:581 includes/admin/admin-internal-post-type-list.php:264
 #: includes/admin/post-types/admin-field-group.php:304
 #: includes/admin/post-types/admin-post-type.php:283
 #: includes/admin/post-types/admin-taxonomy.php:285
@@ -5570,7 +5622,7 @@ msgstr "Không hoạt động"
 msgid "WP Engine"
 msgstr "WP Engine"
 
-#: acf.php:638
+#: acf.php:639
 msgid ""
 "Advanced Custom Fields and Advanced Custom Fields PRO should not be active "
 "at the same time. We've automatically deactivated Advanced Custom Fields PRO."
@@ -5578,7 +5630,7 @@ msgstr ""
 "Advanced Custom Fields và Advanced Custom Fields PRO không nên hoạt động "
 "cùng một lúc. Chúng tôi đã tự động tắt Advanced Custom Fields PRO."
 
-#: acf.php:636
+#: acf.php:637
 msgid ""
 "Advanced Custom Fields and Advanced Custom Fields PRO should not be active "
 "at the same time. We've automatically deactivated Advanced Custom Fields."
@@ -5768,23 +5820,23 @@ msgstr "Đang tải diff"
 msgid "Review local JSON changes"
 msgstr "Xem xét thay đổi JSON cục bộ"
 
-#: includes/admin/admin.php:179
+#: includes/admin/admin.php:183
 msgid "Visit website"
 msgstr "Truy cập trang web"
 
-#: includes/admin/admin.php:178
+#: includes/admin/admin.php:182
 msgid "View details"
 msgstr "Xem chi tiết"
 
-#: includes/admin/admin.php:177
+#: includes/admin/admin.php:181
 msgid "Version %s"
 msgstr "Phiên bản %s"
 
-#: includes/admin/admin.php:176
+#: includes/admin/admin.php:180
 msgid "Information"
 msgstr "Thông tin"
 
-#: includes/admin/admin.php:167
+#: includes/admin/admin.php:171
 msgid ""
 "<a href=\"%s\" target=\"_blank\">Help Desk</a>. The support professionals on "
 "our Help Desk will assist with your more in depth, technical challenges."
@@ -5793,7 +5845,7 @@ msgstr ""
 "Bàn Giúp đỡ của chúng tôi sẽ giúp bạn giải quyết các thách thức kỹ thuật sâu "
 "hơn."
 
-#: includes/admin/admin.php:163
+#: includes/admin/admin.php:167
 msgid ""
 "<a href=\"%s\" target=\"_blank\">Discussions</a>. We have an active and "
 "friendly community on our Community Forums who may be able to help you "
@@ -5803,7 +5855,7 @@ msgstr ""
 "năng động và thân thiện trên Diễn đàn Cộng đồng của chúng tôi, có thể giúp "
 "bạn tìm hiểu 'cách làm' trong thế giới ACF."
 
-#: includes/admin/admin.php:159
+#: includes/admin/admin.php:163
 msgid ""
 "<a href=\"%s\" target=\"_blank\">Documentation</a>. Our extensive "
 "documentation contains references and guides for most situations you may "
@@ -5813,7 +5865,7 @@ msgstr ""
 "tôi chứa các tài liệu tham khảo và hướng dẫn cho hầu hết các tình huống bạn "
 "có thể gặp phải."
 
-#: includes/admin/admin.php:156
+#: includes/admin/admin.php:160
 msgid ""
 "We are fanatical about support, and want you to get the best out of your "
 "website with ACF. If you run into any difficulties, there are several places "
@@ -5823,18 +5875,18 @@ msgstr ""
 "từ trang web của bạn với ACF. Nếu bạn gặp bất kỳ khó khăn nào, có một số nơi "
 "bạn có thể tìm kiếm sự giúp đỡ:"
 
-#: includes/admin/admin.php:153 includes/admin/admin.php:155
+#: includes/admin/admin.php:157 includes/admin/admin.php:159
 msgid "Help & Support"
 msgstr "Giúp đỡ & Hỗ trợ"
 
-#: includes/admin/admin.php:144
+#: includes/admin/admin.php:148
 msgid ""
 "Please use the Help & Support tab to get in touch should you find yourself "
 "requiring assistance."
 msgstr ""
 "Vui lòng sử dụng tab Giúp đỡ & Hỗ trợ để liên hệ nếu bạn cần sự hỗ trợ."
 
-#: includes/admin/admin.php:141
+#: includes/admin/admin.php:145
 msgid ""
 "Before creating your first Field Group, we recommend first reading our <a "
 "href=\"%s\" target=\"_blank\">Getting started</a> guide to familiarize "
@@ -5844,7 +5896,7 @@ msgstr ""
 "hướng dẫn <a href=\"%s\" target=\"_blank\">Bắt đầu</a> của chúng tôi để làm "
 "quen với triết lý và các phương pháp tốt nhất của plugin."
 
-#: includes/admin/admin.php:139
+#: includes/admin/admin.php:143
 msgid ""
 "The Advanced Custom Fields plugin provides a visual form builder to "
 "customize WordPress edit screens with extra fields, and an intuitive API to "
@@ -5855,7 +5907,7 @@ msgstr ""
 "trực quan để hiển thị giá trị trường tùy chỉnh trong bất kỳ tệp mẫu giao "
 "diện nào."
 
-#: includes/admin/admin.php:136 includes/admin/admin.php:138
+#: includes/admin/admin.php:140 includes/admin/admin.php:142
 msgid "Overview"
 msgstr "Tổng quan"
 
@@ -5907,11 +5959,11 @@ msgid "Post Status"
 msgstr "Trang thái bài viết"
 
 #: includes/acf-wp-functions.php:83
-#: includes/locations/class-acf-location-nav-menu.php:98
+#: includes/locations/class-acf-location-nav-menu.php:99
 msgid "Menus"
 msgstr "Menus"
 
-#: includes/locations/class-acf-location-nav-menu.php:89
+#: includes/locations/class-acf-location-nav-menu.php:90
 msgid "Menu Locations"
 msgstr "Vị trí menu"
 
@@ -5983,7 +6035,7 @@ msgstr "Form người dùng"
 msgid "Page Parent"
 msgstr "Trang cha"
 
-#: includes/locations/class-acf-location-current-user-role.php:86
+#: includes/locations/class-acf-location-current-user-role.php:87
 msgid "Super Admin"
 msgstr "Quản trị viên cấp cao"
 
@@ -6004,7 +6056,7 @@ msgstr "Mẫu bài viết"
 msgid "Post Category"
 msgstr "Danh mục bài viết"
 
-#: includes/locations/class-acf-location-attachment.php:93
+#: includes/locations/class-acf-location-attachment.php:94
 msgid "All %s formats"
 msgstr "Tất cả %s các định dạng"
 
@@ -6495,7 +6547,7 @@ msgstr "Tạo bản sao mục này"
 msgid "Supports"
 msgstr "Hỗ trợ"
 
-#: includes/admin/admin.php:388
+#: includes/admin/admin.php:392
 #: includes/admin/views/browse-fields-modal.php:112
 msgid "Documentation"
 msgstr "Tài liệu hướng dẫn"
@@ -7785,9 +7837,9 @@ msgstr "Đã tải lên bài viết"
 
 #: includes/fields/class-acf-field-file.php:234
 #: includes/fields/class-acf-field-image.php:208
-#: includes/locations/class-acf-location-attachment.php:82
+#: includes/locations/class-acf-location-attachment.php:83
 #: includes/locations/class-acf-location-comment.php:70
-#: includes/locations/class-acf-location-nav-menu.php:83
+#: includes/locations/class-acf-location-nav-menu.php:84
 #: includes/locations/class-acf-location-taxonomy.php:72
 #: includes/locations/class-acf-location-user-form.php:80
 #: includes/locations/class-acf-location-user-role.php:87
@@ -8168,89 +8220,89 @@ msgid "Time Picker"
 msgstr "Công cụ chọn thời gian"
 
 #. translators: counts for inactive field groups
-#: acf.php:586
+#: acf.php:587
 msgid "Inactive <span class=\"count\">(%s)</span>"
 msgid_plural "Inactive <span class=\"count\">(%s)</span>"
 msgstr[0] "<span class=\"count\">(%s)</span> không hoạt động"
 
-#: acf.php:547
+#: acf.php:548
 msgid "No Fields found in Trash"
 msgstr "Không tìm thấy trường nào trong thùng rác"
 
-#: acf.php:546
+#: acf.php:547
 msgid "No Fields found"
 msgstr "Không tìm thấy trường nào"
 
-#: acf.php:545
+#: acf.php:546
 msgid "Search Fields"
 msgstr "Tìm kiếm các trường"
 
-#: acf.php:544
+#: acf.php:545
 msgid "View Field"
 msgstr "Xem trường"
 
-#: acf.php:543 includes/admin/views/acf-field-group/fields.php:124
+#: acf.php:544 includes/admin/views/acf-field-group/fields.php:124
 msgid "New Field"
 msgstr "Trường mới"
 
-#: acf.php:542
+#: acf.php:543
 msgid "Edit Field"
 msgstr "Chỉnh sửa trường"
 
-#: acf.php:541
+#: acf.php:542
 msgid "Add New Field"
 msgstr "Thêm trường mới"
 
-#: acf.php:539
+#: acf.php:540
 msgid "Field"
 msgstr "Trường"
 
-#: acf.php:538 includes/admin/post-types/admin-field-group.php:179
+#: acf.php:539 includes/admin/post-types/admin-field-group.php:179
 #: includes/admin/post-types/admin-field-groups.php:98
 #: includes/admin/views/acf-field-group/fields.php:42
 msgid "Fields"
 msgstr "Các trường"
 
-#: acf.php:513
+#: acf.php:514
 msgid "No Field Groups found in Trash"
 msgstr "Không tìm thấy nhóm trường nào trong thùng rác"
 
-#: acf.php:512
+#: acf.php:513
 msgid "No Field Groups found"
 msgstr "Không tìm thấy nhóm trường nào"
 
-#: acf.php:511
+#: acf.php:512
 msgid "Search Field Groups"
 msgstr "Tìm kiếm nhóm trường"
 
-#: acf.php:510
+#: acf.php:511
 msgid "View Field Group"
 msgstr "Xem nhóm trường"
 
-#: acf.php:509
+#: acf.php:510
 msgid "New Field Group"
 msgstr "Nhóm trường mới"
 
-#: acf.php:508
+#: acf.php:509
 msgid "Edit Field Group"
 msgstr "Chỉnh sửa nhóm trường"
 
-#: acf.php:507
+#: acf.php:508
 msgid "Add New Field Group"
 msgstr "Thêm nhóm trường mới"
 
-#: acf.php:506 acf.php:540
+#: acf.php:507 acf.php:541
 #: includes/admin/views/acf-post-type/advanced-settings.php:244
 #: includes/post-types/class-acf-post-type.php:102
 #: includes/post-types/class-acf-taxonomy.php:101
 msgid "Add New"
 msgstr "Thêm mới"
 
-#: acf.php:505
+#: acf.php:506
 msgid "Field Group"
 msgstr "Nhóm trường"
 
-#: acf.php:504 includes/admin/post-types/admin-field-groups.php:61
+#: acf.php:505 includes/admin/post-types/admin-field-groups.php:61
 #: includes/admin/post-types/admin-post-types.php:118
 #: includes/admin/post-types/admin-taxonomies.php:117
 msgid "Field Groups"
@@ -8268,6 +8320,6 @@ msgid "https://www.advancedcustomfields.com"
 msgstr "https://www.advancedcustomfields.com"
 
 #. Plugin Name of the plugin
-#: acf.php acf.php:347
+#: acf.php acf.php:348
 msgid "Advanced Custom Fields"
 msgstr "Advanced Custom Fields"
