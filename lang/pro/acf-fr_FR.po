@@ -388,6 +388,42 @@ msgstr "Supprimer la disposition"
 msgid "Duplicate Layout"
 msgstr "Dupliquer la disposition"
 
+#: pro/fields/class-acf-field-flexible-content.php:99
+msgid "Delete %s"
+msgstr "Supprimer %s"
+
+#: pro/fields/class-acf-field-flexible-content.php:102
+msgid "Are you sure you want to delete %s?"
+msgstr "Êtes-vous sûr de vouloir supprimer %s ?"
+
+#: src/Pro/Fields/FlexibleContent/Layout.php:253
+msgid "More layout actions..."
+msgstr "Plus d'actions..."
+
+#: src/Pro/Fields/FlexibleContent/Layout.php:255
+msgid "Toggle layout"
+msgstr "Afficher/masquer la disposition"
+
+#: src/Pro/Fields/FlexibleContent/Render.php:197
+msgid "Expand All"
+msgstr "Tout développer"
+
+#: src/Pro/Fields/FlexibleContent/Render.php:200
+msgid "Collapse All"
+msgstr "Tout réduire"
+
+#: src/Pro/Fields/FlexibleContent/Render.php:257
+msgid "Rename"
+msgstr "Renommer"
+
+#: src/Pro/Fields/FlexibleContent/Render.php:262
+msgid "Disable"
+msgstr "Désactiver"
+
+#: src/Pro/Fields/FlexibleContent/Render.php:265
+msgid "Enable"
+msgstr "Activer"
+
 # @ acf
 #: pro/fields/class-acf-field-flexible-content.php:564
 msgid "Add New Layout"
