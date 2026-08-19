@@ -12,7 +12,7 @@
 # This file is distributed under the same license as Advanced Custom Fields.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-08-03T18:26:13+00:00\n"
+"PO-Revision-Date: 2026-08-19T14:59:20+00:00\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "Language: fa_IR\n"
 "MIME-Version: 1.0\n"
@@ -21,34 +21,39 @@ msgstr ""
 "X-Generator: gettext\n"
 "Project-Id-Version: Advanced Custom Fields\n"
 
+#: includes/api/api-helpers.php:3292
+#: includes/fields/class-acf-field-image.php:457
+msgid "File must be a valid image."
+msgstr "فایل باید یک تصویر معتبر باشد."
+
 #: includes/admin/views/email-opt-in-banner.php:103
 msgid "Dismiss email opt-in banner"
-msgstr ""
+msgstr "بنر عضویت در ایمیل را رد کنید"
 
 #: includes/admin/views/email-opt-in-banner.php:95
 msgid "You're on the list! Keep an eye out for our next update."
-msgstr ""
+msgstr "شما در لیست هستید! منتظر به‌روزرسانی بعدی ما باشید."
 
 #: includes/admin/views/email-opt-in-banner.php:70
 msgid "Join the list"
-msgstr ""
+msgstr "به لیست بپیوندید"
 
 #: includes/admin/views/email-opt-in-banner.php:63
 msgid "you@example.com"
-msgstr ""
+msgstr "you@example.com"
 
 #: includes/admin/views/email-opt-in-banner.php:54
 msgid "Email address"
-msgstr ""
+msgstr "آدرس ایمیل"
 
 #: includes/admin/views/email-opt-in-banner.php:42
 msgid ""
 "Get critical ACF security updates, releases, news, and workflow improvements."
-msgstr ""
+msgstr "به‌روزرسانی‌ها، نسخه‌ها، اخبار و بهبودهای مهم امنیتی ACF را دریافت کنید."
 
 #: includes/admin/views/email-opt-in-banner.php:39
 msgid "Join the ACF community."
-msgstr ""
+msgstr "به انجمن ACF بپیوندید."
 
 #. translators: %s - Privacy Policy link, opens in a new tab.
 #: includes/admin/views/email-opt-in-banner.php:26
@@ -56,22 +61,24 @@ msgid ""
 "We respect your inbox. Unsubscribe anytime. By signing up, you agree to our "
 "%s."
 msgstr ""
+"ما به صندوق ورودی شما احترام می‌گذاریم. هر زمان که خواستید می‌توانید اشتراک "
+"خود را لغو کنید. با ثبت‌نام، شما با %s ما موافقت می‌کنید."
 
 #: includes/admin/views/email-opt-in-banner.php:21
 msgid "Privacy Policy"
-msgstr ""
+msgstr "سیاست حفظ حریم خصوصی"
 
 #: includes/admin/admin-email-opt-in-banner.php:265
 msgid "Something went wrong on our end. Please try again."
-msgstr ""
+msgstr "مشکلی از طرف ما رخ داده است. لطفا دوباره امتحان کنید."
 
 #: includes/admin/admin-email-opt-in-banner.php:264
 msgid "Please enter a valid email address."
-msgstr ""
+msgstr "لطفا یک آدرس ایمیل معتبر وارد کنید."
 
 #: includes/admin/admin-email-opt-in-banner.php:263
 msgid "Email address is required."
-msgstr ""
+msgstr "آدرس ایمیل الزامی است."
 
 #: src/Site_Health/Site_Health.php:1009
 msgid "Datastore Enabled"
@@ -563,15 +570,15 @@ msgstr "آزمایشی"
 msgid "Blocks Using Auto Inline Editing"
 msgstr "بلوک‌هایی که از ویرایش درون‌خطی خودکار استفاده می‌کنند"
 
-#: includes/fields/class-acf-field-image.php:144
+#: includes/fields/class-acf-field-image.php:145
 msgid "Remove image"
 msgstr "حذف تصویر"
 
-#: includes/fields/class-acf-field-image.php:142
+#: includes/fields/class-acf-field-image.php:143
 msgid "Edit image"
 msgstr "ویرایش تصویر"
 
-#: includes/fields/class-acf-field-image.php:138
+#: includes/fields/class-acf-field-image.php:139
 msgid "Selected image. Press tab to access image options."
 msgstr ""
 "تصویر انتخاب شده. برای دسترسی به گزینه‌های تصویر، کلید Tab را فشار دهید."
@@ -2847,8 +2854,8 @@ msgstr "دو جهته"
 msgid "%s Field"
 msgstr "فیلد %s"
 
-#: includes/fields/class-acf-field-page_link.php:505
-#: includes/fields/class-acf-field-post_object.php:418
+#: includes/fields/class-acf-field-page_link.php:511
+#: includes/fields/class-acf-field-post_object.php:424
 #: includes/fields/class-acf-field-select.php:387
 #: includes/fields/class-acf-field-user.php:120
 msgid "Select Multiple"
@@ -2971,9 +2978,9 @@ msgstr "فیلدی وجود ندارد"
 msgid "No description"
 msgstr "توضیحاتی وجود ندارد"
 
-#: includes/fields/class-acf-field-page_link.php:472
-#: includes/fields/class-acf-field-post_object.php:381
-#: includes/fields/class-acf-field-relationship.php:610
+#: includes/fields/class-acf-field-page_link.php:478
+#: includes/fields/class-acf-field-post_object.php:387
+#: includes/fields/class-acf-field-relationship.php:616
 msgid "Any post status"
 msgstr "هر وضعیت نوشته‌ای"
 
@@ -3215,9 +3222,9 @@ msgstr ""
 msgid "An input for providing a password using a masked field."
 msgstr "یک ورودی برای وارد کردن رمزعبور به وسیله‌ی ناحیه‌ی پوشیده شده."
 
-#: includes/fields/class-acf-field-page_link.php:464
-#: includes/fields/class-acf-field-post_object.php:373
-#: includes/fields/class-acf-field-relationship.php:602
+#: includes/fields/class-acf-field-page_link.php:470
+#: includes/fields/class-acf-field-post_object.php:379
+#: includes/fields/class-acf-field-relationship.php:608
 msgid "Filter by Post Status"
 msgstr "فیلتر بر اساس وضعیت نوشته"
 
@@ -5164,21 +5171,21 @@ msgstr ""
 #: includes/admin/post-types/admin-taxonomies.php:338
 msgid "Taxonomy synchronized."
 msgid_plural "%s taxonomies synchronized."
-msgstr[0] "طبقه‌بندی همگام‌سازی شد."
+msgstr[0] "%s طبقه‌بندی همگام‌سازی شد."
 msgstr[1] "%s طبقه‌بندی همگام‌سازی شدند."
 
 #. translators: %s number of taxonomies duplicated
 #: includes/admin/post-types/admin-taxonomies.php:331
 msgid "Taxonomy duplicated."
 msgid_plural "%s taxonomies duplicated."
-msgstr[0] "طبقه‌بندی تکرار شد."
+msgstr[0] "%s طبقه‌بندی تکرار شد."
 msgstr[1] "%s طبقه‌بندی تکرار شدند."
 
 #. translators: %s number of taxonomies deactivated
 #: includes/admin/post-types/admin-taxonomies.php:324
 msgid "Taxonomy deactivated."
 msgid_plural "%s taxonomies deactivated."
-msgstr[0] "طبقه‌بندی غیرفعال شد."
+msgstr[0] "%s طبقه‌بندی غیرفعال شد."
 msgstr[1] "%s طبقه‌بندی غیرفعال شدند."
 
 #. translators: %s number of taxonomies activated
@@ -5196,14 +5203,14 @@ msgstr "شرایط"
 #: includes/admin/post-types/admin-post-types.php:332
 msgid "Post type synchronized."
 msgid_plural "%s post types synchronized."
-msgstr[0] "نوع نوشته همگام‌سازی شد."
+msgstr[0] "%s نوع نوشته همگام‌سازی شد."
 msgstr[1] "%s نوع نوشته همگام‌سازی شدند."
 
 #. translators: %s number of post types duplicated
 #: includes/admin/post-types/admin-post-types.php:325
 msgid "Post type duplicated."
 msgid_plural "%s post types duplicated."
-msgstr[0] "نوع نوشته تکرار شد."
+msgstr[0] "%s نوع نوشته تکرار شد."
 msgstr[1] "%s نوع نوشته تکرار شدند."
 
 #. translators: %s number of post types deactivated
@@ -5695,19 +5702,19 @@ msgstr "درخواست نامعتبر."
 msgid "%1$s is not one of %2$s"
 msgstr "%1$s یکی از %2$s نیست"
 
-#: includes/fields/class-acf-field-post_object.php:667
+#: includes/fields/class-acf-field-post_object.php:673
 msgid "%1$s must have term %2$s."
 msgid_plural "%1$s must have one of the following terms: %2$s"
 msgstr[0] "%1$s باید یکی از شرایط زیر را داشته باشد: %2$s"
 msgstr[1] "%1$s باید عبارت %2$s را داشته باشد."
 
-#: includes/fields/class-acf-field-post_object.php:651
+#: includes/fields/class-acf-field-post_object.php:657
 msgid "%1$s must be of post type %2$s."
 msgid_plural "%1$s must be of one of the following post types: %2$s"
 msgstr[0] "%1$s باید از یکی از انواع نوشته زیر باشد: %2$s"
 msgstr[1] "%1$s باید از نوع نوشته %2$s باشد."
 
-#: includes/fields/class-acf-field-post_object.php:642
+#: includes/fields/class-acf-field-post_object.php:648
 msgid "%1$s must have a valid post ID."
 msgstr "%1$s باید یک شناسه نوشته معتبر داشته باشد."
 
@@ -5970,7 +5977,7 @@ msgstr "کلید نامعتبر است."
 msgid "Error loading field."
 msgstr "خطا در بارگزاری فیلد."
 
-#: includes/forms/form-user.php:337
+#: includes/forms/form-user.php:417
 msgid "<strong>Error</strong>: %s"
 msgstr "<strong>خطا</strong>: %s"
 
@@ -6607,7 +6614,7 @@ msgstr "هماهنگ سازی موجود است"
 msgid "Field group synchronized."
 msgid_plural "%s field groups synchronized."
 msgstr[0] "گروه های فیلد %s همگام شدند."
-msgstr[1] ""
+msgstr[1] "گروه فیلد %s همگام شدند."
 
 #. translators: %s number of field groups duplicated
 #: includes/admin/post-types/admin-field-groups.php:372
@@ -6919,7 +6926,7 @@ msgstr "ویرایش"
 msgid "The changes you made will be lost if you navigate away from this page"
 msgstr "اگر از صفحه جاری خارج شوید ، تغییرات شما ذخیره نخواهند شد"
 
-#: includes/api/api-helpers.php:3080
+#: includes/api/api-helpers.php:3434
 msgid "File type must be %s."
 msgstr "نوع فایل باید %s باشد."
 
@@ -6928,35 +6935,35 @@ msgstr "نوع فایل باید %s باشد."
 #: includes/admin/views/acf-field-group/conditional-logic.php:191
 #: includes/admin/views/acf-field-group/location-group.php:14
 #: includes/admin/views/acf-field-group/locations.php:43
-#: includes/api/api-helpers.php:3077
+#: includes/api/api-helpers.php:3431
 msgid "or"
 msgstr "یا"
 
-#: includes/api/api-helpers.php:3053
+#: includes/api/api-helpers.php:3407
 msgid "File size must not exceed %s."
 msgstr "حجم فایل ها نباید از %s بیشتر باشد."
 
-#: includes/api/api-helpers.php:3049
+#: includes/api/api-helpers.php:3403
 msgid "File size must be at least %s."
 msgstr "حجم فایل باید حداقل %s باشد."
 
-#: includes/api/api-helpers.php:3036
+#: includes/api/api-helpers.php:3390
 msgid "Image height must not exceed %dpx."
 msgstr "ارتفاع تصویر نباید از %d پیکسل بیشتر باشد."
 
-#: includes/api/api-helpers.php:3032
+#: includes/api/api-helpers.php:3386
 msgid "Image height must be at least %dpx."
 msgstr "ارتفاع فایل باید حداقل %d پیکسل باشد."
 
-#: includes/api/api-helpers.php:3020
+#: includes/api/api-helpers.php:3374
 msgid "Image width must not exceed %dpx."
 msgstr "عرض تصویر نباید از %d پیکسل بیشتر باشد."
 
-#: includes/api/api-helpers.php:3016
+#: includes/api/api-helpers.php:3370
 msgid "Image width must be at least %dpx."
 msgstr "عرض تصویر باید حداقل %d پیکسل باشد."
 
-#: includes/api/api-helpers.php:1450 includes/api/api-term.php:149
+#: includes/api/api-helpers.php:1524 includes/api/api-term.php:149
 msgid "(no title)"
 msgstr "(بدون عنوان)"
 
@@ -7013,11 +7020,11 @@ msgstr "درج انتخاب جدید"
 msgid "Toggle All"
 msgstr "انتخاب همه"
 
-#: includes/fields/class-acf-field-page_link.php:494
+#: includes/fields/class-acf-field-page_link.php:500
 msgid "Allow Archives URLs"
 msgstr "اجازه آدرس های آرشیو"
 
-#: includes/fields/class-acf-field-page_link.php:203
+#: includes/fields/class-acf-field-page_link.php:209
 msgid "Archives"
 msgstr "بایگانی‌ها"
 
@@ -7581,8 +7588,8 @@ msgid "Button Group"
 msgstr "گروه دکمه‌ها"
 
 #: includes/fields/class-acf-field-button-group.php:210
-#: includes/fields/class-acf-field-page_link.php:526
-#: includes/fields/class-acf-field-post_object.php:439
+#: includes/fields/class-acf-field-page_link.php:532
+#: includes/fields/class-acf-field-post_object.php:445
 #: includes/fields/class-acf-field-radio.php:243
 #: includes/fields/class-acf-field-select.php:408
 #: includes/fields/class-acf-field-taxonomy.php:726
@@ -7590,8 +7597,8 @@ msgstr "گروه دکمه‌ها"
 msgid "Allow Null"
 msgstr "اجازه دادن به «خالی»"
 
-#: includes/fields/class-acf-field-page_link.php:280
-#: includes/fields/class-acf-field-post_object.php:261
+#: includes/fields/class-acf-field-page_link.php:286
+#: includes/fields/class-acf-field-post_object.php:267
 #: includes/fields/class-acf-field-taxonomy.php:890
 msgid "Parent"
 msgstr "مادر"
@@ -7723,95 +7730,95 @@ msgstr "هنگام ایجاد یک نوشته جدید نمایش داده می 
 msgid "Text"
 msgstr "متن"
 
-#: includes/fields/class-acf-field-relationship.php:790
+#: includes/fields/class-acf-field-relationship.php:796
 msgid "%1$s requires at least %2$s selection"
 msgid_plural "%1$s requires at least %2$s selections"
 msgstr[0] "%1$s حداقل به %2$s انتخاب نیاز دارد"
 msgstr[1] "%1$s حداقل به %2$s انتخاب نیاز دارد"
 
-#: includes/fields/class-acf-field-post_object.php:409
-#: includes/fields/class-acf-field-relationship.php:653
+#: includes/fields/class-acf-field-post_object.php:415
+#: includes/fields/class-acf-field-relationship.php:659
 msgid "Post ID"
 msgstr "شناسه نوشته"
 
 #: includes/fields/class-acf-field-post_object.php:24
-#: includes/fields/class-acf-field-post_object.php:408
-#: includes/fields/class-acf-field-relationship.php:652
+#: includes/fields/class-acf-field-post_object.php:414
+#: includes/fields/class-acf-field-relationship.php:658
 msgid "Post Object"
 msgstr "آبجکت یک نوشته"
 
-#: includes/fields/class-acf-field-relationship.php:685
+#: includes/fields/class-acf-field-relationship.php:691
 msgid "Maximum Posts"
 msgstr "حداکثر نوشته‌ها"
 
-#: includes/fields/class-acf-field-relationship.php:675
+#: includes/fields/class-acf-field-relationship.php:681
 msgid "Minimum Posts"
 msgstr "حداقل نوشته‌ها"
 
 #: includes/admin/views/acf-field-group/options.php:196
 #: includes/admin/views/acf-post-type/advanced-settings.php:36
-#: includes/fields/class-acf-field-relationship.php:710
+#: includes/fields/class-acf-field-relationship.php:716
 msgid "Featured Image"
 msgstr "تصویر شاخص"
 
-#: includes/fields/class-acf-field-relationship.php:706
+#: includes/fields/class-acf-field-relationship.php:712
 msgid "Selected elements will be displayed in each result"
 msgstr "عناصر انتخاب شده در هر نتیجه نمایش داده خواهند شد"
 
-#: includes/fields/class-acf-field-relationship.php:705
+#: includes/fields/class-acf-field-relationship.php:711
 msgid "Elements"
 msgstr "عناصر"
 
-#: includes/fields/class-acf-field-relationship.php:639
+#: includes/fields/class-acf-field-relationship.php:645
 #: includes/fields/class-acf-field-taxonomy.php:29
 #: includes/fields/class-acf-field-taxonomy.php:646
 #: includes/locations/class-acf-location-taxonomy.php:31
 msgid "Taxonomy"
 msgstr "طبقه بندی"
 
-#: includes/fields/class-acf-field-relationship.php:638
+#: includes/fields/class-acf-field-relationship.php:644
 #: includes/locations/class-acf-location-post-type.php:31
 #: includes/post-types/class-acf-post-type.php:101
 msgid "Post Type"
 msgstr "نوع نوشته"
 
-#: includes/fields/class-acf-field-relationship.php:632
+#: includes/fields/class-acf-field-relationship.php:638
 msgid "Filters"
 msgstr "فیلترها"
 
-#: includes/fields/class-acf-field-page_link.php:487
-#: includes/fields/class-acf-field-post_object.php:396
-#: includes/fields/class-acf-field-relationship.php:625
+#: includes/fields/class-acf-field-page_link.php:493
+#: includes/fields/class-acf-field-post_object.php:402
+#: includes/fields/class-acf-field-relationship.php:631
 msgid "All taxonomies"
 msgstr "تمام طبقه بندی ها"
 
-#: includes/fields/class-acf-field-page_link.php:479
-#: includes/fields/class-acf-field-post_object.php:388
-#: includes/fields/class-acf-field-relationship.php:617
+#: includes/fields/class-acf-field-page_link.php:485
+#: includes/fields/class-acf-field-post_object.php:394
+#: includes/fields/class-acf-field-relationship.php:623
 msgid "Filter by Taxonomy"
 msgstr "فیلتر با طبقه بندی"
 
-#: includes/fields/class-acf-field-page_link.php:457
-#: includes/fields/class-acf-field-post_object.php:366
-#: includes/fields/class-acf-field-relationship.php:595
+#: includes/fields/class-acf-field-page_link.php:463
+#: includes/fields/class-acf-field-post_object.php:372
+#: includes/fields/class-acf-field-relationship.php:601
 msgid "All post types"
 msgstr "تمام انواع نوشته"
 
-#: includes/fields/class-acf-field-page_link.php:449
-#: includes/fields/class-acf-field-post_object.php:358
-#: includes/fields/class-acf-field-relationship.php:587
+#: includes/fields/class-acf-field-page_link.php:455
+#: includes/fields/class-acf-field-post_object.php:364
+#: includes/fields/class-acf-field-relationship.php:593
 msgid "Filter by Post Type"
 msgstr "فیلتر با نوع نوشته"
 
-#: includes/fields/class-acf-field-relationship.php:487
+#: includes/fields/class-acf-field-relationship.php:493
 msgid "Search..."
 msgstr "جستجو . . ."
 
-#: includes/fields/class-acf-field-relationship.php:417
+#: includes/fields/class-acf-field-relationship.php:423
 msgid "Select taxonomy"
 msgstr "انتخاب طبقه بندی"
 
-#: includes/fields/class-acf-field-relationship.php:409
+#: includes/fields/class-acf-field-relationship.php:415
 msgid "Select post type"
 msgstr "انتحاب نوع نوشته"
 
@@ -7832,45 +7839,45 @@ msgid "Relationship"
 msgstr "ارتباط"
 
 #: includes/fields/class-acf-field-file.php:290
-#: includes/fields/class-acf-field-image.php:316
+#: includes/fields/class-acf-field-image.php:331
 msgid "Comma separated list. Leave blank for all types"
 msgstr "با کامای انگلیسی جدا کرده یا برای عدم محدودیت خالی بگذارید"
 
 #: includes/fields/class-acf-field-file.php:289
-#: includes/fields/class-acf-field-image.php:315
+#: includes/fields/class-acf-field-image.php:330
 msgid "Allowed File Types"
 msgstr "نوع پرونده‌های مجاز"
 
 #: includes/fields/class-acf-field-file.php:277
-#: includes/fields/class-acf-field-image.php:279
+#: includes/fields/class-acf-field-image.php:294
 msgid "Maximum"
 msgstr "بیشترین"
 
 #: includes/fields/class-acf-field-file.php:153
 #: includes/fields/class-acf-field-file.php:269
 #: includes/fields/class-acf-field-file.php:281
-#: includes/fields/class-acf-field-image.php:270
-#: includes/fields/class-acf-field-image.php:306
+#: includes/fields/class-acf-field-image.php:285
+#: includes/fields/class-acf-field-image.php:321
 msgid "File size"
 msgstr "اندازه فایل"
 
-#: includes/fields/class-acf-field-image.php:244
-#: includes/fields/class-acf-field-image.php:280
+#: includes/fields/class-acf-field-image.php:259
+#: includes/fields/class-acf-field-image.php:295
 msgid "Restrict which images can be uploaded"
 msgstr "محدودیت در آپلود تصاویر"
 
 #: includes/fields/class-acf-field-file.php:265
-#: includes/fields/class-acf-field-image.php:243
+#: includes/fields/class-acf-field-image.php:258
 msgid "Minimum"
 msgstr "کمترین"
 
 #: includes/fields/class-acf-field-file.php:235
-#: includes/fields/class-acf-field-image.php:209
+#: includes/fields/class-acf-field-image.php:224
 msgid "Uploaded to post"
 msgstr "بارگذاری شده در نوشته"
 
 #: includes/fields/class-acf-field-file.php:234
-#: includes/fields/class-acf-field-image.php:208
+#: includes/fields/class-acf-field-image.php:223
 #: includes/locations/class-acf-location-attachment.php:83
 #: includes/locations/class-acf-location-comment.php:70
 #: includes/locations/class-acf-location-nav-menu.php:84
@@ -7882,28 +7889,28 @@ msgid "All"
 msgstr "همه"
 
 #: includes/fields/class-acf-field-file.php:229
-#: includes/fields/class-acf-field-image.php:203
+#: includes/fields/class-acf-field-image.php:218
 msgid "Limit the media library choice"
 msgstr "محدود کردن انتخاب کتابخانه چندرسانه ای"
 
 #: includes/fields/class-acf-field-file.php:228
-#: includes/fields/class-acf-field-image.php:202
+#: includes/fields/class-acf-field-image.php:217
 msgid "Library"
 msgstr "کتابخانه"
 
-#: includes/fields/class-acf-field-image.php:335
+#: includes/fields/class-acf-field-image.php:350
 msgid "Preview Size"
 msgstr "اندازه پیش نمایش"
 
-#: includes/fields/class-acf-field-image.php:194
+#: includes/fields/class-acf-field-image.php:209
 msgid "Image ID"
 msgstr "شناسه تصویر"
 
-#: includes/fields/class-acf-field-image.php:193
+#: includes/fields/class-acf-field-image.php:208
 msgid "Image URL"
 msgstr "آدرس تصویر"
 
-#: includes/fields/class-acf-field-image.php:192
+#: includes/fields/class-acf-field-image.php:207
 msgid "Image Array"
 msgstr "آرایه تصاویر"
 
@@ -7924,40 +7931,40 @@ msgstr "مقدار برگشتی در نمایش نهایی را تعیین کن�
 msgid "Return Value"
 msgstr "مقدار بازگشت"
 
-#: includes/fields/class-acf-field-image.php:164
+#: includes/fields/class-acf-field-image.php:179
 msgid "Add Image"
 msgstr "افزودن تصویر"
 
-#: includes/fields/class-acf-field-image.php:164
+#: includes/fields/class-acf-field-image.php:179
 msgid "No image selected"
 msgstr "هیچ تصویری انتخاب نشده"
 
 #: includes/assets.php:358 includes/fields/class-acf-field-file.php:161
-#: includes/fields/class-acf-field-image.php:144
+#: includes/fields/class-acf-field-image.php:145
 #: includes/fields/class-acf-field-link.php:133
 msgid "Remove"
 msgstr "حذف"
 
 #: includes/admin/views/acf-field-group/field.php:99
 #: includes/fields/class-acf-field-file.php:159
-#: includes/fields/class-acf-field-image.php:142
+#: includes/fields/class-acf-field-image.php:143
 #: includes/fields/class-acf-field-link.php:133
 msgid "Edit"
 msgstr "ویرایش"
 
-#: includes/fields/class-acf-field-image.php:72 includes/media.php:64
+#: includes/fields/class-acf-field-image.php:73 includes/media.php:64
 msgid "All images"
 msgstr "تمام تصاویر"
 
-#: includes/fields/class-acf-field-image.php:71
+#: includes/fields/class-acf-field-image.php:72
 msgid "Update Image"
 msgstr "بروزرسانی تصویر"
 
-#: includes/fields/class-acf-field-image.php:70
+#: includes/fields/class-acf-field-image.php:71
 msgid "Edit Image"
 msgstr "ویرایش تصویر"
 
-#: includes/fields/class-acf-field-image.php:69
+#: includes/fields/class-acf-field-image.php:70
 msgid "Select Image"
 msgstr "انتخاب تصویر"
 
@@ -8040,8 +8047,8 @@ msgstr "انجام شد"
 msgid "Date Picker"
 msgstr "تاریخ"
 
-#: includes/fields/class-acf-field-image.php:247
-#: includes/fields/class-acf-field-image.php:283
+#: includes/fields/class-acf-field-image.php:262
+#: includes/fields/class-acf-field-image.php:298
 #: includes/fields/class-acf-field-oembed.php:282
 msgid "Width"
 msgstr "عرض"
@@ -8159,8 +8166,8 @@ msgid "Customize the map height"
 msgstr "سفارشی سازی ارتفاع نقشه"
 
 #: includes/fields/class-acf-field-google-map.php:230
-#: includes/fields/class-acf-field-image.php:258
-#: includes/fields/class-acf-field-image.php:294
+#: includes/fields/class-acf-field-image.php:273
+#: includes/fields/class-acf-field-image.php:309
 #: includes/fields/class-acf-field-oembed.php:294
 msgid "Height"
 msgstr "ارتفاع"
@@ -8196,7 +8203,7 @@ msgid "Clear location"
 msgstr "حذف مکان"
 
 #: includes/fields/class-acf-field-google-map.php:159
-#: includes/fields/class-acf-field-relationship.php:637
+#: includes/fields/class-acf-field-relationship.php:643
 msgid "Search"
 msgstr "جستجو"
 
@@ -8218,9 +8225,9 @@ msgstr "قالب توسط توابع پوسته نمایش داده خواهد �
 #: includes/fields/class-acf-field-date_picker.php:211
 #: includes/fields/class-acf-field-date_time_picker.php:199
 #: includes/fields/class-acf-field-icon_picker.php:296
-#: includes/fields/class-acf-field-image.php:186
-#: includes/fields/class-acf-field-post_object.php:403
-#: includes/fields/class-acf-field-relationship.php:647
+#: includes/fields/class-acf-field-image.php:201
+#: includes/fields/class-acf-field-post_object.php:409
+#: includes/fields/class-acf-field-relationship.php:653
 #: includes/fields/class-acf-field-select.php:371
 #: includes/fields/class-acf-field-time_picker.php:130
 #: includes/fields/class-acf-field-user.php:104

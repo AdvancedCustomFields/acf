@@ -3196,10 +3196,24 @@ function acf_validate_is_image_attachment_upload( $errors, $file, $attachment, $
 		return acf_apply_validate_is_image_attachment_filters( $errors, $file, $attachment, $field, $context );
 	}
 
-	$real_mime = wp_get_image_mime( $attachment['tmp_name'] );
+	/**
+	 * Filters the list of image MIME types that cannot be validated by
+	 * wp_get_image_mime(), which reads a binary magic number and only
+	 * recognizes raster formats. Vector / XML image types (e.g. SVG)
+	 * always fail that check by design and must be excluded from it.
+	 *
+	 * @since 6.8.8
+	 *
+	 * @param array $vector_mime_types MIME types to skip the binary magic-number check for.
+	 */
+	$vector_mime_types = (array) apply_filters( 'acf/validate_is_image_attachment/vector_mime_types', array( 'image/svg+xml' ) );
 
-	if ( ! $real_mime || empty( wp_match_mime_types( 'image', $real_mime ) ) ) {
-		$errors['invalid_image'] = $error_message;
+	if ( ! in_array( $checked['type'], $vector_mime_types, true ) ) {
+		$real_mime = wp_get_image_mime( $attachment['tmp_name'] );
+
+		if ( ! $real_mime || empty( wp_match_mime_types( 'image', $real_mime ) ) ) {
+			$errors['invalid_image'] = $error_message;
+		}
 	}
 
 	return acf_apply_validate_is_image_attachment_filters( $errors, $file, $attachment, $field, $context );
