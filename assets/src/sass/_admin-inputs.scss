@@ -150,6 +150,7 @@
 		};
 		background: #fff;
 		box-shadow: none;
+		flex-shrink: 0;
 
 		&:hover {
 			background-color: $blue-50;
@@ -160,9 +161,66 @@
 		&:focus-visible {
 			background-color: $blue-50;
 			border-color: $blue-500;
+		}
+
+		&:active {
+			box-shadow: 0px 0px 0px 3px $blue-50, 0px 0px 0px rgba(255, 54, 54, 0.25);
+		}
+
+		&:disabled {
+			background-color: $gray-50;
+			border-color: $gray-300;
+		}
+
+	}
+
+	/*---------------------------------------------------------------------------------------------
+	*
+	*  Radio Buttons
+	*
+	*  WP 7.0+ uses inline-flex to center the indicator. A relative -1px overlay
+	*  fights that layout and shifts the inner dot toward the top-left.
+	*
+	*---------------------------------------------------------------------------------------------*/
+	input[type="radio"] {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 50%;
+
+		&:checked:before {
+			content: "";
+			display: block;
+			float: none;
+			position: static;
+			top: auto;
+			left: auto;
+			width: 8px;
+			height: 8px;
+			margin: auto;
+			padding: 0;
+			border-radius: 50%;
+			background-color: $blue-500;
+			background-image: none;
+
+			/* Only visible in Windows High Contrast mode */
+			outline: 4px solid transparent;
+		}
+
+	}
+
+	/*---------------------------------------------------------------------------------------------
+	*
+	*  Checkboxes
+	*
+	*---------------------------------------------------------------------------------------------*/
+	input[type="checkbox"] {
+
+		&:checked,
+		&:focus-visible {
 
 			&:before {
-				content: '';
+				content: "";
 				position: relative;
 				top: -1px;
 				left: -1px;
@@ -178,20 +236,19 @@
 
 		}
 
-		&:active {
-			box-shadow: 0px 0px 0px 3px $blue-50, 0px 0px 0px rgba(255, 54, 54, 0.25);
-		}
+		&:checked,
+		&:focus {
 
-		&:disabled {
-			background-color: $gray-50;
-			border-color: $gray-300;
+			&:before {
+				background-image: url('../../images/field-states/checkbox-active.svg');
+			}
+
 		}
 
 	}
 
 	&.rtl {
 
-		input[type="radio"],
 		input[type="checkbox"] {
 
 			&:checked,
@@ -202,43 +259,6 @@
 				}
 			}
 		}
-	}
-
-
-	/*---------------------------------------------------------------------------------------------
-	*
-	*  Radio Buttons
-	*
-	*---------------------------------------------------------------------------------------------*/
-	input[type="radio"] {
-
-		&:checked,
-		&:focus {
-
-			&:before {
-				background-image: url('../../images/field-states/radio-active.svg');
-			}
-
-		}
-
-	}
-
-	/*---------------------------------------------------------------------------------------------
-	*
-	*  Checkboxes
-	*
-	*---------------------------------------------------------------------------------------------*/
-	input[type="checkbox"] {
-
-		&:checked,
-		&:focus {
-
-			&:before {
-				background-image: url('../../images/field-states/checkbox-active.svg');
-			}
-
-		}
-
 	}
 
 	/*---------------------------------------------------------------------------------------------

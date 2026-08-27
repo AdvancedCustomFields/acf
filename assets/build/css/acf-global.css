@@ -2517,6 +2517,7 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
   border-color: #98A2B3;
   background: #fff;
   box-shadow: none;
+  flex-shrink: 0;
 }
 .acf-admin-page input[type=radio]:hover,
 .acf-admin-page input[type=checkbox]:hover {
@@ -2529,9 +2530,56 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
   background-color: #EBF5FA;
   border-color: #0783BE;
 }
-.acf-admin-page input[type=radio]:checked:before, .acf-admin-page input[type=radio]:focus-visible:before,
-.acf-admin-page input[type=checkbox]:checked:before,
-.acf-admin-page input[type=checkbox]:focus-visible:before {
+.acf-admin-page input[type=radio]:active,
+.acf-admin-page input[type=checkbox]:active {
+  box-shadow: 0px 0px 0px 3px #EBF5FA, 0px 0px 0px rgba(255, 54, 54, 0.25);
+}
+.acf-admin-page input[type=radio]:disabled,
+.acf-admin-page input[type=checkbox]:disabled {
+  background-color: #F9FAFB;
+  border-color: #D0D5DD;
+}
+.acf-admin-page {
+  /*---------------------------------------------------------------------------------------------
+  *
+  *  Radio Buttons
+  *
+  *  WP 7.0+ uses inline-flex to center the indicator. A relative -1px overlay
+  *  fights that layout and shifts the inner dot toward the top-left.
+  *
+  *---------------------------------------------------------------------------------------------*/
+}
+.acf-admin-page input[type=radio] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.acf-admin-page input[type=radio]:checked:before {
+  content: "";
+  display: block;
+  float: none;
+  position: static;
+  top: auto;
+  left: auto;
+  width: 8px;
+  height: 8px;
+  margin: auto;
+  padding: 0;
+  border-radius: 50%;
+  background-color: #0783BE;
+  background-image: none;
+  /* Only visible in Windows High Contrast mode */
+  outline: 4px solid transparent;
+}
+.acf-admin-page {
+  /*---------------------------------------------------------------------------------------------
+  *
+  *  Checkboxes
+  *
+  *---------------------------------------------------------------------------------------------*/
+}
+.acf-admin-page input[type=checkbox]:checked:before, .acf-admin-page input[type=checkbox]:focus-visible:before {
   content: "";
   position: relative;
   top: -1px;
@@ -2545,39 +2593,11 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
   background-repeat: no-repeat;
   background-position: center;
 }
-.acf-admin-page input[type=radio]:active,
-.acf-admin-page input[type=checkbox]:active {
-  box-shadow: 0px 0px 0px 3px #EBF5FA, 0px 0px 0px rgba(255, 54, 54, 0.25);
-}
-.acf-admin-page input[type=radio]:disabled,
-.acf-admin-page input[type=checkbox]:disabled {
-  background-color: #F9FAFB;
-  border-color: #D0D5DD;
-}
-.acf-admin-page.rtl input[type=radio]:checked:before, .acf-admin-page.rtl input[type=radio]:focus-visible:before,
-.acf-admin-page.rtl input[type=checkbox]:checked:before,
-.acf-admin-page.rtl input[type=checkbox]:focus-visible:before {
-  left: 1px;
-}
-.acf-admin-page {
-  /*---------------------------------------------------------------------------------------------
-  *
-  *  Radio Buttons
-  *
-  *---------------------------------------------------------------------------------------------*/
-}
-.acf-admin-page input[type=radio]:checked:before, .acf-admin-page input[type=radio]:focus:before {
-  background-image: url("../../images/field-states/radio-active.svg");
-}
-.acf-admin-page {
-  /*---------------------------------------------------------------------------------------------
-  *
-  *  Checkboxes
-  *
-  *---------------------------------------------------------------------------------------------*/
-}
 .acf-admin-page input[type=checkbox]:checked:before, .acf-admin-page input[type=checkbox]:focus:before {
   background-image: url("../../images/field-states/checkbox-active.svg");
+}
+.acf-admin-page.rtl input[type=checkbox]:checked:before, .acf-admin-page.rtl input[type=checkbox]:focus-visible:before {
+  left: 1px;
 }
 .acf-admin-page {
   /*---------------------------------------------------------------------------------------------

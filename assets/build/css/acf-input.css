@@ -1048,6 +1048,18 @@ ul.acf-checkbox-list li input[type=radio] {
   margin: -1px 4px 0 0;
   vertical-align: middle;
 }
+ul.acf-radio-list li input[type=radio],
+ul.acf-checkbox-list li input[type=radio] {
+  /* Match WP 7.0 flex centering so ACF radios stay centered in every editor. */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+ul.acf-radio-list li input[type=radio]:checked:before,
+ul.acf-checkbox-list li input[type=radio]:checked:before {
+  float: none;
+  margin: auto;
+}
 ul.acf-radio-list li input[type=text],
 ul.acf-checkbox-list li input[type=text] {
   width: auto;

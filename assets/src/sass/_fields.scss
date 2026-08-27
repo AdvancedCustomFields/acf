@@ -1128,6 +1128,18 @@ ul.acf-checkbox-list {
 			vertical-align: middle;
 		}
 
+		input[type="radio"] {
+			/* Match WP 7.0 flex centering so ACF radios stay centered in every editor. */
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+
+			&:checked:before {
+				float: none;
+				margin: auto;
+			}
+		}
+
 		input[type="text"] {
 			width: auto;
 			vertical-align: middle;
