@@ -66,6 +66,13 @@ class ACF_Rest_Api {
 
 		$base = $this->request->object_sub_type;
 
+		// WordPress term controllers use the schema title as the object type for
+		// additional REST fields. For built-in tags, the taxonomy is "post_tag"
+		// but the REST object type is "tag".
+		if ( 'term' === $this->request->object_type && 'post_tag' === $base ) {
+			$base = 'tag';
+		}
+
 		// If the object sub type ($post_type, $taxonomy, 'user') cannot be determined from the current request,
 		// we don't know what endpoint to register the field against. Bail if that is the case.
 		if ( ! $base ) {
@@ -218,7 +225,12 @@ class ACF_Rest_Api {
 			return $fields;
 		}
 
-		$object_sub_type = str_replace( '-revision', '', $object_sub_type );
+		// Preserve the taxonomy slug for ACF field-group matching.
+		if ( 'term' === $object_type && $this->request->object_sub_type ) {
+			$object_sub_type = $this->request->object_sub_type;
+		} else {
+			$object_sub_type = str_replace( '-revision', '', $object_sub_type );
+		}
 
 		// Get all field groups for the current object.
 		$field_groups = $this->get_field_groups_by_id( $object_id, $object_type, $object_sub_type );
@@ -283,6 +295,11 @@ class ACF_Rest_Api {
 				__( sprintf( 'Unable to determine the %s object ID or type. The %s property cannot be updated.', get_class( $object ), $property ), 'acf' ),
 				array( 'status' => 400 )
 			);
+		}
+
+		// Preserve the taxonomy slug for ACF field-group matching.
+		if ( 'term' === $object_type && $this->request->object_sub_type ) {
+			$object_sub_type = $this->request->object_sub_type;
 		}
 
 		// Determine the ACF selector for the current object.
