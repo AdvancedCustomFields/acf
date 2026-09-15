@@ -86,37 +86,30 @@ class Taxonomy extends AbstractAbilityGroup {
 							'pattern'     => '^[a-z0-9_-]*$',
 							'maxLength'   => 32,
 							'description' => 'The taxonomy key (slug)',
-							'required'    => true,
 						),
 						'label'             => array(
 							'type'        => 'string',
 							'description' => 'The singular label for the taxonomy',
-							'required'    => true,
 						),
 						'plural_label'      => array(
 							'type'        => 'string',
 							'description' => 'The plural label for the taxonomy',
-							'required'    => true,
 						),
 						'description'       => array(
 							'type'        => 'string',
 							'description' => 'Description of the taxonomy',
-							'required'    => false,
 						),
 						'public'            => array(
 							'type'        => 'boolean',
 							'description' => 'Whether the taxonomy is public',
-							'required'    => false,
 						),
 						'hierarchical'      => array(
 							'type'        => 'boolean',
 							'description' => 'Whether the taxonomy is hierarchical (like categories) or flat (like tags)',
-							'required'    => false,
 						),
 						'post_types'        => array(
 							'type'        => 'array',
 							'description' => 'Array of post types this taxonomy applies to',
-							'required'    => false,
 							'items'       => array(
 								'type' => 'string',
 							),
@@ -124,34 +117,29 @@ class Taxonomy extends AbstractAbilityGroup {
 						'show_in_rest'      => array(
 							'type'        => 'boolean',
 							'description' => 'Whether to show this taxonomy in the REST API (required for AI abilities)',
-							'required'    => false,
 						),
 						'rest_base'         => array(
 							'type'        => 'string',
 							'description' => 'Custom REST API base path (defaults to taxonomy key)',
-							'required'    => false,
 						),
 						'allow_ai_access'   => array(
 							'type'        => 'boolean',
 							'description' => 'Whether to allow AI access to this taxonomy',
-							'required'    => false,
 						),
 						'ai_description'    => array(
 							'type'        => 'string',
 							'description' => 'Description to help AI understand the purpose of this taxonomy',
-							'required'    => false,
 						),
 						'show_ui'           => array(
 							'type'        => 'boolean',
 							'description' => 'Whether to generate a default UI for managing this taxonomy in the admin',
-							'required'    => false,
 						),
 						'show_admin_column' => array(
 							'type'        => 'boolean',
 							'description' => 'Whether to display a column for the taxonomy on its post type listing screens',
-							'required'    => false,
 						),
 					),
+					'required'   => array( 'taxonomy', 'label', 'plural_label' ),
 				),
 				'output_schema'       => array(
 					'type'       => 'object',

@@ -86,85 +86,71 @@ class PostType extends AbstractAbilityGroup {
 							'pattern'     => '^[a-z0-9_-]*$',
 							'maxLength'   => 20,
 							'description' => 'The post type key (slug)',
-							'required'    => true,
 						),
 						'label'            => array(
 							'type'        => 'string',
 							'description' => 'The singular label for the post type',
-							'required'    => true,
 						),
 						'plural_label'     => array(
 							'type'        => 'string',
 							'description' => 'The plural label for the post type',
-							'required'    => true,
 						),
 						'description'      => array(
 							'type'        => 'string',
 							'description' => 'Description of the post type',
-							'required'    => false,
 						),
 						'public'           => array(
 							'type'        => 'boolean',
 							'description' => 'Whether the post type is public',
-							'required'    => false,
 						),
 						'hierarchical'     => array(
 							'type'        => 'boolean',
 							'description' => 'Whether the post type is hierarchical',
-							'required'    => false,
 						),
 						'supports'         => array(
 							'type'        => 'array',
-							'description' => 'Features the post type supports. Can be array of strings ["title", "editor"] or object {"title": true, "editor": false}. Available: title, editor, author, thumbnail, excerpt, comments, trackbacks, revisions, page-attributes, custom-fields, post-formats',
-							'required'    => false,
+							'description' => 'Features the post type supports. Available: title, editor, author, thumbnail, excerpt, comments, trackbacks, revisions, page-attributes, custom-fields, post-formats',
+							'items'       => array( 'type' => 'string' ),
 						),
 						'show_in_rest'     => array(
 							'type'        => 'boolean',
 							'description' => 'Whether to show this post type in the REST API (required for AI abilities)',
-							'required'    => false,
 						),
 						'rest_base'        => array(
 							'type'        => 'string',
 							'description' => 'Custom REST API base path (defaults to post type key)',
-							'required'    => false,
 						),
 						'allow_ai_access'  => array(
 							'type'        => 'boolean',
 							'description' => 'Whether to allow AI access to this post type',
-							'required'    => false,
 						),
 						'ai_description'   => array(
 							'type'        => 'string',
 							'description' => 'Description to help AI understand the purpose of this post type',
-							'required'    => false,
 						),
 						'menu_icon'        => array(
 							'type'        => array( 'string', 'object' ),
 							'description' => 'Menu icon (dashicon class, URL, or object with type and value)',
-							'required'    => false,
 						),
 						'menu_position'    => array(
 							'type'        => 'integer',
 							'description' => 'Position in the admin menu (5-100)',
-							'required'    => false,
 						),
 						'has_archive'      => array(
 							'type'        => 'boolean',
 							'description' => 'Whether the post type has an archive page',
-							'required'    => false,
 						),
 						'has_archive_slug' => array(
 							'type'        => 'string',
 							'description' => 'Custom slug for the archive page',
-							'required'    => false,
 						),
 						'taxonomies'       => array(
 							'type'        => 'array',
 							'description' => 'Array of taxonomy names to associate with this post type',
 							'items'       => array( 'type' => 'string' ),
-							'required'    => false,
 						),
 					),
+					'required'   => array( 'post_type', 'label', 'plural_label' ),
 				),
 				'output_schema'       => array(
 					'type'       => 'object',
