@@ -241,12 +241,12 @@ if ( ! class_exists( 'acf_field_number' ) ) :
 
 			// min
 			if ( is_numeric( $field['min'] ) && $value < floatval( $field['min'] ) ) {
-				$valid = sprintf( __( 'Value must be equal to or higher than %d', 'acf' ), $field['min'] );
+				$valid = sprintf( __( 'Value must be equal to or higher than %s', 'acf' ), $field['min'] );
 			}
 
 			// max
 			if ( is_numeric( $field['max'] ) && $value > floatval( $field['max'] ) ) {
-				$valid = sprintf( __( 'Value must be equal to or lower than %d', 'acf' ), $field['max'] );
+				$valid = sprintf( __( 'Value must be equal to or lower than %s', 'acf' ), $field['max'] );
 			}
 
 			// return
