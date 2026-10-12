@@ -87,7 +87,8 @@ if ( ! class_exists( 'ACF_Local_Meta' ) ) :
 		 * @return  boolean
 		 */
 		function is_request( $meta = array() ) {
-			return acf_is_field_key( key( $meta ) );
+			// Empty meta has no first key, and key() would return null.
+			return ! empty( $meta ) && acf_is_field_key( key( $meta ) );
 		}
 
 		/**
