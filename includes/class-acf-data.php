@@ -125,6 +125,8 @@ if ( ! class_exists( 'ACF_Data' ) ) :
 		 * @return  type Description.
 		 */
 		function _key( $name = '' ) {
+			// PHP 8.5 deprecates null array offsets. PHP already reads null as ''.
+			$name = $name ?? '';
 			return isset( $this->aliases[ $name ] ) ? $this->aliases[ $name ] : $name;
 		}
 
@@ -156,7 +158,7 @@ if ( ! class_exists( 'ACF_Data' ) ) :
 		 * @return  type Description.
 		 */
 		function is( $key = '' ) {
-			return isset( $this->data[ $key ] );
+			return isset( $this->data[ $key ?? '' ] );
 		}
 
 		/**
