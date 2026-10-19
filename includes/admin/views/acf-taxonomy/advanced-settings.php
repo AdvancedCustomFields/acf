@@ -52,7 +52,7 @@ foreach ( acf_get_combined_taxonomy_settings_tabs() as $tab_key => $tab_label ) 
 				)
 			);
 			?>
-			
+
 			<?php
 			acf_render_field_wrap(
 				array(
@@ -951,7 +951,7 @@ foreach ( acf_get_combined_taxonomy_settings_tabs() as $tab_key => $tab_label ) 
 						/* translators: this string will be appended with the new permalink structure. */
 						'custom_permalink_instructions' => __( 'Rewrite the URL using a custom slug defined in the input below. Your permalink structure will be', 'acf' ) . ' {slug}.',
 						'no_permalink_instructions'     => __( 'Permalinks for this taxonomy are disabled.', 'acf' ),
-						'site_url'                      => get_site_url(),
+						'site_url'                      => get_home_url(),
 					),
 					'class'        => 'permalink_rewrite',
 				),
