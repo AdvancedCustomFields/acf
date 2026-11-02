@@ -525,6 +525,13 @@
 				$prevOptions = $options;
 				$prevGroup = $group;
 			} );
+
+			// A page can be empty when the current user can't read any of its posts. Select2 then shows
+			// its "No results found" message, and doesn't remove it when later pages add results.
+			const $results = $( '.select2-container--open .select2-results__options' ).first();
+			if ( $results.children( '.select2-results__option:not(.select2-results__message):not(.loading-results)' ).length ) {
+				$results.children( '.select2-results__message' ).remove();
+			}
 		},
 	} );
 

@@ -11,6 +11,7 @@
 			'keypress .values-list .acf-rel-item': 'onKeypressFilter',
 			'click [data-name="remove_item"]': 'onClickRemove',
 			'touchstart .values-list .acf-rel-item': 'onTouchStartValues',
+			showField: 'maybeFetchMore',
 		},
 
 		$control: function () {
@@ -138,13 +139,35 @@
 		},
 
 		onScrollChoices: function ( e ) {
+			this.maybeFetchMore();
+		},
+
+		maybeFetchMore: function () {
 			// bail early if no more results
 			if ( this.get( 'loading' ) || ! this.get( 'more' ) ) {
 				return;
 			}
 
-			// Scrolled to bottom
+			// Load the next page when the list is scrolled to the bottom. Posts the current user can't read are
+			// left out of results, so a page may add too few choices to scroll, or none, so this also runs
+			// after each page loads, and when a hidden field is shown.
 			var $list = this.$list( 'choices' );
+			if ( ! $list.is( ':visible' ) ) {
+				// Fields inside a Group, or in a meta box that was collapsed, aren't sent the showField event, so
+				// also resume once the list comes into view.
+				if ( ! this.get( 'waitingForView' ) ) {
+					this.set( 'waitingForView', true );
+					acf.onceInView(
+						$list,
+						this.proxy( function () {
+							this.set( 'waitingForView', false );
+							this.maybeFetchMore();
+						} )
+					);
+				}
+				return;
+			}
+
 			var scrollTop = Math.ceil( $list.scrollTop() );
 			var scrollHeight = Math.ceil( $list[ 0 ].scrollHeight );
 			var innerHeight = Math.ceil( $list.innerHeight() );
@@ -319,7 +342,8 @@
 			}
 
 			// add to this.o
-			var ajaxData = this.getAjaxData();
+			const ajaxData = this.getAjaxData();
+			const query = JSON.stringify( ajaxData );
 
 			// clear html if is new query
 			var $choiceslist = this.$list( 'choices' );
@@ -337,19 +361,30 @@
 			this.set( 'loading', true );
 
 			// callback
-			var onComplete = function () {
+			const onComplete = function ( jqXHR, status ) {
 				this.set( 'loading', false );
 				$loading.remove();
+
+				// Only page on if the search hasn't changed since this page was requested.
+				if ( 'success' === status && JSON.stringify( this.getAjaxData() ) === query ) {
+					this.maybeFetchMore();
+				}
 			};
 
 			var onSuccess = function ( json ) {
+				// A page can be empty when the current user can't read any of its posts, so keep paging.
+				if ( json && json.more && ( ! json.results || ! json.results.length ) ) {
+					this.set( 'more', true );
+					return;
+				}
+
 				// no results
 				if ( ! json || ! json.results || ! json.results.length ) {
 					// prevent pagination
 					this.set( 'more', false );
 
-					// add message
-					if ( this.get( 'paged' ) == 1 ) {
+					// add message, also when earlier pages were empty
+					if ( ! $choiceslist.find( '.acf-rel-item' ).length ) {
 						this.$list( 'choices' ).append(
 							'<li>' + acf.__( 'No matches found' ) + '</li>'
 						);
