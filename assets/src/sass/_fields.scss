@@ -1533,6 +1533,28 @@ ul.acf-checkbox-list {
 	margin: 0;
 }
 
+/* rtl */
+html[dir="rtl"] .acf-switch {
+	span {
+		float: right;
+	}
+
+	.acf-switch-slider {
+		left: 50%;
+		right: 2px;
+	}
+
+	&.-on .acf-switch-slider {
+		left: 2px;
+		right: 50%;
+	}
+
+	+ span {
+		margin-left: 0;
+		margin-right: 6px;
+	}
+}
+
 .acf-admin-single-field-group .acf-true-false {
 	border: 1px solid transparent;
 
