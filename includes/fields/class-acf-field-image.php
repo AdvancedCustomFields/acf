@@ -453,7 +453,8 @@ if ( ! class_exists( 'acf_field_image' ) ) :
 				return $valid;
 			}
 
-			if ( is_numeric( $value ) && ! wp_attachment_is_image( $value ) ) {
+			// Respect the acf/is_image_field filter, same as the upload and media modal checks.
+			if ( is_numeric( $value ) && acf_is_image_field( $field ) && ! wp_attachment_is_image( $value ) ) {
 				return __( 'File must be a valid image.', 'acf' );
 			}
 
