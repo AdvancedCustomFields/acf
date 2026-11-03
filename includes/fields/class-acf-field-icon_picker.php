@@ -214,8 +214,13 @@ if ( ! class_exists( 'acf_field_icon_picker' ) ) :
 								>
 									<div class="acf-icon-picker-media-library-preview-img" style="<?php echo esc_attr( 'media_library' !== $field['value']['type'] ? 'display: none;' : '' ); ?>">
 										<?php
-											$img_url = wp_get_attachment_image_url( $field['value']['value'], 'thumbnail' );
-											// If the type is media_library, then we need to show the media library preview.
+										$img_url = '';
+
+										// Only fetch attachment image URL when the field type is media_library and the ID is valid.
+										if ( 'media_library' === $field['value']['type'] && ! empty( $field['value']['value'] ) && is_numeric( $field['value']['value'] ) ) {
+											$attachment_url = wp_get_attachment_image_url( (int) $field['value']['value'], 'thumbnail' );
+											$img_url        = $attachment_url ? $attachment_url : '';
+										}
 										?>
 											<img src="<?php echo esc_url( $img_url ); ?>" alt="<?php esc_attr_e( 'The currently selected image preview', 'acf' ); ?>" />
 									</div>
