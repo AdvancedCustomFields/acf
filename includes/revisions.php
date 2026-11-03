@@ -379,8 +379,11 @@ if ( ! class_exists( 'acf_revisions' ) ) :
 		 * @return mixed
 		 */
 		public function acf_validate_post_id( $post_id, $_post_id ) {
+			global $wp_query;
+
 			// Bail early if not a well-formed WordPress preview context.
-			if ( ! is_preview() ) {
+			// Check $wp_query first, as is_preview() triggers a notice when called before the query is set.
+			if ( ! isset( $wp_query ) || ! is_preview() ) {
 				return $post_id;
 			}
 
