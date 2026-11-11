@@ -203,7 +203,9 @@ if ( ! class_exists( 'ACF_Form_Post' ) ) :
 			);
 
 			// render 'acf_after_title' metaboxes
-			do_meta_boxes( get_current_screen(), 'acf_after_title', $post );
+			if ( isset( $wp_meta_boxes[ get_current_screen()->id ]['acf_after_title'] ) ) {
+				do_meta_boxes( get_current_screen(), 'acf_after_title', $post );
+			}
 
 			$style = '';
 			if ( is_string( $this->style ) ) {
