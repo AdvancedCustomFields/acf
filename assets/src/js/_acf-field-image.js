@@ -57,6 +57,14 @@
 				attachment.height = size.height;
 			}
 
+			// Non-image attachments (allowed when acf/is_image_field returns false)
+			// usually have no image to preview, so show their mime type icon instead.
+			// Keep the preview size when WP generated one (e.g. PDF first-page previews).
+			if ( ! size && attachment.type && attachment.type !== 'image' && attachment.icon ) {
+				attachment.url = attachment.icon;
+				attachment.alt = attachment.alt || attachment.title;
+			}
+
 			// Return.
 			return attachment;
 		},

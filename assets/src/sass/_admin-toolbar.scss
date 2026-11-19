@@ -7,12 +7,39 @@
 *
 *---------------------------------------------------------------------------------------------*/
 .acf-admin-toolbar {
-	position: unset;
-	top: 32px;
-	height: 72px;
+	// Toolbar design tokens. Values originally came from the WP Engine Plugin Design System, which the toolbar no longer depends on.
+	--acf-toolbar-height: 72px;
+	--acf-toolbar-item-size: 40px;
+	--acf-toolbar-bg: #002447;
+	--acf-toolbar-text: #fff;
+	--acf-toolbar-gradient: linear-gradient(98deg, #0ecad4 -14.55%, #7a45e5 115.76%);
+	--acf-toolbar-space-xs: 0.25rem;
+	--acf-toolbar-space-sm: 0.5rem;
+	--acf-toolbar-space-md: 1rem;
+	--acf-toolbar-space-lg: 1.5rem;
+	--acf-toolbar-radius: 0.5rem;
+	--acf-toolbar-tab-highlight: #fafbfc1a;
+	--acf-toolbar-focus-outline: #1f242666;
+	--acf-toolbar-focus-ring: #d5e6f8;
+
+	position: relative;
+	min-height: var(--acf-toolbar-height);
 	z-index: 800;
-	background: $gray-700;
-	color: $gray-400;
+	background: var(--acf-toolbar-bg);
+	color: var(--acf-toolbar-text);
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+
+	// Gradient bar
+	&::before {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 2px;
+		background: var(--acf-toolbar-gradient);
+	}
 
 	.acf-admin-toolbar-inner {
 		display: flex;
@@ -24,9 +51,7 @@
 		.acf-nav-wrap {
 			display: flex;
 			align-items: center;
-
-			position: relative;
-			padding-left: 72px;
+			gap: var(--acf-toolbar-space-md);
 
 			@media screen and (max-width: 1250px) {
 				.acf-header-tab-acf-post-type,
@@ -41,9 +66,8 @@
 					}
 				}
 			}
-
 		}
-		
+
 		.acf-nav-upgrade-wrap {
 			display: flex;
 			align-items: center;
@@ -63,73 +87,64 @@
 		}
 	}
 
-	@media screen and (max-width: $md) {
-		position: static;
-	}
 
 	.acf-logo {
 		display: flex;
-		margin: {
-			right: 24px;
-		}
 		text-decoration: none;
-
-		position: absolute;
-		top: 0;
-		left: 0;
+		padding: var(--acf-toolbar-space-sm);
+		height: var(--acf-toolbar-item-size);
+		width: var(--acf-toolbar-item-size);
+		box-sizing: content-box;
+		flex-shrink: 0;
 
 		img {
 			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
 		}
 
 		&.pro img {
-			height: 46px;
+			object-fit: contain;
 		}
 	}
 
 	h2 {
 		display: none;
-		color: $gray-50;
 	}
 
 	.acf-tab {
-		display: flex;
+		display: inline-flex;
 		align-items: center;
 		box-sizing: border-box;
-		min-height: 40px;
-		margin: {
-			right: 8px;
-		}
-		padding: {
-			top: 8px;
-			right: 16px;
-			bottom: 8px;
-			left: 16px;
-		}
-		border: {
-			width: 1px;
-			style: solid;
-			color: transparent;
-		}
-		border-radius: $radius-md;
-		@extend .p4;
-		color: $gray-400;
+		min-height: var(--acf-toolbar-item-size);
+		padding: var(--acf-toolbar-space-xs) var(--acf-toolbar-space-md);
+		border: 1.3px solid transparent;
+		border-radius: var(--acf-toolbar-radius);
+		font-size: 14px;
+		line-height: 140%;
+		color: var(--acf-toolbar-text);
+		opacity: 0.7;
 		text-decoration: none;
+		box-shadow: none;
+		outline: none;
 
 		&.is-active {
-			background-color: $gray-600;
-			color: #fff;
+			border-color: var(--acf-toolbar-tab-highlight);
+			background: var(--acf-toolbar-tab-highlight);
+			opacity: 1;
 		}
 		&:hover {
-			background-color: $gray-600;
-			color: $gray-50;
+			background: var(--acf-toolbar-tab-highlight);
+			opacity: 1;
 		}
 		&:focus-visible {
-			border: {
-				width: 1px;
-				style: solid;
-				color: $gray-500;
-			}
+			opacity: 1;
+			outline: 1.3px solid var(--acf-toolbar-focus-outline);
+			outline-offset: 0;
+			box-shadow: 0px 0px 0px 2px var(--acf-toolbar-focus-ring);
+			background: var(--acf-toolbar-tab-highlight);
+			color: var(--acf-toolbar-text);
 		}
 		&:focus {
 			box-shadow: none;
@@ -298,27 +313,41 @@
 	// Within wpcontent.
 	#wpcontent & {
 		box-sizing: border-box;
-		margin-left: -20px;
-		padding: {
-			top: 16px;
-			right: 32px;
-			bottom: 16px;
-			left: 32px;
-		}
+		padding: var(--acf-toolbar-space-sm) var(--acf-toolbar-space-lg);
 	}
 
-	// Mobile
+	// Stays visible under the WP admin bar while the page scrolls.
+	@media screen and (max-width: 782px) {
+		position: sticky;
+		top: var(--wp-admin--admin-bar--height, 32px);
+	}
+
+	// WP core switches #wpadminbar to position: absolute below this width, so it scrolls away instead of reserving space.
 	@media screen and (max-width: 600px) {
-		& {
-			display: none;
-		}
+		top: 0;
+	}
+}
+
+// Reserves #wpadminbar's height in normal flow so .acf-admin-toolbar (a sibling of #wpbody, not nested inside it like #wpbody's own admin-bar padding) doesn't start underneath it. Must be a real element, not margin/padding on the toolbar itself, so it scrolls away independently instead of permanently padding out the sticky toolbar once stuck.
+.acf-admin-toolbar-spacer {
+	display: none;
+
+	@media screen and (max-width: 600px) {
+		display: block;
+		height: var(--wp-admin--admin-bar--height, 32px);
+	}
+}
+
+// WP core also pads #wpbody by this same amount at this breakpoint; our spacer above already reserves it, so cancel the duplicate.
+.acf-admin-toolbar + #wpbody {
+
+	@media screen and (max-width: 600px) {
+		padding-top: 0;
 	}
 }
 
 .rtl {
 	#wpcontent .acf-admin-toolbar {
-		margin-left: 0;
-		margin-right: -20px;
 
 		.acf-tab {
 			margin: {
@@ -372,7 +401,7 @@
 		&.acf-header-tab-acf-post-type,
 		&.acf-header-tab-acf-taxonomy,
 		&.acf-header-tab-acf-tools,
-		&.acf-header-tab-acf-settings-updates,
+		&[class*="acf-header-tab-settings-"],
 		&.acf-header-tab-acf-more {
 			i.acf-icon {
 				display: inline-flex;
@@ -432,10 +461,10 @@
 		}
 	}
 
-	// Updates tab
-	.acf-header-tab-acf-settings-updates {
+	// Settings tab
+	[class*="acf-header-tab-settings-"] {
 		i.acf-icon {
-			$icon-url: url("../../images/icons/icon-updates.svg");
+			$icon-url: url("../../images/icons/icon-settings.svg");
 			-webkit-mask-image: $icon-url;
 			mask-image: $icon-url;
 		}

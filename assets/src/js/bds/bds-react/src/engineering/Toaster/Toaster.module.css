@@ -1,0 +1,32 @@
+/* Ark UI sets these on each toast element as it animates. */
+/* bds-check-tokens-allow: --x --y --scale --opacity --z-index */
+
+.toaster {
+	/*
+	 * Overlay scale: toasts — the ceiling, so a toast is visible over a modal,
+	 * a lightbox and any floating surface. `.toast`'s `--z-index` is Ark's
+	 * within-region ordering and is unrelated. See
+	 * docs/engineering-components.md#overlay-stacking-order.
+	 */
+	z-index: 400000;
+}
+
+.toast {
+	width: 25rem;
+	translate: var(--x) var(--y);
+	scale: var(--scale);
+	opacity: var(--opacity);
+	z-index: var(--z-index);
+	will-change: translate, opacity, scale;
+	transition:
+		translate 400ms cubic-bezier(0.21, 1.02, 0.73, 1),
+		scale 400ms cubic-bezier(0.21, 1.02, 0.73, 1),
+		opacity 400ms cubic-bezier(0.21, 1.02, 0.73, 1);
+}
+
+.toast[data-state="closed"] {
+	transition:
+		translate 400ms cubic-bezier(0.06, 0.71, 0.55, 1),
+		scale 400ms cubic-bezier(0.06, 0.71, 0.55, 1),
+		opacity 200ms cubic-bezier(0.06, 0.71, 0.55, 1);
+}

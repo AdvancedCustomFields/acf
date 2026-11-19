@@ -1,0 +1,175 @@
+/*
+ * Switch — Base Design System node 857:10680.
+ *
+ * A native <input type="checkbox" role="switch"> with `appearance: none`. The
+ * track is the input itself; the thumb is its ::before, translated on :checked.
+ *
+ * Track sizes from Figma: Sm 28×16, Md 36×20, Lg 42×24, thumb 12/16/20. The
+ * heights and thumbs are all on the size scale; the widths are not, so they are
+ * derived — track width = 2 × thumb + 2 × inset — which reproduces Figma
+ * exactly at Sm and Md. See docs/figma-divergences.md for Lg.
+ *
+ * Every rule below is qualified with `input` so it reaches (0,1,1): WordPress
+ * admin's `forms.css` styles `input[type="checkbox"]` at that specificity, and a
+ * bare class would lose to it and render a stock wp-admin checkbox. Where
+ * wp-admin styles a state (`:checked::before` carries the Dashicon tick), the
+ * matching rule here restates the geometry it would otherwise inherit.
+ */
+
+input.switch {
+	appearance: none;
+	position: relative;
+	display: inline-flex;
+	flex: none;
+	align-items: center;
+	box-sizing: border-box;
+	margin: 0;
+	border: 0;
+	border-radius: var(--radius-full);
+	background-color: var(--bg-control-inactive);
+	box-shadow: none;
+	cursor: pointer;
+	transition:
+		background-color 120ms ease,
+		box-shadow 120ms ease;
+}
+
+input.switch::before {
+	content: "";
+	position: absolute;
+	left: var(--switch-inset);
+	width: var(--switch-thumb);
+	height: var(--switch-thumb);
+	border-radius: var(--radius-full);
+	background-color: var(--fg-on-color);
+	transition: transform 120ms ease;
+}
+
+input.switch:checked {
+	background-color: var(--bg-control-active);
+}
+
+/*
+ * `content`, `width`, `height` and `margin` are restated from the rule above
+ * because wp-admin's `input[type="checkbox"]:checked::before` outranks it and
+ * would swap the thumb for a 21px Dashicon tick.
+ */
+input.switch:checked::before {
+	content: "";
+	width: var(--switch-thumb);
+	height: var(--switch-thumb);
+	margin: 0;
+	transform: translateX(
+		calc(
+			var(--switch-track) - var(--switch-thumb) - var(--switch-inset) * 2
+		)
+	);
+}
+
+input.switch:hover:not(:disabled) {
+	background-color: var(--bg-control-inactive_hover);
+}
+
+input.switch:hover:not(:disabled):checked {
+	background-color: var(--bg-control-active_hover);
+}
+
+input[type="checkbox"].switch:focus-visible {
+	outline: none;
+	box-shadow: var(--focus-ring-accent);
+}
+
+/*
+ * wp-admin's `input[type="checkbox"]:focus` (forms.css and the colour scheme)
+ * rings on mouse focus too. The `[type]` qualifier outranks it, so the ring
+ * stays keyboard-only.
+ */
+input[type="checkbox"].switch:focus:not(:focus-visible) {
+	box-shadow: none;
+}
+
+input.switch:disabled {
+	opacity: 0.3; /* Figma State=Disabled — interim; design revisiting with new tokens */
+	cursor: not-allowed;
+}
+
+/* --------------------------------------------------------------------------
+ * Sizes
+ * ------------------------------------------------------------------------ */
+
+input.switch.sm {
+	--switch-thumb: var(--size-2xs);
+	--switch-inset: var(--stroke-md);
+	--switch-track: 28px;
+
+	width: var(--switch-track);
+	--switch-height: var(--size-xs);
+
+	height: var(--switch-height);
+}
+
+input.switch.md {
+	--switch-thumb: var(--size-xs);
+	--switch-inset: var(--stroke-md);
+	--switch-track: 36px;
+
+	width: var(--switch-track);
+	--switch-height: var(--size-md);
+
+	height: var(--switch-height);
+}
+
+input.switch.lg {
+	--switch-thumb: var(--size-md);
+	--switch-inset: var(--stroke-sm);
+	--switch-track: 42px;
+
+	width: var(--switch-track);
+	--switch-height: var(--size-lg);
+
+	height: var(--switch-height);
+}
+
+/* --------------------------------------------------------------------------
+ * Label and group layout — shared with the other selection controls.
+ * ------------------------------------------------------------------------ */
+
+.wrapper {
+	composes: wrapper from "../control/control.module.css";
+}
+
+.labelText {
+	composes: labelText from "../control/control.module.css";
+}
+
+.title {
+	composes: title from "../control/control.module.css";
+}
+
+.hint {
+	composes: hint from "../control/control.module.css";
+}
+
+.group {
+	composes: group from "../control/control.module.css";
+}
+
+.groupLabel {
+	composes: groupLabel from "../control/control.module.css";
+}
+
+/*
+ * Centre the track on the first line of the label. The track height differs
+ * per size, so this reads it from the size class rather than assuming one.
+ */
+.wrapper input.switch {
+	margin-top: calc((var(--label-md-line-height) - var(--switch-height)) / 2);
+}
+
+.wrapper:has(input.switch:disabled) .labelText {
+	cursor: not-allowed;
+}
+
+.wrapper:has(input.switch:disabled) .title {
+	color: var(--text-disabled);
+}

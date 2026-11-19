@@ -34,7 +34,7 @@
 *  Links
 *
 *---------------------------------------------------------------------------------------------*/
-.acf-admin-page a {
+.acf-admin-page a:where(:not([data-bds-theme] *)) {
   color: #0783BE;
 }
 
@@ -43,20 +43,20 @@
 *  Headings
 *
 *---------------------------------------------------------------------------------------------*/
-.acf-h1, .acf-admin-page h1,
-.acf-headerbar h1 {
+.acf-h1, .acf-admin-page h1:where(:not([data-bds-theme] *)),
+.acf-headerbar h1:where(:not([data-bds-theme] *)) {
   font-size: 21px;
   font-weight: 400;
 }
 
-.acf-h2, .acf-page-title, .acf-admin-page h2,
-.acf-headerbar h2 {
+.acf-h2, .acf-page-title, .acf-admin-page h2:not([class*=text-base]):where(:not([data-bds-theme] *)),
+.acf-headerbar h2:not([class*=text-base]):where(:not([data-bds-theme] *)) {
   font-size: 18px;
   font-weight: 400;
 }
 
-.acf-h3, .acf-admin-page h3,
-.acf-headerbar h3 {
+.acf-h3, .acf-admin-page h3:where(:not([data-bds-theme] *)),
+.acf-headerbar h3:where(:not([data-bds-theme] *)) {
   font-size: 16px;
   font-weight: 400;
 }
@@ -1377,6 +1377,18 @@ html[dir=rtl] .acf-button-group label:last-child {
 }
 .acf-switch + span {
   margin-left: 6px;
+}
+html[dir=rtl] .acf-switch .acf-switch-slider {
+  left: 50%;
+  right: 2px;
+}
+html[dir=rtl] .acf-switch.-on .acf-switch-slider {
+  left: 2px;
+  right: 50%;
+}
+html[dir=rtl] .acf-switch + span {
+  margin-left: 0;
+  margin-right: 6px;
 }
 .acf-admin-3-8 .acf-switch {
   border-color: #ccd0d4;

@@ -1,0 +1,55 @@
+/*
+ * Label — Base Design System node 1749:3222.
+ *
+ * Figma nests a single-child "Field Info" frame between the root and the label
+ * group. It carries no visual effect with one child, so it is not reproduced —
+ * spacing comes from the two flex containers that remain.
+ */
+
+.label {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--space-xs);
+	font-family: var(--label-md-font-family);
+	font-size: var(--label-md-font-size);
+	line-height: var(--label-md-line-height);
+	letter-spacing: var(--label-md-letter-spacing);
+	font-weight: var(--font-weight-regular);
+	color: var(--text-secondary);
+}
+
+.group {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--space-3xs);
+}
+
+.required {
+	color: var(--text-accent);
+}
+
+.subLabel {
+	color: var(--text-tertiary);
+}
+
+.icon {
+	display: inline-flex;
+	flex: none;
+	align-items: center;
+	justify-content: center;
+	width: var(--size-xs);
+	height: var(--size-xs);
+	color: var(--fg-quaternary);
+}
+
+.icon > svg {
+	width: 100%;
+	height: 100%;
+}
+
+/* An interactive trigger (an IconButton inside a Tooltip) keeps its own size
+   and hit area rather than being squeezed into the 16px icon box. */
+.icon:has(> :not(svg)) {
+	width: auto;
+	height: auto;
+}

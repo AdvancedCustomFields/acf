@@ -1,0 +1,15 @@
+/*
+ * GENERATED FILE — DO NOT EDIT.
+ *
+ * Produced by scripts/sync-tokens.mjs from the Figma variable snapshot in
+ * scripts/data/. Source: ⚛️ Base Design System (t0Yh04DDpQDtwz4BeZYdxt).
+ *
+ * To change a value, change it in Figma, refresh the snapshot, and re-run
+ * `npm run sync:tokens`.
+ */
+
+@import './tokens.css';
+@import './typography.css';
+@import './effects.css';
+@import './dataviz.css';
+@import './surface.css';

@@ -1,0 +1,165 @@
+/*
+ * Badge — Base Design System node 525:4768.
+ *
+ * 48 Figma variants: 2 sizes × 6 colours × 2 radii × stroke on/off. The stroke
+ * is drawn inside the box — Stroke=True and Stroke=False variants measure the
+ * same — so the border is always present and only its colour changes.
+ *
+ * Icon leading/trailing use the same semantic foreground tokens per badge
+ * colour (confirmed by design). Slots default off — see figma-source.md
+ * (Boolean-gated slots) for why a naive paint-walk cannot read them.
+ */
+
+.badge {
+	display: inline-flex;
+	align-items: center;
+	box-sizing: border-box;
+	gap: var(--space-3xs);
+	padding-inline: var(--space-xs);
+	border: var(--stroke-sm) solid transparent;
+	border-radius: var(--radius-sm);
+	font-family: var(--label-md-font-family);
+	font-weight: var(--font-weight-regular);
+	white-space: nowrap;
+}
+
+.stroke {
+	border-color: var(--badge-border);
+}
+
+.radiusPill {
+	border-radius: var(--radius-full);
+}
+
+.label {
+	color: var(--badge-text);
+}
+
+.icon {
+	display: inline-flex;
+	flex: none;
+	align-items: center;
+	justify-content: center;
+	color: var(--badge-fg);
+}
+
+.icon > svg {
+	width: 100%;
+	height: 100%;
+}
+
+.avatar {
+	display: inline-flex;
+	flex: none;
+}
+
+/*
+ * Figma wraps the leading Status indicator in a fixed 12px (`size-2xs`) box at
+ * both sizes, so the 8px dot keeps its optical alignment with the label and the
+ * badge does not resize when the dot's outside ring is drawn.
+ */
+.statusLeading {
+	display: inline-flex;
+	flex: none;
+	align-items: center;
+	justify-content: center;
+	width: var(--size-2xs);
+	height: var(--size-2xs);
+}
+
+/* --------------------------------------------------------------------------
+ * Sizes
+ * ------------------------------------------------------------------------ */
+
+.sizeMd {
+	/* Figma Md frame is 24px (`size-lg`) with 4px vertical inset. */
+	padding-block: var(--space-2xs);
+	font-size: var(--label-md-font-size);
+	line-height: var(--label-md-line-height);
+	letter-spacing: var(--label-md-letter-spacing);
+}
+
+/* Figma pads the label wrapper, not the badge, at Md only. */
+.sizeMd .label {
+	padding-inline: var(--space-3xs);
+}
+
+.sizeMd .icon,
+.sizeMd .avatar,
+.sizeMd .avatar > * {
+	width: var(--size-xs);
+	height: var(--size-xs);
+}
+
+.sizeSm {
+	/* Figma Sm frame is 20px (`size-md`); label is vertically centred inside. */
+	min-height: var(--size-md);
+	padding-block: var(--space-none);
+	font-size: var(--label-sm-font-size);
+	line-height: var(--label-sm-line-height);
+	letter-spacing: var(--label-sm-letter-spacing);
+}
+
+.sizeSm .icon,
+.sizeSm .avatar,
+.sizeSm .avatar > * {
+	width: var(--size-2xs);
+	height: var(--size-2xs);
+}
+
+/* --------------------------------------------------------------------------
+ * Colours — surface, border, label and icon set together.
+ * ------------------------------------------------------------------------ */
+
+.colorGray {
+	--badge-border: var(--border-subtle);
+	--badge-text: var(--text-secondary);
+	--badge-fg: var(--fg-secondary);
+
+	background-color: var(--bg-neutral-subtle);
+}
+
+.colorBlue {
+	--badge-border: var(--border-accent-subtle);
+	--badge-text: var(--text-accent);
+	--badge-fg: var(--fg-accent);
+
+	background-color: var(--bg-accent-subtle);
+}
+
+.colorGreen {
+	--badge-border: var(--border-positive-subtle);
+	--badge-text: var(--text-positive);
+	--badge-fg: var(--fg-positive);
+
+	background-color: var(--bg-positive-subtle);
+}
+
+.colorOrange {
+	--badge-border: var(--border-warning-subtle);
+	--badge-text: var(--text-warning);
+	--badge-fg: var(--fg-warning);
+
+	background-color: var(--bg-warning-subtle);
+}
+
+.colorRed {
+	--badge-border: var(--border-negative-subtle);
+	--badge-text: var(--text-negative);
+	--badge-fg: var(--fg-negative);
+
+	background-color: var(--bg-negative-subtle);
+}
+
+/*
+ * Transparent has no fill. Figma keeps border-primary whether Stroke is on or
+ * off — the stroke axis is intentionally ignored for this colour.
+ */
+.colorTransparent {
+	--badge-border: var(--border-primary);
+	--badge-text: var(--text-secondary);
+	--badge-fg: var(--fg-secondary);
+
+	border-color: var(--border-primary);
+	background-color: transparent;
+}

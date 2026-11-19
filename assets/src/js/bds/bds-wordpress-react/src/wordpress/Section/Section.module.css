@@ -1,0 +1,68 @@
+/*
+ * Section — WordPress Component Library node 96:398.
+ */
+
+.section {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	box-sizing: border-box;
+	width: 100%;
+	border-radius: var(--radius-lg);
+	background-color: var(--bg-primary);
+	box-shadow: var(--shadow-with-stroke-md);
+}
+
+/*
+ * The section does not clip, so a popover inside it (a custom picker, a
+ * dropdown that is not portalled) can extend past its edge. The children
+ * whose backgrounds reach a corner take the corner radius instead: the header
+ * at the top, and the content's last child (a SectionRow clips its own label
+ * background) at the bottom. `inherit` passes SectionGroup's squared inner
+ * corners down too.
+ */
+.section > :first-child,
+.section > .content:first-child > :first-child {
+	border-top-left-radius: inherit;
+	border-top-right-radius: inherit;
+}
+
+.section > :last-child,
+.section > :last-child > .content,
+.content > :last-child {
+	border-bottom-left-radius: inherit;
+	border-bottom-right-radius: inherit;
+}
+
+/* Collapsed, the header is the only visible part, so it owns the bottom too. */
+.section > :first-child:has(+ [data-part="content"][data-state="closed"]) {
+	border-bottom-left-radius: inherit;
+	border-bottom-right-radius: inherit;
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	gap: var(--space-2xl);
+	width: 100%;
+}
+
+/* Figma `Padding=Lg` (96:365). */
+.contentLg {
+	padding: var(--space-3xl);
+}
+
+/* Figma `Padding=Md` (2031:860). */
+.contentMd {
+	padding: var(--space-2xl);
+}
+
+/*
+ * Figma `Padding=None` (96:401) binds space-none to both padding and gap, so
+ * edge-to-edge content such as SectionRow sits flush.
+ */
+.contentNone {
+	gap: var(--space-none);
+	padding: var(--space-none);
+}

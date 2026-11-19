@@ -1,0 +1,114 @@
+/*
+ * Link — Base Design System node 2098:26412.
+ *
+ * Every value below is a semantic token read from Figma dev mode. The Figma
+ * component has no padding and no underline in any state — the only
+ * differences between states are the label colour and, for Focus, a
+ * bg-primary fill behind a radius-xs focus ring.
+ *
+ * Figma leaves the two icon instances' fills unbound, so they take the colour
+ * of the surrounding label; `currentColor` reproduces that.
+ */
+
+.link {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--space-2xs);
+	border-radius: var(--radius-xs);
+	color: var(--text-accent);
+	text-decoration: none;
+	cursor: pointer;
+	font-family: var(--label-md-font-family);
+	font-weight: var(--font-weight-medium);
+	transition:
+		color 120ms ease,
+		box-shadow 120ms ease;
+}
+
+/*
+ * wp-admin's common.css styles `a:focus` (colour, a two-ring box-shadow and a
+ * transparent outline) and `a:active` (colour) at (0,1,1), which beats
+ * `.link` (0,1,0). `:hover` and `:focus-visible` below already win at (0,2,0);
+ * these restate the resting look for the two states that would otherwise fall
+ * through — a mouse-focused link and a pressed one. Order matters: the hover
+ * and focus-visible rules come after, at the same specificity, and win.
+ */
+.link:focus {
+	box-shadow: none;
+	color: var(--text-accent);
+	outline: none;
+}
+
+.link:hover,
+.link:active {
+	color: var(--text-accent_hover);
+}
+
+.link:focus-visible {
+	background-color: var(--bg-primary);
+	color: var(--text-accent_hover);
+	box-shadow: var(--focus-ring-accent);
+	outline: none;
+}
+
+.icon {
+	display: inline-flex;
+	flex: none;
+	align-items: center;
+	justify-content: center;
+	color: currentColor;
+}
+
+.icon > svg {
+	width: 100%;
+	height: 100%;
+}
+
+/* --------------------------------------------------------------------------
+ * Sizes
+ * ------------------------------------------------------------------------ */
+
+.sm {
+	font-size: var(--label-sm-font-size);
+	line-height: var(--label-sm-line-height);
+	letter-spacing: var(--label-sm-letter-spacing);
+}
+
+.sm .icon {
+	width: var(--size-xs);
+	height: var(--size-xs);
+}
+
+.md {
+	font-size: var(--label-md-font-size);
+	line-height: var(--label-md-line-height);
+	letter-spacing: var(--label-md-letter-spacing);
+}
+
+.md .icon {
+	width: var(--size-sm);
+	height: var(--size-sm);
+}
+
+.lg {
+	font-size: var(--label-lg-font-size);
+	line-height: var(--label-lg-line-height);
+	letter-spacing: var(--label-lg-letter-spacing);
+}
+
+/* Figma keeps the Lg icon at size-sm, the same as Md. */
+.lg .icon {
+	width: var(--size-sm);
+	height: var(--size-sm);
+}
+
+/* --------------------------------------------------------------------------
+ * Disabled — an anchor cannot be natively disabled, so this is a class.
+ * ------------------------------------------------------------------------ */
+
+.disabled,
+.disabled:hover {
+	color: var(--text-disabled);
+	cursor: not-allowed;
+	pointer-events: none;
+}

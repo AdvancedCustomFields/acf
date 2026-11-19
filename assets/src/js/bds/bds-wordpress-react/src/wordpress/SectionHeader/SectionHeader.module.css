@@ -1,0 +1,148 @@
+/*
+ * Section header — WordPress Component Library node 95:222.
+ */
+
+.header {
+	display: flex;
+	align-items: flex-end;
+	box-sizing: border-box;
+	width: 100%;
+	min-height: var(--size-3xl);
+	border-bottom: var(--stroke-sm) solid var(--border-subtle);
+	background-color: var(--bg-secondary);
+}
+
+.main {
+	display: flex;
+	flex: 1 1 auto;
+	align-items: center;
+	align-self: stretch;
+	min-width: 0;
+	gap: var(--space-2xl);
+	padding-block: var(--space-md);
+	padding-inline: var(--space-2xl);
+}
+
+.inner {
+	display: flex;
+	flex: 1 1 auto;
+	align-items: center;
+	min-width: 0;
+	gap: var(--space-sm);
+}
+
+.titleStack {
+	display: flex;
+	flex: 1 1 auto;
+	flex-direction: column;
+	min-width: 0;
+	gap: var(--space-2xs);
+}
+
+.titleGroup {
+	display: flex;
+	flex: none;
+	align-items: center;
+	gap: var(--space-sm);
+	min-width: 0;
+}
+
+.icon {
+	display: inline-flex;
+	flex: none;
+	align-items: center;
+	justify-content: center;
+	width: var(--size-sm);
+	height: var(--size-sm);
+	color: var(--fg-secondary);
+}
+
+.icon > svg {
+	width: 100%;
+	height: 100%;
+}
+
+.title {
+	margin: 0;
+	overflow-wrap: break-word;
+	color: var(--text-primary);
+	font-family: var(--label-md-font-family);
+	font-size: var(--label-md-font-size);
+	line-height: var(--label-md-line-height);
+	letter-spacing: var(--label-md-letter-spacing);
+	font-weight: var(--font-weight-medium);
+}
+
+.secondaryText {
+	color: var(--text-tertiary);
+	font-family: var(--label-xs-font-family);
+	font-size: var(--label-xs-font-size);
+	line-height: var(--label-xs-line-height);
+	letter-spacing: var(--label-xs-letter-spacing);
+	font-weight: var(--font-weight-regular);
+}
+
+.action {
+	flex: none;
+}
+
+/*
+ * Collapsible: the title and the toggle square are the hit area (Dale,
+ * 2026-10-15), not the whole bar. The title is a `<label>` for the toggle.
+ */
+.titleLabel {
+	cursor: pointer;
+}
+
+/* Square in Figma, where the header's bottom stroke sits inside its 48px.
+   Here the header's border adds to its height, so the toggle stretches to the
+   space above it rather than fixing its own height — a fixed 48px made a
+   collapsible header 1px taller than a static one. The whole square is the
+   button, not just the icon. */
+.toggle {
+	display: flex;
+	flex: none;
+	align-items: center;
+	align-self: stretch;
+	justify-content: center;
+	box-sizing: border-box;
+	width: var(--size-3xl);
+	margin: 0;
+	padding: 0;
+	border: none;
+	border-left: var(--stroke-sm) solid var(--border-subtle);
+	background: none;
+	color: var(--fg-secondary);
+	cursor: pointer;
+	transition: color 120ms ease;
+}
+
+.toggle:focus-visible {
+	box-shadow: var(--focus-ring-accent);
+	outline: none;
+}
+
+/* No hover fill; hovering the title or the square steps the chevron to its
+   hover colour. */
+.toggle:hover,
+.collapsible:has(.titleLabel:hover) .toggle {
+	color: var(--fg-secondary_hover);
+}
+
+.toggleIcon {
+	display: inline-flex;
+	width: var(--size-sm);
+	height: var(--size-sm);
+}
+
+.toggleIcon > svg {
+	width: 100%;
+	height: 100%;
+	transition: transform 120ms ease;
+}
+
+/* Figma `_Section collapse toggle` (95:206): Expanded shows chevron-up,
+   Collapsed shows chevron-down — so the up chevron turns over when closed. */
+.toggle[data-state="closed"] .toggleIcon > svg {
+	transform: rotate(180deg);
+}

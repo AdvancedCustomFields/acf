@@ -1,0 +1,289 @@
+/*
+ * Horizontal tabs — Base Design System node 1656:1720.
+ * Vertical tabs   — node 1656:1821.
+ *
+ * Both sets are built from the same `_Tab base`, so the tab rules are shared
+ * and the style classes only change the list chrome and the selected treatment.
+ *
+ * `Line` is horizontal-only: the vertical set has no such variant, and the
+ * props type enforces that.
+ */
+
+.root {
+	display: flex;
+}
+
+.horizontal {
+	flex-direction: column;
+}
+
+.vertical {
+	flex-direction: row;
+}
+
+.list {
+	display: flex;
+	box-sizing: border-box;
+	gap: var(--space-3xs);
+	/* `TabNav` renders the list as a `<ul>`; `Tabs` as a `<div>`. */
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.list[data-orientation="horizontal"] {
+	flex-direction: row;
+	align-items: center;
+}
+
+.list[data-orientation="vertical"] {
+	flex-direction: column;
+	align-items: stretch;
+}
+
+/*
+ * `TabNav`'s `<li>`, so its link sizes exactly as a `Tab` would. The margin
+ * reset is for wp-admin, whose `li` rule adds a bottom margin.
+ */
+.item {
+	display: flex;
+	margin: 0;
+}
+
+/*
+ * Every orientation and style rule is keyed off the list, not the root:
+ * `TabList` and `TabNav`'s `<ul>` both carry `data-part="list"`,
+ * `data-orientation` and `data-appearance`, so a wrapper between the root and
+ * the list (WordPress `TabbedNavigation`) changes nothing. Rules reach only
+ * the list's own tabs (child combinators), so a Tabs nested in another
+ * Tabs's panel keeps its own style. Each rule names both shapes: `Tabs`
+ * (`.list > .tab`) and `TabNav` (`.list > .item > .tab`, where the `<li>`
+ * sits between).
+ *
+ * `[data-selected]` is Figma's `State = Active`: Ark sets it on the selected
+ * `Tab`, and `TabLink` sets it alongside `aria-current="page"`.
+ */
+
+/* --------------------------------------------------------------------------
+ * The tab — Figma's `_Tab base` (`1654:1452`).
+ * ------------------------------------------------------------------------ */
+
+.tab {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	box-sizing: border-box;
+	gap: var(--space-sm);
+	min-height: var(--size-xl);
+	padding: var(--space-2xs) var(--space-md);
+	border: var(--stroke-none) solid transparent;
+	border-radius: var(--radius-sm);
+	background-color: transparent;
+	color: var(--text-secondary);
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.list[data-orientation="horizontal"] > .tab,
+.list[data-orientation="horizontal"] > .item > .tab {
+	justify-content: center;
+}
+
+/* Vertical lists left-align their labels; Figma centres the horizontal ones. */
+.list[data-orientation="vertical"] > .tab,
+.list[data-orientation="vertical"] > .item > .tab {
+	justify-content: flex-start;
+	width: 100%;
+}
+
+.tab:focus-visible {
+	box-shadow: var(--focus-ring-accent);
+	outline: none;
+}
+
+.tab:disabled {
+	color: var(--text-disabled);
+	cursor: not-allowed;
+}
+
+/*
+ * wp-admin styles `a:hover`, `a:focus` and `a:active` at (0,1,1), above
+ * `.tab`. Restate the link's resting colour, decoration and shadow at list
+ * scope so those rules cannot recolour or ring a `TabLink`; the state rules
+ * below sit above this. Its focus ring is restated for the same reason.
+ */
+.list > .item > .tab {
+	box-shadow: none;
+	color: var(--text-secondary);
+	text-decoration: none;
+}
+
+.list > .item > .tab:focus-visible {
+	box-shadow: var(--focus-ring-accent);
+	outline: none;
+}
+
+/* Figma's `Icon and Label Container`. */
+.content {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--space-xs);
+}
+
+.icon {
+	display: inline-flex;
+	flex: none;
+	width: var(--size-xs);
+	height: var(--size-xs);
+	color: var(--fg-secondary);
+}
+
+.tab:disabled .icon {
+	color: var(--fg-disabled);
+}
+
+.icon > svg {
+	width: 100%;
+	height: 100%;
+}
+
+.label {
+	font-family: var(--label-md-font-family);
+	font-size: var(--label-md-font-size);
+	font-weight: var(--font-weight-regular);
+	line-height: var(--label-md-line-height);
+	letter-spacing: var(--label-md-letter-spacing);
+}
+
+/* `State = Hover` and `State = Focus` both lift the label in every style. */
+.tab:hover:not(:disabled):not([data-selected]),
+.tab:focus-visible:not([data-selected]) {
+	color: var(--text-secondary_hover);
+}
+
+/* --------------------------------------------------------------------------
+ * Style = Line. A hairline under the whole list. The selected tab draws an
+ * accent rule over it, and a hovered tab a neutral one.
+ * ------------------------------------------------------------------------ */
+
+.list[data-appearance="line"] {
+	border-bottom: var(--stroke-sm) solid var(--border-subtle);
+}
+
+.list[data-appearance="line"] > .tab,
+.list[data-appearance="line"] > .item > .tab {
+	min-height: var(--size-2xl);
+	padding: var(--space-2xs) var(--space-md) var(--space-xs);
+}
+
+/*
+ * `_Tab base`'s `Frame 1`: absolutely positioned, stretched across the tab and
+ * pinned to its bottom edge, overlapping the list's hairline. Its 2px height
+ * is unbound in Figma; `stroke-md` is the token at that value.
+ */
+.list[data-appearance="line"] > .tab::after,
+.list[data-appearance="line"] > .item > .tab::after {
+	position: absolute;
+	inset-inline: 0;
+	bottom: calc(-1 * var(--stroke-sm));
+	height: var(--stroke-md);
+}
+
+.list[data-appearance="line"]
+	> .tab:hover:not(:disabled):not([data-selected])::after,
+.list[data-appearance="line"] > .item > .tab:hover:not([data-selected])::after {
+	content: "";
+	background-color: var(--bg-control-inactive);
+}
+
+.list[data-appearance="line"] > .tab:focus-visible:not([data-selected]),
+.list[data-appearance="line"]
+	> .item
+	> .tab:focus-visible:not([data-selected]) {
+	background-color: var(--bg-primary);
+}
+
+.list[data-appearance="line"] > .tab[data-selected],
+.list[data-appearance="line"] > .item > .tab[data-selected] {
+	color: var(--text-accent);
+}
+
+.list[data-appearance="line"] > .tab[data-selected]::after,
+.list[data-appearance="line"] > .item > .tab[data-selected]::after {
+	content: "";
+	background-color: var(--bg-accent);
+}
+
+/* --------------------------------------------------------------------------
+ * Style = Button. A recessed track with a raised card for the selected tab.
+ * ------------------------------------------------------------------------ */
+
+.list[data-appearance="button"] {
+	padding: var(--space-3xs);
+	border-radius: var(--radius-md);
+	background-color: var(--bg-secondary);
+}
+
+.list[data-appearance="button"] > .tab,
+.list[data-appearance="button"] > .item > .tab {
+	padding: var(--space-3xs) var(--space-md);
+}
+
+/*
+ * Figma fills Hover and Focus with `bg-secondary` — the track's own colour, so
+ * only the label change shows. Bound as drawn.
+ */
+.list[data-appearance="button"]
+	> .tab:hover:not(:disabled):not([data-selected]),
+.list[data-appearance="button"] > .item > .tab:hover:not([data-selected]),
+.list[data-appearance="button"] > .tab:focus-visible:not([data-selected]),
+.list[data-appearance="button"]
+	> .item
+	> .tab:focus-visible:not([data-selected]) {
+	background-color: var(--bg-secondary);
+}
+
+.list[data-appearance="button"] > .tab[data-selected],
+.list[data-appearance="button"] > .item > .tab[data-selected] {
+	background-color: var(--bg-primary);
+	box-shadow: var(--shadow-with-stroke-xs);
+	color: var(--text-primary);
+}
+
+.list[data-appearance="button"] > .tab[data-selected]:focus-visible,
+.list[data-appearance="button"] > .item > .tab[data-selected]:focus-visible {
+	box-shadow: var(--focus-ring-accent);
+}
+
+/* --------------------------------------------------------------------------
+ * Style = Accent. No track; hover, focus and the selected tab all get the
+ * tinted pill and the accent label.
+ * ------------------------------------------------------------------------ */
+
+.list[data-appearance="accent"] {
+	border-radius: var(--radius-md);
+}
+
+.list[data-appearance="accent"] > .tab:hover:not(:disabled),
+.list[data-appearance="accent"] > .item > .tab:hover,
+.list[data-appearance="accent"] > .tab:focus-visible,
+.list[data-appearance="accent"] > .item > .tab:focus-visible,
+.list[data-appearance="accent"] > .tab[data-selected],
+.list[data-appearance="accent"] > .item > .tab[data-selected] {
+	background-color: var(--bg-accent-subtle);
+	color: var(--text-accent);
+}
+
+/*
+ * The vertical accent list has no track, but still insets its tabs from the
+ * column edge. The vertical button list uses the same padding as the
+ * horizontal one, so it needs no override.
+ */
+.list[data-orientation="vertical"][data-appearance="accent"] {
+	padding-inline: var(--space-3xs);
+}
+
+.panel:focus-visible {
+	box-shadow: var(--focus-ring-accent);
+	outline: none;
+}

@@ -1,0 +1,114 @@
+/*
+ * Page header — WordPress Component Library node 59:609.
+ *
+ * Full-bleed bar: flush top/left/right of the page shell. Title and actions sit
+ * in a centred max-width row with inline padding so they align with
+ * {@link PageContent}; the bar background and border span edge to edge.
+ *
+ * Figma stacks the title row (`Frame 1`) over an optional `Tabbed navigation`
+ * instance, so the header is a column; each row centres its own max-width
+ * column.
+ */
+
+.header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	box-sizing: border-box;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	border-bottom: var(--stroke-sm) solid var(--border-subtle);
+	background-color: var(--bg-primary);
+}
+
+.content {
+	display: flex;
+	align-items: center;
+	box-sizing: border-box;
+	width: 100%;
+	max-width: var(--bds-page-width-max, 1280px);
+	min-width: var(--bds-page-width-min, 920px);
+	gap: var(--space-2xl);
+	/*
+	 * Unbound in Figma: a raw 72px min-height. The size scale steps 64
+	 * (`size-4xl`) → 80 (`size-5xl`), so there is nothing to bind it to.
+	 * Recorded in docs/figma-divergences.md.
+	 */
+	min-height: 72px;
+	padding-block: var(--space-md);
+	padding-inline: var(--space-3xl);
+}
+
+@container bds-page (width < 920px) {
+	.header {
+		align-items: flex-start;
+	}
+
+	.navigation {
+		justify-content: flex-start;
+	}
+}
+
+@media screen and (max-width: 360px) {
+	.content {
+		padding-inline: var(--space-xl);
+	}
+}
+
+/* `min-width: 0` lets a long title shrink instead of shoving the actions out. */
+.titleContainer {
+	display: flex;
+	align-items: center;
+	flex: 1 0 0;
+	min-width: 0;
+	gap: var(--space-sm);
+}
+
+.title {
+	margin: 0;
+	color: var(--text-primary);
+	font-family: var(--heading-md-font-family);
+	font-size: var(--heading-md-font-size);
+	line-height: var(--heading-md-line-height);
+	letter-spacing: var(--heading-md-letter-spacing);
+	font-weight: var(--font-weight-medium);
+}
+
+.actions {
+	flex: none;
+}
+
+.badge {
+	flex: none;
+}
+
+/*
+ * The `Tabbed navigation` row. Figma overrides the nested bar's stroke from
+ * its own bottom `border-subtle` to a top `border-faint`, because the header's
+ * bottom border closes the row. The rule and the `bg-secondary` fill live on
+ * this wrapper so both run full-bleed like the header's, while the bar itself
+ * sits in the same centred column as the title row: with the bar's
+ * `space-xl` padding plus the tab's own `space-md`, the first label lines up
+ * with the title's `space-3xl` inset.
+ *
+ * The bar is reached through `[data-bds-tabbed-navigation]`
+ * (TABBED_NAVIGATION_ATTRIBUTE), the stable hook TabbedNavigation documents
+ * for this. Figma draws the top stroke inside the bar's 48px (`size-3xl`)
+ * frame, so the bar's own minimum gives up that stroke to keep the row 48px.
+ */
+.navigation {
+	display: flex;
+	justify-content: center;
+	box-sizing: border-box;
+	width: 100%;
+	border-top: var(--stroke-sm) solid var(--border-faint);
+	background-color: var(--bg-secondary);
+}
+
+.navigation > [data-bds-tabbed-navigation] {
+	max-width: var(--bds-page-width-max, 1280px);
+	min-width: var(--bds-page-width-min, 920px);
+	min-height: calc(var(--size-3xl) - var(--stroke-sm));
+	border-bottom: none;
+}

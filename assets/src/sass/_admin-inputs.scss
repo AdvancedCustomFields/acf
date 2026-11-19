@@ -9,11 +9,11 @@
 	*  All Inputs
 	*
 	*---------------------------------------------------------------------------------------------*/
-	input[type="text"],
-	input[type="search"],
-	input[type="number"],
-	textarea,
-	select {
+	input[type="text"]#{$not-bds},
+	input[type="search"]#{$not-bds},
+	input[type="number"]#{$not-bds},
+	textarea#{$not-bds},
+	select#{$not-bds} {
 		box-sizing: border-box;
 		height: 40px;
 		padding: {
@@ -49,7 +49,7 @@
 	*  Read only text inputs
 	*
 	*---------------------------------------------------------------------------------------------*/
-	input[type="text"] {
+	input[type="text"]#{$not-bds} {
 
 		&:read-only {
 			background-color: $gray-50;
@@ -77,7 +77,7 @@
 	*  Textarea
 	*
 	*---------------------------------------------------------------------------------------------*/
-	textarea {
+	textarea#{$not-bds} {
 		box-sizing: border-box;
 		padding: {
 			top: 10px;
@@ -92,7 +92,7 @@
 	*  Select
 	*
 	*---------------------------------------------------------------------------------------------*/
-	select {
+	select#{$not-bds} {
 		min-width: 160px;
 		max-width: 100%;
 		padding: {
@@ -123,7 +123,7 @@
 
 	&.rtl {
 
-		select {
+		select#{$not-bds} {
 			padding: {
 				right: 12px;
 				left: 40px;
@@ -137,8 +137,8 @@
 	*  Radio Button & Checkbox base styling
 	*
 	*---------------------------------------------------------------------------------------------*/
-	input[type="radio"],
-	input[type="checkbox"] {
+	input[type="radio"]#{$not-bds},
+	input[type="checkbox"]#{$not-bds} {
 		box-sizing: border-box;
 		width: 16px;
 		height: 16px;
@@ -182,7 +182,7 @@
 	*  fights that layout and shifts the inner dot toward the top-left.
 	*
 	*---------------------------------------------------------------------------------------------*/
-	input[type="radio"] {
+	input[type="radio"]#{$not-bds} {
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
@@ -214,7 +214,7 @@
 	*  Checkboxes
 	*
 	*---------------------------------------------------------------------------------------------*/
-	input[type="checkbox"] {
+	input[type="checkbox"]#{$not-bds} {
 
 		&:checked,
 		&:focus-visible {
@@ -249,7 +249,7 @@
 
 	&.rtl {
 
-		input[type="checkbox"] {
+		input[type="checkbox"]#{$not-bds} {
 
 			&:checked,
 			&:focus-visible {
@@ -327,6 +327,11 @@
 
 			.acf-switch-slider {
 				left: 20px;
+
+				// rtl
+				html[dir="rtl"] & {
+					right: 20px;
+				}
 			}
 
 		}
@@ -410,7 +415,7 @@
 	*
 	*---------------------------------------------------------------------------------------------*/
 
-	input::file-selector-button {
+	input#{$not-bds}::file-selector-button {
 		box-sizing: border-box;
 		min-height: 40px;
 		margin: {

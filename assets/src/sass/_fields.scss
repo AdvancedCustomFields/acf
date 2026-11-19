@@ -1499,6 +1499,24 @@ ul.acf-checkbox-list {
 		margin-left: 6px;
 	}
 
+	// rtl
+	html[dir="rtl"] & {
+		.acf-switch-slider {
+			left: 50%;
+			right: 2px;
+		}
+
+		&.-on .acf-switch-slider {
+			left: 2px;
+			right: 50%;
+		}
+
+		+ span {
+			margin-left: 0;
+			margin-right: 6px;
+		}
+	}
+
 	// WP Admin 3.8
 	@include wp-admin("3-8") {
 		border-color: $wp-card-border;

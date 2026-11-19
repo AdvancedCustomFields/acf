@@ -1,0 +1,22 @@
+/* Hint text — Base Design System node 3183:170980. */
+
+.hint {
+	display: block;
+	color: var(--text-tertiary);
+}
+
+.sm {
+	font-family: var(--body-sm-font-family);
+	font-size: var(--body-sm-font-size);
+	line-height: var(--body-sm-line-height);
+	letter-spacing: var(--body-sm-letter-spacing);
+	font-weight: var(--font-weight-regular);
+}
+
+.md {
+	font-family: var(--body-md-font-family);
+	font-size: var(--body-md-font-size);
+	line-height: var(--body-md-line-height);
+	letter-spacing: var(--body-md-letter-spacing);
+	font-weight: var(--font-weight-regular);
+}

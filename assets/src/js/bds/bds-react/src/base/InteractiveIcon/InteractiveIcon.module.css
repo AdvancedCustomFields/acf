@@ -1,0 +1,108 @@
+/*
+ * Interactive icon — Base Design System node 5705:1415.
+ *
+ * A lightweight icon control: no border or resting background, unlike Icon
+ * button. Hover and focus apply bg-blend; focus adds the accent ring.
+ */
+
+.button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	padding: var(--space-4xs);
+	border: none;
+	border-radius: var(--radius-xs);
+	background-color: transparent;
+	color: var(--fg-secondary);
+	cursor: pointer;
+	transition:
+		background-color 120ms ease,
+		box-shadow 120ms ease,
+		color 120ms ease;
+}
+
+.button:hover:not(:disabled) {
+	background-color: var(--bg-blend);
+}
+
+.button:focus-visible {
+	background-color: var(--bg-blend);
+	box-shadow: var(--focus-ring-accent);
+	outline: none;
+}
+
+.button:disabled:not(.loading) {
+	color: var(--fg-disabled);
+	cursor: not-allowed;
+}
+
+.accent {
+	color: var(--fg-accent);
+}
+
+/*
+ * The loading state, mirroring Icon button's: the icon stays in flow so the
+ * control does not resize, and the spinner is laid over it. Not a Figma state
+ * — see the prop's docs.
+ */
+.loading {
+	position: relative;
+	cursor: default;
+}
+
+.iconHidden {
+	visibility: hidden;
+	pointer-events: none;
+}
+
+.spinner {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	color: currentColor;
+	transform: translate(-50%, -50%);
+}
+
+.spinner > svg {
+	animation: bds-interactive-icon-spin 900ms linear infinite;
+}
+
+@keyframes bds-interactive-icon-spin {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.spinner > svg {
+		animation: none;
+	}
+}
+
+.icon {
+	display: inline-flex;
+	flex: none;
+	align-items: center;
+	justify-content: center;
+}
+
+.icon > svg {
+	width: 100%;
+	height: 100%;
+}
+
+.sm .icon {
+	width: var(--size-xs);
+	height: var(--size-xs);
+}
+
+.md .icon {
+	width: var(--size-sm);
+	height: var(--size-sm);
+}
+
+.lg .icon {
+	width: var(--size-md);
+	height: var(--size-md);
+}

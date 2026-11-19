@@ -1,0 +1,13 @@
+/*
+ * Page — engineering layout shell (no Figma component).
+ *
+ * Establishes the container query context and page-width custom properties
+ * consumed by PageHeader, TabbedNavigation and PageContent descendants.
+ */
+
+.page {
+	container-type: inline-size;
+	container-name: bds-page;
+	--bds-page-width-min: 920px;
+	--bds-page-width-max: 1280px;
+}

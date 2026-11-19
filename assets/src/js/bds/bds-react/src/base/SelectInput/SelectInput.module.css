@@ -1,0 +1,132 @@
+/*
+ * Select input — Base Design System node 3196:173592.
+ *
+ * The field shell (label, bordered container, padded input area, sizes,
+ * invalid state) is byte-for-byte the Text input shell — same radius, fill,
+ * border, shadow, padding and heights — so it is composed from
+ * ../field/field.module.css rather than restated. The floating list is the
+ * `Dropdown menu` component, composed from ../menu/menu.module.css.
+ *
+ * What is specific to Select: the container is a <button>, so the disabled
+ * surface keys off `:disabled` on the container itself rather than on a child
+ * control, and the trailing chevron is fg-secondary — not the fg-quaternary
+ * the shell gives in-field icons.
+ */
+
+.field {
+	composes: field from "../field/field.module.css";
+}
+
+.sm {
+	composes: sm from "../field/field.module.css";
+}
+
+.md {
+	composes: md from "../field/field.module.css";
+}
+
+.lg {
+	composes: lg from "../field/field.module.css";
+}
+
+.invalid {
+	composes: invalid from "../field/field.module.css";
+}
+
+.container {
+	composes: container from "../field/field.module.css";
+
+	padding: 0;
+	cursor: pointer;
+	font: inherit;
+	text-align: start;
+}
+
+.inputContainer {
+	composes: inputContainer from "../field/field.module.css";
+}
+
+.icon {
+	composes: icon from "../field/field.module.css";
+}
+
+.positioner {
+	composes: positioner fieldWidth from "../menu/menu.module.css";
+}
+
+.popover {
+	composes: popover from "../menu/menu.module.css";
+}
+
+.list {
+	composes: list boundedList from "../menu/menu.module.css";
+	/*
+	 * Zag holds DOM focus on the list (the rows are an
+	 * `aria-activedescendant` cursor), so the browser draws its focus ring
+	 * here: square, and clipped by the rounded popover. As on the menu's
+	 * panel, focus belongs to the highlighted row, never the surface.
+	 */
+	outline: none;
+}
+
+.empty {
+	composes: empty from "../menu/menu.module.css";
+}
+
+/* The no-results live region while there are results: present but boxless. */
+.status {
+	margin: 0;
+}
+
+/* The selected value, or the placeholder when there is none. */
+.value {
+	overflow: hidden;
+	min-width: 0;
+	flex: 1 1 auto;
+	color: var(--text-primary);
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.placeholder {
+	color: var(--text-placeholder);
+}
+
+.indicator {
+	display: inline-flex;
+	width: var(--size-xs);
+	height: var(--size-xs);
+	flex: none;
+	align-items: center;
+	justify-content: center;
+	color: var(--fg-secondary);
+}
+
+.indicator > svg {
+	width: 100%;
+	height: 100%;
+}
+
+/*
+ * Disabled. The shell's rule targets a disabled child control; here the
+ * container is the control.
+ */
+.container:disabled {
+	border-color: var(--border-disabled);
+	background-color: var(--bg-disabled);
+	box-shadow: none;
+	cursor: not-allowed;
+}
+
+.container:disabled .value {
+	color: var(--text-disabled);
+}
+
+.container:disabled .indicator {
+	color: var(--fg-disabled);
+}
+
+/* Ark hides the closed list with `hidden`; nothing should reserve space. */
+.positioner[hidden] {
+	display: none;
+}

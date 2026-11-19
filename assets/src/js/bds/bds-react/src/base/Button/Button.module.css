@@ -1,0 +1,387 @@
+/*
+ * Button — Base Design System node 530:13117.
+ *
+ * Every value below is a semantic token read from Figma dev mode. The Figma
+ * component sets an explicit height per size; we use min-height so the control
+ * still grows if a consumer's text scales, which keeps the rendered height
+ * identical at default settings.
+ */
+
+.button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	border-style: solid;
+	border-width: var(--stroke-sm);
+	cursor: pointer;
+	text-decoration: none;
+	white-space: nowrap;
+	/* Figma binds the label to a text style; those are the same variables. */
+	font-family: var(--label-md-font-family);
+	transition:
+		background-color 120ms ease,
+		border-color 120ms ease,
+		box-shadow 120ms ease;
+}
+
+.button:disabled,
+.button[aria-disabled="true"] {
+	cursor: not-allowed;
+}
+
+/*
+ * The link form (`href`) cannot be natively disabled: it drops its `href`
+ * and is marked `aria-disabled`. Block the pointer too, as the native
+ * attribute does for a `<button>`.
+ */
+.button[aria-disabled="true"] {
+	pointer-events: none;
+}
+
+/*
+ * Every type draws its own focus ring as a box-shadow (below), so the
+ * user-agent outline has to go — left in, it paints a second ring inside ours.
+ * Make it transparent rather than removing it: forced-colors mode (Windows
+ * High Contrast) drops box-shadow but repaints a transparent outline in the
+ * system colour, so it stays the focus indicator there and invisible
+ * everywhere else.
+ */
+.button:focus-visible {
+	outline: var(--stroke-md) solid transparent;
+}
+
+/*
+ * Loading maps to Figma `State=Loading`. Keep the Type colours (unlike
+ * Disabled), hide the label and icons without collapsing width — Figma Usage
+ * asks for this, even though the variant itself hugs the spinner — and overlay
+ * a spinner. Native `disabled` still blocks interaction.
+ */
+.loading {
+	position: relative;
+}
+
+.content {
+	display: contents;
+}
+
+/*
+ * Hide resting content without removing it from the accessibility tree.
+ * `visibility: hidden` would drop element children (e.g. <span>Save</span>)
+ * so a loading button with no loadingAriaLabel would have no accessible name.
+ * Opacity keeps the boxes for width and leaves the text available to AT.
+ */
+.contentHidden .label,
+.contentHidden .icon {
+	opacity: 0;
+	pointer-events: none;
+}
+
+.spinner {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: currentColor;
+}
+
+.outline.loading .spinner,
+.ghost.loading .spinner {
+	color: var(--fg-accent);
+}
+
+.spinner > svg {
+	animation: bds-button-spin 900ms linear infinite;
+}
+
+@keyframes bds-button-spin {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.spinner > svg {
+		animation: none;
+	}
+}
+
+.icon {
+	display: inline-flex;
+	flex: none;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	/* Icons inherit the label colour — Figma binds both to the same token. */
+	color: currentColor;
+}
+
+.icon > svg,
+.icon > * {
+	flex: none;
+	width: 100%;
+	height: 100%;
+	min-width: 0;
+	min-height: 0;
+}
+
+/* Figma wraps the label in its own padded frame at every size. */
+.label {
+	padding-inline: var(--space-3xs);
+}
+
+/* --------------------------------------------------------------------------
+ * Sizes
+ * ------------------------------------------------------------------------ */
+
+.xs {
+	min-height: var(--size-lg);
+	padding: var(--space-2xs) var(--space-sm);
+	gap: var(--space-3xs);
+	border-radius: var(--radius-sm);
+	font-size: var(--label-sm-font-size);
+	line-height: var(--label-sm-line-height);
+	letter-spacing: var(--label-sm-letter-spacing);
+	font-weight: var(--font-weight-medium);
+}
+
+.xs .icon {
+	width: var(--size-2xs);
+	height: var(--size-2xs);
+}
+
+.sm {
+	min-height: var(--size-xl);
+	padding: var(--space-2xs) var(--space-sm);
+	gap: var(--space-2xs);
+	border-radius: var(--radius-md);
+	font-size: var(--label-md-font-size);
+	line-height: var(--label-md-line-height);
+	letter-spacing: var(--label-md-letter-spacing);
+	font-weight: var(--font-weight-medium);
+}
+
+.sm .icon {
+	width: var(--size-sm);
+	height: var(--size-sm);
+}
+
+.md {
+	min-height: var(--size-2xl);
+	padding: var(--space-sm) var(--space-md);
+	gap: var(--space-2xs);
+	border-radius: var(--radius-md);
+	font-size: var(--label-md-font-size);
+	line-height: var(--label-md-line-height);
+	letter-spacing: var(--label-md-letter-spacing);
+	font-weight: var(--font-weight-medium);
+}
+
+.md .icon {
+	width: var(--size-sm);
+	height: var(--size-sm);
+}
+
+.lg {
+	min-height: var(--size-3xl);
+	padding: var(--space-lg);
+	gap: var(--space-sm);
+	border-radius: var(--radius-md);
+	font-size: var(--label-lg-font-size);
+	line-height: var(--label-lg-line-height);
+	letter-spacing: var(--label-lg-letter-spacing);
+	font-weight: var(--font-weight-medium);
+}
+
+.lg .icon {
+	width: var(--size-md);
+	height: var(--size-md);
+}
+
+/* --------------------------------------------------------------------------
+ * Types
+ *
+ * Figma models Hover / Focus / Disabled as variants; in code they are CSS
+ * states. Focus replaces the resting shadow with the focus ring, matching the
+ * Figma Focus variant exactly.
+ * ------------------------------------------------------------------------ */
+
+.primary {
+	background-color: var(--bg-accent);
+	border-color: var(--border-blend);
+	color: var(--text-on-color);
+	box-shadow: var(--shadow-sm);
+}
+
+.primary:hover:not(:disabled, [aria-disabled="true"]) {
+	background-color: var(--bg-accent_hover);
+}
+
+.primary:focus-visible {
+	background-color: var(--bg-accent_hover);
+	box-shadow: var(--focus-ring-accent);
+}
+
+.secondary {
+	background-color: var(--bg-primary);
+	border-color: var(--border-primary);
+	color: var(--text-secondary);
+	box-shadow: var(--shadow-xs);
+}
+
+.secondary:hover:not(:disabled, [aria-disabled="true"]) {
+	background-color: var(--bg-primary_hover);
+	border-color: var(--border-subtle);
+}
+
+.secondary:focus-visible {
+	background-color: var(--bg-primary_hover);
+	border-color: var(--border-subtle);
+	box-shadow: var(--focus-ring-accent);
+}
+
+/*
+ * Secondary is the one type whose icon and label do not share a colour: Figma
+ * binds the icon to foreground/fg-secondary and the label to
+ * text/text-secondary. Everywhere else the two resolve to the same value, so
+ * the `currentColor` default on `.icon` is right. Disabled is excluded so the
+ * icon dims with the label; loading keeps Type colours, including the spinner.
+ */
+.secondary:not(:disabled, [aria-disabled="true"]) .icon,
+.secondary.loading .icon {
+	color: var(--fg-secondary);
+}
+
+.outline {
+	background-color: transparent;
+	border-color: var(--border-accent);
+	color: var(--text-accent);
+	box-shadow: none;
+}
+
+.outline:focus-visible {
+	box-shadow: var(--focus-ring-accent);
+}
+
+/*
+ * Ghost carries its hover on the *text colour*, not the fill: `State=Default`
+ * binds `text-accent` and `State=Hover` binds `text-accent_hover`, with the
+ * transparent fill unchanged on purpose (Dale, 2026-08). We previously read the
+ * two variants as identical and reproduced no hover at all.
+ */
+.ghost {
+	background-color: transparent;
+	border-color: transparent;
+	color: var(--text-accent);
+	box-shadow: none;
+}
+
+.ghost:hover:not(:disabled, [aria-disabled="true"]) {
+	color: var(--text-accent_hover);
+}
+
+.ghost:focus-visible {
+	background-color: var(--bg-secondary);
+	box-shadow: var(--focus-ring-accent);
+}
+
+.negative {
+	background-color: var(--bg-negative);
+	border-color: var(--border-blend);
+	color: var(--text-on-color);
+	box-shadow: none;
+}
+
+.negative:hover:not(:disabled, [aria-disabled="true"]) {
+	background-color: var(--bg-negative_hover);
+}
+
+.negative:focus-visible {
+	background-color: var(--bg-negative_hover);
+	box-shadow: var(--focus-ring-negative);
+}
+
+/*
+ * The link form (`href`) is an `<a>`, and wp-admin's common.css styles bare
+ * links at (0,1,1): `a:hover, a:active` set the link colour and `a:focus` sets
+ * the colour plus its own ring. That beats each Type's (0,1,0) colour and
+ * resting shadow, so a hovered, pressed or mouse-focused link button turned
+ * wp-admin blue and drew a second ring. Restate them for anchors at (0,2,1).
+ * Keyboard focus keeps the BDS ring: these only reset the shadow when focus is
+ * not `:focus-visible`. The Ghost / Outline hover colours and the disabled
+ * colours are more specific still, so they keep winning; the shadow guards
+ * skip a disabled link (not a loading one) so a link disabled while it has
+ * focus takes the disabled treatment, not a resting shadow.
+ */
+
+a.primary:is(:hover, :active, :focus) {
+	color: var(--text-on-color);
+}
+
+a.secondary:is(:hover, :active, :focus) {
+	color: var(--text-secondary);
+}
+
+a.outline:is(:hover, :active, :focus) {
+	color: var(--text-accent);
+}
+
+a.ghost:is(:hover, :active, :focus) {
+	color: var(--text-accent);
+}
+
+a.negative:is(:hover, :active, :focus) {
+	color: var(--text-on-color);
+}
+
+a.primary:focus:not(:focus-visible):not([aria-disabled="true"]:not(.loading)) {
+	box-shadow: var(--shadow-sm);
+}
+
+a.secondary:focus:not(:focus-visible):not(
+		[aria-disabled="true"]:not(.loading)
+	) {
+	box-shadow: var(--shadow-xs);
+}
+
+a.outline:focus:not(:focus-visible):not([aria-disabled="true"]:not(.loading)) {
+	box-shadow: none;
+}
+
+a.ghost:focus:not(:focus-visible):not([aria-disabled="true"]:not(.loading)) {
+	box-shadow: none;
+}
+
+a.negative:focus:not(:focus-visible):not([aria-disabled="true"]:not(.loading)) {
+	box-shadow: none;
+}
+
+/* `a:focus` also sets `border-radius: 2px`; keep each size's radius. */
+a.xs:focus {
+	border-radius: var(--radius-sm);
+}
+
+a.sm:focus,
+a.md:focus,
+a.lg:focus {
+	border-radius: var(--radius-md);
+}
+
+/* --------------------------------------------------------------------------
+ * Disabled — one treatment for every type except Ghost, which stays
+ * transparent and only dims its label.
+ * ------------------------------------------------------------------------ */
+
+.button:disabled:not(.loading),
+.button[aria-disabled="true"]:not(.loading) {
+	background-color: var(--bg-disabled);
+	border-color: var(--border-disabled);
+	color: var(--text-disabled);
+	box-shadow: none;
+}
+
+.ghost:disabled:not(.loading),
+.ghost[aria-disabled="true"]:not(.loading) {
+	background-color: transparent;
+	border-color: transparent;
+}

@@ -1,0 +1,124 @@
+/* bds-check-tokens-allow: --z-index */
+/*
+ * Tooltip — Base Design System node 955:200.
+ *
+ * Style=Default binds bg-inverse / text-inverse; Style=Subtle binds
+ * bg-primary / text-primary. Default is the higher-weight treatment tooltips
+ * need to read over arbitrary UI; Subtle is the lower-weight alternative.
+ *
+ * Figma draws the pointer as a 10×5 triangle. There is no 10px or 5px value in
+ * the size scale, and Ark's arrow is a rotated square rather than a triangle,
+ * so the arrow is sized with the nearest scale step, --size-2xs (12px). It
+ * protrudes ~6px instead of 5px.
+ */
+
+.positioner {
+	--arrow-size: var(--size-2xs);
+	/*
+	 * Non-interactive tooltips must not capture pointer events. Without this,
+	 * the positioner (and arrow descendants, which do not inherit `none`) sit
+	 * over the trigger and prevent `pointerleave`, leaving collapsed sidebar
+	 * labels stuck open.
+	 */
+	pointer-events: none;
+	/*
+	 * Belt and braces only — `.content` below is what sets the overlay level,
+	 * for the reason documented there. Kept so the tooltip is still lifted if
+	 * zag ever stops writing its inline `z-index`, and deliberately the same
+	 * value.
+	 */
+	z-index: 300000;
+}
+
+.positioner * {
+	pointer-events: none;
+}
+
+/*
+ * Backstop for the rule above. The hashed `.positioner` class only lands if the
+ * CSS module hashes it onto the DOM node; a consumer bundler that re-hashes the
+ * prebuilt module CSS (see BEES-683) can lose it. Target an IWDS-owned attribute
+ * rather than Ark's generic `data-scope` / `data-part` pair so importing IWDS
+ * Tooltip CSS cannot disable pointer events on a third-party Ark tooltip.
+ */
+:global([data-bds-tooltip-positioner]),
+:global([data-bds-tooltip-positioner] *) {
+	pointer-events: none;
+}
+
+.content {
+	/*
+	 * Overlay scale: floating. Above Modal and ChatLightbox so a floating
+	 * surface opened inside either is visible — see
+	 * docs/engineering-components.md#overlay-stacking-order.
+	 *
+	 * On the CONTENT, not the positioner, because zag is what actually applies
+	 * it: `@zag-js/popper` writes `z-index: var(--z-index)` inline on the
+	 * positioner and fills `--z-index` by reading
+	 * `getComputedStyle(positioner.firstElementChild).zIndex`. A value declared
+	 * on the positioner therefore loses to that inline rule, and zag copies the
+	 * content's `auto` — which, with the `isolation: isolate` it also sets
+	 * inline, collapses the whole surface to paint at level 0 and lets any
+	 * `z-index: 1` sibling cover it. Declaring it here is what zag propagates.
+	 */
+	z-index: 300000;
+	/*
+	 * Fills Ark's arrow tip. Declared here rather than on `.positioner`
+	 * because `--tooltip-bg` is set by the appearance class on this element:
+	 * on the positioner it resolves to nothing, leaving the tip transparent
+	 * with only its border painted.
+	 */
+	--arrow-background: var(--tooltip-bg);
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+	align-items: flex-start;
+	justify-content: center;
+	gap: var(--space-3xs);
+	min-height: var(--size-lg);
+	/*
+	 * Figma sets a 240px max-width on the frame with no bound variable, so it
+	 * is a literal here, as Modal's widths are. Long text wraps rather than
+	 * stretching the tooltip across the screen.
+	 */
+	max-width: 240px;
+	padding: var(--space-xs) var(--space-sm);
+	border-radius: var(--radius-sm);
+	background-color: var(--tooltip-bg);
+	box-shadow: var(--shadow-sm);
+	font-family: var(--body-sm-font-family);
+	font-size: var(--body-sm-font-size);
+	line-height: var(--body-sm-line-height);
+	letter-spacing: var(--body-sm-letter-spacing);
+	font-weight: var(--font-weight-regular);
+	color: var(--tooltip-text);
+	overflow-wrap: break-word;
+}
+
+/*
+ * Ark toggles the `hidden` attribute on close but keeps the node mounted, and
+ * `display: flex` above would otherwise win over the attribute, leaving a
+ * closed tooltip painted. Same pattern as the dropdown `.popover[hidden]`.
+ */
+.content[hidden] {
+	display: none;
+}
+
+.arrowTip {
+	border-inline-start: var(--stroke-sm) solid var(--tooltip-bg);
+	border-block-start: var(--stroke-sm) solid var(--tooltip-bg);
+}
+
+/* --------------------------------------------------------------------------
+ * Styles
+ * ------------------------------------------------------------------------ */
+
+.default {
+	--tooltip-bg: var(--bg-inverse);
+	--tooltip-text: var(--text-inverse);
+}
+
+.subtle {
+	--tooltip-bg: var(--bg-primary);
+	--tooltip-text: var(--text-primary);
+}

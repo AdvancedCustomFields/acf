@@ -1,0 +1,51 @@
+/*
+ * The bds-react surface contract — what `[data-bds-theme]` guarantees beyond tokens.
+ *
+ * Hand-written. Unlike its siblings in this directory it is not emitted by
+ * scripts/sync-tokens.mjs; it holds guarantees that have no Figma variable
+ * behind them. `index.css` (`@wpengine/bds-react/styles.css`) pulls it in.
+ *
+ * Box model. WordPress admin sets no global `box-sizing`, so a consumer's
+ * element carrying both a dimension and padding renders larger than its declared
+ * size — padding lands outside the box. That cost the Power hub twice in one
+ * session: a card footer specced at 56px rendered at 80px, and a tool row with a
+ * 96px floor rendered at 129px. Both were invisible in review and both were
+ * found by a designer. Guaranteeing the correct box model on the surface means a
+ * plugin never has to re-derive it rule by rule.
+ *
+ * `inherit` on the descendants rather than a flat `border-box` so a subtree can
+ * opt out deliberately — set `box-sizing: content-box` on a container and its
+ * children follow, which is the only way to host third-party markup that assumes
+ * the content box.
+ *
+ * The descendant rules wrap the attribute in `:where()` so they carry zero
+ * specificity. Unwrapped, `[data-bds-theme] *` ties with an ordinary
+ * `.third-party-root { box-sizing: content-box }` and the later stylesheet wins
+ * — which is bds-react whenever a consumer loads `styles.css` last, silently voiding
+ * the opt-out above. At zero specificity any consumer rule beats the default,
+ * which is what a default should do.
+ *
+ * Font smoothing. Figma paints Inter antialiased; macOS subpixel smoothing
+ * makes the same type look heavier than the canvas. These properties have no
+ * Figma variable, so they live here with the box model rather than in the
+ * generated type ramp. Inheritance carries them to descendants — including
+ * component CSS that binds `--label-*` / `--body-*` tokens instead of composing
+ * a text-style class.
+ *
+ * Scoped to the surface, never `:root` or a bare `*`: bds-react is mounted inside
+ * WordPress admin and inside host applications, and must not restyle either.
+ * Content that Ark UI portals to `document.body` (modals, menus, toasts) sits
+ * outside the surface unless the host puts the attribute high enough to contain
+ * it, so those components still declare their own box model.
+ */
+[data-bds-theme] {
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+:where([data-bds-theme]) *,
+:where([data-bds-theme]) *::before,
+:where([data-bds-theme]) *::after {
+	box-sizing: inherit;
+}

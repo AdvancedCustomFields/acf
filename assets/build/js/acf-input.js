@@ -3853,7 +3853,7 @@
       var map = {
         street_number: ['street_number'],
         street_name: ['street_address', 'route'],
-        city: ['locality', 'postal_town'],
+        city: ['locality', 'postal_town', 'sublocality', 'neighborhood'],
         state: ['administrative_area_level_1', 'administrative_area_level_2', 'administrative_area_level_3', 'administrative_area_level_4', 'administrative_area_level_5'],
         post_code: ['postal_code'],
         country: ['country']
@@ -3866,10 +3866,13 @@
         // Loop over address components.
         for (var i = 0; i < obj.address_components.length; i++) {
           var component = obj.address_components[i];
-          var component_type = component.types[0];
 
-          // Look for matching component type.
-          if (keywords.indexOf(component_type) !== -1) {
+          // Look for a matching component type. Check every type, as Google
+          // may list the relevant one after 'political' (e.g. sublocality).
+          var isMatch = component.types.some(function (type) {
+            return keywords.indexOf(type) !== -1;
+          });
+          if (isMatch) {
             // Append to result.
             result[k] = component.long_name;
 
@@ -4493,6 +4496,14 @@
         attachment.url = size.url;
         attachment.width = size.width;
         attachment.height = size.height;
+      }
+
+      // Non-image attachments (allowed when acf/is_image_field returns false)
+      // usually have no image to preview, so show their mime type icon instead.
+      // Keep the preview size when WP generated one (e.g. PDF first-page previews).
+      if (!size && attachment.type && attachment.type !== 'image' && attachment.icon) {
+        attachment.url = attachment.icon;
+        attachment.alt = attachment.alt || attachment.title;
       }
 
       // Return.
@@ -8741,6 +8752,7 @@
       this.customizeAttachmentFilters();
       this.customizeAttachmentCompat();
       this.customizeAttachmentLibrary();
+      this.customizeQuery();
     },
     customizeAttachmentsButton: function () {
       // validate
@@ -8974,6 +8986,35 @@
           return AttachmentLibrary.prototype.toggleSelection.apply(this, arguments);
         }
       });
+    },
+    customizeQuery: function () {
+      // validate
+      if (!acf.isset(wp, 'media', 'model', 'Query')) {
+        return;
+      }
+
+      // vars
+      const Query = wp.media.model.Query;
+      const initialize = Query.prototype.initialize;
+
+      // extend
+      Query.prototype.initialize = function (models, options) {
+        // vars
+        const args = acf.isget(options, 'args');
+        const uploader = acf.isget(args, '_acfuploader');
+
+        // Queries only observe new uploads when all their args are ones WP can filter.
+        // Hide _acfuploader while initializing (as in addFrameStates), otherwise a
+        // search or filter change creates a query that never receives new uploads,
+        // leaving the uploaded attachment out of the library and "Select" disabled.
+        if (uploader) {
+          delete args._acfuploader;
+        }
+        initialize.apply(this, arguments);
+        if (uploader) {
+          args._acfuploader = uploader;
+        }
+      };
     }
   });
 })(jQuery);
@@ -9428,6 +9469,9 @@
     renderPostScreen: function (data) {
       // Helper function to copy events
       var copyEvents = function ($from, $to) {
+        if (!$from.length) {
+          return;
+        }
         var events = $._data($from[0]).events;
         for (var type in events) {
           for (var i = 0; i < events[type].length; i++) {
@@ -9502,8 +9546,9 @@
 
           // Copy default WP events onto metabox.
           if ($('.postbox').length) {
-            copyEvents($('.postbox .handlediv').first(), $postbox.children('.handlediv'));
-            copyEvents($('.postbox .hndle').first(), $postbox.children('.hndle'));
+            // Use find() as these elements are nested within ".postbox-header".
+            copyEvents($('.postbox .handlediv').first(), $postbox.find('.handlediv'));
+            copyEvents($('.postbox .hndle').first(), $postbox.find('.hndle'));
           }
 
           // Append metabox to the bottom of "side-sortables".

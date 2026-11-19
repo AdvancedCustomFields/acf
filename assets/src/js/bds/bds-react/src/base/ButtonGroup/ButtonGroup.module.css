@@ -1,0 +1,27 @@
+/*
+ * Button group — Base Design System node 3849:28992.
+ *
+ * The Figma component carries no fill, border, radius or padding: the whole
+ * component is the `Buttons` slot's auto-layout. Both orientations bind the
+ * same gap (space/space-sm) and centre on the cross axis.
+ *
+ * Both variants are HUG on both axes in Figma, so the group must size to its
+ * buttons. A bare `display: flex` div is block-level and would stretch to the
+ * parent's width instead, which is what design fixed upstream on 2026-09-04
+ * ("link and button groups not hugging content correctly").
+ */
+
+.group {
+	display: flex;
+	align-items: center;
+	gap: var(--space-sm);
+	width: fit-content;
+}
+
+.horizontal {
+	flex-direction: row;
+}
+
+.vertical {
+	flex-direction: column;
+}

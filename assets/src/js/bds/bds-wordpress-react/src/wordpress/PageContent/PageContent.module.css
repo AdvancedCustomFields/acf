@@ -1,0 +1,79 @@
+/*
+ * PageContent — engineering layout shell (no Figma component).
+ */
+
+.container {
+	box-sizing: border-box;
+	display: flex;
+	width: 100%;
+	justify-content: center;
+}
+
+.content {
+	box-sizing: border-box;
+	display: flex;
+	gap: var(--space-2xl);
+	width: 100%;
+	max-width: var(--bds-page-width-max, 1280px);
+	min-width: var(--bds-page-width-min, 920px);
+	/*
+	 * Side + bottom + top padding frame the column. Pass paddingTop="none"
+	 * when content sits flush under PageHeader (border separates).
+	 */
+	padding-inline: var(--space-3xl);
+	padding-block: var(--space-3xl);
+}
+
+.contentPaddingTopNone {
+	padding-block-start: var(--space-none);
+}
+
+.contentPaddingNone {
+	padding: var(--space-none);
+}
+
+@container bds-page (width < 920px) {
+	.container {
+		justify-content: flex-start;
+	}
+}
+
+@media screen and (max-width: 360px) {
+	.content:not(.contentPaddingNone) {
+		padding-inline: var(--space-xl);
+		padding-block: var(--space-xl);
+	}
+
+	.content.contentPaddingTopNone:not(.contentPaddingNone) {
+		padding-block-start: var(--space-none);
+	}
+}
+
+.main {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-2xl);
+	width: 100%;
+	flex-grow: 1;
+	flex-shrink: 1;
+}
+
+.mainGapNone {
+	gap: var(--space-none);
+}
+
+.sidebar {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-2xl);
+	flex-shrink: 0;
+	/*
+	 * 402px = 400px content + 2px border — sections expect a 400px sidebar.
+	 * Not on the size scale; engineering constant from pds-react.
+	 */
+	width: 402px;
+}
+
+.sidebarGapNone {
+	gap: var(--space-none);
+}

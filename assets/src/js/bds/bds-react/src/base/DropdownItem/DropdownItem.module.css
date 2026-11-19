@@ -1,0 +1,202 @@
+/*
+ * Dropdown item — Base Design System node 1719:3136.
+ *
+ * Figma's `State` axis (Default / Hover / Focus) is CSS state here, and the two
+ * are kept apart: hover is a background change, focus is a ring. Ark's roving
+ * cursor lands as `data-highlighted` for both pointer and keyboard, so the
+ * attribute alone cannot tell them apart — the ring is gated on the panel's
+ * `data-bds-nav`, which reports whether the last thing the user did was press
+ * a key or use a pointer. Mouse users get the clean hover fill; keyboard users
+ * get the ring on the row they are on.
+ *
+ * Figma's `Highlighted` axis is the *selected* row: the same bg-secondary fill
+ * plus a trailing check. It is a prop because selection is data, not
+ * interaction.
+ */
+
+.item {
+	display: flex;
+	box-sizing: border-box;
+	width: 100%;
+	align-items: center;
+	padding: var(--space-xs) var(--space-sm);
+	border: 0;
+	border-radius: var(--radius-sm);
+	margin: 0;
+	background-color: transparent;
+	color: var(--text-primary);
+	cursor: pointer;
+	gap: var(--space-sm);
+	min-height: var(--size-xl);
+	text-align: start;
+}
+
+.item:hover,
+.item[data-highlighted] {
+	background-color: var(--bg-secondary);
+}
+
+/*
+ * A row used on its own (outside a menu) takes focus itself, so its ring is the
+ * ordinary one. `:focus-visible` is already keyboard-only.
+ */
+.item:focus-visible {
+	box-shadow: var(--focus-ring-accent);
+	outline: none;
+}
+
+/*
+ * Inside a menu the row never holds focus — the panel does, and moves a cursor
+ * over the rows with `aria-activedescendant`. The panel reports how the user is
+ * driving (see `menu/useInputModality.ts`); the ring follows the cursor only
+ * while that is the keyboard. Addressed as a global attribute because the panel
+ * is styled by a different CSS module.
+ */
+:global([data-bds-nav="keyboard"]) .item[data-highlighted] {
+	box-shadow: var(--focus-ring-accent);
+	outline: none;
+}
+
+.selected {
+	background-color: var(--bg-secondary);
+}
+
+.item[data-disabled],
+.item:disabled {
+	background-color: transparent;
+	color: var(--text-disabled);
+	cursor: not-allowed;
+}
+
+.item[data-disabled] .icon,
+.item:disabled .icon {
+	color: var(--fg-disabled);
+}
+
+/* The `Wrapper` frame — leading icon plus label, filling the row. */
+.wrapper {
+	display: flex;
+	min-width: 0;
+	flex: 1 1 auto;
+	align-items: center;
+	gap: var(--space-sm);
+}
+
+/* Figma draws a size-xs glyph inside a size-md box. */
+.icon {
+	display: inline-flex;
+	width: var(--size-md);
+	height: var(--size-md);
+	flex: none;
+	align-items: center;
+	justify-content: center;
+	color: var(--fg-tertiary);
+}
+
+.icon > svg {
+	width: var(--size-xs);
+	height: var(--size-xs);
+}
+
+.label {
+	overflow: hidden;
+	min-width: 0;
+	flex: 1 1 auto;
+	font-family: var(--label-md-font-family);
+	font-size: var(--label-md-font-size);
+	font-weight: var(--font-weight-regular);
+	letter-spacing: var(--label-md-letter-spacing);
+	line-height: var(--label-md-line-height);
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+/* The trailing check on a selected row. */
+.check {
+	display: inline-flex;
+	width: var(--size-xs);
+	height: var(--size-xs);
+	flex: none;
+	align-items: center;
+	justify-content: center;
+	color: var(--fg-accent);
+}
+
+.check > svg {
+	width: 100%;
+	height: 100%;
+}
+
+/*
+ * The Checkbox / Switch a row carries is decorative: the row itself is the
+ * control (role="menuitemcheckbox" / "option"), so the inner input must not
+ * take focus or swallow the click.
+ */
+.control {
+	display: inline-flex;
+	flex: none;
+	align-items: center;
+	pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+ * Item type = User
+ * ------------------------------------------------------------------------ */
+
+.user {
+	gap: var(--space-md);
+}
+
+.userDetails {
+	display: flex;
+	overflow: hidden;
+	min-width: 0;
+	flex: 1 1 auto;
+	flex-direction: column;
+	gap: var(--space-4xs);
+}
+
+.userName {
+	overflow: hidden;
+	font-family: var(--label-md-font-family);
+	font-size: var(--label-md-font-size);
+	font-weight: var(--font-weight-medium);
+	letter-spacing: var(--label-md-letter-spacing);
+	line-height: var(--label-md-line-height);
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.userDescription {
+	overflow: hidden;
+	color: var(--text-tertiary);
+	font-family: var(--label-sm-font-family);
+	font-size: var(--label-sm-font-size);
+	font-weight: var(--font-weight-regular);
+	letter-spacing: var(--label-sm-letter-spacing);
+	line-height: var(--label-sm-line-height);
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+ * Item type = Divider / Group title — static rows, not choices.
+ * ------------------------------------------------------------------------ */
+
+.divider {
+	padding: var(--space-3xs) 0;
+}
+
+.groupTitle {
+	display: flex;
+	box-sizing: border-box;
+	align-items: flex-end;
+	min-height: var(--size-lg);
+	padding: var(--space-sm) var(--space-sm) var(--space-3xs);
+	color: var(--text-tertiary);
+	font-family: var(--label-sm-font-family);
+	font-size: var(--label-sm-font-size);
+	font-weight: var(--font-weight-medium);
+	letter-spacing: var(--label-sm-letter-spacing);
+	line-height: var(--label-sm-line-height);
+}

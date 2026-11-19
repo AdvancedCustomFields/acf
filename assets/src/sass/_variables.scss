@@ -5,6 +5,11 @@
 *--------------------------------------------------------------------------------------------*/
 
 /* colors */
+// Appended to element selectors in ACF's admin styles so they don't reach into WP Engine Base Design System surfaces
+// (anything inside [data-bds-theme]), whose components style their own native inputs and headings. :where() keeps
+// the original selector's specificity, so non-BDS screens cascade exactly as before.
+$not-bds: ':where(:not([data-bds-theme] *))';
+
 $acf_blue: #2a9bd9;
 $acf_notice: #2a9bd9;
 $acf_error: #d94f4f;

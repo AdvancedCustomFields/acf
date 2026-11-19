@@ -27,6 +27,7 @@ return array(
     'ACF\\Meta\\Post' => $baseDir . '/src/Meta/Post.php',
     'ACF\\Meta\\Term' => $baseDir . '/src/Meta/Term.php',
     'ACF\\Meta\\User' => $baseDir . '/src/Meta/User.php',
+    'ACF\\Settings_Page\\Settings_Page' => $baseDir . '/src/Settings_Page/Settings_Page.php',
     'ACF\\Site_Health\\AI_Usage' => $baseDir . '/src/Site_Health/AI_Usage.php',
     'ACF\\Site_Health\\Site_Health' => $baseDir . '/src/Site_Health/Site_Health.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',

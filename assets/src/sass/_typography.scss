@@ -18,7 +18,7 @@
 *---------------------------------------------------------------------------------------------*/
 .acf-admin-page {
 
-	a {
+	a#{$not-bds} {
 		color: $blue-500;
 	}
 
@@ -48,15 +48,16 @@
 .acf-admin-page,
 .acf-headerbar {
 
-	h1 {
+	h1#{$not-bds} {
 		@extend .acf-h1;
 	}
 
-	h2 {
+	// Exclude design system components that manage their own typography via CSS module utility classes.
+	h2:not([class*="text-base"])#{$not-bds} {
 		@extend .acf-h2;
 	}
 
-	h3 {
+	h3#{$not-bds} {
 		@extend .acf-h3;
 	}
 

@@ -1,0 +1,291 @@
+/* bds-check-tokens-allow: --z-index --available-height --reference-width */
+/*
+ * The shared floating-menu shell.
+ *
+ * Every menu-like surface in the Base Design System is the same construction —
+ * the `Dropdown menu` component (2162:2115) — differing only in what is put in
+ * its `Dropdown items` slot and whether the `Search` row is shown.
+ *
+ * Three components render it: Dropdown menu (2162:2115), the open state of
+ * Select input (3196:173610) and the open state of Multi-select input
+ * (3196:174935). Both inputs embed a real `Dropdown menu` instance, so the
+ * surface is defined once here and composed rather than copied.
+ *
+ * Consumed with CSS Modules `composes:`.
+ *
+ * Not a component — this directory has no index.ts and is not exported.
+ */
+
+/*
+ * The floating panel is portaled to `document.body` (see each menu component),
+ * so it already paints above in-flow siblings such as a following Switch. Ark
+ * sets `position: absolute` inline; restating it here means the stacking
+ * `z-index` still has a positioned box to apply to even if the inline style is
+ * ever stripped, and keeps the panel above other portaled overlays.
+ */
+.positioner {
+	position: absolute;
+	/*
+	 * Belt and braces only — `.popover` below is what sets the overlay level,
+	 * for the reason documented there. Kept so the panel is still lifted if
+	 * zag ever stops writing its inline `z-index`, and deliberately the same
+	 * value.
+	 */
+	z-index: 300000;
+}
+
+/*
+ * The panel. Figma: Preset=Icon & label (1719:3346).
+ *
+ * Ark holds DOM focus on the panel and moves a roving cursor over the rows with
+ * `aria-activedescendant`, so the panel is what the browser would draw a focus
+ * ring around. Design's rule is that the focus state belongs to the individual
+ * row, never the surface, so the UA outline is suppressed here — DropdownItem
+ * picks the ring up from the highlighted row instead.
+ */
+.popover {
+	/*
+	 * Overlay scale: floating. Above Modal and ChatLightbox so a floating
+	 * surface opened inside either is visible — see
+	 * docs/engineering-components.md#overlay-stacking-order.
+	 *
+	 * On the CONTENT, not the positioner, because zag is what actually applies
+	 * it: `@zag-js/popper` writes `z-index: var(--z-index)` inline on the
+	 * positioner and fills `--z-index` by reading
+	 * `getComputedStyle(positioner.firstElementChild).zIndex`. A value declared
+	 * on the positioner therefore loses to that inline rule, and zag copies the
+	 * content's `auto` — which, with the `isolation: isolate` it also sets
+	 * inline, collapses the whole surface to paint at level 0 and lets any
+	 * `z-index: 1` sibling cover it. Declaring it here is what zag propagates.
+	 */
+	z-index: 300000;
+	/*
+	 * Bound the panel, or the `overflow-y: auto` on `.list` below has nothing
+	 * to scroll inside: the panel had no height cap at all, so a long list grew
+	 * to its content and ran off both ends of the viewport with no scrollbar
+	 * and no way to reach the rows past the edge. The composer's site picker
+	 * lists up to a hundred.
+	 *
+	 * `--available-height` is the space zag's size middleware measures between
+	 * the trigger and the viewport edge; it sets the property whether or not a
+	 * consumer opts into `positioning.fitViewport`, and the fallback covers the
+	 * first paint and any surface positioned some other way.
+	 */
+	max-block-size: var(--available-height, 60vh);
+	display: flex;
+	overflow: hidden;
+	box-sizing: border-box;
+	flex-direction: column;
+	border-radius: var(--radius-lg);
+	background-color: var(--bg-primary);
+	box-shadow: var(--shadow-with-stroke-lg);
+	outline: none;
+}
+
+.popover[hidden] {
+	display: none;
+}
+
+/* The `Dropdown items` slot. */
+.list {
+	display: flex;
+	overflow-y: auto;
+	flex-direction: column;
+	gap: var(--space-3xs);
+	padding: var(--space-2xs);
+}
+
+/* `display: flex` above outranks the UA rule for `hidden`. */
+.list[hidden] {
+	display: none;
+}
+
+/*
+ * The list of the two select inputs, capped at seven and a half rows: the
+ * list's space-2xs top padding, seven `Dropdown item`s at size-xl with the
+ * space-3xs gap after each, then half of the eighth. The cut-off row is the
+ * cue that the list scrolls (Dale, 2026-10-07) — no custom scrollbar until
+ * design draws one. Seven rows still fit without scrolling; eight or more
+ * scroll. Figma's open `Select input` (3196:173628 › Dropdown items) draws
+ * eight rows at 278px, so the cap (258px) sits half a row under it. The search
+ * row (when shown) stays pinned above.
+ *
+ * Figma sets no max height on `Dropdown menu` itself; design asked for the cap
+ * so a long list (Connector's models, Coworker's sites) cannot run the panel to
+ * the viewport edge. `.popover`'s `--available-height` bound still applies
+ * when there is less room than this. Action menus keep the uncapped `.list`.
+ */
+.boundedList {
+	box-sizing: border-box;
+	max-block-size: calc(
+		var(--space-2xs) + 7.5 * var(--size-xl) + 7 * var(--space-3xs)
+	);
+}
+
+/*
+ * The positioner of the two select inputs. Figma draws their embedded
+ * `Dropdown menu` at the field's width (3196:173592 › Dropdown menu, 320px
+ * under a 320px field); without this the panel shrank to its longest row.
+ * `--reference-width` is the trigger width zag's popper writes on the
+ * positioner, and its inline `min-width: max-content` still lets a row wider
+ * than the field grow the panel rather than clip.
+ */
+.fieldWidth {
+	inline-size: var(--reference-width);
+}
+
+/*
+ * Shown in place of the rows once the search has filtered everything out.
+ * Figma (7376:15099, Dale, 2026-10-07) draws it as a `Dropdown item` —
+ * Basic, Default, no icon — sitting in the `Dropdown items` slot, with its
+ * label overridden to the placeholder colour. So it takes the row's box (the
+ * item's padding and size-xl height) inset by the slot's space-2xs padding, and
+ * no interaction state, since it is not a choice. The list itself is hidden
+ * while this shows, so its padding is restated here as the margin.
+ */
+.empty {
+	display: flex;
+	box-sizing: border-box;
+	align-items: center;
+	min-height: var(--size-xl);
+	margin: var(--space-2xs);
+	padding: var(--space-xs) var(--space-sm);
+	color: var(--text-placeholder);
+	font-family: var(--label-md-font-family);
+	font-size: var(--label-md-font-size);
+	font-weight: var(--font-weight-regular);
+	letter-spacing: var(--label-md-letter-spacing);
+	line-height: var(--label-md-line-height);
+}
+
+/*
+ * The `Search` row. Hidden in Figma by default and revealed by the
+ * `Searchable` boolean; a bottom rule separates it from the list.
+ */
+.search {
+	display: flex;
+	box-sizing: border-box;
+	align-items: center;
+	min-height: var(--size-2xl);
+	padding: 0 var(--space-2xs);
+	border-bottom: var(--stroke-sm) solid var(--border-subtle);
+}
+
+.searchWrapper {
+	display: flex;
+	flex: 1 1 auto;
+	min-width: 0;
+	align-items: center;
+	gap: var(--space-sm);
+	padding: var(--space-2xs) var(--space-sm);
+}
+
+/*
+ * Figma draws the glyph at size-sm inside a size-md box. The icon colour is not
+ * bound to a variable upstream (1719:3346 › Search › Search icon), so it takes
+ * the same quaternary foreground as every other in-field icon.
+ */
+.searchIcon {
+	display: inline-flex;
+	width: var(--size-md);
+	height: var(--size-md);
+	flex: none;
+	align-items: center;
+	justify-content: center;
+	color: var(--fg-quaternary);
+}
+
+.searchIcon > svg {
+	width: var(--size-sm);
+	height: var(--size-sm);
+}
+
+/*
+ * Qualified by `[type]` for host form styles: wp-admin's forms.css styles every
+ * `input[type="text"]` — border, radius, min-height, padding, line-height and a
+ * focus box-shadow — at a specificity (0,1,1) that beats a single class, and
+ * the panel is portaled to `document.body`, outside any wrapper a plugin could
+ * scope a reset to. (0,2,0) here and (0,3,0) on focus keep the field Figma's
+ * bare search row on every host.
+ */
+.searchInput[type] {
+	min-width: 0;
+	min-height: 0;
+	flex: 1 1 auto;
+	padding: 0;
+	border: 0;
+	border-radius: 0;
+	margin: 0;
+	background: transparent;
+	box-shadow: none;
+	color: var(--text-primary);
+	font-family: var(--label-md-font-family);
+	font-size: var(--label-md-font-size);
+	font-weight: var(--font-weight-regular);
+	letter-spacing: var(--label-md-letter-spacing);
+	line-height: var(--label-md-line-height);
+	outline: none;
+}
+
+/*
+ * No focus ring on the search field, deliberately.
+ *
+ * Ark focuses it as the menu opens, and a text input matches `:focus-visible`
+ * whenever it is focused — pointer or keyboard, the modality heuristic does not
+ * apply to text entry. So the ring was drawn every single time the menu opened,
+ * where it reads as a permanent blue box around the field rather than as a
+ * focus cue, and it competes with the highlighted row, which is where this
+ * surface actually shows where you are (Ark drives the rows with
+ * `aria-activedescendant`, not DOM focus).
+ *
+ * The caret plus the just-opened menu are the indication here, and focus cannot
+ * arrive on this field any other way — the menu traps it. Bends the
+ * design-system rule that every interactive element carries a visible focus
+ * state, so it is recorded under Platform adaptations in
+ * docs/figma-divergences.md for design to confirm.
+ */
+.searchInput[type]:focus {
+	border: 0;
+	box-shadow: none;
+	outline: none;
+}
+
+.searchInput::placeholder {
+	color: var(--text-placeholder);
+	opacity: 1; /* Firefox dims placeholders by default */
+}
+
+/*
+ * Trailing clear control — Figma's `↪ Search clear action` boolean
+ * (2162:2115 › Search › Icon, 3187:173295): a bare 20px frame holding a 16px
+ * `x` glyph, with no fill and no hover state, so nothing here paints a
+ * background. The glyph colour is not bound upstream; it takes the same
+ * quaternary foreground as the search icon beside it. `.searchInput` grows, so
+ * the control only has to refuse to shrink. The keyboard focus ring below is
+ * the one addition — every interactive element carries one.
+ */
+.searchClear {
+	display: inline-flex;
+	width: var(--size-md);
+	height: var(--size-md);
+	flex: none;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	border: 0;
+	border-radius: var(--radius-xs);
+	margin: 0;
+	background: transparent;
+	color: var(--fg-quaternary);
+	cursor: pointer;
+}
+
+.searchClear > svg {
+	width: var(--size-xs);
+	height: var(--size-xs);
+}
+
+.searchClear:focus-visible {
+	box-shadow: var(--focus-ring-accent);
+	outline: none;
+}

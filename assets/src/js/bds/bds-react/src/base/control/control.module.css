@@ -1,0 +1,92 @@
+/*
+ * Shared layout for the selection controls.
+ *
+ * Checkbox, Checklist item, Radio button and Switch all pair a small control
+ * with an optional label, hint and group — identical layout and typography in
+ * Figma, differing only in the glyph itself.
+ *
+ * This holds the parts that are the same. Each component keeps its own glyph
+ * styling and its own `:has( .control:disabled )` overrides, because those have
+ * to reference that component's own class.
+ *
+ * Not a component — this directory has no index.ts and is not exported.
+ */
+
+.wrapper {
+	display: flex;
+	align-items: flex-start;
+	gap: var(--space-sm);
+}
+
+.labelText {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-3xs);
+	cursor: pointer;
+}
+
+.title {
+	font-family: var(--label-md-font-family);
+	font-size: var(--label-md-font-size);
+	line-height: var(--label-md-line-height);
+	letter-spacing: var(--label-md-letter-spacing);
+	font-weight: var(--font-weight-regular);
+	color: var(--text-secondary);
+}
+
+.hint {
+	font-family: var(--body-sm-font-family);
+	font-size: var(--body-sm-font-size);
+	line-height: var(--body-sm-line-height);
+	letter-spacing: var(--body-sm-letter-spacing);
+	font-weight: var(--font-weight-regular);
+	color: var(--text-tertiary);
+}
+
+/*
+ * Groups — Checkbox group (2162:1027), Radio group (2162:1263) and Checklist
+ * group (2162:1572) share one construction: a Top Section (Label, then Hint
+ * text md, space-2xs apart) space-lg above a Checkbox Section whose rows are
+ * space-md apart.
+ *
+ * The <legend> must stay the fieldset's first child to name the group, and a
+ * rendered legend is not a flex item, so its spacing is a margin.
+ */
+.group {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-lg);
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+
+.groupLabel {
+	padding: 0;
+	margin-bottom: var(--space-lg);
+	font-family: var(--label-md-font-family);
+	font-size: var(--label-md-font-size);
+	line-height: var(--label-md-line-height);
+	letter-spacing: var(--label-md-letter-spacing);
+	font-weight: var(--font-weight-regular);
+	color: var(--text-secondary);
+}
+
+.group:has(> .groupHint) > .groupLabel {
+	margin-bottom: var(--space-2xs);
+}
+
+.groupHint {
+	font-family: var(--body-md-font-family);
+	font-size: var(--body-md-font-size);
+	line-height: var(--body-md-line-height);
+	letter-spacing: var(--body-md-letter-spacing);
+	font-weight: var(--font-weight-regular);
+	color: var(--text-tertiary);
+}
+
+.groupItems {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-md);
+}

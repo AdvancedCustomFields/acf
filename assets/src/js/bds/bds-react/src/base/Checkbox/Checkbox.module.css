@@ -1,0 +1,186 @@
+/*
+ * Checkbox — Base Design System node 629:8492.
+ *
+ * A native <input type="checkbox"> with `appearance: none`, styled directly.
+ * One element, native semantics, native focus, native indeterminate — no
+ * wrapper span and no state machine.
+ *
+ * Figma's Checked / Intermediate / State axes are all native: :checked,
+ * :indeterminate, :hover, :focus-visible, :disabled.
+ *
+ * Every rule below is qualified with `input` so it reaches (0,1,1): WordPress
+ * admin's `forms.css` styles `input[type="checkbox"]` at that specificity, and a
+ * bare class would lose to it and render a stock wp-admin checkbox. Where
+ * wp-admin styles a state (`:checked::before` carries the Dashicon tick), the
+ * matching rule here restates the geometry it would otherwise inherit.
+ */
+
+input.checkbox {
+	appearance: none;
+	display: inline-grid;
+	place-content: center;
+	flex: none;
+	box-sizing: border-box;
+	width: var(--size-xs);
+	height: var(--size-xs);
+	margin: 0;
+	border: var(--stroke-sm) solid var(--border-primary);
+	border-radius: var(--radius-xs);
+	background-color: var(--bg-primary);
+	box-shadow: var(--shadow-sm);
+	color: var(--fg-on-color);
+	cursor: pointer;
+	transition:
+		background-color 120ms ease,
+		border-color 120ms ease,
+		box-shadow 120ms ease;
+}
+
+/* The tick, drawn with a CSS mask so it inherits `color` and needs no SVG. */
+input.checkbox::before {
+	content: "";
+	width: var(--size-xs);
+	height: var(--size-xs);
+	background-color: currentColor;
+	transform: scale(0);
+	transition: transform 80ms ease-in-out;
+	/* stylelint-disable-next-line function-url-quotes */
+	mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E")
+		center / contain no-repeat;
+}
+
+/*
+ * `content` and `margin` are restated because wp-admin's
+ * `input[type="checkbox"]:checked::before` outranks the rule above and would
+ * replace the masked tick with an offset Dashicon glyph.
+ */
+input.checkbox:checked::before,
+input.checkbox:indeterminate::before {
+	content: "";
+	margin: 0;
+	transform: scale(1);
+}
+
+input.checkbox:checked::before {
+	width: var(--size-xs);
+	height: var(--size-xs);
+}
+
+/*
+ * Indeterminate replaces the tick with a bar: 8×2 in Figma. Width is
+ * `--size-3xs`; height is `--stroke-md` (2px) — Figma leaves height unbound.
+ */
+input.checkbox:indeterminate::before {
+	width: var(--size-3xs);
+	height: var(--stroke-md);
+	border-radius: var(--radius-full);
+	mask: none;
+}
+
+input.checkbox:checked,
+input.checkbox:indeterminate {
+	border-color: transparent;
+	background-color: var(--bg-control-active);
+}
+
+input.checkbox:hover:not(:disabled):not(:checked):not(:indeterminate) {
+	border-color: var(--border-primary);
+}
+
+input.checkbox:hover:not(:disabled):is(:checked, :indeterminate) {
+	background-color: var(--bg-control-active_hover);
+}
+
+input[type="checkbox"].checkbox:focus-visible {
+	outline: none;
+	box-shadow: var(--focus-ring-accent);
+}
+
+/*
+ * wp-admin's `input[type="checkbox"]:focus` (forms.css and the colour scheme)
+ * darkens the border on any focus and rings it on mouse focus too. The
+ * `[type]` qualifier outranks it, so the resting border holds and the ring
+ * stays keyboard-only.
+ */
+input[type="checkbox"].checkbox:focus {
+	border-color: var(--border-primary);
+}
+
+input[type="checkbox"].checkbox:focus:is(:checked, :indeterminate) {
+	border-color: transparent;
+}
+
+input[type="checkbox"].checkbox:focus:not(:focus-visible) {
+	box-shadow: var(--shadow-sm);
+}
+
+/* `opacity` resets wp-admin's blanket 0.7 dim — the tokens carry the state. */
+input.checkbox:disabled {
+	border-color: var(--border-disabled);
+	background-color: var(--bg-disabled);
+	box-shadow: none;
+	color: var(--fg-disabled);
+	opacity: 1;
+	cursor: not-allowed;
+}
+
+/* --------------------------------------------------------------------------
+ * Label and group layout — shared with the other selection controls.
+ * ------------------------------------------------------------------------ */
+
+.wrapper {
+	composes: wrapper from "../control/control.module.css";
+}
+
+.labelText {
+	composes: labelText from "../control/control.module.css";
+}
+
+.title {
+	composes: title from "../control/control.module.css";
+}
+
+.title.titleGroup {
+	display: inline-flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: var(--space-3xs);
+}
+
+/* Matches Label's sub label (node 1749:3222), which Checkbox with label nests. */
+.subLabel {
+	color: var(--text-tertiary);
+}
+
+.hint {
+	composes: hint from "../control/control.module.css";
+}
+
+.group {
+	composes: group from "../control/control.module.css";
+}
+
+.groupLabel {
+	composes: groupLabel from "../control/control.module.css";
+}
+
+.groupHint {
+	composes: groupHint from "../control/control.module.css";
+}
+
+.groupItems {
+	composes: groupItems from "../control/control.module.css";
+}
+
+/* Centre the control on the first line of the label text. */
+.wrapper input.checkbox {
+	margin-top: calc((var(--label-md-line-height) - var(--size-xs)) / 2);
+}
+
+.wrapper:has(input.checkbox:disabled) .labelText {
+	cursor: not-allowed;
+}
+
+.wrapper:has(input.checkbox:disabled) .title {
+	color: var(--text-disabled);
+}

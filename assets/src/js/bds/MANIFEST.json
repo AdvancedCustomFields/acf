@@ -1,0 +1,872 @@
+{
+	"generator": "@wpengine/bds-wordpress-react/wporg v0.6.7",
+	"pluginName": "Advanced Custom Fields",
+	"license": "GPL-2.0-or-later",
+	"packages": [
+		{
+			"name": "@wpengine/bds-react",
+			"version": "0.6.7",
+			"dir": "bds-react"
+		},
+		{
+			"name": "@wpengine/bds-wordpress-react",
+			"version": "0.6.7",
+			"dir": "bds-wordpress-react"
+		}
+	],
+	"files": [
+		{
+			"path": "bds-react/src/base/Badge/Badge.module.css",
+			"package": "@wpengine/bds-react",
+			"source": "src/base/Badge/Badge.module.css",
+			"sha256": "eeef1c2c929b43f6677a6fc73b12fc5f89245b90bb1d604de356c4cac39db957",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/base/Badge/Badge.tsx",
+			"package": "@wpengine/bds-react",
+			"source": "src/base/Badge/Badge.tsx",
+			"sha256": "ee6f830b039a5be98716b6ea979682429eb136f1a13a102fb1f4a1ba696cefed",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/base/Button/Button.module.css",
+			"package": "@wpengine/bds-react",
+			"source": "src/base/Button/Button.module.css",
+			"sha256": "3439d339c6a0d6faf5b03044d9170e558521d929614367982f6f78f3c338676d",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/base/Button/Button.tsx",
+			"package": "@wpengine/bds-react",
+			"source": "src/base/Button/Button.tsx",
+			"sha256": "e156eff7dcd1f54856a1ebb383c7c0e1efeff7e0409fcc29b1228f656b29a4b8",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/base/ButtonGroup/ButtonGroup.module.css",
+			"package": "@wpengine/bds-react",
+			"source": "src/base/ButtonGroup/ButtonGroup.module.css",
+			"sha256": "e359d6712e008dc496039c776a5ce0e494a98a87df597205d9b41417c79d6670",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/base/ButtonGroup/ButtonGroup.tsx",
+			"package": "@wpengine/bds-react",
+			"source": "src/base/ButtonGroup/ButtonGroup.tsx",
+			"sha256": "52334e59906efbde94f4c52ca14f3227e534d27ace759c6d9dcc86f07b6fc5b0",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/base/Checkbox/Checkbox.module.css",
+			"package": "@wpengine/bds-react",
+			"source": "src/base/Checkbox/Checkbox.module.css",
+			"sha256": "fc51feef78725c347c158aacbfd4b6961cb9a8d14b04fdb1d82602cd3b94261f",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/base/Checkbox/Checkbox.tsx",
+			"package": "@wpengine/bds-react",
+			"source": "src/base/Checkbox/Checkbox.tsx",
+			"sha256": "1047e880dccb968dc7a8b4a7710deeff13230e10b9ad75be71dca8bdb16d111e",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/base/DropdownItem/DropdownItem.module.css",
+			"package": "@wpengine/bds-react",
+			"source": "src/base/DropdownItem/DropdownItem.module.css",
+			"sha256": "a81a54af8990e2363ee0c27009371b3315699f15bc3e69f60612615346fa2626",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/base/DropdownItem/DropdownItem.tsx",
+			"package": "@wpengine/bds-react",
+			"source": "src/base/DropdownItem/DropdownItem.tsx",
+			"sha256": "b3d6a92fffbccda075f46a91b9682567292727178490a39f6812a231a205db40",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/base/HintText/HintText.module.css",
+			"package": "@wpengine/bds-react",
+			"source": "src/base/HintText/HintText.module.css",
+			"sha256": "50548c36f2a7e2df2fdb22dbcf2e460522c901cbf62740f0b98c770ecb540db3",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/base/HintText/HintText.tsx",
+			"package": "@wpengine/bds-react",
+			"source": "src/base/HintText/HintText.tsx",
+			"sha256": "132222fa00d679fab16057cedc7a48fdd5db914b98a732b982cca2d067e9f852",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/base/InteractiveIcon/InteractiveIcon.module.css",
+			"package": "@wpengine/bds-react",
+			"source": "src/base/InteractiveIcon/InteractiveIcon.module.css",
+			"sha256": "08bd04e9a361310630e6318856e5049b1269a069dc5e74f46270565fc002d9c0",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/base/InteractiveIcon/InteractiveIcon.tsx",
+			"package": "@wpengine/bds-react",
+			"source": "src/base/InteractiveIcon/InteractiveIcon.tsx",
+			"sha256": "2d33c10462107451fdfc8980c5e8bbd1f6909a04a9b68657fea0adee38fdbfac",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/base/Label/Label.module.css",
+			"package": "@wpengine/bds-react",
+			"source": "src/base/Label/Label.module.css",
+			"sha256": "adbca002c6a234579111328a1174a86495cdf261fcd10752c19676383df6591e",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/base/Label/Label.tsx",
+			"package": "@wpengine/bds-react",
+			"source": "src/base/Label/Label.tsx",
+			"sha256": "cb631f516edf36d6a5618d247dc24384f5cb9f3cddd5f0cdd4de28c25139c6a6",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/base/Link/Link.module.css",
+			"package": "@wpengine/bds-react",
+			"source": "src/base/Link/Link.module.css",
+			"sha256": "785a2ab6dafc8c3c55ee6421d73a04247bdd32b067dabe6db8b8f2ea43e8d76b",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/base/Link/Link.tsx",
+			"package": "@wpengine/bds-react",
+			"source": "src/base/Link/Link.tsx",
+			"sha256": "45d4bc3c6d24f45415599867c275b642ad6eba1e8cf072ee59a054e2edead641",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/base/SelectInput/SelectInput.module.css",
+			"package": "@wpengine/bds-react",
+			"source": "src/base/SelectInput/SelectInput.module.css",
+			"sha256": "98ebd81734e4deec5c9226a3620cde557e453f1162800248f68bb8eafd111517",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/base/SelectInput/SelectInput.tsx",
+			"package": "@wpengine/bds-react",
+			"source": "src/base/SelectInput/SelectInput.tsx",
+			"sha256": "7b41be1af1653b7452ef622ff49f630f85b45ebedb40bb7177a588e1d1d771ba",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/base/Separator/Separator.module.css",
+			"package": "@wpengine/bds-react",
+			"source": "src/base/Separator/Separator.module.css",
+			"sha256": "15f9bd7206254a771b7a7e7def6a730ff63a28fac8457640cea72bbab00224fe",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/base/Separator/Separator.tsx",
+			"package": "@wpengine/bds-react",
+			"source": "src/base/Separator/Separator.tsx",
+			"sha256": "66665a06c358f9a5bd538bce33b374f8cc21e90bf2b7b4e4e330629bbcdc33fc",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/base/Switch/Switch.module.css",
+			"package": "@wpengine/bds-react",
+			"source": "src/base/Switch/Switch.module.css",
+			"sha256": "cdb08e25d6c23af4ae55ff050ec0bfc1323c706f10f06a16d66e0b4cd5f0f5a0",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/base/Switch/Switch.tsx",
+			"package": "@wpengine/bds-react",
+			"source": "src/base/Switch/Switch.tsx",
+			"sha256": "0a8c001b10f0d9d58d05c408e8238a347ba7d2e08b77881b496cb524279014ba",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/base/Tabs/Tabs.module.css",
+			"package": "@wpengine/bds-react",
+			"source": "src/base/Tabs/Tabs.module.css",
+			"sha256": "6802ca547ad0a1c458e67b221e12d9c04672f7a6af10e4c243a49b8f43bd7123",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/base/Tabs/Tabs.tsx",
+			"package": "@wpengine/bds-react",
+			"source": "src/base/Tabs/Tabs.tsx",
+			"sha256": "0aa13df91c00a966081b733de285a51a31702cf1e1c569bd4dbc01fdb3280452",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/base/TextInput/TextInput.module.css",
+			"package": "@wpengine/bds-react",
+			"source": "src/base/TextInput/TextInput.module.css",
+			"sha256": "03e8d03ed182a2432a2c8c2ed9f509f159533b7dd2feb3f525cbd2fc203c8384",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/base/TextInput/TextInput.tsx",
+			"package": "@wpengine/bds-react",
+			"source": "src/base/TextInput/TextInput.tsx",
+			"sha256": "5e4420422f0f6930f7688dd5f1fbef25dc2c7bff8f6a2e987faaae5980e37f9f",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/base/Toast/Toast.module.css",
+			"package": "@wpengine/bds-react",
+			"source": "src/base/Toast/Toast.module.css",
+			"sha256": "01d23d4d22b38239f4e3689f912486121de8e1e3d8c820967c126fc96ee3e329",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/base/Toast/Toast.tsx",
+			"package": "@wpengine/bds-react",
+			"source": "src/base/Toast/Toast.tsx",
+			"sha256": "4dffdb769353561246481aac6c112a333da38870f14455caec35d82a1f554188",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/base/Tooltip/Tooltip.module.css",
+			"package": "@wpengine/bds-react",
+			"source": "src/base/Tooltip/Tooltip.module.css",
+			"sha256": "ea7320b69548349951c5fadc4d55a2bb05540bded0d13ed6ff8bca2be34a53af",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/base/Tooltip/Tooltip.tsx",
+			"package": "@wpengine/bds-react",
+			"source": "src/base/Tooltip/Tooltip.tsx",
+			"sha256": "8f180cc11b87fe973b09656bb086f95b499a742041fff4c8ab8fbbec4dda3de6",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/base/control/control.module.css",
+			"package": "@wpengine/bds-react",
+			"source": "src/base/control/control.module.css",
+			"sha256": "39b6e18dc89b8534f7cfeb1a6432bc0936ef6c3b1b350815a7cbd257a6eae42a",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/base/field/field.module.css",
+			"package": "@wpengine/bds-react",
+			"source": "src/base/field/field.module.css",
+			"sha256": "5270317cea5fa2e91a68e2245ae05fc2fb70ed4f970c25f930075a2025bbcd4f",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/base/menu/MenuSearch.tsx",
+			"package": "@wpengine/bds-react",
+			"source": "src/base/menu/MenuSearch.tsx",
+			"sha256": "7584c29d63edfca541da972dd206593701175c95d6e376785015b44d02360ea8",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/base/menu/collection.ts",
+			"package": "@wpengine/bds-react",
+			"source": "src/base/menu/collection.ts",
+			"sha256": "173683c9e6f77604c216e85558181dd44a6dce1461e432049a58695784bd1906",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/base/menu/menu.module.css",
+			"package": "@wpengine/bds-react",
+			"source": "src/base/menu/menu.module.css",
+			"sha256": "4678fe5edc98fb30fa989a0a14d79c119bf1f0315a1a1ac4057911677ca8814c",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/base/menu/useInputModality.ts",
+			"package": "@wpengine/bds-react",
+			"source": "src/base/menu/useInputModality.ts",
+			"sha256": "e98ff7250b06a2ed0b9a8aa2c36b85c3edcf870a53c6282e1a873c2e8fac44f8",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/base/router/RouterProvider.tsx",
+			"package": "@wpengine/bds-react",
+			"source": "src/base/router/RouterProvider.tsx",
+			"sha256": "31d4c6105bdf750fbce2f35000b21e46d80180b097785267602fab65144ecb9f",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/base/theme/usePortaledBdsTheme.ts",
+			"package": "@wpengine/bds-react",
+			"source": "src/base/theme/usePortaledBdsTheme.ts",
+			"sha256": "01d79889e9a8385e79fe31de80c5bcc6f4bcddab62e37de02f1349473c766a45",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/engineering/Toaster/Toaster.module.css",
+			"package": "@wpengine/bds-react",
+			"source": "src/engineering/Toaster/Toaster.module.css",
+			"sha256": "9798f0195d1cdc45d703e262139b65044cacda136eb264b3f9f7ae951db469c0",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/engineering/Toaster/Toaster.tsx",
+			"package": "@wpengine/bds-react",
+			"source": "src/engineering/Toaster/Toaster.tsx",
+			"sha256": "ebe04b2b976c8604b015128d6061beb119a2d8911f3fafa763f7815f4126f4b6",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/fonts/files/inter-cyrillic-ext-wght-normal.woff2",
+			"package": "@wpengine/bds-react",
+			"source": "src/fonts/files/inter-cyrillic-ext-wght-normal.woff2",
+			"sha256": "ca157063339ac4ad418f214f3abfed119b0798ab4d377386ce5c9e5a7a435ebd",
+			"category": "third-party",
+			"license": "OFL-1.1",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/fonts/files/inter-cyrillic-wght-normal.woff2",
+			"package": "@wpengine/bds-react",
+			"source": "src/fonts/files/inter-cyrillic-wght-normal.woff2",
+			"sha256": "71d5ee93cc1e9f1d520a3a8b66456de18c7879d8df09d57fcd2eaff75fef0075",
+			"category": "third-party",
+			"license": "OFL-1.1",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/fonts/files/inter-greek-ext-wght-normal.woff2",
+			"package": "@wpengine/bds-react",
+			"source": "src/fonts/files/inter-greek-ext-wght-normal.woff2",
+			"sha256": "6e9e020a25f9b56d418f2c085b1d3c09725a4da23fe693a5b463064606732190",
+			"category": "third-party",
+			"license": "OFL-1.1",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/fonts/files/inter-greek-wght-normal.woff2",
+			"package": "@wpengine/bds-react",
+			"source": "src/fonts/files/inter-greek-wght-normal.woff2",
+			"sha256": "1be3448e292fbf05ffe176fe1e43f135013d50b1e7d324ad1a558f623d3bb6f6",
+			"category": "third-party",
+			"license": "OFL-1.1",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/fonts/files/inter-latin-ext-wght-normal.woff2",
+			"package": "@wpengine/bds-react",
+			"source": "src/fonts/files/inter-latin-ext-wght-normal.woff2",
+			"sha256": "34b9c504cab7a73e37b746343a449132e56cf7b5481af2cb81dc74dcff25c956",
+			"category": "third-party",
+			"license": "OFL-1.1",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/fonts/files/inter-latin-wght-normal.woff2",
+			"package": "@wpengine/bds-react",
+			"source": "src/fonts/files/inter-latin-wght-normal.woff2",
+			"sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62",
+			"category": "third-party",
+			"license": "OFL-1.1",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/fonts/files/inter-vietnamese-wght-normal.woff2",
+			"package": "@wpengine/bds-react",
+			"source": "src/fonts/files/inter-vietnamese-wght-normal.woff2",
+			"sha256": "5c66f9e07e90c6d4ac4922cc68d60de26c17b1858e677fb5e603fce3952b3ff2",
+			"category": "third-party",
+			"license": "OFL-1.1",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/fonts/files/jetbrains-mono-cyrillic-400-normal.woff2",
+			"package": "@wpengine/bds-react",
+			"source": "src/fonts/files/jetbrains-mono-cyrillic-400-normal.woff2",
+			"sha256": "522f5827308102a9c0ea7860b5a11306043610ecf03d150ba32056a06e8c56e2",
+			"category": "third-party",
+			"license": "OFL-1.1",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/fonts/files/jetbrains-mono-cyrillic-ext-400-normal.woff2",
+			"package": "@wpengine/bds-react",
+			"source": "src/fonts/files/jetbrains-mono-cyrillic-ext-400-normal.woff2",
+			"sha256": "5f4292eb92ca542e9f60048ca72832d0183b1a06e5d7bcfeed16f9be9ebb4018",
+			"category": "third-party",
+			"license": "OFL-1.1",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/fonts/files/jetbrains-mono-greek-400-normal.woff2",
+			"package": "@wpengine/bds-react",
+			"source": "src/fonts/files/jetbrains-mono-greek-400-normal.woff2",
+			"sha256": "365b7a8eaff022b13ed0561fde3890a04a30507d773ecd5adb3aca8e766a285c",
+			"category": "third-party",
+			"license": "OFL-1.1",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/fonts/files/jetbrains-mono-latin-400-normal.woff2",
+			"package": "@wpengine/bds-react",
+			"source": "src/fonts/files/jetbrains-mono-latin-400-normal.woff2",
+			"sha256": "14425ba9c695763c1547f48a206b7aa60350a33ae23de09f0407877f3fcd89eb",
+			"category": "third-party",
+			"license": "OFL-1.1",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/fonts/files/jetbrains-mono-latin-ext-400-normal.woff2",
+			"package": "@wpengine/bds-react",
+			"source": "src/fonts/files/jetbrains-mono-latin-ext-400-normal.woff2",
+			"sha256": "505dfba8ecbe77e82765f36d317ed7ef4ac42719dc5f4ae68d1c483fd22d0d14",
+			"category": "third-party",
+			"license": "OFL-1.1",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/fonts/files/jetbrains-mono-vietnamese-400-normal.woff2",
+			"package": "@wpengine/bds-react",
+			"source": "src/fonts/files/jetbrains-mono-vietnamese-400-normal.woff2",
+			"sha256": "efc9e0df126ca6dd1c37a022bfe1d664d23b3fcaa32979d2028ecb4c074306c8",
+			"category": "third-party",
+			"license": "OFL-1.1",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/fonts/fonts.css",
+			"package": "@wpengine/bds-react",
+			"source": "src/fonts/fonts.css",
+			"sha256": "f02bd587cc18004130dc2347aa4591f386884ec46ac828ee29ae205cccc00461",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/tokens/dataviz.css",
+			"package": "@wpengine/bds-react",
+			"source": "src/tokens/dataviz.css",
+			"sha256": "4afead394bc1d257b14924aced291e04dfb13dd8006f58d041c331e5bac38b88",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/tokens/effects.css",
+			"package": "@wpengine/bds-react",
+			"source": "src/tokens/effects.css",
+			"sha256": "b254ecea68ffb8d43d3a574b2ecfb1048cecc66e1094a4245047b3d085c947b6",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/tokens/index.css",
+			"package": "@wpengine/bds-react",
+			"source": "src/tokens/index.css",
+			"sha256": "04dde97848f4812952f5dab0038ecbefd86b7aea44a9877cd50671e13d53048e",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/tokens/primitives.css",
+			"package": "@wpengine/bds-react",
+			"source": "src/tokens/primitives.css",
+			"sha256": "1dda11011da2cea792a5b932add909b7f775d63b26b25cfdcf0da033aa9d3e31",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/tokens/surface.css",
+			"package": "@wpengine/bds-react",
+			"source": "src/tokens/surface.css",
+			"sha256": "8c96325adead2c6e4044c350ef54ea9f5826d6f8372eddaa7422ad91a3b8f89e",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/tokens/tokens.css",
+			"package": "@wpengine/bds-react",
+			"source": "src/tokens/tokens.css",
+			"sha256": "0f44d88cd66921ee6b4aa4e660c576cd544fa89041887784431135bbdb372a2d",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-react/src/tokens/typography.css",
+			"package": "@wpengine/bds-react",
+			"source": "src/tokens/typography.css",
+			"sha256": "547086ba5b55fe148b6d60a81741de16610a53a34a2b69a9e96b40fbf8c00fd2",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-wordpress-react/src/wordpress/Page/Page.module.css",
+			"package": "@wpengine/bds-wordpress-react",
+			"source": "src/wordpress/Page/Page.module.css",
+			"sha256": "6408ce143aef5783e3c74dd2d009338ac2cce2300428f5e5d41bba12fc6f9398",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-wordpress-react/src/wordpress/Page/Page.tsx",
+			"package": "@wpengine/bds-wordpress-react",
+			"source": "src/wordpress/Page/Page.tsx",
+			"sha256": "b11ea878591a8d8f63e3c95dc37e44176809463488d5cda403cf331bfb57e6ad",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-wordpress-react/src/wordpress/PageContent/PageContent.module.css",
+			"package": "@wpengine/bds-wordpress-react",
+			"source": "src/wordpress/PageContent/PageContent.module.css",
+			"sha256": "e4a24475f778e9d3d3a369afc6b0d8e6f557b6801da1d467c583ae457a4273c7",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-wordpress-react/src/wordpress/PageContent/PageContent.tsx",
+			"package": "@wpengine/bds-wordpress-react",
+			"source": "src/wordpress/PageContent/PageContent.tsx",
+			"sha256": "441cb58fc789396aece32f6d403c25271b59c80b92842e32d7b5d2795050a113",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-wordpress-react/src/wordpress/PageHeader/PageHeader.module.css",
+			"package": "@wpengine/bds-wordpress-react",
+			"source": "src/wordpress/PageHeader/PageHeader.module.css",
+			"sha256": "7bfeda88df54ccfd223d3506287dfa9f872e7cf49a9f6b8307ee1cc53d636e8a",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-wordpress-react/src/wordpress/PageHeader/PageHeader.tsx",
+			"package": "@wpengine/bds-wordpress-react",
+			"source": "src/wordpress/PageHeader/PageHeader.tsx",
+			"sha256": "4af6a9e81ea54f2e85cb3abc8055ab9c2a7b8ed3415c9efce7e8305aadbad854",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-wordpress-react/src/wordpress/Section/Section.module.css",
+			"package": "@wpengine/bds-wordpress-react",
+			"source": "src/wordpress/Section/Section.module.css",
+			"sha256": "5cb6b0f28cb0cc4bc0aefd849d4cbaa6eed4b0ac7f62d9651fd913cec6ab96fa",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-wordpress-react/src/wordpress/Section/Section.tsx",
+			"package": "@wpengine/bds-wordpress-react",
+			"source": "src/wordpress/Section/Section.tsx",
+			"sha256": "d660fe493fd1d2ecb9d45a7b15180865242a372d6f8ec1ba93938a3b3353794c",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-wordpress-react/src/wordpress/SectionHeader/SectionHeader.module.css",
+			"package": "@wpengine/bds-wordpress-react",
+			"source": "src/wordpress/SectionHeader/SectionHeader.module.css",
+			"sha256": "5df78063d9950ba6301d5d1023fb7b32b5cde5b2bdd78a2c853f677a02af8649",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-wordpress-react/src/wordpress/SectionHeader/SectionHeader.tsx",
+			"package": "@wpengine/bds-wordpress-react",
+			"source": "src/wordpress/SectionHeader/SectionHeader.tsx",
+			"sha256": "60543af730c38ad61df8a4d67c0781fb7943e2aae1ba265fe0fec92a53233af8",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-wordpress-react/src/wordpress/SectionRow/SectionRow.module.css",
+			"package": "@wpengine/bds-wordpress-react",
+			"source": "src/wordpress/SectionRow/SectionRow.module.css",
+			"sha256": "408f0cea649df88ff5604f5acfc0defbffb7a6f9d8ce38fd598a4736cc62f1b5",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-wordpress-react/src/wordpress/SectionRow/SectionRow.tsx",
+			"package": "@wpengine/bds-wordpress-react",
+			"source": "src/wordpress/SectionRow/SectionRow.tsx",
+			"sha256": "0cba7d56adedf8a97681b03bf197840dcbda11c84e935d1faa6ca85d95a15ea8",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-wordpress-react/src/wordpress/TabbedNavigation/TabbedNavigation.module.css",
+			"package": "@wpengine/bds-wordpress-react",
+			"source": "src/wordpress/TabbedNavigation/TabbedNavigation.module.css",
+			"sha256": "93d8d5a658c6d53812fc99560e699ef0f7ce7428a5a7a95d49ab07718ee79c63",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		},
+		{
+			"path": "bds-wordpress-react/src/wordpress/TabbedNavigation/TabbedNavigation.tsx",
+			"package": "@wpengine/bds-wordpress-react",
+			"source": "src/wordpress/TabbedNavigation/TabbedNavigation.tsx",
+			"sha256": "a1c9fcb46e903785dcd16d8f73dd82d86ab3f853457d63e0c8bcb616073cefb0",
+			"category": "bds",
+			"license": "GPL-2.0-or-later",
+			"bundles": [
+				"assets/build/js:acf-settings"
+			]
+		}
+	],
+	"excluded": [],
+	"trademarks": [],
+	"generated": [
+		"LICENSE.txt",
+		"NOTICE.txt"
+	]
+}

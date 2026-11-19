@@ -1,0 +1,85 @@
+/*
+ * Separator — Base Design System node 2101:37609.
+ *
+ * Figma models six Types: Default, Label center, Label left, Button,
+ * Icon Button, and Filled. Button and Icon Button differ only in what sits in
+ * the middle slot, so in code they collapse into `type="default"` with
+ * children. See docs/figma-divergences.md.
+ */
+
+.separator {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	gap: var(--space-md);
+	border: 0;
+	margin: 0;
+}
+
+/* The rule itself. A flex child either side of the middle content. */
+.line {
+	flex: 1 1 auto;
+	min-width: 0;
+	height: 0;
+	border-top: var(--stroke-sm) solid var(--line-color);
+}
+
+/* --------------------------------------------------------------------------
+ * Styles — set the rule colour, and the label colour where the type has one.
+ * ------------------------------------------------------------------------ */
+
+.default {
+	--line-color: var(--border-primary);
+	--label-color: var(--text-tertiary);
+	--filled-bg: var(--bg-neutral-subtle);
+}
+
+.subtle {
+	--line-color: var(--border-subtle);
+	--label-color: var(--text-tertiary);
+	--filled-bg: var(--bg-secondary);
+}
+
+.accent {
+	--line-color: var(--border-accent);
+	--label-color: var(--text-accent);
+	--filled-bg: var(--bg-accent-subtle);
+}
+
+/* --------------------------------------------------------------------------
+ * Types
+ * ------------------------------------------------------------------------ */
+
+.label {
+	flex: 0 0 auto;
+	color: var(--label-color);
+	font-family: var(--label-sm-font-family);
+	font-size: var(--label-sm-font-size);
+	line-height: var(--label-sm-line-height);
+	letter-spacing: var(--label-sm-letter-spacing);
+	font-weight: var(--font-weight-regular);
+}
+
+/*
+ * Filled is a solid bar rather than a rule — no lines, and the label sits
+ * inside it at the xs step.
+ */
+.filled {
+	display: block;
+	width: 100%;
+	padding: var(--space-2xs) var(--space-sm);
+	background-color: var(--filled-bg);
+	color: var(--label-color);
+	font-family: var(--label-xs-font-family);
+	font-size: var(--label-xs-font-size);
+	line-height: var(--label-xs-line-height);
+	letter-spacing: var(--label-xs-letter-spacing);
+	font-weight: var(--font-weight-regular);
+}
+
+/* The middle slot when it holds arbitrary content (a Button, an Icon button). */
+.slot {
+	flex: 0 0 auto;
+	display: inline-flex;
+	align-items: center;
+}

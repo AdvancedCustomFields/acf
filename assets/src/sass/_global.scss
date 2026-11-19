@@ -2032,7 +2032,7 @@ html[dir="rtl"] .acf-table > tbody > tr > td.order + td {
 			top: 48px;
 			right: 32px;
 			bottom: 0;
-			left: 12px;
+			left: 32px;
 		}
 
 		@media screen and (max-width: 768px) {
@@ -2045,7 +2045,7 @@ html[dir="rtl"] .acf-table > tbody > tr > td.order + td {
 
 	&.rtl .wrap {
 		margin: {
-			right: 12px;
+			right: 32px;
 			left: 32px;
 		}
 
@@ -2063,6 +2063,16 @@ html[dir="rtl"] .acf-table > tbody > tr > td.order + td {
 				left: 0;
 			}
 		}
+	}
+}
+
+// The admin toolbar and page content sit flush against the WP admin sidebar. Matches the
+// specificity of the Plugin Design System rule ACF previously relied on for this.
+body.acf-admin-page {
+	background-color: #eef0f1;
+
+	#wpwrap #wpcontent {
+		padding: 0;
 	}
 }
 

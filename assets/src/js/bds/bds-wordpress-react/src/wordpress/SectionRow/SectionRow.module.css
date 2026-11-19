@@ -1,0 +1,128 @@
+/*
+ * SectionRow — WordPress Component Library `Section row` (2031:607) and its
+ * internal label part `_Section row label` (2031:287).
+ */
+
+/*
+ * The row is its own size container so it stacks at the width it is given
+ * (a Section in a sidebar, a narrow tab panel), not only at a narrow
+ * viewport. Name kept in sync with SECTION_ROW_CONTAINER_NAME in
+ * layoutShell.ts.
+ */
+.row {
+	container-type: inline-size;
+	container-name: bds-section-row;
+	box-sizing: border-box;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: stretch;
+	width: 100%;
+	overflow: clip;
+	border-block-end: var(--stroke-sm) solid var(--border-subtle);
+}
+
+/*
+ * The Section's own stroke draws the bottom edge, so the last row's rule
+ * would double it; design confirmed the last row drops it. See
+ * docs/figma-divergences.md.
+ */
+.row:last-child {
+	border-block-end: none;
+}
+
+/*
+ * Figma nests a `Wrapper` frame inside the label frame; the outer frame's
+ * `space-md` gap never applies because the wrapper is its only child, so the
+ * two collapse into one element carrying the wrapper's gap. `Section row`
+ * overrides that gap to `space-sm` on its instance (the `_Section row label`
+ * main component has `space-2xs`); design confirmed `space-sm` is intended,
+ * so the label column aligns with the content area by default.
+ */
+.label {
+	box-sizing: border-box;
+	display: flex;
+	flex: none;
+	flex-direction: column;
+	gap: var(--space-sm);
+	/*
+	 * 320px: `_Section row label` is a fixed 320px frame (max 320px) with no
+	 * size variable bound; the size scale stops at 128px. Kept in sync with
+	 * SECTION_ROW_LABEL_WIDTH_PX in layoutShell.ts.
+	 */
+	width: 320px;
+	padding: var(--space-2xl);
+	border-inline-end: var(--stroke-sm) solid var(--border-subtle);
+	background-color: var(--bg-secondary);
+}
+
+.labelRow {
+	display: flex;
+	align-items: flex-start;
+	gap: var(--space-xs);
+}
+
+.labelText {
+	composes: label-md-regular from global;
+	min-width: 0;
+	color: var(--text-primary);
+}
+
+.required {
+	composes: label-md-medium from global;
+	flex: none;
+	color: var(--text-secondary);
+}
+
+.visuallyHidden {
+	position: absolute;
+	overflow: hidden;
+	block-size: 1px;
+	inline-size: 1px;
+	clip-path: inset(50%);
+	white-space: nowrap;
+}
+
+.supportingText {
+	composes: body-xs-regular from global;
+	margin: 0;
+	color: var(--text-tertiary);
+}
+
+/*
+ * Figma's content area distributes its children with Space between and
+ * aligns them to the start of the cross axis, so a control keeps its own
+ * width. Figma ignores its stored 8px itemSpacing under Space between (see
+ * docs/figma-source.md), but a CSS gap is the floor space-between never goes
+ * below, so it stops stacked children touching when the row is no taller than
+ * they are.
+ */
+.contentArea {
+	box-sizing: border-box;
+	display: flex;
+	flex: 1 1 0;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: var(--space-sm);
+	min-width: 0;
+	padding: var(--space-2xl);
+}
+
+/*
+ * Below 600px (the 320px label column plus a 280px content column) the label
+ * stacks over the content area. Container queries cannot read custom
+ * properties, so this is a literal kept in sync with
+ * SECTION_ROW_STACK_BELOW_PX in layoutShell.ts.
+ */
+@container bds-section-row (width < 600px) {
+	/*
+	 * A container query styles descendants only, so the row cannot switch to
+	 * a column here; a full-width label wraps the content area onto its own
+	 * line instead.
+	 */
+	.label {
+		width: 100%;
+		border-inline-end: none;
+		border-block-end: var(--stroke-sm) solid var(--border-subtle);
+	}
+}

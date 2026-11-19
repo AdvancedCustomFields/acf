@@ -1,0 +1,196 @@
+/*
+ * The shared field shell.
+ *
+ * Every Base Design System input is the same construction — Label, a bordered
+ * Container, and Hint text — differing only in what sits inside the Container.
+ * Verified identical across Text input (3183:170719), Textarea (3183:172170),
+ * Number input (3196:177919) and Password input (3196:179314): same radius,
+ * fill, border, shadow, padding and state colours.
+ *
+ * Consumed with CSS Modules `composes:`, so each component keeps its own class
+ * names while the shell is defined once.
+ *
+ * Not a component — this directory has no index.ts and is not exported.
+ */
+
+.field {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-sm);
+}
+
+.container {
+	display: flex;
+	align-items: stretch;
+	box-sizing: border-box;
+	width: 100%;
+	border: var(--stroke-sm) solid var(--border-primary);
+	border-radius: var(--radius-md);
+	background-color: var(--bg-primary);
+	box-shadow: var(--shadow-xs);
+	transition:
+		border-color 120ms ease,
+		box-shadow 120ms ease;
+}
+
+/* The ring lives on the shell; the real focus is on the inner control. */
+.container:focus-within {
+	box-shadow: var(--focus-ring-accent);
+}
+
+.inputContainer {
+	display: flex;
+	flex: 1 1 auto;
+	min-width: 0;
+	align-items: center;
+	gap: var(--space-sm);
+	padding: var(--space-sm) var(--space-md);
+}
+
+.control {
+	flex: 1 1 auto;
+	min-width: 0;
+	border: 0;
+	padding: 0;
+	margin: 0;
+	background: transparent;
+	color: var(--text-primary);
+	font: inherit;
+	outline: none; /* the shell owns the focus ring */
+}
+
+/*
+ * wp-admin's forms.css styles the native control itself: `input[type="text"]`
+ * (and password, number, email, url, search, tel, date, time…) and
+ * `textarea` get a border, radius, padding, a 40px min-height, a white fill and
+ * a colour at (0,1,1); `input[readonly]` and `input:disabled` repaint the fill
+ * (0,1,1); and `…:focus` adds a border colour, box-shadow and outline at
+ * (0,2,1). All of that beats `.control` (0,1,0), so inside wp-admin the control
+ * drew a second box inside the shell. Restate the reset scoped to the shell —
+ * (0,2,0), and (0,3,0) for focus — so none of it lands. Colour is left to the
+ * state rules below, which come later at the same specificity and win.
+ */
+.container .control {
+	min-height: 0;
+	border: 0;
+	border-radius: 0;
+	padding: 0;
+	background: transparent;
+	box-shadow: none;
+	color: var(--text-primary);
+}
+
+.container .control:focus {
+	border: 0;
+	box-shadow: none;
+	outline: none;
+}
+
+.control::placeholder {
+	color: var(--text-placeholder);
+	opacity: 1; /* Firefox dims placeholders by default */
+}
+
+.icon {
+	display: inline-flex;
+	flex: none;
+	align-items: center;
+	justify-content: center;
+	width: var(--size-xs);
+	height: var(--size-xs);
+	color: var(--fg-quaternary);
+}
+
+.icon > svg {
+	width: 100%;
+	height: 100%;
+}
+
+/* --------------------------------------------------------------------------
+ * Sizes
+ *
+ * Figma sets an explicit shell height; min-height reproduces it while still
+ * allowing growth if the consumer's text scales.
+ *
+ * Typography sits on the shell rather than the input area, so prefix and suffix
+ * — which are siblings of the input area, not children — inherit the same type
+ * instead of falling back to the document default.
+ * ------------------------------------------------------------------------ */
+
+.sm .container {
+	min-height: var(--size-xl);
+	font-family: var(--label-sm-font-family);
+	font-size: var(--label-sm-font-size);
+	line-height: var(--label-sm-line-height);
+	letter-spacing: var(--label-sm-letter-spacing);
+	font-weight: var(--font-weight-regular);
+}
+
+.md .container {
+	min-height: var(--size-2xl);
+	font-family: var(--label-md-font-family);
+	font-size: var(--label-md-font-size);
+	line-height: var(--label-md-line-height);
+	letter-spacing: var(--label-md-letter-spacing);
+	font-weight: var(--font-weight-regular);
+}
+
+.lg .container {
+	min-height: var(--size-3xl);
+	font-family: var(--label-lg-font-family);
+	font-size: var(--label-lg-font-size);
+	line-height: var(--label-lg-line-height);
+	letter-spacing: var(--label-lg-letter-spacing);
+	font-weight: var(--font-weight-regular);
+}
+
+/* --------------------------------------------------------------------------
+ * States
+ * ------------------------------------------------------------------------ */
+
+.invalid .container {
+	border-color: var(--border-negative);
+}
+
+.invalid .container:focus-within {
+	box-shadow: var(--focus-ring-negative);
+}
+
+/*
+ * Read Only and Disabled share a surface but differ in stroke and text colour:
+ * read-only content is still meant to be readable, disabled content is not.
+ * Text input's `State=Read Only` binds `border-subtle`; `State=Disabled` binds
+ * `border-disabled`.
+ *
+ * Order matters: a disabled input also matches `:read-only`, so the disabled
+ * rule comes second and wins at equal specificity.
+ */
+.container:has(.control:read-only) {
+	border-color: var(--border-subtle);
+	background-color: var(--bg-disabled);
+	box-shadow: none;
+}
+
+/*
+ * A read-only control still takes focus, so it still shows the ring. The rule
+ * above drops the resting shadow at a higher specificity than
+ * `.container:focus-within`, which would otherwise remove it.
+ */
+.container:has(.control:read-only):focus-within {
+	box-shadow: var(--focus-ring-accent);
+}
+
+.container:has(.control:disabled) {
+	border-color: var(--border-disabled);
+	background-color: var(--bg-disabled);
+	box-shadow: none;
+}
+
+.control:read-only {
+	color: var(--text-tertiary);
+}
+
+.control:disabled {
+	color: var(--text-disabled);
+	cursor: not-allowed;
+}

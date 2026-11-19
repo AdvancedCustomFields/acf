@@ -1,0 +1,158 @@
+/*
+ * Toast — Base Design System node 2101:28589.
+ *
+ * The card surface is the same for every Type: bg-primary + border-blend. Type
+ * only drives inner styling — mainly the leading icon (Style=Gray on Neutral,
+ * Style=Accent contained icon on Info, semantic colours on the rest). Do not
+ * expect Alert-style surface shifts per type.
+ *
+ * The icon sits in a contained-icon-shaped box, but it is NOT `ContainedIcon`.
+ * Upstream the `Info` toast uses a `Style=Accent` contained icon — accent
+ * subtle fills, not the info family. The icon box is built here from the tokens
+ * Toast actually binds so all five types stay consistent.
+ *
+ * The surface width is fixed at 360px in Figma. Width is the toaster's
+ * concern — the component fills whatever it is given and the toaster caps it.
+ */
+
+.toast {
+	display: flex;
+	box-sizing: border-box;
+	align-items: flex-start;
+	gap: var(--space-lg);
+	padding: var(--space-md);
+	background-color: var(--bg-primary);
+	border: var(--stroke-sm) solid var(--border-blend);
+	border-radius: var(--radius-lg);
+	box-shadow: var(--shadow-xl);
+}
+
+.content {
+	display: flex;
+	flex: 1 1 auto;
+	align-items: flex-start;
+	gap: var(--space-xs);
+	min-width: 0;
+}
+
+/* --------------------------------------------------------------------------
+ * Icon
+ * ------------------------------------------------------------------------ */
+
+.iconBox {
+	display: inline-flex;
+	flex: none;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	width: var(--size-xl);
+	height: var(--size-xl);
+	border: var(--stroke-sm) solid var(--toast-icon-border);
+	border-radius: var(--radius-md);
+	background-color: var(--toast-icon-bg);
+	color: var(--toast-icon-fg);
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: var(--size-sm);
+	height: var(--size-sm);
+	color: currentColor;
+}
+
+.icon > svg {
+	width: 100%;
+	height: 100%;
+}
+
+/* --------------------------------------------------------------------------
+ * Copy
+ * ------------------------------------------------------------------------ */
+
+.body {
+	display: flex;
+	flex: 1 1 auto;
+	flex-direction: column;
+	gap: var(--space-sm);
+	padding-inline: var(--space-2xs);
+	min-width: 0;
+}
+
+.copy {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-2xs);
+	min-width: 0;
+}
+
+.title {
+	font-family: var(--label-md-font-family);
+	font-size: var(--label-md-font-size);
+	line-height: var(--label-md-line-height);
+	letter-spacing: var(--label-md-letter-spacing);
+	font-weight: var(--font-weight-medium);
+	color: var(--text-primary);
+}
+
+.message {
+	font-family: var(--body-sm-font-family);
+	font-size: var(--body-sm-font-size);
+	line-height: var(--body-sm-line-height);
+	letter-spacing: var(--body-sm-letter-spacing);
+	font-weight: var(--font-weight-regular);
+	color: var(--text-secondary);
+}
+
+/*
+ * Title only — no description or actions. Figma draws only the full card, where
+ * the copy fills the 32px icon's height; a lone 16px title would sit on the
+ * icon's top edge, so it and the close control centre on the icon instead.
+ */
+.titleOnly,
+.titleOnly .content {
+	align-items: center;
+}
+
+/* Close control — `InteractiveIcon` in markup; class is layout-only here. */
+
+.close {
+	flex: none;
+}
+
+/* --------------------------------------------------------------------------
+ * Types — only the icon box changes; the surface and copy are shared.
+ * ------------------------------------------------------------------------ */
+
+.info {
+	--toast-icon-bg: var(--bg-accent-subtle);
+	--toast-icon-border: var(--border-accent-subtle);
+	--toast-icon-fg: var(--fg-accent);
+}
+
+/* Neutral uses a bare Gray icon, not a contained box. Icon tokens are our
+ * convention; the card surface is `bg-primary` for every type, same as Figma. */
+.neutral {
+	--toast-icon-bg: var(--bg-secondary);
+	--toast-icon-border: var(--border-subtle);
+	--toast-icon-fg: var(--fg-secondary);
+}
+
+.negative {
+	--toast-icon-bg: var(--bg-negative-subtle);
+	--toast-icon-border: var(--border-negative-subtle);
+	--toast-icon-fg: var(--fg-negative);
+}
+
+.positive {
+	--toast-icon-bg: var(--bg-positive-subtle);
+	--toast-icon-border: var(--border-positive-subtle);
+	--toast-icon-fg: var(--fg-positive);
+}
+
+.warning {
+	--toast-icon-bg: var(--bg-warning-subtle);
+	--toast-icon-border: var(--border-warning-subtle);
+	--toast-icon-fg: var(--fg-warning);
+}

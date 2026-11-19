@@ -1,0 +1,74 @@
+/*
+ * Text input — Base Design System node 3183:170719.
+ *
+ * The shell (field, container, input container, sizes, states) is shared with
+ * every other input — see ../field/field.module.css for the structure and why
+ * it is factored out. Only the prefix/suffix affixes are specific to this one.
+ */
+
+.field {
+	composes: field from "../field/field.module.css";
+}
+
+.sm {
+	composes: sm from "../field/field.module.css";
+}
+
+.md {
+	composes: md from "../field/field.module.css";
+}
+
+.lg {
+	composes: lg from "../field/field.module.css";
+}
+
+.invalid {
+	composes: invalid from "../field/field.module.css";
+}
+
+.container {
+	composes: container from "../field/field.module.css";
+}
+
+.inputContainer {
+	composes: inputContainer from "../field/field.module.css";
+}
+
+.input {
+	composes: control from "../field/field.module.css";
+}
+
+.icon {
+	composes: icon from "../field/field.module.css";
+}
+
+/*
+ * Prefix and suffix sit outside the padded input area, flush to the shell.
+ * Figma strokes them `border-subtle` in every State, whatever the shell's own
+ * stroke. Their text is `_Prefix/Suffix base` (`919:2186`): Label/md Regular in
+ * `text-secondary` at every Size, not the shell's size-stepped value type.
+ */
+.affix {
+	display: flex;
+	flex: none;
+	align-items: center;
+	padding: var(--space-2xs) var(--space-md);
+	background-color: var(--bg-secondary);
+	font-family: var(--label-md-font-family);
+	font-size: var(--label-md-font-size);
+	line-height: var(--label-md-line-height);
+	letter-spacing: var(--label-md-letter-spacing);
+	font-weight: var(--font-weight-regular);
+	color: var(--text-secondary);
+	white-space: nowrap;
+}
+
+.prefix {
+	border-right: var(--stroke-sm) solid var(--border-subtle);
+	border-radius: var(--radius-md) 0 0 var(--radius-md);
+}
+
+.suffix {
+	border-left: var(--stroke-sm) solid var(--border-subtle);
+	border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}

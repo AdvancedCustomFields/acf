@@ -1521,11 +1521,20 @@
 	.acf-field-settings-split {
 		border: none;
 		flex-direction: column;
+
+		.acf-field {
+			border-top-width: 1px;
+			border-top-style: solid;
+			border-top-color: $gray-200;
+
+			&:nth-child(2n) {
+				border-left: none;
+			}
+		}
 	}
-	.acf-field {
-		border-top-width: 1px;
-		border-top-style: solid;
-		border-top-color: $gray-200;
+
+	#acf-field-group-fields.hide-tabs .acf-field-settings-split .acf-field + .acf-field {
+		border-top: none;
 	}
 }
 

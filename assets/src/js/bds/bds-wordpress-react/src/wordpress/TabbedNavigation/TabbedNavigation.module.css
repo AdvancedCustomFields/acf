@@ -1,0 +1,64 @@
+/*
+ * Tabbed navigation — WordPress Component Library node 2056:6704.
+ *
+ * Figma lays the bar out with Space between, so its stored 24px itemSpacing is
+ * ignored (see docs/figma-source.md) and there is no gap here either. The
+ * bottom stroke is drawn inside the 48px (`size-3xl`) frame, so the box is
+ * border-box and the tabs fill the 47px above it.
+ *
+ * PageHeader restyles this bar's edges through `[data-bds-tabbed-navigation]`
+ * (TABBED_NAVIGATION_ATTRIBUTE): keep the borders on `.bar` so that override
+ * stays a border override.
+ */
+
+.bar {
+	display: flex;
+	align-items: stretch;
+	justify-content: space-between;
+	box-sizing: border-box;
+	width: 100%;
+	min-height: var(--size-3xl);
+	padding-block: var(--space-none);
+	padding-inline: var(--space-xl) var(--space-3xl);
+	border-bottom: var(--stroke-sm) solid var(--border-subtle);
+	background-color: var(--bg-secondary);
+}
+
+/*
+ * The tab row. Figma overrides the nested `Horizontal tabs` to padding
+ * `space-none` and fills the bar's height, and draws no hairline of its own:
+ * the bar's border is the line the indicator sits on. So the list stretches
+ * its tabs to the bar's full height, which puts each tab's `::after`
+ * indicator (base pins it one `stroke-sm` below the tab) over that border.
+ *
+ * Two shapes reach here: a base `TabList` (`role="tablist"`) as a direct
+ * child, or the `<ul>` inside a base `TabNav`'s `<nav>`. The attribute
+ * qualifiers lift these above base's `.line > .list` and
+ * `.horizontal > .list` (0,2,0), which would otherwise draw the hairline and
+ * centre the tabs, whatever order the stylesheets load in.
+ */
+.bar > [role="tablist"][class],
+.bar > nav > ul[class] {
+	align-items: stretch;
+	padding: var(--space-none);
+	border-bottom: none;
+	gap: var(--space-3xs);
+}
+
+/* `TabNav`'s list fills its `<nav>`, which is a column; `TabList` is the row. */
+.bar > nav > ul[class] {
+	flex: 1 1 auto;
+}
+
+/*
+ * Figma's `↪ Secondary content` slot: hugs its content, end-aligned and
+ * vertically centred, `space-2xs` padding and `space-sm` between controls.
+ */
+.secondary {
+	display: flex;
+	flex: none;
+	align-items: center;
+	justify-content: flex-end;
+	gap: var(--space-sm);
+	padding: var(--space-2xs);
+}

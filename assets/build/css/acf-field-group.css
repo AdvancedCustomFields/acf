@@ -684,7 +684,7 @@ html[dir=rtl] .acf-field-object.open > .handle {
 *  Links
 *
 *---------------------------------------------------------------------------------------------*/
-.acf-admin-page a {
+.acf-admin-page a:where(:not([data-bds-theme] *)) {
   color: #0783BE;
 }
 
@@ -693,14 +693,14 @@ html[dir=rtl] .acf-field-object.open > .handle {
 *  Headings
 *
 *---------------------------------------------------------------------------------------------*/
-.acf-h1, .acf-admin-page h1,
-.acf-headerbar h1 {
+.acf-h1, .acf-admin-page h1:where(:not([data-bds-theme] *)),
+.acf-headerbar h1:where(:not([data-bds-theme] *)) {
   font-size: 21px;
   font-weight: 400;
 }
 
-.acf-h2, .post-type-acf-field-group #acf-field-group-fields .acf-field-list.-empty .no-fields-message .no-fields-message-inner h2, .acf-page-title, .acf-admin-page h2,
-.acf-headerbar h2 {
+.acf-h2, .post-type-acf-field-group #acf-field-group-fields .acf-field-list.-empty .no-fields-message .no-fields-message-inner h2, .acf-page-title, .acf-admin-page h2:not([class*=text-base]):where(:not([data-bds-theme] *)),
+.acf-headerbar h2:not([class*=text-base]):where(:not([data-bds-theme] *)) {
   font-size: 18px;
   font-weight: 400;
 }
@@ -708,8 +708,8 @@ html[dir=rtl] .acf-field-object.open > .handle {
 .acf-h3, .post-type-acf-field-group .acf-field-settings-fc_head label, .acf-admin-page #acf-popup .acf-popup-box .title h1,
 .acf-admin-page #acf-popup .acf-popup-box .title h2,
 .acf-admin-page #acf-popup .acf-popup-box .title h3,
-.acf-admin-page #acf-popup .acf-popup-box .title h4, .acf-admin-page h3,
-.acf-headerbar h3 {
+.acf-admin-page #acf-popup .acf-popup-box .title h4, .acf-admin-page h3:where(:not([data-bds-theme] *)),
+.acf-headerbar h3:where(:not([data-bds-theme] *)) {
   font-size: 16px;
   font-weight: 400;
 }
@@ -728,11 +728,11 @@ html[dir=rtl] .acf-field-object.open > .handle {
 .acf-admin-page .p3 {
   font-size: 13.5px;
 }
-.acf-admin-page .p4, .acf-admin-page .post-type-acf-field-group .acf-thead li, .post-type-acf-field-group .acf-thead .acf-admin-page li, .acf-admin-page .post-type-acf-field-group .acf-field-object .handle li, .post-type-acf-field-group .acf-field-object .handle .acf-admin-page li, .acf-admin-page .post-type-acf-field-group .acf-field-object .handle li.li-field-label a.edit-field, .post-type-acf-field-group .acf-field-object .handle li.li-field-label .acf-admin-page a.edit-field, .acf-admin-page .acf-field-list .acf-sortable-handle, .acf-field-list .acf-admin-page .acf-sortable-handle, .acf-admin-page input[type=text],
-.acf-admin-page input[type=search],
-.acf-admin-page input[type=number],
-.acf-admin-page textarea,
-.acf-admin-page select, .acf-admin-page .button, .acf-admin-page .acf-input .select2-container.-acf .select2-selection__rendered,
+.acf-admin-page .p4, .acf-admin-page .post-type-acf-field-group .acf-thead li, .post-type-acf-field-group .acf-thead .acf-admin-page li, .acf-admin-page .post-type-acf-field-group .acf-field-object .handle li, .post-type-acf-field-group .acf-field-object .handle .acf-admin-page li, .acf-admin-page .post-type-acf-field-group .acf-field-object .handle li.li-field-label a.edit-field, .post-type-acf-field-group .acf-field-object .handle li.li-field-label .acf-admin-page a.edit-field, .acf-admin-page .acf-field-list .acf-sortable-handle, .acf-field-list .acf-admin-page .acf-sortable-handle, .acf-admin-page input[type=text]:where(:not([data-bds-theme] *)),
+.acf-admin-page input[type=search]:where(:not([data-bds-theme] *)),
+.acf-admin-page input[type=number]:where(:not([data-bds-theme] *)),
+.acf-admin-page textarea:where(:not([data-bds-theme] *)),
+.acf-admin-page select:where(:not([data-bds-theme] *)), .acf-admin-page .button, .acf-admin-page .acf-input .select2-container.-acf .select2-selection__rendered,
 .acf-admin-page .rule-groups .select2-container.-acf .select2-selection__rendered {
   font-size: 13px;
 }
@@ -806,11 +806,11 @@ html[dir=rtl] .acf-field-object.open > .handle {
   *
   *---------------------------------------------------------------------------------------------*/
 }
-.acf-admin-page input[type=text],
-.acf-admin-page input[type=search],
-.acf-admin-page input[type=number],
-.acf-admin-page textarea,
-.acf-admin-page select {
+.acf-admin-page input[type=text]:where(:not([data-bds-theme] *)),
+.acf-admin-page input[type=search]:where(:not([data-bds-theme] *)),
+.acf-admin-page input[type=number]:where(:not([data-bds-theme] *)),
+.acf-admin-page textarea:where(:not([data-bds-theme] *)),
+.acf-admin-page select:where(:not([data-bds-theme] *)) {
   box-sizing: border-box;
   height: 40px;
   padding-right: 12px;
@@ -822,27 +822,27 @@ html[dir=rtl] .acf-field-object.open > .handle {
   /* stylelint-disable-next-line scss/at-extend-no-missing-placeholder */
   color: #344054;
 }
-.acf-admin-page input[type=text]:focus,
-.acf-admin-page input[type=search]:focus,
-.acf-admin-page input[type=number]:focus,
-.acf-admin-page textarea:focus,
-.acf-admin-page select:focus {
+.acf-admin-page input[type=text]:where(:not([data-bds-theme] *)):focus,
+.acf-admin-page input[type=search]:where(:not([data-bds-theme] *)):focus,
+.acf-admin-page input[type=number]:where(:not([data-bds-theme] *)):focus,
+.acf-admin-page textarea:where(:not([data-bds-theme] *)):focus,
+.acf-admin-page select:where(:not([data-bds-theme] *)):focus {
   outline: 3px solid #EBF5FA;
   border-color: #399CCB;
 }
-.acf-admin-page input[type=text]:disabled,
-.acf-admin-page input[type=search]:disabled,
-.acf-admin-page input[type=number]:disabled,
-.acf-admin-page textarea:disabled,
-.acf-admin-page select:disabled {
+.acf-admin-page input[type=text]:where(:not([data-bds-theme] *)):disabled,
+.acf-admin-page input[type=search]:where(:not([data-bds-theme] *)):disabled,
+.acf-admin-page input[type=number]:where(:not([data-bds-theme] *)):disabled,
+.acf-admin-page textarea:where(:not([data-bds-theme] *)):disabled,
+.acf-admin-page select:where(:not([data-bds-theme] *)):disabled {
   background-color: #F9FAFB;
   color: rgb(128.2255319149, 137.7574468085, 157.7744680851);
 }
-.acf-admin-page input[type=text]::placeholder,
-.acf-admin-page input[type=search]::placeholder,
-.acf-admin-page input[type=number]::placeholder,
-.acf-admin-page textarea::placeholder,
-.acf-admin-page select::placeholder {
+.acf-admin-page input[type=text]:where(:not([data-bds-theme] *))::placeholder,
+.acf-admin-page input[type=search]:where(:not([data-bds-theme] *))::placeholder,
+.acf-admin-page input[type=number]:where(:not([data-bds-theme] *))::placeholder,
+.acf-admin-page textarea:where(:not([data-bds-theme] *))::placeholder,
+.acf-admin-page select:where(:not([data-bds-theme] *))::placeholder {
   color: #98A2B3;
 }
 .acf-admin-page {
@@ -852,7 +852,7 @@ html[dir=rtl] .acf-field-object.open > .handle {
   *
   *---------------------------------------------------------------------------------------------*/
 }
-.acf-admin-page input[type=text]:read-only {
+.acf-admin-page input[type=text]:where(:not([data-bds-theme] *)):read-only {
   background-color: #F9FAFB;
   color: #98A2B3;
 }
@@ -874,7 +874,7 @@ html[dir=rtl] .acf-field-object.open > .handle {
   *
   *---------------------------------------------------------------------------------------------*/
 }
-.acf-admin-page textarea {
+.acf-admin-page textarea:where(:not([data-bds-theme] *)) {
   box-sizing: border-box;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -888,7 +888,7 @@ html[dir=rtl] .acf-field-object.open > .handle {
   *
   *---------------------------------------------------------------------------------------------*/
 }
-.acf-admin-page select {
+.acf-admin-page select:where(:not([data-bds-theme] *)) {
   min-width: 160px;
   max-width: 100%;
   padding-right: 40px;
@@ -897,10 +897,10 @@ html[dir=rtl] .acf-field-object.open > .handle {
   background-position: right 10px top 50%;
   background-size: 20px;
 }
-.acf-admin-page select:hover, .acf-admin-page select:focus {
+.acf-admin-page select:where(:not([data-bds-theme] *)):hover, .acf-admin-page select:where(:not([data-bds-theme] *)):focus {
   color: #0783BE;
 }
-.acf-admin-page select::before {
+.acf-admin-page select:where(:not([data-bds-theme] *))::before {
   content: "";
   display: block;
   position: absolute;
@@ -909,7 +909,7 @@ html[dir=rtl] .acf-field-object.open > .handle {
   width: 20px;
   height: 20px;
 }
-.acf-admin-page.rtl select {
+.acf-admin-page.rtl select:where(:not([data-bds-theme] *)) {
   padding-right: 12px;
   padding-left: 40px;
   background-position: left 10px top 50%;
@@ -921,8 +921,8 @@ html[dir=rtl] .acf-field-object.open > .handle {
   *
   *---------------------------------------------------------------------------------------------*/
 }
-.acf-admin-page input[type=radio],
-.acf-admin-page input[type=checkbox] {
+.acf-admin-page input[type=radio]:where(:not([data-bds-theme] *)),
+.acf-admin-page input[type=checkbox]:where(:not([data-bds-theme] *)) {
   box-sizing: border-box;
   width: 16px;
   height: 16px;
@@ -934,23 +934,23 @@ html[dir=rtl] .acf-field-object.open > .handle {
   box-shadow: none;
   flex-shrink: 0;
 }
-.acf-admin-page input[type=radio]:hover,
-.acf-admin-page input[type=checkbox]:hover {
+.acf-admin-page input[type=radio]:where(:not([data-bds-theme] *)):hover,
+.acf-admin-page input[type=checkbox]:where(:not([data-bds-theme] *)):hover {
   background-color: #EBF5FA;
   border-color: #0783BE;
 }
-.acf-admin-page input[type=radio]:checked, .acf-admin-page input[type=radio]:focus-visible,
-.acf-admin-page input[type=checkbox]:checked,
-.acf-admin-page input[type=checkbox]:focus-visible {
+.acf-admin-page input[type=radio]:where(:not([data-bds-theme] *)):checked, .acf-admin-page input[type=radio]:where(:not([data-bds-theme] *)):focus-visible,
+.acf-admin-page input[type=checkbox]:where(:not([data-bds-theme] *)):checked,
+.acf-admin-page input[type=checkbox]:where(:not([data-bds-theme] *)):focus-visible {
   background-color: #EBF5FA;
   border-color: #0783BE;
 }
-.acf-admin-page input[type=radio]:active,
-.acf-admin-page input[type=checkbox]:active {
+.acf-admin-page input[type=radio]:where(:not([data-bds-theme] *)):active,
+.acf-admin-page input[type=checkbox]:where(:not([data-bds-theme] *)):active {
   box-shadow: 0px 0px 0px 3px #EBF5FA, 0px 0px 0px rgba(255, 54, 54, 0.25);
 }
-.acf-admin-page input[type=radio]:disabled,
-.acf-admin-page input[type=checkbox]:disabled {
+.acf-admin-page input[type=radio]:where(:not([data-bds-theme] *)):disabled,
+.acf-admin-page input[type=checkbox]:where(:not([data-bds-theme] *)):disabled {
   background-color: #F9FAFB;
   border-color: #D0D5DD;
 }
@@ -964,13 +964,13 @@ html[dir=rtl] .acf-field-object.open > .handle {
   *
   *---------------------------------------------------------------------------------------------*/
 }
-.acf-admin-page input[type=radio] {
+.acf-admin-page input[type=radio]:where(:not([data-bds-theme] *)) {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
 }
-.acf-admin-page input[type=radio]:checked:before {
+.acf-admin-page input[type=radio]:where(:not([data-bds-theme] *)):checked:before {
   content: "";
   display: block;
   float: none;
@@ -994,7 +994,7 @@ html[dir=rtl] .acf-field-object.open > .handle {
   *
   *---------------------------------------------------------------------------------------------*/
 }
-.acf-admin-page input[type=checkbox]:checked:before, .acf-admin-page input[type=checkbox]:focus-visible:before {
+.acf-admin-page input[type=checkbox]:where(:not([data-bds-theme] *)):checked:before, .acf-admin-page input[type=checkbox]:where(:not([data-bds-theme] *)):focus-visible:before {
   content: "";
   position: relative;
   top: -1px;
@@ -1008,10 +1008,10 @@ html[dir=rtl] .acf-field-object.open > .handle {
   background-repeat: no-repeat;
   background-position: center;
 }
-.acf-admin-page input[type=checkbox]:checked:before, .acf-admin-page input[type=checkbox]:focus:before {
+.acf-admin-page input[type=checkbox]:where(:not([data-bds-theme] *)):checked:before, .acf-admin-page input[type=checkbox]:where(:not([data-bds-theme] *)):focus:before {
   background-image: url("../../images/field-states/checkbox-active.svg");
 }
-.acf-admin-page.rtl input[type=checkbox]:checked:before, .acf-admin-page.rtl input[type=checkbox]:focus-visible:before {
+.acf-admin-page.rtl input[type=checkbox]:where(:not([data-bds-theme] *)):checked:before, .acf-admin-page.rtl input[type=checkbox]:where(:not([data-bds-theme] *)):focus-visible:before {
   left: 1px;
 }
 .acf-admin-page {
@@ -1070,6 +1070,9 @@ html[dir=rtl] .acf-field-object.open > .handle {
 .acf-admin-page .acf-switch.-on .acf-switch-slider {
   left: 20px;
 }
+html[dir=rtl] .acf-admin-page .acf-switch.-on .acf-switch-slider {
+  right: 20px;
+}
 .acf-admin-page .acf-switch .acf-switch-off,
 .acf-admin-page .acf-switch .acf-switch-on {
   visibility: hidden;
@@ -1120,7 +1123,7 @@ html[dir=rtl] .acf-field-object.open > .handle {
   *
   *---------------------------------------------------------------------------------------------*/
 }
-.acf-admin-page input::file-selector-button {
+.acf-admin-page input:where(:not([data-bds-theme] *))::file-selector-button {
   box-sizing: border-box;
   min-height: 40px;
   margin-right: 16px;
@@ -1136,7 +1139,7 @@ html[dir=rtl] .acf-field-object.open > .handle {
   border-color: #0783BE;
   text-decoration: none;
 }
-.acf-admin-page input::file-selector-button:hover {
+.acf-admin-page input:where(:not([data-bds-theme] *))::file-selector-button:hover {
   border-color: #066998;
   cursor: pointer;
   color: #066998 !important;
@@ -2985,10 +2988,16 @@ html[dir=rtl] .acf-field-object.open > .handle {
     border: none;
     flex-direction: column;
   }
-  .acf-field {
+  .acf-field-settings-split .acf-field {
     border-top-width: 1px;
     border-top-style: solid;
     border-top-color: #EAECF0;
+  }
+  .acf-field-settings-split .acf-field:nth-child(2n) {
+    border-left: none;
+  }
+  #acf-field-group-fields.hide-tabs .acf-field-settings-split .acf-field + .acf-field {
+    border-top: none;
   }
 }
 /*----------------------------------------------------------------------------

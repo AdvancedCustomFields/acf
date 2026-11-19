@@ -574,6 +574,7 @@
 			this.customizeAttachmentFilters();
 			this.customizeAttachmentCompat();
 			this.customizeAttachmentLibrary();
+			this.customizeQuery();
 		},
 
 		customizeAttachmentsButton: function () {
@@ -880,6 +881,38 @@
 					);
 				},
 			} );
+		},
+
+		customizeQuery: function () {
+			// validate
+			if ( ! acf.isset( wp, 'media', 'model', 'Query' ) ) {
+				return;
+			}
+
+			// vars
+			const Query = wp.media.model.Query;
+			const initialize = Query.prototype.initialize;
+
+			// extend
+			Query.prototype.initialize = function ( models, options ) {
+				// vars
+				const args = acf.isget( options, 'args' );
+				const uploader = acf.isget( args, '_acfuploader' );
+
+				// Queries only observe new uploads when all their args are ones WP can filter.
+				// Hide _acfuploader while initializing (as in addFrameStates), otherwise a
+				// search or filter change creates a query that never receives new uploads,
+				// leaving the uploaded attachment out of the library and "Select" disabled.
+				if ( uploader ) {
+					delete args._acfuploader;
+				}
+
+				initialize.apply( this, arguments );
+
+				if ( uploader ) {
+					args._acfuploader = uploader;
+				}
+			};
 		},
 	} );
 } )( jQuery );

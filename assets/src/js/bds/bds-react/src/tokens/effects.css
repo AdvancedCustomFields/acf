@@ -1,0 +1,90 @@
+/*
+ * GENERATED FILE — DO NOT EDIT.
+ *
+ * Produced by scripts/sync-tokens.mjs from the Figma variable snapshot in
+ * scripts/data/. Source: ⚛️ Base Design System (t0Yh04DDpQDtwz4BeZYdxt).
+ *
+ * To change a value, change it in Figma, refresh the snapshot, and re-run
+ * `npm run sync:tokens`.
+ */
+
+/* Shadows and focus rings. Apply with `box-shadow: var(--shadow-md)`.
+ *
+ * Repeated per theme on purpose — see the note in scripts/sync-tokens.mjs.
+ * These reference themed colours, and a custom property resolves its own
+ * `var()`s where it is declared, so one `:root` copy would pin every shadow
+ * and focus ring to the light palette. */
+:root,
+[data-bds-theme='light'] {
+	--shadow-xs: 0px 1px 2px 0px var(--shadow-4);
+	--shadow-sm: 0px 2px 4px 0px var(--shadow-4), 0px 1px 2px 0px var(--shadow-2);
+	--shadow-md: 0px 4px 8px 0px var(--shadow-4), 0px 2px 4px 0px var(--shadow-2);
+	--shadow-lg: 0px 8px 16px 0px var(--shadow-4), 0px 4px 6px 0px var(--shadow-2);
+	--shadow-xl: 0px 16px 24px 0px var(--shadow-4), 0px 6px 10px 0px var(--shadow-2);
+	--shadow-2xl: 0px 32px 48px 0px var(--shadow-5), 0px 12px 20px 0px var(--shadow-2);
+	--shadow-with-stroke-xs: 0px 2px 2px 0px var(--shadow-4), 0px 0px 0px 1px var(--shadow-stroke);
+	--shadow-with-stroke-sm: 0px 3px 4px 0px var(--shadow-4), 0px 1px 2px 0px var(--shadow-2), 0px 0px 0px 1px var(--shadow-stroke);
+	--shadow-with-stroke-md: 0px 5px 8px 0px var(--shadow-4), 0px 2px 4px 0px var(--shadow-2), 0px 0px 0px 1px var(--shadow-stroke);
+	--shadow-with-stroke-lg: 0px 8px 16px 0px var(--shadow-4), 0px 4px 6px 0px var(--shadow-2), 0px 0px 0px 1px var(--shadow-stroke);
+	--shadow-with-stroke-xl: 0px 16px 24px 0px var(--shadow-4), 0px 6px 10px 0px var(--shadow-2), 0px 0px 0px 1px var(--shadow-stroke);
+	--shadow-with-stroke-2xl: 0px 32px 48px 0px var(--shadow-5), 0px 12px 20px 0px var(--shadow-2), 0px 0px 0px 1px var(--shadow-stroke);
+	--focus-ring-accent: 0px 0px 0px 1px var(--bg-primary), 0px 0px 0px 3px var(--focus-accent);
+	--focus-ring-neutral: 0px 0px 0px 1px var(--bg-primary), 0px 0px 0px 3px var(--focus-neutral);
+	--focus-ring-positive: 0px 0px 0px 1px var(--bg-primary), 0px 0px 0px 3px var(--focus-positive);
+	--focus-ring-warning: 0px 0px 0px 1px var(--bg-primary), 0px 0px 0px 3px var(--focus-warning);
+	--focus-ring-negative: 0px 0px 0px 1px var(--bg-primary), 0px 0px 0px 3px var(--focus-negative);
+	--focus-ring-info: 0px 0px 0px 1px var(--bg-primary), 0px 0px 0px 3px var(--focus-info);
+}
+
+[data-bds-theme='dark'] {
+	--shadow-xs: 0px 1px 2px 0px var(--shadow-4);
+	--shadow-sm: 0px 2px 4px 0px var(--shadow-4), 0px 1px 2px 0px var(--shadow-2);
+	--shadow-md: 0px 4px 8px 0px var(--shadow-4), 0px 2px 4px 0px var(--shadow-2);
+	--shadow-lg: 0px 8px 16px 0px var(--shadow-4), 0px 4px 6px 0px var(--shadow-2);
+	--shadow-xl: 0px 16px 24px 0px var(--shadow-4), 0px 6px 10px 0px var(--shadow-2);
+	--shadow-2xl: 0px 32px 48px 0px var(--shadow-5), 0px 12px 20px 0px var(--shadow-2);
+	--shadow-with-stroke-xs: 0px 2px 2px 0px var(--shadow-4), 0px 0px 0px 1px var(--shadow-stroke);
+	--shadow-with-stroke-sm: 0px 3px 4px 0px var(--shadow-4), 0px 1px 2px 0px var(--shadow-2), 0px 0px 0px 1px var(--shadow-stroke);
+	--shadow-with-stroke-md: 0px 5px 8px 0px var(--shadow-4), 0px 2px 4px 0px var(--shadow-2), 0px 0px 0px 1px var(--shadow-stroke);
+	--shadow-with-stroke-lg: 0px 8px 16px 0px var(--shadow-4), 0px 4px 6px 0px var(--shadow-2), 0px 0px 0px 1px var(--shadow-stroke);
+	--shadow-with-stroke-xl: 0px 16px 24px 0px var(--shadow-4), 0px 6px 10px 0px var(--shadow-2), 0px 0px 0px 1px var(--shadow-stroke);
+	--shadow-with-stroke-2xl: 0px 32px 48px 0px var(--shadow-5), 0px 12px 20px 0px var(--shadow-2), 0px 0px 0px 1px var(--shadow-stroke);
+	--focus-ring-accent: 0px 0px 0px 1px var(--bg-primary), 0px 0px 0px 3px var(--focus-accent);
+	--focus-ring-neutral: 0px 0px 0px 1px var(--bg-primary), 0px 0px 0px 3px var(--focus-neutral);
+	--focus-ring-positive: 0px 0px 0px 1px var(--bg-primary), 0px 0px 0px 3px var(--focus-positive);
+	--focus-ring-warning: 0px 0px 0px 1px var(--bg-primary), 0px 0px 0px 3px var(--focus-warning);
+	--focus-ring-negative: 0px 0px 0px 1px var(--bg-primary), 0px 0px 0px 3px var(--focus-negative);
+	--focus-ring-info: 0px 0px 0px 1px var(--bg-primary), 0px 0px 0px 3px var(--focus-info);
+}
+
+@media (prefers-color-scheme: dark) {
+		:root:not([data-bds-theme='light']) {
+		--shadow-xs: 0px 1px 2px 0px var(--shadow-4);
+		--shadow-sm: 0px 2px 4px 0px var(--shadow-4), 0px 1px 2px 0px var(--shadow-2);
+		--shadow-md: 0px 4px 8px 0px var(--shadow-4), 0px 2px 4px 0px var(--shadow-2);
+		--shadow-lg: 0px 8px 16px 0px var(--shadow-4), 0px 4px 6px 0px var(--shadow-2);
+		--shadow-xl: 0px 16px 24px 0px var(--shadow-4), 0px 6px 10px 0px var(--shadow-2);
+		--shadow-2xl: 0px 32px 48px 0px var(--shadow-5), 0px 12px 20px 0px var(--shadow-2);
+		--shadow-with-stroke-xs: 0px 2px 2px 0px var(--shadow-4), 0px 0px 0px 1px var(--shadow-stroke);
+		--shadow-with-stroke-sm: 0px 3px 4px 0px var(--shadow-4), 0px 1px 2px 0px var(--shadow-2), 0px 0px 0px 1px var(--shadow-stroke);
+		--shadow-with-stroke-md: 0px 5px 8px 0px var(--shadow-4), 0px 2px 4px 0px var(--shadow-2), 0px 0px 0px 1px var(--shadow-stroke);
+		--shadow-with-stroke-lg: 0px 8px 16px 0px var(--shadow-4), 0px 4px 6px 0px var(--shadow-2), 0px 0px 0px 1px var(--shadow-stroke);
+		--shadow-with-stroke-xl: 0px 16px 24px 0px var(--shadow-4), 0px 6px 10px 0px var(--shadow-2), 0px 0px 0px 1px var(--shadow-stroke);
+		--shadow-with-stroke-2xl: 0px 32px 48px 0px var(--shadow-5), 0px 12px 20px 0px var(--shadow-2), 0px 0px 0px 1px var(--shadow-stroke);
+		--focus-ring-accent: 0px 0px 0px 1px var(--bg-primary), 0px 0px 0px 3px var(--focus-accent);
+		--focus-ring-neutral: 0px 0px 0px 1px var(--bg-primary), 0px 0px 0px 3px var(--focus-neutral);
+		--focus-ring-positive: 0px 0px 0px 1px var(--bg-primary), 0px 0px 0px 3px var(--focus-positive);
+		--focus-ring-warning: 0px 0px 0px 1px var(--bg-primary), 0px 0px 0px 3px var(--focus-warning);
+		--focus-ring-negative: 0px 0px 0px 1px var(--bg-primary), 0px 0px 0px 3px var(--focus-negative);
+		--focus-ring-info: 0px 0px 0px 1px var(--bg-primary), 0px 0px 0px 3px var(--focus-info);
+	}
+}
+
+/* Background blur radii. Apply with `backdrop-filter: blur(var(--blur-md))`.
+ * Plain lengths with nothing themed in them, so one scope is enough. */
+:root {
+	--blur-sm: 8px;
+	--blur-md: 12px;
+	--blur-lg: 16px;
+	--blur-xl: 24px;
+}

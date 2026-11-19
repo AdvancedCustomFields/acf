@@ -1,0 +1,71 @@
+/*
+ * Data-visualisation colour tokens.
+ *
+ * Hand-written. Unlike tokens.css this file is not emitted by
+ * scripts/sync-tokens.mjs: the Base Design System has no chart palette, so
+ * there is no Figma variable behind these. `index.css` (`@wpengine/bds-react/styles.css`)
+ * pulls it in after tokens.css; the names are typed in dataviz.ts.
+ *
+ * Every value aliases an existing primitive. The tokens add names and an order,
+ * not colours. Charts are graphics, which design allows fixed colour values
+ * (Dale, 2026-09-22); recorded in docs/figma-divergences.md until Figma has a
+ * palette of its own.
+ *
+ * The steps and the order were chosen with the data-viz palette validator,
+ * not by eye. It checks the lightness band, the chroma floor, colour-blind and
+ * normal-vision separation between neighbouring slots, and contrast against
+ * each theme's `--bg-primary`. The runs are in docs/tokens.md → Data
+ * visualisation. Re-run the validator before changing any value here;
+ * dataviz.css.test.ts fails if a change breaks one of its hard gates.
+ *
+ * - `--viz-categorical-N` — series identity. Assign slots in this order,
+ *   starting at 1, and never cycle. A colour follows its entity. Past the last
+ *   slot, fold the tail into one series coloured `--viz-other`.
+ * - `--viz-other` — the folded tail. A de-emphasis grey, distinct from every
+ *   slot so it can sit beside whichever slot is last.
+ *
+ * Each slot resolves to the same primitive in both themes, so a series keeps
+ * its colour when the viewer flips the theme. That one set passes the gates
+ * against both surfaces. Only `--viz-other` changes per theme. The blocks
+ * still mirror the theme scopes in tokens.css so a later re-step for one theme
+ * is a one-line change, and a theme-pinned subtree resolves its own values.
+ */
+
+/* Light (the default) — on `:root` and on any element pinned light. */
+:root,
+[data-bds-theme='light'] {
+	--viz-categorical-1: var(--color-blue-6);
+	--viz-categorical-2: var(--color-orange-8);
+	--viz-categorical-3: var(--color-teal-8);
+	--viz-categorical-4: var(--color-red-8);
+	--viz-categorical-5: var(--color-yellow-9);
+	--viz-categorical-6: var(--color-purple-6);
+	--viz-categorical-7: var(--color-green-8);
+	--viz-other: var(--color-gray-8);
+}
+
+/* Dark, opt-in via the data attribute. */
+[data-bds-theme='dark'] {
+	--viz-categorical-1: var(--color-blue-6);
+	--viz-categorical-2: var(--color-orange-8);
+	--viz-categorical-3: var(--color-teal-8);
+	--viz-categorical-4: var(--color-red-8);
+	--viz-categorical-5: var(--color-yellow-9);
+	--viz-categorical-6: var(--color-purple-6);
+	--viz-categorical-7: var(--color-green-8);
+	--viz-other: var(--color-gray-11);
+}
+
+/* Dark by system preference, unless a light theme is pinned explicitly. */
+@media (prefers-color-scheme: dark) {
+	:root:not([data-bds-theme='light']) {
+		--viz-categorical-1: var(--color-blue-6);
+		--viz-categorical-2: var(--color-orange-8);
+		--viz-categorical-3: var(--color-teal-8);
+		--viz-categorical-4: var(--color-red-8);
+		--viz-categorical-5: var(--color-yellow-9);
+		--viz-categorical-6: var(--color-purple-6);
+		--viz-categorical-7: var(--color-green-8);
+		--viz-other: var(--color-gray-11);
+	}
+}

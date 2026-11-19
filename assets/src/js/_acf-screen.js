@@ -243,6 +243,9 @@
 		renderPostScreen: function ( data ) {
 			// Helper function to copy events
 			var copyEvents = function ( $from, $to ) {
+				if ( ! $from.length ) {
+					return;
+				}
 				var events = $._data( $from[ 0 ] ).events;
 				for ( var type in events ) {
 					for ( var i = 0; i < events[ type ].length; i++ ) {
@@ -355,8 +358,9 @@
 
 					// Copy default WP events onto metabox.
 					if ( $( '.postbox' ).length ) {
-						copyEvents( $( '.postbox .handlediv' ).first(), $postbox.children( '.handlediv' ) );
-						copyEvents( $( '.postbox .hndle' ).first(), $postbox.children( '.hndle' ) );
+						// Use find() as these elements are nested within ".postbox-header".
+						copyEvents( $( '.postbox .handlediv' ).first(), $postbox.find( '.handlediv' ) );
+						copyEvents( $( '.postbox .hndle' ).first(), $postbox.find( '.hndle' ) );
 					}
 
 					// Append metabox to the bottom of "side-sortables".

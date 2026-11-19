@@ -42,6 +42,7 @@ class ComposerStaticInit94e23cbc47a4750e27ee21b7644f1866
         'ACF\\Meta\\Post' => __DIR__ . '/../..' . '/src/Meta/Post.php',
         'ACF\\Meta\\Term' => __DIR__ . '/../..' . '/src/Meta/Term.php',
         'ACF\\Meta\\User' => __DIR__ . '/../..' . '/src/Meta/User.php',
+        'ACF\\Settings_Page\\Settings_Page' => __DIR__ . '/../..' . '/src/Settings_Page/Settings_Page.php',
         'ACF\\Site_Health\\AI_Usage' => __DIR__ . '/../..' . '/src/Site_Health/AI_Usage.php',
         'ACF\\Site_Health\\Site_Health' => __DIR__ . '/../..' . '/src/Site_Health/Site_Health.php',
     );

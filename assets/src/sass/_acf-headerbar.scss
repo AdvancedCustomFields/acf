@@ -35,9 +35,6 @@
 	z-index: 700;
 	box-sizing: border-box;
 	min-height: 72px;
-	margin: {
-		left: -20px;
-	};
 	padding: {
 		top: 8px;
 		right: 32px;
@@ -170,11 +167,8 @@
 .acf-headerbar-field-editor {
 	position: sticky;
 	top: 32px;
-	z-index: 1020;
-	margin: {
-		left: -20px;
-	};
-	width: calc(100% + 20px);
+	z-index: 700;
+	width: 100%;
 
 	@media screen and (max-width: $md) {
 		position: relative;
@@ -192,7 +186,6 @@
 	@media screen and (max-width: $sm) {
 		position: relative;
 		top: 46px;
-		z-index: unset;
 	}
 
 
@@ -237,8 +230,6 @@
 
 .rtl .acf-headerbar,
 .rtl .acf-headerbar-field-editor {
-	margin-left: 0;
-	margin-right: -20px;
 
 	.acf-page-title {
 		margin: {
